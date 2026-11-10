@@ -1,0 +1,58 @@
+{
+  "workload": "128-step particle trajectories",
+  "cpu_threads": 4,
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "gpu_note": null,
+  "repeats": 3,
+  "first_call_s": {
+    "cpu_serial": 0.8665306999973836,
+    "cpu_parallel": 0.39366330000484595,
+    "gpu_resident": 0.6499212000053376
+  },
+  "timings": [
+    {
+      "batch": 32,
+      "verified": 32,
+      "milliseconds": {
+        "python": 0.2975628713012147,
+        "cpu_serial": 0.02247333333512318,
+        "cpu_parallel": 0.303895959597977,
+        "gpu_resident": 0.15809473684624353,
+        "gpu_roundtrip": 0.38300318472720624
+      }
+    },
+    {
+      "batch": 512,
+      "verified": 512,
+      "milliseconds": {
+        "python": 4.831238461729999,
+        "cpu_serial": 0.36461636363211175,
+        "cpu_parallel": 0.40130666670544696,
+        "gpu_resident": 0.1529305343347028,
+        "gpu_roundtrip": 0.6735211111339999
+      }
+    },
+    {
+      "batch": 4096,
+      "verified": 4096,
+      "milliseconds": {
+        "python": 46.86720000245259,
+        "cpu_serial": 2.6795130432456853,
+        "cpu_parallel": 1.2396122449213087,
+        "gpu_resident": 0.1571863874342324,
+        "gpu_roundtrip": 0.4595916030416621
+      }
+    },
+    {
+      "batch": 32768,
+      "verified": 32768,
+      "milliseconds": {
+        "python": 283.2828000027803,
+        "cpu_serial": 22.67079999971126,
+        "cpu_parallel": 6.6307299995969515,
+        "gpu_resident": 0.2611639130602429,
+        "gpu_roundtrip": 0.7170571427975249
+      }
+    }
+  ]
+}
