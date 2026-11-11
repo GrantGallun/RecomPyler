@@ -18,3 +18,7 @@ recompyler = "recompyler.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+# The vendored ahead-of-time compiler needs its C source and Numba's licence.
+"recompyler._pycc" = ["modulemixin.c", "LICENSE.numba"]
