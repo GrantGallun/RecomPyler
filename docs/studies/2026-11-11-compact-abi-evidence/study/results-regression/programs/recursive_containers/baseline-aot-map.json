@@ -1,0 +1,22 @@
+[
+  {
+    "function": "run",
+    "actual_aot_calls_in_audit": 8,
+    "selected_digest": "da8bc1d36eed91d7c89a958fbfdb6e289e1a36c15e61274707f2d9f3d6c6907f",
+    "selected_export": "r0",
+    "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\cache\\baseline\\recompyler\\rcaotr_5e1125360d9743763eee47ef.cp314-win_amd64.pyd",
+    "artifact_sha256": "53a8d7612df9bce23f67b1896d976a6107972fe249193ef75c87dbcff3024f52",
+    "wrapper_rva": "0x12d0",
+    "preferred_image_base": "0x180000000",
+    "wrapper_preferred_address": "0x1800012d0",
+    "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\baseline.plan.json",
+    "plan_sha256": "cf7b7584da3238f289929ee5ce70dd02b77eaa80f426ceff0bf4d011bc8ae7d2",
+    "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\baseline.audit.json",
+    "audit_sha256": "0618f1bc53fe8a4319134ebbc380aa378bd7a6ebdb90c88440c98e2059851368",
+    "limitations": [
+      "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+      "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+      "No kernel executed, compiled, profiled or timed by this mapping script."
+    ]
+  }
+]

@@ -1,0 +1,186 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "checked",
+  "function": "recurrence_1",
+  "task": "prepare",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ]
+  },
+  "corpus_count": 284,
+  "expected_results_sha256": "a2335106cb689e2f42741fd2fdb74f166cbf90832ebd6f4e603a40a7054f8939",
+  "valid_exact_results": true,
+  "construction_s": 0.23072330000286456,
+  "first_call_s": 1.08590930000355,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 1,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 284,
+    "aot_calls": 0,
+    "jit_calls": 284,
+    "fallback_calls": 0,
+    "contract_native_calls": 284,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "recurrence_1",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "325c4bb09270590089581d2c349903edb9823d524eae95c03dc3c163a411de65",
+    "function_bytecode_sha256": "7ebef16f44fe0674853653e7a9256f52df36423ec9016c40627e1dff1c0a68a5",
+    "selected_mode": "checked",
+    "identity": "e8212ded95188082142f42226b8963975c4b72bd379fd88acffc69926f5e4e58",
+    "contract": "IntIntervals(_items=(('x', (-1048576, 1048576)), ('y', (-1, 1)), ('z', (-1048576, 1048576))))",
+    "proof_certificates": "(IntervalCertificate(origin=(3, 8, 3, 13, 'mul'), left=(-1048576, 1048576), right=(-1, 1), result=(-1048576, 1048576)), IntervalCertificate(origin=(3, 8, 3, 17, 'add'), left=(-1048576, 1048576), right=(-1048576, 1048576), result=(-2097152, 2097152)))",
+    "problem": null,
+    "policy_metadata": {
+      "certificates": [
+        [
+          [
+            3,
+            8,
+            3,
+            13,
+            "mul"
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -1048576,
+            1048576
+          ]
+        ],
+        [
+          [
+            3,
+            8,
+            3,
+            17,
+            "add"
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -2097152,
+            2097152
+          ]
+        ]
+      ],
+      "contract": [
+        [
+          "x",
+          [
+            -1048576,
+            1048576
+          ]
+        ],
+        [
+          "y",
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          "z",
+          [
+            -1048576,
+            1048576
+          ]
+        ]
+      ],
+      "implementation": "c681942f89604e42708e20fac650baa7813f2be9c1f9b8164a463e135035e3b5",
+      "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+      "max_trips": 1024,
+      "mode": "checked",
+      "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+      "origin": "efc3ff80342e3d1ce3d8ab6722661a14f87ad77462c73744221823f8a70991ef",
+      "proof": 1,
+      "schema": 1
+    },
+    "program_digest": "5d24389e71542a96ef2c95e5c6e73700cd4061f66e5054deb83d7036ff3d3c0d",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_recurrence_1",
+    "program_source_sha256": "c89afe0f83978d7784122c4eea4376d581a4fd4e04b1471664216ecb5e095e4b",
+    "dispatcher_module": "rc_heap_c5b6e2f0892c8f086a959ea3",
+    "dispatcher_qualname": "f0_recurrence_1",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_c5b6e2f0892c8f086a959ea315f0_recurrence_1B3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_c5b6e2f0892c8f086a959ea315f0_recurrence_1B3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx",
+        "code_capture_requested": true,
+        "llvm_sha256": "fb7acd2987e43c5d2a699d2db16b7590da15ed4aac4b775e2e1495756250b960",
+        "asm_sha256": "44d9086b70ad9aac19aac64d5c14b5d743029d2395c6559775c11abdd931cc37"
+      }
+    ],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64)": 1
+    }
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "final_counts": {
+    "compiled_calls": 285,
+    "aot_calls": 0,
+    "jit_calls": 285,
+    "fallback_calls": 0,
+    "contract_native_calls": 285,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_c5b6e2f0892c8f086a959ea3.f0_recurrence_1-586.py314.1.nbc": "d02d87648ac2cb8bbabe31e523a91cf0ef1a41f6910b05cdc505c75f6b43ad67",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_c5b6e2f0892c8f086a959ea3.f0_recurrence_1-586.py314.nbi": "f8334f921a8eb6863643a85298611af739dc699c0629b8c21e232b0be598c3a9",
+    "rc_heap_c5b6e2f0892c8f086a959ea3.py": "409e13bc8b915a5db47007cc4b2080fac0f573880c7d66bfd29e78d3984cefe5",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

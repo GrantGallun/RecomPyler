@@ -1,0 +1,464 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_object.py",
+  "profiler": "c",
+  "total_s": 0.0027340486318072777,
+  "script_self_s": 2.906039298977703e-06,
+  "functions": [
+    {
+      "function": "run",
+      "qualname": "run",
+      "line": 16,
+      "calls": 8,
+      "self_s": 2.906039298977703e-06,
+      "cumulative_s": 8.010251622181386e-05,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+        "net_s_first_run": -0.7423586466268253,
+        "net_s_cached": -0.01943574662641282,
+        "first_pass_s": 0.7422170999998343,
+        "warm_start_s": 0.019294199999421835,
+        "python_us_per_call": 7.738868609428946,
+        "compiled_cpu_us_per_call": 25.432196983302042,
+        "speedup": 0.3042941439353445,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "the compiled version did not apply to the captured calls",
+        "diagnostic_original_recommended": false,
+        "diagnostic_original_recommendation": "one call at a time it is 0.30x Python"
+      }
+    }
+  ],
+  "plan": {
+    "startup_s": 0.10916709999582963,
+    "saving_s": -0.01943574662641282,
+    "worth_running": false,
+    "aot_regions": {
+      "module": "rcaotr_9a0de151760ee3be0d4b70d8",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\cache\\candidate\\recompyler",
+      "functions": [
+        {
+          "function": "run",
+          "line": 16,
+          "qualname": "run",
+          "exports": {
+            "8d6e765411f5efcea0afaad36aa9f38a4f6d448b89cc24e921634b7807f80adc": "r0",
+            "6def163e237355486385952b947df28179cd5ebfa5b37cff5f1068c0c43da6f3": "r0",
+            "fe650ddd30ad853ad678bf27f4d69e758c359c3dc36874bfbb1b4f920ba03959": "r1"
+          },
+          "seeds": {
+            "6def163e237355486385952b947df28179cd5ebfa5b37cff5f1068c0c43da6f3": {
+              "version": 1,
+              "classes": [
+                [
+                  [
+                    "Node"
+                  ],
+                  [
+                    "left",
+                    "right",
+                    "value"
+                  ],
+                  [
+                    [
+                      "Node"
+                    ]
+                  ]
+                ]
+              ],
+              "families": [
+                [
+                  [
+                    "Node"
+                  ],
+                  [
+                    [
+                      "Node"
+                    ]
+                  ],
+                  [
+                    [
+                      "left",
+                      [
+                        "object",
+                        [
+                          "Node"
+                        ],
+                        true,
+                        [
+                          [
+                            "Node"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "right",
+                      [
+                        "object",
+                        [
+                          "Node"
+                        ],
+                        true,
+                        [
+                          [
+                            "Node"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "value",
+                      "f"
+                    ]
+                  ]
+                ]
+              ],
+              "functions": [
+                {
+                  "ref": [
+                    "$entry"
+                  ],
+                  "owner": null,
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "5d4ef0ddf912991ec1d028485bbb9706d4d0f6a8a92528447991d3e0309d2be4",
+                  "vars": [
+                    [
+                      "root",
+                      [
+                        "object",
+                        [
+                          "Node"
+                        ],
+                        false,
+                        [
+                          [
+                            "Node"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  "ret": "f"
+                },
+                {
+                  "ref": [
+                    "Node",
+                    "total"
+                  ],
+                  "owner": [
+                    "Node"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "94d9c6b28c6d2d5c0434e9eb4f23e55669f6386698094bb9dd782cc3f87fdda7",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Node",
+                    "total"
+                  ],
+                  "owner": [
+                    "Node"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Node@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "94d9c6b28c6d2d5c0434e9eb4f23e55669f6386698094bb9dd782cc3f87fdda7",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Node"
+                        ],
+                        false,
+                        [
+                          [
+                            "Node"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "value",
+                      "f"
+                    ]
+                  ],
+                  "ret": "f"
+                }
+              ],
+              "globals": [],
+              "cells": [],
+              "dependencies": {
+                "functions": [
+                  [
+                    [
+                      "$entry"
+                    ],
+                    "5d4ef0ddf912991ec1d028485bbb9706d4d0f6a8a92528447991d3e0309d2be4",
+                    null
+                  ],
+                  [
+                    [
+                      "Node",
+                      "__init__"
+                    ],
+                    "11bdbf9e6cbdfa30fe6565e9b2b83374f13883e439181064784b9667e9fffcaa",
+                    null
+                  ],
+                  [
+                    [
+                      "Node",
+                      "total"
+                    ],
+                    "94d9c6b28c6d2d5c0434e9eb4f23e55669f6386698094bb9dd782cc3f87fdda7",
+                    null
+                  ]
+                ],
+                "classes": [
+                  [
+                    [
+                      "Node"
+                    ],
+                    [
+                      [
+                        "Node"
+                      ]
+                    ],
+                    [
+                      "Node",
+                      "__init__"
+                    ]
+                  ]
+                ]
+              }
+            },
+            "fe650ddd30ad853ad678bf27f4d69e758c359c3dc36874bfbb1b4f920ba03959": {
+              "version": 1,
+              "classes": [
+                [
+                  [
+                    "Node"
+                  ],
+                  [
+                    "left",
+                    "right",
+                    "value"
+                  ],
+                  [
+                    [
+                      "Node"
+                    ]
+                  ]
+                ]
+              ],
+              "families": [
+                [
+                  [
+                    "Node"
+                  ],
+                  [
+                    [
+                      "Node"
+                    ]
+                  ],
+                  [
+                    [
+                      "left",
+                      [
+                        "object",
+                        [
+                          "Node"
+                        ],
+                        true,
+                        [
+                          [
+                            "Node"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "right",
+                      [
+                        "object",
+                        [
+                          "Node"
+                        ],
+                        true,
+                        [
+                          [
+                            "Node"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "value",
+                      "f"
+                    ]
+                  ]
+                ]
+              ],
+              "functions": [
+                {
+                  "ref": [
+                    "$entry"
+                  ],
+                  "owner": null,
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "5d4ef0ddf912991ec1d028485bbb9706d4d0f6a8a92528447991d3e0309d2be4",
+                  "vars": [
+                    [
+                      "root",
+                      [
+                        "object",
+                        [
+                          "Node"
+                        ],
+                        true,
+                        [
+                          [
+                            "Node"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  "ret": "f"
+                },
+                {
+                  "ref": [
+                    "Node",
+                    "total"
+                  ],
+                  "owner": [
+                    "Node"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "94d9c6b28c6d2d5c0434e9eb4f23e55669f6386698094bb9dd782cc3f87fdda7",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Node",
+                    "total"
+                  ],
+                  "owner": [
+                    "Node"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Node@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "94d9c6b28c6d2d5c0434e9eb4f23e55669f6386698094bb9dd782cc3f87fdda7",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Node"
+                        ],
+                        true,
+                        [
+                          [
+                            "Node"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "value",
+                      "f"
+                    ]
+                  ],
+                  "ret": "f"
+                }
+              ],
+              "globals": [],
+              "cells": [],
+              "dependencies": {
+                "functions": [
+                  [
+                    [
+                      "$entry"
+                    ],
+                    "5d4ef0ddf912991ec1d028485bbb9706d4d0f6a8a92528447991d3e0309d2be4",
+                    null
+                  ],
+                  [
+                    [
+                      "Node",
+                      "__init__"
+                    ],
+                    "11bdbf9e6cbdfa30fe6565e9b2b83374f13883e439181064784b9667e9fffcaa",
+                    null
+                  ],
+                  [
+                    [
+                      "Node",
+                      "total"
+                    ],
+                    "94d9c6b28c6d2d5c0434e9eb4f23e55669f6386698094bb9dd782cc3f87fdda7",
+                    null
+                  ]
+                ],
+                "classes": [
+                  [
+                    [
+                      "Node"
+                    ],
+                    [
+                      [
+                        "Node"
+                      ]
+                    ],
+                    [
+                      "Node",
+                      "__init__"
+                    ]
+                  ]
+                ]
+              }
+            }
+          },
+          "seed_policy": "guarded",
+          "seed_policy_reason": null
+        }
+      ]
+    }
+  },
+  "manual_diagnostic_contract": "Target-only rows; original recommendation retained; exactly verified heapRegion required; force explicitly permitted, actual AOT required by study."
+}

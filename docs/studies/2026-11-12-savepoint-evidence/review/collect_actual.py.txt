@@ -1,0 +1,61 @@
+"""Disassemble fresh audit-selected PE files; never import or execute artifacts."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+from static_method import inspect
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / 'actual-artifacts'
+TOOL = Path('C:/Users/grant/AppData/Local/Programs/Swift/Toolchains/6.3.2+Asserts/usr/bin/llvm-objdump.exe')
+read = lambda p: json.loads(p.read_text())
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--name', required=True)
+parser.add_argument('--plan', type=Path, required=True)
+parser.add_argument('--audit', type=Path, required=True)
+parser.add_argument('--frozen', type=Path, required=True)
+args = parser.parse_args()
+OUT.mkdir(exist_ok=True)
+plan, raw = read(args.plan), read(args.audit)
+audit = raw.get('mode_evidence', raw)
+totals = audit['totals']
+assert totals['aot_calls'] > 0
+assert all(totals[k] == 0 for k in ('jit_calls', 'fallback_calls', 'unknown_native_calls', 'rejected_attempts'))
+numba = audit.get('numba_imported_after', audit.get('numba_imported'))
+assert numba is False
+selected = [(row, digest, counts['aot_calls']) for row in audit['functions']
+            for digest, counts in row.get('programs', {}).items() if counts['aot_calls']]
+assert len(selected) == 1
+function, digest, calls = selected[0]
+assert calls == totals['aot_calls']
+section = plan['plan']['aot_regions']
+matches = [row for row in section['functions'] if digest in row['exports']]
+assert len(matches) == 1
+row = matches[0]
+assert row.get('qualname', row['function']) == function['function']
+export = row['exports'][digest]
+artifacts = list(Path(section['folder']).glob(section['module'] + '*.pyd'))
+assert len(artifacts) == 1
+artifact = artifacts[0]
+assert sha(artifact) == read(args.frozen)[str(artifact)]
+metadata = inspect(artifact, export)
+command = [str(TOOL), '--disassemble', '--demangle', '--no-show-raw-insn', str(artifact)]
+process = subprocess.run(command, capture_output=True)
+(OUT / (args.name + '.asm')).write_bytes(process.stdout)
+(OUT / (args.name + '.stderr')).write_bytes(process.stderr)
+assert process.returncode == 0, process.stderr
+metadata.update(
+    case=args.name, digest=digest, function=function['function'], export=export,
+    actual_aot_calls=calls, audit_totals=totals, numba_imported=numba,
+    plan=str(args.plan.resolve()), plan_sha256=sha(args.plan),
+    audit=str(args.audit.resolve()), audit_sha256=sha(args.audit),
+    frozen=str(args.frozen.resolve()), frozen_sha256=sha(args.frozen),
+    command=command, tool_sha256=sha(TOOL),
+    assembly_sha256=sha(OUT / (args.name + '.asm')), artifact_executed=False,
+)
+(OUT / (args.name + '-provenance.json')).write_text(json.dumps(metadata, indent=2) + '\n')
+print(json.dumps({'name': args.name, 'digest': digest, 'export': export,
+                  'artifact_sha256': sha(artifact), 'wrapper': metadata['method']['function_address']}))

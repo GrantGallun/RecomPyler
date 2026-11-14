@@ -1,0 +1,30 @@
+"""Metadata/copy-only freeze of coordinator-approved current baseline."""
+from pathlib import Path
+import hashlib
+import json
+import shutil
+import subprocess
+
+here=Path(__file__).resolve().parent
+source=here.parent/'integration';target=here/'baseline'
+expected='5d0fe5296e077b893a0d9c920f6ccfe798696eeb'
+def git(folder,*args):return subprocess.check_output(['git','-C',str(folder),*args]).decode().strip()
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+if git(source,'rev-parse','HEAD')!=expected or git(source,'status','--porcelain'):raise SystemExit('Current source changed.')
+if git(target,'rev-parse','HEAD')!=expected:raise SystemExit('Snapshot revision differs.')
+aligned=[];hashes={}
+for name in git(target,'ls-files','src','tools').splitlines():
+    original=source/name;copied=target/name
+    if copied.read_bytes()!=original.read_bytes():
+        if copied.read_bytes().replace(b'\r\n',b'\n')!=original.read_bytes().replace(b'\r\n',b'\n'):raise SystemExit('Non-newline content mismatch: '+name)
+        shutil.copyfile(original,copied);aligned.append(name)
+    hashes[name]=sha(copied)
+extensions={}
+for original in sorted((source/'src/recompyler').glob('*.pyd')):
+    copied=target/'src/recompyler'/original.name;shutil.copyfile(original,copied)
+    extensions[original.name]=sha(copied)
+git(target,'add','--renormalize','--','src','tools')
+if git(target,'status','--porcelain'):raise SystemExit('Snapshot not clean after newline alignment.')
+(here/'BASELINE.json').write_text(json.dumps({'baseline_commit':expected,'product_commit':'9ff4908fdc58613d72287f71cfc6b70aa5e693ff',
+    'tracked_source_tool_sha256':hashes,'raw_byte_alignment':aligned,'native_extensions':extensions,'note':'Metadata/copy only; no compiler import/build/workload run.'},indent=2)+'\n')
+print('Frozen clean current baseline; aligned='+str(aligned)+' native_extensions='+str(extensions))

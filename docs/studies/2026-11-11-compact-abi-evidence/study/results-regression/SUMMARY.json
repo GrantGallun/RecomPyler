@@ -1,0 +1,574 @@
+{
+  "complete": true,
+  "programs": {
+    "recursive_object": {
+      "plain": {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_object.py"
+        ],
+        "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+        "status": "ok",
+        "exit_code": 0,
+        "wall_s": 0.053520499997830484,
+        "stdout_sha256": "c2be41c1a1336b7bf3306e8891afb15b45ec597b2c22c8b61b67c6fa02affde0",
+        "stdout_bytes": 96,
+        "utc": "2026-11-12T05:18:53.349004+00:00"
+      },
+      "baseline": {
+        "valid": true,
+        "audit": {
+          "totals": {
+            "aot_calls": 8,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          "functions": [
+            {
+              "function": "run",
+              "kind": "region",
+              "aot_calls": 8,
+              "jit_calls": 0,
+              "unknown_native_calls": 0,
+              "rejected_attempts": 0,
+              "fallback_calls": 0,
+              "programs": {
+                "0fdc56641302703a3bb7b9b575f98b4fe4880f24cffc3e6f0f0e3faa4168450b": {
+                  "aot_calls": 8,
+                  "jit_calls": 0,
+                  "unknown_native_calls": 0
+                }
+              }
+            }
+          ],
+          "runner_report": {
+            "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_object.py",
+            "functions": [
+              {
+                "function": "run",
+                "compiled_calls": 8,
+                "aot_calls": 8,
+                "jit_calls": 0,
+                "fallback_calls": 0,
+                "lifted": true,
+                "ahead_of_time": true,
+                "aot_loaded": true,
+                "region": true
+              }
+            ],
+            "not_found": [],
+            "batches": {},
+            "batch_failures": {},
+            "exit_code": null
+          },
+          "numba_imported_before": false,
+          "numba_imported_by_audit_bootstrap": false,
+          "numba_imported_after": false,
+          "timing_eligible": false,
+          "limitations": [
+            "Audit imports/patches add overhead; this process is never a latency sample.",
+            "Successful Region.attempt mode uses its actual selected latest program, not export availability.",
+            "jit_calls includes fresh JIT and Numba disk-cache execution; no machine-code cache-hit inference."
+          ],
+          "runner_total_compiled_calls": 8,
+          "runner_total_fallback_calls": 0,
+          "product_exact_aot_calls": 8,
+          "product_exact_jit_calls": 0,
+          "compiled_total_reconciles": true,
+          "runner_only_fallback_calls": 0,
+          "product_exact_counter_matches_audit": true,
+          "batch_execution_needs_separate_audit": false,
+          "fallback_note": "Audit wrapper counts exclude direct runner preparation-failure Python calls; runner counter retains those."
+        },
+        "process": {
+          "command": [
+            "C:\\Python314\\python.exe",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\audit.py",
+            "--output",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_object\\baseline.audit.json",
+            "--plan",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_object\\baseline.plan.json",
+            "--force",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_object.py"
+          ],
+          "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+          "status": "ok",
+          "exit_code": 0,
+          "wall_s": 0.19149189999734517,
+          "stdout_sha256": "c2be41c1a1336b7bf3306e8891afb15b45ec597b2c22c8b61b67c6fa02affde0",
+          "stdout_bytes": 96,
+          "utc": "2026-11-12T05:18:53.541221+00:00"
+        }
+      },
+      "candidate": {
+        "valid": true,
+        "audit": {
+          "totals": {
+            "aot_calls": 8,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          "functions": [
+            {
+              "function": "run",
+              "kind": "region",
+              "aot_calls": 8,
+              "jit_calls": 0,
+              "unknown_native_calls": 0,
+              "rejected_attempts": 0,
+              "fallback_calls": 0,
+              "programs": {
+                "6def163e237355486385952b947df28179cd5ebfa5b37cff5f1068c0c43da6f3": {
+                  "aot_calls": 8,
+                  "jit_calls": 0,
+                  "unknown_native_calls": 0
+                }
+              }
+            }
+          ],
+          "runner_report": {
+            "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_object.py",
+            "functions": [
+              {
+                "function": "run",
+                "compiled_calls": 8,
+                "aot_calls": 8,
+                "jit_calls": 0,
+                "fallback_calls": 0,
+                "lifted": true,
+                "ahead_of_time": true,
+                "aot_loaded": true,
+                "region": true
+              }
+            ],
+            "not_found": [],
+            "batches": {},
+            "batch_failures": {},
+            "exit_code": null
+          },
+          "numba_imported_before": false,
+          "numba_imported_by_audit_bootstrap": false,
+          "numba_imported_after": false,
+          "timing_eligible": false,
+          "limitations": [
+            "Audit imports/patches add overhead; this process is never a latency sample.",
+            "Successful Region.attempt mode uses its actual selected latest program, not export availability.",
+            "jit_calls includes fresh JIT and Numba disk-cache execution; no machine-code cache-hit inference."
+          ],
+          "runner_total_compiled_calls": 8,
+          "runner_total_fallback_calls": 0,
+          "product_exact_aot_calls": 8,
+          "product_exact_jit_calls": 0,
+          "compiled_total_reconciles": true,
+          "runner_only_fallback_calls": 0,
+          "product_exact_counter_matches_audit": true,
+          "batch_execution_needs_separate_audit": false,
+          "fallback_note": "Audit wrapper counts exclude direct runner preparation-failure Python calls; runner counter retains those."
+        },
+        "process": {
+          "command": [
+            "C:\\Python314\\python.exe",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\audit.py",
+            "--output",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_object\\candidate.audit.json",
+            "--plan",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_object\\candidate.plan.json",
+            "--force",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_object.py"
+          ],
+          "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+          "status": "ok",
+          "exit_code": 0,
+          "wall_s": 0.19764280000526924,
+          "stdout_sha256": "c2be41c1a1336b7bf3306e8891afb15b45ec597b2c22c8b61b67c6fa02affde0",
+          "stdout_bytes": 96,
+          "utc": "2026-11-12T05:18:53.746632+00:00"
+        }
+      }
+    },
+    "recursive_containers": {
+      "plain": {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_containers.py"
+        ],
+        "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+        "status": "ok",
+        "exit_code": 0,
+        "wall_s": 0.05511059999844292,
+        "stdout_sha256": "335559a2d7a25ff3c6a4de30fa0dbe9c1a212fa41085ca79353328fd941facc0",
+        "stdout_bytes": 95,
+        "utc": "2026-11-12T05:18:53.807343+00:00"
+      },
+      "baseline": {
+        "valid": true,
+        "audit": {
+          "totals": {
+            "aot_calls": 8,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          "functions": [
+            {
+              "function": "run",
+              "kind": "region",
+              "aot_calls": 8,
+              "jit_calls": 0,
+              "unknown_native_calls": 0,
+              "rejected_attempts": 0,
+              "fallback_calls": 0,
+              "programs": {
+                "da8bc1d36eed91d7c89a958fbfdb6e289e1a36c15e61274707f2d9f3d6c6907f": {
+                  "aot_calls": 8,
+                  "jit_calls": 0,
+                  "unknown_native_calls": 0
+                }
+              }
+            }
+          ],
+          "runner_report": {
+            "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_containers.py",
+            "functions": [
+              {
+                "function": "run",
+                "compiled_calls": 8,
+                "aot_calls": 8,
+                "jit_calls": 0,
+                "fallback_calls": 0,
+                "lifted": true,
+                "ahead_of_time": true,
+                "aot_loaded": true,
+                "region": true
+              }
+            ],
+            "not_found": [],
+            "batches": {},
+            "batch_failures": {},
+            "exit_code": null
+          },
+          "numba_imported_before": false,
+          "numba_imported_by_audit_bootstrap": false,
+          "numba_imported_after": false,
+          "timing_eligible": false,
+          "limitations": [
+            "Audit imports/patches add overhead; this process is never a latency sample.",
+            "Successful Region.attempt mode uses its actual selected latest program, not export availability.",
+            "jit_calls includes fresh JIT and Numba disk-cache execution; no machine-code cache-hit inference."
+          ],
+          "runner_total_compiled_calls": 8,
+          "runner_total_fallback_calls": 0,
+          "product_exact_aot_calls": 8,
+          "product_exact_jit_calls": 0,
+          "compiled_total_reconciles": true,
+          "runner_only_fallback_calls": 0,
+          "product_exact_counter_matches_audit": true,
+          "batch_execution_needs_separate_audit": false,
+          "fallback_note": "Audit wrapper counts exclude direct runner preparation-failure Python calls; runner counter retains those."
+        },
+        "process": {
+          "command": [
+            "C:\\Python314\\python.exe",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\audit.py",
+            "--output",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\baseline.audit.json",
+            "--plan",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\baseline.plan.json",
+            "--force",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_containers.py"
+          ],
+          "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+          "status": "ok",
+          "exit_code": 0,
+          "wall_s": 0.18986020000011194,
+          "stdout_sha256": "335559a2d7a25ff3c6a4de30fa0dbe9c1a212fa41085ca79353328fd941facc0",
+          "stdout_bytes": 95,
+          "utc": "2026-11-12T05:18:53.997993+00:00"
+        }
+      },
+      "candidate": {
+        "valid": true,
+        "audit": {
+          "totals": {
+            "aot_calls": 8,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          "functions": [
+            {
+              "function": "run",
+              "kind": "region",
+              "aot_calls": 8,
+              "jit_calls": 0,
+              "unknown_native_calls": 0,
+              "rejected_attempts": 0,
+              "fallback_calls": 0,
+              "programs": {
+                "c465a326ec936a78c26cb713d39d08ff06818e2b7a20c6ff75131df56d1d173f": {
+                  "aot_calls": 8,
+                  "jit_calls": 0,
+                  "unknown_native_calls": 0
+                }
+              }
+            }
+          ],
+          "runner_report": {
+            "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_containers.py",
+            "functions": [
+              {
+                "function": "run",
+                "compiled_calls": 8,
+                "aot_calls": 8,
+                "jit_calls": 0,
+                "fallback_calls": 0,
+                "lifted": true,
+                "ahead_of_time": true,
+                "aot_loaded": true,
+                "region": true
+              }
+            ],
+            "not_found": [],
+            "batches": {},
+            "batch_failures": {},
+            "exit_code": null
+          },
+          "numba_imported_before": false,
+          "numba_imported_by_audit_bootstrap": false,
+          "numba_imported_after": false,
+          "timing_eligible": false,
+          "limitations": [
+            "Audit imports/patches add overhead; this process is never a latency sample.",
+            "Successful Region.attempt mode uses its actual selected latest program, not export availability.",
+            "jit_calls includes fresh JIT and Numba disk-cache execution; no machine-code cache-hit inference."
+          ],
+          "runner_total_compiled_calls": 8,
+          "runner_total_fallback_calls": 0,
+          "product_exact_aot_calls": 8,
+          "product_exact_jit_calls": 0,
+          "compiled_total_reconciles": true,
+          "runner_only_fallback_calls": 0,
+          "product_exact_counter_matches_audit": true,
+          "batch_execution_needs_separate_audit": false,
+          "fallback_note": "Audit wrapper counts exclude direct runner preparation-failure Python calls; runner counter retains those."
+        },
+        "process": {
+          "command": [
+            "C:\\Python314\\python.exe",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\audit.py",
+            "--output",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\candidate.audit.json",
+            "--plan",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\candidate.plan.json",
+            "--force",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_containers.py"
+          ],
+          "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+          "status": "ok",
+          "exit_code": 0,
+          "wall_s": 0.19467119999899296,
+          "stdout_sha256": "335559a2d7a25ff3c6a4de30fa0dbe9c1a212fa41085ca79353328fd941facc0",
+          "stdout_bytes": 95,
+          "utc": "2026-11-12T05:18:54.198536+00:00"
+        }
+      }
+    },
+    "recursive_returns": {
+      "plain": {
+        "command": [
+          "C:\\Python314\\python.exe",
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_returns.py"
+        ],
+        "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+        "status": "ok",
+        "exit_code": 0,
+        "wall_s": 0.05436259999987669,
+        "stdout_sha256": "a2a1eb64159e3f25a9c15242e7df1028812c05d2abe511de86ea9c3d4d9ff014",
+        "stdout_bytes": 95,
+        "utc": "2026-11-12T05:18:54.259281+00:00"
+      },
+      "baseline": {
+        "valid": true,
+        "audit": {
+          "totals": {
+            "aot_calls": 8,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          "functions": [
+            {
+              "function": "run",
+              "kind": "region",
+              "aot_calls": 8,
+              "jit_calls": 0,
+              "unknown_native_calls": 0,
+              "rejected_attempts": 0,
+              "fallback_calls": 0,
+              "programs": {
+                "57c70ee5b935e7ea0d4d2e61cf7cdbf1e4b264c7fa2f6026c4107206ac7b3f64": {
+                  "aot_calls": 8,
+                  "jit_calls": 0,
+                  "unknown_native_calls": 0
+                }
+              }
+            }
+          ],
+          "runner_report": {
+            "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_returns.py",
+            "functions": [
+              {
+                "function": "run",
+                "compiled_calls": 8,
+                "aot_calls": 8,
+                "jit_calls": 0,
+                "fallback_calls": 0,
+                "lifted": true,
+                "ahead_of_time": true,
+                "aot_loaded": true,
+                "region": true
+              }
+            ],
+            "not_found": [],
+            "batches": {},
+            "batch_failures": {},
+            "exit_code": null
+          },
+          "numba_imported_before": false,
+          "numba_imported_by_audit_bootstrap": false,
+          "numba_imported_after": false,
+          "timing_eligible": false,
+          "limitations": [
+            "Audit imports/patches add overhead; this process is never a latency sample.",
+            "Successful Region.attempt mode uses its actual selected latest program, not export availability.",
+            "jit_calls includes fresh JIT and Numba disk-cache execution; no machine-code cache-hit inference."
+          ],
+          "runner_total_compiled_calls": 8,
+          "runner_total_fallback_calls": 0,
+          "product_exact_aot_calls": 8,
+          "product_exact_jit_calls": 0,
+          "compiled_total_reconciles": true,
+          "runner_only_fallback_calls": 0,
+          "product_exact_counter_matches_audit": true,
+          "batch_execution_needs_separate_audit": false,
+          "fallback_note": "Audit wrapper counts exclude direct runner preparation-failure Python calls; runner counter retains those."
+        },
+        "process": {
+          "command": [
+            "C:\\Python314\\python.exe",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\audit.py",
+            "--output",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_returns\\baseline.audit.json",
+            "--plan",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_returns\\baseline.plan.json",
+            "--force",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_returns.py"
+          ],
+          "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+          "status": "ok",
+          "exit_code": 0,
+          "wall_s": 0.19181859999662265,
+          "stdout_sha256": "a2a1eb64159e3f25a9c15242e7df1028812c05d2abe511de86ea9c3d4d9ff014",
+          "stdout_bytes": 95,
+          "utc": "2026-11-12T05:18:54.451821+00:00"
+        }
+      },
+      "candidate": {
+        "valid": true,
+        "audit": {
+          "totals": {
+            "aot_calls": 8,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          "functions": [
+            {
+              "function": "run",
+              "kind": "region",
+              "aot_calls": 8,
+              "jit_calls": 0,
+              "unknown_native_calls": 0,
+              "rejected_attempts": 0,
+              "fallback_calls": 0,
+              "programs": {
+                "9584e0fcefc7498bdede346f0c6cac6c6de8e15f79703eebc8226877b1c7b817": {
+                  "aot_calls": 8,
+                  "jit_calls": 0,
+                  "unknown_native_calls": 0
+                }
+              }
+            }
+          ],
+          "runner_report": {
+            "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_returns.py",
+            "functions": [
+              {
+                "function": "run",
+                "compiled_calls": 8,
+                "aot_calls": 8,
+                "jit_calls": 0,
+                "fallback_calls": 0,
+                "lifted": true,
+                "ahead_of_time": true,
+                "aot_loaded": true,
+                "region": true
+              }
+            ],
+            "not_found": [],
+            "batches": {},
+            "batch_failures": {},
+            "exit_code": null
+          },
+          "numba_imported_before": false,
+          "numba_imported_by_audit_bootstrap": false,
+          "numba_imported_after": false,
+          "timing_eligible": false,
+          "limitations": [
+            "Audit imports/patches add overhead; this process is never a latency sample.",
+            "Successful Region.attempt mode uses its actual selected latest program, not export availability.",
+            "jit_calls includes fresh JIT and Numba disk-cache execution; no machine-code cache-hit inference."
+          ],
+          "runner_total_compiled_calls": 8,
+          "runner_total_fallback_calls": 0,
+          "product_exact_aot_calls": 8,
+          "product_exact_jit_calls": 0,
+          "compiled_total_reconciles": true,
+          "runner_only_fallback_calls": 0,
+          "product_exact_counter_matches_audit": true,
+          "batch_execution_needs_separate_audit": false,
+          "fallback_note": "Audit wrapper counts exclude direct runner preparation-failure Python calls; runner counter retains those."
+        },
+        "process": {
+          "command": [
+            "C:\\Python314\\python.exe",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\audit.py",
+            "--output",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_returns\\candidate.audit.json",
+            "--plan",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_returns\\candidate.plan.json",
+            "--force",
+            "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_returns.py"
+          ],
+          "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression",
+          "status": "ok",
+          "exit_code": 0,
+          "wall_s": 0.1990363000004436,
+          "stdout_sha256": "a2a1eb64159e3f25a9c15242e7df1028812c05d2abe511de86ea9c3d4d9ff014",
+          "stdout_bytes": 95,
+          "utc": "2026-11-12T05:18:54.657307+00:00"
+        }
+      }
+    }
+  },
+  "all_valid": true,
+  "manifest_sha256": "3696d2640f48ead8dc5ca89d8aa3086e6af4691e711871e1682db4733e538516"
+}

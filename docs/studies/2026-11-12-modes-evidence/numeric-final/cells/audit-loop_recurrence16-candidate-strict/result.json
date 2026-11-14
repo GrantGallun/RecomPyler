@@ -1,0 +1,1042 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "candidate-strict",
+  "function": "loop_recurrence16",
+  "task": "audit",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ],
+    "n": [
+      0,
+      1024
+    ]
+  },
+  "corpus_count": 392,
+  "expected_results_sha256": "a20c051a6a31c8a5fdf53f4206625a81332b99fe0941095fed0f8ce598978deb",
+  "valid_exact_results": true,
+  "construction_s": 0.21954160000314005,
+  "first_call_s": 0.69205049998709,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 392,
+    "aot_calls": 0,
+    "jit_calls": 392,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "loop_recurrence16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "b5ae3bb6685078518eed9a23a9037b44108be6cbf308ee2bb9dce07a222d21c0",
+    "function_bytecode_sha256": "1d23dac200bc0f0d85991e5d5a2578605c991488a6fb66650a27c73dc59fae7a",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null,
+    "program_digest": "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_loop_recurrence16",
+    "program_source_sha256": "273f21ce77fb0f406fd3546b37df1b479d725709daffb63e5e81022ef9fefcdd",
+    "dispatcher_module": "rc_heap_73547edce78f3bbe0466b8e9",
+    "dispatcher_qualname": "f0_loop_recurrence16",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_73547edce78f3bbe0466b8e920f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_73547edce78f3bbe0466b8e920f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "code_capture_requested": false,
+        "code_capture_note": "No cached LLVM/ASM inspection requested or claimed"
+      }
+    ],
+    "dispatcher_cache_hits": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)": 1
+    },
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "invalid_audits": [
+    {
+      "args": [
+        "1048577",
+        "1",
+        "0",
+        "16"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "bound_values": [
+        "1048577",
+        "1",
+        "0",
+        "16"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1099511627776",
+        "1099511627776",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "22887284938275379073209020876478544547459876696240605379143567921401229194635390521531593992375926147753704711196832136165647163781896860689459713299065525895619517863742099239634841598830825399410808286309334714246027443025828896982300582702768008983456200733770736438207494301362797381893641396371719689591109784347784921076483327025701370690350140760288021909021930961276721445295410715539013633"
+      },
+      "bound_values": [
+        "1099511627776",
+        "1099511627776",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "22887284938275379073209020876478544547459876696240605379143567921401229194635390521531593992375926147753704711196832136165647163781896860689459713299065525895619517863742099239634841598830825399410808286309334714246027443025828896982300582702768008983456200733770736438207494301362797381893641396371719689591109784347784921076483327025701370690350140760288021909021930961276721445295410715539013633"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "22887284938275379073209020876478544547459876696240605379143567921401229194635390521531593992375926147753704711196832136165647163781896860689459713299065525895619517863742099239634841598830825399410808286309334714246027443025828896982300582702768008983456200733770736438207494301362797381893641396371719689591109784347784921076483327025701370690350140760288021909021930961276721445295410715539013633"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "9223372036854775807",
+        "1",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775823"
+      },
+      "bound_values": [
+        "9223372036854775807",
+        "1",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775823"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775823"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "-9223372036854775808",
+        "-1",
+        "0",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "bound_values": [
+        "-9223372036854775808",
+        "-1",
+        "0",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "True",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "bool",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "65"
+      },
+      "bound_values": [
+        "True",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "65"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "65"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "semantic_audits.<locals>.IntSubclass",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "66"
+      },
+      "bound_values": [
+        "2",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "66"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "66"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2.0",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "float",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "66.0"
+      },
+      "bound_values": [
+        "2.0",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "66.0"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "66.0"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        },
+        "c049f928b65b8eb20111136929128c6f2c71e6b59a3e05025be59f6d607e584f": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1208925819614629174706176",
+        "1",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706208"
+      },
+      "bound_values": [
+        "1208925819614629174706176",
+        "1",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706208"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706208"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        },
+        "c049f928b65b8eb20111136929128c6f2c71e6b59a3e05025be59f6d607e584f": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "-1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "1",
+        "-1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        },
+        "c049f928b65b8eb20111136929128c6f2c71e6b59a3e05025be59f6d607e584f": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "1025"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "16401"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "1",
+        "1025"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "16401"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "16401"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        },
+        "c049f928b65b8eb20111136929128c6f2c71e6b59a3e05025be59f6d607e584f": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() missing 4 required positional arguments: 'x', 'y', 'z', and 'n'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() missing 4 required positional arguments: 'x', 'y', 'z', and 'n'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() missing 4 required positional arguments: 'x', 'y', 'z', and 'n'"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        },
+        "c049f928b65b8eb20111136929128c6f2c71e6b59a3e05025be59f6d607e584f": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {
+        "bad": "1"
+      },
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() got an unexpected keyword argument 'bad'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() got an unexpected keyword argument 'bad'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() got an unexpected keyword argument 'bad'"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        },
+        "c049f928b65b8eb20111136929128c6f2c71e6b59a3e05025be59f6d607e584f": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {
+        "x": "1",
+        "y": "1",
+        "z": "2",
+        "n": "3"
+      },
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "2",
+        "3"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        },
+        "c049f928b65b8eb20111136929128c6f2c71e6b59a3e05025be59f6d607e584f": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    }
+  ],
+  "audit_observations": {
+    "attempts": 13,
+    "rejected_attempts": 8,
+    "attempt_exceptions": 0,
+    "programs": {
+      "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee": {
+        "mode": "JIT",
+        "entered": 7,
+        "returned": 7,
+        "successful_status": 4,
+        "failed_status": 3
+      },
+      "c049f928b65b8eb20111136929128c6f2c71e6b59a3e05025be59f6d607e584f": {
+        "mode": "JIT",
+        "entered": 1,
+        "returned": 1,
+        "successful_status": 1,
+        "failed_status": 0
+      }
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 398,
+    "aot_calls": 0,
+    "jit_calls": 398,
+    "fallback_calls": 8,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.add_i-95.py314.1.nbc": "371969105e96efe1c77a318a24113a5d4a22bff0aa371cdedb25e221981d7e06",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.add_i-95.py314.nbi": "6452a5a68265d3ccaf5b0a1cdc427c9cdf9acefd6a4cd69ad9706c8ae8aaa4bd",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.f0_recurrence_16-554.py314.1.nbc": "3de7a3b4e882fec7a75259caeab935c16c39bae026c0b6f333b8226cdcf8a70a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.f0_recurrence_16-554.py314.nbi": "ed0f7108593c614dd302f66374b388d5b6d58bfb65471c0383f104124b30dd93",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.mul_i-111.py314.1.nbc": "ae63fe96e17cf249cf4b340f75b034481d481138e125e8581b959b88f15778c8",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.mul_i-111.py314.nbi": "d25e95ed643981197ef5da89445ac65df22ce9c073b492eda0f46a991b9d8009",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.1.nbc": "03d464c43eeefe37ccc5b5807a9750e8d29d1001aa10d174c4cdbc08c94c2d3e",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.2.nbc": "1bdfa9dae9168c762da231b9efab5715d18cb07720b25433ec1e997d7be4e5db",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.nbi": "f8858fdcca579c2245f748ee93d783d9371e52888c7f9866d2878465e4e158f2",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.f0_fibonacci-554.py314.1.nbc": "88fc0be167b637630721968ff4b388a5c57326fdaa675253bc5b0eefb7a5b88a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.f0_fibonacci-554.py314.nbi": "3ec654d73f6e23254a0fb8b1cbe18f9b1fdafa839a3ef4eb325e9efb5ad95a4c",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_57152f1561b845507fca6255.f0_recurrence_64-554.py314.1.nbc": "262a8d35da30cdbbe06d022c2df289046f023d936610c068f21816e385338bdc",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_57152f1561b845507fca6255.f0_recurrence_64-554.py314.nbi": "06875971543e91bde5656f078f1fc5b59b37a2c0d7f1db733a0cfa57cc6fd958",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.add_i-95.py314.1.nbc": "da691f8d58eda09af09df079a78553ab1f04708a6a46995e92cb975b79e449a6",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.add_i-95.py314.nbi": "3714e2a1d2dc026f0d25886db87dcb94cb30fdeb92b9f50e575d237222bc62dc",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.f0_recurrence_64-554.py314.1.nbc": "d06a06a86f0b891ca8d16800d76eba7bcc6ec6cabfb0410aff3a4d1c6dd62d3d",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.f0_recurrence_64-554.py314.nbi": "9b62b2dc073973095187b42839227b9f4fff9bc01c616ccc92b2aa78b089d73e",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.mul_i-111.py314.1.nbc": "96d68e9ef88efc4d00341f597b65ed1652c2ce0da26be9bb0749188e9f3c6c00",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.mul_i-111.py314.nbi": "49df8b3c4ab3a940d7a0fa1d79ffa5026b5443fc49f563e5d38bf90e10078a3d",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.add_i-95.py314.1.nbc": "c3293c227109ac85dc6b9d2823511d1ff99ece2e3cea7dc6faa5dcf489ca4abc",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.add_i-95.py314.nbi": "ed77de60fdbfd9bf0c1c9a0fda7d729e19208b1b8e7a5dc0e70a850c290865b3",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.f0_loop_recurrence16-554.py314.1.nbc": "6c4f19312a155389947ed6f84253f9cc29c28b025ce2648753fd82fd67e47472",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.f0_loop_recurrence16-554.py314.nbi": "c70fe331c5799f175e277afe78db2b8d3b2c8419214e175ec33d7108ec953fbe",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.mul_i-111.py314.1.nbc": "4299248fe60f42957bff72dfa9650e9c79e297bc6cf765235fd7c29a7d7c42b3",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.mul_i-111.py314.nbi": "dd9164cabe7753714a563b9a07ae88ee23e5e14b3f1df8c2916b9e567d0019df",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.1.nbc": "0fb84849518f2f1938dd368b4b8aaa125dba4e218a2a2604d18c43bc4950ea7a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.2.nbc": "70d3131acf51e70c3032571fdfc7f9e798432dcf95b7ec59241106090b58f577",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.nbi": "113bfe9eba654041795f4e48fee0c78c27f4d46b40f75ab6366d6d2ccd2e6f2a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.1.nbc": "362daba5facd4e74c13a8b23dc2778775d5a3fb19f93ccbeae4f5944e2a7200f",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.nbi": "221988085045de20bdb84d94233c8d50aedfa20ad2c3d707205a2268861a286d",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_b3a9bfa1769a9e7651c5e8a3.f0_recurrence_16-554.py314.1.nbc": "bec0a099701b449b890cefb682eac3445cb17008b4d319a24252e95fd57ab8b7",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_b3a9bfa1769a9e7651c5e8a3.f0_recurrence_16-554.py314.nbi": "dfd7c9f5a153d03ecf3bf0ccc2132340e6a592cab0181844b07c5ad89baf9c86",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.1.nbc": "08cc8bd03e1357c11fe7b17293c659f973dc16d1ed6fa71e7577c1db20117782",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.nbi": "d8ad44c9caae00d8d2781d009bff1a46400003f7f618891244cccf0c31960a61",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e108b176528cc6fcedb2027d.f0_loop_recurrence16-554.py314.1.nbc": "8185f22fcea8e6984baa623ed5febff50ac9f83da5bd58b2982e29d7b0499450",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e108b176528cc6fcedb2027d.f0_loop_recurrence16-554.py314.nbi": "953913257a4f5a399cf17b7738e45d36c62bb144c67683b12d7ba40d4c340150",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.1.nbc": "2bba7021e3bf3d4bc43bd7be3cde343f0fb4c0ee16238cf197030ee570397c1a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.nbi": "c27cdaa61113a3444f0af6d858c72a995b52b3338cd421b830da6995c48c8895",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.1.nbc": "e88082336c561e40fc7e196eec2525f6a31ee3c862dddc14454cd2a4be36192b",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.nbi": "f22260a03baa0264c23b81cd378a818feeb67a47bea6e0902091e8935fba7d92",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.1.nbc": "05f05a8a79d8b06a8791ebbbe5db87b514e7a10f71e5b83f7cc5d8bf1c98d308",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.nbi": "8df3082aaeef4320c3be2eef63306159fea4fdece7953a531de7091617e52fe1",
+    "rc_heap_0bc4322814ec5c10910c6684.py": "733a95f74730ce19aeca5450b9f375ee66dd5f34fe17d46536fe29608bc9b1ad",
+    "rc_heap_3ccb1a4c2558e2f7afd382de.py": "8cce3e29d8f1dcee671403f3f85b3b7cc07cb215053b8fdf1b2c20f069641f9b",
+    "rc_heap_57152f1561b845507fca6255.py": "3412f552ef5c66dd02c78d0be310793333427a21f0f3956a7b70f906f2001092",
+    "rc_heap_5b5b61a3bf0b3ec88f796210.py": "28c6ef1728a5b4ed719af5b6032d6a176d9838413d86f9ae7c004d8acd01d3e9",
+    "rc_heap_73547edce78f3bbe0466b8e9.py": "5ece0a8280d553af17cdb1bb7f3364e062ab2a6652ac615b0aea0329f7e381ca",
+    "rc_heap_76885d8ba89d2be1fa3724cd.py": "26cc0d593581dd6ce068115793bbfdcbf1023c2e5963d9416c4559bfc6ee80a2",
+    "rc_heap_b3a9bfa1769a9e7651c5e8a3.py": "c4bdb78600365dbbd5c627585c9da6ccefa475f53c7f154b79dfa7001d98d56d",
+    "rc_heap_cc640ec9e29e6464b99a6ead.py": "d8225e5a0acc7e273d93af0df0223a773f05e6d9aac654ca752626a7320a6a39",
+    "rc_heap_e108b176528cc6fcedb2027d.py": "0bec3141164e1538fb6798932dd26423f4da968aca81bc4d4a48fe07909c4ee4",
+    "rc_heap_e1608e92092c158d0062c70d.py": "a2f33cf69430461eadd844470bc8964abe125a29cbf1fd42644dbf49297be705",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

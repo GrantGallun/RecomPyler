@@ -1,0 +1,1062 @@
+{
+  "schema": 8,
+  "stage": "current-first",
+  "manifest_sha256": "07a61e41f7f763e55af8433a647710376406d26d56e73bf607cbcdff16b2da51",
+  "config": {
+    "limit": 40,
+    "samples": 8,
+    "repetitions": 5,
+    "timeout_s": 180,
+    "shim_loops": 2,
+    "audit_repetitions": 5
+  },
+  "groups": {
+    "heldout": {
+      "fixed_population": 38,
+      "paired_meaningful_timing_n": 37,
+      "paired_names": [
+        "async_generators",
+        "asyncio_tcp",
+        "asyncio_websockets",
+        "base64",
+        "chaos",
+        "comprehensions",
+        "concurrent_imap",
+        "decimal_factorial",
+        "decimal_pi",
+        "deepcopy",
+        "deltablue",
+        "fastapi",
+        "gc_collect",
+        "gc_traversal",
+        "generators",
+        "hexiom",
+        "json_dumps",
+        "json_loads",
+        "logging",
+        "mdp",
+        "meteor_contest",
+        "nqueens",
+        "pathlib",
+        "pidigits",
+        "pprint",
+        "regex_compile",
+        "regex_dna",
+        "regex_effbot",
+        "regex_v8",
+        "richards_super",
+        "sqlalchemy_declarative",
+        "sqlite_synth",
+        "sympy",
+        "typing_runtime_protocols",
+        "unpack_sequence",
+        "xml_etree",
+        "yaml"
+      ],
+      "current": {
+        "successful_profiles": 38,
+        "timed_programs_with_native_calls": 0,
+        "programs_with_reconciled_audits": 38,
+        "audited_programs_with_native_calls": 0,
+        "audit_native_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.027090843564588043,
+        "over_10pct_verified": 3,
+        "process_speedup_geomean_paired": 0.9651193740132307,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.0,
+        "top_blockers_mean_self_fraction": [
+          [
+            "outside the supported subset: '...' has a closure, keyword-only arguments, *args or is a generator",
+            0.02178228897132479
+          ],
+          [
+            "as a region: With of '...'",
+            0.020770021366059113
+          ],
+          [
+            "outside the supported subset: global '...' is not a numeric constant",
+            0.019419652015671342
+          ],
+          [
+            "outside the supported subset: '...' is recursive",
+            0.01903498022665321
+          ],
+          [
+            "as a region: an int argument too large for 64 bits",
+            0.0173307108365729
+          ],
+          [
+            "outside the supported subset: call",
+            0.01726309637004715
+          ],
+          [
+            "not captured: the function not a module-level function or a method",
+            0.00836245682653661
+          ],
+          [
+            "outside the supported subset: '...' returns a value on some paths and None on others",
+            0.005579861043641166
+          ],
+          [
+            "outside the supported subset: '...' may be read before assignment",
+            0.0051321103331071465
+          ],
+          [
+            "as a region: range() on int of '...'",
+            0.002826588079641627
+          ],
+          [
+            "outside the supported subset: constant '...'",
+            0.0015918798046887686
+          ],
+          [
+            "as a region, only 5 of 8 captured calls ran compiled",
+            0.001525107787961379
+          ]
+        ],
+        "deployment_categories": {
+          "no_selected_wrappers": 38
+        }
+      }
+    },
+    "tuned": {
+      "fixed_population": 9,
+      "paired_meaningful_timing_n": 9,
+      "paired_names": [
+        "barnes_hut",
+        "coroutines",
+        "fannkuch",
+        "float",
+        "nbody",
+        "raytrace",
+        "richards",
+        "scimark",
+        "spectral_norm"
+      ],
+      "current": {
+        "successful_profiles": 9,
+        "timed_programs_with_native_calls": 4,
+        "programs_with_reconciled_audits": 9,
+        "audited_programs_with_native_calls": 4,
+        "audit_native_program_counts_by_repetition": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.45209285351586825,
+        "over_10pct_verified": 9,
+        "process_speedup_geomean_paired": 1.2533174315292168,
+        "audit_native_program_count_min_max": [
+          4,
+          4
+        ],
+        "audit_aot_program_count_min_max": [
+          4,
+          4
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.3800166005433649,
+        "top_blockers_mean_self_fraction": [
+          [
+            "as a region: an array of typecode '...'",
+            0.018172306720992806
+          ],
+          [
+            "as a region: '...' uses the new object before setting all its attributes",
+            0.01452740089805348
+          ],
+          [
+            "no calls with numeric arguments and results were captured",
+            0.009864277323942506
+          ],
+          [
+            "outside the supported subset: assignment target",
+            0.004304559161638136
+          ],
+          [
+            "as a region, only 5 of 8 captured calls ran compiled",
+            0.003864077157033049
+          ],
+          [
+            "as a region: a '...' object with attributes its __init__ does not set",
+            0.0034854888037249105
+          ],
+          [
+            "as a region, only 4 of 8 captured calls ran compiled",
+            0.001566235778721146
+          ],
+          [
+            "result differs from a captured call",
+            0.000725322306071642
+          ],
+          [
+            "outside the supported subset: call",
+            0.0004737903821350061
+          ],
+          [
+            "as a region: range() on int of '...'",
+            0.00027478387389376217
+          ],
+          [
+            "as a region: '...' customises attribute access",
+            0.00019553630119453213
+          ],
+          [
+            "as a region: name '...' used as a value of '...'",
+            7.351935258541571e-06
+          ]
+        ],
+        "deployment_categories": {
+          "native_called": 4,
+          "no_selected_wrappers": 5
+        }
+      }
+    },
+    "addition": {
+      "fixed_population": 2,
+      "paired_meaningful_timing_n": 2,
+      "paired_names": [
+        "go",
+        "poker_selfplay"
+      ],
+      "current": {
+        "successful_profiles": 2,
+        "timed_programs_with_native_calls": 0,
+        "programs_with_reconciled_audits": 2,
+        "audited_programs_with_native_calls": 0,
+        "audit_native_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.00026892902644660245,
+        "over_10pct_verified": 0,
+        "process_speedup_geomean_paired": 0.9879457114166547,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.0,
+        "top_blockers_mean_self_fraction": [
+          [
+            "as a region: '...' declares globals or defines functions inside itself",
+            0.16682304332273232
+          ],
+          [
+            "outside the supported subset: AnnAssign",
+            0.08787378347956806
+          ],
+          [
+            "as a region: a '...' object with attributes its __init__ does not set",
+            0.08586460318058863
+          ],
+          [
+            "as a region: '...' uses the new object before setting all its attributes",
+            0.07826255575967836
+          ],
+          [
+            "as a region: no source for '...'",
+            0.023063227271847137
+          ],
+          [
+            "arguments were changed differently from a captured call",
+            0.017514607378052584
+          ],
+          [
+            "not captured: the function not a module-level function or a method",
+            0.016253609997582123
+          ],
+          [
+            "as a region: GeneratorExp of '...'",
+            0.003816419803969484
+          ],
+          [
+            "as a region: an array of dtype int32 and 2 dimensions",
+            0.0030276622357261985
+          ],
+          [
+            "result differs from a captured call",
+            0.002352654632770463
+          ],
+          [
+            "outside the supported subset: Dict",
+            0.0013660647243438104
+          ],
+          [
+            "outside the supported subset: GeneratorExp",
+            0.001262322747057378
+          ]
+        ],
+        "deployment_categories": {
+          "no_selected_wrappers": 2
+        }
+      }
+    }
+  },
+  "source_totals": {
+    "current": {
+      "successful_profiles": 49,
+      "profile_wall_s": 556.4323353,
+      "valid_timed_programs": 49,
+      "native_timing_programs": [
+        "barnes_hut",
+        "fannkuch",
+        "raytrace",
+        "scimark"
+      ],
+      "timing_compiled_calls_total_observed": 2020,
+      "timing_aot_calls_total_observed": 2020,
+      "timing_jit_calls_total_observed": 0,
+      "timing_mode_unknown_or_incomplete_programs": [],
+      "timing_fallback_calls_total_observed": 0,
+      "timing_batch_rows_total": 0,
+      "reconciled_audit_programs": 49,
+      "separate_audit_mode_totals": {
+        "aot_calls": 2020,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "unknown_native_calls": 0
+      },
+      "audit_counter_or_output_failures": []
+    }
+  },
+  "rankings": {
+    "current": {
+      "slowest_processes": [
+        {
+          "name": "fastapi",
+          "group": "heldout",
+          "median_wall_s": 10.740281200000027,
+          "plain_median_wall_s": 10.525700999998662,
+          "process_speedup": 0.9800209886495929,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pprint",
+          "group": "heldout",
+          "median_wall_s": 3.106255200000305,
+          "plain_median_wall_s": 3.036149600004137,
+          "process_speedup": 0.9774308305395638,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "base64",
+          "group": "heldout",
+          "median_wall_s": 2.6606830999953672,
+          "plain_median_wall_s": 2.6673470999958226,
+          "process_speedup": 1.0025046199603656,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "mdp",
+          "group": "heldout",
+          "median_wall_s": 1.7392504000017652,
+          "plain_median_wall_s": 1.7799405999976443,
+          "process_speedup": 1.0233952511931794,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sympy",
+          "group": "heldout",
+          "median_wall_s": 1.55450700000074,
+          "plain_median_wall_s": 1.527946599999268,
+          "process_speedup": 0.9829139399169903,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_tcp",
+          "group": "heldout",
+          "median_wall_s": 1.149428299999272,
+          "plain_median_wall_s": 1.164009599997371,
+          "process_speedup": 1.0126856977491403,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pathlib",
+          "group": "heldout",
+          "median_wall_s": 0.6949174000037601,
+          "plain_median_wall_s": 0.6782631999958539,
+          "process_speedup": 0.9760342739902381,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "async_generators",
+          "group": "heldout",
+          "median_wall_s": 0.655598999997892,
+          "plain_median_wall_s": 0.65718989999732,
+          "process_speedup": 1.0024266357932718,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "scimark",
+          "group": "tuned",
+          "median_wall_s": 0.6367832000032649,
+          "plain_median_wall_s": 0.8456835000033607,
+          "process_speedup": 1.3280556082494397,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "xml_etree",
+          "group": "heldout",
+          "median_wall_s": 0.6253058000002056,
+          "plain_median_wall_s": 0.6245595000000321,
+          "process_speedup": 0.9988065039534685,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "poker_selfplay",
+          "group": "addition",
+          "median_wall_s": 0.6077513999989606,
+          "plain_median_wall_s": 0.6100061999968602,
+          "process_speedup": 1.0037100696072498,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlalchemy_declarative",
+          "group": "heldout",
+          "median_wall_s": 0.5352991999970982,
+          "plain_median_wall_s": 0.5223620000033407,
+          "process_speedup": 0.9758318338719212,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_pi",
+          "group": "heldout",
+          "median_wall_s": 0.5155808999988949,
+          "plain_median_wall_s": 0.5120816999988165,
+          "process_speedup": 0.993213092261397,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_websockets",
+          "group": "heldout",
+          "median_wall_s": 0.5029409999988275,
+          "plain_median_wall_s": 0.4877284000031068,
+          "process_speedup": 0.9697527145415543,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_factorial",
+          "group": "heldout",
+          "median_wall_s": 0.4818146000034176,
+          "plain_median_wall_s": 0.46917369999573566,
+          "process_speedup": 0.9737639747579416,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "concurrent_imap",
+          "group": "heldout",
+          "median_wall_s": 0.4592363000047044,
+          "plain_median_wall_s": 0.44354220000241185,
+          "process_speedup": 0.9658256544569065,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_dna",
+          "group": "heldout",
+          "median_wall_s": 0.4299260000043432,
+          "plain_median_wall_s": 0.4232045000026119,
+          "process_speedup": 0.9843659141301911,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pidigits",
+          "group": "heldout",
+          "median_wall_s": 0.42463990000396734,
+          "plain_median_wall_s": 0.4055004000038025,
+          "process_speedup": 0.954927692852259,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "raytrace",
+          "group": "tuned",
+          "median_wall_s": 0.4166019000040251,
+          "plain_median_wall_s": 0.48612539999885485,
+          "process_speedup": 1.1668823401769364,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "barnes_hut",
+          "group": "tuned",
+          "median_wall_s": 0.41543210000236286,
+          "plain_median_wall_s": 1.2930651000060607,
+          "process_speedup": 3.1125786861407825,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "regex_compile",
+          "group": "heldout",
+          "median_wall_s": 0.3377623999986099,
+          "plain_median_wall_s": 0.3173255000001518,
+          "process_speedup": 0.9394932650924371,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "go",
+          "group": "addition",
+          "median_wall_s": 0.2983128999985638,
+          "plain_median_wall_s": 0.2900881000023219,
+          "process_speedup": 0.972428949615382,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nbody",
+          "group": "tuned",
+          "median_wall_s": 0.29451310000149533,
+          "plain_median_wall_s": 0.2814349999971455,
+          "process_speedup": 0.955594165406281,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "meteor_contest",
+          "group": "heldout",
+          "median_wall_s": 0.29303530000470346,
+          "plain_median_wall_s": 0.27346449999458855,
+          "process_speedup": 0.9332135070081974,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "fannkuch",
+          "group": "tuned",
+          "median_wall_s": 0.2897632000021986,
+          "plain_median_wall_s": 0.5730562999960966,
+          "process_speedup": 1.9776710775962876,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "spectral_norm",
+          "group": "tuned",
+          "median_wall_s": 0.27798880000045756,
+          "plain_median_wall_s": 0.26720750000094995,
+          "process_speedup": 0.9612167828362514,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nqueens",
+          "group": "heldout",
+          "median_wall_s": 0.2649593999958597,
+          "plain_median_wall_s": 0.25826709999819286,
+          "process_speedup": 0.9747421680537794,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "float",
+          "group": "tuned",
+          "median_wall_s": 0.23764179999852786,
+          "plain_median_wall_s": 0.22846690000005765,
+          "process_speedup": 0.9613918931832403,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "chaos",
+          "group": "heldout",
+          "median_wall_s": 0.2369377000068198,
+          "plain_median_wall_s": 0.22515199999907054,
+          "process_speedup": 0.9502582324070419,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "generators",
+          "group": "heldout",
+          "median_wall_s": 0.22013910000532633,
+          "plain_median_wall_s": 0.20244760000059614,
+          "process_speedup": 0.9196349035482468,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards_super",
+          "group": "heldout",
+          "median_wall_s": 0.21262740000383928,
+          "plain_median_wall_s": 0.20196579999901587,
+          "process_speedup": 0.9498578263919377,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards",
+          "group": "tuned",
+          "median_wall_s": 0.19929940000292845,
+          "plain_median_wall_s": 0.18776870000147028,
+          "process_speedup": 0.9421438298294489,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_v8",
+          "group": "heldout",
+          "median_wall_s": 0.19421259999944596,
+          "plain_median_wall_s": 0.19532559999788646,
+          "process_speedup": 1.0057308331099202,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_effbot",
+          "group": "heldout",
+          "median_wall_s": 0.17816860000311863,
+          "plain_median_wall_s": 0.16620539999712491,
+          "process_speedup": 0.9328546107126379,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_traversal",
+          "group": "heldout",
+          "median_wall_s": 0.17199369999434566,
+          "plain_median_wall_s": 0.15762579999864101,
+          "process_speedup": 0.9164626378979173,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "coroutines",
+          "group": "tuned",
+          "median_wall_s": 0.17178360000252724,
+          "plain_median_wall_s": 0.1651586000007228,
+          "process_speedup": 0.9614340367665658,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "yaml",
+          "group": "heldout",
+          "median_wall_s": 0.17103130000032252,
+          "plain_median_wall_s": 0.15998079999553738,
+          "process_speedup": 0.9353890194089368,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_dumps",
+          "group": "heldout",
+          "median_wall_s": 0.1568466000026092,
+          "plain_median_wall_s": 0.1482938999979524,
+          "process_speedup": 0.9454709250661824,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_collect",
+          "group": "heldout",
+          "median_wall_s": 0.1553157000016654,
+          "plain_median_wall_s": 0.1417490000021644,
+          "process_speedup": 0.9126508137982475,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "typing_runtime_protocols",
+          "group": "heldout",
+          "median_wall_s": 0.1534518000044045,
+          "plain_median_wall_s": 0.14228320000256645,
+          "process_speedup": 0.9272175367019645,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "logging",
+          "group": "heldout",
+          "median_wall_s": 0.1488857999938773,
+          "plain_median_wall_s": 0.14180920000217156,
+          "process_speedup": 0.9524696109904588,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "hexiom",
+          "group": "heldout",
+          "median_wall_s": 0.1484651999999187,
+          "plain_median_wall_s": 0.14341639999474864,
+          "process_speedup": 0.9659933775378148,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deltablue",
+          "group": "heldout",
+          "median_wall_s": 0.14772709999670042,
+          "plain_median_wall_s": 0.14364609999756794,
+          "process_speedup": 0.9723747369357171,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlite_synth",
+          "group": "heldout",
+          "median_wall_s": 0.14732699999876786,
+          "plain_median_wall_s": 0.13709080000262475,
+          "process_speedup": 0.9305205427638605,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "comprehensions",
+          "group": "heldout",
+          "median_wall_s": 0.14606579999963287,
+          "plain_median_wall_s": 0.1390255000005709,
+          "process_speedup": 0.9518004899224892,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_loads",
+          "group": "heldout",
+          "median_wall_s": 0.14191739999660058,
+          "plain_median_wall_s": 0.1352139000009629,
+          "process_speedup": 0.952764777287364,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "unpack_sequence",
+          "group": "heldout",
+          "median_wall_s": 0.14103379999869503,
+          "plain_median_wall_s": 0.14660600000206614,
+          "process_speedup": 1.0395096778461805,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deepcopy",
+          "group": "heldout",
+          "median_wall_s": 0.13729160000366392,
+          "plain_median_wall_s": 0.12971240000479156,
+          "process_speedup": 0.9447948745686547,
+          "deployment_status": "no_selected_wrappers"
+        }
+      ],
+      "largest_process_overhead": [
+        {
+          "name": "fastapi",
+          "overhead_s": 0.21458020000136457,
+          "process_speedup": 0.9800209886495929,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pprint",
+          "overhead_s": 0.07010559999616817,
+          "process_speedup": 0.9774308305395638,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sympy",
+          "overhead_s": 0.026560400001471862,
+          "process_speedup": 0.9829139399169903,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_compile",
+          "overhead_s": 0.020436899998458102,
+          "process_speedup": 0.9394932650924371,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "meteor_contest",
+          "overhead_s": 0.019570800010114908,
+          "process_speedup": 0.9332135070081974,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pidigits",
+          "overhead_s": 0.019139500000164844,
+          "process_speedup": 0.954927692852259,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "generators",
+          "overhead_s": 0.017691500004730187,
+          "process_speedup": 0.9196349035482468,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pathlib",
+          "overhead_s": 0.016654200007906184,
+          "process_speedup": 0.9760342739902381,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "concurrent_imap",
+          "overhead_s": 0.015694100002292544,
+          "process_speedup": 0.9658256544569065,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_websockets",
+          "overhead_s": 0.015212599995720666,
+          "process_speedup": 0.9697527145415543,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_traversal",
+          "overhead_s": 0.014367899995704647,
+          "process_speedup": 0.9164626378979173,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_collect",
+          "overhead_s": 0.013566699999500997,
+          "process_speedup": 0.9126508137982475,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nbody",
+          "overhead_s": 0.013078100004349835,
+          "process_speedup": 0.955594165406281,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlalchemy_declarative",
+          "overhead_s": 0.012937199993757531,
+          "process_speedup": 0.9758318338719212,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_factorial",
+          "overhead_s": 0.012640900007681921,
+          "process_speedup": 0.9737639747579416,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_effbot",
+          "overhead_s": 0.011963200005993713,
+          "process_speedup": 0.9328546107126379,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "chaos",
+          "overhead_s": 0.011785700007749256,
+          "process_speedup": 0.9502582324070419,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards",
+          "overhead_s": 0.011530700001458172,
+          "process_speedup": 0.9421438298294489,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "typing_runtime_protocols",
+          "overhead_s": 0.011168600001838058,
+          "process_speedup": 0.9272175367019645,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "yaml",
+          "overhead_s": 0.011050500004785135,
+          "process_speedup": 0.9353890194089368,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "spectral_norm",
+          "overhead_s": 0.01078129999950761,
+          "process_speedup": 0.9612167828362514,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards_super",
+          "overhead_s": 0.010661600004823413,
+          "process_speedup": 0.9498578263919377,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlite_synth",
+          "overhead_s": 0.010236199996143114,
+          "process_speedup": 0.9305205427638605,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "float",
+          "overhead_s": 0.00917489999847021,
+          "process_speedup": 0.9613918931832403,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_dumps",
+          "overhead_s": 0.0085527000046568,
+          "process_speedup": 0.9454709250661824,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "go",
+          "overhead_s": 0.008224799996241927,
+          "process_speedup": 0.972428949615382,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deepcopy",
+          "overhead_s": 0.007579199998872355,
+          "process_speedup": 0.9447948745686547,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "logging",
+          "overhead_s": 0.007076599991705734,
+          "process_speedup": 0.9524696109904588,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "comprehensions",
+          "overhead_s": 0.007040299999061972,
+          "process_speedup": 0.9518004899224892,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_dna",
+          "overhead_s": 0.006721500001731329,
+          "process_speedup": 0.9843659141301911,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_loads",
+          "overhead_s": 0.006703499995637685,
+          "process_speedup": 0.952764777287364,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nqueens",
+          "overhead_s": 0.006692299997666851,
+          "process_speedup": 0.9747421680537794,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "coroutines",
+          "overhead_s": 0.0066250000018044375,
+          "process_speedup": 0.9614340367665658,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "hexiom",
+          "overhead_s": 0.005048800005170051,
+          "process_speedup": 0.9659933775378148,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deltablue",
+          "overhead_s": 0.004080999999132473,
+          "process_speedup": 0.9723747369357171,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_pi",
+          "overhead_s": 0.0034992000000784174,
+          "process_speedup": 0.993213092261397,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "xml_etree",
+          "overhead_s": 0.0007463000001735054,
+          "process_speedup": 0.9988065039534685,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_v8",
+          "overhead_s": -0.0011129999984405003,
+          "process_speedup": 1.0057308331099202,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "async_generators",
+          "overhead_s": -0.0015908999994280748,
+          "process_speedup": 1.0024266357932718,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "poker_selfplay",
+          "overhead_s": -0.0022547999978996813,
+          "process_speedup": 1.0037100696072498,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "unpack_sequence",
+          "overhead_s": -0.005572200003371108,
+          "process_speedup": 1.0395096778461805,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "base64",
+          "overhead_s": -0.006664000000455417,
+          "process_speedup": 1.0025046199603656,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_tcp",
+          "overhead_s": -0.014581299998098984,
+          "process_speedup": 1.0126856977491403,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "mdp",
+          "overhead_s": -0.040690199995879084,
+          "process_speedup": 1.0233952511931794,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "raytrace",
+          "overhead_s": -0.06952349999482976,
+          "process_speedup": 1.1668823401769364,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "scimark",
+          "overhead_s": -0.20890030000009574,
+          "process_speedup": 1.3280556082494397,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "fannkuch",
+          "overhead_s": -0.28329309999389807,
+          "process_speedup": 1.9776710775962876,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "barnes_hut",
+          "overhead_s": -0.8776330000036978,
+          "process_speedup": 3.1125786861407825,
+          "deployment_status": "native_called"
+        }
+      ]
+    }
+  },
+  "execution": {
+    "completed_child_records": 883,
+    "child_wall_s": 1125.2780662001605,
+    "failures": [],
+    "bytecode_compile_only_wall_s": 47.71442360004585,
+    "separate_audit_wall_s": 174.37477389998094,
+    "first_finished_utc": "2026-11-12T06:00:36.767225+00:00",
+    "last_finished_utc": "2026-11-12T06:20:27.071564+00:00"
+  },
+  "limits": [
+    "Exact stdout bytes/exit equality only; empty stdout is not full result-equivalence proof. Captured samples/verification counts retained separately. Profile CLI output not script-equivalence evidence.",
+    "Largest verified candidate reach is an opportunity proxy, not dynamic union or actual native-time coverage.",
+    "Kernel candidate speedups exclude process/profile cost and are never process-speedup claims.",
+    "Historical failed packages/data are exclusions recorded in manifest; attempted additions separate.",
+    "Actual counts are successful runner-process entry calls, not dynamic recursive-call counts or cross-process native-time union.",
+    "Zero wrapper fallback for unselected execution does not mean no Python work.",
+    "Initial and later paired medians are never pooled."
+  ]
+}

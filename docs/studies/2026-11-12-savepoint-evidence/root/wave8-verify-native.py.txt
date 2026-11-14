@@ -1,0 +1,120 @@
+"""Read-only independent verification of a completed two-case native study."""
+import hashlib
+import json
+import statistics
+import struct
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+OUT = Path(sys.argv[1]).resolve()
+read = lambda p: json.loads(p.read_text())
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+m = read(OUT / 'manifest.json')
+assert read(OUT / 'complete.json') == {'completed': True, 'manifest_sha256':sha(OUT/'manifest.json')}
+for name, digest in m['helpers'].items():
+    assert sha(OUT.parent/name) == digest, name
+for source in m['sources'].values():
+    for name, digest in source['src_sha256'].items():
+        assert sha(Path(source['path'])/'src'/name) == digest, name
+
+
+def parse(path):
+    checks, seconds = {}, None
+    for line in path.read_text().splitlines():
+        values = line.split()
+        if len(values)==3 and values[0]=='check':
+            key,value = values[1:]
+            assert key not in checks
+            checks[key] = struct.pack('!d',float.fromhex(value)) if '0x' in value.lower() else value
+        if len(values)==2 and values[0]=='seconds':
+            assert seconds is None
+            seconds=float(values[1])
+    assert checks and seconds and seconds>0
+    return checks,seconds
+
+
+raw_count=0
+raw_streams=[]
+measurements={}
+summary=read(OUT/'SUMMARY.json')
+for name,item in m['programs'].items():
+    folder=OUT/'programs'/name
+    for p in folder.glob('*.json'):
+        d=read(p)
+        if isinstance(d,dict) and 'command' in d and 'stdout_sha256' in d:
+            assert d['status']=='ok' and d['exit_code']==0,p
+            for stream in ('stdout','stderr'):
+                file=p.with_suffix('.'+stream)
+                if stream+'_sha256' in d:
+                    assert sha(file)==d[stream+'_sha256'] and file.stat().st_size==d[stream+'_bytes'],file
+                else:
+                    assert stream=='stderr' and file.is_file()
+                raw_streams.append(file)
+            raw_count+=1
+    frozen=read(folder/'bytecode-frozen.json')
+    actual={p.relative_to(OUT/'bytecode'/name).as_posix():sha(p) for p in sorted((OUT/'bytecode'/name).rglob('*')) if p.is_file()}
+    assert frozen==actual,name
+    for file,digest in read(folder/'aot-artifacts-frozen.json').items():
+        assert sha(Path(file))==digest,file
+    plain=read(folder/'plain-state.json')
+    for source in m['sources']:
+        data=read(folder/f'{source}-state.json')
+        if name=='barnes_hut':
+            assert data['initial']==plain['initial'] and data['final']==plain['final']
+            assert data['checkpoints']==plain['checkpoints'] and len(data['checkpoints'])==100
+            assert len(data['final']['numbers'])==1400
+        else:
+            assert data['final']==plain['final'] and data['observed']==plain['observed']
+            assert data['final']['byte_count']==30000 and len(data['final']['bytes_hex'])==60000
+            assert all(s['same_array_object'] for s in data['observed'])
+        audit=read(folder/f'{source}-selected.audit.json')
+        assert audit['compiled_total_reconciles'] and audit['product_exact_counter_matches_audit']
+        assert audit['totals']['aot_calls']==item['audit_aot_calls']
+        assert not any(audit['totals'][k] for k in ('jit_calls','fallback_calls','unknown_native_calls','rejected_attempts'))
+        assert not audit['numba_imported']
+        for mapping in read(folder/f'{source}-aot-map.json'):
+            assert sha(Path(mapping['artifact']))==mapping['artifact_sha256']
+            assert sha(Path(mapping['plan']))==mapping['plan_sha256']
+            assert sha(Path(mapping['audit']))==mapping['audit_sha256']
+            assert mapping['actual_aot_calls_in_audit']==item['audit_aot_calls']
+    reference,_=parse(folder/'plain-0.stdout')
+    table={}
+    for source in ('plain','c',*m['sources']):
+        kernels,walls=[],[]
+        for rep in range(5):
+            process=read(folder/f'{source}-{rep}.json')
+            checks,kernel=parse(folder/f'{source}-{rep}.stdout')
+            assert checks==reference,(name,source,rep)
+            kernels.append(kernel);walls.append(process['wall_s'])
+            if source in m['sources']:
+                counts=read(folder/f'{source}-{rep}.counts.json')
+                assert not counts.get('not_found') and not counts.get('batches')
+                assert sum(r['aot_calls'] for r in counts['functions'])==5*item['audit_aot_calls']
+                assert all(r['jit_calls']==r['fallback_calls']==0 and r['compiled_calls']==r['aot_calls'] for r in counts['functions'])
+        reported=summary['programs'][name][source]
+        assert kernels==reported['kernel_samples_s'] and walls==reported['process_wall_samples_s']
+        assert statistics.median(kernels)==reported['median_best_kernel_s']
+        assert statistics.median(walls)==reported['median_process_wall_s']
+        table[source]={'kernel_ms':statistics.median(kernels)*1000,'process_ms':statistics.median(walls)*1000}
+    measurements[name]=table
+assert raw_count==58,raw_count
+# Native legacy process records store a stdout hash; verify BOTH raw streams
+# against immutable committed archive bytes rather than inventing stderr fields.
+archive_commit=subprocess.check_output(['git','-C',str(OUT.parent),'rev-parse','HEAD']).decode().strip()
+requests=''.join(f'{archive_commit}:{p.relative_to(OUT.parent).as_posix()}\n' for p in raw_streams).encode()
+blobs=subprocess.check_output(['git','-C',str(OUT.parent),'cat-file','--batch'],input=requests)
+position=0
+for path in raw_streams:
+    end=blobs.index(b'\n',position);header=blobs[position:end].split()
+    assert len(header)==3 and header[1]==b'blob',path
+    length=int(header[2]);blob=blobs[end+1:end+1+length];position=end+2+length
+    assert blob==path.read_bytes(),path
+receipt={'all_verified':True,'manifest_sha256':sha(OUT/'manifest.json'),'raw_process_records':raw_count,
+         'raw_stdout_stderr_streams_equal_git_blobs':len(raw_streams),'archive_commit':archive_commit,
+         'timing_children':40,'timing_AOT_success':5050,'audit_AOT_success':202,'timing_or_audit_JIT_fallback':0,
+         'measurements':measurements,'note':'Separate fresh two-case diagnostic; all raw outputs/exits/hashes/bytecode/artifacts/state/modes/medians verified. No workloads rerun. Static counts and timings are distinct.'}
+target=ROOT/f'wave8-root-native-{OUT.name}-verification.json'
+target.write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(receipt,indent=2))

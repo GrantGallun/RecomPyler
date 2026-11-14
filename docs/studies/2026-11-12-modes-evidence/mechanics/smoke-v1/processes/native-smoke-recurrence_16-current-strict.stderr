@@ -1,0 +1,47 @@
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\helpers\worker.py", line 513, in <module>
+    main()
+    ~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\helpers\worker.py", line 448, in main
+    first = target(*values[0])
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\inputs\current\recompyler\heap.py", line 6982, in __call__
+    ok, value = self.attempt(args, kwargs)
+                ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\inputs\current\recompyler\heap.py", line 6879, in attempt
+    program = self.program_for(args)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\inputs\current\recompyler\heap.py", line 6784, in program_for
+    candidate.compile(self.ahead_of_time)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\inputs\current\recompyler\heap.py", line 904, in compile
+    self.check_math()
+    ~~~~~~~~~~~~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\inputs\current\recompyler\heap.py", line 974, in check_math
+    differs = sorted(used.intersection(TRANSCENDENTAL) - _math_agrees())
+                                                         ~~~~~~~~~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\inputs\current\recompyler\lift.py", line 2956, in _math_agrees
+    saved = folder and folder / f"selftest-{_runtime_key()[:24]}.json"
+                                            ~~~~~~~~~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave10-measurements\smoke-v1\inputs\current\recompyler\lift.py", line 106, in _runtime_key
+    import numba
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\__init__.py", line 92, in <module>
+    from numba.core.decorators import (cfunc, jit, njit, stencil,
+                                       jit_module)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\decorators.py", line 13, in <module>
+    from numba.stencils.stencil import stencil
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\stencils\stencil.py", line 11, in <module>
+    from numba.core import types, typing, utils, ir, config, ir_utils, registry
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py", line 14, in <module>
+    from numba.core.extending import _Intrinsic
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\extending.py", line 20, in <module>
+    from numba.core.pythonapi import box, unbox, reflect, NativeValue  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\pythonapi.py", line 12, in <module>
+    from numba.core import (
+        types, utils, config, lowering, cgutils, imputils, serialize,
+    )
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 19, in <module>
+    from numba.misc.coverage_support import get_registered_loc_notify
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\misc\coverage_support.py", line 114, in <module>
+    class NumbaTracer(coverage.types.Tracer):
+                      ^^^^^^^^^^^^^^
+AttributeError: module 'coverage' has no attribute 'types'

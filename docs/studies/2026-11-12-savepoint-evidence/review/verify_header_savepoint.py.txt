@@ -1,0 +1,45 @@
+"""Read-only savepoint hashing; no imports/builds/tests/performance execution."""
+import hashlib
+import json
+from pathlib import Path
+
+root = Path(__file__).resolve().parent.parent
+folder = root/'wave8-header-analysis'
+worker = root/'wave8-header-fix'
+read = lambda path: json.loads(path.read_text())
+sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+freeze = read(folder/'candidate-freeze.json')
+for name, expected in freeze['inputs_sha256'].items():
+    assert sha(worker/name) == expected, name
+report = {'commit':freeze['commit'], 'base':freeze['base'],
+          'safety_commit':freeze['safety_commit'],
+          'mode':'read-only metadata verification',
+          'current_bytes_match_frozen_inputs':True,
+          'frozen_input_count':len(freeze['inputs_sha256']),
+          'freeze_sha256':sha(folder/'candidate-freeze.json'), 'receipts':{}}
+for name in ('header-green-final','combined-focused','full-suite'):
+    path = folder/name
+    inputs = read(path/'inputs.json')
+    for filename, expected in inputs['inputs_sha256'].items():
+        assert sha(worker/filename) == expected, (name,filename)
+    if not (path/'result.json').exists():
+        report['receipts'][name] = {'status':'running-or-pending; no completion receipt',
+                                   'inputs_match_current':True}
+        continue
+    result = read(path/'result.json')
+    for stream in ('stdout','stderr'):
+        assert sha(path/(stream+'.bin')) == result[stream+'_sha256']
+    report['receipts'][name] = {'exit_code':result['exit_code'],
+                              'inputs_unchanged':result['inputs_unchanged'],
+                              'receipt_sha256':sha(path/'result.json'),
+                              'stdout_sha256':result['stdout_sha256'],
+                              'inputs_match_current':True, 'log_hashes_verified':True}
+capture = read(folder/'final/report.json')
+for name,expected in capture['inputs'].items():
+    assert sha(worker/name) == expected, name
+for name,expected in capture['files_sha256'].items():
+    assert sha(folder/'final'/name) == expected, name
+report['fixture_capture_inputs_and_files_verified'] = True
+out = Path(__file__).resolve().parent/'header-savepoint-verification.json'
+out.write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps(report,indent=2))

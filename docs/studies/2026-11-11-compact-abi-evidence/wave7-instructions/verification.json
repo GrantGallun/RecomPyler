@@ -1,0 +1,264 @@
+{
+  "manifest_sha256": "308adefb126b9d36f4742ec29bb4590f807d2955293f168aa2c90d0dd6bcaabc",
+  "artifacts": {
+    "baseline": {
+      "sha256": "94afcc7bfed19eeb450e1f3aae3fe0f37aab6e48ba1e08ae1f3122997e4e2fda",
+      "digest": "ab7a5260a3ecad9c50cc0b5ca7997455e7a913b7da1c1c35ccdfc32c43c50e2a",
+      "wrapper": "0x1800019e0",
+      "aot_calls": 100
+    },
+    "candidate": {
+      "sha256": "76a7b0c2a9475553633ed9aa1621d27bdb4af76abdd3e5cbfeb2b5b37f6ea564",
+      "digest": "8b850a3ec40ed1c9992ac80e245679f7e785fa6b866f2c2a6a64d7f9f892e495",
+      "wrapper": "0x1800011d0",
+      "aot_calls": 100
+    }
+  },
+  "checkpoints": {
+    "baseline": "100 numeric/type/alias hashes and full initial/final vectors equal plain",
+    "candidate": "100 numeric/type/alias hashes and full initial/final vectors equal plain"
+  },
+  "measurements": {
+    "baseline": {
+      "kernel_samples_ms": [
+        46.90359999949578,
+        47.49180000362685,
+        50.72059999656631,
+        49.4299999991199,
+        47.4778999996488
+      ],
+      "kernel_median_ms": 47.49180000362685,
+      "process_wall_median_ms": 559.6179999993183
+    },
+    "candidate": {
+      "kernel_samples_ms": [
+        35.881800002243835,
+        35.64840000035474,
+        36.593199998605996,
+        35.82880000612931,
+        35.059000001638196
+      ],
+      "kernel_median_ms": 35.82880000612931,
+      "process_wall_median_ms": 511.8624999959138
+    },
+    "c": {
+      "kernel_samples_ms": [
+        9.13167,
+        9.114265,
+        9.126185999999999,
+        9.115458,
+        9.093523
+      ],
+      "kernel_median_ms": 9.115458,
+      "process_wall_median_ms": 207.7994999999646
+    }
+  },
+  "outgoing_stack_argument_slots": {
+    "baseline": [
+      {
+        "instruction": "1800040fe:     \tcallq\t0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>",
+        "outgoing_offsets": [
+          "0x20",
+          "0x28",
+          "0x30",
+          "0x38",
+          "0x40",
+          "0x48",
+          "0x50",
+          "0x58",
+          "0x60",
+          "0x68",
+          "0x70",
+          "0x78",
+          "0x80",
+          "0x88",
+          "0x90",
+          "0x98",
+          "0xa0",
+          "0xa8",
+          "0xb0",
+          "0xb8",
+          "0xc0",
+          "0xc8",
+          "0xd0",
+          "0xd8",
+          "0xe0",
+          "0xe8",
+          "0xf0",
+          "0xf8",
+          "0x100"
+        ]
+      },
+      {
+        "instruction": "180004333:     \tcallq\t0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>",
+        "outgoing_offsets": [
+          "0x20",
+          "0x28",
+          "0x30",
+          "0x38",
+          "0x40",
+          "0x48",
+          "0x50",
+          "0x58",
+          "0x60",
+          "0x68",
+          "0x70",
+          "0x78",
+          "0x80",
+          "0x88",
+          "0x90",
+          "0x98",
+          "0xa0",
+          "0xa8",
+          "0xb0",
+          "0xb8",
+          "0xc0",
+          "0xc8",
+          "0xd0",
+          "0xd8",
+          "0xe0",
+          "0xe8",
+          "0xf0",
+          "0xf8",
+          "0x100"
+        ]
+      },
+      {
+        "instruction": "180004552:     \tcallq\t0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>",
+        "outgoing_offsets": [
+          "0x20",
+          "0x28",
+          "0x30",
+          "0x38",
+          "0x40",
+          "0x48",
+          "0x50",
+          "0x58",
+          "0x60",
+          "0x68",
+          "0x70",
+          "0x78",
+          "0x80",
+          "0x88",
+          "0x90",
+          "0x98",
+          "0xa0",
+          "0xa8",
+          "0xb0",
+          "0xb8",
+          "0xc0",
+          "0xc8",
+          "0xd0",
+          "0xd8",
+          "0xe0",
+          "0xe8",
+          "0xf0",
+          "0xf8",
+          "0x100"
+        ]
+      },
+      {
+        "instruction": "1800047b4:     \tcallq\t0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>",
+        "outgoing_offsets": [
+          "0x20",
+          "0x28",
+          "0x30",
+          "0x38",
+          "0x40",
+          "0x48",
+          "0x50",
+          "0x58",
+          "0x60",
+          "0x68",
+          "0x70",
+          "0x78",
+          "0x80",
+          "0x88",
+          "0x90",
+          "0x98",
+          "0xa0",
+          "0xa8",
+          "0xb0",
+          "0xb8",
+          "0xc0",
+          "0xc8",
+          "0xd0",
+          "0xd8",
+          "0xe0",
+          "0xe8",
+          "0xf0",
+          "0xf8",
+          "0x100"
+        ]
+      }
+    ],
+    "candidate": [
+      {
+        "instruction": "180002f78:     \tcallq\t0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>",
+        "outgoing_offsets": [
+          "0x20",
+          "0x28",
+          "0x30",
+          "0x38",
+          "0x40",
+          "0x48"
+        ]
+      },
+      {
+        "instruction": "180003034:     \tcallq\t0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>",
+        "outgoing_offsets": [
+          "0x20",
+          "0x28",
+          "0x30",
+          "0x38",
+          "0x40",
+          "0x48"
+        ]
+      },
+      {
+        "instruction": "1800030e4:     \tcallq\t0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>",
+        "outgoing_offsets": [
+          "0x20",
+          "0x28",
+          "0x30",
+          "0x38",
+          "0x40",
+          "0x48"
+        ]
+      },
+      {
+        "instruction": "1800031d5:     \tcallq\t0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>",
+        "outgoing_offsets": [
+          "0x20",
+          "0x28",
+          "0x30",
+          "0x38",
+          "0x40",
+          "0x48"
+        ]
+      }
+    ]
+  },
+  "ratios": {
+    "speedup": 1.3255202517388893,
+    "kernel_reduction_percent": 24.557923676522808,
+    "candidate_time_over_c": 3.93055401123337,
+    "baseline_time_over_c": 5.210028942443358
+  },
+  "seed_newline_only": {
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\baseline\\src\\recompyler\\_region_seed.py": "cbca700e53dae98906d5e1e75e77f1414d5cf1928a4cf92138ffa7f71f6da88f",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-compact-abi\\src\\recompyler\\_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e"
+  },
+  "c": {
+    "artifact_sha256": "4fd003eeea3b3bf997c90889340719fd71e8f698da5feca673ece46e9418f9ff",
+    "theta_address": "0x1400042f8",
+    "theta": 0.5,
+    "excerpt_sha256": "9f2376da0c51928562e25abaafe8afa955a3cdf7dd32bbd1ba10b665a8362a9f"
+  },
+  "generality_controls": [
+    "recursive_object",
+    "recursive_containers",
+    "recursive_returns"
+  ],
+  "native_artifacts_executed": false
+}

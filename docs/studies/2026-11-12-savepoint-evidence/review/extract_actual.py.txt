@@ -1,0 +1,94 @@
+"""Bounded static counts and excerpts from freshly audit-selected artifacts."""
+from collections import Counter
+import hashlib
+import json
+from pathlib import Path
+import re
+import struct
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / 'actual-artifacts'
+RANGES = {
+    'barnes-current': {'force': (0x180002c30, 0x180003260),
+                       'particle-check': (0x180002cb6, 0x180002cf1),
+                       'first-call': (0x180002f48, 0x180002f7d)},
+    'barnes-final': {'force': (0x180002c30, 0x180003260),
+                     'particle-check': (0x180002cc6, 0x180002cf1),
+                     'first-call': (0x180002f48, 0x180002f7d)},
+    'raytrace-current': {'render': (0x1800019d0, 0x180002fc0),
+                        'rgb-convert-store': (0x180002c28, 0x180002ea4),
+                        'red-index-store': (0x180002c7a, 0x180002cdf),
+                        'green-index-store': (0x180002d51, 0x180002de8),
+                        'blue-index-store': (0x180002e4e, 0x180002ea4)},
+    'raytrace-final': {'render': (0x1800019d0, 0x180002f10),
+                      'rgb-convert-store': (0x180002c49, 0x180002ded),
+                      'red-index-store': (0x180002c9b, 0x180002ccd),
+                      'green-index-store': (0x180002d37, 0x180002d63),
+                      'blue-index-store': (0x180002dc9, 0x180002ded)},
+}
+
+def parse(path):
+    rows = []
+    for line in path.read_text().splitlines():
+        match = re.match(r'\s*([0-9a-f]+):\s+(\w+)\s*(.*)', line)
+        if match:
+            rows.append((int(match[1],16), match[2], match[3], line))
+    return rows
+
+def summarize(rows, begin, end, double=lambda address: None):
+    selected = [r for r in rows if begin <= r[0] < end]
+    thresholds = []
+    for r in selected:
+        match = re.search(r'# (0x[0-9a-f]+)', r[2])
+        if match and double(int(match[1],16)) == float(2**53):
+            thresholds.append(hex(r[0]))
+    return {
+        'begin': hex(begin), 'end_exclusive': hex(end), 'span_bytes': end-begin,
+        'instruction_lines_including_padding': len(selected),
+        'padding_instruction_lines': sum(r[1].startswith('nop') for r in selected),
+        'stack_operand_lines': sum('%rsp' in r[2] for r in selected),
+        'frame_reservations': [r[3].strip() for r in selected if r[1]=='subq' and ', %rsp' in r[2]],
+        'direct_calls': [r[3].strip() for r in selected if r[1]=='callq'],
+        'exact_2pow53_rip_references': thresholds,
+        'mnemonic_counts': dict(Counter(r[1] for r in selected)),
+    }, selected
+
+all_counts = {}
+for case, ranges in RANGES.items():
+    meta = json.loads((OUT / (case+'-provenance.json')).read_text())
+    raw = Path(meta['artifact']).read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == meta['artifact_sha256']
+    def double(address):
+        for section in meta['sections']:
+            offset = address-int(meta['preferred_image_base'],16)-section['rva']
+            if 0 <= offset <= section['rawsize']-8:
+                return struct.unpack_from('<d', raw, section['offset']+offset)[0]
+    rows = parse(OUT / (case+'.asm'))
+    all_counts[case] = {}
+    for label, bounds in ranges.items():
+        counts, selected = summarize(rows, *bounds, double)
+        all_counts[case][label] = counts
+        (OUT / f'{case}-{label}.asm').write_text(
+            f'# {case} {label}: [{bounds[0]:#x}, {bounds[1]:#x})\n'
+            '# Source/call-target-bound static range; counts include padding, never cycles.\n'
+            + '\n'.join(r[3] for r in selected) + '\n')
+    print(case, {label: counts['instruction_lines_including_padding']
+                 for label, counts in all_counts[case].items()})
+
+old_c = ROOT.parent / 'wave7-instructions/c-force.asm'
+(OUT / 'barnes-c-force.asm').write_bytes(old_c.read_bytes())
+all_counts['barnes-c'] = {'force': summarize(parse(old_c), 0x140002710, 0x1400028f0)[0]}
+ray_c = ROOT / 'raytrace-c.asm'
+counts, selected = summarize(parse(ray_c), 0x1400019ca, 0x140001a3b)
+(OUT / 'raytrace-c-rgb-context.asm').write_text(
+    '# C RGB clamp/store context; different layout/bounds contract, not a matched-count block.\n'
+    + '\n'.join(r[3] for r in selected) + '\n')
+all_counts['c_provenance'] = {
+    name: {'binary': str(path), 'binary_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+           'disassembly_source': str(asm), 'disassembly_sha256': hashlib.sha256(asm.read_bytes()).hexdigest(),
+           'note': 'Existing static disassembly of byte-identical unchanged C binary; no binary execution.'}
+    for name, path, asm in (
+        ('barnes',ROOT.parent/'wave5-study/results/bin/barnes_hut.exe',old_c),
+        ('raytrace',ROOT.parent/'wave5-study/results/bin/raytrace.exe',ray_c))
+}
+(OUT / 'static-counts.json').write_text(json.dumps(all_counts, indent=2)+'\n')

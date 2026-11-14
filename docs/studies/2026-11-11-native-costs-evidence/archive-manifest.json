@@ -1,0 +1,514 @@
+{
+  "baseline": "0aeb157e8d272e0b1d4787a173f5b66f75d81b01",
+  "production": "9ff4908fdc58613d72287f71cfc6b70aa5e693ff",
+  "manual_study_commit": "1205c60e321d628c321c6e0df8f58abc9158103a",
+  "proof_study_commit": "187f331594db2e6662219fee8f17ba000cf4269e",
+  "note": "Raw process/state/phase records and selected AOT artifacts remain in the two independently committed local study repositories.",
+  "files": {
+    "analysis/cpu-target.md": {
+      "sha256": "33278ef1810c43990afab6b0f1acd3ff8da27e9f851a6814dd4f3dc066c41bfd",
+      "bytes": 1661,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-analysis\\cpu-target.md"
+    },
+    "analysis/numeric-proof.md": {
+      "sha256": "6894612641a61e1f96f01402693047f98b989fea9fd1ddf11e77b455265d89dc",
+      "bytes": 22787,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-analysis\\numeric-proof.md"
+    },
+    "analysis/representation-proof.md": {
+      "sha256": "d00fab5fafabdd0fc6e0b0cfa2a78a5e83ddedc6e2a495b57817270ee3703849",
+      "bytes": 15811,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-analysis\\representation-proof.md"
+    },
+    "analysis/zero-facts-review.md": {
+      "sha256": "b64952458a7714e64d0e38ab3e51b558f333188c158cc2fc172f8fa9dae959ca",
+      "bytes": 10495,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-analysis\\zero-facts-review.md"
+    },
+    "validation/focused.log": {
+      "sha256": "5416a709e521216793093b694be1157bdf4e0a75aeb63475a305cc618f434cac",
+      "bytes": 108,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-zero-facts\\build\\zero-facts-validation\\focused.log"
+    },
+    "validation/full.log": {
+      "sha256": "8ff4db9355240a308a0c316d89e877b374bfd94e5782c5ec0d13f0687fcb7680",
+      "bytes": 9393,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-zero-facts\\build\\zero-facts-validation\\full.log"
+    },
+    "validation/manifest.json": {
+      "sha256": "f9b42e5a4f949031dde6d6321c97acdf1550c7216aff7bf3fd696d4b21df81c2",
+      "bytes": 2051,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-zero-facts\\build\\zero-facts-validation\\manifest.json"
+    },
+    "validation/test_heap_zero_facts.py.txt": {
+      "sha256": "f51ae8b8c331e2931b135cca54354f151e29e3df1eee9b59211ce96bc9424ec2",
+      "bytes": 12009,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-zero-facts\\tests\\test_heap_zero_facts.py"
+    },
+    "validation/wave6-integration-source.json": {
+      "sha256": "fbe6af386733f93ed568e717a204c6364b458a6866dcfe448fbebcce5e91e30c",
+      "bytes": 5454,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-integration-source.json"
+    },
+    "validation/wave6-verification.json": {
+      "sha256": "19b2f2885ffaf6ba67415ae289325249ef95ba73a4d401160b77ab230292c7af",
+      "bytes": 483,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-verification.json"
+    },
+    "validation/wave6-verify.py": {
+      "sha256": "2def9deca89015fcefd64357958e8bb3346b216d1c4808165d3265079ce20818",
+      "bytes": 2742,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-verify.py"
+    },
+    "assembly/baseline-method.json": {
+      "sha256": "6442050a891cfce55e726211a4bb61f3f1b62b434163e589e4c6e08f8174e2ee",
+      "bytes": 1701,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\baseline-method.json"
+    },
+    "assembly/c-force.asm": {
+      "sha256": "9f2376da0c51928562e25abaafe8afa955a3cdf7dd32bbd1ba10b665a8362a9f",
+      "bytes": 4869,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\c-force.asm"
+    },
+    "assembly/collect.py": {
+      "sha256": "e09f2a40dba1252f37df8237ddd61d35b03a8476f46f34ad3b0a241dd007666e",
+      "bytes": 2885,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\collect.py"
+    },
+    "assembly/current-direct-call-marshalling.asm": {
+      "sha256": "03611db045c2405751ac738651c1c66eef733d3e29efd71f1b961ced3f5c1004",
+      "bytes": 2401,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\current-direct-call-marshalling.asm"
+    },
+    "assembly/current-direct-fields.asm": {
+      "sha256": "9332f94bd2eb721ffc05462e2d6fa47366b13c9646a48c0e6f6b1ebb15aefc5d",
+      "bytes": 3241,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\current-direct-fields.asm"
+    },
+    "assembly/current-direct-first-return.asm": {
+      "sha256": "e31de83e4a2d137b797832ddab48feabe3867c1d3b5b3fb501400adbf5d735fd",
+      "bytes": 1170,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\current-direct-first-return.asm"
+    },
+    "assembly/current-direct-force.asm": {
+      "sha256": "e8c0f9a938c787acf4077f5ccbd10beaf248d5656b01480672fb70c27e49143a",
+      "bytes": 28388,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\current-direct-force.asm"
+    },
+    "assembly/current-direct-provenance.json": {
+      "sha256": "807a1441cccd58a886a855627e5bcb0b5d7378b0986e4adb74bfa8ae8f2b597f",
+      "bytes": 3057,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\current-direct-provenance.json"
+    },
+    "assembly/current-direct-ranges.json": {
+      "sha256": "8c598b45c0c3321c5c50641fb6e857caec52db3ca712d135bd15ae2d8b6acf5d",
+      "bytes": 35292,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\current-direct-ranges.json"
+    },
+    "assembly/current-direct.asm": {
+      "sha256": "61065892b6ca109619c2ab50db15dbfa951106e27a791a6450f7a00604e645cc",
+      "bytes": 406180,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\current-direct.asm"
+    },
+    "assembly/current-direct.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\current-direct.stderr"
+    },
+    "assembly/extract.py": {
+      "sha256": "8b8346422cbf3586c6afdbafb05cb51a46d393ccc336519960cc4a8679e57594",
+      "bytes": 3167,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\extract.py"
+    },
+    "assembly/forceonly-direct-force.asm": {
+      "sha256": "08c97f72479b9c8a4150f7c755fc979d4f9c8be3a6f60603adbd1c0ea311e249",
+      "bytes": 20745,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\forceonly-direct-force.asm"
+    },
+    "assembly/forceonly-direct-provenance.json": {
+      "sha256": "d475a6c906ff7db5243719621520415d12e154157200c9709cafb1479a029411",
+      "bytes": 3059,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\forceonly-direct-provenance.json"
+    },
+    "assembly/forceonly-direct-ranges.json": {
+      "sha256": "768cc4aca2a89f89ed32926d7af12ad2d602346a9c39fdcbad9624d8c78f22e7",
+      "bytes": 35292,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\forceonly-direct-ranges.json"
+    },
+    "assembly/forceonly-direct.asm": {
+      "sha256": "d755b3c31c83f4f8d664d82d7bbb461b3a4a0fea49b870e65349aded1661cf20",
+      "bytes": 390611,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\forceonly-direct.asm"
+    },
+    "assembly/forceonly-direct.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\forceonly-direct.stderr"
+    },
+    "assembly/fullfloat-direct-call-marshalling.asm": {
+      "sha256": "957c67216f1b90b8c23b6ebc14004914acf827f146c6c795ee110fabe4c378bd",
+      "bytes": 2283,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\fullfloat-direct-call-marshalling.asm"
+    },
+    "assembly/fullfloat-direct-fields.asm": {
+      "sha256": "4922aa28e570f950b3c49f1f692fef191d11762959cb4a0015f851999eaa15ea",
+      "bytes": 676,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\fullfloat-direct-fields.asm"
+    },
+    "assembly/fullfloat-direct-first-return.asm": {
+      "sha256": "4cea27e351fca459e05ab3a5a7e45e251b9f96c3b766b63a150976c604d0b6d6",
+      "bytes": 848,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\fullfloat-direct-first-return.asm"
+    },
+    "assembly/fullfloat-direct-force.asm": {
+      "sha256": "2ba1b439b7da00a1f6171c670bb0b1ce7d54abc541ce134350f812cc7bf06d8e",
+      "bytes": 18008,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\fullfloat-direct-force.asm"
+    },
+    "assembly/fullfloat-direct-provenance.json": {
+      "sha256": "e5f5250d6d56cc95df9fea6c3dc55bb9f338f620fbf02d63030343d09d0c71e5",
+      "bytes": 3059,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\fullfloat-direct-provenance.json"
+    },
+    "assembly/fullfloat-direct-ranges.json": {
+      "sha256": "06d9fc7c84608fec862a7401c3e6b03db4034ef4bc6410afe8059b5a101824e1",
+      "bytes": 35292,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\fullfloat-direct-ranges.json"
+    },
+    "assembly/fullfloat-direct.asm": {
+      "sha256": "f524bcbbdc05cebc486deb77dd382a37e2cc02647488b8fff3da08b75b54dbea",
+      "bytes": 379678,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\fullfloat-direct.asm"
+    },
+    "assembly/fullfloat-direct.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\fullfloat-direct.stderr"
+    },
+    "assembly/production-call-marshalling.asm": {
+      "sha256": "0e5d46aa6998cfdbf40385b8d6ea63ed3a5b26a7e8af254b46db646a907854e6",
+      "bytes": 2396,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\production-call-marshalling.asm"
+    },
+    "assembly/production-fields.asm": {
+      "sha256": "dbfe449918bfde9ef4c66738a09564a4065961e4ef3ec0a04fcee67fc54c30cc",
+      "bytes": 3237,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\production-fields.asm"
+    },
+    "assembly/production-first-return.asm": {
+      "sha256": "a5cac8777c9825bc79c0577b661448a4fb8031766e457d7341d46c0cd169f02e",
+      "bytes": 986,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\production-first-return.asm"
+    },
+    "assembly/production-force.asm": {
+      "sha256": "0f9feb2a4935ec9a5d4635e1a7797842a1c2f1e249fa2c782d3e7dbe74481568",
+      "bytes": 22782,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\production-force.asm"
+    },
+    "assembly/production-provenance.json": {
+      "sha256": "ebd531ea35524ea671bc37663c0c1eb21283f36b034a6b930ab3135af51729b7",
+      "bytes": 3016,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\production-provenance.json"
+    },
+    "assembly/production-ranges.json": {
+      "sha256": "c5719a4a4b6e9add38d78e874a67a5e0a8b6e334f48283c1388623799d739892",
+      "bytes": 35292,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\production-ranges.json"
+    },
+    "assembly/production.asm": {
+      "sha256": "6afed3e9b2352aca006512bf4e39a3ee21087537ebb036b17e6b2d2820517903",
+      "bytes": 394650,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\production.asm"
+    },
+    "assembly/production.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\production.stderr"
+    },
+    "assembly/ranges.py": {
+      "sha256": "bc219366d8f08d54d0c39b907a51355825405c7da8ab99a1e80fc7c8c92f5f34",
+      "bytes": 1786,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\ranges.py"
+    },
+    "assembly/REPORT.md": {
+      "sha256": "17babe47de5b33e4b3cbb8f4e1df38b644589cbf90ea33c368b870fa505ac837",
+      "bytes": 11563,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\REPORT.md"
+    },
+    "assembly/static-counts.json": {
+      "sha256": "f3b1f9c178ab0b4080590b741ae0df2b6f37935609380112f4f6e731bcd6f4d0",
+      "bytes": 17629,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\static-counts.json"
+    },
+    "assembly/static_method.py": {
+      "sha256": "787be166b8fb1180752d9ee929b9141386dd6c6cbae931b1c70862fe9848ff81",
+      "bytes": 3276,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\static_method.py"
+    },
+    "assembly/verification.json": {
+      "sha256": "840d908ce4aa643505f2017ef27846eeb19e74b1d55e890bb75c508e156d3ed3",
+      "bytes": 1393,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\verification.json"
+    },
+    "assembly/verify_evidence.py": {
+      "sha256": "dda9c221df956fb8a37c57c8838c1406efe47862a0128c799ee993c14c5a58ab",
+      "bytes": 3220,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\verify_evidence.py"
+    },
+    "assembly/tool-diff/diff.txt": {
+      "sha256": "5d06e950c8fdadc4c680d74bac33da64fb3e7d302e255d1aafb4fd27104ba78f",
+      "bytes": 53921,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\tool-diff\\diff.txt"
+    },
+    "assembly/tool-diff/left.raw": {
+      "sha256": "e8c0f9a938c787acf4077f5ccbd10beaf248d5656b01480672fb70c27e49143a",
+      "bytes": 28388,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\tool-diff\\left.raw"
+    },
+    "assembly/tool-diff/report.json": {
+      "sha256": "e1293bf6e096d06c7397a7d653c3dca9a0a20a361a5154ee7526c696e3bbaf7b",
+      "bytes": 566,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\tool-diff\\report.json"
+    },
+    "assembly/tool-diff/right.raw": {
+      "sha256": "0f9feb2a4935ec9a5d4635e1a7797842a1c2f1e249fa2c782d3e7dbe74481568",
+      "bytes": 22782,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-instructions\\tool-diff\\right.raw"
+    },
+    "manual/PROTOCOL.md": {
+      "sha256": "1da1d75267d34a6b5a8fabcfbfe760904910a4e78e85abab29c7bd7b37fa1bfb",
+      "bytes": 4610,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\PROTOCOL.md"
+    },
+    "manual/RESULTS.md": {
+      "sha256": "3f390c197097f2d7a821627dc8f4348dafbd9b250c6f4083a3298cfaefb2750d",
+      "bytes": 5917,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\RESULTS.md"
+    },
+    "manual/BASELINE.json": {
+      "sha256": "30ef479b38ceb8f011b0d294e0c8124a79dd3da94e7617d9f5282b36ec331e82",
+      "bytes": 3862,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\BASELINE.json"
+    },
+    "manual/ARCHIVE-INDEX.json": {
+      "sha256": "b90c0c3d0bd7ea149be2c8fbd92a93491c4afa85b60e768c1886cc5c3b4d7f4d",
+      "bytes": 36770,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\ARCHIVE-INDEX.json"
+    },
+    "manual/manifest.json": {
+      "sha256": "77e07518f29ec54d697de1bd6ee94486b74fe89622cec4a5bd09a71d3e902795",
+      "bytes": 73058,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\manifest.json"
+    },
+    "manual/ANALYSIS.json": {
+      "sha256": "07a9a81b9eec83e97fe358999e074f49edaf01e0fe619fccfd7a9aa43c7435f1",
+      "bytes": 641715,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\ANALYSIS.json"
+    },
+    "manual/checkpoint-postverification.json": {
+      "sha256": "8536a764449ae96e2e548e576989806aa1c0b1764f7277f273a3920f90da7f4e",
+      "bytes": 23952,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\checkpoint-postverification.json"
+    },
+    "manual/reused-profile-provenance.json": {
+      "sha256": "b0a17b3e870f4e50f106c98b65efa4b6a684e049dd172c294136461080db5d8c",
+      "bytes": 1467,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\reused-profile-provenance.json"
+    },
+    "manual/aot-artifacts-frozen.json": {
+      "sha256": "8b6a6a87dace2d2fb179bbc11482f0519b8474edbb6bf09546095f8247a56d25",
+      "bytes": 1419,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\aot-artifacts-frozen.json"
+    },
+    "manual/complete.json": {
+      "sha256": "f02e7318a8d79833df80c6d12f13c9bea338365000a5b3c96265b2299a15e887",
+      "bytes": 1603,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\complete.json"
+    },
+    "manual/helpers/analyze.py": {
+      "sha256": "3076d1731747d5fd0fb3b7bfd7473530c2955a70a1297ca945e6c5954c01960f",
+      "bytes": 7118,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\analyze.py"
+    },
+    "manual/helpers/archive.py": {
+      "sha256": "af65835cfad1413c43ae59ff0f4c033af907ba78622f7a1321af2f8eea27e252",
+      "bytes": 7854,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\archive.py"
+    },
+    "manual/helpers/arena_phase.py": {
+      "sha256": "ad153495998e99020c7c5b56d6fd4eaf3dd64c249e4001e947a58f0e34f373a2",
+      "bytes": 2512,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\arena_phase.py"
+    },
+    "manual/helpers/audit.py": {
+      "sha256": "c98c9eef8f4c6685afa94f12b5bd577eed1c41dd057052dc39e0acfd5006bdbd",
+      "bytes": 7980,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\audit.py"
+    },
+    "manual/helpers/causal.py": {
+      "sha256": "bdd6e080e9434264fea6769f98a0f771f97b889a418c11453f62f37667f4cd57",
+      "bytes": 13611,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\causal.py"
+    },
+    "manual/helpers/common.py": {
+      "sha256": "9ad22e07d174c1add937004efb4a7f2c2569b11a350272a2f70fc8531cb2f40c",
+      "bytes": 9197,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\common.py"
+    },
+    "manual/helpers/postverify.py": {
+      "sha256": "0bf25944c0c64d9f0b758aefb80d37fa7810a3dfa589eb456a91021fb77dad78",
+      "bytes": 4649,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\postverify.py"
+    },
+    "manual/helpers/profile_target.py": {
+      "sha256": "73ea89c9c47e83da02f82c19eafd32ff894527ffdeb7aea31ff681aeb0833e86",
+      "bytes": 2079,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\profile_target.py"
+    },
+    "manual/helpers/state_audit.py": {
+      "sha256": "a685050f182e0df9e1573529f81223b095fcf686d0a74fbb6f4e064790d35ba3",
+      "bytes": 4672,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\state_audit.py"
+    },
+    "manual/helpers/test_mechanics.py.txt": {
+      "sha256": "a91e4f7541d7db9062022a52457b89b423736f3e026f5d0ad54c3d4a9545fb28",
+      "bytes": 2463,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\test_mechanics.py"
+    },
+    "manual/helpers/variants.py": {
+      "sha256": "174e35f281ce7c3e5617770ad5e93f6b39562406b12a5f469a0edd28a11e15a4",
+      "bytes": 4126,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\variants.py"
+    },
+    "manual/helpers/warm_bytecode.py": {
+      "sha256": "67437327080def5ebd3139d6a11c7671baafe078601a4b73961c634ed22f5932",
+      "bytes": 946,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\warm_bytecode.py"
+    },
+    "manual/drivers/current-direct.py": {
+      "sha256": "75c2550e69a0b565a8fdf1651a723f51e7f63333eb960fc778163722844bf7fa",
+      "bytes": 13599,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\drivers\\current-direct.py"
+    },
+    "manual/drivers/current-wrapper1.py": {
+      "sha256": "e67d8bd5b0f761d73d86d6eb9601bc6975edc23e9c9679541b09a253be8b1309",
+      "bytes": 13780,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\drivers\\current-wrapper1.py"
+    },
+    "manual/drivers/current-wrapper4.py": {
+      "sha256": "275b99ffe928db8064c7697052258821b67e7e80aa0eadeab5b604f3293fc5b0",
+      "bytes": 13780,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\drivers\\current-wrapper4.py"
+    },
+    "manual/drivers/forceonly-direct.py": {
+      "sha256": "92682b6795cd7cc2945a41ca6a66a723ca61788cf2ee92696dac5abec4b65d75",
+      "bytes": 13611,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\drivers\\forceonly-direct.py"
+    },
+    "manual/drivers/fullfloat-direct.py": {
+      "sha256": "237a241d90871fe08c9862d3774b11369b11c44a09c6949da684855316ff9922",
+      "bytes": 13631,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\drivers\\fullfloat-direct.py"
+    },
+    "manual/drivers/fullfloat-wrapper4.py": {
+      "sha256": "01f277112a9d7cd6ef3ce25363bf50abc5db85f8b2cd2ded7d2cbf97a439c084",
+      "bytes": 13812,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\drivers\\fullfloat-wrapper4.py"
+    },
+    "manual/maps/current-direct.json": {
+      "sha256": "8139e8659d6428b3aca136a347a5d48f5cb95abf6dc59e27e6ceccbe9076a51c",
+      "bytes": 1386,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cases\\current-direct\\aot-map.json"
+    },
+    "manual/maps/current-wrapper1.json": {
+      "sha256": "24827c8768839b4d95f925d018b350cda9bd481bb1b9db0f5eabd19e0eef91d6",
+      "bytes": 1387,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cases\\current-wrapper1\\aot-map.json"
+    },
+    "manual/maps/current-wrapper4.json": {
+      "sha256": "f04a4eb0076a45c27fe5a36e2b1c4a54b2ba64a2a54a76caa978eed4276c5d8f",
+      "bytes": 1386,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cases\\current-wrapper4\\aot-map.json"
+    },
+    "manual/maps/forceonly-direct.json": {
+      "sha256": "6039e7ce371085ff8a3d4bcd9b4e3823d0a89ea145292d882a847168cbe20909",
+      "bytes": 1388,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cases\\forceonly-direct\\aot-map.json"
+    },
+    "manual/maps/fullfloat-direct.json": {
+      "sha256": "8be65d2bb880e8b24e5f075f61cbb37d67054ad06c58d9fdc61e6064da3a445d",
+      "bytes": 1388,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cases\\fullfloat-direct\\aot-map.json"
+    },
+    "manual/maps/fullfloat-wrapper4.json": {
+      "sha256": "73d2ca768b7b39d53ecad513ca6eb6b0c1b4bf4106d803894fa405c2d2b6c017",
+      "bytes": 1392,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cases\\fullfloat-wrapper4\\aot-map.json"
+    },
+    "proof/RESULTS.md": {
+      "sha256": "7cc345559c1a83181386f8dc3926098b8f7c12a4301eba4cae1af92f2e1a4447",
+      "bytes": 4957,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\RESULTS.md"
+    },
+    "proof/proof.py": {
+      "sha256": "14749698efa4ce1e763ff9c09879416ed3e6f142be021fe89dca62622712ec80",
+      "bytes": 9974,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\proof.py"
+    },
+    "proof/ARCHIVE-INDEX.json": {
+      "sha256": "6097b548baa3eef968de4b54ea2e5df90e89bd2aec37b12cad967df53abb3b87",
+      "bytes": 26922,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\ARCHIVE-INDEX.json"
+    },
+    "proof/manifest.json": {
+      "sha256": "b58ae5be6211787fae5a47cf5943b277d61443edf70a12e05d3cde6eda58c46d",
+      "bytes": 69409,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\manifest.json"
+    },
+    "proof/ANALYSIS.json": {
+      "sha256": "8eecd08c4b7e3fad664851d63c8b816026a4b4040c0605e5fbffa75d6c86b53c",
+      "bytes": 24195,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\ANALYSIS.json"
+    },
+    "proof/checkpoint-postverification.json": {
+      "sha256": "55c0de56ef736653c8f3cf7509db5da76149295cc6290e25aac381515d71e495",
+      "bytes": 4137,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\checkpoint-postverification.json"
+    },
+    "proof/aot-artifacts-frozen.json": {
+      "sha256": "e8c2bb608f4ca9529a47ea97f2fde883f8210231e35774dfafecda2ab7f60565",
+      "bytes": 473,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\aot-artifacts-frozen.json"
+    },
+    "proof/complete.json": {
+      "sha256": "50076849d6b7d6c37abcd9bf8f7607865f23c3b2b5b4e13fe15c4eceb0f6189e",
+      "bytes": 649,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\complete.json"
+    },
+    "proof/plain-state.json": {
+      "sha256": "69129a1924d96f41e08566ed3347c7557387057b7e3e3fe49255df83ad4eed38",
+      "bytes": 174658,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\plain-state.json"
+    },
+    "proof/baseline-state.json": {
+      "sha256": "0223a7a34bc4332f15e833133ea8acf0974b24239fdab81fbb6a665b3b2f3198",
+      "bytes": 175916,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\baseline-state.json"
+    },
+    "proof/candidate-state.json": {
+      "sha256": "a313710468f415e12f549374bb705a82feb189343a98f9f6e13981b07efe06c2",
+      "bytes": 175916,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\candidate-state.json"
+    },
+    "proof/baseline-aot-map.json": {
+      "sha256": "b925f577d51c3eb7d7283173d902e34b4ff35242d189b0f7d4984b7a8508e8eb",
+      "bytes": 1359,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\baseline-aot-map.json"
+    },
+    "proof/candidate-aot-map.json": {
+      "sha256": "8e03049a9e9bbc0a2dbccb88a2c3c75e7fa847c0c9d65b185d13c5ba12d47f70",
+      "bytes": 1355,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\candidate-aot-map.json"
+    }
+  }
+}

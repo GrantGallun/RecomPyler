@@ -1,0 +1,58 @@
+[
+  {
+    "name": "barnes_hut",
+    "variant": "baseline",
+    "exit_code": 0,
+    "stdout": "{\"reported\": [{\"function\": \"advance_system\", \"compiled_calls\": 200, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": true}], \"actual_program_aot\": [true], \"numba_imported\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "barnes_hut",
+    "variant": "integrated",
+    "exit_code": 0,
+    "stdout": "{\"reported\": [{\"function\": \"advance_system\", \"compiled_calls\": 200, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": true}], \"actual_program_aot\": [true], \"numba_imported\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "fannkuch",
+    "variant": "baseline",
+    "exit_code": 0,
+    "stdout": "{\"reported\": [{\"function\": \"fannkuch\", \"compiled_calls\": 2, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": false}], \"actual_program_aot\": [], \"numba_imported\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "fannkuch",
+    "variant": "integrated",
+    "exit_code": 0,
+    "stdout": "{\"reported\": [{\"function\": \"fannkuch\", \"compiled_calls\": 2, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": false}], \"actual_program_aot\": [], \"numba_imported\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "raytrace",
+    "variant": "baseline",
+    "exit_code": 0,
+    "stdout": "{\"reported\": [{\"function\": \"Scene.render\", \"compiled_calls\": 2, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": true}], \"actual_program_aot\": [true], \"numba_imported\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "raytrace",
+    "variant": "integrated",
+    "exit_code": 0,
+    "stdout": "{\"reported\": [], \"actual_program_aot\": [], \"numba_imported\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "scimark",
+    "variant": "baseline",
+    "exit_code": 0,
+    "stdout": "{\"reported\": [{\"function\": \"FFT_transform_internal\", \"compiled_calls\": 0, \"fallback_calls\": 0, \"lifted\": false, \"ahead_of_time\": false, \"region\": false}, {\"function\": \"FFT_bitreverse\", \"compiled_calls\": 0, \"fallback_calls\": 0, \"lifted\": false, \"ahead_of_time\": false, \"region\": false}, {\"function\": \"FFT_transform\", \"compiled_calls\": 100, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": false}, {\"function\": \"FFT_inverse\", \"compiled_calls\": 100, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": false}], \"actual_program_aot\": [], \"numba_imported\": false}\n",
+    "stderr": ""
+  },
+  {
+    "name": "scimark",
+    "variant": "integrated",
+    "exit_code": 0,
+    "stdout": "{\"reported\": [{\"function\": \"FFT_transform_internal\", \"compiled_calls\": 0, \"fallback_calls\": 0, \"lifted\": false, \"ahead_of_time\": false, \"region\": false}, {\"function\": \"FFT_transform\", \"compiled_calls\": 100, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": false}, {\"function\": \"FFT_inverse\", \"compiled_calls\": 100, \"fallback_calls\": 0, \"lifted\": true, \"ahead_of_time\": true, \"region\": false}], \"actual_program_aot\": [], \"numba_imported\": false}\n",
+    "stderr": ""
+  }
+]

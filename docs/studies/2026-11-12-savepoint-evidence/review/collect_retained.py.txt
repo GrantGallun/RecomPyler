@@ -1,0 +1,60 @@
+"""Read-only disassembly of historical, audit-selected native artifacts."""
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+from static_method import inspect
+
+ROOT = Path(__file__).resolve().parent
+STUDY = ROOT.parent/'wave5-study/results'
+TOOL = Path('C:/Users/grant/AppData/Local/Programs/Swift/Toolchains/6.3.2+Asserts/usr/bin/llvm-objdump.exe')
+def read(path): return json.loads(path.read_text())
+def sha(path): return hashlib.sha256(path.read_bytes()).hexdigest()
+
+out = {}
+for workload, mode, function, section_name in (
+        ('raytrace', 'forced', 'Scene.render', 'aot_regions'),
+        ('scimark', 'warm', 'FFT_inverse', 'aot')):
+    folder = STUDY/'programs'/workload
+    plan_path = folder/('candidate.warm.plan.json' if mode == 'warm' else 'candidate.plan.json')
+    audit_path = folder/f'candidate-{mode}.audit.json'
+    plan, audit = read(plan_path), read(audit_path)
+    selected = next(row for row in audit['functions'] if row['function'] == function)
+    assert selected['aot_calls'] > 0
+    assert all(selected[k] == 0 for k in ('jit_calls', 'fallback_calls', 'unknown_native_calls', 'rejected_attempts'))
+    section = plan['plan'][section_name]
+    row = next(row for row in section['functions'] if row.get('qualname',row['function']) == function)
+    if section_name == 'aot_regions':
+        digests = [digest for digest, counts in selected['programs'].items() if counts['aot_calls']]
+        assert len(digests) == 1
+        digest = digests[0]
+        export = row['exports'][digest]
+    else:
+        assert len(set(row['exports'].values())) == 1
+        export = next(iter(row['exports'].values()))
+        digest = row['digest']
+    artifacts = list(Path(section['folder']).glob(section['module']+'*.pyd'))
+    assert len(artifacts) == 1
+    artifact = artifacts[0]
+    assert sha(artifact) == read(folder/'aot-artifacts-frozen.json')[str(artifact)]
+    meta = inspect(artifact, export)
+    meta.update(function=function, digest=digest, actual_selected_counts=selected,
+                plan=str(plan_path), plan_sha256=sha(plan_path),
+                audit=str(audit_path), audit_sha256=sha(audit_path),
+                historical=True, native_artifact_executed=False)
+    name = workload+'-retained-aot'
+    command = [str(TOOL), '--disassemble', '--demangle', '--no-show-raw-insn', str(artifact)]
+    run = subprocess.run(command, capture_output=True)
+    (ROOT/(name+'.asm')).write_bytes(run.stdout)
+    (ROOT/(name+'.stderr')).write_bytes(run.stderr)
+    assert run.returncode == 0, run.stderr
+    meta.update(command=command, tool_sha256=sha(TOOL), assembly_sha256=sha(ROOT/(name+'.asm')))
+    out[name] = meta
+    c = STUDY/'bin'/(workload+'.exe')
+    run = subprocess.run([str(TOOL), '--disassemble', '--demangle', '--no-show-raw-insn', str(c)], capture_output=True)
+    assert run.returncode == 0
+    (ROOT/(workload+'-c.asm')).write_bytes(run.stdout)
+    out[workload+'-c'] = {'artifact':str(c), 'artifact_sha256':sha(c),
+                        'assembly_sha256':sha(ROOT/(workload+'-c.asm')), 'native_artifact_executed':False}
+    print(workload, function, export, meta['method']['function_address'], sha(artifact))
+(ROOT/'retained-provenance.json').write_text(json.dumps(out,indent=2)+'\n')

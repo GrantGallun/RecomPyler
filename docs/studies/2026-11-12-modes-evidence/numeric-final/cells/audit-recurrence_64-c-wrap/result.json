@@ -1,0 +1,634 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "c-wrap",
+  "function": "recurrence_64",
+  "task": "audit",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ]
+  },
+  "corpus_count": 284,
+  "expected_results_sha256": "cbf97cde0265eb08f0df78c10861938c9fcc8d4d5b06280f04c653827644bd74",
+  "valid_exact_results": true,
+  "construction_s": 0.00030270000570453703,
+  "first_call_s": 2.3899992811493576e-05,
+  "first_call_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 1
+  },
+  "validation_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 284
+  },
+  "program": {
+    "function": "recurrence_64",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "f81906987e4f2bd70a4fcd3e31a8e03ce20f6d2fcf1d48417ce6c8eeecb374a2",
+    "function_bytecode_sha256": "52296a43ebbfc72ccf1b65d9e13ba2afc4968df7f64ba943b4374f8b6e6bfcb1",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null
+  },
+  "numba_imported": false,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "invalid_audits": [
+    {
+      "args": [
+        "1048577",
+        "1",
+        "0"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "bound_values": [
+        "1048577",
+        "1",
+        "0"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1099511627776",
+        "1099511627776",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1099511627777"
+      },
+      "bound_values": [
+        "1099511627776",
+        "1099511627776",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "476418619515067823588715187722901724701901626131411312563880807689911872766165421208371667435004311107972206200723559758306538834262716480132138179996827150978561935836083830918963624314189752608832109287154678938707174839309100990374526225758911398014279070078095859827525343371627839752251954861253394374699459454633263029393902944000101263316519100106590305489046383637774802613442688311125952612368180533757233859583467869921386665062018875587339328805688105671722218552327124315385968710803278804784061532684533105922021208849973466944949536149165060371171917870074652915573980782326201385997435949446928703430625562371927363617632784812239442911237855167555079267082935383975794351308151015340903776892931056770998665087407993999977602238016212283189284222685238657654890430465"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1099511627777"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "9223372036854775807",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775745"
+      },
+      "bound_values": [
+        "9223372036854775807",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775871"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775745"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "-9223372036854775808",
+        "-1",
+        "0"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "bound_values": [
+        "-9223372036854775808",
+        "-1",
+        "0"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "True",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "bool",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "__main__.construct.<locals>.NumericContractError",
+        "message": "C wrapping reference requires exact signed-int64 inputs"
+      },
+      "bound_values": [
+        "True",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "129"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "2",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "semantic_audits.<locals>.IntSubclass",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "__main__.construct.<locals>.NumericContractError",
+        "message": "C wrapping reference requires exact signed-int64 inputs"
+      },
+      "bound_values": [
+        "2",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "130"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "2.0",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "float",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "__main__.construct.<locals>.NumericContractError",
+        "message": "C wrapping reference requires exact signed-int64 inputs"
+      },
+      "bound_values": [
+        "2.0",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "130.0"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1208925819614629174706176",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "__main__.construct.<locals>.NumericContractError",
+        "message": "C wrapping reference requires exact signed-int64 inputs"
+      },
+      "bound_values": [
+        "1208925819614629174706176",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706240"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_64() missing 3 required positional arguments: 'x', 'y', and 'z'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_64() missing 3 required positional arguments: 'x', 'y', and 'z'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_64() missing 3 required positional arguments: 'x', 'y', and 'z'"
+      },
+      "policy": "C-reference-binding-TypeError",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {
+        "bad": "1"
+      },
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_64() got an unexpected keyword argument 'bad'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_64() got an unexpected keyword argument 'bad'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_64() got an unexpected keyword argument 'bad'"
+      },
+      "policy": "C-reference-binding-TypeError",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {
+        "x": "1",
+        "y": "1",
+        "z": "2"
+      },
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "129"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "129"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "129"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    }
+  ],
+  "audit_observations": {
+    "attempts": 0,
+    "rejected_attempts": 0,
+    "attempt_exceptions": 0,
+    "programs": {}
+  },
+  "final_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 4,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 290
+  },
+  "cache_files": {}
+}

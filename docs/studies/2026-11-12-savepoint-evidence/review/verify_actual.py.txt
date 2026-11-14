@@ -1,0 +1,62 @@
+"""Cross-check static maps, immutable inputs and retained state; execute no artifacts."""
+import ast
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+OUT = ROOT / 'actual-artifacts'
+STUDY = ROOT.parent / 'wave8-native/results'
+read = lambda p: json.loads(p.read_text())
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+result = {'mode': 'read-only metadata/state/static evidence verification', 'cases': {}}
+for workload, short in (('barnes_hut', 'barnes'), ('raytrace', 'raytrace')):
+    folder = STUDY/'programs'/workload
+    plain = read(folder/'plain-state.json')
+    expected = 100 if workload == 'barnes_hut' else 1
+    case = {}
+    for variant in ('current', 'final'):
+        meta = read(OUT/f'{short}-{variant}-provenance.json')
+        mapping = read(folder/f'{variant}-aot-map.json')
+        assert len(mapping) == 1
+        mapping = mapping[0]
+        assert mapping['selected_digest'] == meta['digest']
+        assert mapping['selected_export'] == meta['export']
+        assert mapping['artifact_sha256'] == meta['artifact_sha256']
+        assert mapping['wrapper_preferred_address'] == meta['method']['function_address']
+        assert sha(Path(meta['artifact'])) == meta['artifact_sha256']
+        for item in ('plan', 'audit', 'frozen'):
+            assert sha(Path(meta[item])) == meta[item+'_sha256']
+        assert sha(OUT/f'{short}-{variant}.asm') == meta['assembly_sha256']
+        assert meta['actual_aot_calls'] == expected
+        state = read(folder/f'{variant}-state.json')
+        keys = ('initial','final','checkpoints') if workload == 'barnes_hut' else ('final','observed')
+        for key in keys:
+            assert state[key] == plain[key], (workload,variant,key)
+        case[variant] = {'artifact_sha256':meta['artifact_sha256'], 'selected_digest':meta['digest'],
+                         'static_map_equals_runtime_map':True, 'exact_state_matches_plain':True,
+                         'actual_aot_calls':expected}
+    driver = ROOT.parent/'wave5-study/results/drivers'/f'{workload}.py'
+    tree = ast.parse(driver.read_bytes())
+    aug = [node.lineno for node in ast.walk(tree)
+           if isinstance(node,ast.AugAssign) and isinstance(node.target,ast.Subscript)]
+    assert not aug
+    case['driver_sha256'] = sha(driver)
+    case['subscript_augassign_sites'] = aug
+    result['cases'][workload] = case
+summary = read(STUDY/'SUMMARY.json')
+result['fresh_measurements'] = {}
+for name, rows in summary['programs'].items():
+    current, final, c = (rows[k] for k in ('current','final','c'))
+    a,b,cv = (r['median_best_kernel_s'] for r in (current,final,c))
+    result['fresh_measurements'][name] = {
+        'current_ms':a*1000, 'final_ms':b*1000, 'c_ms':cv*1000,
+        'final_time_change_percent':100*(b/a-1), 'current_over_c':a/cv, 'final_over_c':b/cv,
+        'current_range_ms':[min(current['kernel_samples_s'])*1000,max(current['kernel_samples_s'])*1000],
+        'final_range_ms':[min(final['kernel_samples_s'])*1000,max(final['kernel_samples_s'])*1000],
+        'current_wall_ms':current['median_process_wall_s']*1000,
+        'final_wall_ms':final['median_process_wall_s']*1000,
+    }
+result['summary_sha256'] = sha(STUDY/'SUMMARY.json')
+(OUT/'verification.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result['fresh_measurements'],indent=2))

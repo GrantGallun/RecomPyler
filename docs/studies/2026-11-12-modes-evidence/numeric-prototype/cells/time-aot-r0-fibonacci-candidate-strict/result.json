@@ -1,0 +1,689 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "candidate-strict",
+  "function": "fibonacci",
+  "task": "time-aot",
+  "contract": {
+    "n": [
+      0,
+      80
+    ]
+  },
+  "corpus_count": 81,
+  "expected_results_sha256": "a8e29982451912a80ff9466a6a4630cd90a30305544a5de79841ce5042599f6c",
+  "valid_exact_results": true,
+  "construction_s": 0.2912875000038184,
+  "first_call_s": 0.0014026999997440726,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 1,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 81,
+    "aot_calls": 81,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "fibonacci",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "04d31e40e4e6dc61337c3e2e39e015c1d76241cb0199f6b40cb26e80f8a18344",
+    "function_bytecode_sha256": "3be6f8b101655e687df46a1c67db5226839d397b34c52a14866c6e92984a5b80",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null,
+    "program_digest": "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf",
+    "program_cached": true,
+    "program_ahead_of_time": true,
+    "entry_name": "f0_fibonacci",
+    "program_source_sha256": "15020bc158108e1f42ec57c0f8d35aba4565e5e0e1e2137d211fd457066846aa",
+    "dispatcher_module": "rcaotr_b19cba7e9f83b6770fdb3d59",
+    "dispatcher_qualname": "_Closure.r0",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": false,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "samples": [
+    {
+      "elapsed_ns": 3053800,
+      "calls": 648,
+      "checksum_uint64": 490446325772892720
+    },
+    {
+      "elapsed_ns": 2912600,
+      "calls": 648,
+      "checksum_uint64": 490446325772892720
+    },
+    {
+      "elapsed_ns": 2906000,
+      "calls": 648,
+      "checksum_uint64": 490446325772892720
+    }
+  ],
+  "median_ns": 2912600,
+  "timing_counts": {
+    "compiled_calls": 1944,
+    "aot_calls": 1944,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "boundary": "complete-Python-call-plus-all-return-integer-sum",
+  "aot_selection": {
+    "program_digest": "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf",
+    "export": "r0",
+    "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\aot\\candidate-strict\\fibonacci\\rcaotr_b19cba7e9f83b6770fdb3d59.cp314-win_amd64.pyd",
+    "binary_sha256": "1b7a7ef7830c390184daee4e487edcf1a588a13853861a9c6d58f7398de167f0",
+    "runtime_wrapper_address": 140722217554144,
+    "runtime_module_base": 140722217549824,
+    "runtime_wrapper_rva": 4320,
+    "static_mapping": {
+      "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\aot\\candidate-strict\\fibonacci\\rcaotr_b19cba7e9f83b6770fdb3d59.cp314-win_amd64.pyd",
+      "binary_sha256": "1b7a7ef7830c390184daee4e487edcf1a588a13853861a9c6d58f7398de167f0",
+      "export": "r0",
+      "preferred_base": 6442450944,
+      "method_rva": 4320,
+      "function_address": 6442455264,
+      "method_definition_rva": 40960,
+      "flags": 3,
+      "sections": [
+        {
+          "name": ".text",
+          "size": 11112,
+          "rva": 4096,
+          "raw_size": 11264,
+          "offset": 1024,
+          "executable": true
+        },
+        {
+          "name": ".rdata",
+          "size": 23754,
+          "rva": 16384,
+          "raw_size": 24064,
+          "offset": 12288,
+          "executable": false
+        },
+        {
+          "name": ".data",
+          "size": 3192,
+          "rva": 40960,
+          "raw_size": 2560,
+          "offset": 36352,
+          "executable": false
+        },
+        {
+          "name": ".pdata",
+          "size": 1044,
+          "rva": 45056,
+          "raw_size": 1536,
+          "offset": 38912,
+          "executable": false
+        },
+        {
+          "name": ".rsrc",
+          "size": 248,
+          "rva": 49152,
+          "raw_size": 512,
+          "offset": 40448,
+          "executable": false
+        },
+        {
+          "name": ".reloc",
+          "size": 184,
+          "rva": 53248,
+          "raw_size": 512,
+          "offset": 40960,
+          "executable": false
+        }
+      ],
+      "unwind_ranges": [
+        {
+          "begin_rva": 4320,
+          "end_rva": 5106,
+          "unwind_rva": 36704
+        },
+        {
+          "begin_rva": 5184,
+          "end_rva": 5267,
+          "unwind_rva": 36728
+        },
+        {
+          "begin_rva": 5280,
+          "end_rva": 5373,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 5376,
+          "end_rva": 5465,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5472,
+          "end_rva": 5578,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5584,
+          "end_rva": 5757,
+          "unwind_rva": 36136
+        },
+        {
+          "begin_rva": 5760,
+          "end_rva": 5853,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 5856,
+          "end_rva": 5982,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5984,
+          "end_rva": 6013,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 6013,
+          "end_rva": 6060,
+          "unwind_rva": 36144
+        },
+        {
+          "begin_rva": 6060,
+          "end_rva": 6085,
+          "unwind_rva": 36164
+        },
+        {
+          "begin_rva": 6128,
+          "end_rva": 6211,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6224,
+          "end_rva": 6327,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 6336,
+          "end_rva": 6386,
+          "unwind_rva": 36196
+        },
+        {
+          "begin_rva": 6386,
+          "end_rva": 6421,
+          "unwind_rva": 36204
+        },
+        {
+          "begin_rva": 6421,
+          "end_rva": 6472,
+          "unwind_rva": 36224
+        },
+        {
+          "begin_rva": 6480,
+          "end_rva": 6542,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6544,
+          "end_rva": 6670,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6672,
+          "end_rva": 6787,
+          "unwind_rva": 36244
+        },
+        {
+          "begin_rva": 6800,
+          "end_rva": 6851,
+          "unwind_rva": 36256
+        },
+        {
+          "begin_rva": 6880,
+          "end_rva": 6905,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 6928,
+          "end_rva": 6999,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 7088,
+          "end_rva": 7125,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 7136,
+          "end_rva": 7200,
+          "unwind_rva": 36272
+        },
+        {
+          "begin_rva": 7200,
+          "end_rva": 7277,
+          "unwind_rva": 36284
+        },
+        {
+          "begin_rva": 7277,
+          "end_rva": 7390,
+          "unwind_rva": 36308
+        },
+        {
+          "begin_rva": 7392,
+          "end_rva": 7747,
+          "unwind_rva": 36328
+        },
+        {
+          "begin_rva": 7760,
+          "end_rva": 9499,
+          "unwind_rva": 36344
+        },
+        {
+          "begin_rva": 9536,
+          "end_rva": 9711,
+          "unwind_rva": 36328
+        },
+        {
+          "begin_rva": 9712,
+          "end_rva": 9728,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 9728,
+          "end_rva": 9780,
+          "unwind_rva": 36368
+        },
+        {
+          "begin_rva": 9780,
+          "end_rva": 9810,
+          "unwind_rva": 36388
+        },
+        {
+          "begin_rva": 9920,
+          "end_rva": 10057,
+          "unwind_rva": 36404
+        },
+        {
+          "begin_rva": 10064,
+          "end_rva": 10119,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 10128,
+          "end_rva": 10188,
+          "unwind_rva": 36420
+        },
+        {
+          "begin_rva": 10188,
+          "end_rva": 10236,
+          "unwind_rva": 36432
+        },
+        {
+          "begin_rva": 10236,
+          "end_rva": 10247,
+          "unwind_rva": 36452
+        },
+        {
+          "begin_rva": 10256,
+          "end_rva": 10331,
+          "unwind_rva": 36468
+        },
+        {
+          "begin_rva": 10331,
+          "end_rva": 10388,
+          "unwind_rva": 36480
+        },
+        {
+          "begin_rva": 10388,
+          "end_rva": 10473,
+          "unwind_rva": 36500
+        },
+        {
+          "begin_rva": 10473,
+          "end_rva": 10507,
+          "unwind_rva": 36520
+        },
+        {
+          "begin_rva": 10507,
+          "end_rva": 10528,
+          "unwind_rva": 36536
+        },
+        {
+          "begin_rva": 10528,
+          "end_rva": 10701,
+          "unwind_rva": 36556
+        },
+        {
+          "begin_rva": 10704,
+          "end_rva": 10747,
+          "unwind_rva": 36572
+        },
+        {
+          "begin_rva": 10747,
+          "end_rva": 10951,
+          "unwind_rva": 36588
+        },
+        {
+          "begin_rva": 10951,
+          "end_rva": 10972,
+          "unwind_rva": 36612
+        },
+        {
+          "begin_rva": 10972,
+          "end_rva": 11097,
+          "unwind_rva": 36632
+        },
+        {
+          "begin_rva": 11097,
+          "end_rva": 11123,
+          "unwind_rva": 36652
+        },
+        {
+          "begin_rva": 11123,
+          "end_rva": 11201,
+          "unwind_rva": 36668
+        },
+        {
+          "begin_rva": 11201,
+          "end_rva": 11218,
+          "unwind_rva": 36684
+        },
+        {
+          "begin_rva": 11344,
+          "end_rva": 11456,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11456,
+          "end_rva": 11606,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 11632,
+          "end_rva": 11743,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11744,
+          "end_rva": 11873,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11920,
+          "end_rva": 12033,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 12112,
+          "end_rva": 12142,
+          "unwind_rva": 36736
+        },
+        {
+          "begin_rva": 12144,
+          "end_rva": 12224,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 12224,
+          "end_rva": 12502,
+          "unwind_rva": 36740
+        },
+        {
+          "begin_rva": 12504,
+          "end_rva": 12635,
+          "unwind_rva": 36808
+        },
+        {
+          "begin_rva": 12636,
+          "end_rva": 12932,
+          "unwind_rva": 36892
+        },
+        {
+          "begin_rva": 12932,
+          "end_rva": 12993,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 13004,
+          "end_rva": 13179,
+          "unwind_rva": 36940
+        },
+        {
+          "begin_rva": 13180,
+          "end_rva": 13215,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13252,
+          "end_rva": 13279,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13280,
+          "end_rva": 13337,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13340,
+          "end_rva": 13392,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13392,
+          "end_rva": 13413,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13416,
+          "end_rva": 13456,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13456,
+          "end_rva": 13477,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13480,
+          "end_rva": 13576,
+          "unwind_rva": 36992
+        },
+        {
+          "begin_rva": 13576,
+          "end_rva": 13624,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13624,
+          "end_rva": 13644,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13644,
+          "end_rva": 13702,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13704,
+          "end_rva": 13843,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 13844,
+          "end_rva": 13996,
+          "unwind_rva": 36952
+        },
+        {
+          "begin_rva": 13996,
+          "end_rva": 14032,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 14032,
+          "end_rva": 14073,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 14092,
+          "end_rva": 14152,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 14152,
+          "end_rva": 14212,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 14216,
+          "end_rva": 14883,
+          "unwind_rva": 37012
+        },
+        {
+          "begin_rva": 15024,
+          "end_rva": 15026,
+          "unwind_rva": 37032
+        },
+        {
+          "begin_rva": 15056,
+          "end_rva": 15062,
+          "unwind_rva": 37040
+        },
+        {
+          "begin_rva": 15062,
+          "end_rva": 15085,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15085,
+          "end_rva": 15110,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15110,
+          "end_rva": 15130,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15130,
+          "end_rva": 15184,
+          "unwind_rva": 36932
+        },
+        {
+          "begin_rva": 15184,
+          "end_rva": 15208,
+          "unwind_rva": 36984
+        }
+      ],
+      "note": "Static candidate becomes selected only when actual successful-call digest/export and runtime RVA agree."
+    },
+    "actual_wrapper_counts_after_cell": {
+      "compiled_calls": 2026,
+      "aot_calls": 2026,
+      "jit_calls": 0,
+      "fallback_calls": 0,
+      "contract_native_calls": 0,
+      "guard_misses": 0,
+      "representation_rejections": 0,
+      "loop_limit_rejections": 0,
+      "native_failures": 0,
+      "foreign_calls": 0
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 2026,
+    "aot_calls": 2026,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.add_i-95.py314.1.nbc": "62f2cbacff26d7a8d60005a82e33b75572eb4304857651118edb9ba84386cc3d",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.add_i-95.py314.nbi": "6452a5a68265d3ccaf5b0a1cdc427c9cdf9acefd6a4cd69ad9706c8ae8aaa4bd",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.f0_recurrence_16-554.py314.1.nbc": "a12149ada376d7dae36353907e7007f5b86e93e8b6aee847110d9477bc6c66a3",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.f0_recurrence_16-554.py314.nbi": "ed0f7108593c614dd302f66374b388d5b6d58bfb65471c0383f104124b30dd93",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.mul_i-111.py314.1.nbc": "7e48fa0823236b7d30a519e17d4ea9815570dabdda5bd79f3425c1b9d86d8e6a",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.mul_i-111.py314.nbi": "d25e95ed643981197ef5da89445ac65df22ce9c073b492eda0f46a991b9d8009",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.1.nbc": "a0649ce91235a73b7ba18f25257cc5e6312a915cef9b7901206aae49f6ecf88a",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.2.nbc": "2aacfaf730ccd42ae8a314d4304da42d49b154a0ebf78c0ec14877065cd26405",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.nbi": "f8858fdcca579c2245f748ee93d783d9371e52888c7f9866d2878465e4e158f2",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.f0_fibonacci-554.py314.1.nbc": "db46b7b7d238b1a47b8b2efbe5f835813af6a7a921295d781bb7afab5d3a9bff",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.f0_fibonacci-554.py314.nbi": "3ec654d73f6e23254a0fb8b1cbe18f9b1fdafa839a3ef4eb325e9efb5ad95a4c",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_57152f1561b845507fca6255.f0_recurrence_64-554.py314.1.nbc": "16fcd23d10200e6acbd56f54046570a6abd4977e84f1d6bf31c0203b0a3d43d2",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_57152f1561b845507fca6255.f0_recurrence_64-554.py314.nbi": "06875971543e91bde5656f078f1fc5b59b37a2c0d7f1db733a0cfa57cc6fd958",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.add_i-95.py314.1.nbc": "38bc28edf99ce483775be69efd53892187f70295febfc2d3dcf164d659d3f1ef",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.add_i-95.py314.nbi": "3714e2a1d2dc026f0d25886db87dcb94cb30fdeb92b9f50e575d237222bc62dc",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.f0_recurrence_64-554.py314.1.nbc": "68028bfb98073adcfa724eb5d777f89ad117accf2e19f4c7b3f89d73f8e6ba90",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.f0_recurrence_64-554.py314.nbi": "9b62b2dc073973095187b42839227b9f4fff9bc01c616ccc92b2aa78b089d73e",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.mul_i-111.py314.1.nbc": "98d67c04bebe650ab64c63d1c4c0a4fe22d782a3d52156b43c3787cab4c8d4b8",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.mul_i-111.py314.nbi": "49df8b3c4ab3a940d7a0fa1d79ffa5026b5443fc49f563e5d38bf90e10078a3d",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.add_i-95.py314.1.nbc": "59c282601dd47c6fa8b452150c8281d5858273caf19953e8a9700228f5210546",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.add_i-95.py314.nbi": "ed77de60fdbfd9bf0c1c9a0fda7d729e19208b1b8e7a5dc0e70a850c290865b3",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.f0_loop_recurrence16-554.py314.1.nbc": "076e36ee41c362f075cf61e24889607f95df79f943fb9bfdc8c0551c5d7fa93e",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.f0_loop_recurrence16-554.py314.nbi": "c70fe331c5799f175e277afe78db2b8d3b2c8419214e175ec33d7108ec953fbe",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.mul_i-111.py314.1.nbc": "37f0271a48c3db00293f977154e3305a8298ff58c272b07998e7b88e465c7309",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.mul_i-111.py314.nbi": "dd9164cabe7753714a563b9a07ae88ee23e5e14b3f1df8c2916b9e567d0019df",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.1.nbc": "a53ec8bc70ad02d47ee05b8c35e9baf351aa3c2830463150635980ecf3a2f018",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.2.nbc": "75e6f79a6f4e286f9bb06f7af8f8593774025cdd81fd0ece60d7b5e9f08f5531",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.nbi": "113bfe9eba654041795f4e48fee0c78c27f4d46b40f75ab6366d6d2ccd2e6f2a",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.1.nbc": "5fdc95a7663076764fcac3bc19535608e33689d5660c2476217c59524aa5e013",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.nbi": "221988085045de20bdb84d94233c8d50aedfa20ad2c3d707205a2268861a286d",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_b3a9bfa1769a9e7651c5e8a3.f0_recurrence_16-554.py314.1.nbc": "838226714c646fd4a2bfbc03c859b5fd0fcdd3ea90e722035e6be7afc03dffd3",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_b3a9bfa1769a9e7651c5e8a3.f0_recurrence_16-554.py314.nbi": "dfd7c9f5a153d03ecf3bf0ccc2132340e6a592cab0181844b07c5ad89baf9c86",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.1.nbc": "40ac844d25448449a6da0bdd7379fff53aab50ddd477520f865abe48ce892d6c",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.nbi": "d8ad44c9caae00d8d2781d009bff1a46400003f7f618891244cccf0c31960a61",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e108b176528cc6fcedb2027d.f0_loop_recurrence16-554.py314.1.nbc": "65b1c78680c15d022d02893695977405bec83222d0515aaca46fedea3b872460",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e108b176528cc6fcedb2027d.f0_loop_recurrence16-554.py314.nbi": "953913257a4f5a399cf17b7738e45d36c62bb144c67683b12d7ba40d4c340150",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.1.nbc": "d4e23ff5f396cd2569d7d19a4282e4a8a6d7fccfa545d4cf8f1fd9e14f81db55",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.nbi": "c27cdaa61113a3444f0af6d858c72a995b52b3338cd421b830da6995c48c8895",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.1.nbc": "0dcbc87b1862dabc17879c685328fe4d3440d023983e3ba342670e403dafb20d",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.nbi": "f22260a03baa0264c23b81cd378a818feeb67a47bea6e0902091e8935fba7d92",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.1.nbc": "9c96194a8a376b4dbff94925cb572c7bd0dbff250665bb751a23f96b2182ed69",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.nbi": "8df3082aaeef4320c3be2eef63306159fea4fdece7953a531de7091617e52fe1",
+    "rc_heap_0bc4322814ec5c10910c6684.py": "733a95f74730ce19aeca5450b9f375ee66dd5f34fe17d46536fe29608bc9b1ad",
+    "rc_heap_3ccb1a4c2558e2f7afd382de.py": "8cce3e29d8f1dcee671403f3f85b3b7cc07cb215053b8fdf1b2c20f069641f9b",
+    "rc_heap_57152f1561b845507fca6255.py": "3412f552ef5c66dd02c78d0be310793333427a21f0f3956a7b70f906f2001092",
+    "rc_heap_5b5b61a3bf0b3ec88f796210.py": "28c6ef1728a5b4ed719af5b6032d6a176d9838413d86f9ae7c004d8acd01d3e9",
+    "rc_heap_73547edce78f3bbe0466b8e9.py": "5ece0a8280d553af17cdb1bb7f3364e062ab2a6652ac615b0aea0329f7e381ca",
+    "rc_heap_76885d8ba89d2be1fa3724cd.py": "26cc0d593581dd6ce068115793bbfdcbf1023c2e5963d9416c4559bfc6ee80a2",
+    "rc_heap_b3a9bfa1769a9e7651c5e8a3.py": "c4bdb78600365dbbd5c627585c9da6ccefa475f53c7f154b79dfa7001d98d56d",
+    "rc_heap_cc640ec9e29e6464b99a6ead.py": "d8225e5a0acc7e273d93af0df0223a773f05e6d9aac654ca752626a7320a6a39",
+    "rc_heap_e108b176528cc6fcedb2027d.py": "0bec3141164e1538fb6798932dd26423f4da968aca81bc4d4a48fe07909c4ee4",
+    "rc_heap_e1608e92092c158d0062c70d.py": "a2f33cf69430461eadd844470bc8964abe125a29cbf1fd42644dbf49297be705",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

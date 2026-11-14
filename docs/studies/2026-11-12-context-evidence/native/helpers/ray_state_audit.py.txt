@@ -1,0 +1,63 @@
+"""Untimed exact30000byte/type/dimension/mutable-array identity and native audit."""
+import argparse
+import ast
+import hashlib
+import json
+from pathlib import Path
+import sys
+import types
+import audit
+
+def canvas_state(canvas):
+    raw=canvas.bytes.tobytes()
+    return {'bytes_hex':raw.hex(),'bytes_sha256':hashlib.sha256(raw).hexdigest(),'byte_count':len(raw),
+        'array_type':type(canvas.bytes).__module__+'.'+type(canvas.bytes).__qualname__,
+        'array_typecode':canvas.bytes.typecode,'array_itemsize':canvas.bytes.itemsize,
+        'canvas_type':type(canvas).__module__+'.'+type(canvas).__qualname__,
+        'width':canvas.width,'height':canvas.height,'width_type':type(canvas.width).__name__,'height_type':type(canvas.height).__name__}
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--script',type=Path,required=True);p.add_argument('--plan',type=Path);p.add_argument('--expected-source',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+    observed=[]
+    def wrap(fn):
+        def call(scene,canvas,*v,**kw):
+            original=canvas.bytes;before=canvas_state(canvas)
+            result=fn(scene,canvas,*v,**kw)
+            observed.append({'before':before,'after':canvas_state(canvas),'same_array_object':canvas.bytes is original,'return_type':type(result).__name__})
+            return result
+        return call
+    evidence=None
+    if a.plan:
+        from recompyler import heap,runner
+        if a.expected_source and any(not Path(mod.__file__).resolve().is_relative_to(a.expected_source.resolve()/'src') for mod in (heap,runner)):
+            raise RuntimeError('Ray audit imported outside frozen requested compiler source.')
+        from recompyler.lift import Lifted
+        from recompyler.aot import AotLifted
+        observer=audit.Auditor();observer.patch_region(heap.Region);observer.patch_lifted(Lifted,AotLifted)
+        oldcall=heap.Region.__call__;oldtypes=runner.types;captured=[]
+        def make_module(*v,**kw):
+            module=types.ModuleType(*v,**kw);captured.append(module);return module
+        def call(region,*v,**kw):
+            if region.original.__qualname__=='Scene.render':return wrap(lambda *v,**kw:oldcall(region,*v,**kw))(*v,**kw)
+            return oldcall(region,*v,**kw)
+        heap.Region.__call__=call;runner.types=types.SimpleNamespace(ModuleType=make_module)
+        try:
+            report=runner.run_script(a.script.resolve(),['1'],a.plan.resolve(),True);namespace=captured[-1].__dict__
+        finally:
+            evidence=observer.result();observer.restore();heap.Region.__call__=oldcall;runner.types=oldtypes
+        evidence.update(runner=report,numba_imported='numba' in sys.modules)
+    else:
+        tree=ast.parse(a.script.read_text())
+        for cls in tree.body:
+            if isinstance(cls,ast.ClassDef) and cls.name=='Scene':
+                for fn in cls.body:
+                    if isinstance(fn,ast.FunctionDef) and fn.name=='render':fn.decorator_list.insert(0,ast.copy_location(ast.Name(id='__canvas_wrap__',ctx=ast.Load()),fn))
+        module=types.ModuleType('__main__');namespace=module.__dict__;namespace.update(__file__=str(a.script.resolve()),__canvas_wrap__=wrap)
+        oldmain,oldargv=sys.modules['__main__'],sys.argv;sys.modules['__main__'],sys.argv=module,[str(a.script),'1']
+        try:exec(compile(ast.fix_missing_locations(tree),str(a.script.resolve()),'exec'),namespace)
+        finally:sys.modules['__main__'],sys.argv=oldmain,oldargv
+    result={'timing_eligible':False,'final':canvas_state(namespace['_canvas']),'observed':observed,'mode_evidence':evidence}
+    a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(result,indent=2)+'\n')
+    if len(observed)!=1 or not observed[0]['same_array_object'] or result['final']['byte_count']!=30000:raise SystemExit('Raytrace state/identity audit failed; preserved.')
+
+if __name__=='__main__':main()

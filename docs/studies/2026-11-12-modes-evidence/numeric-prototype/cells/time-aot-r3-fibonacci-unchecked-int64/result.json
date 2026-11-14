@@ -1,0 +1,672 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "unchecked-int64",
+  "function": "fibonacci",
+  "task": "time-aot",
+  "contract": {
+    "n": [
+      0,
+      80
+    ]
+  },
+  "corpus_count": 81,
+  "expected_results_sha256": "a8e29982451912a80ff9466a6a4630cd90a30305544a5de79841ce5042599f6c",
+  "valid_exact_results": true,
+  "construction_s": 0.2935390000056941,
+  "first_call_s": 0.0013137000059941784,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 1,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 1,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 81,
+    "aot_calls": 81,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 81,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "fibonacci",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "04d31e40e4e6dc61337c3e2e39e015c1d76241cb0199f6b40cb26e80f8a18344",
+    "function_bytecode_sha256": "3be6f8b101655e687df46a1c67db5226839d397b34c52a14866c6e92984a5b80",
+    "selected_mode": "unchecked-int64",
+    "identity": "3d6c70b4cb675f5082f47a75abb955387e425c3822fa9af42b0d1fd8f7237d88",
+    "contract": "IntIntervals(_items=(('n', (0, 80)),))",
+    "proof_certificates": "()",
+    "problem": null,
+    "policy_metadata": {
+      "certificates": [],
+      "contract": [
+        [
+          "n",
+          [
+            0,
+            80
+          ]
+        ]
+      ],
+      "implementation": "c681942f89604e42708e20fac650baa7813f2be9c1f9b8164a463e135035e3b5",
+      "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+      "max_trips": 1024,
+      "mode": "unchecked-int64",
+      "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+      "origin": "93fbc39333366ed0426df7e215280b2e6565dbc79b7187333927a095375499ae",
+      "proof": 1,
+      "schema": 1
+    },
+    "program_digest": "3d36deac3a8cae31652c24de249ff57bd31092f1313e44ddbb25ea31a1db51be",
+    "program_cached": true,
+    "program_ahead_of_time": true,
+    "entry_name": "f0_fibonacci",
+    "program_source_sha256": "8bd77155570d003a5ee0fb77ab42a0074fdcf516a75caa34816f15eddfebc373",
+    "dispatcher_module": "rcnumeric_3d36deac3a8cae31652c24de",
+    "dispatcher_qualname": "_Closure.entry",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": false,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "samples": [
+    {
+      "elapsed_ns": 6379300,
+      "calls": 648,
+      "checksum_uint64": 490446325772892720
+    },
+    {
+      "elapsed_ns": 6678000,
+      "calls": 648,
+      "checksum_uint64": 490446325772892720
+    },
+    {
+      "elapsed_ns": 5907000,
+      "calls": 648,
+      "checksum_uint64": 490446325772892720
+    }
+  ],
+  "median_ns": 6379300,
+  "timing_counts": {
+    "compiled_calls": 1944,
+    "aot_calls": 1944,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 1944,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "boundary": "complete-Python-call-plus-all-return-integer-sum",
+  "aot_selection": {
+    "program_digest": "3d36deac3a8cae31652c24de249ff57bd31092f1313e44ddbb25ea31a1db51be",
+    "export": "entry",
+    "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\aot\\unchecked-int64\\fibonacci\\rcnumeric_3d36deac3a8cae31652c24de.cp314-win_amd64.pyd",
+    "binary_sha256": "94e9ef27261d11dbffd11d98d314cfac0f9f990d0e3b3cde332f68e3fd5b25db",
+    "runtime_wrapper_address": 140722217554112,
+    "runtime_module_base": 140722217549824,
+    "runtime_wrapper_rva": 4288,
+    "static_mapping": {
+      "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\aot\\unchecked-int64\\fibonacci\\rcnumeric_3d36deac3a8cae31652c24de.cp314-win_amd64.pyd",
+      "binary_sha256": "94e9ef27261d11dbffd11d98d314cfac0f9f990d0e3b3cde332f68e3fd5b25db",
+      "export": "entry",
+      "preferred_base": 6442450944,
+      "method_rva": 4288,
+      "function_address": 6442455232,
+      "method_definition_rva": 40960,
+      "flags": 3,
+      "sections": [
+        {
+          "name": ".text",
+          "size": 11048,
+          "rva": 4096,
+          "raw_size": 11264,
+          "offset": 1024,
+          "executable": true
+        },
+        {
+          "name": ".rdata",
+          "size": 23762,
+          "rva": 16384,
+          "raw_size": 24064,
+          "offset": 12288,
+          "executable": false
+        },
+        {
+          "name": ".data",
+          "size": 3192,
+          "rva": 40960,
+          "raw_size": 2560,
+          "offset": 36352,
+          "executable": false
+        },
+        {
+          "name": ".pdata",
+          "size": 1044,
+          "rva": 45056,
+          "raw_size": 1536,
+          "offset": 38912,
+          "executable": false
+        },
+        {
+          "name": ".rsrc",
+          "size": 248,
+          "rva": 49152,
+          "raw_size": 512,
+          "offset": 40448,
+          "executable": false
+        },
+        {
+          "name": ".reloc",
+          "size": 184,
+          "rva": 53248,
+          "raw_size": 512,
+          "offset": 40960,
+          "executable": false
+        }
+      ],
+      "unwind_ranges": [
+        {
+          "begin_rva": 4288,
+          "end_rva": 5059,
+          "unwind_rva": 36704
+        },
+        {
+          "begin_rva": 5120,
+          "end_rva": 5203,
+          "unwind_rva": 36724
+        },
+        {
+          "begin_rva": 5216,
+          "end_rva": 5309,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 5312,
+          "end_rva": 5401,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5408,
+          "end_rva": 5514,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5520,
+          "end_rva": 5693,
+          "unwind_rva": 36136
+        },
+        {
+          "begin_rva": 5696,
+          "end_rva": 5789,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 5792,
+          "end_rva": 5918,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5920,
+          "end_rva": 5949,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5949,
+          "end_rva": 5996,
+          "unwind_rva": 36144
+        },
+        {
+          "begin_rva": 5996,
+          "end_rva": 6021,
+          "unwind_rva": 36164
+        },
+        {
+          "begin_rva": 6064,
+          "end_rva": 6147,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6160,
+          "end_rva": 6263,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 6272,
+          "end_rva": 6322,
+          "unwind_rva": 36196
+        },
+        {
+          "begin_rva": 6322,
+          "end_rva": 6357,
+          "unwind_rva": 36204
+        },
+        {
+          "begin_rva": 6357,
+          "end_rva": 6408,
+          "unwind_rva": 36224
+        },
+        {
+          "begin_rva": 6416,
+          "end_rva": 6478,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6480,
+          "end_rva": 6606,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6608,
+          "end_rva": 6723,
+          "unwind_rva": 36244
+        },
+        {
+          "begin_rva": 6736,
+          "end_rva": 6787,
+          "unwind_rva": 36256
+        },
+        {
+          "begin_rva": 6816,
+          "end_rva": 6841,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 6864,
+          "end_rva": 6935,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 7024,
+          "end_rva": 7061,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 7072,
+          "end_rva": 7136,
+          "unwind_rva": 36272
+        },
+        {
+          "begin_rva": 7136,
+          "end_rva": 7213,
+          "unwind_rva": 36284
+        },
+        {
+          "begin_rva": 7213,
+          "end_rva": 7326,
+          "unwind_rva": 36308
+        },
+        {
+          "begin_rva": 7328,
+          "end_rva": 7683,
+          "unwind_rva": 36328
+        },
+        {
+          "begin_rva": 7696,
+          "end_rva": 9435,
+          "unwind_rva": 36344
+        },
+        {
+          "begin_rva": 9472,
+          "end_rva": 9647,
+          "unwind_rva": 36328
+        },
+        {
+          "begin_rva": 9648,
+          "end_rva": 9664,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 9664,
+          "end_rva": 9716,
+          "unwind_rva": 36368
+        },
+        {
+          "begin_rva": 9716,
+          "end_rva": 9746,
+          "unwind_rva": 36388
+        },
+        {
+          "begin_rva": 9856,
+          "end_rva": 9993,
+          "unwind_rva": 36404
+        },
+        {
+          "begin_rva": 10000,
+          "end_rva": 10055,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 10064,
+          "end_rva": 10124,
+          "unwind_rva": 36420
+        },
+        {
+          "begin_rva": 10124,
+          "end_rva": 10172,
+          "unwind_rva": 36432
+        },
+        {
+          "begin_rva": 10172,
+          "end_rva": 10183,
+          "unwind_rva": 36452
+        },
+        {
+          "begin_rva": 10192,
+          "end_rva": 10267,
+          "unwind_rva": 36468
+        },
+        {
+          "begin_rva": 10267,
+          "end_rva": 10324,
+          "unwind_rva": 36480
+        },
+        {
+          "begin_rva": 10324,
+          "end_rva": 10409,
+          "unwind_rva": 36500
+        },
+        {
+          "begin_rva": 10409,
+          "end_rva": 10443,
+          "unwind_rva": 36520
+        },
+        {
+          "begin_rva": 10443,
+          "end_rva": 10464,
+          "unwind_rva": 36536
+        },
+        {
+          "begin_rva": 10464,
+          "end_rva": 10637,
+          "unwind_rva": 36556
+        },
+        {
+          "begin_rva": 10640,
+          "end_rva": 10683,
+          "unwind_rva": 36572
+        },
+        {
+          "begin_rva": 10683,
+          "end_rva": 10887,
+          "unwind_rva": 36588
+        },
+        {
+          "begin_rva": 10887,
+          "end_rva": 10908,
+          "unwind_rva": 36612
+        },
+        {
+          "begin_rva": 10908,
+          "end_rva": 11033,
+          "unwind_rva": 36632
+        },
+        {
+          "begin_rva": 11033,
+          "end_rva": 11059,
+          "unwind_rva": 36652
+        },
+        {
+          "begin_rva": 11059,
+          "end_rva": 11137,
+          "unwind_rva": 36668
+        },
+        {
+          "begin_rva": 11137,
+          "end_rva": 11154,
+          "unwind_rva": 36684
+        },
+        {
+          "begin_rva": 11280,
+          "end_rva": 11392,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11392,
+          "end_rva": 11542,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 11568,
+          "end_rva": 11679,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11680,
+          "end_rva": 11809,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11856,
+          "end_rva": 11969,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 12048,
+          "end_rva": 12078,
+          "unwind_rva": 36736
+        },
+        {
+          "begin_rva": 12080,
+          "end_rva": 12160,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 12160,
+          "end_rva": 12438,
+          "unwind_rva": 36740
+        },
+        {
+          "begin_rva": 12440,
+          "end_rva": 12571,
+          "unwind_rva": 36808
+        },
+        {
+          "begin_rva": 12572,
+          "end_rva": 12868,
+          "unwind_rva": 36892
+        },
+        {
+          "begin_rva": 12868,
+          "end_rva": 12929,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 12940,
+          "end_rva": 13115,
+          "unwind_rva": 36940
+        },
+        {
+          "begin_rva": 13116,
+          "end_rva": 13151,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13188,
+          "end_rva": 13215,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13216,
+          "end_rva": 13273,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13276,
+          "end_rva": 13328,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13328,
+          "end_rva": 13349,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13352,
+          "end_rva": 13392,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13392,
+          "end_rva": 13413,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13416,
+          "end_rva": 13512,
+          "unwind_rva": 36992
+        },
+        {
+          "begin_rva": 13512,
+          "end_rva": 13560,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13560,
+          "end_rva": 13580,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13580,
+          "end_rva": 13638,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13640,
+          "end_rva": 13779,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 13780,
+          "end_rva": 13932,
+          "unwind_rva": 36952
+        },
+        {
+          "begin_rva": 13932,
+          "end_rva": 13968,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 13968,
+          "end_rva": 14009,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 14028,
+          "end_rva": 14088,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 14088,
+          "end_rva": 14148,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 14152,
+          "end_rva": 14819,
+          "unwind_rva": 37012
+        },
+        {
+          "begin_rva": 14960,
+          "end_rva": 14962,
+          "unwind_rva": 37032
+        },
+        {
+          "begin_rva": 14992,
+          "end_rva": 14998,
+          "unwind_rva": 37040
+        },
+        {
+          "begin_rva": 14998,
+          "end_rva": 15021,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15021,
+          "end_rva": 15046,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15046,
+          "end_rva": 15066,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15066,
+          "end_rva": 15120,
+          "unwind_rva": 36932
+        },
+        {
+          "begin_rva": 15120,
+          "end_rva": 15144,
+          "unwind_rva": 36984
+        }
+      ],
+      "note": "Static candidate becomes selected only when actual successful-call digest/export and runtime RVA agree."
+    },
+    "actual_wrapper_counts_after_cell": {
+      "compiled_calls": 2026,
+      "aot_calls": 2026,
+      "jit_calls": 0,
+      "fallback_calls": 0,
+      "contract_native_calls": 2026,
+      "guard_misses": 0,
+      "representation_rejections": 0,
+      "loop_limit_rejections": 0,
+      "native_failures": 0,
+      "foreign_calls": 0
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 2026,
+    "aot_calls": 2026,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 2026,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_272a2580db4628ec9a7dd061.f0_recurrence_1-586.py314.1.nbc": "a37ad6ffcfe40471208b0cb6c752b2ee8e772ee7b6b2186f6297a6e853afca66",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_272a2580db4628ec9a7dd061.f0_recurrence_1-586.py314.nbi": "22e6ed30dd648648b42c25297c4fc21590360d353f9fff5bce8d1abed307a6e4",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_90b0c6f3cf785308b7ee93d3.f0_loop_recurrence16-586.py314.1.nbc": "3e37874dd5cb2dbe0c0597c16667cfdcbded77a2be9bfd9a16bd9bc11ae11259",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_90b0c6f3cf785308b7ee93d3.f0_loop_recurrence16-586.py314.nbi": "3b14581a81a558afe4e6ddceb27e70ebb7cbcc04a33f86087a501c076ba48565",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_a39a8e178a9a302942ae2ac2.f0_recurrence_16-586.py314.1.nbc": "57b0f5f4449a9a9b1a0053a6c0e9eb7ec262c47c979218196e94e90aeeb74a36",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_a39a8e178a9a302942ae2ac2.f0_recurrence_16-586.py314.nbi": "bfd808dfbffc5ef1e83a46927eacf34f0c41a69547fd9c6f43deca662a1ba4f9",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_dc0a616c86c4f17f273ddd82.f0_recurrence_64-586.py314.1.nbc": "c554a8714974086d0ea7ed7a9b95c0a43e894fca3563d1f0866a68d0cabd919c",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_dc0a616c86c4f17f273ddd82.f0_recurrence_64-586.py314.nbi": "2fa0227cbd6700987a701c039bc09e3a2a1cedd8221597458379d342ebb617f8",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_fd62efb1f1d505f678775a81.f0_fibonacci-586.py314.1.nbc": "868c0b380036b8c1e1e45975fbabc09db2c0acd20e46ae6049ca16446df3c7ae",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_fd62efb1f1d505f678775a81.f0_fibonacci-586.py314.nbi": "6814ab367199fb049a28dcab30040e2a9e8d4966b072435b16a27fe58579de3f",
+    "rc_heap_272a2580db4628ec9a7dd061.py": "dc6c1b1682252182c515b19aa8dfe7f37d79587f81a9604026f8de13299f6e62",
+    "rc_heap_90b0c6f3cf785308b7ee93d3.py": "e094624fa9fa83ff7e476ad000068cf99fa3cad2aa1d0ade9bc7a2c6652aa4ab",
+    "rc_heap_a39a8e178a9a302942ae2ac2.py": "add67654d042986e844dff5e8609b2ce035d568f6b82a8d86fee2a9b7a0e1d9c",
+    "rc_heap_dc0a616c86c4f17f273ddd82.py": "de473d8abc5f8c5c745aff9842e8dbabdd21fc3b665e93d16e2c49b66af9b86e",
+    "rc_heap_fd62efb1f1d505f678775a81.py": "6a8826fa0b930ddded6ae4f3ea98926bb6dac045ba57f60f415c633ff3c743ea",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

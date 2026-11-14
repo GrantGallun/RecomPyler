@@ -1,0 +1,287 @@
+.....F                                                             [100%]
+================================== FAILURES ===================================
+_ FastBindingTests.test_actual_native_positional_calls_do_not_construct_signatures (mode='checked') _
+
+self = <test_experimental_numeric.FastBindingTests testMethod=test_actual_native_positional_calls_do_not_construct_signatures>
+
+    def test_actual_native_positional_calls_do_not_construct_signatures(self):
+        from unittest.mock import patch
+        contract = self.contract(x=(-20, 20), y=(-20, 20), z=(-20, 20))
+        for mode in ("checked", "unchecked-int64"):
+            region = self.api.lift_numeric(mul_add, mode=mode, contract=contract)
+            self.assertEqual(region(3, -4, 5), -7)
+            with self.subTest(mode=mode), patch.object(self.api.inspect, "Signature", wraps=inspect.Signature) as construction:
+                self.assertEqual(region(4, 2, 1), 9)
+                self.assertEqual(region.attempt((1, 2, 3), {}), (True, 5))
+>               construction.assert_not_called()
+
+tests\test_experimental_numeric.py:659: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Signature' id='2434371307568'>
+
+    def assert_not_called(self):
+        """assert that the mock was never called.
+        """
+        if self.call_count != 0:
+            msg = ("Expected '%s' to not have been called. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'Signature' to not have been called. Called 2 times.
+E           Calls: [call([<Parameter "x">, <Parameter "y">, <Parameter "z">]),
+E            call([<Parameter "x">, <Parameter "y">, <Parameter "z">])].
+
+C:\Python314\Lib\unittest\mock.py:947: AssertionError
+_ FastBindingTests.test_actual_native_positional_calls_do_not_construct_signatures (mode='unchecked-int64') _
+
+self = <test_experimental_numeric.FastBindingTests testMethod=test_actual_native_positional_calls_do_not_construct_signatures>
+
+    def test_actual_native_positional_calls_do_not_construct_signatures(self):
+        from unittest.mock import patch
+        contract = self.contract(x=(-20, 20), y=(-20, 20), z=(-20, 20))
+        for mode in ("checked", "unchecked-int64"):
+            region = self.api.lift_numeric(mul_add, mode=mode, contract=contract)
+            self.assertEqual(region(3, -4, 5), -7)
+            with self.subTest(mode=mode), patch.object(self.api.inspect, "Signature", wraps=inspect.Signature) as construction:
+                self.assertEqual(region(4, 2, 1), 9)
+                self.assertEqual(region.attempt((1, 2, 3), {}), (True, 5))
+>               construction.assert_not_called()
+
+tests\test_experimental_numeric.py:659: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Signature' id='2434370306128'>
+
+    def assert_not_called(self):
+        """assert that the mock was never called.
+        """
+        if self.call_count != 0:
+            msg = ("Expected '%s' to not have been called. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'Signature' to not have been called. Called 2 times.
+E           Calls: [call([<Parameter "x">, <Parameter "y">, <Parameter "z">]),
+E            call([<Parameter "x">, <Parameter "y">, <Parameter "z">])].
+
+C:\Python314\Lib\unittest\mock.py:947: AssertionError
+_ FastBindingTests.test_positional_binding_reads_live_and_oversized_defaults_without_subclass_hooks (mode='checked') _
+
+self = <test_experimental_numeric.FastBindingTests testMethod=test_positional_binding_reads_live_and_oversized_defaults_without_subclass_hooks>
+
+    def test_positional_binding_reads_live_and_oversized_defaults_without_subclass_hooks(self):
+        from unittest.mock import patch
+        class HookedDefaults(tuple):
+            def __len__(self):
+                raise AssertionError("default tuple length hook ran")
+            def __getitem__(self, index):
+                raise AssertionError("default tuple indexing hook ran")
+            def __iter__(self):
+                raise AssertionError("default tuple iteration hook ran")
+            def __bool__(self):
+                raise AssertionError("default tuple truth hook ran")
+        contract = self.contract(x=(-100, 100), y=(-100, 100), z=(-100, 100))
+        original = positional_defaults.__defaults__
+        try:
+            for mode in ("checked", "unchecked-int64"):
+                positional_defaults.__defaults__ = (2, 3)
+                region = self.api.lift_numeric(positional_defaults, mode=mode, contract=contract)
+                self.assertEqual(region(4), 11)
+                positional_defaults.__defaults__ = HookedDefaults((100, 6, 7, 8))
+                with self.subTest(mode=mode), patch.object(self.api.inspect, "Signature", wraps=inspect.Signature) as construction:
+                    self.assertEqual(region(), 50)
+                    self.assertEqual(region(1), 15)
+                    self.assertEqual(region(1, 2), 10)
+>                   construction.assert_not_called()
+
+tests\test_experimental_numeric.py:687: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Signature' id='2434371320000'>
+
+    def assert_not_called(self):
+        """assert that the mock was never called.
+        """
+        if self.call_count != 0:
+            msg = ("Expected '%s' to not have been called. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'Signature' to not have been called. Called 3 times.
+E           Calls: [call([<Parameter "x=6">, <Parameter "y=7">, <Parameter "z=8">]),
+E            call([<Parameter "x=6">, <Parameter "y=7">, <Parameter "z=8">]),
+E            call([<Parameter "x=6">, <Parameter "y=7">, <Parameter "z=8">])].
+
+C:\Python314\Lib\unittest\mock.py:947: AssertionError
+_ FastBindingTests.test_positional_binding_reads_live_and_oversized_defaults_without_subclass_hooks (mode='unchecked-int64') _
+
+self = <test_experimental_numeric.FastBindingTests testMethod=test_positional_binding_reads_live_and_oversized_defaults_without_subclass_hooks>
+
+    def test_positional_binding_reads_live_and_oversized_defaults_without_subclass_hooks(self):
+        from unittest.mock import patch
+        class HookedDefaults(tuple):
+            def __len__(self):
+                raise AssertionError("default tuple length hook ran")
+            def __getitem__(self, index):
+                raise AssertionError("default tuple indexing hook ran")
+            def __iter__(self):
+                raise AssertionError("default tuple iteration hook ran")
+            def __bool__(self):
+                raise AssertionError("default tuple truth hook ran")
+        contract = self.contract(x=(-100, 100), y=(-100, 100), z=(-100, 100))
+        original = positional_defaults.__defaults__
+        try:
+            for mode in ("checked", "unchecked-int64"):
+                positional_defaults.__defaults__ = (2, 3)
+                region = self.api.lift_numeric(positional_defaults, mode=mode, contract=contract)
+                self.assertEqual(region(4), 11)
+                positional_defaults.__defaults__ = HookedDefaults((100, 6, 7, 8))
+                with self.subTest(mode=mode), patch.object(self.api.inspect, "Signature", wraps=inspect.Signature) as construction:
+                    self.assertEqual(region(), 50)
+                    self.assertEqual(region(1), 15)
+                    self.assertEqual(region(1, 2), 10)
+>                   construction.assert_not_called()
+
+tests\test_experimental_numeric.py:687: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Signature' id='2434393900768'>
+
+    def assert_not_called(self):
+        """assert that the mock was never called.
+        """
+        if self.call_count != 0:
+            msg = ("Expected '%s' to not have been called. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'Signature' to not have been called. Called 3 times.
+E           Calls: [call([<Parameter "x=6">, <Parameter "y=7">, <Parameter "z=8">]),
+E            call([<Parameter "x=6">, <Parameter "y=7">, <Parameter "z=8">]),
+E            call([<Parameter "x=6">, <Parameter "y=7">, <Parameter "z=8">])].
+
+C:\Python314\Lib\unittest\mock.py:947: AssertionError
+_ FastBindingTests.test_positional_guard_misses_and_arity_checks_do_not_construct_signatures (mode='checked') _
+
+self = <test_experimental_numeric.FastBindingTests testMethod=test_positional_guard_misses_and_arity_checks_do_not_construct_signatures>
+
+    def test_positional_guard_misses_and_arity_checks_do_not_construct_signatures(self):
+        from unittest.mock import patch
+        contract = self.contract(x=(-2, 2), y=(-2, 2), z=(-2, 2))
+        for mode in ("checked", "unchecked-int64"):
+            region = self.api.lift_numeric(mul_add, mode=mode, contract=contract)
+            cases = (((), None), ((1, 2, 3, 4), {}), ((True, 1, 1), None), ((2**80, 1, 1), {}))
+            with self.subTest(mode=mode), patch.object(self.api.inspect, "Signature", wraps=inspect.Signature) as construction:
+                for args, kwargs in cases:
+                    if mode == "checked":
+                        self.assertEqual(region.attempt(args, kwargs), (False, None))
+                    else:
+                        with self.assertRaises(self.api.NumericContractError):
+                            region.attempt(args, kwargs)
+>               construction.assert_not_called()
+
+tests\test_experimental_numeric.py:646: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Signature' id='2433330021776'>
+
+    def assert_not_called(self):
+        """assert that the mock was never called.
+        """
+        if self.call_count != 0:
+            msg = ("Expected '%s' to not have been called. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'Signature' to not have been called. Called 4 times.
+E           Calls: [call([<Parameter "x">, <Parameter "y">, <Parameter "z">]),
+E            call([<Parameter "x">, <Parameter "y">, <Parameter "z">]),
+E            call([<Parameter "x">, <Parameter "y">, <Parameter "z">]),
+E            call([<Parameter "x">, <Parameter "y">, <Parameter "z">])].
+
+C:\Python314\Lib\unittest\mock.py:947: AssertionError
+_ FastBindingTests.test_positional_guard_misses_and_arity_checks_do_not_construct_signatures (mode='unchecked-int64') _
+
+self = <test_experimental_numeric.FastBindingTests testMethod=test_positional_guard_misses_and_arity_checks_do_not_construct_signatures>
+
+    def test_positional_guard_misses_and_arity_checks_do_not_construct_signatures(self):
+        from unittest.mock import patch
+        contract = self.contract(x=(-2, 2), y=(-2, 2), z=(-2, 2))
+        for mode in ("checked", "unchecked-int64"):
+            region = self.api.lift_numeric(mul_add, mode=mode, contract=contract)
+            cases = (((), None), ((1, 2, 3, 4), {}), ((True, 1, 1), None), ((2**80, 1, 1), {}))
+            with self.subTest(mode=mode), patch.object(self.api.inspect, "Signature", wraps=inspect.Signature) as construction:
+                for args, kwargs in cases:
+                    if mode == "checked":
+                        self.assertEqual(region.attempt(args, kwargs), (False, None))
+                    else:
+                        with self.assertRaises(self.api.NumericContractError):
+                            region.attempt(args, kwargs)
+>               construction.assert_not_called()
+
+tests\test_experimental_numeric.py:646: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Signature' id='2434393901104'>
+
+    def assert_not_called(self):
+        """assert that the mock was never called.
+        """
+        if self.call_count != 0:
+            msg = ("Expected '%s' to not have been called. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'Signature' to not have been called. Called 4 times.
+E           Calls: [call([<Parameter "x">, <Parameter "y">, <Parameter "z">]),
+E            call([<Parameter "x">, <Parameter "y">, <Parameter "z">]),
+E            call([<Parameter "x">, <Parameter "y">, <Parameter "z">]),
+E            call([<Parameter "x">, <Parameter "y">, <Parameter "z">])].
+
+C:\Python314\Lib\unittest\mock.py:947: AssertionError
+_ FastBindingTests.test_positional_only_calls_bind_natively_and_keep_python_keyword_errors _
+
+self = <test_experimental_numeric.FastBindingTests testMethod=test_positional_only_calls_bind_natively_and_keep_python_keyword_errors>
+
+    def test_positional_only_calls_bind_natively_and_keep_python_keyword_errors(self):
+        from unittest.mock import patch
+        checked = self.api.lift_numeric(positional_only, mode="checked", contract=self.contract(x=(-10, 10), y=(-10, 10)))
+        self.assertEqual(checked(3), 5)
+        with patch.object(self.api.inspect, "Signature", wraps=inspect.Signature) as construction:
+            self.assertEqual(checked(3, 4), 7)
+>           construction.assert_not_called()
+
+tests\test_experimental_numeric.py:698: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <MagicMock name='Signature' id='2434393904464'>
+
+    def assert_not_called(self):
+        """assert that the mock was never called.
+        """
+        if self.call_count != 0:
+            msg = ("Expected '%s' to not have been called. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'Signature' to not have been called. Called 1 times.
+E           Calls: [call([<Parameter "x">, <Parameter "y=2">])].
+
+C:\Python314\Lib\unittest\mock.py:947: AssertionError
+=========================== short test summary info ===========================
+SUBFAILED(mode='checked') tests/test_experimental_numeric.py::FastBindingTests::test_actual_native_positional_calls_do_not_construct_signatures
+SUBFAILED(mode='unchecked-int64') tests/test_experimental_numeric.py::FastBindingTests::test_actual_native_positional_calls_do_not_construct_signatures
+SUBFAILED(mode='checked') tests/test_experimental_numeric.py::FastBindingTests::test_positional_binding_reads_live_and_oversized_defaults_without_subclass_hooks
+SUBFAILED(mode='unchecked-int64') tests/test_experimental_numeric.py::FastBindingTests::test_positional_binding_reads_live_and_oversized_defaults_without_subclass_hooks
+SUBFAILED(mode='checked') tests/test_experimental_numeric.py::FastBindingTests::test_positional_guard_misses_and_arity_checks_do_not_construct_signatures
+SUBFAILED(mode='unchecked-int64') tests/test_experimental_numeric.py::FastBindingTests::test_positional_guard_misses_and_arity_checks_do_not_construct_signatures
+FAILED tests/test_experimental_numeric.py::FastBindingTests::test_positional_only_calls_bind_natively_and_keep_python_keyword_errors
+7 failed, 5 passed, 43 deselected in 2.17s

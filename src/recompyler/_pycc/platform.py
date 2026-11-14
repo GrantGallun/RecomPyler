@@ -4,12 +4,12 @@ from setuptools.dist import Distribution
 import numpy as np
 
 import functools
+import hashlib
 import os
 import subprocess
 import sys
-from tempfile import mkdtemp
+from tempfile import TemporaryDirectory
 from contextlib import contextmanager
-from pathlib import Path
 
 # Wire in distutils components from setuptools
 CCompiler =  setuptools.distutils.ccompiler.CCompiler
@@ -36,25 +36,50 @@ find_pyext_ending = functools.partial(get_configs, 1)
 def _gentmpfile(suffix):
     # windows locks the tempfile so use a tempdir + file, see
     # https://github.com/numba/numba/issues/3304
+    with TemporaryDirectory() as tmpdir:
+        with open(os.path.join(tmpdir, "temp%s" % suffix), 'wt') as ntf:
+            yield ntf
+
+
+def _compile_objects(compiler, sources, output_dir, **options):
+    """Keep object names relative without moving sources or changing cwd.
+
+    Some distutils MSVC versions strip a source's drive but retain its root,
+    causing object_filenames() to discard output_dir. Give that method only
+    relative names; compile() must still receive the original source paths so
+    quoted includes, diagnostics, and dependency handling retain their meaning.
+    Hash the full source path (including extension) to distinguish equal stems
+    in different directories, on different drives, or in C and C++ sources.
+    """
+    original = compiler.object_filenames
+    previous = compiler.__dict__.get('object_filenames')
+    had_override = 'object_filenames' in compiler.__dict__
+
+    def object_filenames(source_filenames, strip_dir=False, output_dir=''):
+        relative = []
+        for source in source_filenames:
+            identity = os.path.normcase(os.path.abspath(source))
+            digest = hashlib.sha256(os.fsencode(identity)).hexdigest()
+            relative.append('_pycc_' + digest + os.path.splitext(source)[1])
+        return original(relative, strip_dir=strip_dir, output_dir=output_dir)
+
+    # Scope the override to this compiler instance and this call. Never patch
+    # setuptools globally, stage installed sources, or change process cwd.
+    compiler.object_filenames = object_filenames
     try:
-        tmpdir = mkdtemp()
-        ntf = open(os.path.join(tmpdir, "temp%s" % suffix), 'wt')
-        yield ntf
+        return compiler.compile(sources, output_dir=output_dir, **options)
     finally:
-        try:
-            ntf.close()
-            os.remove(ntf)
-        except Exception:
-            pass
+        if had_override:
+            compiler.object_filenames = previous
         else:
-            os.rmdir(tmpdir)
+            del compiler.object_filenames
 
 
 @functools.lru_cache(maxsize=1)
 def external_compiler_works():
     """
-    Returns True if the "external compiler" bound in numpy.distutil is present
-    and working, False otherwise.
+    Returns True if the configured C and C++ compiler is present and working,
+    False otherwise.
     """
     compiler = new_compiler()
     customize_compiler(compiler)
@@ -67,7 +92,8 @@ def external_compiler_works():
                 ntf.close()
                 # *output_dir* is set to avoid the compiler putting temp files
                 # in the current directory.
-                compiler.compile([ntf.name], output_dir=Path(ntf.name).anchor)
+                _compile_objects(compiler, [ntf.name],
+                                 output_dir=os.path.dirname(ntf.name))
         except Exception: # likely CompileError or file system issue
             return False
     return True
@@ -143,12 +169,11 @@ class Toolchain(object):
         If a 2-tuple (name, value), the given name is expanded into the
         given value by the C preprocessor.
         """
-        objects = self._compiler.compile(sources,
-                                         output_dir=output_dir,
-                                         include_dirs=include_dirs,
-                                         depends=depends,
-                                         macros=macros or [],
-                                         extra_preargs=extra_cflags)
+        objects = _compile_objects(self._compiler, sources, output_dir,
+                                   include_dirs=include_dirs,
+                                   depends=depends,
+                                   macros=macros or [],
+                                   extra_preargs=extra_cflags)
         return objects
 
     def link_shared(self, output, objects, libraries=(),

@@ -1,0 +1,102 @@
+{
+  "method": "Six repetitions; first excluded from warmed medians. Timers add overhead. Source/artifacts unchanged. Final energy is inside the original kernel timer.",
+  "report": {
+    "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+    "functions": [
+      {
+        "function": "advance_system",
+        "compiled_calls": 600,
+        "aot_calls": 600,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": true,
+        "ahead_of_time": true,
+        "aot_loaded": true,
+        "region": true
+      }
+    ],
+    "not_found": [],
+    "batches": {},
+    "batch_failures": {},
+    "exit_code": null
+  },
+  "repetitions": [
+    {
+      "load_ms": 9.9561,
+      "guards_ms": 0.7114,
+      "native_ms": 28.2818,
+      "writeback_ms": 3.4418,
+      "attempt_ms": 80.8304,
+      "energy_ms": 2.792,
+      "kernel_ms": 152.4074999979348,
+      "other_attempt_ms": 38.439299999999996,
+      "native_entries": 100
+    },
+    {
+      "load_ms": 9.3865,
+      "guards_ms": 0.6954,
+      "native_ms": 27.4435,
+      "writeback_ms": 3.248,
+      "attempt_ms": 45.0283,
+      "energy_ms": 2.8848,
+      "kernel_ms": 48.05029999988619,
+      "other_attempt_ms": 4.254899999999999,
+      "native_entries": 100
+    },
+    {
+      "load_ms": 9.4542,
+      "guards_ms": 0.697,
+      "native_ms": 27.3604,
+      "writeback_ms": 3.2936,
+      "attempt_ms": 45.0107,
+      "energy_ms": 2.5,
+      "kernel_ms": 47.65110000153072,
+      "other_attempt_ms": 4.205500000000001,
+      "native_entries": 100
+    },
+    {
+      "load_ms": 9.6766,
+      "guards_ms": 0.7541,
+      "native_ms": 28.1303,
+      "writeback_ms": 3.3731,
+      "attempt_ms": 46.2565,
+      "energy_ms": 2.5547,
+      "kernel_ms": 48.95740000210935,
+      "other_attempt_ms": 4.322400000000002,
+      "native_entries": 100
+    },
+    {
+      "load_ms": 9.035,
+      "guards_ms": 0.9073,
+      "native_ms": 27.3597,
+      "writeback_ms": 3.2844,
+      "attempt_ms": 44.7034,
+      "energy_ms": 2.5105,
+      "kernel_ms": 47.34960000496358,
+      "other_attempt_ms": 4.117000000000004,
+      "native_entries": 100
+    },
+    {
+      "load_ms": 11.1105,
+      "guards_ms": 0.8642,
+      "native_ms": 31.1931,
+      "writeback_ms": 3.9222,
+      "attempt_ms": 52.0416,
+      "energy_ms": 2.7827,
+      "kernel_ms": 55.010500000207685,
+      "other_attempt_ms": 4.951599999999999,
+      "native_entries": 100
+    }
+  ],
+  "warm_component_medians_ms": {
+    "load_ms": 9.4542,
+    "guards_ms": 0.7541,
+    "native_ms": 27.4435,
+    "writeback_ms": 3.2936,
+    "attempt_ms": 45.0283,
+    "energy_ms": 2.5547,
+    "kernel_ms": 48.05029999988619,
+    "other_attempt_ms": 4.254899999999999
+  },
+  "native_imported_numba": false
+}

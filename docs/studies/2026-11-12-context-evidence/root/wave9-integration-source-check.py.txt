@@ -1,0 +1,35 @@
+"""Align only verified text line endings and verify the merged candidate bytes."""
+import hashlib
+import json
+import subprocess
+from pathlib import Path
+
+root = Path(__file__).resolve().parent
+worker = root / 'wave9-inline-context-fix'
+integration = root / 'integration'
+freeze = json.loads((root / 'wave9-inline-context-analysis/candidate-freeze.json').read_text())
+sha = lambda data: hashlib.sha256(data).hexdigest()
+git = lambda repo, *args: subprocess.check_output(['git', '-C', str(repo), *args])
+assert git(worker, 'rev-parse', 'HEAD').decode().strip() == freeze['commit']
+assert not git(worker, 'status', '--porcelain').strip()
+assert git(integration, 'branch', '--show-current').decode().strip() == 'codex/integrated-coverage'
+allowed = {b'?? docs/studies/2026-11-12-resumed-measurements.md'}
+before_status = set(git(integration, 'status', '--porcelain').splitlines())
+assert before_status <= allowed, before_status
+aligned = []
+for name, digest in freeze['inputs'].items():
+    source = (worker / name).read_bytes()
+    target = integration / name
+    assert sha(source) == digest, name
+    other = target.read_bytes()
+    if other != source:
+        assert source.replace(b'\r\n', b'\n') == other.replace(b'\r\n', b'\n'), name
+        target.write_bytes(source)
+        aligned.append(name)
+    assert sha(target.read_bytes()) == digest, name
+git(integration, 'add', '--renormalize', '--', 'src', 'tests')
+assert not git(integration, 'diff', '--cached', '--binary').strip()
+assert set(git(integration, 'status', '--porcelain').splitlines()) == before_status
+receipt = {'worker_head': freeze['commit'], 'integration_head': git(integration, 'rev-parse', 'HEAD').decode().strip(), 'frozen_source_test_native_files_verified': len(freeze['inputs']), 'line_endings_aligned': aligned, 'tracked_code_clean': True, 'allowed_untracked_report_only': True, 'hashes': freeze['inputs']}
+(root / 'wave9-final-source-verification.json').write_text(json.dumps(receipt, indent=2) + '\n')
+print(json.dumps({k: v for k, v in receipt.items() if k != 'hashes'}))

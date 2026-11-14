@@ -1,0 +1,29 @@
+The fresh saved-a9b versus inline037 diagnostic improves both selected kernels: **Barnes8.10%less kernel time and raytrace6.33%less**. Barnes35.9731 to33.0608ms (1.0881xspeed), raytrace3.6609 to3.4292ms (1.0676x). Allfive paired kernel samples are faster for each case; ranges do not overlap, although the rayrange gap is onlyabout0.0013ms. Whole-process medians fall3.05%and0.69%; Barnes process ranges do not overlap, while raytrace process ranges overlap. This is finite target-only evidence on a shared machine, not universal/defaultprogram speed or a formal significance claim.
+
+Baseline current=a9b59be60cdf568c8f6b63442e7efa88fd16fdd2; final=0373788b7be436e5e43b0a6a6f3fd40b2871c3a3. Onlyheap.py differs, SHA672ea7eee61ed5768d9e22750f713f0bafafb0a059c17ab4d6c172a8c697d2de to7904ae104331ea666cdcf0b577900771d2b2530f9b3ad28670480ef9e78c40b4. Other29source/native entries match, including guarded supportpyd17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0. Manifest095ecab621b1cf7876b3c165fb7bef5bc9ae4088512c3fcd7b8a6c3d63fe9133. Same13frozenhelpers/protocol/runtime/environment/inputs/Cflags; allfourprofiles/builds,40timings,6stateaudits,4compile-onlywarmups and4maps are fresh. No earlier profile/artifact/latency reuse or pooling.
+
+|Case|CP kernel ms|C kernel ms|Saved a9b kernel ms|Inline037 kernel ms|Saved/inline process ms|Saved/inline kernel time over C|
+|---|---:|---:|---:|---:|---:|---:|
+|barnes_hut|516.510200|9.088993|35.973100|33.060800|490.1197/475.1701|3.9579x/3.6375x|
+|raytrace|158.017300|0.607967|3.660900|3.429200|388.4918/385.8284|6.0215x/5.6404x|
+
+|Case/source|Five fresh kernel samples, ms|
+|---|---|
+|barnes_hut current|35.1793, 38.9277, 36.5342, 35.9731, 35.5912|
+|barnes_hut final|32.6648, 32.3649, 33.6340, 33.0745, 33.0608|
+|raytrace current|3.6461, 3.6783, 3.6609, 3.6996, 3.6067|
+|raytrace final|3.4015, 3.4271, 3.4292, 3.6054, 3.5216|
+
+Barnes ranges35.1793-38.9277ms versus32.3649-33.6340ms; raytrace3.6067-3.6996ms versus3.4015-3.6054ms. Distributions and every sample are retained, with no reruns/subsets/additionalrepetitions chosen. The baseline differs naturally from earlier cohorts; headline ratios use only this fresh matched cohort.
+
+The first combined578cohort remains unchanged under results/ and RESULTS.md: its matched Barnesgain6.11%and rayregression7.05%are preserved. Inline037 carries the same recursive-context/list-iteration work with proof-bounded privatehelper refinement using five rawheap SSAvalues; this new cohort is an explicit follow-up. Its earlier578timings are never substituted as thiscohort baseline or pooled. Independent actualAOT/Cstaticreview is separate; instruction counts cannot override measured timing or measurecycles. No isolated perpatch attribution follows from the combined source.
+
+Kernel medians use five rotating fresh-process bests: Python/RPbest-of5freshstates versus Cbest-of20. Entrycounts include allfivePython/RPstates, not just the beststate. Complete-process Cworkcounts differ, so do not treat Cprocess-wall ratios as kernel ratios. Barnes retains200particles/100advances and finalenergy within the timer, outside its selected compiledregion. Raytrace includes freshCanvas/Scene allocation and rendering; Cbufferallocation is outside its innerloop. Original numerictypes, algorithms, absolute drivers/Csources/binaries/checksums are unchanged. Cflags are Clang21.1.6/-O3/-march=native/-ffp-contract=off; RPgenericAOT versus host-tunedC remains an unmeasured targetdifference.
+
+All40timingprocesses pass unchanged finite oracles. Each source makes2500successful timingAOTBarnesentries plus25raytraceentries:5050total,zeroJIT/fallback. Six separate fullstateaudits match plainPython: all100Barnesnumeric/type/alias checkpoints plus full initial/final1400scalarvectors; all30000rayRGBbytes, types/typecode/itemsize/dimensions and mutablearray identity. Separate202auditAOTentries reconcile with product counters,zeroJIT/fallback/rejected/unknown/noNumbaimport. Internal recursive calls are not included in entrycounts. Cretains the original finite checksumoracle, without a new fullbyte observer.
+
+All58processrecords pass,0failure/timeout. Costs excluded from latency: fresh profile capture/verification/JIT/AOT/startupprobes190.825s; compile-onlywarmups3.016s; stateaudits2.650s; address-onlymaps0.674s. Childwalltotal225.435s. Build-only cost is not invented. This cohort ran only after NEW037fullsuite599tests+52subtestsPASS300.90s/22knownwarnings and all61before==after==freeze inputs, followed by explicit workerCPUrelease and rootconditionalgate. That correctnessproof is distinct from the prior578592-test run.
+
+Allsource/runtime/packages/environment/helpers/shim/originalinputs/bytecode/AOT identities pass before/after. Reconciled audit exports bind actual selected PEhashes/RVAs; profilingJIT/availableexports are not substituted for successful runtimeAOT. Four new actualselectedPEs/build evidence are copied under selected-aot/results-inline/<program>/<source>, with source/compiler/native/C/driverbytes under inputs/results-inline. ARCHIVE-INDEX-results-inline.json checks every copy; ARCHIVE-VERIFICATION-results-inline.json verifies58rawstdoutrecords/copies and captures58stderrhashes separately from inherited recorderhashfields. Earlierresults/archives/helperbytes remain unchanged.
+
+SESSION-VERIFICATION-inline.json records coordinator93742exit0, allfrozen/58valid checks and no owned measurementPythonprocesses; CPUreleased with no automatic additional run/test/cohort. Heavyjobs were serialized; only authorized metadata/read-onlyinspection occurred concurrently (workercheckpoint stdlibI/O/compression0.171s duringprofilephase), and unrelated hostbackgroundload remains uncontrolled. The earlier49defaultpairedcohort measured saveda9b only; no new037defaultcoverage/held-outwholeprocess result was collected. Allrawsample/process/counter/state/exit/stdout/stderr/cost/hash/map evidence is retained.

@@ -1,0 +1,1271 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "candidate-strict",
+  "function": "fibonacci",
+  "task": "audit-aot",
+  "contract": {
+    "n": [
+      0,
+      80
+    ]
+  },
+  "corpus_count": 81,
+  "expected_results_sha256": "a8e29982451912a80ff9466a6a4630cd90a30305544a5de79841ce5042599f6c",
+  "valid_exact_results": true,
+  "construction_s": 0.2985640999977477,
+  "first_call_s": 0.0014106999879004434,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 1,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 81,
+    "aot_calls": 81,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "fibonacci",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "04d31e40e4e6dc61337c3e2e39e015c1d76241cb0199f6b40cb26e80f8a18344",
+    "function_bytecode_sha256": "3be6f8b101655e687df46a1c67db5226839d397b34c52a14866c6e92984a5b80",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null,
+    "program_digest": "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf",
+    "program_cached": true,
+    "program_ahead_of_time": true,
+    "entry_name": "f0_fibonacci",
+    "program_source_sha256": "15020bc158108e1f42ec57c0f8d35aba4565e5e0e1e2137d211fd457066846aa",
+    "dispatcher_module": "rcaotr_b19cba7e9f83b6770fdb3d59",
+    "dispatcher_qualname": "_Closure.r0",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": false,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "invalid_audits": [
+    {
+      "args": [
+        "81"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "37889062373143906"
+      },
+      "bound_values": [
+        "81"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "37889062373143906"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "37889062373143906"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "100"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "354224848179261915075"
+      },
+      "bound_values": [
+        "100"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "354224848179261915075"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "354224848179261915075"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "-1"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "0"
+      },
+      "bound_values": [
+        "-1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "0"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "0"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1024"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "4506699633677819813104383235728886049367860596218604830803023149600030645708721396248792609141030396244873266580345011219530209367425581019871067646094200262285202346655868899711089246778413354004103631553925405243"
+      },
+      "bound_values": [
+        "1024"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "4506699633677819813104383235728886049367860596218604830803023149600030645708721396248792609141030396244873266580345011219530209367425581019871067646094200262285202346655868899711089246778413354004103631553925405243"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "4506699633677819813104383235728886049367860596218604830803023149600030645708721396248792609141030396244873266580345011219530209367425581019871067646094200262285202346655868899711089246778413354004103631553925405243"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "1025"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "7291993184377412737043195648396979558721167948342308637716205818587400148912186579874409368754354848994831816250311893410648104792440789475340471377366852420526027975140687031196633477605718294523235826853392138525"
+      },
+      "bound_values": [
+        "1025"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "7291993184377412737043195648396979558721167948342308637716205818587400148912186579874409368754354848994831816250311893410648104792440789475340471377366852420526027975140687031196633477605718294523235826853392138525"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "7291993184377412737043195648396979558721167948342308637716205818587400148912186579874409368754354848994831816250311893410648104792440789475340471377366852420526027975140687031196633477605718294523235826853392138525"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "True"
+      ],
+      "arg_types": [
+        "bool"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "bound_values": [
+        "True"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "3"
+      ],
+      "arg_types": [
+        "semantic_audits.<locals>.IntSubclass"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "2"
+      },
+      "bound_values": [
+        "3"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "2"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "2"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2.0"
+      ],
+      "arg_types": [
+        "float"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "'float' object cannot be interpreted as an integer"
+      },
+      "bound_values": [
+        "2.0"
+      ],
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "'float' object cannot be interpreted as an integer"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "'float' object cannot be interpreted as an integer"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() missing 1 required positional argument: 'n'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() missing 1 required positional argument: 'n'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() missing 1 required positional argument: 'n'"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "3"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {
+        "bad": "1"
+      },
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() got an unexpected keyword argument 'bad'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() got an unexpected keyword argument 'bad'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() got an unexpected keyword argument 'bad'"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {
+        "n": "4"
+      },
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "bound_values": [
+        "4"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    }
+  ],
+  "audit_observations": {
+    "attempts": 11,
+    "rejected_attempts": 8,
+    "attempt_exceptions": 0,
+    "programs": {
+      "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf": {
+        "mode": "AOT",
+        "entered": 6,
+        "returned": 6,
+        "successful_status": 3,
+        "failed_status": 3
+      }
+    }
+  },
+  "aot_selection": {
+    "program_digest": "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf",
+    "export": "r0",
+    "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\aot\\candidate-strict\\fibonacci\\rcaotr_b19cba7e9f83b6770fdb3d59.cp314-win_amd64.pyd",
+    "binary_sha256": "f783aa5b3c61bf4b0f5fb5193e912b16562a541eaf928b84dd073bf4cad8b49c",
+    "runtime_wrapper_address": 140722265264352,
+    "runtime_module_base": 140722265260032,
+    "runtime_wrapper_rva": 4320,
+    "static_mapping": {
+      "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\aot\\candidate-strict\\fibonacci\\rcaotr_b19cba7e9f83b6770fdb3d59.cp314-win_amd64.pyd",
+      "binary_sha256": "f783aa5b3c61bf4b0f5fb5193e912b16562a541eaf928b84dd073bf4cad8b49c",
+      "export": "r0",
+      "preferred_base": 6442450944,
+      "method_rva": 4320,
+      "function_address": 6442455264,
+      "method_definition_rva": 40960,
+      "flags": 3,
+      "sections": [
+        {
+          "name": ".text",
+          "size": 11112,
+          "rva": 4096,
+          "raw_size": 11264,
+          "offset": 1024,
+          "executable": true
+        },
+        {
+          "name": ".rdata",
+          "size": 23754,
+          "rva": 16384,
+          "raw_size": 24064,
+          "offset": 12288,
+          "executable": false
+        },
+        {
+          "name": ".data",
+          "size": 3192,
+          "rva": 40960,
+          "raw_size": 2560,
+          "offset": 36352,
+          "executable": false
+        },
+        {
+          "name": ".pdata",
+          "size": 1044,
+          "rva": 45056,
+          "raw_size": 1536,
+          "offset": 38912,
+          "executable": false
+        },
+        {
+          "name": ".rsrc",
+          "size": 248,
+          "rva": 49152,
+          "raw_size": 512,
+          "offset": 40448,
+          "executable": false
+        },
+        {
+          "name": ".reloc",
+          "size": 184,
+          "rva": 53248,
+          "raw_size": 512,
+          "offset": 40960,
+          "executable": false
+        }
+      ],
+      "unwind_ranges": [
+        {
+          "begin_rva": 4320,
+          "end_rva": 5106,
+          "unwind_rva": 36704
+        },
+        {
+          "begin_rva": 5184,
+          "end_rva": 5267,
+          "unwind_rva": 36728
+        },
+        {
+          "begin_rva": 5280,
+          "end_rva": 5373,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 5376,
+          "end_rva": 5465,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5472,
+          "end_rva": 5578,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5584,
+          "end_rva": 5757,
+          "unwind_rva": 36136
+        },
+        {
+          "begin_rva": 5760,
+          "end_rva": 5853,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 5856,
+          "end_rva": 5982,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5984,
+          "end_rva": 6013,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 6013,
+          "end_rva": 6060,
+          "unwind_rva": 36144
+        },
+        {
+          "begin_rva": 6060,
+          "end_rva": 6085,
+          "unwind_rva": 36164
+        },
+        {
+          "begin_rva": 6128,
+          "end_rva": 6211,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6224,
+          "end_rva": 6327,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 6336,
+          "end_rva": 6386,
+          "unwind_rva": 36196
+        },
+        {
+          "begin_rva": 6386,
+          "end_rva": 6421,
+          "unwind_rva": 36204
+        },
+        {
+          "begin_rva": 6421,
+          "end_rva": 6472,
+          "unwind_rva": 36224
+        },
+        {
+          "begin_rva": 6480,
+          "end_rva": 6542,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6544,
+          "end_rva": 6670,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6672,
+          "end_rva": 6787,
+          "unwind_rva": 36244
+        },
+        {
+          "begin_rva": 6800,
+          "end_rva": 6851,
+          "unwind_rva": 36256
+        },
+        {
+          "begin_rva": 6880,
+          "end_rva": 6905,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 6928,
+          "end_rva": 6999,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 7088,
+          "end_rva": 7125,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 7136,
+          "end_rva": 7200,
+          "unwind_rva": 36272
+        },
+        {
+          "begin_rva": 7200,
+          "end_rva": 7277,
+          "unwind_rva": 36284
+        },
+        {
+          "begin_rva": 7277,
+          "end_rva": 7390,
+          "unwind_rva": 36308
+        },
+        {
+          "begin_rva": 7392,
+          "end_rva": 7747,
+          "unwind_rva": 36328
+        },
+        {
+          "begin_rva": 7760,
+          "end_rva": 9499,
+          "unwind_rva": 36344
+        },
+        {
+          "begin_rva": 9536,
+          "end_rva": 9711,
+          "unwind_rva": 36328
+        },
+        {
+          "begin_rva": 9712,
+          "end_rva": 9728,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 9728,
+          "end_rva": 9780,
+          "unwind_rva": 36368
+        },
+        {
+          "begin_rva": 9780,
+          "end_rva": 9810,
+          "unwind_rva": 36388
+        },
+        {
+          "begin_rva": 9920,
+          "end_rva": 10057,
+          "unwind_rva": 36404
+        },
+        {
+          "begin_rva": 10064,
+          "end_rva": 10119,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 10128,
+          "end_rva": 10188,
+          "unwind_rva": 36420
+        },
+        {
+          "begin_rva": 10188,
+          "end_rva": 10236,
+          "unwind_rva": 36432
+        },
+        {
+          "begin_rva": 10236,
+          "end_rva": 10247,
+          "unwind_rva": 36452
+        },
+        {
+          "begin_rva": 10256,
+          "end_rva": 10331,
+          "unwind_rva": 36468
+        },
+        {
+          "begin_rva": 10331,
+          "end_rva": 10388,
+          "unwind_rva": 36480
+        },
+        {
+          "begin_rva": 10388,
+          "end_rva": 10473,
+          "unwind_rva": 36500
+        },
+        {
+          "begin_rva": 10473,
+          "end_rva": 10507,
+          "unwind_rva": 36520
+        },
+        {
+          "begin_rva": 10507,
+          "end_rva": 10528,
+          "unwind_rva": 36536
+        },
+        {
+          "begin_rva": 10528,
+          "end_rva": 10701,
+          "unwind_rva": 36556
+        },
+        {
+          "begin_rva": 10704,
+          "end_rva": 10747,
+          "unwind_rva": 36572
+        },
+        {
+          "begin_rva": 10747,
+          "end_rva": 10951,
+          "unwind_rva": 36588
+        },
+        {
+          "begin_rva": 10951,
+          "end_rva": 10972,
+          "unwind_rva": 36612
+        },
+        {
+          "begin_rva": 10972,
+          "end_rva": 11097,
+          "unwind_rva": 36632
+        },
+        {
+          "begin_rva": 11097,
+          "end_rva": 11123,
+          "unwind_rva": 36652
+        },
+        {
+          "begin_rva": 11123,
+          "end_rva": 11201,
+          "unwind_rva": 36668
+        },
+        {
+          "begin_rva": 11201,
+          "end_rva": 11218,
+          "unwind_rva": 36684
+        },
+        {
+          "begin_rva": 11344,
+          "end_rva": 11456,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11456,
+          "end_rva": 11606,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 11632,
+          "end_rva": 11743,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11744,
+          "end_rva": 11873,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11920,
+          "end_rva": 12033,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 12112,
+          "end_rva": 12142,
+          "unwind_rva": 36736
+        },
+        {
+          "begin_rva": 12144,
+          "end_rva": 12224,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 12224,
+          "end_rva": 12502,
+          "unwind_rva": 36740
+        },
+        {
+          "begin_rva": 12504,
+          "end_rva": 12635,
+          "unwind_rva": 36808
+        },
+        {
+          "begin_rva": 12636,
+          "end_rva": 12932,
+          "unwind_rva": 36892
+        },
+        {
+          "begin_rva": 12932,
+          "end_rva": 12993,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 13004,
+          "end_rva": 13179,
+          "unwind_rva": 36940
+        },
+        {
+          "begin_rva": 13180,
+          "end_rva": 13215,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13252,
+          "end_rva": 13279,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13280,
+          "end_rva": 13337,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13340,
+          "end_rva": 13392,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13392,
+          "end_rva": 13413,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13416,
+          "end_rva": 13456,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13456,
+          "end_rva": 13477,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13480,
+          "end_rva": 13576,
+          "unwind_rva": 36992
+        },
+        {
+          "begin_rva": 13576,
+          "end_rva": 13624,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13624,
+          "end_rva": 13644,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13644,
+          "end_rva": 13702,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13704,
+          "end_rva": 13843,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 13844,
+          "end_rva": 13996,
+          "unwind_rva": 36952
+        },
+        {
+          "begin_rva": 13996,
+          "end_rva": 14032,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 14032,
+          "end_rva": 14073,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 14092,
+          "end_rva": 14152,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 14152,
+          "end_rva": 14212,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 14216,
+          "end_rva": 14883,
+          "unwind_rva": 37012
+        },
+        {
+          "begin_rva": 15024,
+          "end_rva": 15026,
+          "unwind_rva": 37032
+        },
+        {
+          "begin_rva": 15056,
+          "end_rva": 15062,
+          "unwind_rva": 37040
+        },
+        {
+          "begin_rva": 15062,
+          "end_rva": 15085,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15085,
+          "end_rva": 15110,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15110,
+          "end_rva": 15130,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15130,
+          "end_rva": 15184,
+          "unwind_rva": 36932
+        },
+        {
+          "begin_rva": 15184,
+          "end_rva": 15208,
+          "unwind_rva": 36984
+        }
+      ],
+      "note": "Static candidate becomes selected only when actual successful-call digest/export and runtime RVA agree."
+    },
+    "actual_wrapper_counts_after_cell": {
+      "compiled_calls": 85,
+      "aot_calls": 85,
+      "jit_calls": 0,
+      "fallback_calls": 8,
+      "contract_native_calls": 0,
+      "guard_misses": 0,
+      "representation_rejections": 0,
+      "loop_limit_rejections": 0,
+      "native_failures": 0,
+      "foreign_calls": 0
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 85,
+    "aot_calls": 85,
+    "jit_calls": 0,
+    "fallback_calls": 8,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.add_i-95.py314.1.nbc": "371969105e96efe1c77a318a24113a5d4a22bff0aa371cdedb25e221981d7e06",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.add_i-95.py314.nbi": "6452a5a68265d3ccaf5b0a1cdc427c9cdf9acefd6a4cd69ad9706c8ae8aaa4bd",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.f0_recurrence_16-554.py314.1.nbc": "3de7a3b4e882fec7a75259caeab935c16c39bae026c0b6f333b8226cdcf8a70a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.f0_recurrence_16-554.py314.nbi": "ed0f7108593c614dd302f66374b388d5b6d58bfb65471c0383f104124b30dd93",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.mul_i-111.py314.1.nbc": "ae63fe96e17cf249cf4b340f75b034481d481138e125e8581b959b88f15778c8",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_0bc4322814ec5c10910c6684.mul_i-111.py314.nbi": "d25e95ed643981197ef5da89445ac65df22ce9c073b492eda0f46a991b9d8009",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.1.nbc": "03d464c43eeefe37ccc5b5807a9750e8d29d1001aa10d174c4cdbc08c94c2d3e",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.2.nbc": "1bdfa9dae9168c762da231b9efab5715d18cb07720b25433ec1e997d7be4e5db",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.nbi": "f8858fdcca579c2245f748ee93d783d9371e52888c7f9866d2878465e4e158f2",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.f0_fibonacci-554.py314.1.nbc": "88fc0be167b637630721968ff4b388a5c57326fdaa675253bc5b0eefb7a5b88a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_3ccb1a4c2558e2f7afd382de.f0_fibonacci-554.py314.nbi": "3ec654d73f6e23254a0fb8b1cbe18f9b1fdafa839a3ef4eb325e9efb5ad95a4c",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_57152f1561b845507fca6255.f0_recurrence_64-554.py314.1.nbc": "262a8d35da30cdbbe06d022c2df289046f023d936610c068f21816e385338bdc",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_57152f1561b845507fca6255.f0_recurrence_64-554.py314.nbi": "06875971543e91bde5656f078f1fc5b59b37a2c0d7f1db733a0cfa57cc6fd958",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.add_i-95.py314.1.nbc": "da691f8d58eda09af09df079a78553ab1f04708a6a46995e92cb975b79e449a6",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.add_i-95.py314.nbi": "3714e2a1d2dc026f0d25886db87dcb94cb30fdeb92b9f50e575d237222bc62dc",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.f0_recurrence_64-554.py314.1.nbc": "d06a06a86f0b891ca8d16800d76eba7bcc6ec6cabfb0410aff3a4d1c6dd62d3d",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.f0_recurrence_64-554.py314.nbi": "9b62b2dc073973095187b42839227b9f4fff9bc01c616ccc92b2aa78b089d73e",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.mul_i-111.py314.1.nbc": "96d68e9ef88efc4d00341f597b65ed1652c2ce0da26be9bb0749188e9f3c6c00",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_5b5b61a3bf0b3ec88f796210.mul_i-111.py314.nbi": "49df8b3c4ab3a940d7a0fa1d79ffa5026b5443fc49f563e5d38bf90e10078a3d",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.add_i-95.py314.1.nbc": "c3293c227109ac85dc6b9d2823511d1ff99ece2e3cea7dc6faa5dcf489ca4abc",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.add_i-95.py314.nbi": "ed77de60fdbfd9bf0c1c9a0fda7d729e19208b1b8e7a5dc0e70a850c290865b3",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.f0_loop_recurrence16-554.py314.1.nbc": "6c4f19312a155389947ed6f84253f9cc29c28b025ce2648753fd82fd67e47472",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.f0_loop_recurrence16-554.py314.nbi": "c70fe331c5799f175e277afe78db2b8d3b2c8419214e175ec33d7108ec953fbe",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.mul_i-111.py314.1.nbc": "4299248fe60f42957bff72dfa9650e9c79e297bc6cf765235fd7c29a7d7c42b3",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_73547edce78f3bbe0466b8e9.mul_i-111.py314.nbi": "dd9164cabe7753714a563b9a07ae88ee23e5e14b3f1df8c2916b9e567d0019df",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.1.nbc": "0fb84849518f2f1938dd368b4b8aaa125dba4e218a2a2604d18c43bc4950ea7a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.2.nbc": "70d3131acf51e70c3032571fdfc7f9e798432dcf95b7ec59241106090b58f577",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.nbi": "113bfe9eba654041795f4e48fee0c78c27f4d46b40f75ab6366d6d2ccd2e6f2a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.1.nbc": "362daba5facd4e74c13a8b23dc2778775d5a3fb19f93ccbeae4f5944e2a7200f",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.nbi": "221988085045de20bdb84d94233c8d50aedfa20ad2c3d707205a2268861a286d",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_b3a9bfa1769a9e7651c5e8a3.f0_recurrence_16-554.py314.1.nbc": "bec0a099701b449b890cefb682eac3445cb17008b4d319a24252e95fd57ab8b7",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_b3a9bfa1769a9e7651c5e8a3.f0_recurrence_16-554.py314.nbi": "dfd7c9f5a153d03ecf3bf0ccc2132340e6a592cab0181844b07c5ad89baf9c86",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.1.nbc": "08cc8bd03e1357c11fe7b17293c659f973dc16d1ed6fa71e7577c1db20117782",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.nbi": "d8ad44c9caae00d8d2781d009bff1a46400003f7f618891244cccf0c31960a61",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e108b176528cc6fcedb2027d.f0_loop_recurrence16-554.py314.1.nbc": "8185f22fcea8e6984baa623ed5febff50ac9f83da5bd58b2982e29d7b0499450",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e108b176528cc6fcedb2027d.f0_loop_recurrence16-554.py314.nbi": "953913257a4f5a399cf17b7738e45d36c62bb144c67683b12d7ba40d4c340150",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.1.nbc": "2bba7021e3bf3d4bc43bd7be3cde343f0fb4c0ee16238cf197030ee570397c1a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.nbi": "c27cdaa61113a3444f0af6d858c72a995b52b3338cd421b830da6995c48c8895",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.1.nbc": "e88082336c561e40fc7e196eec2525f6a31ee3c862dddc14454cd2a4be36192b",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.nbi": "f22260a03baa0264c23b81cd378a818feeb67a47bea6e0902091e8935fba7d92",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.1.nbc": "05f05a8a79d8b06a8791ebbbe5db87b514e7a10f71e5b83f7cc5d8bf1c98d308",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.nbi": "8df3082aaeef4320c3be2eef63306159fea4fdece7953a531de7091617e52fe1",
+    "rc_heap_0bc4322814ec5c10910c6684.py": "733a95f74730ce19aeca5450b9f375ee66dd5f34fe17d46536fe29608bc9b1ad",
+    "rc_heap_3ccb1a4c2558e2f7afd382de.py": "8cce3e29d8f1dcee671403f3f85b3b7cc07cb215053b8fdf1b2c20f069641f9b",
+    "rc_heap_57152f1561b845507fca6255.py": "3412f552ef5c66dd02c78d0be310793333427a21f0f3956a7b70f906f2001092",
+    "rc_heap_5b5b61a3bf0b3ec88f796210.py": "28c6ef1728a5b4ed719af5b6032d6a176d9838413d86f9ae7c004d8acd01d3e9",
+    "rc_heap_73547edce78f3bbe0466b8e9.py": "5ece0a8280d553af17cdb1bb7f3364e062ab2a6652ac615b0aea0329f7e381ca",
+    "rc_heap_76885d8ba89d2be1fa3724cd.py": "26cc0d593581dd6ce068115793bbfdcbf1023c2e5963d9416c4559bfc6ee80a2",
+    "rc_heap_b3a9bfa1769a9e7651c5e8a3.py": "c4bdb78600365dbbd5c627585c9da6ccefa475f53c7f154b79dfa7001d98d56d",
+    "rc_heap_cc640ec9e29e6464b99a6ead.py": "d8225e5a0acc7e273d93af0df0223a773f05e6d9aac654ca752626a7320a6a39",
+    "rc_heap_e108b176528cc6fcedb2027d.py": "0bec3141164e1538fb6798932dd26423f4da968aca81bc4d4a48fe07909c4ee4",
+    "rc_heap_e1608e92092c158d0062c70d.py": "a2f33cf69430461eadd844470bc8964abe125a29cbf1fd42644dbf49297be705",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

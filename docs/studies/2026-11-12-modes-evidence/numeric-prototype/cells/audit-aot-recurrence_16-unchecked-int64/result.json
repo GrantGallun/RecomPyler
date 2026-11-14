@@ -1,0 +1,1308 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "unchecked-int64",
+  "function": "recurrence_16",
+  "task": "audit-aot",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ]
+  },
+  "corpus_count": 284,
+  "expected_results_sha256": "dc673682d0f04197db3e170492b393023b5282c41d6deeb46c297eb5c7538fd5",
+  "valid_exact_results": true,
+  "construction_s": 0.30929060000926256,
+  "first_call_s": 0.002663500010385178,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 1,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 1,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 284,
+    "aot_calls": 284,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 284,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "recurrence_16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "21d321a223fe51ff44430bacfe216ffab032516eedcd3f7613a9e404dd549d67",
+    "function_bytecode_sha256": "e91b1989418bb801a4874f438979bc7c3c320586a833474766145ecfd02524f3",
+    "selected_mode": "unchecked-int64",
+    "identity": "0f92d5ba1fcb2569dfb5f9c960501301d5120d86c5dde4c448c553aa70dd5ce9",
+    "contract": "IntIntervals(_items=(('x', (-1048576, 1048576)), ('y', (-1, 1)), ('z', (-1048576, 1048576))))",
+    "proof_certificates": "()",
+    "problem": null,
+    "policy_metadata": {
+      "certificates": [],
+      "contract": [
+        [
+          "x",
+          [
+            -1048576,
+            1048576
+          ]
+        ],
+        [
+          "y",
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          "z",
+          [
+            -1048576,
+            1048576
+          ]
+        ]
+      ],
+      "implementation": "c681942f89604e42708e20fac650baa7813f2be9c1f9b8164a463e135035e3b5",
+      "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+      "max_trips": 1024,
+      "mode": "unchecked-int64",
+      "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+      "origin": "697d448cb5ab8ce84c6a5e79be44a95c686cc70d93438c4260efba90a96a4deb",
+      "proof": 1,
+      "schema": 1
+    },
+    "program_digest": "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf",
+    "program_cached": true,
+    "program_ahead_of_time": true,
+    "entry_name": "f0_recurrence_16",
+    "program_source_sha256": "4fc72872fbbe430055a4b7fcc75fcd6b8b702879587328781ecb9d26aa0b3dcd",
+    "dispatcher_module": "rcnumeric_c22eebaf1fa306f6be37fd80",
+    "dispatcher_qualname": "_Closure.entry",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": false,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "invalid_audits": [
+    {
+      "args": [
+        "1048577",
+        "1",
+        "0"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "bound_values": [
+        "1048577",
+        "1",
+        "0"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1099511627776",
+        "1099511627776",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1099511627777"
+      },
+      "bound_values": [
+        "1099511627776",
+        "1099511627776",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "5016456510113118655434602960550847839797686282637628186535791543871654457692954512571088988152075878867529518138597827650580178456838894635580295071046097780654528071431634362050824315681271856898890530817"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1099511627777"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "9223372036854775807",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775793"
+      },
+      "bound_values": [
+        "9223372036854775807",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775823"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775793"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "-9223372036854775808",
+        "-1",
+        "0"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "bound_values": [
+        "-9223372036854775808",
+        "-1",
+        "0"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "True",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "bool",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "x must be an exact Python int representable in signed int64"
+      },
+      "bound_values": [
+        "True",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "33"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "semantic_audits.<locals>.IntSubclass",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "x must be an exact Python int representable in signed int64"
+      },
+      "bound_values": [
+        "2",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "34"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2.0",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "float",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "x must be an exact Python int representable in signed int64"
+      },
+      "bound_values": [
+        "2.0",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "34.0"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1208925819614629174706176",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "x must be an exact Python int representable in signed int64"
+      },
+      "bound_values": [
+        "1208925819614629174706176",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706192"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "arguments do not bind"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_16() missing 3 required positional arguments: 'x', 'y', and 'z'"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {
+        "bad": "1"
+      },
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "arguments do not bind"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_16() got an unexpected keyword argument 'bad'"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {
+        "x": "1",
+        "y": "1",
+        "z": "2"
+      },
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "33"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "33"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "33"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+          "mode": "AOT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    }
+  ],
+  "audit_observations": {
+    "attempts": 11,
+    "rejected_attempts": 0,
+    "attempt_exceptions": 6,
+    "programs": {
+      "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf": {
+        "mode": "AOT",
+        "entered": 5,
+        "returned": 5,
+        "successful_status": 5,
+        "failed_status": 0
+      }
+    }
+  },
+  "aot_selection": {
+    "program_digest": "c22eebaf1fa306f6be37fd80b0f91fa703feaad7355c86ef97721d5f2c9d7ccf",
+    "export": "entry",
+    "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\aot\\unchecked-int64\\recurrence_16\\rcnumeric_c22eebaf1fa306f6be37fd80.cp314-win_amd64.pyd",
+    "binary_sha256": "6eb50c552a442ede55647eac036406d3252ab26a6526f8eccc05ee6975a5d891",
+    "runtime_wrapper_address": 140722212573456,
+    "runtime_module_base": 140722212569088,
+    "runtime_wrapper_rva": 4368,
+    "static_mapping": {
+      "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\aot\\unchecked-int64\\recurrence_16\\rcnumeric_c22eebaf1fa306f6be37fd80.cp314-win_amd64.pyd",
+      "binary_sha256": "6eb50c552a442ede55647eac036406d3252ab26a6526f8eccc05ee6975a5d891",
+      "export": "entry",
+      "preferred_base": 6442450944,
+      "method_rva": 4368,
+      "function_address": 6442455312,
+      "method_definition_rva": 40960,
+      "flags": 3,
+      "sections": [
+        {
+          "name": ".text",
+          "size": 11336,
+          "rva": 4096,
+          "raw_size": 11776,
+          "offset": 1024,
+          "executable": true
+        },
+        {
+          "name": ".rdata",
+          "size": 23762,
+          "rva": 16384,
+          "raw_size": 24064,
+          "offset": 12800,
+          "executable": false
+        },
+        {
+          "name": ".data",
+          "size": 3192,
+          "rva": 40960,
+          "raw_size": 2560,
+          "offset": 36864,
+          "executable": false
+        },
+        {
+          "name": ".pdata",
+          "size": 1044,
+          "rva": 45056,
+          "raw_size": 1536,
+          "offset": 39424,
+          "executable": false
+        },
+        {
+          "name": ".rsrc",
+          "size": 248,
+          "rva": 49152,
+          "raw_size": 512,
+          "offset": 40960,
+          "executable": false
+        },
+        {
+          "name": ".reloc",
+          "size": 184,
+          "rva": 53248,
+          "raw_size": 512,
+          "offset": 41472,
+          "executable": false
+        }
+      ],
+      "unwind_ranges": [
+        {
+          "begin_rva": 4368,
+          "end_rva": 5346,
+          "unwind_rva": 36704
+        },
+        {
+          "begin_rva": 5408,
+          "end_rva": 5491,
+          "unwind_rva": 36728
+        },
+        {
+          "begin_rva": 5504,
+          "end_rva": 5597,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 5600,
+          "end_rva": 5689,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5696,
+          "end_rva": 5802,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 5808,
+          "end_rva": 5981,
+          "unwind_rva": 36136
+        },
+        {
+          "begin_rva": 5984,
+          "end_rva": 6077,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 6080,
+          "end_rva": 6206,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 6208,
+          "end_rva": 6237,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 6237,
+          "end_rva": 6284,
+          "unwind_rva": 36144
+        },
+        {
+          "begin_rva": 6284,
+          "end_rva": 6309,
+          "unwind_rva": 36164
+        },
+        {
+          "begin_rva": 6352,
+          "end_rva": 6435,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6448,
+          "end_rva": 6551,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 6560,
+          "end_rva": 6610,
+          "unwind_rva": 36196
+        },
+        {
+          "begin_rva": 6610,
+          "end_rva": 6645,
+          "unwind_rva": 36204
+        },
+        {
+          "begin_rva": 6645,
+          "end_rva": 6696,
+          "unwind_rva": 36224
+        },
+        {
+          "begin_rva": 6704,
+          "end_rva": 6766,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6768,
+          "end_rva": 6894,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 6896,
+          "end_rva": 7011,
+          "unwind_rva": 36244
+        },
+        {
+          "begin_rva": 7024,
+          "end_rva": 7075,
+          "unwind_rva": 36256
+        },
+        {
+          "begin_rva": 7104,
+          "end_rva": 7129,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 7152,
+          "end_rva": 7223,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 7312,
+          "end_rva": 7349,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 7360,
+          "end_rva": 7424,
+          "unwind_rva": 36272
+        },
+        {
+          "begin_rva": 7424,
+          "end_rva": 7501,
+          "unwind_rva": 36284
+        },
+        {
+          "begin_rva": 7501,
+          "end_rva": 7614,
+          "unwind_rva": 36308
+        },
+        {
+          "begin_rva": 7616,
+          "end_rva": 7971,
+          "unwind_rva": 36328
+        },
+        {
+          "begin_rva": 7984,
+          "end_rva": 9723,
+          "unwind_rva": 36344
+        },
+        {
+          "begin_rva": 9760,
+          "end_rva": 9935,
+          "unwind_rva": 36328
+        },
+        {
+          "begin_rva": 9936,
+          "end_rva": 9952,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 9952,
+          "end_rva": 10004,
+          "unwind_rva": 36368
+        },
+        {
+          "begin_rva": 10004,
+          "end_rva": 10034,
+          "unwind_rva": 36388
+        },
+        {
+          "begin_rva": 10144,
+          "end_rva": 10281,
+          "unwind_rva": 36404
+        },
+        {
+          "begin_rva": 10288,
+          "end_rva": 10343,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 10352,
+          "end_rva": 10412,
+          "unwind_rva": 36420
+        },
+        {
+          "begin_rva": 10412,
+          "end_rva": 10460,
+          "unwind_rva": 36432
+        },
+        {
+          "begin_rva": 10460,
+          "end_rva": 10471,
+          "unwind_rva": 36452
+        },
+        {
+          "begin_rva": 10480,
+          "end_rva": 10555,
+          "unwind_rva": 36468
+        },
+        {
+          "begin_rva": 10555,
+          "end_rva": 10612,
+          "unwind_rva": 36480
+        },
+        {
+          "begin_rva": 10612,
+          "end_rva": 10697,
+          "unwind_rva": 36500
+        },
+        {
+          "begin_rva": 10697,
+          "end_rva": 10731,
+          "unwind_rva": 36520
+        },
+        {
+          "begin_rva": 10731,
+          "end_rva": 10752,
+          "unwind_rva": 36536
+        },
+        {
+          "begin_rva": 10752,
+          "end_rva": 10925,
+          "unwind_rva": 36556
+        },
+        {
+          "begin_rva": 10928,
+          "end_rva": 10971,
+          "unwind_rva": 36572
+        },
+        {
+          "begin_rva": 10971,
+          "end_rva": 11175,
+          "unwind_rva": 36588
+        },
+        {
+          "begin_rva": 11175,
+          "end_rva": 11196,
+          "unwind_rva": 36612
+        },
+        {
+          "begin_rva": 11196,
+          "end_rva": 11321,
+          "unwind_rva": 36632
+        },
+        {
+          "begin_rva": 11321,
+          "end_rva": 11347,
+          "unwind_rva": 36652
+        },
+        {
+          "begin_rva": 11347,
+          "end_rva": 11425,
+          "unwind_rva": 36668
+        },
+        {
+          "begin_rva": 11425,
+          "end_rva": 11442,
+          "unwind_rva": 36684
+        },
+        {
+          "begin_rva": 11568,
+          "end_rva": 11680,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11680,
+          "end_rva": 11830,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 11856,
+          "end_rva": 11967,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 11968,
+          "end_rva": 12097,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 12144,
+          "end_rva": 12257,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 12336,
+          "end_rva": 12366,
+          "unwind_rva": 36736
+        },
+        {
+          "begin_rva": 12368,
+          "end_rva": 12448,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 12448,
+          "end_rva": 12726,
+          "unwind_rva": 36740
+        },
+        {
+          "begin_rva": 12728,
+          "end_rva": 12859,
+          "unwind_rva": 36808
+        },
+        {
+          "begin_rva": 12860,
+          "end_rva": 13156,
+          "unwind_rva": 36892
+        },
+        {
+          "begin_rva": 13156,
+          "end_rva": 13217,
+          "unwind_rva": 36112
+        },
+        {
+          "begin_rva": 13228,
+          "end_rva": 13403,
+          "unwind_rva": 36940
+        },
+        {
+          "begin_rva": 13404,
+          "end_rva": 13439,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13476,
+          "end_rva": 13503,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13504,
+          "end_rva": 13561,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13564,
+          "end_rva": 13616,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13616,
+          "end_rva": 13637,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13640,
+          "end_rva": 13680,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13680,
+          "end_rva": 13701,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13704,
+          "end_rva": 13800,
+          "unwind_rva": 36992
+        },
+        {
+          "begin_rva": 13800,
+          "end_rva": 13848,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13848,
+          "end_rva": 13868,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13868,
+          "end_rva": 13926,
+          "unwind_rva": 36264
+        },
+        {
+          "begin_rva": 13928,
+          "end_rva": 14067,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 14068,
+          "end_rva": 14220,
+          "unwind_rva": 36952
+        },
+        {
+          "begin_rva": 14220,
+          "end_rva": 14256,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 14256,
+          "end_rva": 14297,
+          "unwind_rva": 36128
+        },
+        {
+          "begin_rva": 14316,
+          "end_rva": 14376,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 14376,
+          "end_rva": 14436,
+          "unwind_rva": 36184
+        },
+        {
+          "begin_rva": 14440,
+          "end_rva": 15107,
+          "unwind_rva": 37012
+        },
+        {
+          "begin_rva": 15248,
+          "end_rva": 15250,
+          "unwind_rva": 37032
+        },
+        {
+          "begin_rva": 15280,
+          "end_rva": 15286,
+          "unwind_rva": 37040
+        },
+        {
+          "begin_rva": 15286,
+          "end_rva": 15309,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15309,
+          "end_rva": 15334,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15334,
+          "end_rva": 15354,
+          "unwind_rva": 36800
+        },
+        {
+          "begin_rva": 15354,
+          "end_rva": 15408,
+          "unwind_rva": 36932
+        },
+        {
+          "begin_rva": 15408,
+          "end_rva": 15432,
+          "unwind_rva": 36984
+        }
+      ],
+      "note": "Static candidate becomes selected only when actual successful-call digest/export and runtime RVA agree."
+    },
+    "actual_wrapper_counts_after_cell": {
+      "compiled_calls": 290,
+      "aot_calls": 290,
+      "jit_calls": 0,
+      "fallback_calls": 0,
+      "contract_native_calls": 290,
+      "guard_misses": 0,
+      "representation_rejections": 6,
+      "loop_limit_rejections": 0,
+      "native_failures": 0,
+      "foreign_calls": 0
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 290,
+    "aot_calls": 290,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 290,
+    "guard_misses": 0,
+    "representation_rejections": 6,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_272a2580db4628ec9a7dd061.f0_recurrence_1-586.py314.1.nbc": "a37ad6ffcfe40471208b0cb6c752b2ee8e772ee7b6b2186f6297a6e853afca66",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_272a2580db4628ec9a7dd061.f0_recurrence_1-586.py314.nbi": "22e6ed30dd648648b42c25297c4fc21590360d353f9fff5bce8d1abed307a6e4",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_90b0c6f3cf785308b7ee93d3.f0_loop_recurrence16-586.py314.1.nbc": "3e37874dd5cb2dbe0c0597c16667cfdcbded77a2be9bfd9a16bd9bc11ae11259",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_90b0c6f3cf785308b7ee93d3.f0_loop_recurrence16-586.py314.nbi": "3b14581a81a558afe4e6ddceb27e70ebb7cbcc04a33f86087a501c076ba48565",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_a39a8e178a9a302942ae2ac2.f0_recurrence_16-586.py314.1.nbc": "57b0f5f4449a9a9b1a0053a6c0e9eb7ec262c47c979218196e94e90aeeb74a36",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_a39a8e178a9a302942ae2ac2.f0_recurrence_16-586.py314.nbi": "bfd808dfbffc5ef1e83a46927eacf34f0c41a69547fd9c6f43deca662a1ba4f9",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_dc0a616c86c4f17f273ddd82.f0_recurrence_64-586.py314.1.nbc": "c554a8714974086d0ea7ed7a9b95c0a43e894fca3563d1f0866a68d0cabd919c",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_dc0a616c86c4f17f273ddd82.f0_recurrence_64-586.py314.nbi": "2fa0227cbd6700987a701c039bc09e3a2a1cedd8221597458379d342ebb617f8",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_fd62efb1f1d505f678775a81.f0_fibonacci-586.py314.1.nbc": "868c0b380036b8c1e1e45975fbabc09db2c0acd20e46ae6049ca16446df3c7ae",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_fd62efb1f1d505f678775a81.f0_fibonacci-586.py314.nbi": "6814ab367199fb049a28dcab30040e2a9e8d4966b072435b16a27fe58579de3f",
+    "rc_heap_272a2580db4628ec9a7dd061.py": "dc6c1b1682252182c515b19aa8dfe7f37d79587f81a9604026f8de13299f6e62",
+    "rc_heap_90b0c6f3cf785308b7ee93d3.py": "e094624fa9fa83ff7e476ad000068cf99fa3cad2aa1d0ade9bc7a2c6652aa4ab",
+    "rc_heap_a39a8e178a9a302942ae2ac2.py": "add67654d042986e844dff5e8609b2ce035d568f6b82a8d86fee2a9b7a0e1d9c",
+    "rc_heap_dc0a616c86c4f17f273ddd82.py": "de473d8abc5f8c5c745aff9842e8dbabdd21fc3b665e93d16e2c49b66af9b86e",
+    "rc_heap_fd62efb1f1d505f678775a81.py": "6a8826fa0b930ddded6ae4f3ea98926bb6dac045ba57f60f415c633ff3c743ea",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "manifest_sha256": "8f10e31742ced92aa575f1bb3c4cc07ee738bde517dc8a2c859d7bc512d1bba3",
+  "verified_raw_processes": 33,
+  "verified_cells": 27,
+  "native_smoke_cells": 13,
+  "aot_replay_audits": 7,
+  "aot_validation_calls": 1798,
+  "native_batch_invocations": 3312,
+  "all_native_status_failures": 0,
+  "formal_timing_eligible": false,
+  "actual_aot_replay_numba_imported": false,
+  "native_adapter_physical_calls": [
+    {
+      "function": "fibonacci",
+      "variant": "c-exact",
+      "retained": null
+    },
+    {
+      "function": "fibonacci",
+      "variant": "c-wrap",
+      "retained": null
+    },
+    {
+      "function": "fibonacci",
+      "variant": "checked",
+      "retained": false
+    },
+    {
+      "function": "fibonacci",
+      "variant": "unchecked-int64",
+      "retained": false
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "c-exact",
+      "retained": null
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "c-wrap",
+      "retained": null
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "checked",
+      "retained": false
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "unchecked-int64",
+      "retained": false
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "c-exact",
+      "retained": null
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "c-wrap",
+      "retained": null
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "checked",
+      "retained": false
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "current-strict",
+      "retained": true
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "unchecked-int64",
+      "retained": false
+    }
+  ],
+  "cached_inspection_warning_limit": "AOT build-cell cached LLVM not used as actual body; formal helpers restrict code capture to cold cells"
+}

@@ -1,0 +1,65 @@
+{
+  "totals": {
+    "aot_calls": 8,
+    "jit_calls": 0,
+    "unknown_native_calls": 0,
+    "rejected_attempts": 0,
+    "fallback_calls": 0
+  },
+  "functions": [
+    {
+      "function": "run",
+      "kind": "region",
+      "aot_calls": 8,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "0fdc56641302703a3bb7b9b575f98b4fe4880f24cffc3e6f0f0e3faa4168450b": {
+          "aot_calls": 8,
+          "jit_calls": 0,
+          "unknown_native_calls": 0
+        }
+      }
+    }
+  ],
+  "runner_report": {
+    "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\drivers\\recursive_object.py",
+    "functions": [
+      {
+        "function": "run",
+        "compiled_calls": 8,
+        "aot_calls": 8,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": true,
+        "ahead_of_time": true,
+        "aot_loaded": true,
+        "region": true
+      }
+    ],
+    "not_found": [],
+    "batches": {},
+    "batch_failures": {},
+    "exit_code": null
+  },
+  "numba_imported_before": false,
+  "numba_imported_by_audit_bootstrap": false,
+  "numba_imported_after": false,
+  "timing_eligible": false,
+  "limitations": [
+    "Audit imports/patches add overhead; this process is never a latency sample.",
+    "Successful Region.attempt mode uses its actual selected latest program, not export availability.",
+    "jit_calls includes fresh JIT and Numba disk-cache execution; no machine-code cache-hit inference."
+  ],
+  "runner_total_compiled_calls": 8,
+  "runner_total_fallback_calls": 0,
+  "product_exact_aot_calls": 8,
+  "product_exact_jit_calls": 0,
+  "compiled_total_reconciles": true,
+  "runner_only_fallback_calls": 0,
+  "product_exact_counter_matches_audit": true,
+  "batch_execution_needs_separate_audit": false,
+  "fallback_note": "Audit wrapper counts exclude direct runner preparation-failure Python calls; runner counter retains those."
+}

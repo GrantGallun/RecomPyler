@@ -1,0 +1,70 @@
+"""Scoped static excerpts and counts; never execute measured native artifacts."""
+from collections import Counter
+import hashlib
+import json
+from pathlib import Path
+import re
+import struct
+
+ROOT = Path(__file__).resolve().parent
+RANGES = {
+    'baseline': {'force': (0x180003c20, 0x180004870),
+                 'fields': (0x180003d2a, 0x180003e44),
+                 'first-call': (0x180003f7a, 0x180004103),
+                 'first-return': (0x1800040fe, 0x180004176)},
+    'candidate': {'force': (0x180002c30, 0x180003260),
+                  'fields': (0x180002d01, 0x180002e1d),
+                  'first-call': (0x180002f48, 0x180002f7d),
+                  'first-return': (0x180002f78, 0x180002fc9),
+                  'array-adapter': (0x180001090, 0x1800011d0),
+                  'advance': (0x1800025d0, 0x180002c30)},
+}
+
+def parse(path):
+    rows = []
+    for line in path.read_text().splitlines():
+        m = re.match(r'\s*([0-9a-f]+):\s+(\w+)\s*(.*)', line)
+        if m:
+            rows.append((int(m[1], 16), m[2], m[3], line))
+    return rows
+
+def summary(rows, start, end, double=lambda address: None):
+    selected = [r for r in rows if start <= r[0] < end]
+    thresholds = []
+    for r in selected:
+        m = re.search(r'# (0x[0-9a-f]+)', r[2])
+        if m and double(int(m[1], 16)) == float(2**53):
+            thresholds.append({'at': hex(r[0]), 'instruction': r[1],
+                               'constant_address': m[1], 'value': float(2**53)})
+    return dict(begin=hex(start), end=hex(end), span_bytes=end-start,
+                instruction_lines=len(selected),
+                stack_operand_lines=sum('%rsp' in r[2] for r in selected),
+                frame_reservations=[r[3].strip() for r in selected if r[1]=='subq' and ', %rsp' in r[2]],
+                direct_calls=[{'at': hex(r[0]), 'operand': r[2]} for r in selected if r[1]=='callq'],
+                exact_threshold_rip_references=thresholds,
+                mnemonic_counts=dict(Counter(r[1] for r in selected))), selected
+
+result = {}
+for case, ranges in RANGES.items():
+    meta = json.loads((ROOT/(case+'-provenance.json')).read_text())
+    raw = Path(meta['artifact']).read_bytes()
+    assert hashlib.sha256(raw).hexdigest() == meta['artifact_sha256']
+    def double(va):
+        for section in meta['sections']:
+            offset = va-int(meta['preferred_image_base'], 16)-section['rva']
+            if 0 <= offset <= section['rawsize']-8:
+                return struct.unpack_from('<d', raw, section['offset']+offset)[0]
+        return None
+    rows = parse(ROOT/(case+'.asm'))
+    result[case] = {}
+    for name, (start, end) in ranges.items():
+        info, selected = summary(rows, start, end, double)
+        result[case][name] = info
+        (ROOT/(case+'-'+name+'.asm')).write_text(
+            f'# {case} {name}: [{start:#x}, {end:#x})\n'
+            '# Source/call-target inferred range, possibly including padding; static evidence, not cycles.\n'
+            +'\n'.join(r[3] for r in selected)+'\n')
+    print(case, {k: result[case]['force'][k] for k in ('span_bytes', 'instruction_lines', 'stack_operand_lines', 'frame_reservations')})
+result['c'] = {'force': summary(parse(ROOT/'c-force.asm'), 0x140002710, 0x1400028f0)[0]}
+print('c', {k: result['c']['force'][k] for k in ('span_bytes', 'instruction_lines', 'stack_operand_lines', 'frame_reservations')})
+(ROOT/'static-counts.json').write_text(json.dumps(result, indent=2)+'\n')

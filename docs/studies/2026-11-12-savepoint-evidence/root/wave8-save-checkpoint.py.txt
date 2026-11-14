@@ -1,0 +1,106 @@
+"""Verify and capture the user-requested stop point; execute no product code."""
+import hashlib
+import json
+import shutil
+import subprocess
+import zipfile
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parent
+REPO=ROOT/'integration'
+OUT=REPO/'docs/studies/2026-11-12-savepoint-evidence'
+read=lambda p:json.loads(p.read_text())
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+analysis=ROOT/'wave8-header-analysis'
+freeze=read(analysis/'candidate-freeze.json')
+assert freeze['commit']=='a9b59be60cdf568c8f6b63442e7efa88fd16fdd2'
+for name,digest in freeze['inputs_sha256'].items():
+    assert sha(ROOT/'wave8-header-fix'/name)==digest,name
+    assert sha(REPO/name)==digest,name
+assert len(freeze['inputs_sha256'])==58
+full=read(analysis/'full-suite/result.json')
+assert full['exit_code']==0 and full['inputs_unchanged']
+assert sha(analysis/'full-suite/stdout.bin')==full['stdout_sha256']
+assert sha(analysis/'full-suite/stderr.bin')==full['stderr_sha256']
+assert '572 passed, 22 warnings, 52 subtests passed in 336.93s' in (analysis/'full-suite/stdout.bin').read_text()
+receipt=read(analysis/'checkpoint-receipt.json')
+bundle=Path(receipt['archive'])
+assert sha(bundle)==receipt['archive_sha256']=='11430716ee10e137b2f463bd50ab46f1c7b6755b8c9573cb8e64564e500707f8'
+with zipfile.ZipFile(bundle) as archive:
+    names=archive.namelist()
+    assert len(names)==len(set(names))==185
+    manifest_bytes=archive.read('metadata/checkpoint-manifest.json')
+    assert hashlib.sha256(manifest_bytes).hexdigest()==receipt['manifest_sha256']
+    manifest=json.loads(manifest_bytes)
+    assert len(manifest['files_sha256'])==184
+    assert set(names)==set(manifest['files_sha256'])|{'metadata/checkpoint-manifest.json'}
+    for name,digest in manifest['files_sha256'].items():
+        assert hashlib.sha256(archive.read(name)).hexdigest()==digest,name
+assert not (ROOT/'wave8-native/results-final').exists()
+assert not (ROOT/'wave8-study/results-paired-final').exists()
+assert not list((ROOT/'wave8-study/results-paired').rglob('*-profile.json'))
+verification={'all_verified':True,'paused_by_user':True,'product_commit':freeze['commit'],
+    'frozen_inputs_equal_worker_and_integration':58,'full_suite':'572 tests and52 subtests passed;22warnings336.93s',
+    'checkpoint_zip_sha256':sha(bundle),'checkpoint_capture_hashes_verified':184,
+    'latest_performance_run':False,'unused_411_paired_processes':0,
+    'new_final_native_and_paired_directories_absent':True,
+    'note':'Read-only hashes/archive verification only. No tests, builds, profiles or timings rerun.'}
+(ROOT/'wave8-savepoint-verification.json').write_text(json.dumps(verification,indent=2)+'\n')
+
+assert not OUT.exists(),'Never overwrite a checkpoint archive.'
+OUT.mkdir()
+(OUT/'.gitattributes').write_bytes(b'* -text\n')
+files=[]
+
+
+def copy(source,destination):
+    source=Path(source);destination=Path(destination)
+    if destination.suffix=='.py':destination=destination.with_suffix('.py.txt')
+    target=OUT/destination
+    assert not target.exists(),target
+    target.parent.mkdir(parents=True,exist_ok=True)
+    shutil.copyfile(source,target)
+    assert source.read_bytes()==target.read_bytes()
+    files.append({'source':str(source),'archive':destination.as_posix(),'bytes':target.stat().st_size,'sha256':sha(target)})
+
+
+for name in ['checkpoint-a9b59be60cdf.zip','checkpoint-manifest.json','checkpoint-receipt.json','no-owned-children.json','candidate-freeze.json','VALIDATION.md']:
+    source=analysis/name
+    if source.exists():copy(source,Path('latest')/name)
+for name in ['wave8-save-checkpoint.py','wave8-savepoint-verification.json','wave8-root-current-first-verification.json',
+             'wave8-root-native-results-verification.json','wave8-header-integration-source.json',
+             'wave8-native-loader-integration.json','wave8-gate-verification.json','wave8-verify-results.py','wave8-verify-native.py']:
+    copy(ROOT/name,Path('root')/name)
+copy(ROOT/'wave8-final-gate-verification.json',Path('root/first-411-native-and-unused-paired-gate.json'))
+for name in ['PROTOCOL.md','RESULTS-current.md','SOURCE-SNAPSHOT.json','ARCHIVE-INDEX-results-current.json',
+             'results-current/manifest.json','results-current/COMPACT.json','results-current/ANALYSIS.json',
+             'results-paired/manifest.json']:
+    copy(ROOT/'wave8-study'/name,Path('initial-study')/name)
+copy(ROOT/'wave8-study/.git/archive-verification.json',Path('initial-study/raw-archive-verification.json'))
+for name in ['PROTOCOL.md','RESULTS-411.md','results/manifest.json','results/SUMMARY.json','results/ANALYSIS.json','results/complete.json']:
+    source=ROOT/'wave8-native'/name
+    if source.exists():copy(source,Path('first-411-native')/name)
+copy(ROOT/'wave8-native/.git/archive-verification.json',Path('first-411-native/raw-archive-verification.json'))
+for case in ['barnes_hut','raytrace']:
+    folder=ROOT/'wave8-native/results/programs'/case
+    for source in folder.glob('*.json'):
+        if any(tag in source.name for tag in ['-state.json','-aot-map.json','-selected.audit.json']):
+            copy(source,Path('first-411-native/programs')/case/source.name)
+    for variant in ['current','final']:
+        for mapping in read(folder/f'{variant}-aot-map.json'):
+            source=Path(mapping['artifact']);assert sha(source)==mapping['artifact_sha256']
+            copy(source,Path('first-411-native/programs')/case/variant/source.name)
+review=ROOT/'wave8-assembly-analysis'
+for source in sorted(review.rglob('*')):
+    if source.is_file() and ('__pycache__' not in source.parts) and (source.suffix in ['.md','.json','.asm','.py']):
+        copy(source,Path('review')/source.relative_to(review))
+files.append({'source':'generated exact-byte policy','archive':'.gitattributes','bytes':8,'sha256':sha(OUT/'.gitattributes')})
+result={'schema':1,'paused_by_user':True,'latest_product_commit':freeze['commit'],
+    'full_suite_passed':True,'latest_performance_pending':True,
+    'independent_initial_raw_commit':'8a082b2b968eaebfc5881064137f7dc02c2bfcef',
+    'independent_first_native_raw_commit':'1f952f1dc4138c2d108e0f50ebb15f4dedeb94fb',
+    'files_excluding_manifest':len(files),'bytes_excluding_manifest':sum(f['bytes'] for f in files),
+    'note':'Exact compressed latest source/test/native/validation bundle plus compact measurements and reviews. Full raw study data remains committed in the separate local study repositories. Python captures outside zip use .py.txt.',
+    'files':sorted(files,key=lambda f:f['archive'])}
+(OUT/'archive-manifest.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps({k:v for k,v in result.items() if k!='files'},indent=2))

@@ -1,0 +1,50 @@
+"""Archive an explicit native cohort with per-source labels and destination collision checks."""
+from pathlib import Path
+import hashlib,json,shutil,subprocess,sys
+HERE=Path(__file__).resolve().parent
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def read(p):return json.loads(Path(p).read_text())
+def save(p,v):p.write_text(json.dumps(v,indent=2)+"\n")
+def prepare(out):
+ m=read(out/'manifest.json');copies=[]
+ seen={}
+ def copy(src,rel,h,role):
+  src=Path(src);dst=HERE/rel
+  if rel.as_posix() in seen and seen[rel.as_posix()]!=h:raise ValueError('Conflicting archive destination')
+  seen[rel.as_posix()]=h
+  if sha(src)!=h:raise ValueError('Frozen original changed: '+str(src))
+  dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(src,dst)
+  if sha(dst)!=h:raise ValueError('Copy changed')
+  copies.append({'source':str(src),'archive':str(rel).replace('\\','/'),'sha256':h,'role':role})
+ for label,s in m['sources'].items():
+  for n,h in s['src_sha256'].items():copy(Path(s['path'])/'src'/n,Path('inputs')/out.name/'compiler'/label/n,h,'exact final frozen source/native bytes')
+ for name,item in m['programs'].items():
+  for key,folder in [('script','drivers'),('binary','bin'),('source','c-sources')]:
+   src=Path(item[key]);copy(src,Path('inputs')/out.name/folder/src.name,item[key+'_sha256'],'unchanged original measured input')
+  for label in m['sources']:
+   for row in read(out/'programs'/name/(label+'-aot-map.json')):
+    src=Path(row['artifact']);base=Path('selected-aot')/out.name/name/label
+    copy(src,base/src.name,row['artifact_sha256'],'actual successful selected AOT PE')
+    for generated in sorted(src.parent.iterdir()):
+     if generated.is_file() and generated.suffix in {'.py','.json'}:copy(generated,base/'build-evidence'/generated.name,sha(generated),'generated build evidence; not extra execution')
+ save(HERE/('ARCHIVE-INDEX-'+out.name+'.json'),{'manifest_sha256':sha(out/'manifest.json'),'copies':copies})
+def verify(out):
+ m=read(out/'manifest.json');records=[];bad=[]
+ for p in out.rglob('*.json'):
+  if any(x in p.parts for x in ['bytecode','cache','temp']):continue
+  d=read(p)
+  if isinstance(d,dict) and 'command' in d:
+   records.append(p)
+   for ext in ['stdout','stderr']:
+    f=p.with_suffix('.'+ext)
+    if ext+'_sha256' in d and (sha(f)!=d[ext+'_sha256'] or f.stat().st_size!=d[ext+'_bytes']):bad.append(str(p)+':'+ext)
+   if d['exit_code']!=0 or d['status']!='ok':bad.append(str(p)+':exit/status')
+ for row in read(HERE/('ARCHIVE-INDEX-'+out.name+'.json'))['copies']:
+  if sha(HERE/row['archive'])!=row['sha256']:bad.append(row['archive'])
+ if len(records)!=58:bad.append('expected58records got'+str(len(records)))
+ result={'manifest_sha256':sha(out/'manifest.json'),'raw_records':len(records),'all_raw_bytes_and_archived_copies_match':not bad,'stderr_hashes_captured_separately':{str(p.with_suffix('.stderr').relative_to(HERE)):sha(p.with_suffix('.stderr')) for p in records},'failures':bad}
+ save(HERE/('ARCHIVE-VERIFICATION-'+out.name+'.json'),result);print(json.dumps(result,indent=2))
+ if bad:raise SystemExit(1)
+if __name__=='__main__':
+ import argparse
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['prepare','verify']);p.add_argument('--output',type=Path,required=True);a=p.parse_args();{'prepare':prepare,'verify':verify}[a.action](a.output.resolve())

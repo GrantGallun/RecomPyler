@@ -1,0 +1,124 @@
+FFFFF                                                                    [100%]
+================================== FAILURES ===================================
+_____________ test_recursive_native_context_borrows_five_scalars ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002A9E6F168B0>
+
+    def test_recursive_native_context_borrows_five_scalars(monkeypatch):
+        monkeypatch.setattr(heap, "_cached_module", lambda source: None)
+        region = heap.lift_region(recursive_sum)
+        assert region(4, 1.25) == 10.0
+        assert region.compiled_calls == 1, region.problem
+        program = region.latest
+        recursive = getattr(program.module, program.entry.name + "_borrowed", program.run)
+        from numba import types
+    
+        signature = recursive.signatures[0]
+>       assert sum(isinstance(kind, types.CPointer) for kind in signature) == 4
+E       assert 0 == 4
+E        +  where 0 = sum(<generator object test_recursive_native_context_borrows_five_scalars.<locals>.<genexpr> at 0x000002A9E8702020>)
+
+tests\test_heap_compact_abi.py:29: AssertionError
+_ test_public_adapter_rejects_invalid_context_before_borrowing[arena-length] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002A9E9864640>
+bad = 'arena-length'
+
+    @pytest.mark.parametrize("bad", ["arena-length", "top-length", "status-length", "arena-stride"])
+    def test_public_adapter_rejects_invalid_context_before_borrowing(monkeypatch, bad):
+        monkeypatch.setattr(heap, "_cached_module", lambda source: None)
+        region = heap.lift_region(recursive_sum)
+        assert region(2, 1.0) == 3.0
+        F, I, top, st = region.arrays()
+        if bad == "arena-length":
+            I = I[:-1]
+        elif bad == "top-length":
+            top = top[:3]
+        elif bad == "status-length":
+            st = st[:0]
+        else:
+            F, I = F[::2], I[::2]
+>       with pytest.raises(ValueError, match="heap context"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_heap_compact_abi.py:54: Failed
+__ test_public_adapter_rejects_invalid_context_before_borrowing[top-length] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002A9EAE329F0>
+bad = 'top-length'
+
+    @pytest.mark.parametrize("bad", ["arena-length", "top-length", "status-length", "arena-stride"])
+    def test_public_adapter_rejects_invalid_context_before_borrowing(monkeypatch, bad):
+        monkeypatch.setattr(heap, "_cached_module", lambda source: None)
+        region = heap.lift_region(recursive_sum)
+        assert region(2, 1.0) == 3.0
+        F, I, top, st = region.arrays()
+        if bad == "arena-length":
+            I = I[:-1]
+        elif bad == "top-length":
+            top = top[:3]
+        elif bad == "status-length":
+            st = st[:0]
+        else:
+            F, I = F[::2], I[::2]
+>       with pytest.raises(ValueError, match="heap context"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_heap_compact_abi.py:54: Failed
+_ test_public_adapter_rejects_invalid_context_before_borrowing[status-length] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002A9EB361F20>
+bad = 'status-length'
+
+    @pytest.mark.parametrize("bad", ["arena-length", "top-length", "status-length", "arena-stride"])
+    def test_public_adapter_rejects_invalid_context_before_borrowing(monkeypatch, bad):
+        monkeypatch.setattr(heap, "_cached_module", lambda source: None)
+        region = heap.lift_region(recursive_sum)
+        assert region(2, 1.0) == 3.0
+        F, I, top, st = region.arrays()
+        if bad == "arena-length":
+            I = I[:-1]
+        elif bad == "top-length":
+            top = top[:3]
+        elif bad == "status-length":
+            st = st[:0]
+        else:
+            F, I = F[::2], I[::2]
+>       with pytest.raises(ValueError, match="heap context"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_heap_compact_abi.py:54: Failed
+_ test_public_adapter_rejects_invalid_context_before_borrowing[arena-stride] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002A9EC8A3570>
+bad = 'arena-stride'
+
+    @pytest.mark.parametrize("bad", ["arena-length", "top-length", "status-length", "arena-stride"])
+    def test_public_adapter_rejects_invalid_context_before_borrowing(monkeypatch, bad):
+        monkeypatch.setattr(heap, "_cached_module", lambda source: None)
+        region = heap.lift_region(recursive_sum)
+        assert region(2, 1.0) == 3.0
+        F, I, top, st = region.arrays()
+        if bad == "arena-length":
+            I = I[:-1]
+        elif bad == "top-length":
+            top = top[:3]
+        elif bad == "status-length":
+            st = st[:0]
+        else:
+            F, I = F[::2], I[::2]
+>       with pytest.raises(ValueError, match="heap context"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_heap_compact_abi.py:54: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_heap_compact_abi.py::test_recursive_native_context_borrows_five_scalars
+FAILED tests/test_heap_compact_abi.py::test_public_adapter_rejects_invalid_context_before_borrowing[arena-length]
+FAILED tests/test_heap_compact_abi.py::test_public_adapter_rejects_invalid_context_before_borrowing[top-length]
+FAILED tests/test_heap_compact_abi.py::test_public_adapter_rejects_invalid_context_before_borrowing[status-length]
+FAILED tests/test_heap_compact_abi.py::test_public_adapter_rejects_invalid_context_before_borrowing[arena-stride]
+5 failed in 3.68s

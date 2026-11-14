@@ -1,0 +1,161 @@
+"""Child implementation for dev_inspect phases. Private compiler API adapter."""
+import functools
+from contextlib import ExitStack
+import hashlib
+import json
+from pathlib import Path
+import sys
+import time
+import traceback
+import types
+
+
+def instrument(config):
+    repo = Path(config["repo"])
+    sys.path.insert(0, str(repo / "src"))
+    from recompyler import heap, runner
+
+    for module in (heap, runner):
+        if not Path(module.__file__).resolve().is_relative_to(repo / "src"):
+            raise ValueError("imported compiler is outside the requested repo")
+    plan = Path(config["plan"])
+    picks = runner.recommended(plan, config["force"])
+    name = config["function"].rsplit(".", 1)[-1]
+    keys = {key for key in picks if key[0] == name and (config["line"] is None or key[1] == config["line"])}
+    if len(keys) != 1:
+        raise ValueError("target is not selected or is ambiguous; select one function/line in the plan")
+    key = next(iter(keys))
+    if key not in runner.regional(plan):
+        raise ValueError("unsupported engine: phases currently instruments only heap.Region targets")
+    for cls, method in ((heap.Region, "attempt"), (heap.Region, "load"), (heap._Program, "compile"),
+                        (heap._Program, "guards_hold"), (heap._Unloader, "result"), (heap._Unloader, "write_back")):
+        if not callable(getattr(cls, method, None)):
+            raise ValueError(f"unsupported compiler API: {cls.__name__}.{method}")
+    with ExitStack() as cleanup:
+        return observe(config, heap, runner, key, cleanup)
+
+
+def observe(config, heap, runner, key, cleanup):
+    attempts, active = [], []
+    clock = time.perf_counter_ns
+    phases = ("load_ns", "guards_ns", "native_ns", "result_ns", "writeback_ns")
+
+    def patch(cls, name, replacement):
+        cleanup.callback(setattr, cls, name, getattr(cls, name))
+        setattr(cls, name, replacement)
+
+    def timed(cls, method, label):
+        original = getattr(cls, method)
+        depths = {}
+        @functools.wraps(original)
+        def measured(*args, **kwargs):
+            if not active:
+                return original(*args, **kwargs)
+            record = active[-1]
+            identity = id(record)
+            depth = depths.get(identity, 0)
+            started = clock() if depth == 0 else None
+            depths[identity] = depth + 1
+            try:
+                return original(*args, **kwargs)
+            finally:
+                if depth == 0:
+                    depths.pop(identity)
+                    record[label] += clock() - started
+                else:
+                    depths[identity] = depth
+        patch(cls, method, measured)
+
+    timed(heap.Region, "load", "load_ns")
+    timed(heap._Program, "guards_hold", "guards_ns")
+    timed(heap._Unloader, "result", "result_ns")
+    timed(heap._Unloader, "write_back", "writeback_ns")
+    original_compile = heap._Program.compile
+    def compile_measured(program, *args, **kwargs):
+        result = original_compile(program, *args, **kwargs)
+        native = getattr(program, "run", None)
+        if callable(native) and native is not getattr(program, "_inspection_run", None):
+            @functools.wraps(native)
+            def measured(*passed, **named):
+                if not active:
+                    return native(*passed, **named)
+                record, started = active[-1], clock()
+                record["native_entries"] += 1
+                record["native_modes"].append("aot" if program.ahead_of_time else "jit")
+                try:
+                    return native(*passed, **named)
+                finally:
+                    record["native_ns"] += clock() - started
+            program.run = program._inspection_run = measured
+        return result
+    patch(heap._Program, "compile", compile_measured)
+    original_attempt = heap.Region.attempt
+    def attempt_measured(region, *args, **kwargs):
+        fn = region.original
+        matches = (fn.__name__, fn.__code__.co_firstlineno) == key
+        if "." in config["function"]:
+            matches = matches and fn.__qualname__ == config["function"]
+        if not matches:
+            return original_attempt(region, *args, **kwargs)
+        if not hasattr(region, "aot_calls") or not hasattr(region, "jit_calls"):
+            raise ValueError("unsupported compiler API: actual region mode counters are absent")
+        before = region.aot_calls, region.jit_calls
+        record = {phase: 0 for phase in phases}
+        record.update(function=fn.__qualname__, line=key[1], native_entries=0, native_modes=[], ok=False)
+        active.append(record)
+        started = clock()
+        try:
+            result = original_attempt(region, *args, **kwargs)
+            record["ok"] = bool(result[0])
+            return result
+        finally:
+            record["attempt_ns"] = clock() - started
+            record["aot_calls"] = region.aot_calls - before[0]
+            record["jit_calls"] = region.jit_calls - before[1]
+            record["other_attempt_ns"] = record["attempt_ns"] - sum(record[p] for p in phases)
+            attempts.append(record)
+            active.pop()
+    patch(heap.Region, "attempt", attempt_measured)
+    error = None
+    try:
+        report = runner.run_script(Path(config["script"]), config["script_args"], Path(config["plan"]), force=config["force"])
+    except BaseException as exc:
+        traceback.print_exc()
+        report = None
+        error = f"target run failed: {type(exc).__name__}: {exc}"
+    # No fabricated zero attribution for a call that never entered this engine.
+    if not attempts and not error:
+        error = "no target Region.attempt calls observed; target may be uncalled, lazy, or unsupported"
+    if report and report.get("batches"):
+        error = "unsupported batch execution: region timings do not attribute batch backends"
+    loaded = []
+    for name, module in tuple(sys.modules.items()):
+        path = vars(module).get("__file__") if type(module) is types.ModuleType else None
+        if path and Path(path).suffix.lower() in {".pyd", ".so", ".dll", ".dylib"} and Path(path).is_file():
+            raw = Path(path).read_bytes()
+            loaded.append({"module": name, "path": str(Path(path).resolve()), "sha256": hashlib.sha256(raw).hexdigest()})
+    result = {"instrumented": True, "timing_note": "Diagnostic timers add overhead; not an uninstrumented performance result. Native entries include retries; actual successful mode counts and Python fallbacks are in runner. Other attempt time includes preparation/compilation and unmeasured conversion/commit work. Timers attribute only the selected region.",
+            "attempts": attempts, "runner": report, "loaded_native_modules": loaded,
+            "numba_imported": "numba" in sys.modules,
+            "totals_ns": {p: sum(record[p] for record in attempts) for p in (*phases, "attempt_ns", "other_attempt_ns")}}
+    if error:
+        result["error"] = error
+    return result
+
+
+def main():
+    config = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+    try:
+        report = instrument(config)
+        exit_code = (report.get("runner") or {}).get("exit_code")
+        code = 2 if "error" in report else (0 if exit_code in (None, 0) else 1)
+    except BaseException as exc:
+        report = {"instrumented": True, "error": f"{type(exc).__name__}: {exc}"}
+        traceback.print_exc()
+        code = 2
+    Path(config["result"]).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    return code
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

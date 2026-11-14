@@ -1,0 +1,54 @@
+{
+  "baseline": {
+    "process": {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\phase_breakdown.py",
+        "--source",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\baseline",
+        "--driver",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+        "--plan",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\barnes_hut\\baseline.plan.json",
+        "--output",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-phases.payload.json"
+      ],
+      "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results",
+      "status": "ok",
+      "exit_code": 0,
+      "wall_s": 0.6321686000010232,
+      "stdout_sha256": "8190c66b94322d8429f78aaba6717f86722d5db69b24c11a826d4bde91b44801",
+      "stdout_bytes": 377,
+      "utc": "2026-11-12T03:39:58.339414+00:00"
+    },
+    "payload": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-phases.payload.json",
+    "headline_timing_eligible": false,
+    "numeric_checks_match_python": true
+  },
+  "candidate": {
+    "process": {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\phase_breakdown.py",
+        "--source",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes",
+        "--driver",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+        "--plan",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\barnes_hut\\candidate.plan.json",
+        "--output",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-phases.payload.json"
+      ],
+      "cwd": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results",
+      "status": "ok",
+      "exit_code": 0,
+      "wall_s": 0.5741897000043537,
+      "stdout_sha256": "e46bba8cad9ee01b62d022691a5977155d6a73675a73469d57fc52fa6e945be3",
+      "stdout_bytes": 387,
+      "utc": "2026-11-12T03:39:59.359702+00:00"
+    },
+    "payload": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-phases.payload.json",
+    "headline_timing_eligible": false,
+    "numeric_checks_match_python": true
+  }
+}

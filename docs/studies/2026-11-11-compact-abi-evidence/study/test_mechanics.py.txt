@@ -1,0 +1,44 @@
+"""Tiny preparation fixtures; no compiler/native/workload execution."""
+import ast
+import copy
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import unittest
+import checks
+import postverify
+
+class Mechanics(unittest.TestCase):
+    def test_intermediate_types_are_required(self):
+        initial={'numbers':['0x0.0p+0'],'types':['int'],'aliases':[0]}
+        a={'initial':initial,'final':initial,'checkpoints':[{'step':1,'numeric_sha256':'n','types_sha256':'int','aliases_sha256':'a'}]}
+        b=copy.deepcopy(a);b['checkpoints'][0]['types_sha256']='float'
+        self.assertFalse(postverify.pair(a,b)['valid'])
+        self.assertTrue(postverify.pair(a,a)['valid'])
+        with self.assertRaises(ValueError):checks.audit_compare(a,{},b)
+
+    def test_missing_checks_and_signed_zero(self):
+        self.assertFalse(checks.check_equal({},{}))
+        self.assertFalse(checks.check_equal({'x':'0x0.0p+0'},{'x':'-0x0.0p+0'}))
+        self.assertTrue(checks.check_equal({'x':'0x0.0p+0'},{'x':'0x0.0p+0'}))
+
+    def test_explicit_results_warmup_does_not_execute(self):
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name);script=root/'results'/'tiny.py';script.parent.mkdir()
+            script.write_text('raise RuntimeError("must not execute")\n')
+            e=dict(os.environ,PYTHONPYCACHEPREFIX=str(root/'bytecode'))
+            p=subprocess.run([sys.executable,str(Path(__file__).parent/'warm_bytecode.py'),str(script)],env=e,capture_output=True)
+            self.assertEqual(p.returncode,0,p.stderr)
+            self.assertTrue(list((root/'bytecode').rglob('tiny.*.pyc')))
+
+    def test_syntax_and_three_controls(self):
+        here=Path(__file__).parent
+        for path in here.glob('*.py'):ast.parse(path.read_text())
+        paths=list((here/'regressions').glob('*.py'))
+        self.assertEqual(len(paths),3)
+        for path in paths:
+            tree=ast.parse(path.read_text());self.assertEqual(sum(isinstance(n,ast.FunctionDef) and n.name=='run' for n in tree.body),1)
+
+if __name__=='__main__':unittest.main()

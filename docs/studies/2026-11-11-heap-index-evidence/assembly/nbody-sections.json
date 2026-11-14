@@ -1,0 +1,118 @@
+{
+  "baseline": {
+    "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\nbody\\baseline\\recompyler\\rcaot_880fa06e8c8860a0e204e592.cp314-win_amd64.pyd",
+    "artifact_sha256": "9c6e5f21bf0c2109bfb2b46ef07f326227c44c6698abd6be80eab3f9781fe949",
+    "image_base": "0x180000000",
+    "sections": {
+      ".text": {
+        "rva": "0x1000",
+        "virtual_size": 36280,
+        "raw_size": 36352,
+        "sha256": "6e9aac9daf84bcfc6c7e4449028884c56978151367c0d2e784adea4792455114"
+      },
+      ".rdata": {
+        "rva": "0xa000",
+        "virtual_size": 25744,
+        "raw_size": 26112,
+        "sha256": "d45915e4b208325a25928186cd268c3f6a9a9e367961c41e8f0e42779a63ce11"
+      },
+      ".data": {
+        "rva": "0x11000",
+        "virtual_size": 3328,
+        "raw_size": 2560,
+        "sha256": "f861b451fba63e744711903dc3936a2b577617ef1eed8c4dca057d1a144a552d"
+      },
+      ".pdata": {
+        "rva": "0x12000",
+        "virtual_size": 1092,
+        "raw_size": 1536,
+        "sha256": "339675cfb3b9fe6c082112c9a6cd4ebc9a86c477256cbeb9ccbddb724485af7d"
+      },
+      ".rsrc": {
+        "rva": "0x13000",
+        "virtual_size": 248,
+        "raw_size": 512,
+        "sha256": "e8e25f1fae523e81f32919c22cc2d61b0fff23d8ac64f10c517ba3001094ca90"
+      },
+      ".reloc": {
+        "rva": "0x14000",
+        "virtual_size": 292,
+        "raw_size": 512,
+        "sha256": "8a8061eba35daaaf4f56f0d52b46d761749c4ea10080e6120863f228c35ced50"
+      }
+    },
+    "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\nbody\\baseline-forced.audit.json",
+    "audit_totals": {
+      "aot_calls": 5,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0
+    },
+    "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\nbody\\baseline.plan.json"
+  },
+  "candidate": {
+    "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\nbody\\candidate\\recompyler\\rcaot_880fa06e8c8860a0e204e592.cp314-win_amd64.pyd",
+    "artifact_sha256": "2ff48aa830e97683487debcd3c0a7ef32b9b6c2bec217ad2facbfacf046535a4",
+    "image_base": "0x180000000",
+    "sections": {
+      ".text": {
+        "rva": "0x1000",
+        "virtual_size": 36280,
+        "raw_size": 36352,
+        "sha256": "6e9aac9daf84bcfc6c7e4449028884c56978151367c0d2e784adea4792455114"
+      },
+      ".rdata": {
+        "rva": "0xa000",
+        "virtual_size": 25744,
+        "raw_size": 26112,
+        "sha256": "0eb5438f64f184964fe24e5e7f5dcd5a65bbdc31f03836b6d096be14a47dd074"
+      },
+      ".data": {
+        "rva": "0x11000",
+        "virtual_size": 3328,
+        "raw_size": 2560,
+        "sha256": "f861b451fba63e744711903dc3936a2b577617ef1eed8c4dca057d1a144a552d"
+      },
+      ".pdata": {
+        "rva": "0x12000",
+        "virtual_size": 1092,
+        "raw_size": 1536,
+        "sha256": "339675cfb3b9fe6c082112c9a6cd4ebc9a86c477256cbeb9ccbddb724485af7d"
+      },
+      ".rsrc": {
+        "rva": "0x13000",
+        "virtual_size": 248,
+        "raw_size": 512,
+        "sha256": "e8e25f1fae523e81f32919c22cc2d61b0fff23d8ac64f10c517ba3001094ca90"
+      },
+      ".reloc": {
+        "rva": "0x14000",
+        "virtual_size": 292,
+        "raw_size": 512,
+        "sha256": "8a8061eba35daaaf4f56f0d52b46d761749c4ea10080e6120863f228c35ced50"
+      }
+    },
+    "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\nbody\\candidate-forced.audit.json",
+    "audit_totals": {
+      "aot_calls": 5,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0
+    },
+    "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\nbody\\candidate.plan.json"
+  },
+  "sections_byte_identical": {
+    ".text": true,
+    ".rdata": false,
+    ".data": true,
+    ".pdata": true,
+    ".rsrc": true,
+    ".reloc": true
+  },
+  "limitations": [
+    "No artifact import/execution/build/timing; compares raw PE sections only.",
+    "Same .text bytes do not establish identical whole-process performance."
+  ]
+}

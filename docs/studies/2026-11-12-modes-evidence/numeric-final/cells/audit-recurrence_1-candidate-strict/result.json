@@ -1,0 +1,826 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "candidate-strict",
+  "function": "recurrence_1",
+  "task": "audit",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ]
+  },
+  "corpus_count": 284,
+  "expected_results_sha256": "a2335106cb689e2f42741fd2fdb74f166cbf90832ebd6f4e603a40a7054f8939",
+  "valid_exact_results": true,
+  "construction_s": 0.21887540000898298,
+  "first_call_s": 0.649276700001792,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 284,
+    "aot_calls": 0,
+    "jit_calls": 284,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "recurrence_1",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "325c4bb09270590089581d2c349903edb9823d524eae95c03dc3c163a411de65",
+    "function_bytecode_sha256": "7ebef16f44fe0674853653e7a9256f52df36423ec9016c40627e1dff1c0a68a5",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null,
+    "program_digest": "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_recurrence_1",
+    "program_source_sha256": "1a1c0ad556493c2eaf720eb90dcd613a599a18d109d4d5488e09e11482dfd09c",
+    "dispatcher_module": "rc_heap_e1608e92092c158d0062c70d",
+    "dispatcher_qualname": "f0_recurrence_1",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_e1608e92092c158d0062c70d15f0_recurrence_1B3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_e1608e92092c158d0062c70d15f0_recurrence_1B3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx",
+        "code_capture_requested": false,
+        "code_capture_note": "No cached LLVM/ASM inspection requested or claimed"
+      }
+    ],
+    "dispatcher_cache_hits": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64)": 1
+    },
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "invalid_audits": [
+    {
+      "args": [
+        "1048577",
+        "1",
+        "0"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "bound_values": [
+        "1048577",
+        "1",
+        "0"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1099511627776",
+        "1099511627776",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706177"
+      },
+      "bound_values": [
+        "1099511627776",
+        "1099511627776",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706177"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706177"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "9223372036854775807",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775808"
+      },
+      "bound_values": [
+        "9223372036854775807",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775808"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775808"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "-9223372036854775808",
+        "-1",
+        "0"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775808"
+      },
+      "bound_values": [
+        "-9223372036854775808",
+        "-1",
+        "0"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775808"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775808"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 0,
+          "failed_status": 1
+        }
+      }
+    },
+    {
+      "args": [
+        "True",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "bool",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "bound_values": [
+        "True",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "semantic_audits.<locals>.IntSubclass",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "4"
+      },
+      "bound_values": [
+        "2",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "4"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "4"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2.0",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "float",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "4.0"
+      },
+      "bound_values": [
+        "2.0",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "4.0"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "4.0"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        },
+        "88bd371270005e63b57ba1a3fdb2c334e374a9ce99258df65320c0e46a6c0218": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1208925819614629174706176",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706177"
+      },
+      "bound_values": [
+        "1208925819614629174706176",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706177"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706177"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        },
+        "88bd371270005e63b57ba1a3fdb2c334e374a9ce99258df65320c0e46a6c0218": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_1() missing 3 required positional arguments: 'x', 'y', and 'z'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_1() missing 3 required positional arguments: 'x', 'y', and 'z'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_1() missing 3 required positional arguments: 'x', 'y', and 'z'"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        },
+        "88bd371270005e63b57ba1a3fdb2c334e374a9ce99258df65320c0e46a6c0218": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {
+        "bad": "1"
+      },
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_1() got an unexpected keyword argument 'bad'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_1() got an unexpected keyword argument 'bad'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "recurrence_1() got an unexpected keyword argument 'bad'"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        },
+        "88bd371270005e63b57ba1a3fdb2c334e374a9ce99258df65320c0e46a6c0218": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {
+        "x": "1",
+        "y": "1",
+        "z": "2"
+      },
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        },
+        "88bd371270005e63b57ba1a3fdb2c334e374a9ce99258df65320c0e46a6c0218": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    }
+  ],
+  "audit_observations": {
+    "attempts": 11,
+    "rejected_attempts": 8,
+    "attempt_exceptions": 0,
+    "programs": {
+      "214801714103782328191f224fb31f74f7f9377185798c4af7ec54497a90736b": {
+        "mode": "JIT",
+        "entered": 5,
+        "returned": 5,
+        "successful_status": 2,
+        "failed_status": 3
+      },
+      "88bd371270005e63b57ba1a3fdb2c334e374a9ce99258df65320c0e46a6c0218": {
+        "mode": "JIT",
+        "entered": 1,
+        "returned": 1,
+        "successful_status": 1,
+        "failed_status": 0
+      }
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 288,
+    "aot_calls": 0,
+    "jit_calls": 288,
+    "fallback_calls": 8,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.1.nbc": "08cc8bd03e1357c11fe7b17293c659f973dc16d1ed6fa71e7577c1db20117782",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.nbi": "d8ad44c9caae00d8d2781d009bff1a46400003f7f618891244cccf0c31960a61",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.1.nbc": "2bba7021e3bf3d4bc43bd7be3cde343f0fb4c0ee16238cf197030ee570397c1a",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.nbi": "c27cdaa61113a3444f0af6d858c72a995b52b3338cd421b830da6995c48c8895",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.1.nbc": "e88082336c561e40fc7e196eec2525f6a31ee3c862dddc14454cd2a4be36192b",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.nbi": "f22260a03baa0264c23b81cd378a818feeb67a47bea6e0902091e8935fba7d92",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.1.nbc": "05f05a8a79d8b06a8791ebbbe5db87b514e7a10f71e5b83f7cc5d8bf1c98d308",
+    "numba/candidate-strict_1ac17625b89d3289bd86e14b34dabfb835debae2/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.nbi": "8df3082aaeef4320c3be2eef63306159fea4fdece7953a531de7091617e52fe1",
+    "rc_heap_cc640ec9e29e6464b99a6ead.py": "d8225e5a0acc7e273d93af0df0223a773f05e6d9aac654ca752626a7320a6a39",
+    "rc_heap_e1608e92092c158d0062c70d.py": "a2f33cf69430461eadd844470bc8964abe125a29cbf1fd42644dbf49297be705",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

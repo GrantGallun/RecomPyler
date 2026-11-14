@@ -1,0 +1,99 @@
+{
+  "manifest_sha256": "308adefb126b9d36f4742ec29bb4590f807d2955293f168aa2c90d0dd6bcaabc",
+  "rows": {
+    "plain": {
+      "checks_valid": true,
+      "kernel_samples_s": [
+        0.5547885000050883,
+        0.5522853000002215,
+        0.5390740000002552,
+        0.553105200000573,
+        0.5298456999953487
+      ],
+      "median_best_kernel_s": 0.5522853000002215,
+      "process_wall_samples_s": [
+        2.961464200001501,
+        3.0033538000061526,
+        2.89132729999983,
+        2.9682821999958833,
+        2.8573520999998436
+      ],
+      "median_process_wall_s": 2.961464200001501,
+      "aot_calls_total": null,
+      "jit_calls_total": null,
+      "fallback_calls_total": null,
+      "actual_modes_valid": null
+    },
+    "c": {
+      "checks_valid": true,
+      "kernel_samples_s": [
+        0.00913167,
+        0.009114265,
+        0.009126186,
+        0.009115458,
+        0.009093523
+      ],
+      "median_best_kernel_s": 0.009115458,
+      "process_wall_samples_s": [
+        0.21823549999680836,
+        0.20547259999875678,
+        0.1968205000011949,
+        0.2078505999961635,
+        0.2077994999999646
+      ],
+      "median_process_wall_s": 0.2077994999999646,
+      "aot_calls_total": null,
+      "jit_calls_total": null,
+      "fallback_calls_total": null,
+      "actual_modes_valid": null
+    },
+    "baseline": {
+      "checks_valid": true,
+      "kernel_samples_s": [
+        0.04690359999949578,
+        0.04749180000362685,
+        0.05072059999656631,
+        0.0494299999991199,
+        0.0474778999996488
+      ],
+      "median_best_kernel_s": 0.04749180000362685,
+      "process_wall_samples_s": [
+        0.5357911000028253,
+        0.5796945999973104,
+        0.5798021999944467,
+        0.5596179999993183,
+        0.5301970000000438
+      ],
+      "median_process_wall_s": 0.5596179999993183,
+      "aot_calls_total": 2500,
+      "jit_calls_total": 0,
+      "fallback_calls_total": 0,
+      "actual_modes_valid": true
+    },
+    "candidate": {
+      "checks_valid": true,
+      "kernel_samples_s": [
+        0.035881800002243835,
+        0.03564840000035474,
+        0.036593199998605996,
+        0.03582880000612931,
+        0.035059000001638196
+      ],
+      "median_best_kernel_s": 0.03582880000612931,
+      "process_wall_samples_s": [
+        0.5272398000015528,
+        0.4962061999976868,
+        0.516776900003606,
+        0.5118624999959138,
+        0.5075007999985246
+      ],
+      "median_process_wall_s": 0.5118624999959138,
+      "aot_calls_total": 2500,
+      "jit_calls_total": 0,
+      "fallback_calls_total": 0,
+      "actual_modes_valid": true
+    }
+  },
+  "candidate_profile_wall_s": 65.16033819999575,
+  "baseline_profile_cost_note": "Reused historical profile evidence; no fresh baseline profiling cost."
+}

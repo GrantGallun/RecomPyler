@@ -1,0 +1,111 @@
+"""Separate untimed full-state/checkpoint/alias and actual-mode audit."""
+import argparse
+import ast
+import builtins
+import hashlib
+import json
+from pathlib import Path
+import sys
+import types
+
+import audit
+
+FIELDS = ('position.x','position.y','velocity.x','velocity.y','acceleration.x','acceleration.y','mass')
+
+
+def state(particles, identities):
+    numbers, kinds, links = [], [], []
+    def label(obj):
+        return identities.setdefault(id(obj), len(identities))
+    links.append(label(particles))
+    for particle in particles:
+        links.append(label(particle))
+        links.extend(label(getattr(particle, n)) for n in ('position','velocity','acceleration'))
+        for path in FIELDS:
+            value = particle
+            for name in path.split('.'):
+                value = getattr(value, name)
+            numbers.append(float(value).hex())
+            kinds.append(type(value).__name__)
+    sha = lambda value: hashlib.sha256(json.dumps(value, separators=(',',':')).encode()).hexdigest()
+    return {'numeric_sha256': sha(numbers), 'types_sha256': sha(kinds), 'aliases_sha256': sha(links),
+            'numbers': numbers, 'types': kinds, 'aliases': links, 'identity_nodes': len(identities)}
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--script', type=Path, required=True)
+    p.add_argument('--target', required=True)
+    p.add_argument('--group', type=int, required=True)
+    p.add_argument('--plan', type=Path)
+    p.add_argument('--expected-source',type=Path)
+    p.add_argument('--output', type=Path, required=True)
+    args = p.parse_args()
+    snapshots, identities = [], {}
+    initial = None
+    def wrapped(fn):
+        def call(*values, **named):
+            nonlocal initial
+            if initial is None:
+                initial = state(values[0], identities)
+            result = fn(*values, **named)
+            s = state(values[0], identities)
+            snapshots.append({'step': (len(snapshots)+1)*args.group, **{k:s[k] for k in ('numeric_sha256','types_sha256','aliases_sha256','identity_nodes')}})
+            return result
+        return call
+    mode_evidence = None
+    if args.plan:
+        from recompyler import heap, runner
+        if args.expected_source and any(not Path(mod.__file__).resolve().is_relative_to(args.expected_source.resolve()/'src') for mod in (heap,runner)):
+            raise RuntimeError('State audit imported outside frozen requested compiler source.')
+        from recompyler.lift import Lifted
+        from recompyler.aot import AotLifted
+        instrument = audit.Auditor()
+        instrument.patch_region(heap.Region)
+        instrument.patch_lifted(Lifted, AotLifted)
+        original = heap.Region.__call__
+        original_types = runner.types
+        captured = []
+        def make_module(*v, **kw):
+            m = types.ModuleType(*v, **kw)
+            captured.append(m)
+            return m
+        def call(region, *values, **named):
+            if region.original.__name__ == args.target:
+                return wrapped(lambda *v, **k: original(region, *v, **k))(*values, **named)
+            return original(region, *values, **named)
+        heap.Region.__call__ = call
+        runner.types = types.SimpleNamespace(ModuleType=make_module)
+        try:
+            report = runner.run_script(args.script.resolve(), ['1'], args.plan.resolve(), True)
+            namespace = captured[-1].__dict__
+        finally:
+            heap.Region.__call__, runner.types = original, original_types
+            mode_evidence = instrument.result()
+            instrument.restore()
+        mode_evidence['runner'] = report
+        mode_evidence['numba_imported'] = 'numba' in sys.modules
+    else:
+        tree = ast.parse(args.script.read_text())
+        for node in tree.body:
+            if isinstance(node, ast.FunctionDef) and node.name == args.target:
+                node.decorator_list.insert(0, ast.copy_location(ast.Name(id='__state_wrap__', ctx=ast.Load()), node))
+        module = types.ModuleType('__main__')
+        namespace = module.__dict__
+        namespace.update(__file__=str(args.script.resolve()), __state_wrap__=wrapped)
+        oldmain, oldargv = sys.modules['__main__'], sys.argv
+        sys.modules['__main__'], sys.argv = module, [str(args.script.resolve()), '1']
+        try:
+            exec(compile(ast.fix_missing_locations(tree), str(args.script.resolve()), 'exec'), namespace)
+        finally:
+            sys.modules['__main__'], sys.argv = oldmain, oldargv
+    final = state(namespace['_particles'], identities)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps({'timing_eligible':False, 'initial':initial, 'final':final,
+        'checkpoints':snapshots, 'mode_evidence':mode_evidence, 'expected_steps':100}, indent=2)+'\n')
+    if len(snapshots)*args.group != 100:
+        raise SystemExit('Incomplete full-state checkpoint coverage.')
+
+
+if __name__ == '__main__':
+    main()

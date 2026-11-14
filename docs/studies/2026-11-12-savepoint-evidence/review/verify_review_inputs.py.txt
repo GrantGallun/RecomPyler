@@ -1,0 +1,49 @@
+"""Independent metadata verification only; no product/workload imports."""
+import hashlib
+import json
+from pathlib import Path
+
+root = Path(__file__).resolve().parent.parent
+evidence = root / 'wave8-coverage-analysis'
+worker = root / 'wave8-runtime-fix'
+read = lambda path: json.loads(path.read_text())
+sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+freeze = read(evidence / 'candidate-freeze.json')
+inputs = read(evidence / 'full-suite/inputs.json')
+result = read(evidence / 'full-suite/result.json')
+assert freeze['inputs_sha256'] == inputs['inputs_sha256']
+for name, expected in freeze['inputs_sha256'].items():
+    assert sha(worker / name) == expected, name
+assert result['exit_code'] == 0 and result['inputs_unchanged']
+for stream in ('stdout', 'stderr'):
+    assert sha(evidence / f'full-suite/{stream}.bin') == result[stream + '_sha256']
+summary = {
+    'mode': 'read-only file hashing; no execution or product imports',
+    'commit': freeze['commit'], 'base': freeze['base'],
+    'matched_frozen_input_count': len(freeze['inputs_sha256']),
+    'freeze_equals_full_suite_inputs': True, 'current_bytes_match_freeze': True,
+    'full_suite_exit_code': result['exit_code'], 'full_suite_log_hashes_match': True,
+    'receipt_sha256': sha(evidence / 'full-suite/result.json'),
+    'inputs_sha256': sha(evidence / 'full-suite/inputs.json'),
+    'freeze_sha256': sha(evidence / 'candidate-freeze.json'),
+}
+aot_folder = evidence / 'augassign-aot-proof'
+aot = read(aot_folder / 'report.json')
+assert aot['exit_code'] == 0 and aot['inputs_unchanged']
+assert not aot['numba_imported_in_child']
+assert aot['rows'] == json.loads((aot_folder / 'child.stdout.bin').read_bytes())
+for name, expected in aot['input_hashes'].items():
+    assert sha(worker / name) == expected, name
+for name, expected in aot['artifact_hashes'].items():
+    assert sha(aot_folder / name) == expected, name
+summary['external_aot_probe'] = {
+    'native_entries': sum(row['native_entries'] for row in aot['rows']),
+    'aot_success': sum(row['aot_success'] for row in aot['rows']),
+    'jit_success': sum(row['jit_success'] for row in aot['rows']),
+    'expected_setter_error_fallbacks': sum(row['fallback'] for row in aot['rows']),
+    'inputs_artifacts_rows_verified': True,
+    'report_sha256': sha(aot_folder / 'report.json'),
+}
+output = Path(__file__).resolve().parent / 'final-input-verification.json'
+output.write_text(json.dumps(summary, indent=2) + '\n')
+print(json.dumps(summary))

@@ -1,0 +1,117 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "c-exact",
+  "function": "recurrence_16",
+  "task": "native",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ]
+  },
+  "corpus_count": 284,
+  "expected_results_sha256": "dc673682d0f04197db3e170492b393023b5282c41d6deeb46c297eb5c7538fd5",
+  "valid_exact_results": true,
+  "construction_s": 0.000312299991492182,
+  "first_call_s": 2.300000051036477e-05,
+  "first_call_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 1
+  },
+  "validation_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 284
+  },
+  "program": {
+    "function": "recurrence_16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "21d321a223fe51ff44430bacfe216ffab032516eedcd3f7613a9e404dd549d67",
+    "function_bytecode_sha256": "e91b1989418bb801a4874f438979bc7c3c320586a833474766145ecfd02524f3",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null
+  },
+  "numba_imported": false,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "native_batch": {
+    "available": true,
+    "boundary": "prevalidated-input-C-loop-native-call-and-status-reset",
+    "mode": "C-exact",
+    "samples": [
+      {
+        "elapsed_ns": 1867100,
+        "native_invocations": 581632,
+        "status_failures": 0,
+        "checksum_uint64": 18446743984855183360
+      },
+      {
+        "elapsed_ns": 1934400,
+        "native_invocations": 581632,
+        "status_failures": 0,
+        "checksum_uint64": 18446743984855183360
+      },
+      {
+        "elapsed_ns": 1867900,
+        "native_invocations": 581632,
+        "status_failures": 0,
+        "checksum_uint64": 18446743984855183360
+      }
+    ],
+    "median_ns": 1867900,
+    "timing_eligible": true,
+    "region_counter_delta": {
+      "compiled_calls": 0,
+      "aot_calls": 0,
+      "jit_calls": 0,
+      "fallback_calls": 0,
+      "contract_native_calls": 0,
+      "guard_misses": 0,
+      "representation_rejections": 0,
+      "loop_limit_rejections": 0,
+      "native_failures": 0,
+      "foreign_calls": 0
+    },
+    "counter_accounting": "C loop counts native invocations; Region Python counters do not count adapter calls"
+  },
+  "final_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 285
+  },
+  "cache_files": {}
+}

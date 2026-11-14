@@ -1,0 +1,95 @@
+FF                                                                     [100%]
+================================== FAILURES ===================================
+_ ContractTests.test_contract_subclass_cannot_supply_different_proof_and_guard_bounds _
+
+self = <test_experimental_numeric.ContractTests testMethod=test_contract_subclass_cannot_supply_different_proof_and_guard_bounds>
+
+    def test_contract_subclass_cannot_supply_different_proof_and_guard_bounds(self):
+        class DivergentIntervals(self.api.IntIntervals):
+            def __getitem__(self, name):
+                return (-1, 1)
+            def __iter__(self):
+                return iter(("x",))
+        contract = DivergentIntervals(x=(-2**32, 2**32))
+        try:
+            region = self.api.lift_numeric(proved_product, mode="checked", contract=contract)
+        except ValueError:
+            return
+>       self.assertEqual(region(2**32), 2**64)
+E       AssertionError: 0 != 18446744073709551616
+
+tests\test_experimental_numeric.py:167: AssertionError
+_ ContractTests.test_only_exact_immutable_interval_configuration_is_accepted (mode='checked') _
+
+self = <test_experimental_numeric.ContractTests testMethod=test_only_exact_immutable_interval_configuration_is_accepted>
+
+    def test_only_exact_immutable_interval_configuration_is_accepted(self):
+        calls = []
+        class DivergentIntervals(self.api.IntIntervals):
+            def __getitem__(self, name):
+                calls.append("getitem")
+                return (-1, 1)
+            def __iter__(self):
+                calls.append("iter")
+                return iter(("x",))
+        for mode in ("checked", "unchecked-int64"):
+>           with self.subTest(mode=mode), self.assertRaises(ValueError):
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: ValueError not raised
+
+tests\test_experimental_numeric.py:179: AssertionError
+_ ContractTests.test_only_exact_immutable_interval_configuration_is_accepted (mode='unchecked-int64') _
+
+self = <test_experimental_numeric.ContractTests testMethod=test_only_exact_immutable_interval_configuration_is_accepted>
+
+    def test_only_exact_immutable_interval_configuration_is_accepted(self):
+        calls = []
+        class DivergentIntervals(self.api.IntIntervals):
+            def __getitem__(self, name):
+                calls.append("getitem")
+                return (-1, 1)
+            def __iter__(self):
+                calls.append("iter")
+                return iter(("x",))
+        for mode in ("checked", "unchecked-int64"):
+>           with self.subTest(mode=mode), self.assertRaises(ValueError):
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: ValueError not raised
+
+tests\test_experimental_numeric.py:179: AssertionError
+_ ContractTests.test_only_exact_immutable_interval_configuration_is_accepted __
+
+self = <test_experimental_numeric.ContractTests testMethod=test_only_exact_immutable_interval_configuration_is_accepted>
+
+    def test_only_exact_immutable_interval_configuration_is_accepted(self):
+        calls = []
+        class DivergentIntervals(self.api.IntIntervals):
+            def __getitem__(self, name):
+                calls.append("getitem")
+                return (-1, 1)
+            def __iter__(self):
+                calls.append("iter")
+                return iter(("x",))
+        for mode in ("checked", "unchecked-int64"):
+            with self.subTest(mode=mode), self.assertRaises(ValueError):
+                self.api.lift_numeric(proved_product, mode=mode,
+                                      contract=DivergentIntervals(x=(-2**32, 2**32)))
+>       self.assertEqual(calls, [])
+E       AssertionError: Lists differ: ['iter', 'iter', 'getitem', 'iter', 'iter', 'getitem'] != []
+E       
+E       First list contains 6 additional elements.
+E       First extra element 0:
+E       'iter'
+E       
+E       - ['iter', 'iter', 'getitem', 'iter', 'iter', 'getitem']
+E       + []
+
+tests\test_experimental_numeric.py:182: AssertionError
+---------------------------- Captured stdout call -----------------------------
+uu
+=========================== short test summary info ===========================
+FAILED tests/test_experimental_numeric.py::ContractTests::test_contract_subclass_cannot_supply_different_proof_and_guard_bounds
+SUBFAILED(mode='checked') tests/test_experimental_numeric.py::ContractTests::test_only_exact_immutable_interval_configuration_is_accepted
+SUBFAILED(mode='unchecked-int64') tests/test_experimental_numeric.py::ContractTests::test_only_exact_immutable_interval_configuration_is_accepted
+FAILED tests/test_experimental_numeric.py::ContractTests::test_only_exact_immutable_interval_configuration_is_accepted
+4 failed, 49 deselected in 1.28s

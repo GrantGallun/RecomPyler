@@ -1,0 +1,51 @@
+"""Read-only proof-study summary and phase/cost expansion."""
+from pathlib import Path
+import json
+import statistics
+import sys
+import common
+
+out=Path(__file__).resolve().parent/'results'
+m=common.read(out/'manifest.json');s=common.read(out/'SUMMARY.json');failures=[]
+for name,row in s['rows'].items():
+    row['kernel_time_over_C']=row['median_best_kernel_s']/s['rows']['c']['median_best_kernel_s']
+    row['speedup_over_plain']=s['rows']['plain']['median_best_kernel_s']/row['median_best_kernel_s']
+    if not row['checks_valid']:failures.append(name+': outputs')
+    if name in m['sources']:
+        if not row['actual_modes_valid']:failures.append(name+': timing modes')
+        p=common.read(out/(name+'-phase.json'));a=p['attempts'];keys=['load_ns','guards_ns','native_ns','result_ns','writeback_ns','other_attempt_ns','attempt_ns']
+        chunks=[{k:sum(t[k] for t in a[i*100:(i+1)*100])*1e-6 for k in keys} for i in range(6)]
+        counts={k:sum(f.get(k,0) for f in p['runner']['functions']) for k in ['aot_calls','jit_calls','fallback_calls']}
+        valid=(len(a)==600 and all(t['ok'] for t in a) and counts=={'aot_calls':600,'jit_calls':0,'fallback_calls':0}
+               and not p.get('error') and not p['numba_imported'] and all(t['aot'] for t in p['arena_native_entries']))
+        if not valid:failures.append(name+': phase modes')
+        row['phase']={'valid':valid,'cold_and_warm_rep_component_ms':chunks,
+            'warm_component_medians_ms':{k:statistics.median(v[k] for v in chunks[1:]) for k in keys},
+            'actual_calls':counts,'numba_imported':p['numba_imported'],'max_capacity_bytes':p['max_capacity_bytes'],
+            'max_top_slots':p['max_top_slots'],'growth_native_exits':p['growth_native_exits'],
+            'driver_times_s':p['driver_times_s'],'instrumented_cold_kernel_s':p['driver_times_s'][0],
+            'instrumented_warm_kernel_median_s':statistics.median(p['driver_times_s'][1:]),
+            'program_selection':{'observed_invocations':len(p['program_selection']),
+                'cold_uncached_records':[r for r in p['program_selection'] if not r['cached_programs_before']],
+                'cached_call_median_ns':statistics.median(r['wall_ns'] for r in p['program_selection'] if r['cached_programs_before']) if any(r['cached_programs_before'] for r in p['program_selection']) else None,
+                'per_reset_sum_ms':[sum(r['wall_ns'] for r in p['program_selection'][i*100:(i+1)*100])*1e-6 for i in range(6)] if len(p['program_selection'])==len(a) else None,
+                'missing_cached_calls_note':'No fabricated zeros: repeated valid calls may use Region prepared fastpath and bypass program_for entirely.',
+                'note':p['program_selection_note']},
+            'note':'Instrumented; six state resets, first excluded from warm medians. Component and program-selection timers overlap as declared; not headline latency.'}
+        row['selected_AOT']=common.read(out/(name+'-aot-map.json'))
+        row['state_comparison']=common.read(out/(name+'-state-comparison.json'))
+v=common.read(out/'checkpoint-postverification.json')
+if not v['all_valid']:failures.append('checkpoint postverification')
+before=s['rows']['baseline'];after=s['rows']['candidate']
+s.update(source_revisions=m['sources'],all_valid=not failures,failures=failures,
+    checkpoint_postverification=v,
+    comparison={'kernel_time_ratio_candidate_over_baseline':after['median_best_kernel_s']/before['median_best_kernel_s'],
+                'kernel_speedup_baseline_over_candidate':before['median_best_kernel_s']/after['median_best_kernel_s'],
+                'process_wall_ratio_candidate_over_baseline':after['median_process_wall_s']/before['median_process_wall_s']},
+    costs={'fresh_candidate_profile_s':s['candidate_profile_wall_s'],'reused_baseline_profile_historical_s':m['reused_profile']['profile_record']['wall_s'],
+           'compile_only_warmup_s':sum(common.read(out/(n+'.json'))['wall_s'] for n in ['warmup-before','warmup-final']),
+           'state_audit_processes_s':sum(common.read(out/(n+'-state-process.json'))['wall_s'] for n in ['plain','baseline','candidate']),
+           'phase_processes_s':sum(common.read(out/(n+'-phase-process.json'))['wall_s'] for n in ['baseline','candidate'])},
+    limits=m['limits'])
+common.save(out/'ANALYSIS.json',s)
+print('all_valid='+str(s['all_valid'])+' failures='+str(failures))

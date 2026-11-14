@@ -1,0 +1,22 @@
+[
+  {
+    "function": "advance_system",
+    "actual_aot_calls_in_audit": 100,
+    "selected_digest": "2f00f2fc07a1a2caecc1d492aac7bef5f4a97d72540d2123506eb157fa135b21",
+    "selected_export": "r0",
+    "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cache\\forceonly-direct\\recompyler\\rcaotr_b8ad585ae5ddf1131de85239.cp314-win_amd64.pyd",
+    "artifact_sha256": "c9119e644feebd8358a8f24c09a98a7043152ac93c7a73adf84de21e139da1c0",
+    "wrapper_rva": "0x19d0",
+    "preferred_image_base": "0x180000000",
+    "wrapper_preferred_address": "0x1800019d0",
+    "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cases\\forceonly-direct\\plan.json",
+    "plan_sha256": "f8a2e8318e72a3cc732f558826e809fc15c42c62ae11fad5bd1ac01596ea19a4",
+    "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-study\\results-v2\\cases\\forceonly-direct\\native-state-selected-audit.json",
+    "audit_sha256": "34ea2d67d43068ddaaba1244a3ed238c9808c32ecd67ac9ef5be7a49ad1db018",
+    "limitations": [
+      "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+      "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+      "No kernel executed, compiled, profiled or timed by this mapping script."
+    ]
+  }
+]

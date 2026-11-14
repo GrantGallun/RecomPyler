@@ -1,0 +1,570 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "c-wrap",
+  "function": "fibonacci",
+  "task": "audit",
+  "contract": {
+    "n": [
+      0,
+      80
+    ]
+  },
+  "corpus_count": 81,
+  "expected_results_sha256": "a8e29982451912a80ff9466a6a4630cd90a30305544a5de79841ce5042599f6c",
+  "valid_exact_results": true,
+  "construction_s": 0.00030440000409726053,
+  "first_call_s": 1.960000372491777e-05,
+  "first_call_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 1
+  },
+  "validation_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 81
+  },
+  "program": {
+    "function": "fibonacci",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "04d31e40e4e6dc61337c3e2e39e015c1d76241cb0199f6b40cb26e80f8a18344",
+    "function_bytecode_sha256": "3be6f8b101655e687df46a1c67db5226839d397b34c52a14866c6e92984a5b80",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null
+  },
+  "numba_imported": false,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "invalid_audits": [
+    {
+      "args": [
+        "81"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "37889062373143906"
+      },
+      "bound_values": [
+        "81"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "37889062373143906"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "37889062373143906"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "100"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3736710778780434371"
+      },
+      "bound_values": [
+        "100"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "354224848179261915075"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3736710778780434371"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "-1"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "0"
+      },
+      "bound_values": [
+        "-1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "0"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "0"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1024"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-1287776884204053957"
+      },
+      "bound_values": [
+        "1024"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "4506699633677819813104383235728886049367860596218604830803023149600030645708721396248792609141030396244873266580345011219530209367425581019871067646094200262285202346655868899711089246778413354004103631553925405243"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-1287776884204053957"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1025"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "__main__.construct.<locals>.NumericContractError",
+        "message": "C wrapping reference retains max(0,n)<=1024 operational cap"
+      },
+      "bound_values": [
+        "1025"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "7291993184377412737043195648396979558721167948342308637716205818587400148912186579874409368754354848994831816250311893410648104792440789475340471377366852420526027975140687031196633477605718294523235826853392138525"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 1,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "True"
+      ],
+      "arg_types": [
+        "bool"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "__main__.construct.<locals>.NumericContractError",
+        "message": "C wrapping reference requires exact signed-int64 inputs"
+      },
+      "bound_values": [
+        "True"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "3"
+      ],
+      "arg_types": [
+        "semantic_audits.<locals>.IntSubclass"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "__main__.construct.<locals>.NumericContractError",
+        "message": "C wrapping reference requires exact signed-int64 inputs"
+      },
+      "bound_values": [
+        "3"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "2"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "2.0"
+      ],
+      "arg_types": [
+        "float"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "__main__.construct.<locals>.NumericContractError",
+        "message": "C wrapping reference requires exact signed-int64 inputs"
+      },
+      "bound_values": [
+        "2.0"
+      ],
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "'float' object cannot be interpreted as an integer"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() missing 1 required positional argument: 'n'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() missing 1 required positional argument: 'n'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() missing 1 required positional argument: 'n'"
+      },
+      "policy": "C-reference-binding-TypeError",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "3"
+      ],
+      "arg_types": [
+        "int"
+      ],
+      "kwargs": {
+        "bad": "1"
+      },
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() got an unexpected keyword argument 'bad'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() got an unexpected keyword argument 'bad'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "fibonacci() got an unexpected keyword argument 'bad'"
+      },
+      "policy": "C-reference-binding-TypeError",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {
+        "n": "4"
+      },
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "bound_values": [
+        "4"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "3"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 1
+      },
+      "observed_attempt_delta": {
+        "attempts": 0,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    }
+  ],
+  "audit_observations": {
+    "attempts": 0,
+    "rejected_attempts": 0,
+    "attempt_exceptions": 0,
+    "programs": {}
+  },
+  "final_counts": {
+    "compiled_calls": 0,
+    "aot_calls": 0,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 3,
+    "loop_limit_rejections": 1,
+    "native_failures": 0,
+    "foreign_calls": 87
+  },
+  "cache_files": {}
+}

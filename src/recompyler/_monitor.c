@@ -42,6 +42,7 @@ typedef struct {
     long long *counts;
     long long other_signatures, with_lists, reused_lists;
     PyObject *previous_lists;
+    int generator; /* a generator or async generator: samples last across yields */
 } Stat;
 
 typedef struct {
@@ -67,6 +68,10 @@ typedef struct {
     uint32_t generation;
     PyObject *disable, *watch, *classify, *capture, *leave;
     double bias;
+    /* Generators: the bias of a yield or resume callback, the hook that records a
+       sampled call's yielded value, and the samples of suspended frames by frame. */
+    double yield_bias;
+    PyObject *yielded, *suspended;
     Stat *stats;
     Py_ssize_t nstats;
     Thread **threads;
@@ -321,6 +326,7 @@ static PyObject *sample_enter(Core *core, Py_ssize_t index) {
 
 #define BEGIN double began = now()
 #define END(thread) (thread)->off += now() - began + core->bias
+#define END_YIELD(thread) (thread)->off += now() - began + core->yield_bias
 
 /* Library code starting or resuming while a watched frame is on top of the stack was
    entered without a CALL event: an import, an operator or attribute hook, a library
@@ -413,15 +419,31 @@ static PyObject *on_resume(Core *core, PyObject *const *args, Py_ssize_t nargs) 
         Py_RETURN_NONE;
     }
     int *depth = active_slot(thread, index);
-    Entry entry = {SCRIPT, index, (void *)args[0], NULL, began - thread->off, 0.0, 0.0, NULL};
-    if (depth == NULL || push(thread, entry) < 0) PyErr_Clear();
-    else ++*depth;
-    END(thread);
+    PyObject *pending = NULL;
+    if (core->stats[index].generator && core->suspended != NULL && PyDict_GET_SIZE(core->suspended)) {
+        /* A sampled generator resuming: its sample goes on collecting values. */
+        PyFrameObject *frame = PyEval_GetFrame();
+        if (frame != NULL && PyDict_Pop(core->suspended, (PyObject *)frame, &pending) < 0) PyErr_Clear();
+    }
+    Entry entry = {SCRIPT, index, (void *)args[0], NULL, began - thread->off, 0.0, 0.0, pending};
+    if (depth == NULL || push(thread, entry) < 0) {
+        Py_XDECREF(pending);
+        PyErr_Clear();
+    } else {
+        ++*depth;
+    }
+    END_YIELD(thread);
     Py_RETURN_NONE;
 }
 
-static void leave(Core *core, Py_ssize_t index, PyObject *value, int returned) {
+#define LEFT_YIELD 0
+#define LEFT_RETURN 1
+#define LEFT_UNWIND 2
+#define LEFT_CLOSED 3 /* a generator closed before its end */
+
+static void leave(Core *core, Py_ssize_t index, PyObject *value, int how) {
     BEGIN;
+    int returned = how == LEFT_RETURN;
     Thread *thread = thread_for(core, 0);
     if (thread == NULL) return;
     double at = began - thread->off;
@@ -442,14 +464,28 @@ static void leave(Core *core, Py_ssize_t index, PyObject *value, int returned) {
     entry.pending = NULL;
     close_entry(core, thread, &entry, at);
     if (pending != NULL) {
-        if (returned && core->stats[index].sampling) {
-            PyObject *done = PyObject_CallFunction(core->leave, "nOO", index, pending, value ? value : Py_None);
+        Stat *stat = &core->stats[index];
+        if (how == LEFT_YIELD && stat->generator && stat->sampling && core->yielded != NULL) {
+            /* Record the value; the sample waits for the frame to resume. */
+            PyObject *keep = PyObject_CallFunction(core->yielded, "nOO", index, pending, value ? value : Py_None);
+            if (keep == NULL) PyErr_WriteUnraisable(core->yielded);
+            PyFrameObject *frame = PyEval_GetFrame();
+            if (keep != NULL && PyObject_IsTrue(keep) && frame != NULL && core->suspended != NULL &&
+                PyDict_SetItem(core->suspended, (PyObject *)frame, pending) < 0)
+                PyErr_Clear();
+            Py_XDECREF(keep);
+        } else if ((returned || stat->generator) && stat->sampling) {
+            /* -1 discards a failed generator call rather than flushing its
+               previously yielded values as a call that was closed early. */
+            PyObject *done = PyObject_CallFunction(core->leave, "nOOi", index, pending, value ? value : Py_None,
+                                                   how == LEFT_UNWIND ? -1 : returned);
             if (done == NULL) PyErr_WriteUnraisable(core->leave);
             Py_XDECREF(done);
         }
         Py_DECREF(pending);
     }
-    END(thread);
+    if (how == LEFT_YIELD) END_YIELD(thread);
+    else END(thread);
 }
 
 static void library_exit(Core *core, PyObject *code) {
@@ -478,22 +514,25 @@ static void library_exit(Core *core, PyObject *code) {
 
 static PyObject *on_return(Core *core, PyObject *const *args, Py_ssize_t nargs) {
     Py_ssize_t state = code_state(core, args[0]);
-    if (state >= STATE_FIRST_INDEX) leave(core, state - STATE_FIRST_INDEX, nargs > 2 ? args[2] : NULL, 1);
+    if (state >= STATE_FIRST_INDEX) leave(core, state - STATE_FIRST_INDEX, nargs > 2 ? args[2] : NULL, LEFT_RETURN);
     else if (state == STATE_LIBRARY) library_exit(core, args[0]);
     Py_RETURN_NONE;
 }
 
 static PyObject *on_yield(Core *core, PyObject *const *args, Py_ssize_t nargs) {
     Py_ssize_t state = code_state(core, args[0]);
-    if (state >= STATE_FIRST_INDEX) leave(core, state - STATE_FIRST_INDEX, NULL, 0);
+    if (state >= STATE_FIRST_INDEX) leave(core, state - STATE_FIRST_INDEX, nargs > 2 ? args[2] : NULL, LEFT_YIELD);
     else if (state == STATE_LIBRARY) library_exit(core, args[0]);
     Py_RETURN_NONE;
 }
 
 static PyObject *on_unwind(Core *core, PyObject *const *args, Py_ssize_t nargs) {
     Py_ssize_t state = code_state(core, args[0]);
-    if (state >= STATE_FIRST_INDEX) leave(core, state - STATE_FIRST_INDEX, NULL, 0);
-    else if (state == STATE_LIBRARY) library_exit(core, args[0]);
+    if (state >= STATE_FIRST_INDEX) {
+        /* A generator closed early (break, close()) still yielded what it yielded. */
+        int closed = nargs > 2 && PyErr_GivenExceptionMatches(args[2], PyExc_GeneratorExit);
+        leave(core, state - STATE_FIRST_INDEX, NULL, closed ? LEFT_CLOSED : LEFT_UNWIND);
+    } else if (state == STATE_LIBRARY) library_exit(core, args[0]);
     Py_RETURN_NONE;
 }
 
@@ -560,7 +599,8 @@ static PyObject *core_configure(Core *core, PyObject *args) {
     int size;
     PyObject *names;
     unsigned long long seed;
-    if (!PyArg_ParseTuple(args, "niO!K", &index, &size, &PyTuple_Type, &names, &seed)) return NULL;
+    int generator = 0;
+    if (!PyArg_ParseTuple(args, "niO!K|p", &index, &size, &PyTuple_Type, &names, &seed, &generator)) return NULL;
     if (index < 0 || ensure_stats(core, index + 1) < 0) return PyErr_NoMemory();
     Stat *stat = &core->stats[index];
     if (stat->signatures != NULL) Py_RETURN_NONE;
@@ -572,6 +612,7 @@ static PyObject *core_configure(Core *core, PyObject *args) {
     stat->size = size;
     stat->sampling = size > 0;
     stat->rare_left = MAX_RARE;
+    stat->generator = generator;
     stat->rng = seed ? seed : 0x9E3779B97F4A7C15ULL;
     Py_RETURN_NONE;
 }
@@ -619,15 +660,20 @@ static PyObject *core_offset(Core *core, PyObject *arg) {
 }
 
 static int core_init(Core *core, PyObject *args, PyObject *kwargs) {
-    PyObject *disable, *watch, *classify, *capture, *leave_hook;
-    double bias;
-    if (!PyArg_ParseTuple(args, "OOOOOd", &disable, &watch, &classify, &capture, &leave_hook, &bias)) return -1;
+    PyObject *disable, *watch, *classify, *capture, *leave_hook, *yielded = NULL;
+    double bias, yield_bias = -1.0;
+    if (!PyArg_ParseTuple(args, "OOOOOd|dO", &disable, &watch, &classify, &capture, &leave_hook, &bias, &yield_bias,
+                          &yielded))
+        return -1;
     Py_XSETREF(core->disable, Py_NewRef(disable));
     Py_XSETREF(core->watch, Py_NewRef(watch));
     Py_XSETREF(core->classify, Py_NewRef(classify));
     Py_XSETREF(core->capture, Py_NewRef(capture));
     Py_XSETREF(core->leave, Py_NewRef(leave_hook));
     core->bias = bias;
+    core->yield_bias = yield_bias < 0.0 ? bias : yield_bias;
+    Py_XSETREF(core->yielded, yielded != NULL && yielded != Py_None ? Py_NewRef(yielded) : NULL);
+    if (core->suspended == NULL && (core->suspended = PyDict_New()) == NULL) return -1;
     core->generation = ++generations;
     return 0;
 }
@@ -638,6 +684,8 @@ static int core_traverse(Core *core, visitproc visit, void *arg) {
     Py_VISIT(core->classify);
     Py_VISIT(core->capture);
     Py_VISIT(core->leave);
+    Py_VISIT(core->yielded);
+    Py_VISIT(core->suspended);
     for (Py_ssize_t i = 0; i < core->nstats; i++) {
         Py_VISIT(core->stats[i].previous_lists);
         Py_VISIT(core->stats[i].signatures);
@@ -653,6 +701,8 @@ static int core_clear(Core *core) {
     Py_CLEAR(core->classify);
     Py_CLEAR(core->capture);
     Py_CLEAR(core->leave);
+    Py_CLEAR(core->yielded);
+    Py_CLEAR(core->suspended);
     for (Py_ssize_t i = 0; i < core->nstats; i++) {
         Stat *stat = &core->stats[i];
         Py_CLEAR(stat->names);
@@ -688,7 +738,7 @@ static void core_dealloc(Core *core) {
 static PyMethodDef core_methods[] = {
     FAST(on_start), FAST(on_resume), FAST(on_return), FAST(on_yield), FAST(on_unwind), FAST(on_call),
     FAST(on_c_return),
-    {"configure", (PyCFunction)core_configure, METH_VARARGS, "configure(index, size, names, seed)"},
+    {"configure", (PyCFunction)core_configure, METH_VARARGS, "configure(index, size, names, seed[, generator])"},
     {"stop_sampling", (PyCFunction)core_stop_sampling, METH_O, NULL},
     {"stats", (PyCFunction)core_stats, METH_O, "(calls, self_s, cumulative_s, library_s)"},
     {"sampling", (PyCFunction)core_sampling, METH_O,

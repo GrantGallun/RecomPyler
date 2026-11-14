@@ -1,0 +1,37 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_recursive_result_conversion_is_timed_once_per_attempt __________
+
+tmp_path = WindowsPath('C:/Users/grant/AppData/Local/Temp/pytest-of-grant/pytest-1744/test_recursive_result_conversi0')
+
+    def test_recursive_result_conversion_is_timed_once_per_attempt(tmp_path):
+        repo, script, plan = fixture_repo(tmp_path)
+        heap = repo / "src/recompyler/heap.py"
+        heap.write_text(heap.read_text().replace("    def result(self): return 42", "    def result(self, depth=5):\n        return self.result(depth - 1) if depth else 42"))
+        config = dict(repo=str(repo), script=str(script), plan=str(plan), function="target", line=None, force=False, script_args=[])
+        probe = f'''
+    import itertools, json, sys
+    sys.path.insert(0, {str(CLI.parent)!r})
+    import _phase_worker as worker
+    ticks = itertools.count(0, 10)
+    worker.time.perf_counter_ns = lambda: next(ticks)
+    report = worker.instrument({config!r})
+    attempt = report['attempts'][0]
+    assert attempt['result_ns'] == 10, attempt
+    assert attempt['other_attempt_ns'] >= 0, attempt
+    assert attempt['ok'] and attempt['aot_calls'] == 1
+    print(json.dumps(attempt))
+    '''
+        done = subprocess.run([sys.executable, "-c", probe], capture_output=True)
+>       assert done.returncode == 0, done.stderr
+E       AssertionError: b'Traceback (most recent call last):\r
+E           File "<string>", line 9, in <module>\r
+E             assert attempt[\'result_ns\'] ==...s\': [\'aot\'], \'ok\': True, \'attempt_ns\': 210, \'aot_calls\': 1, \'jit_calls\': 0, \'other_attempt_ns\': -190}\r
+E         '
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport itertools, json, sys\nsys.path.insert(0, 'D:\\\\Co...\': [\'aot\'], \'ok\': True, \'attempt_ns\': 210, \'aot_calls\': 1, \'jit_calls\': 0, \'other_attempt_ns\': -190}\r\n').returncode
+
+tests\test_dev_inspect.py:297: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_dev_inspect.py::test_recursive_result_conversion_is_timed_once_per_attempt
+1 failed, 17 deselected in 0.24s

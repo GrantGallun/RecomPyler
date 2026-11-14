@@ -1,0 +1,2813 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "fixed_rounds": 7,
+  "cells": [
+    {
+      "function": "fibonacci",
+      "variant": "c-exact",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 626900,
+      "min_child_ns": 617800,
+      "max_child_ns": 728600,
+      "calls_per_sample": 165888,
+      "median_ns_per_call": 3.77905574845679,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-fibonacci-c-exact\\result.json",
+          "sha256": "002ea0d9bd1d2c56e196b91f7d0a6b377498b84776e1ffade9657e9d46ed2ab0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-fibonacci-c-exact\\result.json",
+          "sha256": "0a2fbe6e6bda1bb8d04eed35b0cf0c1908a0e4bdbf20e03f9b53195a4abdc0d7"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-fibonacci-c-exact\\result.json",
+          "sha256": "304dce3b66851764933065babe5ac06cccd935b6a20d1cb5ecf9db5b8380876c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-fibonacci-c-exact\\result.json",
+          "sha256": "64d8dc88a104650e6b53ba0863ff891955fd827ebb52fef7ec82f8111c440b2b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-fibonacci-c-exact\\result.json",
+          "sha256": "55c16cfc27377c14c4b0b13b9b61ba2e36ff63b06469911cb6d2414047e11dc7"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-fibonacci-c-exact\\result.json",
+          "sha256": "aa8ae70989dcba96580e28fa1ad0b9dbf1a364b96b27ad7f61fb1147c64b88eb"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-fibonacci-c-exact\\result.json",
+          "sha256": "af21aa0fd7d93ccb982352123af88796bf91b0bf931d9cf8e1e4c26293b3bfd2"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "c-exact",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1344300,
+      "min_child_ns": 1324700,
+      "max_child_ns": 1464600,
+      "calls_per_sample": 648,
+      "median_ns_per_call": 2074.537037037037,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-fibonacci-c-exact\\result.json",
+          "sha256": "a6b634b67d58eaa383c3d2041423bb79bd513debb0ad7d51630e78cfabe88906"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-fibonacci-c-exact\\result.json",
+          "sha256": "e7b51a7306a620aa77ade489eda660df91797e4257bf880858028d004ca57bf6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-fibonacci-c-exact\\result.json",
+          "sha256": "554aff613b27767e3815d62690c51ffd542e385b161d1eef629a20d407b98175"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-fibonacci-c-exact\\result.json",
+          "sha256": "a1b17bb154b5f094a818e38d04bb81e02ee8af69dffa34fed3e21606a0a265e1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-fibonacci-c-exact\\result.json",
+          "sha256": "0466250432b9a73478442d07a4f3399b8f9fabd141182555897c5429e8275160"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-fibonacci-c-exact\\result.json",
+          "sha256": "8bf0d4ea6e1e52ff87647959c5db9ab54da62436b110e1140b1c051fe5b0f290"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-fibonacci-c-exact\\result.json",
+          "sha256": "9acfdf7a1ccc6c66d2de69c991d12b1c3b4858adcb60743f2a75e6da23a10e93"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "c-wrap",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 618800,
+      "min_child_ns": 611900,
+      "max_child_ns": 972300,
+      "calls_per_sample": 165888,
+      "median_ns_per_call": 3.73022762345679,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-fibonacci-c-wrap\\result.json",
+          "sha256": "ef5e5c2e21b4c75a567577e18ce2cf215d2ecbb2beb0fa0645abec6fb88ac9fb"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-fibonacci-c-wrap\\result.json",
+          "sha256": "c2d59a526e6e95b6d40a04f8278d3b335abeb465591bdb7c5a992f7c7cb4973f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-fibonacci-c-wrap\\result.json",
+          "sha256": "cbba139b48be4496ff076ca002c5a3d41f3e3e5e06a165b0c08b921ac3370cd5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-fibonacci-c-wrap\\result.json",
+          "sha256": "343e5b0a32d7bcd91e8cb71d343c7f87797a910bd87792cba6df9f83a3299bb5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-fibonacci-c-wrap\\result.json",
+          "sha256": "53c3eab8ccac5cf1581e91071605c1708ff96c6a737b5aa000c31d88acc78465"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-fibonacci-c-wrap\\result.json",
+          "sha256": "64bd01894d1d4acf6546097c59bd5fd8c2b37afbdb9d6ff097d1dbba861eaebe"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-fibonacci-c-wrap\\result.json",
+          "sha256": "166c66979557d0f7e1a9dbfbef3621840843266b54ed0cabbcec8cec294a86ea"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "c-wrap",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1420300,
+      "min_child_ns": 1396400,
+      "max_child_ns": 1647800,
+      "calls_per_sample": 648,
+      "median_ns_per_call": 2191.820987654321,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-fibonacci-c-wrap\\result.json",
+          "sha256": "76726f8c4b35e544d72bc8df7988a5fbb11cb1bd4cdefee281bb123f53ff9a39"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-fibonacci-c-wrap\\result.json",
+          "sha256": "b3d42e603144c40968295212b963e3f3050ad79a8d1b79135bcaa58e7ecff649"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-fibonacci-c-wrap\\result.json",
+          "sha256": "bd0bafb31d027860a400fb102a5b04f1fafc62ce7030c468d1da4ed8c9093500"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-fibonacci-c-wrap\\result.json",
+          "sha256": "c32c985ebd08a2dd3491787cbaa36f440a60e55e0af44aff040b01d7fe4f503d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-fibonacci-c-wrap\\result.json",
+          "sha256": "cfb9ce9b409099f87b5c7ae3a8a5dfc1698add8700e864d0e15d5b61db3296ee"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-fibonacci-c-wrap\\result.json",
+          "sha256": "ec7221716ca8177f0217ee803080b1c4fdd585539a0a999bdc3163188ff16ce4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-fibonacci-c-wrap\\result.json",
+          "sha256": "086561ab5bc3de760279f5386c57233b357a43fb614f6e1b1c617db3ed67d89c"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "candidate-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 3172700,
+      "min_child_ns": 3111700,
+      "max_child_ns": 3638500,
+      "calls_per_sample": 165888,
+      "median_ns_per_call": 19.125554591049383,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-fibonacci-candidate-strict\\result.json",
+          "sha256": "65a78399f66ca2459fbe216cf114cdbe8ed2d543070324244a8bd253f86ea427"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-fibonacci-candidate-strict\\result.json",
+          "sha256": "01813185cc743884e33e2beba4b94a94936b7586cb9a43c86292f6f9778d39f4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-fibonacci-candidate-strict\\result.json",
+          "sha256": "7ffc4e3201ab849b0bb7c12b75a4d75f13275be8c01564093f4e601a05ffe1e8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-fibonacci-candidate-strict\\result.json",
+          "sha256": "d11b91f6f3a8929b408231726f47bc58f7bca0970345d397659734fe8f7fa3ac"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-fibonacci-candidate-strict\\result.json",
+          "sha256": "24fcee0333043382e2e62c8913e33657d2e701dce2a3186f0841e81d36c9e138"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-fibonacci-candidate-strict\\result.json",
+          "sha256": "39a5fe4b12f53a390043264bec4307099f5504473d7b20826e4303f70f489162"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-fibonacci-candidate-strict\\result.json",
+          "sha256": "45555441467897af93fceba70e9c23e458484860daebae7d98484a79bbe2b394"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "candidate-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 2967800,
+      "min_child_ns": 2912600,
+      "max_child_ns": 3398100,
+      "calls_per_sample": 648,
+      "median_ns_per_call": 4579.938271604939,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-fibonacci-candidate-strict\\result.json",
+          "sha256": "ea21d1bdc38793ecaeedb0161f2490e8f75243becceaaf95b3313b6fef44e773"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-fibonacci-candidate-strict\\result.json",
+          "sha256": "85ce509ea2fa0ea3a5238b66ea6282caf61013632bf81d059280186b95fdd967"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-fibonacci-candidate-strict\\result.json",
+          "sha256": "5926775a23e0d819371f163d8d73f9bb8b2996a4f649e1b4da0eda4c31f191f0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-fibonacci-candidate-strict\\result.json",
+          "sha256": "909d66a4f4e122b529bfbe49d35c9ce054f9984c35f122d70656b8e1719a647d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-fibonacci-candidate-strict\\result.json",
+          "sha256": "9546e9c83d25b66add70725e3abb805393a51bff15366155e4fe3d243a6cd9d0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-fibonacci-candidate-strict\\result.json",
+          "sha256": "bc5bd4b390d80f138eb89b94f1bc78eb7c01a0be9a32b887104fd1113b98277b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-fibonacci-candidate-strict\\result.json",
+          "sha256": "f872f3991546a4aa766fb49acc0c3d8eea4021a87c49a6574ad671ab1a845c43"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "checked",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 825300,
+      "min_child_ns": 818700,
+      "max_child_ns": 862200,
+      "calls_per_sample": 165888,
+      "median_ns_per_call": 4.975043402777778,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-fibonacci-checked\\result.json",
+          "sha256": "7d50ac0a62ec16a5cb1884ed59b354b02eed9049fec8cc45edfa507b5bc3d7ca"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-fibonacci-checked\\result.json",
+          "sha256": "f2424d222a8e647d753cc7a7b906bf351442bc3c4d3b8763b7ae4bfd72b626db"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-fibonacci-checked\\result.json",
+          "sha256": "d774c6c4543cccc737a813e47596cf8871a2e06dfc92c15195e2b44dd310cbe3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-fibonacci-checked\\result.json",
+          "sha256": "43947c095ea060d3f445db53e2dd21d4e9a079fb1519865b944a930437e289ce"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-fibonacci-checked\\result.json",
+          "sha256": "63e49861eb0ba6d935c984171719bc77bb8c15720821473f3ce327b8e448011e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-fibonacci-checked\\result.json",
+          "sha256": "9eea3f701a02d324368420a5e3955b67fecf5d927c956c489f3bf12c880392ec"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-fibonacci-checked\\result.json",
+          "sha256": "1db03a5953195d3661ce91b10ea911bf97b1d676a70146616c45586e686259be"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "checked",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 6443500,
+      "min_child_ns": 6351000,
+      "max_child_ns": 7860600,
+      "calls_per_sample": 648,
+      "median_ns_per_call": 9943.672839506173,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-fibonacci-checked\\result.json",
+          "sha256": "bd4c4a6294f50b139a78374ec41f4292ac7b7368ad5e5b224187892786819337"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-fibonacci-checked\\result.json",
+          "sha256": "0b68f56b203e66ea32a23b8381c55b38bf0137896c6f401f024747477022d795"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-fibonacci-checked\\result.json",
+          "sha256": "2f289baaccdf67b96c64fc19610080a3365915ba693a665159e0b3d385bcde44"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-fibonacci-checked\\result.json",
+          "sha256": "1f6f9d3dbeaf7c9e35d6204e2d9086fae3a58af366357fc3b3a2613a2ebb405f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-fibonacci-checked\\result.json",
+          "sha256": "e52b451e49272e987b072427cae5bd22bbfdbb8bb65a8d33a8afdae80b137730"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-fibonacci-checked\\result.json",
+          "sha256": "443c08a301a946af534edd9aa1ae22d5ea2bd3990d4fd7dcfb43632c1331bbe4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-fibonacci-checked\\result.json",
+          "sha256": "9d8b7151b1bf471b73d7dec5ed760f7bb003863f74bd3315ac0be5e168fb59c0"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "cpython",
+      "task": "native",
+      "available": false,
+      "reasons": [
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call"
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "cpython",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 386000,
+      "min_child_ns": 373500,
+      "max_child_ns": 488100,
+      "calls_per_sample": 648,
+      "median_ns_per_call": 595.679012345679,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-fibonacci-cpython\\result.json",
+          "sha256": "fe2ab08ec40113f6a333da52a62a6cc04a495f7b7aa92b3a773219e9e5fc0247"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-fibonacci-cpython\\result.json",
+          "sha256": "e9bb2c9a3dc146b84b59b8f014802726d1f013d3c3f44c463de4a833c8d460dd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-fibonacci-cpython\\result.json",
+          "sha256": "2830f904e8dde1cf49b1d49b7edd6e26310a7dbfe3297adf08416245c7b8af83"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-fibonacci-cpython\\result.json",
+          "sha256": "fc4948e9d3d96b41b1a75f3e1ce5fdb259bb98b1fd34f49f14b71e7d55c3fac7"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-fibonacci-cpython\\result.json",
+          "sha256": "4a703c196d6d70319f132419f01dd16e83ccb7fcb92e77a1b6cb183850675c1a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-fibonacci-cpython\\result.json",
+          "sha256": "ec95b16b03fbe16811ef671b7d6aa2832e2a6f1100b4f7e77b65c4043045069d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-fibonacci-cpython\\result.json",
+          "sha256": "886245c34ba37faa76a5fcac964698a1b845317c359f074f61c3a4bd954b84a4"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "current-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 3180100,
+      "min_child_ns": 3131600,
+      "max_child_ns": 3605700,
+      "calls_per_sample": 165888,
+      "median_ns_per_call": 19.17016300154321,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-fibonacci-current-strict\\result.json",
+          "sha256": "03999c1e4573cf6540e1300b248e558e0e3cdb8c5e3dcc6d21bd5f07a2cfdd67"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-fibonacci-current-strict\\result.json",
+          "sha256": "5cbac058e5c9cc82adc16c0dd273fd10d036542a9e8fb48d31d45aa1fc37ab48"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-fibonacci-current-strict\\result.json",
+          "sha256": "a57e5a82205fd1674f903043b96e5e90cddff6866c0fc26195835262c3d1f02e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-fibonacci-current-strict\\result.json",
+          "sha256": "f4ca057e34d2128158429d8d45620483d7bcc6c16e6124d643004970774393ce"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-fibonacci-current-strict\\result.json",
+          "sha256": "2445157cab8be9a7e21c7b014d67ef00083755b331e5594888f45ce7e7670f79"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-fibonacci-current-strict\\result.json",
+          "sha256": "69bad5af5f99b7d537f94492af7bd0cd0a7d947db55a87f53d988efd600e6ddf"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-fibonacci-current-strict\\result.json",
+          "sha256": "fffa967f6698b4158cd83adc8eefa04cab9f04092b91a4cdb4384f18ac93b144"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "current-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 2980500,
+      "min_child_ns": 2918100,
+      "max_child_ns": 3742100,
+      "calls_per_sample": 648,
+      "median_ns_per_call": 4599.537037037037,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-fibonacci-current-strict\\result.json",
+          "sha256": "e9c1f4f766a63a53e2f691cf9186ec3ad65b696c43f79c2709b99990697fc3f9"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-fibonacci-current-strict\\result.json",
+          "sha256": "30bd73d0cddcc1f800c018d35abae21da903c0ec35fcc4401d276554ff9a4dc1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-fibonacci-current-strict\\result.json",
+          "sha256": "84fdde573f9506bb64e142798e242ea2dee33169bbdc735091fa1f67cd1b338f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-fibonacci-current-strict\\result.json",
+          "sha256": "c4121c1e456e09be3ca41655b80ddf10e8095527d96d9d6655877e12da9a4cb4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-fibonacci-current-strict\\result.json",
+          "sha256": "4bc2b0aa044660928195dd2359433b4231718827f71f1cdc12c6ced2e7bc917a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-fibonacci-current-strict\\result.json",
+          "sha256": "b65e384d1790f8e492d8bda4468332a6f54af451c66e982ed8b87a390aa4e66c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-fibonacci-current-strict\\result.json",
+          "sha256": "ecc1993e59f54ee80e8f1ad7d37c2b67b2700f3cbe65a1394407a6655dfcf65e"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "unchecked-int64",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 828800,
+      "min_child_ns": 817700,
+      "max_child_ns": 901000,
+      "calls_per_sample": 165888,
+      "median_ns_per_call": 4.996141975308642,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-fibonacci-unchecked-int64\\result.json",
+          "sha256": "8a56eb69e7afeebea45aa52e18727814567d525a4d865480de7a1d288e60c9df"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-fibonacci-unchecked-int64\\result.json",
+          "sha256": "1f35ab6312e24a214ab32746caab299671d0fa2c5edda1871afa4e0591a33387"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-fibonacci-unchecked-int64\\result.json",
+          "sha256": "65da4eade477c9a8a3b6788845b06090ece529cb56d978d4fdea20001d20ff9e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-fibonacci-unchecked-int64\\result.json",
+          "sha256": "8e02b6e9c2728ba49ebac504cdb27cbb47a66c779afb5278592d895ec4dc9eb8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-fibonacci-unchecked-int64\\result.json",
+          "sha256": "b74c5097e89cd439f916cb27f26c35884a253b6592f8d245634ea495270fedcd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-fibonacci-unchecked-int64\\result.json",
+          "sha256": "2d416c702b5751f6c6bcad9c3f0e876bed1493c3f5185cf9c1edebe650d0ab20"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-fibonacci-unchecked-int64\\result.json",
+          "sha256": "d0587c1a163db198df118311d96365bb305a70bba3273d8e0c2bd813ea794622"
+        }
+      ]
+    },
+    {
+      "function": "fibonacci",
+      "variant": "unchecked-int64",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 6379300,
+      "min_child_ns": 5834300,
+      "max_child_ns": 6515400,
+      "calls_per_sample": 648,
+      "median_ns_per_call": 9844.598765432098,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-fibonacci-unchecked-int64\\result.json",
+          "sha256": "4fc6bcf5151ab55a3b53dfa05e3534871a14ce34ed6e49a36198fa3ba52bb26e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-fibonacci-unchecked-int64\\result.json",
+          "sha256": "983215e8153d81a6ba4acbc095e1aa8e9cc79df41876176d78cfdcd57b9e9135"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-fibonacci-unchecked-int64\\result.json",
+          "sha256": "7a45555b3402af1586459460ab38a21d9290b30287c552c6c3384522f7ca72e1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-fibonacci-unchecked-int64\\result.json",
+          "sha256": "93734b357e83cd392149cd043405ca825249ffcbbfdd02b87fd3252d21d41c2a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-fibonacci-unchecked-int64\\result.json",
+          "sha256": "83ed91ee1e835169c8b20e3a91e80e2f21f1a839ab3b2aa00690f0020b133688"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-fibonacci-unchecked-int64\\result.json",
+          "sha256": "4bc912c2c0efdb3b66809fdff3698464ac0988b43f84aa1a704f645ed38053e0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-fibonacci-unchecked-int64\\result.json",
+          "sha256": "037c82e8c24844ab9d6a2aa04969daf2b793c30224581c40b04e723a5dda198f"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "c-exact",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 16372000,
+      "min_child_ns": 16029900,
+      "max_child_ns": 17413300,
+      "calls_per_sample": 3136,
+      "median_ns_per_call": 5220.663265306122,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-loop_recurrence16-c-exact\\result.json",
+          "sha256": "5e5df5a7391787158e1d2e7bc38d9a5abe1a2e5bb61745cf07f6a806c0d45613"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-loop_recurrence16-c-exact\\result.json",
+          "sha256": "585a2457fa5899da75b29b0d4f5b56caaf69b0cb2d0ef4689d831960a4851217"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-loop_recurrence16-c-exact\\result.json",
+          "sha256": "c93399368089c22caa41bebc31fb6cd415d99da6ac09a3dcd459b3d31687ea1e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-loop_recurrence16-c-exact\\result.json",
+          "sha256": "19105c243d558ef40111b2834565d8576e5beff3fce9135a21c089f247afa879"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-loop_recurrence16-c-exact\\result.json",
+          "sha256": "7f584002d4bf021f8bcddef637af517aea8040f5789113d7ff06da12d7d51b56"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-loop_recurrence16-c-exact\\result.json",
+          "sha256": "9da74838def78c9eb0797e0ce753bdccd10471dbc950b09e754986771267d104"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-loop_recurrence16-c-exact\\result.json",
+          "sha256": "fd84ffef1dbd8e95f5ef8dc7e9a7de3b5c10c0110034271cb60d6480a27439d2"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "c-exact",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 3108600,
+      "min_child_ns": 3076300,
+      "max_child_ns": 3243700,
+      "calls_per_sample": 392,
+      "median_ns_per_call": 7930.102040816327,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-loop_recurrence16-c-exact\\result.json",
+          "sha256": "012bf10538f6f6a6cb9b49f150402f2f067ed1dc07c6075b4d4d6007c498f538"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-loop_recurrence16-c-exact\\result.json",
+          "sha256": "0762720eaf5cbe37dc34243e5c47ac30e6135d4e50a38a53610536363361278a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-loop_recurrence16-c-exact\\result.json",
+          "sha256": "f6701af14b6f7a0424c63d15f1a01f89ed890a5f3eab3d790756d96ca13ff939"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-loop_recurrence16-c-exact\\result.json",
+          "sha256": "08ab97c3dce2e632c14234360839b65eb90e9b233d4530e0cb50b3d5535e0643"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-loop_recurrence16-c-exact\\result.json",
+          "sha256": "78789bd18a98c74caaf5aa0aba4a3f500f4fd593a4801e187dec0b4f17adf58f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-loop_recurrence16-c-exact\\result.json",
+          "sha256": "59b93c1f903f4074d41e09ef986029ae789db1fee87a200762e7292acf8dded4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-loop_recurrence16-c-exact\\result.json",
+          "sha256": "5325ed628b0739fbd08ac7f6c4284e77632942383eab842e4ea2128e1e980411"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "c-wrap",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 16120900,
+      "min_child_ns": 16034100,
+      "max_child_ns": 17031300,
+      "calls_per_sample": 3136,
+      "median_ns_per_call": 5140.593112244898,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "0e96d539073e1be9d4ba239f67ee92b210ee5cb554ff2b4cc6334759d4eddc74"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "e0969178ee938b1b5edcda844bc0147a6a5e1765625c9f8ea398cea3ed80b878"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "803124a1f5f3b27547cc35e93d1b3d6ab812bb9e3bed968f303c473d20426bec"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "58ed72362e0f70ce03c88d6944d13296bc5b2510fec4460f4d881b301ea9a67d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "3b67e643ce58097173ffa64a7235820a21b1c40e51633b4f45a6140326ee8ff5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "9279853dda19a6036d309ad67b0ad08420bed31b9ce87ff138a789b294b92893"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "4ba616dddda407e8b7b64659a4023b3330bb02cc400c254c7c3aedeb1ba76d16"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "c-wrap",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 3198100,
+      "min_child_ns": 3143200,
+      "max_child_ns": 4016600,
+      "calls_per_sample": 392,
+      "median_ns_per_call": 8158.418367346939,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "e630133d9f13b42311f122f989596e48974a3b96e036a9633a6ccc1e07b4f4ad"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "884604e34af24f3cfaf87146571c42609136926edb1436957df15695f40e8f8c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "fb57d74b6342c163a5af5ab7032c5b66eb39a99ec57009d71198d8047b0f665b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "c2254f0a7ac60f762f1e1b9b79f18d8fe629ae840e2dcb0fda544b03ed305162"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "3b80b17d9e23de33736b0765b2a32d6b7e483d181aa808d0f10f5d258c47ab52"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "a6681f64b520e85d46464b0e1068c0287c923630b67b14373392874137678fca"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-loop_recurrence16-c-wrap\\result.json",
+          "sha256": "e6fcb02a963accc5584c0f051ccf8b969263cb35b017c2433cd4248080043e59"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "candidate-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 17412900,
+      "min_child_ns": 17320200,
+      "max_child_ns": 19419500,
+      "calls_per_sample": 3136,
+      "median_ns_per_call": 5552.5829081632655,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "6d6abeebd2da5b6f17139adbd2ee6625fbb78c64f0cd9e01b1796bd8aebccc26"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "ee87ec37baefc9e4cd89e644d86fc6573674e7a03f2a5cf8171dae6a9b1deb76"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "77f1f90361477471e260272371ab0329dd9138881838055b7c4d00ef0f43f14c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "9b7ba7090a12af90327684ea9415941f2e1f2e6c3d36d3db33725159c419aabc"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "c56f0957c9c07cc5d13c25965c8eaa23e24a1b078adb2e9ba3143469433b78bd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "3e9464fd0cacf2ef80e506eee4a09dcee718d473a2f920699652ed95001b33b4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "694cddad55aaab75cf01d42b4a12e61056967e30e7cff5bd10e4b0e22b4e2f4f"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "candidate-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 4493200,
+      "min_child_ns": 4243700,
+      "max_child_ns": 5316900,
+      "calls_per_sample": 392,
+      "median_ns_per_call": 11462.244897959185,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "8366d8631bdf10351e32341078cd1c951017ac687e685e269a1e43fa80cf43c8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "04cf572f92fa2cf3b1c700383f2a426df1971e7fc87f18faaef3d71d609a09ce"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "4364e222ba4ffc2a6d4a632b6f26b33640f996e8440307ea7c697afcb59f34b0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "0f1beb604ff76b1d819ee9fb83a60f74bfaf74b42001cc1cee58958d5e7b65bc"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "aa6606710c3cdeed7a534166d0b1a48378c3463148ad7c51702fa80231c3788d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "91e8d532be51738c20f60f883d1d87f841fdfdde65690e3ce9e95318dbc03375"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-loop_recurrence16-candidate-strict\\result.json",
+          "sha256": "b80b61a17d3c70b8448fb926746d686e674d4800d29df7eadfd16f014103f7ba"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "checked",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 16177700,
+      "min_child_ns": 16056200,
+      "max_child_ns": 18226100,
+      "calls_per_sample": 3136,
+      "median_ns_per_call": 5158.705357142857,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-loop_recurrence16-checked\\result.json",
+          "sha256": "95b3fd9491b09041850c0fe5fa2f472c9a92d1e9176d8d5f3e410680a9d31038"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-loop_recurrence16-checked\\result.json",
+          "sha256": "ceb45411c66dca09bc1c8d41cbcbdff911e22ec61fb7bfa42f8eb45b73e26d3c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-loop_recurrence16-checked\\result.json",
+          "sha256": "b984d9102b5fa81e2f045d3e2d4ddb3b3bab9a868a16a943184930575c86c96d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-loop_recurrence16-checked\\result.json",
+          "sha256": "bd47b4adb1bcbda28912fea04138ca3175a4fb35c76cf9e772cf7ba7c7788f2d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-loop_recurrence16-checked\\result.json",
+          "sha256": "ae49832015a2e7a357b388bc41643c9fb5bb5b1fa75aabda94bacba80be47895"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-loop_recurrence16-checked\\result.json",
+          "sha256": "d0e8b8cb60ee4ab1a7d1922b1e1c3177fd39a39d7b4fd2202662391e5802c98e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-loop_recurrence16-checked\\result.json",
+          "sha256": "bc19f42ef69df338defe575aa443b98d1f46894f8827ce622571801f20366801"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "checked",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 8995900,
+      "min_child_ns": 8579000,
+      "max_child_ns": 10560300,
+      "calls_per_sample": 392,
+      "median_ns_per_call": 22948.724489795917,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-loop_recurrence16-checked\\result.json",
+          "sha256": "cc1053d1592e6b4bb0bf832474336de913892a125f1e01ebb7fc46557439db87"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-loop_recurrence16-checked\\result.json",
+          "sha256": "a8b77069c9cb9cb0f40eac4614b6e337a04f67730de1c0614885544b8a89f364"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-loop_recurrence16-checked\\result.json",
+          "sha256": "76a2d78abeef1e9cb1b7076fc6b4205eff7a252ac29adac1d2d06ace83a25097"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-loop_recurrence16-checked\\result.json",
+          "sha256": "fef87dfc53a641dc27009579ed9b9e3bdb4869ae91ce2cdc4134eb7f9d6109d5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-loop_recurrence16-checked\\result.json",
+          "sha256": "236553e53accf589d9012ff6552fc223920f72e0986a3c472d3ede96a09e4d37"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-loop_recurrence16-checked\\result.json",
+          "sha256": "ebb9aaa8d76be9f1daaae7d997b2d548220d0004d506c60a0f270ad94ff525b3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-loop_recurrence16-checked\\result.json",
+          "sha256": "ff32027ff5d1afa37c583a6cd157aa7d920dd0608eca8ad352600f3a51629a7f"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "cpython",
+      "task": "native",
+      "available": false,
+      "reasons": [
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call"
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "cpython",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 42415300,
+      "min_child_ns": 41943400,
+      "max_child_ns": 43633500,
+      "calls_per_sample": 392,
+      "median_ns_per_call": 108202.29591836735,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-loop_recurrence16-cpython\\result.json",
+          "sha256": "0f618889749695260b0718716010c4359101e53f46a252fdd0c2486975e01744"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-loop_recurrence16-cpython\\result.json",
+          "sha256": "8005553d951f6161bf863b295a0cd749ded6c490b781d2bd7fc05fad141f80d4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-loop_recurrence16-cpython\\result.json",
+          "sha256": "7b22ad7a67fb28436fe83753ff5c92be482b3463d94e61b2e96ac6b13bba62f4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-loop_recurrence16-cpython\\result.json",
+          "sha256": "823d49abd261407aaae116d5605e5e1d800638e4e4b7c1ec896056fd6e4635df"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-loop_recurrence16-cpython\\result.json",
+          "sha256": "beaf1723282161a42a613cd990de29d1b70f20d445dc34de4ae7c64b3bdbbf4c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-loop_recurrence16-cpython\\result.json",
+          "sha256": "1d2bafb15b2d044a2f166a3664998b5eaf9e2b2a7bf4b5047e033772a6589f2f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-loop_recurrence16-cpython\\result.json",
+          "sha256": "30bd0958dc7a63fdd457478592652ffb724f316d953db89d6e889e4e3f4084cc"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "current-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 17533400,
+      "min_child_ns": 17312800,
+      "max_child_ns": 19055400,
+      "calls_per_sample": 3136,
+      "median_ns_per_call": 5591.007653061224,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-loop_recurrence16-current-strict\\result.json",
+          "sha256": "9b841a09ce1b2fcd372394a68c19e8e57c96df35195bc52e4780cd8b46f3396e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-loop_recurrence16-current-strict\\result.json",
+          "sha256": "5f6eb11e44d62f81f52e5c6487d1e38d524e2d772f42600f2441cf5066b735bd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-loop_recurrence16-current-strict\\result.json",
+          "sha256": "d4bbecc01bcab9c37c9afc78d0039aafaff59356849a0e42566a1ee6167126a3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-loop_recurrence16-current-strict\\result.json",
+          "sha256": "290625c7712d737a9bdb0515a73f00eb6516c311346e92b2603d5c54958628b5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-loop_recurrence16-current-strict\\result.json",
+          "sha256": "f52937ba08d048a352d0b76fa99aa574a0f37623c0946f725d8d3d74d35efcb2"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-loop_recurrence16-current-strict\\result.json",
+          "sha256": "6d02995874f14a000a0ac3e2618988f96edd3ecd96aa9ba292d53ab67dc599ae"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-loop_recurrence16-current-strict\\result.json",
+          "sha256": "717d1e0131735841271e678acb41172912ecc1667c92362a20e4fa65665350c5"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "current-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 4306400,
+      "min_child_ns": 4230500,
+      "max_child_ns": 4667800,
+      "calls_per_sample": 392,
+      "median_ns_per_call": 10985.714285714286,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-loop_recurrence16-current-strict\\result.json",
+          "sha256": "caa98b0a40cf3c71264af9c325399f04f660512ee997273f4516a3b3e3397c68"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-loop_recurrence16-current-strict\\result.json",
+          "sha256": "25832e28435eb9d85e6569dd82c0156bb4f531aacc6a0e7269e47ede4d5de96b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-loop_recurrence16-current-strict\\result.json",
+          "sha256": "d72c1d89dd539fcd5fd6333a3d8a96dd5889eab09ce928fa51fe0345e5a30810"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-loop_recurrence16-current-strict\\result.json",
+          "sha256": "c9f6b0a268a188d4b78b31bc87d918afb38b5ff32e3fdc201115ecc238883ee0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-loop_recurrence16-current-strict\\result.json",
+          "sha256": "f61835484dc3e8f4d45530e655f89d69c946be55c6213bcb081d15edd8b9329e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-loop_recurrence16-current-strict\\result.json",
+          "sha256": "19ed44068da653340de744909a09714d5816b901ca8083e22ed7b578825054a5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-loop_recurrence16-current-strict\\result.json",
+          "sha256": "040f12ee2588d9137aecd4bc294bee797600bbeb6ea8b6e9734bbae6be2b6b75"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "unchecked-int64",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 16174000,
+      "min_child_ns": 16056000,
+      "max_child_ns": 17069700,
+      "calls_per_sample": 3136,
+      "median_ns_per_call": 5157.525510204082,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "728acaa769706155d504df7124c8e8a8e8c31ca0823b324635142f1fa07bcd7e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "fac55392fafe7171b036757de177980e91728eaa308ebf0fd502ef178f01bae1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "0bcdd804c00b6c93a7318dca8f825da69506ec424d0df024b527ae8dc2f65877"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "7823bc58aec93c4910cf865529a7832c81646e2fd654fd014ce19fb24bb742d9"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "eef6b2304b579a6ac355c0e6113040d823e653dce5c5e038ab2fe9aa6404f792"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "9e2e141308e60b10b859b9fcb7bb2c742672fb8adffc7a611381bbdc276480fd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "4739c2479e2a4eb195a3fc2c620d82416b2d4c1ff3102ac9f163db5b7f8ed467"
+        }
+      ]
+    },
+    {
+      "function": "loop_recurrence16",
+      "variant": "unchecked-int64",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 9033200,
+      "min_child_ns": 8198500,
+      "max_child_ns": 10403700,
+      "calls_per_sample": 392,
+      "median_ns_per_call": 23043.877551020407,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "9b399c7eda888577e5fb1a946698be183b1af13340e3aebba19aa8c1eec96352"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "37910e8b0ebc065354a38ccb9cfdd48c92b7a0e93b7bcd93fa3794156074e79a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "482bef25f758f1e166709f43028c0fb1072ff4d1a12e0cec78c6875b9865f869"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "1784327b606d1e45864d6475bd7aeb849373b73167d01fd1dc363ca8c9462244"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "74a2d66d5425c785f3830def82a443b9c098c37141258725a3ffc8a4e8ed14cb"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "ad90bf8f03aef1147862ecf59339601b656a682f728aec521eb9b10b9397bf5c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-loop_recurrence16-unchecked-int64\\result.json",
+          "sha256": "efbbc9550d0de10d400a748b97571db41690c7b4b91b9449d953f18b105cc439"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "c-exact",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 685100,
+      "min_child_ns": 462200,
+      "max_child_ns": 853000,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 1.1778925506161972,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_1-c-exact\\result.json",
+          "sha256": "dcd6c52f040992ea0aafe124c0fcce2f7e972f2011bde8979498a04dacf2c8a3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_1-c-exact\\result.json",
+          "sha256": "8c1077e53519b044eab8177fd1a87271da6460e390a291bea53440414b656789"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_1-c-exact\\result.json",
+          "sha256": "b00653b6211ec8cbac28f9f56601ab89ce9cf712f5db3a9004803302dcd9a04c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_1-c-exact\\result.json",
+          "sha256": "00de3135357da675b46c214376dcee92c353d0e644d91ecc9b6f5ce44df1834b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_1-c-exact\\result.json",
+          "sha256": "1b88b71eed33552a9e1a0f45c2ded13eecce8d69780d3bd9db65e8c6ad9a881b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_1-c-exact\\result.json",
+          "sha256": "60ab513fd8180c81ef6089b590209eb0121928eadf8418070dcb62fd9c515940"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_1-c-exact\\result.json",
+          "sha256": "b0c600bedb7709a1c437e9918dcff670e0e354f5635f485999f9c668364ec823"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "c-exact",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 5810100,
+      "min_child_ns": 5652500,
+      "max_child_ns": 6503200,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 2557.262323943662,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_1-c-exact\\result.json",
+          "sha256": "06ace57b504dac936288990634e68e14b550cc40fab93de7dfbae4e27ef79d2f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_1-c-exact\\result.json",
+          "sha256": "731cc4aebafd3787c405c90065460bcb14fc148f9f352690fd38d93bf9c19c44"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_1-c-exact\\result.json",
+          "sha256": "267492f51f7dbbe6fa6d6879dcacb059db60320121a365ac0fe529e1f11a3510"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_1-c-exact\\result.json",
+          "sha256": "5f26c6762612ea25d6b9daf378145dcc927665c7bd9b6783fbbda1f96f4d7d28"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_1-c-exact\\result.json",
+          "sha256": "c3690ac2740a15a9c229e2ba70e665d4cc32895f13b6ad581717d6375fc11845"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_1-c-exact\\result.json",
+          "sha256": "7b84c8fab0b5d5350cb334843d43ef3772c020984a451203099bda1aa4744d71"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_1-c-exact\\result.json",
+          "sha256": "07a23dcb74d03bb473d2b0d34b4c5cd1781100f6fbb84dacbfab0176b94bd200"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "c-wrap",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 681700,
+      "min_child_ns": 650600,
+      "max_child_ns": 909900,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 1.1720469300176057,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_1-c-wrap\\result.json",
+          "sha256": "68c985bc5c3b74260531f421ad94d40c57ca9ecad4ae29425796a72f4f8d1e94"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_1-c-wrap\\result.json",
+          "sha256": "ea081462fc8a1285ff59883d593dcfc59971d3d6a11c3b613376303b308a218d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_1-c-wrap\\result.json",
+          "sha256": "573648421333c5eb885902d427bb3b904364ae88b816b49580b39dd3bd52e142"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_1-c-wrap\\result.json",
+          "sha256": "5fe909154d02889b6e466bb75381319a9308dc352202fac097a8fffdaeee46ca"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_1-c-wrap\\result.json",
+          "sha256": "46602c357d101a9616fa43ad2b9deff686d14fe7381218139164c421acbc472f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_1-c-wrap\\result.json",
+          "sha256": "d0ac1898e5e689ec4f0c8e95d77510cb25d8d9bfcf9d6dcb7e318cf17b5e2c22"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_1-c-wrap\\result.json",
+          "sha256": "2cda637180ccdf1f719e27f082f7b277bceeff70b4893dd61534febda4d923a2"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "c-wrap",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 6199100,
+      "min_child_ns": 5911500,
+      "max_child_ns": 9660700,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 2728.4771126760565,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_1-c-wrap\\result.json",
+          "sha256": "87987fb2014a786b8f56f6529e296ad7757e78359a11e6e5833c664ae5af082a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_1-c-wrap\\result.json",
+          "sha256": "c17782a01d24e665683c6a0d77987862f5f6f2a5e85e9b161d2e49a20692694a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_1-c-wrap\\result.json",
+          "sha256": "cf9e57201a0f9720acf30380e9e66608bdc721f4d02c5522fe8993ff95e1ebf3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_1-c-wrap\\result.json",
+          "sha256": "e040cc53e853abdff83d365efe423ab9523d86df5c520ecc59c19dbfa511ca7f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_1-c-wrap\\result.json",
+          "sha256": "c2f27e45a37361a73507d9881b359665ef75371a49d88a7f3af73dd0c9d50999"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_1-c-wrap\\result.json",
+          "sha256": "51c9fe44b8c6110e4b67df0e92b00045dbfb682cbc93148407c480cc3d7cefa7"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_1-c-wrap\\result.json",
+          "sha256": "f08f71ea8fb4107ce6daf90bdf0f02415cd32d1bd8a2832f4630fda6584ae814"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "candidate-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1330400,
+      "min_child_ns": 1265500,
+      "max_child_ns": 1537000,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 2.287356954225352,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_1-candidate-strict\\result.json",
+          "sha256": "cbcd510ec59779245b76c1130ed895e3925013b9c9de42273bb60fbda4a14759"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_1-candidate-strict\\result.json",
+          "sha256": "f9618d3417abdd9688ae64703f611a6147650f33087fda1f779d250562f96a67"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_1-candidate-strict\\result.json",
+          "sha256": "d988317015e04ef1b93cc96d915485c6ef8947abaad4c20f2a22783733006d00"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_1-candidate-strict\\result.json",
+          "sha256": "79a37938822e8e317cf003fa99853dcde398df56c12d28e98691d5b84f2ca929"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_1-candidate-strict\\result.json",
+          "sha256": "48bf6bba07c61248bd5ae2b21c1db9cc4822d565fc1e28c4ae7841484eb6bd7b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_1-candidate-strict\\result.json",
+          "sha256": "9252a3dfd32b4b8a158deaade157b1e70ee13b53b5e6e2e714c71e68c8a87467"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_1-candidate-strict\\result.json",
+          "sha256": "86a7481fa24a9f22d638d75ff6ca8e83e4284499901be7f5279a6e056e7edb3e"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "candidate-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 11770100,
+      "min_child_ns": 11187900,
+      "max_child_ns": 12766000,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 5180.50176056338,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_1-candidate-strict\\result.json",
+          "sha256": "9d3433e1b28d6f6b5b1b185fabc8732f0779b3f016c08d57e51ae3079b1ad900"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_1-candidate-strict\\result.json",
+          "sha256": "3cf7de659a1b2804d10d8f46432748827f5e30bd0bdbf9de6852fe42968be764"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_1-candidate-strict\\result.json",
+          "sha256": "935eee5104cddd4d2bbfc8215fab2a6115200d9638a3a697d7b9c22b8a54c7b1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_1-candidate-strict\\result.json",
+          "sha256": "6cf2e850f9526d9e3ce8fe9fb10a6e7e9cbf6e74a679c6aa53654846793088b3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_1-candidate-strict\\result.json",
+          "sha256": "eda49a24266e7e8508525063089cad8c4bdd35f8d80eec7697cfdbd678347897"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_1-candidate-strict\\result.json",
+          "sha256": "b6fdb7a8fdfc6a3b05945e83ffb53ad9994a46e420eb3ebcf15f24c57f6c73b9"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_1-candidate-strict\\result.json",
+          "sha256": "b1696fdb48794410d5d94ce1ff11699500681ad4f1afdb0a041f02bb584c04fb"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "checked",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1095000,
+      "min_child_ns": 1066000,
+      "max_child_ns": 1212000,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 1.8826336927816902,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_1-checked\\result.json",
+          "sha256": "ff01f5c6ce39df5410650680aa9affddc75cd7ac09a16e70c1e532eb5797edc2"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_1-checked\\result.json",
+          "sha256": "890cc67f89a6e9110d30258c18f569e8fa6469a56a3fc8e94db558910cdebfe4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_1-checked\\result.json",
+          "sha256": "59c06d4338121c4dc765b60bf7e8fa93449449e11651a2a0606c0018ad2918dd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_1-checked\\result.json",
+          "sha256": "feeb2d1f0989fc4cb2928971b850972415e823d703d6c0181f4c2bc9a2e7d6aa"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_1-checked\\result.json",
+          "sha256": "9ee33bd999cb01d6ed925c7cc801f96a86a3fb2aa6704875edd9501e2d4fcd47"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_1-checked\\result.json",
+          "sha256": "a24353d4ef4f9648f4f3972c53bac5ab0347716ebddd3d6f75e682710249f727"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_1-checked\\result.json",
+          "sha256": "dc2db8e5cacaced86bc116634cb3ded3578cce764e1a5aa8ce25a46f0104c413"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "checked",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 32424900,
+      "min_child_ns": 31161800,
+      "max_child_ns": 35861500,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 14271.522887323943,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_1-checked\\result.json",
+          "sha256": "70ed2f439cd98d380746118842394ca16aef9c300792072b0888cdc204811e62"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_1-checked\\result.json",
+          "sha256": "f52dc43c6ac3a6fbadb9b6cf00b2a590ade48c59c41092d411581f925a047d07"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_1-checked\\result.json",
+          "sha256": "91ca296cc816b5178492a4bebfc419f87372decd08b5ea601a201962ad552ee6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_1-checked\\result.json",
+          "sha256": "45abcdffa46a7972725c8473d3c07623acfe57cac0f9c7c422a62a45129383e3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_1-checked\\result.json",
+          "sha256": "66958a41873697549c13eb5e5c3ed7445365d3367dfae42d8007deb09ece38a2"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_1-checked\\result.json",
+          "sha256": "958e4b2501b784b5f5fba7831de74a7d29f96589649673df11fbf11298bb59c1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_1-checked\\result.json",
+          "sha256": "74e3d19a448cfeac994b5099f9393f7b38438a62437f5e8c227058ec2cc8fd10"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "cpython",
+      "task": "native",
+      "available": false,
+      "reasons": [
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call"
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "cpython",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 130900,
+      "min_child_ns": 127700,
+      "max_child_ns": 141700,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 57.61443661971831,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_1-cpython\\result.json",
+          "sha256": "5df8c677cd633ef1e6b6219b1ebf4add2bf0567c4d1090f474912c41f769606a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_1-cpython\\result.json",
+          "sha256": "813fa2d25f691010b1784f24531377764e539469ac2669b7621754cb53f6256c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_1-cpython\\result.json",
+          "sha256": "c056ea0d775f59ec54940b248806ffbe1c2f21eabbd882ae3530bfb693c5ea8c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_1-cpython\\result.json",
+          "sha256": "a8814e993e00d7f8070ab6ebd6a2ab62937e83fa682029ebbaf60919815955b3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_1-cpython\\result.json",
+          "sha256": "548c428a8ee92c4a8ff354d4cab72adbb80cfd548ecbf83520f9f4a4c5820211"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_1-cpython\\result.json",
+          "sha256": "f3fc40a752b5a1d8566e92d812ceecfad429809a4e48c8b35a59d6daa44ab52c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_1-cpython\\result.json",
+          "sha256": "b2e8ed7e94cc1fcc7f47f1d9df073b3b4f7b81b6baf718d3d98343da5572aecd"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "current-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1291100,
+      "min_child_ns": 1266400,
+      "max_child_ns": 1365400,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 2.219788457306338,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_1-current-strict\\result.json",
+          "sha256": "719b257484201de9baec79fbd3c9a9542ddf46c474d90d1a1f8ff82b59ffbcf8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_1-current-strict\\result.json",
+          "sha256": "41392ead176b8fca63551fd78bdeef5a12e78a5a422015dd96ebd2df398f79a4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_1-current-strict\\result.json",
+          "sha256": "a09040b8c0aebc53d2b2d67019df0855925b53991412576d3b472fdb8b2767e9"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_1-current-strict\\result.json",
+          "sha256": "165d5e4526fba8cea690beb2d6fc348b9717c8c1b96f775d8dd9ecf979748cf1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_1-current-strict\\result.json",
+          "sha256": "f001ba4fe131169b31ed4e103b58960a3541c054999b9c124290ab3066e5ff42"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_1-current-strict\\result.json",
+          "sha256": "f39e2f4919d98b6294305d264f769dd94fb51324cff8030000ea7dacc42a51f6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_1-current-strict\\result.json",
+          "sha256": "ba1307cac78e7768b217b38b4a7617522cb2f74e899da8b172d32585fde5b181"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "current-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 11313400,
+      "min_child_ns": 11184000,
+      "max_child_ns": 15026600,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 4979.489436619719,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_1-current-strict\\result.json",
+          "sha256": "d8649b848dedad18a1a7175037e8416ccada480050b149806213dd17d279df38"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_1-current-strict\\result.json",
+          "sha256": "6513d4498ea96d0b7ad6f34dc89c5aa38f4a5eb5c93934ae00249069d45826c8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_1-current-strict\\result.json",
+          "sha256": "8996c961ea8c60cf9a221e4a523110ace6cd391601b3ad85f9dc0cf9153b789c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_1-current-strict\\result.json",
+          "sha256": "ed43d7ef95def854324ccca70eec5ef203443613340f8b7edc408ef9500ae471"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_1-current-strict\\result.json",
+          "sha256": "14fd1bfc7852569dfd81ef68da19fa1df0e0c27fd439b7c2a65ebe271b778c9a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_1-current-strict\\result.json",
+          "sha256": "82b7dcca8a498ba69ae1b2331b69caa5514376da309db2ff8d49ba70f176b113"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_1-current-strict\\result.json",
+          "sha256": "b7f9274cbf6393b663702813474b1571cef2cd4df1697d35ce4513b21a06a851"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "unchecked-int64",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1083100,
+      "min_child_ns": 1068700,
+      "max_child_ns": 1092200,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 1.8621740206866197,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "d35d71d87af0032c759bb0f5fcdff5447de8c6f072d2abf1446603d54e2042d5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "9eefc425635cfb3cd40d8f661c7443db8ffb1e2782fcfb811490633f479984a4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "9449dc6fbcf9c35e88e0110059eb1fa064c49fe2796a927448e4e15a968e13de"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "ff313ea46c43821ce2aa92eddbd471f47a438a545e303e12a7ddd6adaa74d27f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "54bd271bd978b0d513a7fb240bbc661f67fe0c1344e1d5307a3b59c7f3a7c001"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "884916271c486a5bb79211eef99c175752fbc9bd3c7e75c9be25f337faec0880"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "02905d2da1ec05d0b9e51ec74e416fb86be003ca60ed4365f50e037c339837cf"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_1",
+      "variant": "unchecked-int64",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 30200900,
+      "min_child_ns": 28737900,
+      "max_child_ns": 33988200,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 13292.649647887323,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "787463ef58df54657b6f14792724f68fd26ecf04e25de45b7e0470ee6cd3b47b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "3219f20bc0ae12805b63e300b6f7b6420a8181371b5a1cc0976ba4d54194bee6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "5f901519c4fd7a9f4e95a9263cc5fb5e9ac5ae70203a78c9c09b1f36d1041215"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "b5f39dfdc7145fba1e55fa9ef4a40ceeaa162fe8032b1d471f5680e2f2f1a6bd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "d992d29a4e8715016f01f81cc839eb3d7b9c6a27e36a15d22b933aca8d681ff3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "ebb2db6ced0fdebb78ff2331f7690e29033c17582f6a3659af65a5ad4d7bb8a4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_1-unchecked-int64\\result.json",
+          "sha256": "5b0fe9102bb6e5188cd2cc261d58164c054ecbc4c6fed0669b670671f72c4a6b"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "c-exact",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1879300,
+      "min_child_ns": 1863700,
+      "max_child_ns": 2319800,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 3.231080820862676,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_16-c-exact\\result.json",
+          "sha256": "999896b2157b3887e9b8aac8bef8bc915f41386fb7ce126af0cf53cf214eeec3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_16-c-exact\\result.json",
+          "sha256": "6ca6f0020e1dc6dc2a6fd4b480b061d539155f49a3341afadc706737ab83d6dd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_16-c-exact\\result.json",
+          "sha256": "9bfb452c567f9706d1078127a538dc06740083a678ef0a8e7936431716f9126e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_16-c-exact\\result.json",
+          "sha256": "a88c1f26aac0f0ddbbae2cb849569a50c2189bc43a4b65599d124d1c06ec67e9"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_16-c-exact\\result.json",
+          "sha256": "b8b616acae1948b9e186f3dbb34b7492405814f55bcd8f79aeafd1f169c2b8b4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_16-c-exact\\result.json",
+          "sha256": "6d02733d3c0ff602bdaf4a25e8b7aa9e110615862474743374fbd235b008de13"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_16-c-exact\\result.json",
+          "sha256": "c5226aa26549b739fffe64b94e7863bfe4963d2e962a37d497845490173512f1"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "c-exact",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 5931700,
+      "min_child_ns": 5667300,
+      "max_child_ns": 6815900,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 2610.7834507042253,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_16-c-exact\\result.json",
+          "sha256": "b0b2ca15cb3c140a4f777061eb198419cfe085ff7d04400ea206913cab45c857"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_16-c-exact\\result.json",
+          "sha256": "8a6bad409d66667cadc65b6086249ef341cfc0b5261fb7cf3ae21a24a79cbdb7"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_16-c-exact\\result.json",
+          "sha256": "d0ca90efa367609fb540e4c77ea86c32a1edc85b19aa10c443bde6f55affd98e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_16-c-exact\\result.json",
+          "sha256": "4c24d696abbc8c866365e974bb53bc5e2c3e98c063d3528374b523e0e40c05a6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_16-c-exact\\result.json",
+          "sha256": "7ad5383a4b9dde03ae6e923dd98779eae4b13d83f92311ec37d58827889613d6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_16-c-exact\\result.json",
+          "sha256": "0a7b771c6f6048b105ae95ddb2f23687d80debcea12afb352fb989e4f0580daf"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_16-c-exact\\result.json",
+          "sha256": "d00b08441200236e50b4e7439874a85231f1e083134987405ab7e866144ca046"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "c-wrap",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1902100,
+      "min_child_ns": 1872200,
+      "max_child_ns": 3053300,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 3.2702808648767605,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_16-c-wrap\\result.json",
+          "sha256": "9e0f73790e81ee51a5aeb0c29d4a3904b32d905e0710b7d2fe452d0b0fa029cb"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_16-c-wrap\\result.json",
+          "sha256": "51fb702e4d2667b1cc4312b91bbe654dcab62509cbe51fa0d8e442cd7e719c8a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_16-c-wrap\\result.json",
+          "sha256": "689bc7b1ebb13670ad836ba9e399f3e8742fc02652c4feaaa90803577af49e7b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_16-c-wrap\\result.json",
+          "sha256": "799e994af5e8237619c2f3a50d5aa4899cc8ed363cb560e426612348ff97a679"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_16-c-wrap\\result.json",
+          "sha256": "6ea900917a1213565199c00032c25fec9df0b466f441303e8a31f208dc434421"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_16-c-wrap\\result.json",
+          "sha256": "3a01d149d1e9dd826a205a93d72e5ec698f0cbeb14ae74316370162bacb2ab47"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_16-c-wrap\\result.json",
+          "sha256": "97e515a4ff53db94cee351a6156e232e336484f5b1b2e252a06fc0052b210e71"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "c-wrap",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 6260500,
+      "min_child_ns": 5908700,
+      "max_child_ns": 7434200,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 2755.5017605633802,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_16-c-wrap\\result.json",
+          "sha256": "6b75d7b45e96456f22751f0418841e92116559b20756534d74e90ea825b94573"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_16-c-wrap\\result.json",
+          "sha256": "154c38279973d683c0a727236bf050655e0b7d03b86839b0fe8d78720104cf4d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_16-c-wrap\\result.json",
+          "sha256": "5f128f7bbc66c489679868921e9bf51eccb2eceaa4ae74148c4d81b0db3d9d37"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_16-c-wrap\\result.json",
+          "sha256": "54635fd2ddd32bcbd262ff67f406bd39168586bfe87bad345ba7fe877d3f003d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_16-c-wrap\\result.json",
+          "sha256": "9d685cf7da7feb22c47dfba799d58d595d38456a4075b8e1eb126969c4b79cc8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_16-c-wrap\\result.json",
+          "sha256": "295d8b79fbfc33828f4fd10e96c89e1b748fb1b48266ab7c282e4780f0c01b7d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_16-c-wrap\\result.json",
+          "sha256": "9aedb1cf1f1d80747f457a83903ecc5ab80f965b76d267c236d367ac35b928c2"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "candidate-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 9422800,
+      "min_child_ns": 9316800,
+      "max_child_ns": 11681700,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 16.20062169894366,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_16-candidate-strict\\result.json",
+          "sha256": "3f83af7bf604238d6f9cd41dd42ffc91e9bfabce3b6b408918f7f0b1240708f6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_16-candidate-strict\\result.json",
+          "sha256": "bb548675dbe8517696f1cd0316ce5a2ce20c9a32b23a82e98658c7d8992dc411"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_16-candidate-strict\\result.json",
+          "sha256": "953e207bf1aefc00df4b095ea422c64759939767b718059ae944d21b96ac4440"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_16-candidate-strict\\result.json",
+          "sha256": "4723931444d1ed9b0171e36664c58de48f9bdc32a2c9e0f8b9bbfe34db487ab7"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_16-candidate-strict\\result.json",
+          "sha256": "a005e72ed229cef673ab3d8a0b3eabc73b383a275eca3208c9fe72998be9a713"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_16-candidate-strict\\result.json",
+          "sha256": "4b1e892c3aa3d823d806495fd27c5e918136fbaf00bee772e3922246072bb2a0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_16-candidate-strict\\result.json",
+          "sha256": "9c79bc8b0608b96018026ec133c7ddb9419ee24060c10790581e7704c075ed51"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "candidate-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 11427900,
+      "min_child_ns": 11229700,
+      "max_child_ns": 14191200,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 5029.885563380281,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_16-candidate-strict\\result.json",
+          "sha256": "eccea6579c8885431175af1596816e95fc8f61f40fd2ecef291b1d1ffb73292d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_16-candidate-strict\\result.json",
+          "sha256": "b794bc564763abeaacbe47fc410e90259c6a77aa7310e1fbaf48f370c4841c37"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_16-candidate-strict\\result.json",
+          "sha256": "c086f67c257b488c3c3dc4c7e9fe9fb86a99fdbb659420225c3f7a4015e2774e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_16-candidate-strict\\result.json",
+          "sha256": "65097a089b0879a3c7c63fb0ac848b1521d679796a9df0f8909e0c847f138025"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_16-candidate-strict\\result.json",
+          "sha256": "b21fa8c46c88c5cbe8c500cfb19b00a6481995bfaeda45d50f7c66ff5b47a9f2"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_16-candidate-strict\\result.json",
+          "sha256": "65327188ea9c3a8b453839f6badd5bd25e8c7d7992e95751a1d598fb044e5306"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_16-candidate-strict\\result.json",
+          "sha256": "ca64c5d7e5bfeb76a91d37b5b78cc67efae192dbcca254ec3c786a252dd8accb"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "checked",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 3224500,
+      "min_child_ns": 3160500,
+      "max_child_ns": 3709800,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 5.543883417693662,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_16-checked\\result.json",
+          "sha256": "e7fa45b206d28eef48767727607eeeeccdbd1099196323c641a13421f43b479f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_16-checked\\result.json",
+          "sha256": "a5bcf866c2950c72fd528d368f106f42ec9f2dc3f26985ce266a783991890dbc"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_16-checked\\result.json",
+          "sha256": "fefe27e053633e4b855da3e0ad038374c2e3d77cdeabf10b5d116351ce00fd66"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_16-checked\\result.json",
+          "sha256": "9760072dccd00652ab4709184db2bda45b4055a3ad19940e86f6aa7cbae34e87"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_16-checked\\result.json",
+          "sha256": "c68c1d239befcf7335b85f55de7e982ffa301d41f6b4f4360beea8d1d9db9f1e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_16-checked\\result.json",
+          "sha256": "b358ae01c2c028c509cde220193bb6792d2098672116b8ca208c2e2250bee765"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_16-checked\\result.json",
+          "sha256": "1163df5e9fc1dce168f6b3e80a0b558ea288a81fe261f1ba8207f67c659943cb"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "checked",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 33880700,
+      "min_child_ns": 30812000,
+      "max_child_ns": 35977500,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 14912.279929577464,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_16-checked\\result.json",
+          "sha256": "17a05d84e787f000f44377489ae80314dcfca88659c198649f0f427177d509f2"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_16-checked\\result.json",
+          "sha256": "96ea7bec10188befdc9f4ceac2adaaf805d9a79a6ab3ef528fd20229034cb486"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_16-checked\\result.json",
+          "sha256": "4604adce08dc4406b59500084dde6122ebb041996fc0c8cfc92ae67b0da8bf57"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_16-checked\\result.json",
+          "sha256": "a3b723a446363286a607bd56d25f46de5069cdaa77870219d2f3d874b394dbc9"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_16-checked\\result.json",
+          "sha256": "2a49db5ca32f27d530351d5a2519c3d223b47f4ff5c179aed818529f245b89e5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_16-checked\\result.json",
+          "sha256": "907fede8a82fb42a60d556caa79592af710e3e14d3b78102a824a6bef1173b96"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_16-checked\\result.json",
+          "sha256": "ca15419d4432f78f9a381ca20bb58d73656434055e9e932021960ef062f91ce1"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "cpython",
+      "task": "native",
+      "available": false,
+      "reasons": [
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call"
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "cpython",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 576500,
+      "min_child_ns": 558600,
+      "max_child_ns": 800600,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 253.7411971830986,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_16-cpython\\result.json",
+          "sha256": "103c0bcddeabc81d5e0c55e5527b8a53e78f04db8774e8636985b92a49aa58a3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_16-cpython\\result.json",
+          "sha256": "518aa0b8b13c545de4729a71867c6b9a947a566a36a7dcf8f354ed77c48011b5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_16-cpython\\result.json",
+          "sha256": "8fb7952364e66f113c1c55b13d34d1bdc316a61cc38d17df76fea0b20cb0d5fb"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_16-cpython\\result.json",
+          "sha256": "62b1e905ba398c04861aadc436bd17752cd48cf1061be5fa1f8d3ad7fd51711b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_16-cpython\\result.json",
+          "sha256": "50d60cb8c1950f9d5ed382b5601bd98603250bcf4f3cb7a799535c70a5aedb09"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_16-cpython\\result.json",
+          "sha256": "e86e0a58ff3ccc6ba5602a4a93197449046552ecde40649fe592f9bb451f986d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_16-cpython\\result.json",
+          "sha256": "c625cf4591d49a49675666671c5c3c58eeb6d1a3916b702a813c9a89a56982d2"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "current-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 10042400,
+      "min_child_ns": 9460700,
+      "max_child_ns": 11237700,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 17.265900088028168,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_16-current-strict\\result.json",
+          "sha256": "d6b31d746fb7f5437fabe67f1eccd9e888f549c92084f45f1a468ae0ee0d3fc1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_16-current-strict\\result.json",
+          "sha256": "5b68bf4920cec28bada579b91d33f47016325b3345f32ffb8aa884e06e14fe58"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_16-current-strict\\result.json",
+          "sha256": "da19b074efb32c780db3b4aa312a477ccefc5bbd7d2eede8df8e7956af046f15"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_16-current-strict\\result.json",
+          "sha256": "9e1d67880e32a7a5eeb1f9185b5e4c9eeeffbdcd7f90fe1024ce6b2e2f307fca"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_16-current-strict\\result.json",
+          "sha256": "4e92acc9ea50579335942913cf2c43a509fecd40c671591980a839bf6ce012cf"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_16-current-strict\\result.json",
+          "sha256": "862feb966f3b3cee326092c4615a305804a9dbc58a20a2210803d69c5cbcd723"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_16-current-strict\\result.json",
+          "sha256": "dce844b38d9c05bad59520e041903eb501f35b484ac0811a4b6c05ac848ab452"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "current-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 11607000,
+      "min_child_ns": 11163900,
+      "max_child_ns": 13369400,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 5108.7147887323945,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_16-current-strict\\result.json",
+          "sha256": "66e3bf9a4bc5af0cb402ad6ad4fdf93dc05e4d2f28ff1c4e89554c90197df924"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_16-current-strict\\result.json",
+          "sha256": "a55009235ca39b64e2818e8747dfe1b84c069d4d46bdb41d63317139f901d661"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_16-current-strict\\result.json",
+          "sha256": "11c6e5b4101f5d0e9d8683fd82cfd0153aaf788b57daa3c5bf16e662ffb06bbf"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_16-current-strict\\result.json",
+          "sha256": "368ba48d9f5a1f37dbbbb53a95bd37311cdd658c4fe3ae78166896f57cea74ef"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_16-current-strict\\result.json",
+          "sha256": "2452c5e72767f94512131beb7f84b7944f883ad170329566a07db96e6e418a92"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_16-current-strict\\result.json",
+          "sha256": "227a57eeaaa4b9588287e4ab69b0261a61fbc285eea931c9c7c7a1e3ffaf6320"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_16-current-strict\\result.json",
+          "sha256": "f1a5e4a5ce3bf111919b089ac4f0f1e7edad715e500513ec4d58721f04c5e5da"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "unchecked-int64",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 3192100,
+      "min_child_ns": 3170200,
+      "max_child_ns": 3929400,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 5.488178091989437,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "62eff732f10d5014564fdb8f7f391f13a9944f386db83c1c4e069665c06fa516"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "c0df49434dcfbc8b00a40c09cba8ebe06d6bba39fdee74334fd211e502a22cd1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "37d292763d756985d0ddbeb4e1f1dc8acb850ced785e3987817fc4374c6e28c0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "5eda2b4b74482bb2d8ac0e002fa382ee922389cf916862e2427f29bc9e8b1c49"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "860bdc8af9aa25cad631aa21699c952e5ca0e58f77f5d7a97189519354f73264"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "c6669e72812b4d4dde94e0efeff10ea2d5f0667eea17833302f2a9558c212b5e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "eb18620e1ec67d33fbe7fad404d09278124c3e2088ef84a191665284f6f65570"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_16",
+      "variant": "unchecked-int64",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 33388800,
+      "min_child_ns": 29015900,
+      "max_child_ns": 46973800,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 14695.774647887323,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "3a20e951570d37d39df464c9b114978fc3ee46e83061b3b6e9034131a1c618c6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "d9778986b30e762c986a982cb9ec84648bafa70e435fb0f9851b2356db7f5128"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "881b98f7a34fade8c9d87b96f575c85429c54c0491a9db186783170d6681b7ed"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "a72e500d9702a3b1430bc7f9b7a6483673eaaa44d4ba0ab168e93e6c2ab25c73"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "6f7e3514048df3cb179e9a427de7d7587e7dc9bf3e7cb207dc1b14bc2a33909e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "2e4b0c1122f81bd17bed7207356fda825093be5524a30a9c1c034b5625090a56"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_16-unchecked-int64\\result.json",
+          "sha256": "72eee74d7c321aaf022545914cfa4b66ff0e0487bf7f531937ce7eb67e81e0f0"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "c-exact",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 14511600,
+      "min_child_ns": 14440200,
+      "max_child_ns": 17501900,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 24.949796434859156,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_64-c-exact\\result.json",
+          "sha256": "60507baef01a5e442a71dc365d24856471a423db0ca11a391e0e7ff827a408cc"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_64-c-exact\\result.json",
+          "sha256": "52ebfcc09ccddec090fa8177417a6f11c7140afefdc14be72e47bbb9076d0fda"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_64-c-exact\\result.json",
+          "sha256": "c180ac9583ee789a62b1f9bd6a2e67bacdc6a4ae5353fcd5f78f64f6dc0ee730"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_64-c-exact\\result.json",
+          "sha256": "5260a27cb8b9009cc61aaef8b42639fcc4a1fbf288a809a349a4ce40af13934d"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_64-c-exact\\result.json",
+          "sha256": "30426b5ebafe004998eafa36a6d8eeb10d957496338112fcc5b4aef00e0fa048"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_64-c-exact\\result.json",
+          "sha256": "461ca841d342cc0bbacba821eb78651827052546c3eb871f3f3aa2ca807ad5bc"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_64-c-exact\\result.json",
+          "sha256": "940a84cde0e5fa877c898a482c60120aabff6df205a31d8c9704e76a66ed1d45"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "c-exact",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 5922100,
+      "min_child_ns": 5708500,
+      "max_child_ns": 9586300,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 2606.5580985915494,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_64-c-exact\\result.json",
+          "sha256": "91028dad9d032cfd03f090ebd2432c92edb6ace32b7ced40f699c411aa3cf872"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_64-c-exact\\result.json",
+          "sha256": "1f9f1e017950f0de888d1fef28ade4929e26e83c7d56b41e5fec16b75b25f779"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_64-c-exact\\result.json",
+          "sha256": "03afdff849b235ae685e5560bb3ef33d4d49d5cc65eb5621b7cef3784d336edc"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_64-c-exact\\result.json",
+          "sha256": "b0292e00928e2293ccd53bdfed3cadc48e599ca9f3fb89c3e6ca3be98a6406fe"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_64-c-exact\\result.json",
+          "sha256": "57ca7ee6547bc849093410c58341edc199c612b8b2e7d7c48816dff34dd05de0"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_64-c-exact\\result.json",
+          "sha256": "0f921fedd6227caf112187f9f45834bcb3ced5ccb6b038c78fd115079d281284"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_64-c-exact\\result.json",
+          "sha256": "208e427590413bddf2f44ca853496a9442e7ebc7a82efcc00aeb73471d46eaac"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "c-wrap",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 14464100,
+      "min_child_ns": 14453700,
+      "max_child_ns": 16650200,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 24.86812967649648,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_64-c-wrap\\result.json",
+          "sha256": "4c71860d2a5389bfdffb936d4ee9392ba715124867a543e8a48b3ed7f24e9f0c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_64-c-wrap\\result.json",
+          "sha256": "db065d54e3828f98e3a402c59409d53fd3132ea7ddfdf5fd8a7d65947c2bd014"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_64-c-wrap\\result.json",
+          "sha256": "03b999dae8d2ac2a6e17fec41223f9a0b4ebe7344fe53069b83ba94354370d38"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_64-c-wrap\\result.json",
+          "sha256": "fc389ded2fe4116df939c0359e845ff5d1ea17a90d7396ed163be39bd07ef628"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_64-c-wrap\\result.json",
+          "sha256": "6c4879f85bd25ebfd0ffed2d3fcbe3ce14616bdf6b41a70493bd0850287561f4"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_64-c-wrap\\result.json",
+          "sha256": "1b9acdf88988b18e39114755e0f4e91856c175030a9b12c9128389dc76057f04"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_64-c-wrap\\result.json",
+          "sha256": "0e5d5a1cbaaa428712c3b2ed439672b7b86c43941580eb17d50f995e859ee529"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "c-wrap",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 6518000,
+      "min_child_ns": 5984800,
+      "max_child_ns": 8171100,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 2868.8380281690143,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_64-c-wrap\\result.json",
+          "sha256": "4119e4466d6184ab78074140b1d64e03c4899f4150b7cdf6b19ccafd205b7c34"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_64-c-wrap\\result.json",
+          "sha256": "171b17c7283887b631da9427cb534c3d43f420adc0461bbba0f6f9fd4d6da1c8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_64-c-wrap\\result.json",
+          "sha256": "c5a17bb2ef5948ee890d7c76805d77bd7f1e005d6c75794c6abaa6443b8cb194"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_64-c-wrap\\result.json",
+          "sha256": "433110cefc28f6a64e173f5ebb683fc078060111e1c6aa515424dbe3fcc41e92"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_64-c-wrap\\result.json",
+          "sha256": "281308e9b14672c6003a102ba0b26cfe9132cb10302b225f2efad81e220e0008"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_64-c-wrap\\result.json",
+          "sha256": "9e7f1f95948d7f6871151dad64e3746fb4ff1c6f74ddf35c172247a0edafdb64"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_64-c-wrap\\result.json",
+          "sha256": "0a223f12ba74a4513b38ac23c867ac79b83b75aecb5d0a2b8b71ab954847a23e"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "candidate-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 32903300,
+      "min_child_ns": 32638800,
+      "max_child_ns": 33839700,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 56.570649482834504,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_64-candidate-strict\\result.json",
+          "sha256": "29fa2d93c85591b676fba71dbcb59b17cb08c39cbd8754f075fcfff2463ab091"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_64-candidate-strict\\result.json",
+          "sha256": "b4a92c2c01a1f8847fc16a426744a6e3f7fa1afb1c5e4825bea86e0c42184a1f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_64-candidate-strict\\result.json",
+          "sha256": "68a30f5e959f39c97ad641663e13acd5c9c7d7b8304c6a2dcfce6179ea4e9d48"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_64-candidate-strict\\result.json",
+          "sha256": "15c3cb68a2348ad81eea42b6552446e7246c533e6ff9a2c40e4b64ec2ad65074"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_64-candidate-strict\\result.json",
+          "sha256": "719facfc0586e870d4a07241316479c4dcc1b710c62b9b117e52a02f6366e360"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_64-candidate-strict\\result.json",
+          "sha256": "d1b6f23b31633aaa6df1329529799510b471bd282a738cd60faba1b58765e85a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_64-candidate-strict\\result.json",
+          "sha256": "75627a0f853050af4c0c6538f8dc0f8db904e6d09c1f928c73bb3fc0ba172447"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "candidate-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 12059000,
+      "min_child_ns": 11370100,
+      "max_child_ns": 12638300,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 5307.658450704225,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_64-candidate-strict\\result.json",
+          "sha256": "2b9a1bc527e73e5f4f601fc67288032140ebb42815308dbe5cbe9a843a92fba6"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_64-candidate-strict\\result.json",
+          "sha256": "3c554c1927b9d8c5b019744a34730a9b49904eb3a967d2e8bf4e2e95ceb89dcd"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_64-candidate-strict\\result.json",
+          "sha256": "cc87b8beb0f61560a471a1c6a3f8cebcb9025bd9001ab3374e6e85abae7fe958"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_64-candidate-strict\\result.json",
+          "sha256": "ce917b754b5ac5a54e68d070dcfff715ca7e3a83429f5aef96b57d40d82abf42"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_64-candidate-strict\\result.json",
+          "sha256": "4b2a08f4f21391eaa12d115e1fb8a901cccdac5c12f4f070820ea7863fbc67ac"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_64-candidate-strict\\result.json",
+          "sha256": "2738475b669a6d68e6ed4a77520af223b804edcf0fd485ce7db326c1bcad50f1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_64-candidate-strict\\result.json",
+          "sha256": "99fd0571e1ab45e6985525e2d4855dfcab3e119810e9fc94a59c2c026a7ba5de"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "checked",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 18758200,
+      "min_child_ns": 18499500,
+      "max_child_ns": 21303000,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 32.2509765625,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_64-checked\\result.json",
+          "sha256": "24296b96a5fa79a29599748c97e2447da3db80d4feb4c805e4937e3b2fa4b23e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_64-checked\\result.json",
+          "sha256": "f86f17ed3e308aecadad7478b34aa5ddcc4e560863c97daa0ba902e3c4c8e3b5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_64-checked\\result.json",
+          "sha256": "9f48c9fcbf6ab2b300c42246f0be62f377540a6609f76ff698cc11425819a466"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_64-checked\\result.json",
+          "sha256": "b19589f40ea0dc1cd94735b7198596d89691d736871ea27e2c2fee19515dc697"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_64-checked\\result.json",
+          "sha256": "f0ceded3f08bf2b0c52a7d8ebc55bc3c897e64bc21b3de0a565062f3ea24c327"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_64-checked\\result.json",
+          "sha256": "2af789098f337774992f2807342c371d86fa153b25c2b1304083479841767f9c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_64-checked\\result.json",
+          "sha256": "6d2cb1e0c496d58cfa71d92d14f36dbceb15c9d20734ebfb93caa3bc0a3d1664"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "checked",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 33138200,
+      "min_child_ns": 30128000,
+      "max_child_ns": 37771600,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 14585.475352112677,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_64-checked\\result.json",
+          "sha256": "1fb6765cb1720e6969fe6591cb33548771f36c471389d9e24615b380be8684ff"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_64-checked\\result.json",
+          "sha256": "f1000708d8b13ff5fc3105c6206efe533892ef3f8fd58bf66756c73311dc4627"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_64-checked\\result.json",
+          "sha256": "cfb9d923c21bd761c126e70a04957a8dc93c827f8d84d47659c31a33a3e4fc45"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_64-checked\\result.json",
+          "sha256": "2a925c5d6bd6acbd7fa94d0d34b960d2f48685b389b5ff099fce562cffef0ee3"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_64-checked\\result.json",
+          "sha256": "8838e28aefdb434d24791c521a667ca7ad5cc916dea6d1e802226a95a362f179"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_64-checked\\result.json",
+          "sha256": "0a684617dc2f0e604d347b8a9b8f5ba446df553b88be4ecd974c0f5738b36236"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_64-checked\\result.json",
+          "sha256": "b97fb68adf97131911cd7ab4c6cb438e14c3b93e40f47842d542b43ccd3efbf0"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "cpython",
+      "task": "native",
+      "available": false,
+      "reasons": [
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call",
+        "CPython reference is an ordinary Python call"
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "cpython",
+      "task": "time",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 1895900,
+      "min_child_ns": 1873300,
+      "max_child_ns": 2228200,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 834.4630281690141,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r0-recurrence_64-cpython\\result.json",
+          "sha256": "73fdd77cf9e95917752ed9208781a15a36fa7fe66fc390df14579858e526a36f"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r1-recurrence_64-cpython\\result.json",
+          "sha256": "e3178e1b4d28b8c22fb22e1b1060d1c43d2b138cc19adaa4ec8596cfe3a64179"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r2-recurrence_64-cpython\\result.json",
+          "sha256": "807a46856b6ad0857ea7373f587a35c5d6e8976c581c0d8bcc9158dfa7e9347b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r3-recurrence_64-cpython\\result.json",
+          "sha256": "8d35bfcd6a5a061f21884db24ec2725ca9fc98f6116a387d2e970458a0f6fcf8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r4-recurrence_64-cpython\\result.json",
+          "sha256": "786f2262a64feed19a0ce80c58b503758ad8e4b350d34b896bd8e97af274d3cb"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r5-recurrence_64-cpython\\result.json",
+          "sha256": "300c0fc1ae6efda05c8d5a43750446f29e40a670b33aa39e2d9a1f3a90589985"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-r6-recurrence_64-cpython\\result.json",
+          "sha256": "8964ebcec82aa16ba44774626afa762eb54b2a541f766ecbb4ef555d60b4849a"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "current-strict",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 32500000,
+      "min_child_ns": 32241100,
+      "max_child_ns": 33600100,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 55.877255721830984,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_64-current-strict\\result.json",
+          "sha256": "063faf2c1e9015980bcc5dd8dcca8910b77e754d80afc8972364e58cb3bfda3c"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_64-current-strict\\result.json",
+          "sha256": "21af173d7e033f03d26d374b60e98ac96aa5e137123f6ea9ae1d7091aff69d93"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_64-current-strict\\result.json",
+          "sha256": "2026a6cc99841b7de4f2218790b1ebb0062c3e225d299536f2bd5bd9132619c8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_64-current-strict\\result.json",
+          "sha256": "8a1c8fe5edb2ed0612d8dfd37e22f50b6c330a32fa8954a5a3bbfd145e60a1a5"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_64-current-strict\\result.json",
+          "sha256": "795c0866df609eb78485e89a885f9e3c1aec95c1bf7b5a8083e5451635a4e09a"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_64-current-strict\\result.json",
+          "sha256": "80bc447a753201c380e7b5e8e5fa4cc62cf5e5befb655c0b1ead7942dcc67cd9"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_64-current-strict\\result.json",
+          "sha256": "095251f64318d6a0a17ec070f6843a427add6709d7fedf56f292a0e4ef81fd33"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "current-strict",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 11701400,
+      "min_child_ns": 11445400,
+      "max_child_ns": 13893700,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 5150.264084507042,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_64-current-strict\\result.json",
+          "sha256": "fa940d33bae9b7c6d099fc22bc3a367c32db1df65ecba955fe8fb5a2ac9a5a7e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_64-current-strict\\result.json",
+          "sha256": "145dc7efa43c8a99ad62656be00bb89d87803718f64ed4e3e4551b8e021936ec"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_64-current-strict\\result.json",
+          "sha256": "7eb7f2db8fa92c753c06070d2cf84fd848bd44ae6b5859df7ca9427dc1ea5ddc"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_64-current-strict\\result.json",
+          "sha256": "bfb038b1c5e5b6a87757c56e6b1d24255659e0b66b179da3b6cd8615e01b5db8"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_64-current-strict\\result.json",
+          "sha256": "f0ae1529dcbf87def262a8607879e86b82173404bf45c609fc1c538483f64014"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_64-current-strict\\result.json",
+          "sha256": "a2df211d2cdd5e35fe30dfce22c6f7408e09c95b333c5f471c1e5fe192ea8148"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_64-current-strict\\result.json",
+          "sha256": "365fcc1df8e04edc8763a43ca1cc89ecc3751d34ec86730025c7f1ee1b6cae45"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "unchecked-int64",
+      "task": "native",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 19347400,
+      "min_child_ns": 18516500,
+      "max_child_ns": 22111600,
+      "calls_per_sample": 581632,
+      "median_ns_per_call": 33.26398822623239,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r0-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "fa5b5dc70c395926d1fd6696462ac4b4f2f237697c7964be1291b4463a742d35"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r1-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "79af3df9914c41909f0866a27d7a8dc82f748a4b679bce623acbd6290622fe14"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r2-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "f5028bafc609b34a8ccde311b444ab6f12ad175273ec6fafa0f5e9074fcec149"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r3-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "39de2c3409062cfede5f35e49ed39a3fcc762ac06505d33a97f45c5a134e7f3e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r4-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "5cb1c4cbd34466b8f710c7edccdc8c61d38db3c4c9cc7c548ab9cccd362ecd35"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r5-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "5156f896a57bbc8dd7c570d2db97da616cec44440f3b93c0d8694f61f5a5f16b"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\native-r6-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "f9191c47caea863559e18b94f4e78ae0cfff9ae5648347543115b6c1ddf6c049"
+        }
+      ]
+    },
+    {
+      "function": "recurrence_64",
+      "variant": "unchecked-int64",
+      "task": "time-aot",
+      "children": 7,
+      "samples": 21,
+      "median_child_ns": 31224300,
+      "min_child_ns": 28610800,
+      "max_child_ns": 34989900,
+      "calls_per_sample": 2272,
+      "median_ns_per_call": 13743.089788732394,
+      "cells": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r0-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "516077d95796b91d28c51f0930886ae2562fc43f6a8ff6047a2357cb69176a1e"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r1-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "9cb2b5245a07bfc45538ca345e708dbfe3605a066f77a157017ff401e2436dad"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r2-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "942bf775e084ca04bc3b8edba8dcf2d0ccb7c7caa4d3b004e8f7caa8fb64e251"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r3-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "5aa1c7000b0a78f120511ae855445e3cd38e30d3dcf7f294fdc220b1f57df2e1"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r4-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "e3860b1eef1a0de5712211ce23fb5cc1c05fb1b77db3aacd065d05a3d2105557"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r5-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "137e43aaa49185847b59ba994296ffc87a1c743a55167b0a95229d584337a669"
+        },
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\cells\\time-aot-r6-recurrence_64-unchecked-int64\\result.json",
+          "sha256": "3b24173553390839f96f82182bbadebdbfc54254f8e5bdd007020ebe4a3bf5cf"
+        }
+      ]
+    }
+  ],
+  "no_historical_pooling": true
+}

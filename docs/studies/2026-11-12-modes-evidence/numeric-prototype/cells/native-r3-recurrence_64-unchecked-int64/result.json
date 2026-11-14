@@ -1,0 +1,197 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "unchecked-int64",
+  "function": "recurrence_64",
+  "task": "native",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ]
+  },
+  "corpus_count": 284,
+  "expected_results_sha256": "cbf97cde0265eb08f0df78c10861938c9fcc8d4d5b06280f04c653827644bd74",
+  "valid_exact_results": true,
+  "construction_s": 0.22355559999414254,
+  "first_call_s": 1.1213340999966022,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 1,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 284,
+    "aot_calls": 0,
+    "jit_calls": 284,
+    "fallback_calls": 0,
+    "contract_native_calls": 284,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "recurrence_64",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "f81906987e4f2bd70a4fcd3e31a8e03ce20f6d2fcf1d48417ce6c8eeecb374a2",
+    "function_bytecode_sha256": "52296a43ebbfc72ccf1b65d9e13ba2afc4968df7f64ba943b4374f8b6e6bfcb1",
+    "selected_mode": "unchecked-int64",
+    "identity": "d18c23ab80c76b895c0bfb3037373bba9dbeee01b064edd6699c88d3068f92aa",
+    "contract": "IntIntervals(_items=(('x', (-1048576, 1048576)), ('y', (-1, 1)), ('z', (-1048576, 1048576))))",
+    "proof_certificates": "()",
+    "problem": null,
+    "policy_metadata": {
+      "certificates": [],
+      "contract": [
+        [
+          "x",
+          [
+            -1048576,
+            1048576
+          ]
+        ],
+        [
+          "y",
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          "z",
+          [
+            -1048576,
+            1048576
+          ]
+        ]
+      ],
+      "implementation": "c681942f89604e42708e20fac650baa7813f2be9c1f9b8164a463e135035e3b5",
+      "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+      "max_trips": 1024,
+      "mode": "unchecked-int64",
+      "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+      "origin": "79c54ec4ea814923fa28cb1872e18075373d6889faf97f1e97dd1efea1753a6c",
+      "proof": 1,
+      "schema": 1
+    },
+    "program_digest": "92fa5aff039ece90f4e5fe934232858f615b6a669c5744b3073065c504583676",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_recurrence_64",
+    "program_source_sha256": "e80f072ec4c3ba9576839c82f1e96fca0d0c0d98ea52af6360742bf113589ae1",
+    "dispatcher_module": "rc_heap_dc0a616c86c4f17f273ddd82",
+    "dispatcher_qualname": "f0_recurrence_64",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_dc0a616c86c4f17f273ddd8216f0_recurrence_64B3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_dc0a616c86c4f17f273ddd8216f0_recurrence_64B3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx",
+        "code_capture_requested": true,
+        "llvm_sha256": "eefb4108ffd9c3b83087ab2742d10a7e77f7e1a01fe28a41f6aff01dde2a138d",
+        "asm_sha256": "5d356cfedd1efcd90877f795c8c06b47e3870ac8ba4c7ef2a47323ec098ebd0e"
+      }
+    ],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64)": 1
+    }
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "native_batch": {
+    "available": true,
+    "boundary": "prevalidated-input-C-loop-native-call-and-status-reset",
+    "mode": "JIT-selected-dispatcher-via-cfunc-adapter",
+    "samples": [
+      {
+        "elapsed_ns": 18488700,
+        "native_invocations": 581632,
+        "status_failures": 0,
+        "checksum_uint64": 18446743757722611712
+      },
+      {
+        "elapsed_ns": 18663800,
+        "native_invocations": 581632,
+        "status_failures": 0,
+        "checksum_uint64": 18446743757722611712
+      },
+      {
+        "elapsed_ns": 18690300,
+        "native_invocations": 581632,
+        "status_failures": 0,
+        "checksum_uint64": 18446743757722611712
+      }
+    ],
+    "median_ns": 18663800,
+    "timing_eligible": true,
+    "region_counter_delta": {
+      "compiled_calls": 0,
+      "aot_calls": 0,
+      "jit_calls": 0,
+      "fallback_calls": 0,
+      "contract_native_calls": 0,
+      "guard_misses": 0,
+      "representation_rejections": 0,
+      "loop_limit_rejections": 0,
+      "native_failures": 0,
+      "foreign_calls": 0
+    },
+    "counter_accounting": "C loop counts native invocations; Region Python counters do not count adapter calls",
+    "adapter_build_s": 0.04856230001314543,
+    "adapter_address": 2769152627056,
+    "selected_target_digest": "92fa5aff039ece90f4e5fe934232858f615b6a669c5744b3073065c504583676",
+    "selected_target_symbols": [
+      "_ZN32rc_heap_dc0a616c86c4f17f273ddd8216f0_recurrence_64B3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx"
+    ],
+    "adapter_selected_target_call_lines": [
+      "%.167 = call i32 @_ZN32rc_heap_dc0a616c86c4f17f273ddd8216f0_recurrence_64B3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx(ptr nonnull %.155, ptr nonnull %excinfo.5, ptr null, ptr null, i64 65536, i64 8, ptr %arg.fp, i64 65536, i64 8, ptr null, ptr null, i64 65536, i64 8, ptr %arg.ip, i64 65536, i64 8, ptr null, ptr null, i64 4, i64 8, ptr %arg.tp, i64 4, i64 8, ptr null, ptr null, i64 1, i64 1, ptr %arg.sp, i64 1, i64 1, i64 %arg.x, i64 %arg.y, i64 %arg.z)"
+    ],
+    "selected_target_physical_calls_retained": true,
+    "native_invocation_meaning": "C loop invokes adapter; selected dispatcher body is linked and may be inlined by LLVM",
+    "adapter_source_sha256": "9572335b50147d80dc23d965792548ed4328ee68ba0a74f26c9abce0fe3beb81",
+    "adapter_llvm_sha256": "1730a1c18e068979be868917b87b4da399cb3f90a5a9004fce0f8b3390a50cd5",
+    "adapter_asm_sha256": "fff97782ef2c7597119c20af290a699ceb609493d6fd10e284e9e83aa71b1cc8"
+  },
+  "final_counts": {
+    "compiled_calls": 285,
+    "aot_calls": 0,
+    "jit_calls": 285,
+    "fallback_calls": 0,
+    "contract_native_calls": 285,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/native-r3-recurrence_64-unchecked-int64_6c6d21ce1af77b7862b06db4da3e7562e301c8ee/rc_heap_dc0a616c86c4f17f273ddd82.f0_recurrence_64-586.py314.1.nbc": "107f32adad036b6c4b196bfe5c66167b18da0dcbd5635ab466a377377dfad259",
+    "numba/native-r3-recurrence_64-unchecked-int64_6c6d21ce1af77b7862b06db4da3e7562e301c8ee/rc_heap_dc0a616c86c4f17f273ddd82.f0_recurrence_64-586.py314.nbi": "5cac733e1b5cf0479fa8fb71359afb5addd8968a4a0f334136560fba02dbc593",
+    "rc_heap_dc0a616c86c4f17f273ddd82.py": "de473d8abc5f8c5c745aff9842e8dbabdd21fc3b665e93d16e2c49b66af9b86e",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

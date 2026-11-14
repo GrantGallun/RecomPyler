@@ -1,0 +1,41 @@
+"""Independent small recursive object numeric control; no C speed claim."""
+import hashlib
+import json
+
+class Node:
+    def __init__(self,value,left=None,right=None):
+        self.value=value
+        self.left=left
+        self.right=right
+    def total(self):
+        value=self.value
+        if self.left is not None:value+=self.left.total()
+        if self.right is not None:value+=self.right.total()
+        return value
+
+def run(root):
+    return root.total()
+
+def make(level,start):
+    if level==0:return Node(float(start))
+    return Node(float(start),make(level-1,start*2),make(level-1,start*2+1))
+
+root=make(6,1)
+before=[];nodes=[]
+def snapshot(node):
+    nodes.append(node)
+    before.append((node.value.hex(),type(node.value).__name__))
+    if node.left is not None:snapshot(node.left)
+    if node.right is not None:snapshot(node.right)
+snapshot(root)
+expected=sum(float.fromhex(v) for v,t in before)
+identities=[id(n) for n in nodes]
+values=[]
+for index in range(8):
+    result=run(root)
+    assert type(result) is float and result==expected
+    values.append(result.hex())
+after=[(n.value.hex(),type(n.value).__name__) for n in nodes]
+assert before==after and identities==[id(n) for n in nodes]
+print('check digest',hashlib.sha256(json.dumps([before,values]).encode()).hexdigest())
+print('check nodes',len(nodes))

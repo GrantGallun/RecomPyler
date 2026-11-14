@@ -1,0 +1,76 @@
+{
+  "manifest_sha256": "158e4e6183652faa1318c47dc3c9ee7a4a8946a178829919f92e26bd806ea392",
+  "timings": 300,
+  "independent_audits": 42,
+  "fresh_profiles": 18,
+  "all_checks_pass": true,
+  "rows": [
+    {
+      "name": "barnes_hut",
+      "kernel_view": "forced",
+      "validated_variants": 6
+    },
+    {
+      "name": "nbody",
+      "kernel_view": "forced",
+      "validated_variants": 6
+    },
+    {
+      "name": "float",
+      "kernel_view": "forced",
+      "validated_variants": 6
+    },
+    {
+      "name": "scimark",
+      "kernel_view": "warm",
+      "validated_variants": 8
+    },
+    {
+      "name": "fannkuch",
+      "kernel_view": "forced",
+      "validated_variants": 6
+    },
+    {
+      "name": "spectral_norm",
+      "kernel_view": "warm",
+      "validated_variants": 8
+    },
+    {
+      "name": "coroutines",
+      "kernel_view": "forced",
+      "validated_variants": 6
+    },
+    {
+      "name": "richards",
+      "kernel_view": "warm",
+      "validated_variants": 8
+    },
+    {
+      "name": "raytrace",
+      "kernel_view": "forced",
+      "validated_variants": 6
+    }
+  ],
+  "phase_medians_ms": {
+    "baseline": {
+      "load_ms": 9.2806,
+      "guards_ms": 0.7393,
+      "native_ms": 31.4393,
+      "writeback_ms": 3.3203,
+      "attempt_ms": 49.1121,
+      "energy_ms": 2.5245,
+      "kernel_ms": 51.811900004395284,
+      "other_attempt_ms": 4.3386
+    },
+    "candidate": {
+      "load_ms": 9.4542,
+      "guards_ms": 0.7541,
+      "native_ms": 27.4435,
+      "writeback_ms": 3.2936,
+      "attempt_ms": 45.0283,
+      "energy_ms": 2.5547,
+      "kernel_ms": 48.05029999988619,
+      "other_attempt_ms": 4.254899999999999
+    }
+  }
+}

@@ -1,0 +1,53 @@
+"""Read-only native evidence expansion; never executes product or workload."""
+from pathlib import Path
+import common
+import postverify
+import native
+
+import argparse
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);args=p.parse_args()
+out=args.output.resolve();m=common.read(out/'manifest.json');s=common.read(out/'SUMMARY.json');failures=[];costs={};audit_calls=0;timing_calls=0
+for name,rows in s['programs'].items():
+    folder=out/'programs'/name;item=m['programs'][name];plain=common.read(folder/'plain-state.json');details={}
+    for source in m['sources']:
+        row=rows[source];expected=5*5*item['audit_aot_calls'];data=common.read(folder/(source+'-state.json'))
+        if name=='barnes_hut':state_check=postverify.pair(plain,data);valid_state=state_check['valid']
+        else:
+            valid_state=(plain['final']==data['final'] and plain['observed']==data['observed'])
+            state_check={'valid':valid_state,'complete_output_bytes':data['final']['byte_count'],'output_sha256':data['final']['bytes_sha256'],
+                'array_identity_preserved':all(r['same_array_object'] for r in data['observed']),'note':'All30000bytes/types/dimensions/identity compared toplain; Cusesunchangedchecksumoracle.'}
+        mode=common.read(folder/(source+'-selected.audit.json'))
+        valid=(row['complete'] and row['checks_valid'] and row['aot_calls_total']==expected and row['jit_calls_total']==row['fallback_calls_total']==0
+               and valid_state and mode['compiled_total_reconciles'] and mode['product_exact_counter_matches_audit'] and not mode['numba_imported'])
+        if not valid:failures.append(name+':'+source)
+        audit_calls+=mode['totals']['aot_calls'];timing_calls+=row['aot_calls_total'] or 0
+        row.update(valid=valid,expected_timing_aot_calls=expected,state_check=state_check,selected_AOT=common.read(folder/(source+'-aot-map.json')),
+            kernel_time_over_C=row['median_best_kernel_s']/rows['c']['median_best_kernel_s'],
+            kernel_speedup_over_plain=rows['plain']['median_best_kernel_s']/row['median_best_kernel_s'],
+            audit_mode_totals_separate_from_timing=mode['totals'])
+        report=common.read(folder/(source+'.plan.json'));process=common.read(folder/(source+'-profile.json'))
+        details[source]={'profile_wall_s':process['wall_s'],'verification':[r['candidate'] for r in report['functions']]}
+    for label in ['plain','c']:
+        if not rows[label]['complete'] or not rows[label]['checks_valid']:failures.append(name+':'+label)
+    costs[name]=details
+    rows['comparison']={'kernel_time_ratio_final_over_current':rows['final']['median_best_kernel_s']/rows['current']['median_best_kernel_s'],
+        'kernel_speedup_current_over_final':rows['current']['median_best_kernel_s']/rows['final']['median_best_kernel_s'],
+        'process_time_ratio_final_over_current':rows['final']['median_process_wall_s']/rows['current']['median_process_wall_s']}
+records=[]
+for path in out.glob('programs/*/*.json'):
+    value=common.read(path)
+    if isinstance(value,dict) and 'command' in value:records.append((path,value))
+for path,value in records:
+    if value['status']!='ok' or value['exit_code']!=0:failures.append(str(path))
+result={'schema':8,'manifest_sha256':native.sha(out/'manifest.json'),'sources':m['sources'],'all_valid':not failures,'failures':failures,
+    'programs':s['programs'],'profiles':costs,'actual_timing_aot_calls_total':timing_calls,'separate_audit_aot_calls_total':audit_calls,
+    'execution':{'completed_top_level_records':len(records),'child_wall_s':sum(v['wall_s'] for p,v in records),
+      'fresh_profile_wall_s':sum(v['wall_s'] for p,v in records if p.name.endswith('-profile.json')),
+      'compile_only_warmup_wall_s':sum(v['wall_s'] for p,v in records if p.name.startswith('warmup-')),
+      'state_audit_wall_s':sum(v['wall_s'] for p,v in records if p.name.endswith('-state-process.json')),
+      'address_mapping_wall_s':sum(v['wall_s'] for p,v in records if p.name.endswith('-map-process.json'))},
+    'limits':['Explicit target-only forced diagnostic, not defaultdeployment.','Fiveprocessbest-of-fivePython/RP versusbest-of20C; processworkcounts differ.',
+      'RayPythonallocatesCanvas/Scene insidekernel; Cbufferallocationoutsideitsloop.','Generic RP AOT versus C -march=native target; impactunmeasured.',
+      'Overlapping samples/sharedbackgroundload; noformalsignificance orstaticinstructions-to-cycles claim.','Saved a9b versus an explicitly reviewed candidate; perpatch attribution requires separate frozen cohorts.','Initialfullcohortlatenciesneverpooled.']}
+common.save(out/'ANALYSIS.json',result)
+print('all_valid='+str(result['all_valid'])+' failures='+str(failures)+' timingAOT='+str(timing_calls)+' separateAuditAOT='+str(audit_calls))

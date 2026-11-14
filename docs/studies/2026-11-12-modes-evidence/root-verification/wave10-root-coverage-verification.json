@@ -1,0 +1,230 @@
+{
+  "all_verified": true,
+  "manifest_sha256": "a7b62c4eee4cd28191ddf43b06756c8101211ebe5a25edce9c061988439e485e",
+  "successful_process_records": 64,
+  "groups": {
+    "heldout": {
+      "fixed_population": 1,
+      "meaningful_pairs": 1,
+      "current": {
+        "speed_vs_python_geomean": 0.9466339649345625,
+        "timed_native_programs": 0,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "audit_native_programs_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "candidate": {
+        "speed_vs_python_geomean": 0.9799205634198975,
+        "timed_native_programs": 0,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "audit_native_programs_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "diagnostic": {
+      "fixed_population": 1,
+      "meaningful_pairs": 1,
+      "current": {
+        "speed_vs_python_geomean": 0.9591867123598616,
+        "timed_native_programs": 0,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "audit_native_programs_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "candidate": {
+        "speed_vs_python_geomean": 3.672462986357655,
+        "timed_native_programs": 1,
+        "timing_modes": {
+          "compiled_calls": 160,
+          "aot_calls": 160,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "audit_native_programs_by_repetition": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "name": "chaos",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.21753090000129305,
+      "current": {
+        "median_s": 0.22979409999970812,
+        "speed_vs_python": 0.9466339649345625,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 12.442797600000631,
+        "recommended_functions": 0
+      },
+      "candidate": {
+        "median_s": 0.22198829999251757,
+        "speed_vs_python": 0.9799205634198975,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 65.77250880000065,
+        "recommended_functions": 1
+      }
+    },
+    {
+      "name": "chaos_extended32",
+      "group": "diagnostic",
+      "meaningful": true,
+      "plain_median_s": 1.2651219999970635,
+      "current": {
+        "median_s": 1.318952800007537,
+        "speed_vs_python": 0.9591867123598616,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 14.515900000013062,
+        "recommended_functions": 0
+      },
+      "candidate": {
+        "median_s": 0.344488700007787,
+        "speed_vs_python": 3.6724629863576546,
+        "timing_modes": {
+          "compiled_calls": 160,
+          "aot_calls": 160,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "native",
+          "native",
+          "native",
+          "native",
+          "native"
+        ],
+        "audit_totals": {
+          "aot_calls": 160,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          32,
+          32,
+          32,
+          32,
+          32
+        ],
+        "profile_wall_s": 71.81780660001095,
+        "recommended_functions": 1
+      }
+    }
+  ],
+  "note": "Complete successful cohort only. Raw output/exit/hash/bytecode/artifact/mode verification; no workload executed. Empty stdout is not full semantic equivalence."
+}

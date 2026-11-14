@@ -1,0 +1,156 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "candidate-strict",
+  "function": "fibonacci",
+  "task": "native",
+  "contract": {
+    "n": [
+      0,
+      80
+    ]
+  },
+  "corpus_count": 81,
+  "expected_results_sha256": "a8e29982451912a80ff9466a6a4630cd90a30305544a5de79841ce5042599f6c",
+  "valid_exact_results": true,
+  "construction_s": 0.21661639999365434,
+  "first_call_s": 1.1781216000090353,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 81,
+    "aot_calls": 0,
+    "jit_calls": 81,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "fibonacci",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "04d31e40e4e6dc61337c3e2e39e015c1d76241cb0199f6b40cb26e80f8a18344",
+    "function_bytecode_sha256": "3be6f8b101655e687df46a1c67db5226839d397b34c52a14866c6e92984a5b80",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null,
+    "program_digest": "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_fibonacci",
+    "program_source_sha256": "15020bc158108e1f42ec57c0f8d35aba4565e5e0e1e2137d211fd457066846aa",
+    "dispatcher_module": "rc_heap_76885d8ba89d2be1fa3724cd",
+    "dispatcher_qualname": "f0_fibonacci",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64)",
+        "native_symbol": "_ZN32rc_heap_76885d8ba89d2be1fa3724cd12f0_fibonacciB3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedEx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_76885d8ba89d2be1fa3724cd12f0_fibonacciB3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedEx",
+        "code_capture_requested": true,
+        "llvm_sha256": "f5f547da68f1a62f20dc60aed943499a563a74e200c13ce518b9f0511dd8cae8",
+        "asm_sha256": "758faef5a13d5a8decfda4c6001204a58e76b783dcbe7bd92f34c8aeb285a0d0"
+      }
+    ],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64)": 1
+    }
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "native_batch": {
+    "available": true,
+    "boundary": "prevalidated-input-C-loop-native-call-and-status-reset",
+    "mode": "JIT-selected-dispatcher-via-cfunc-adapter",
+    "samples": [
+      {
+        "elapsed_ns": 3190300,
+        "native_invocations": 165888,
+        "status_failures": 0,
+        "checksum_uint64": 14873794955603226624
+      },
+      {
+        "elapsed_ns": 3028700,
+        "native_invocations": 165888,
+        "status_failures": 0,
+        "checksum_uint64": 14873794955603226624
+      },
+      {
+        "elapsed_ns": 3111700,
+        "native_invocations": 165888,
+        "status_failures": 0,
+        "checksum_uint64": 14873794955603226624
+      }
+    ],
+    "median_ns": 3111700,
+    "timing_eligible": true,
+    "region_counter_delta": {
+      "compiled_calls": 0,
+      "aot_calls": 0,
+      "jit_calls": 0,
+      "fallback_calls": 0,
+      "contract_native_calls": 0,
+      "guard_misses": 0,
+      "representation_rejections": 0,
+      "loop_limit_rejections": 0,
+      "native_failures": 0,
+      "foreign_calls": 0
+    },
+    "counter_accounting": "C loop counts native invocations; Region Python counters do not count adapter calls",
+    "adapter_build_s": 0.04744359999313019,
+    "adapter_address": 3174965506144,
+    "selected_target_digest": "c186324c1dab4c37d8b0c0431cd34e72748e7dab3c1144e8e320364dd9f42dcf",
+    "selected_target_symbols": [
+      "_ZN32rc_heap_76885d8ba89d2be1fa3724cd12f0_fibonacciB3v11B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedEx"
+    ],
+    "adapter_selected_target_call_lines": [],
+    "selected_target_physical_calls_retained": false,
+    "native_invocation_meaning": "C loop invokes adapter; selected dispatcher body is linked and may be inlined by LLVM",
+    "adapter_source_sha256": "2daacb58d0f941ccabe2c83ee33001983c758ea4b28eb1f00c1794f269f33f65",
+    "adapter_llvm_sha256": "78d47c7b2bf2591b1f4a44d9f4fb053250f9d1b1028956cac28084d2ba2ebdd4",
+    "adapter_asm_sha256": "91f57068fa33e476586fead7ab7d1525a54ab3161d16e25eee4343057c94909b"
+  },
+  "final_counts": {
+    "compiled_calls": 82,
+    "aot_calls": 0,
+    "jit_calls": 82,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/native-r4-fibonacci-candidate-strict_83708d88b6777fa5719d1fa24ba7a01eb96ec237/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.1.nbc": "cdff7650c9f88a8671c3d42e05394efd3d9781ceaa6d5741b188b11ec7adad2c",
+    "numba/native-r4-fibonacci-candidate-strict_83708d88b6777fa5719d1fa24ba7a01eb96ec237/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.2.nbc": "66f9b7d82af5e89b279f009496f75ff9fd20976f5a8f294e737fcc51539c0905",
+    "numba/native-r4-fibonacci-candidate-strict_83708d88b6777fa5719d1fa24ba7a01eb96ec237/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.nbi": "428c9962b88c568ad201deaeb1b52360e9019445880faaac612964b24cc988c4",
+    "numba/native-r4-fibonacci-candidate-strict_83708d88b6777fa5719d1fa24ba7a01eb96ec237/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.1.nbc": "5f1567c404104930f39dbeceec43e5bef5dc84187b802a041acf06cb03805ac6",
+    "numba/native-r4-fibonacci-candidate-strict_83708d88b6777fa5719d1fa24ba7a01eb96ec237/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.nbi": "7470ed5fbe7f445e32623ce2dc911168e4b979359d52d147667f9036468cda02",
+    "rc_heap_76885d8ba89d2be1fa3724cd.py": "26cc0d593581dd6ce068115793bbfdcbf1023c2e5963d9416c4559bfc6ee80a2",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

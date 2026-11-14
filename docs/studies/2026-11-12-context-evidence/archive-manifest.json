@@ -1,0 +1,1671 @@
+{
+  "worker_commit": "0373788b7be436e5e43b0a6a6f3fd40b2871c3a3",
+  "native_archive_commit": "93278a74afc22d18c17596d5367a229bc1cd9c43",
+  "heldout_archive_commit": "add8fe34eba9ffbf74fb29077b6141bfcce144f5",
+  "cohort_manifest_sha256": "095ecab621b1cf7876b3c165fb7bef5bc9ae4088512c3fcd7b8a6c3d63fe9133",
+  "files": {
+    ".gitattributes": {
+      "origin": null,
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "role": "Preserve exact evidence bytes in Git"
+    },
+    "candidate/checkpoint.zip": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-inline-context-analysis\\wave9-inline-candidate-checkpoint.zip",
+      "bytes": 427325,
+      "sha256": "2b94fbd4d5aab8f9563ea81345b8c17f66be092ba5cc040fd197b3bd5a18397f",
+      "role": "61 raw validated source/test/native inputs and validation evidence"
+    },
+    "candidate/checkpoint-receipt.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-inline-context-analysis\\checkpoint-receipt.json",
+      "bytes": 30365,
+      "sha256": "76adde186aabf30b1f5c00b458bf0c800389f3b93b72fc35b10d02f658f1d1a6",
+      "role": "Per-member checkpoint hashes"
+    },
+    "assembly/actual-037-static-checkpoint.zip": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-heap-analysis\\actual-037-static-checkpoint.zip",
+      "bytes": 403850,
+      "sha256": "ae8b91756d316c7224995f6f4f99762ae72a2ad0366b03f87904f8915f3bfbb8",
+      "role": "Actual selected AOT/C disassembly and independently bound ranges/counts"
+    },
+    "root/wave9-root-inline-full-suite-verification.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-root-inline-full-suite-verification.json",
+      "bytes": 431,
+      "sha256": "16af43bab9d87d7277fa332042dabdd0f21116bc7fe7b52aa7d2665cd1c91d7d",
+      "role": "Independent verification receipt"
+    },
+    "root/wave9-root-inline-freeze-verification.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-root-inline-freeze-verification.json",
+      "bytes": 384,
+      "sha256": "ca360da9b0418e11adb01d6326ffa37602517b2b855027a18495bc11a360d182",
+      "role": "Independent verification receipt"
+    },
+    "root/wave9-root-inline-native-gate.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-root-inline-native-gate.json",
+      "bytes": 500,
+      "sha256": "d05fb18eca7c058b02c1ac2123f285769f3902e59257698236bad045f1740341",
+      "role": "Independent verification receipt"
+    },
+    "root/wave9-root-inline-checkpoint-verification.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-root-inline-checkpoint-verification.json",
+      "bytes": 187,
+      "sha256": "20f0da768c9fc976fd5fba1384abfae5c5231f981a300f3dc5e7d2bcd15cbe65",
+      "role": "Independent verification receipt"
+    },
+    "root/wave9-root-native-inline-verification.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-root-native-inline-verification.json",
+      "bytes": 1533,
+      "sha256": "cfed8862c97d7cb91bc2b9c0c71e68540b4930d5aaf4a98577bf826a94c97cda",
+      "role": "Independent verification receipt"
+    },
+    "root/wave9-final-source-verification.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-final-source-verification.json",
+      "bytes": 6758,
+      "sha256": "1cbf25b436322ec5c5b4001a269bb64048b6d67535a10d4bca90d3324fe3051d",
+      "role": "Independent verification receipt"
+    },
+    "root/wave8-root-paired-final-verification.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-root-paired-final-verification.json",
+      "bytes": 92685,
+      "sha256": "de0e194a4f100505bc23abf8ffcb148128c84b4108d90db42b2233aee17135da",
+      "role": "Independent verification receipt"
+    },
+    "root/wave9-verify-inline-full-suite.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-verify-inline-full-suite.py",
+      "bytes": 1639,
+      "sha256": "15f73fd50074a65db95be44dc667a7b5754c5111408a29e050e15de601068965",
+      "role": "Verification source, retained as text"
+    },
+    "root/wave9-verify-native-gate.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-verify-native-gate.py",
+      "bytes": 2599,
+      "sha256": "4c3b2d10a32b9c0adc767fc6d49bc69b639fbc5eb96342a234a3e1ecca6a97a6",
+      "role": "Verification source, retained as text"
+    },
+    "root/wave8-verify-native.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-verify-native.py",
+      "bytes": 6571,
+      "sha256": "78e8093fe6772c9dea130a8cc0e4c9a9060ca27325a11fb59fe412b81fda81ce",
+      "role": "Verification source, retained as text"
+    },
+    "root/wave8-verify-results.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-verify-results.py",
+      "bytes": 8013,
+      "sha256": "62352c9f9c5984d4130a9ac10b5c9a3a5a81a6475acfa432618d3159ef9ff439",
+      "role": "Verification source, retained as text"
+    },
+    "root/wave9-integration-source-check.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-integration-source-check.py",
+      "bytes": 2051,
+      "sha256": "e8b8eb809fec808ff37dc36075d578dba572b98980edcac4693538b63fd1b2d9",
+      "role": "Verification source, retained as text"
+    },
+    "reviews/INLINE-FINAL-CODE-REVIEW.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-independent-review\\INLINE-FINAL-CODE-REVIEW.md",
+      "bytes": 3518,
+      "sha256": "dacf7891bd7de1524681c9e15640b462b56e0ff9b8a61495aad08e37f594a721",
+      "role": "Fresh independent correctness review"
+    },
+    "reviews/INLINE-CONTEXT-REVIEW.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-independent-review\\INLINE-CONTEXT-REVIEW.md",
+      "bytes": 6864,
+      "sha256": "b07baccb6fb37696709259db4f5d43b3941e39a7d9c25781495f1f3f3c770987",
+      "role": "Fresh independent correctness review"
+    },
+    "reviews/inline-full-suite-verification.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-independent-review\\inline-full-suite-verification.json",
+      "bytes": 779,
+      "sha256": "db6774fb80f97329d2fdf3a5bc40fcf701fb47cdeeef21727d4c3c203d8acd3b",
+      "role": "Fresh independent correctness review"
+    },
+    "designs/EXPERIMENTAL-MODES.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-recursive-analysis\\EXPERIMENTAL-MODES.md",
+      "bytes": 21275,
+      "sha256": "c65f8f90bc9c5726e4c6528de96cd1d4dd4c959c778b72b1dcc970244a79089c",
+      "role": "Two user-requested future modes; design only"
+    },
+    "designs/INVARIANT-ARG-FOLLOWUP.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-recursive-analysis\\INVARIANT-ARG-FOLLOWUP.md",
+      "bytes": 4773,
+      "sha256": "725d9c10a64855fa35fefafd2e16c8bc9a7c4a7eefc4491a4b0cdebd4ca1a33b",
+      "role": "Future invariant semantic argument experiment; design only"
+    },
+    "designs/INLINE-CONTEXT.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-inline-context-analysis\\DESIGN.md",
+      "bytes": 9161,
+      "sha256": "e82c7337056b3be0678a0c67d0b222b15c713f71ab67ab01773bf8b1aae19ef9",
+      "role": "Implemented follow-up proof/design"
+    },
+    "native/manifest.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\manifest.json",
+      "bytes": 74304,
+      "sha256": "095ecab621b1cf7876b3c165fb7bef5bc9ae4088512c3fcd7b8a6c3d63fe9133",
+      "role": "Completed fresh 037 cohort"
+    },
+    "native/SUMMARY.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\SUMMARY.json",
+      "bytes": 5723,
+      "sha256": "86569fbdb9944538e2fc9eb41e460186adb6e576a4929401962716b636ca4857",
+      "role": "Completed fresh 037 cohort"
+    },
+    "native/ANALYSIS.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\ANALYSIS.json",
+      "bytes": 29817,
+      "sha256": "05d51a62cff4fad7c9798b9a4527a06fa13fa0a70440f7aea1339ad7884077f7",
+      "role": "Completed fresh 037 cohort"
+    },
+    "native/complete.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\complete.json",
+      "bytes": 117,
+      "sha256": "07e91019a395e5c4b09c5b3bbc3a7006a38a6f5f3429e1d7cd1b7a1caed0428d",
+      "role": "Completed fresh 037 cohort"
+    },
+    "native/RESULTS-inline.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\RESULTS-inline.md",
+      "bytes": 5959,
+      "sha256": "67398e0ba84d516436f0be06b11a592be9676bd2d5a40427fd6ae27b814f0fc0",
+      "role": "Completed cohort analysis/archive verification"
+    },
+    "native/SESSION-VERIFICATION-inline.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\SESSION-VERIFICATION-inline.json",
+      "bytes": 2560,
+      "sha256": "82c92339e582159c6cd9c0e8502fcb7e875667f5b41cd73463140dc6e56f6dab",
+      "role": "Completed cohort analysis/archive verification"
+    },
+    "native/ARCHIVE-VERIFICATION-results-inline.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\ARCHIVE-VERIFICATION-results-inline.json",
+      "bytes": 7809,
+      "sha256": "ec38c45d4c539082fc1b101bea0750e626c06896931ec4a31a2a1243b3504215",
+      "role": "Completed cohort analysis/archive verification"
+    },
+    "native/programs/barnes_hut/aot-artifacts-frozen.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\aot-artifacts-frozen.json",
+      "bytes": 489,
+      "sha256": "31817a2653bd4ff10ba729a726cd32ba7185bb239145e11ef1fc95064fc0689a",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/bytecode-frozen.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\bytecode-frozen.json",
+      "bytes": 115901,
+      "sha256": "507ed34db9106c9e7e7b0c38748b98fbcd70be9c6e1e6d29b9daf834cd0e9e86",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-0.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-0.json",
+      "bytes": 453,
+      "sha256": "f48af83abafa4808bce29e16341f4afe97e48096b90eb97bc8542d60164e8fae",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-0.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-0.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-0.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-0.stdout",
+      "bytes": 149,
+      "sha256": "253c83486d460c2eafcea495ef6b6a076ea4c7f51dc9d86551ffd0e52cab2bf4",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-1.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-1.json",
+      "bytes": 453,
+      "sha256": "d2874c7ca60fabad27050bcba279f612f04f5f30b310c7f2b6506e9a09f431f7",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-1.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-1.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-1.stdout",
+      "bytes": 149,
+      "sha256": "c52e266cf8a7d6266613ec38ac864ff61561018dfd6925fe536096dfbfc073a7",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-2.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-2.json",
+      "bytes": 453,
+      "sha256": "4d77797dcd6f6bde1d27789a3a37a93752b8c378589c7fb5e33fd5c4e11f0ae3",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-2.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-2.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-2.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-2.stdout",
+      "bytes": 149,
+      "sha256": "f1e7eb52462b63b41f29747085fd127327c78479540e90c239ffdb893d88f617",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-3.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-3.json",
+      "bytes": 452,
+      "sha256": "de55bcec05501d429c7e88ea457d5776fc63e88c33e590c9e1d83c01fa9b7413",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-3.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-3.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-3.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-3.stdout",
+      "bytes": 149,
+      "sha256": "a7820282d8eca003cd8ed3ee5bc6bd01a50021da32a4cc0b8f41977a2165713d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-4.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-4.json",
+      "bytes": 453,
+      "sha256": "6c760060e6182dbb522b562c5343e1777482d32c3ca03d087eee5a954b8f87b8",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-4.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-4.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/c-4.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\c-4.stdout",
+      "bytes": 149,
+      "sha256": "b604b3f8efc9acbda1d4198897cbad0e3970c422c5e1d9cde55c3574da70b8c4",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-0.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-0.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-0.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-0.json",
+      "bytes": 830,
+      "sha256": "d8e45fcae2d737245f2487c6dcc7042cba1e39416daed61c5c5af39697740358",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-0.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-0.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-0.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-0.stdout",
+      "bytes": 158,
+      "sha256": "28ba8b2e184b7e0431447230233074269e8707e4b04954360507baa72614b58b",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-1.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-1.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-1.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-1.json",
+      "bytes": 830,
+      "sha256": "76346c2e777c2fc502d425831c8cc9f52d7ce082b8550c65ff183d846ec64ce8",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-1.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-1.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-1.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-1.stdout",
+      "bytes": 158,
+      "sha256": "e3b3244ea8ea42c087951044c1385d158af8bc2193ff7ef164115013f5477394",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-2.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-2.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-2.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-2.json",
+      "bytes": 830,
+      "sha256": "2a8c3f88ad1de9491bdf349d23c9a8ec4c904dbd85218bf4b8b183ec2ec495a7",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-2.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-2.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-2.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-2.stdout",
+      "bytes": 157,
+      "sha256": "158c01b1cac578083ad4e4fadd44fab861e694a75c5810d14c334fdfc926cf96",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-3.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-3.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-3.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-3.json",
+      "bytes": 830,
+      "sha256": "1f688d3f25caa78fde5d78837d070e4ea7da4bd84ac06683a81429b67609fb64",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-3.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-3.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-3.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-3.stdout",
+      "bytes": 157,
+      "sha256": "f3d22da85ab17a086452fd26e27949627d2472b58b15e7add32e117825f7f982",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-4.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-4.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-4.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-4.json",
+      "bytes": 831,
+      "sha256": "7baa7a1c59f27750d6b2c599bbcaab30137f04681a0fa365b019994cd207b0e6",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-4.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-4.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-4.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-4.stdout",
+      "bytes": 158,
+      "sha256": "9374e2aa62db0f7b61e44e082a8d66e4b4facf8a7245d0bbd26f964369975fba",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-aot-map.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-aot-map.json",
+      "bytes": 1403,
+      "sha256": "3e56a4592550380e75673843f0d2ac656e86a7438c1cc4b118140af83a18c878",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-map-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-map-process.json",
+      "bytes": 892,
+      "sha256": "d83e1638a28b83e494ba58fd308e2f2adcac3316248846186085690fac2036da",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-map-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-map-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-map-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-map-process.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-profile.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-profile.json",
+      "bytes": 862,
+      "sha256": "297c022beaffc3be8a062dedfbed5f5110d1e95ba989ec4d09c411419a9724bb",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-profile.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-profile.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-profile.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-profile.stdout",
+      "bytes": 1429,
+      "sha256": "ca9743f3b44ab100b161c95951c4695f7e99cca8d27c89794174830a168f020c",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-selected.audit.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-selected.audit.json",
+      "bytes": 1795,
+      "sha256": "92f4049002dff02ffa21b21443bd9fe4942c64ab1b3fac871f9e98c52f5e9e52",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-state-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-state-process.json",
+      "bytes": 1027,
+      "sha256": "c890a30022741c10a59b76cfd9daaa8b8476524f096e3cbf9525c7cec866fbf8",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-state-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-state-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-state-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-state-process.stdout",
+      "bytes": 156,
+      "sha256": "b1b73586fe786e0705cd6ca5778105e76f9dbbf4d981a482e9c00045f28609ae",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current-state.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current-state.json",
+      "bytes": 175916,
+      "sha256": "e6f4415e2f0d4cd9ee02687b686c571fba819b24a612d881be36bbfcea75c350",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/current.plan.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\current.plan.json",
+      "bytes": 87692,
+      "sha256": "0d00e910da19ba88a7f0bac3d4aa25e188a1b3b5f3079dae93a96667cdbec996",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-0.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-0.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-0.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-0.json",
+      "bytes": 827,
+      "sha256": "bdde8faab911962985269468e25beb5a4f62c10aaef08b88fd15baee9543b4b8",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-0.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-0.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-0.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-0.stdout",
+      "bytes": 157,
+      "sha256": "4eb43ed3bb27551bebfc85b4baf875cd5630289d5dbc932c28a53c141225fae2",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-1.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-1.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-1.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-1.json",
+      "bytes": 827,
+      "sha256": "78bb726a18e0337d87f5652cb49715a34f39f01e9ac9d091f547e118dc5693f8",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-1.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-1.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-1.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-1.stdout",
+      "bytes": 157,
+      "sha256": "5cad983ed5ba61dae19891f54e0fabb9dfafbb02e4acc83593d2ea001c56685d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-2.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-2.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-2.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-2.json",
+      "bytes": 827,
+      "sha256": "6d383bd96ac03767b7c0dc4dd7248788eb7f03434ae344aa7b224f80d3374527",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-2.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-2.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-2.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-2.stdout",
+      "bytes": 157,
+      "sha256": "aeaa5c03e17aa27bea1bb9fcbac08f8a5acf04d9d935cf9c2ce30984afc80f82",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-3.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-3.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-3.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-3.json",
+      "bytes": 827,
+      "sha256": "ef580e1f8842f91ad8b3606f58637c26d363ae76449a8b413d2574e8bd1ae3b7",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-3.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-3.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-3.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-3.stdout",
+      "bytes": 158,
+      "sha256": "3c8f3a85ca9b2534b2c71e15d2d037a0f1281ff098a5ab5bdf408ba3262e6b52",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-4.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-4.counts.json",
+      "bytes": 481,
+      "sha256": "708cfab89ae3b347a6e31f51f510faec1c6c9d7eb53d7952a7c95253ea3e6c67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-4.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-4.json",
+      "bytes": 827,
+      "sha256": "21327b6103de3e20da23242db598cc89a9a76b079bb7f81eecec28dbcc7e7185",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-4.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-4.stderr",
+      "bytes": 206,
+      "sha256": "3e51225c8a9c48aa3df9b7f116a6810c3296870a38173474f01e6af76e9cc7fa",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-4.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-4.stdout",
+      "bytes": 157,
+      "sha256": "e1c2cbac0bd4449674eeed20095ccf4508cebd5ac1b40ac5eb666996e9b6ea61",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-aot-map.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-aot-map.json",
+      "bytes": 1397,
+      "sha256": "65d3a51bc1fd701cb4794f25f1c22ed242a2847a7f455a338cd4d1c6ebda878a",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-map-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-map-process.json",
+      "bytes": 887,
+      "sha256": "255d65332bcf7536bc7eac64a07f7bed4696fc37321afbeeb7f7edd44f123f87",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-map-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-map-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-map-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-map-process.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-profile.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-profile.json",
+      "bytes": 868,
+      "sha256": "3cc0c57bc168257c1c98e894a50eee2bf84c2e566e79096261efa9040ad14faf",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-profile.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-profile.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-profile.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-profile.stdout",
+      "bytes": 1425,
+      "sha256": "970e5803d80281df8877a163bed3af526baa7ba2cf94945bb4e19b9f5f5c6ebd",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-selected.audit.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-selected.audit.json",
+      "bytes": 1795,
+      "sha256": "99bb073559a255a40f65ebe79b7a8682e49d8e87b1745e25a2189cf61f61e324",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-state-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-state-process.json",
+      "bytes": 1030,
+      "sha256": "7a36a8ab9af703ade8f52d5f32b48e9948a6e0d48171069de48025420e2dfbda",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-state-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-state-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-state-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-state-process.stdout",
+      "bytes": 157,
+      "sha256": "e91e0fc828b0572e4e374d95c06c113db8b04359eafd1c80a2d2637225b87f84",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final-state.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final-state.json",
+      "bytes": 175916,
+      "sha256": "1012278d33e806796ca9a4d27c1c0329707268da1de3ec9913daa0e319d60b76",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/final.plan.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\final.plan.json",
+      "bytes": 87688,
+      "sha256": "d1fe72cebce477c61f883495d0a1a023eca4c92ddb73e8239a6b7e86bfd3e4b3",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-0.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-0.json",
+      "bytes": 488,
+      "sha256": "9469cb1de644fc84d5eba77431e4c913290d350ac10d7ebc860430dca553b997",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-0.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-0.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-0.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-0.stdout",
+      "bytes": 156,
+      "sha256": "f253c33f3c17fcabaaa56ab8d44bbdb676eca637533a3efe7f65e362f4a7e5c2",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-1.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-1.json",
+      "bytes": 487,
+      "sha256": "68d766ec3fa9290aab027f56f903fe833aa53098afb289beaf1e313df8aaf92c",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-1.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-1.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-1.stdout",
+      "bytes": 156,
+      "sha256": "1da6f5d9cb77d19ef6b9446f009ba6c0327261788a21b3fcff2007e573f737ad",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-2.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-2.json",
+      "bytes": 488,
+      "sha256": "60a9deecb2d7437679bac06bdab67f0c4c1859e0f61d035297be8b4ec070cad3",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-2.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-2.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-2.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-2.stdout",
+      "bytes": 156,
+      "sha256": "d4848ee7fa7312d4b859bc6e9f267738d0e6fd17ae7d7236f82586005e2a0cff",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-3.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-3.json",
+      "bytes": 488,
+      "sha256": "75d69954d405ce792072f085219f4217562b7a146d1ba452bbda0c15244694d1",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-3.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-3.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-3.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-3.stdout",
+      "bytes": 156,
+      "sha256": "acf87955055676ad82d5601ee9a1adcab7f8ef4f1c93dc5f943ee23c41f51fd0",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-4.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-4.json",
+      "bytes": 487,
+      "sha256": "449cf3b85cfaafc6ed179dda1a938dcf5ae2609b5623ba9751c7616250d0496d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-4.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-4.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-4.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-4.stdout",
+      "bytes": 156,
+      "sha256": "8975064acfe40b94f613dba2a2f8e4abbde12c4108faba9f95a944e3ab1e8b3e",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-state-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-state-process.json",
+      "bytes": 786,
+      "sha256": "e49ba92ce8c54790b32a6beaf87f086224780d9a1296837f9e2e50d9843a9b41",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-state-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-state-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-state-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-state-process.stdout",
+      "bytes": 156,
+      "sha256": "e672159deede30b713dce2dcc8ac404aa7ecf8a36301c31de51a9f3bd5dd1b44",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/plain-state.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\plain-state.json",
+      "bytes": 174658,
+      "sha256": "69129a1924d96f41e08566ed3347c7557387057b7e3e3fe49255df83ad4eed38",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/warmup-before.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\warmup-before.json",
+      "bytes": 814,
+      "sha256": "4b8d2a1b9f30dc7e52733d9f5d8751d35be762c30ba8cd84831148605979b125",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/warmup-before.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\warmup-before.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/warmup-before.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\warmup-before.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/warmup-final.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\warmup-final.json",
+      "bytes": 814,
+      "sha256": "b1341b233c26513df18a103778e64499ad2364c31f6069589f8dc2dbd924147e",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/warmup-final.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\warmup-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/barnes_hut/warmup-final.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\barnes_hut\\warmup-final.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/aot-artifacts-frozen.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\aot-artifacts-frozen.json",
+      "bytes": 485,
+      "sha256": "e40a2b19eddb73c4f3ef1083bb5ba501ad9ba5263a5a8ca475d4251014c633fc",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/bytecode-frozen.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\bytecode-frozen.json",
+      "bytes": 115895,
+      "sha256": "c60399195e85dba564a59c16f9ab5e4d20650be467229e1e117a98b2ca87a319",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-0.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-0.json",
+      "bytes": 451,
+      "sha256": "0832712381109a9d393b13d7a61070d57705ccb6c8e15d6d48d1a9f90ba9ca93",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-0.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-0.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-0.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-0.stdout",
+      "bytes": 77,
+      "sha256": "e9e46adf6526b35df0d5352d9e57719657ba5293f70b79dccf78daf0cb4e97f7",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-1.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-1.json",
+      "bytes": 451,
+      "sha256": "de41c1465bae919dc862f46228f5ae1a1da95a20f9ee6c788515cb941498be91",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-1.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-1.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-1.stdout",
+      "bytes": 77,
+      "sha256": "e536dc8c151a35598ec8a73e5f6af0cb24d872d463643a210cd02e04671fb166",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-2.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-2.json",
+      "bytes": 450,
+      "sha256": "d68434e58c6322c6e794656f6f57690056ee92da44e83a88322b83d2d768948b",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-2.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-2.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-2.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-2.stdout",
+      "bytes": 77,
+      "sha256": "121af338dc072b0c490e34d1f8f96d73bfa00503d3a40c887c64afb8dd6e4621",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-3.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-3.json",
+      "bytes": 451,
+      "sha256": "c7a43636456a33f4f1247a034777f388ade30fe530cdeae0d9baebfaf28fb8f4",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-3.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-3.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-3.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-3.stdout",
+      "bytes": 77,
+      "sha256": "1ea5393f4f2087a8b130fd770b5a681d315a13428f1fc9bee19e25292a3bfa45",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-4.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-4.json",
+      "bytes": 451,
+      "sha256": "4eb3bb7a76b5098a922e1136d80c1b384b3fd19327cbce03a46a9390e5bec350",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-4.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-4.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/c-4.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\c-4.stdout",
+      "bytes": 77,
+      "sha256": "1ea5393f4f2087a8b130fd770b5a681d315a13428f1fc9bee19e25292a3bfa45",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-0.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-0.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-0.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-0.json",
+      "bytes": 824,
+      "sha256": "eee81c5ee4cf66653fe78fec51992e5166b800c72cb5d41f061f31cd1cdd95ca",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-0.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-0.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-0.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-0.stdout",
+      "bytes": 86,
+      "sha256": "d76da3c1601904b3a856c97a7c4efb1208087ca980b624d97d66d9eeb685db7a",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-1.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-1.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-1.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-1.json",
+      "bytes": 824,
+      "sha256": "c2241dacb0465158ca13a2ec8e1db0cd28862f2aad2103c7c421e633258bb5dd",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-1.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-1.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-1.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-1.stdout",
+      "bytes": 87,
+      "sha256": "bdac75b9ea1fe43e04dfc32eebca1bda177b90df27b382a88a4ff64040261e3c",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-2.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-2.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-2.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-2.json",
+      "bytes": 823,
+      "sha256": "15116d1cc6b42f08f63766cd63eb7135dd4aaac56fcd90a1a9f9cd974e81dda7",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-2.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-2.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-2.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-2.stdout",
+      "bytes": 86,
+      "sha256": "222754cf50cea1ae68c89d79d3b77327a6bbfdc69f782317fc1cf0ac07209f1a",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-3.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-3.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-3.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-3.json",
+      "bytes": 824,
+      "sha256": "831aac1300fa90be589da063dc60d12f5ae41f35ded15bafbd665e3de3e2e0f2",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-3.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-3.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-3.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-3.stdout",
+      "bytes": 87,
+      "sha256": "7af40f407ba80883a58ab50ce5ae132731d46e43cb84478c0fcba6b7c9b184c2",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-4.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-4.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-4.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-4.json",
+      "bytes": 823,
+      "sha256": "e1b18265830fb6bd3cd51f77e69c15c96dbc1c7c6992dde6bd371d7d90168895",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-4.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-4.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-4.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-4.stdout",
+      "bytes": 87,
+      "sha256": "8457c89af22c05697033156aec8e09dbd1e72b5b863966405fbf613091fb34db",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-aot-map.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-aot-map.json",
+      "bytes": 1393,
+      "sha256": "477a9241ca1e535618aa1ccac1c237d35b1a99dfa161c3a9498be0d007d3f8f3",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-map-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-map-process.json",
+      "bytes": 887,
+      "sha256": "94a94181151f426f6da57238934a14a1c35dae2102b4b211a4eb564d2ed62ace",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-map-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-map-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-map-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-map-process.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-profile.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-profile.json",
+      "bytes": 856,
+      "sha256": "4d256a7f947375aa392c99f145363fcb840559f335746c09c4476e2f0a1b464d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-profile.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-profile.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-profile.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-profile.stdout",
+      "bytes": 1353,
+      "sha256": "6a5ef78216b80f3c65c37b7fa15bf6554d22344513572799911a3d85fb390bda",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-selected.audit.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-selected.audit.json",
+      "bytes": 1771,
+      "sha256": "7fe519311350da707f9d5500206f10aaf127b9d412fe91d32959cafc9d493582",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-state-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-state-process.json",
+      "bytes": 957,
+      "sha256": "bb83b3e8a9a13aa2b10e08f8d95dbcef80ddcc1b1a5b37e32769c54d04aecb35",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-state-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-state-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-state-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-state-process.stdout",
+      "bytes": 85,
+      "sha256": "62a0fca1a1fc0e9af234f849c1187e651e53c86ceb2b0258107d409b911829a0",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current-state.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current-state.json",
+      "bytes": 182636,
+      "sha256": "d7770152bd4929092d06b384cd7b713047c37c10e891848f529e21deeb612e7e",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/current.plan.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\current.plan.json",
+      "bytes": 2532,
+      "sha256": "f26513a811fd501647332bcf0e36960da47056d4d8980f2c6c75d7a5aa291761",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-0.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-0.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-0.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-0.json",
+      "bytes": 819,
+      "sha256": "a9b09815fba78a8e08d902a6d1f7a09150639fd25e7c4b87154e93b604ba83ee",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-0.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-0.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-0.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-0.stdout",
+      "bytes": 87,
+      "sha256": "ac59be56a34a42e08ad8a1b2cbd7b4d0e2f3db16be002ffee023047745d9870f",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-1.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-1.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-1.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-1.json",
+      "bytes": 819,
+      "sha256": "0f72106560e6b728140fc9dd86a868dd7a01c0022638df7a5f928b3dff8acfc8",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-1.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-1.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-1.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-1.stdout",
+      "bytes": 86,
+      "sha256": "51b3f64f350a241853f0d75d43e7116a78ab08e5c90f58a47127041747725d04",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-2.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-2.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-2.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-2.json",
+      "bytes": 819,
+      "sha256": "e366bddfd9f4a14e40bf21ecd0fbf0018f8741ddfa94a906595756a288b3e276",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-2.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-2.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-2.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-2.stdout",
+      "bytes": 86,
+      "sha256": "1cb40ad676b03819b61fe8ec8b6d929361d6c31f27df984a41201f35ee30e005",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-3.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-3.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-3.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-3.json",
+      "bytes": 819,
+      "sha256": "d266c8723003fa3ffdae143e85c31939336b6884b3977f36f82d93e737c8adcf",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-3.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-3.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-3.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-3.stdout",
+      "bytes": 87,
+      "sha256": "3c81b03e6a5277406e4dd9b637fce2b5f69a9c9c42f950ce61083c0fa7ac4e35",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-4.counts.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-4.counts.json",
+      "bytes": 473,
+      "sha256": "f5898a1f9b3c88a3d433337b0108e15a05fc7b29196c85508d2fca439e61254d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-4.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-4.json",
+      "bytes": 819,
+      "sha256": "258ed0a71d09c2113912814dec6813e0ef27ed4826d3a5f4531aad2b6d5c6dd8",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-4.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-4.stderr",
+      "bytes": 200,
+      "sha256": "132ddfaefcfcb88fb81207e1ac84c72091425e3b533d091fd24689b1f52f5b46",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-4.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-4.stdout",
+      "bytes": 87,
+      "sha256": "4c49c2bb3a61f61ed04ce70d64b62ee5344379070e0416cfc27ab5095a7615d7",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-aot-map.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-aot-map.json",
+      "bytes": 1387,
+      "sha256": "bb3d4be5a9be68bcb19f1446186fab9e3d6036d87f94eab747710c069b45fa08",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-map-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-map-process.json",
+      "bytes": 880,
+      "sha256": "88bd05cc7c6b85fb30001cf5ecfc2ae8d017bacfd7008e4d6b1698c24c80f84d",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-map-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-map-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-map-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-map-process.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-profile.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-profile.json",
+      "bytes": 862,
+      "sha256": "8715e9ab1543730018b002418f6df0ca0063f058bda6f423627e73d0236fcbc0",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-profile.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-profile.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-profile.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-profile.stdout",
+      "bytes": 1349,
+      "sha256": "6a8aaf3152f921e7d89e60eeca09caec407212c54b0fef7bd23321df08f1f79e",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-selected.audit.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-selected.audit.json",
+      "bytes": 1771,
+      "sha256": "07f3562077a4c69f344abc618d379e01b213ec55e575fbd74f35ce8417bdfa67",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-state-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-state-process.json",
+      "bytes": 961,
+      "sha256": "151bb6a4d01d96039a93d89a1fe419c3a428cc93055690c2c864cf33f1f19204",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-state-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-state-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-state-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-state-process.stdout",
+      "bytes": 85,
+      "sha256": "eb55a794e994b2fc78d41c9fddb2286c66710559b6748af44a1820ed83bb6ab4",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final-state.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final-state.json",
+      "bytes": 182636,
+      "sha256": "d12face6b22203efb137d7b9e220674e9589cfa23c37e1e70106e35f7b51c328",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/final.plan.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\final.plan.json",
+      "bytes": 2533,
+      "sha256": "7871d92d4a791368a617d40872a9d09792d07d0f69a5152aa8bc0cfd605b1d43",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-0.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-0.json",
+      "bytes": 485,
+      "sha256": "84734e82d90ece89c88adf8466f65f3d3c60ff714e39c63fbd7bb10c7796c79e",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-0.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-0.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-0.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-0.stdout",
+      "bytes": 85,
+      "sha256": "2f62b2f421985f464e0e5de0ca43100cd87608bc4b5c56a5830ca369ce4227e4",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-1.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-1.json",
+      "bytes": 485,
+      "sha256": "e0b38f0f0533888d7cd19a5daca4250df67d83dd0161bc48b1c6fa472e3ba7d8",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-1.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-1.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-1.stdout",
+      "bytes": 85,
+      "sha256": "ee3c409d0e238b6e8b2c49eb60a17dc3d88d80ec51ddc4f7332b7a37fb858afb",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-2.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-2.json",
+      "bytes": 485,
+      "sha256": "625f2ed62a76eaf9c173c7ffc97c8ba0f9994d0390b622bb9afb7c474adc8dd9",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-2.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-2.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-2.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-2.stdout",
+      "bytes": 85,
+      "sha256": "a4a5c42371b25a6ab3591af191933676dbdf553b20269c0d56fc7aa0a07108ec",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-3.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-3.json",
+      "bytes": 485,
+      "sha256": "ba30c9131509e40a1baf13bac5b258942a5af2b7617f8a5dae3e39f575af46a3",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-3.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-3.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-3.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-3.stdout",
+      "bytes": 85,
+      "sha256": "3fb17e2b86bc87faa4e2f6676844e9e55b3b9e4dc14f6f89fc425a47490dd693",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-4.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-4.json",
+      "bytes": 485,
+      "sha256": "35b922e3ec998d7b0ca97aa15be10d55a01d36b88554c1e02ce2a257fcd5a8d9",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-4.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-4.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-4.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-4.stdout",
+      "bytes": 85,
+      "sha256": "1a81a3d9c037243e2d26052da5a04abd831c9a85a4e4c421915f296c2940f823",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-state-process.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-state-process.json",
+      "bytes": 719,
+      "sha256": "b267e5589deeb02c77491a2c486e9b4c1740ad04444626985e63514847088188",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-state-process.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-state-process.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-state-process.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-state-process.stdout",
+      "bytes": 85,
+      "sha256": "15bd27b67b81e1793214ec7e1eeba7380b6181609c8165938b75c710e25e4e93",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/plain-state.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\plain-state.json",
+      "bytes": 181394,
+      "sha256": "de0f26d1ad485741c617fae78bc11892861d8e3c25dbedddc1b24b3961a8ef0a",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/warmup-before.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\warmup-before.json",
+      "bytes": 812,
+      "sha256": "90d81e4a7adde01624011c166768e0bc62953b0459ecc1c862bb92551e611214",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/warmup-before.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\warmup-before.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/warmup-before.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\warmup-before.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/warmup-final.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\warmup-final.json",
+      "bytes": 811,
+      "sha256": "83047e823e3df9d8261296ab03f46c84837c1ca3ad7322999cd88ae0eab46bf4",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/warmup-final.stderr": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\warmup-final.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/programs/raytrace/warmup-final.stdout": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\programs\\raytrace\\warmup-final.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "Raw native process/state/mode/artifact-map evidence"
+    },
+    "native/helpers/native.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\native.py",
+      "bytes": 12615,
+      "sha256": "7b88a680dcf8197ce65a9f90576834da48c275e016e3add815e968240b258916",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/common.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\common.py",
+      "bytes": 9197,
+      "sha256": "9ad22e07d174c1add937004efb4a7f2c2569b11a350272a2f70fc8531cb2f40c",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/profile_target.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\profile_target.py",
+      "bytes": 2397,
+      "sha256": "12f686004b7abb51e926f8ec29c1f95c7b7f9686d934fd5d2f95438353ad5ffa",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/state_audit.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\state_audit.py",
+      "bytes": 4972,
+      "sha256": "8548074f7305916ff78ec4f4b77a39db0017e5f5fc662e20a287758365d88c4a",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/ray_state_audit.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\ray_state_audit.py",
+      "bytes": 3947,
+      "sha256": "121003094442fa0c0bc6da9359382f40b09399d97102f80d20c25a01a2ad2d35",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/postverify.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\postverify.py",
+      "bytes": 4649,
+      "sha256": "0bf25944c0c64d9f0b758aefb80d37fa7810a3dfa589eb456a91021fb77dad78",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/audit.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\audit.py",
+      "bytes": 7980,
+      "sha256": "c98c9eef8f4c6685afa94f12b5bd577eed1c41dd057052dc39e0acfd5006bdbd",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/warm_bytecode.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\warm_bytecode.py",
+      "bytes": 946,
+      "sha256": "67437327080def5ebd3139d6a11c7671baafe078601a4b73961c634ed22f5932",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/map_aot.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\map_aot.py",
+      "bytes": 4136,
+      "sha256": "68063f5cfe1a0d07bc2c4d48e0a5deffec3d0ddfb402d2e2cf6d7031d78f032d",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/PROTOCOL.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\PROTOCOL.md",
+      "bytes": 4857,
+      "sha256": "09b83cf0e049ff25a01468670f3ddb04f290a062ca057d36b1b35fdb0c72d74f",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/BASELINE-PROVENANCE.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\BASELINE-PROVENANCE.json",
+      "bytes": 5638,
+      "sha256": "828c792cba37469beaff3bac9c26320fce2c53cf9044d6e4d564a665aa55acc0",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/archive_cohort.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\archive_cohort.py",
+      "bytes": 3415,
+      "sha256": "15ac621b149904c13624a977fdc9d4166b9576036fe6eb4c5cc106b37b74492f",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/helpers/analyze_cohort.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\analyze_cohort.py",
+      "bytes": 4876,
+      "sha256": "2eb6625bcd7038cacbb603422c2efda7269556cd760b2f15edd82883940ee956",
+      "role": "Frozen benchmark helper/protocol"
+    },
+    "native/inputs/barnes_hut/barnes_hut.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+      "bytes": 13599,
+      "sha256": "75c2550e69a0b565a8fdf1651a723f51e7f63333eb960fc778163722844bf7fa",
+      "role": "Unchanged measured Python/C input"
+    },
+    "native/inputs/barnes_hut/barnes_hut.c": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\c-sources\\barnes_hut.c",
+      "bytes": 7327,
+      "sha256": "ea6988a337c98a3e7eee9733ec6da57303d7aa0ebd37e032c74f26d797096152",
+      "role": "Unchanged measured Python/C input"
+    },
+    "native/inputs/barnes_hut/barnes_hut.exe": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\bin\\barnes_hut.exe",
+      "bytes": 16384,
+      "sha256": "4fd003eeea3b3bf997c90889340719fd71e8f698da5feca673ece46e9418f9ff",
+      "role": "Unchanged measured Python/C input"
+    },
+    "native/selected-aot/barnes_hut/current/rcaotr_37d5bbedabb5b3cb6ca652c3.cp314-win_amd64.pyd": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\cache\\barnes_hut\\current\\recompyler\\rcaotr_37d5bbedabb5b3cb6ca652c3.cp314-win_amd64.pyd",
+      "bytes": 68096,
+      "sha256": "e98cc4037b249ddd957948b03dea4a2cbe64d9f27b7e56b873471a903550e565",
+      "role": "Actually selected successful AOT binary"
+    },
+    "native/selected-aot/barnes_hut/final/rcaotr_37bed947cdaa1333e55322a8.cp314-win_amd64.pyd": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\cache\\barnes_hut\\final\\recompyler\\rcaotr_37bed947cdaa1333e55322a8.cp314-win_amd64.pyd",
+      "bytes": 66560,
+      "sha256": "c01ad9455882cd8fe70eb45dc688a82e5486fb631d924a39935f1abd6ebc197c",
+      "role": "Actually selected successful AOT binary"
+    },
+    "native/inputs/raytrace/raytrace.py.txt": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\raytrace.py",
+      "bytes": 12723,
+      "sha256": "6fbfc3df050c3eb08928a1f05fb7c3cec8058b24216f70d9f8ae55462e06ff2d",
+      "role": "Unchanged measured Python/C input"
+    },
+    "native/inputs/raytrace/raytrace.c": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\c-sources\\raytrace.c",
+      "bytes": 8145,
+      "sha256": "fbc9047e78046959e479c6591438c27f385d3446624b94d29f10961e7d178ec5",
+      "role": "Unchanged measured Python/C input"
+    },
+    "native/inputs/raytrace/raytrace.exe": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\bin\\raytrace.exe",
+      "bytes": 17920,
+      "sha256": "3913b4bb6c6203042230c72da1fa46b6cad7899281c3cd3f2764fce29f7a2abc",
+      "role": "Unchanged measured Python/C input"
+    },
+    "native/selected-aot/raytrace/current/rcaotr_a3422bdefd5ad5f63247c998.cp314-win_amd64.pyd": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\cache\\raytrace\\current\\recompyler\\rcaotr_a3422bdefd5ad5f63247c998.cp314-win_amd64.pyd",
+      "bytes": 65024,
+      "sha256": "1880c8ad0d9a5057df6b4054e727be6e7b81236519dbbed02757c48997d21740",
+      "role": "Actually selected successful AOT binary"
+    },
+    "native/selected-aot/raytrace/final/rcaotr_7508da57ea552f418d6e0f1d.cp314-win_amd64.pyd": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\cache\\raytrace\\final\\recompyler\\rcaotr_7508da57ea552f418d6e0f1d.cp314-win_amd64.pyd",
+      "bytes": 64000,
+      "sha256": "deecad159593b89eaf8cb4d2859a74f832f62c17206ac49fa7d3215d55790d9d",
+      "role": "Actually selected successful AOT binary"
+    },
+    "heldout/RESULTS.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-study\\RESULTS-paired-final.md",
+      "bytes": 6880,
+      "sha256": "dc7159ae15deaf1edaca523a1d8418589c76f95e003be512037891a18b49458f",
+      "role": "Saved a9b full fixed-population measurement"
+    },
+    "heldout/manifest.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-study\\results-paired-final\\manifest.json",
+      "bytes": 116478,
+      "sha256": "92d2cbf74740bad09c91feb84a391928e9cef31a580df5b8af5e08e97d8a72b6",
+      "role": "Saved a9b full paired cohort metadata/results"
+    },
+    "heldout/COMPACT.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-study\\results-paired-final\\COMPACT.json",
+      "bytes": 68654,
+      "sha256": "7af4295823f0c5178b0b4281212696edef99bdf980aab2018740fda4b1d247ad",
+      "role": "Saved a9b full paired cohort metadata/results"
+    },
+    "heldout/PAIRED-COMPARISON.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-study\\results-paired-final\\PAIRED-COMPARISON.json",
+      "bytes": 58880,
+      "sha256": "a7c9e878ced28a1231fc112c0a1e927f79a9d438bdf6b1aaa5afb5d7ad807fae",
+      "role": "Saved a9b full paired cohort metadata/results"
+    },
+    "heldout/EXECUTION-NOTES.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-study\\PAIRED-EXECUTION-NOTES.md",
+      "bytes": 1349,
+      "sha256": "1c9cc9c75dcf185eee60de1fb0848fbec00ea6c450e01c01f16d4a09091ac2e1",
+      "role": "Path routing and light source-inspection provenance"
+    },
+    "first-prototype/RESULTS.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\RESULTS.md",
+      "bytes": 5625,
+      "sha256": "3a8bc2a4c155386491f71acf0bdb3938792be3a16132df59364e1424f10af7eb",
+      "role": "Preserved 578 gain/regression, not pooled with final timings"
+    },
+    "first-prototype/ASSEMBLY.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-heap-analysis\\ACTUAL-578-REPORT.md",
+      "bytes": 7868,
+      "sha256": "1c7208c6d2c0938c62667228f3c00988a1ba5ec5568d1d9a472d0ac668a72db4",
+      "role": "Preserved reason for helper-SSA refinement"
+    },
+    "assembly/ACTUAL-037-REPORT.md": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-heap-analysis\\ACTUAL-037-REPORT.md",
+      "bytes": 8890,
+      "sha256": "b697f25c206cd6b068c4c37312a6ae6a624896c76b44338df65b0d1cb7ae7e26",
+      "role": "Readable actual selected AOT/C review"
+    },
+    "root/wave9-root-static-checkpoint-verification.json": {
+      "origin": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-root-static-checkpoint-verification.json",
+      "bytes": 207,
+      "sha256": "2452e4f44140ef822c82fbc308ad810e1681b9488e56b9bf6bfd9f10c21b53b1",
+      "role": "Independent static archive verification"
+    }
+  },
+  "note": "Full 49-workload raw data stays in the independently verified study repository. Native raw records and actual selected binaries are captured here. No workloads were executed by this script."
+}

@@ -1,0 +1,50 @@
+{
+  "all_verified": true,
+  "manifest_sha256": "836382bb3dbdfdcf67a46c45a1f65ce8137a108e0a00cdcd404426a743fa00e2",
+  "raw_process_records": 58,
+  "raw_stdout_stderr_streams_equal_git_blobs": 116,
+  "archive_commit": "1f952f1dc4138c2d108e0f50ebb15f4dedeb94fb",
+  "timing_children": 40,
+  "timing_AOT_success": 5050,
+  "audit_AOT_success": 202,
+  "timing_or_audit_JIT_fallback": 0,
+  "measurements": {
+    "barnes_hut": {
+      "plain": {
+        "kernel_ms": 539.7056000001612,
+        "process_ms": 2903.709299993352
+      },
+      "c": {
+        "kernel_ms": 9.134054,
+        "process_ms": 199.03419999900507
+      },
+      "current": {
+        "kernel_ms": 36.34749999764608,
+        "process_ms": 512.0595000043977
+      },
+      "final": {
+        "kernel_ms": 36.27379999670666,
+        "process_ms": 509.108300000662
+      }
+    },
+    "raytrace": {
+      "plain": {
+        "kernel_ms": 161.13189999305177,
+        "process_ms": 951.7202999995789
+      },
+      "c": {
+        "kernel_ms": 0.60463,
+        "process_ms": 17.361699996399693
+      },
+      "current": {
+        "kernel_ms": 3.9311000000452623,
+        "process_ms": 420.3720000004978
+      },
+      "final": {
+        "kernel_ms": 3.827200001978781,
+        "process_ms": 430.0978000028408
+      }
+    }
+  },
+  "note": "Separate fresh two-case diagnostic; all raw outputs/exits/hashes/bytecode/artifacts/state/modes/medians verified. No workloads rerun. Static counts and timings are distinct."
+}

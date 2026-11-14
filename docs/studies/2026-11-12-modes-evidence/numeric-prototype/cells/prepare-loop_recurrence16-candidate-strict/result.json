@@ -1,0 +1,159 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "candidate-strict",
+  "function": "loop_recurrence16",
+  "task": "prepare",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ],
+    "n": [
+      0,
+      1024
+    ]
+  },
+  "corpus_count": 392,
+  "expected_results_sha256": "a20c051a6a31c8a5fdf53f4206625a81332b99fe0941095fed0f8ce598978deb",
+  "valid_exact_results": true,
+  "construction_s": 0.22080409999762196,
+  "first_call_s": 0.9862327000009827,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 392,
+    "aot_calls": 0,
+    "jit_calls": 392,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "loop_recurrence16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "b5ae3bb6685078518eed9a23a9037b44108be6cbf308ee2bb9dce07a222d21c0",
+    "function_bytecode_sha256": "1d23dac200bc0f0d85991e5d5a2578605c991488a6fb66650a27c73dc59fae7a",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null,
+    "program_digest": "c318ac0fb823ace0893838672f7321dabfa801a694eb2bfff5dd039fc66b26ee",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_loop_recurrence16",
+    "program_source_sha256": "273f21ce77fb0f406fd3546b37df1b479d725709daffb63e5e81022ef9fefcdd",
+    "dispatcher_module": "rc_heap_73547edce78f3bbe0466b8e9",
+    "dispatcher_qualname": "f0_loop_recurrence16",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_73547edce78f3bbe0466b8e920f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_73547edce78f3bbe0466b8e920f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "code_capture_requested": true,
+        "llvm_sha256": "2414e6a31271bb4956891d6d08340f244f362f2f6438d1b199a8363c3cfbf6d2",
+        "asm_sha256": "144a18730163782f0b0a2a375bd5c2c13f0511af3300ef5fea660026ee9ec1ea"
+      }
+    ],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)": 1
+    }
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "final_counts": {
+    "compiled_calls": 393,
+    "aot_calls": 0,
+    "jit_calls": 393,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.add_i-95.py314.1.nbc": "62f2cbacff26d7a8d60005a82e33b75572eb4304857651118edb9ba84386cc3d",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.add_i-95.py314.nbi": "6452a5a68265d3ccaf5b0a1cdc427c9cdf9acefd6a4cd69ad9706c8ae8aaa4bd",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.f0_recurrence_16-554.py314.1.nbc": "a12149ada376d7dae36353907e7007f5b86e93e8b6aee847110d9477bc6c66a3",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.f0_recurrence_16-554.py314.nbi": "ed0f7108593c614dd302f66374b388d5b6d58bfb65471c0383f104124b30dd93",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.mul_i-111.py314.1.nbc": "7e48fa0823236b7d30a519e17d4ea9815570dabdda5bd79f3425c1b9d86d8e6a",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_0bc4322814ec5c10910c6684.mul_i-111.py314.nbi": "d25e95ed643981197ef5da89445ac65df22ce9c073b492eda0f46a991b9d8009",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.1.nbc": "a0649ce91235a73b7ba18f25257cc5e6312a915cef9b7901206aae49f6ecf88a",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.2.nbc": "2aacfaf730ccd42ae8a314d4304da42d49b154a0ebf78c0ec14877065cd26405",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.add_i-95.py314.nbi": "f8858fdcca579c2245f748ee93d783d9371e52888c7f9866d2878465e4e158f2",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.f0_fibonacci-554.py314.1.nbc": "db46b7b7d238b1a47b8b2efbe5f835813af6a7a921295d781bb7afab5d3a9bff",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_3ccb1a4c2558e2f7afd382de.f0_fibonacci-554.py314.nbi": "3ec654d73f6e23254a0fb8b1cbe18f9b1fdafa839a3ef4eb325e9efb5ad95a4c",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_57152f1561b845507fca6255.f0_recurrence_64-554.py314.1.nbc": "16fcd23d10200e6acbd56f54046570a6abd4977e84f1d6bf31c0203b0a3d43d2",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_57152f1561b845507fca6255.f0_recurrence_64-554.py314.nbi": "06875971543e91bde5656f078f1fc5b59b37a2c0d7f1db733a0cfa57cc6fd958",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.add_i-95.py314.1.nbc": "38bc28edf99ce483775be69efd53892187f70295febfc2d3dcf164d659d3f1ef",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.add_i-95.py314.nbi": "3714e2a1d2dc026f0d25886db87dcb94cb30fdeb92b9f50e575d237222bc62dc",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.f0_recurrence_64-554.py314.1.nbc": "68028bfb98073adcfa724eb5d777f89ad117accf2e19f4c7b3f89d73f8e6ba90",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.f0_recurrence_64-554.py314.nbi": "9b62b2dc073973095187b42839227b9f4fff9bc01c616ccc92b2aa78b089d73e",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.mul_i-111.py314.1.nbc": "98d67c04bebe650ab64c63d1c4c0a4fe22d782a3d52156b43c3787cab4c8d4b8",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_5b5b61a3bf0b3ec88f796210.mul_i-111.py314.nbi": "49df8b3c4ab3a940d7a0fa1d79ffa5026b5443fc49f563e5d38bf90e10078a3d",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.add_i-95.py314.1.nbc": "59c282601dd47c6fa8b452150c8281d5858273caf19953e8a9700228f5210546",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.add_i-95.py314.nbi": "ed77de60fdbfd9bf0c1c9a0fda7d729e19208b1b8e7a5dc0e70a850c290865b3",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.f0_loop_recurrence16-554.py314.1.nbc": "076e36ee41c362f075cf61e24889607f95df79f943fb9bfdc8c0551c5d7fa93e",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.f0_loop_recurrence16-554.py314.nbi": "c70fe331c5799f175e277afe78db2b8d3b2c8419214e175ec33d7108ec953fbe",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.mul_i-111.py314.1.nbc": "37f0271a48c3db00293f977154e3305a8298ff58c272b07998e7b88e465c7309",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_73547edce78f3bbe0466b8e9.mul_i-111.py314.nbi": "dd9164cabe7753714a563b9a07ae88ee23e5e14b3f1df8c2916b9e567d0019df",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.1.nbc": "a53ec8bc70ad02d47ee05b8c35e9baf351aa3c2830463150635980ecf3a2f018",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.2.nbc": "75e6f79a6f4e286f9bb06f7af8f8593774025cdd81fd0ece60d7b5e9f08f5531",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.add_i-95.py314.nbi": "113bfe9eba654041795f4e48fee0c78c27f4d46b40f75ab6366d6d2ccd2e6f2a",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.1.nbc": "5fdc95a7663076764fcac3bc19535608e33689d5660c2476217c59524aa5e013",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_76885d8ba89d2be1fa3724cd.f0_fibonacci-554.py314.nbi": "221988085045de20bdb84d94233c8d50aedfa20ad2c3d707205a2268861a286d",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_b3a9bfa1769a9e7651c5e8a3.f0_recurrence_16-554.py314.1.nbc": "838226714c646fd4a2bfbc03c859b5fd0fcdd3ea90e722035e6be7afc03dffd3",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_b3a9bfa1769a9e7651c5e8a3.f0_recurrence_16-554.py314.nbi": "dfd7c9f5a153d03ecf3bf0ccc2132340e6a592cab0181844b07c5ad89baf9c86",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.1.nbc": "40ac844d25448449a6da0bdd7379fff53aab50ddd477520f865abe48ce892d6c",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_cc640ec9e29e6464b99a6ead.f0_recurrence_1-554.py314.nbi": "d8ad44c9caae00d8d2781d009bff1a46400003f7f618891244cccf0c31960a61",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.1.nbc": "d4e23ff5f396cd2569d7d19a4282e4a8a6d7fccfa545d4cf8f1fd9e14f81db55",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.add_i-95.py314.nbi": "c27cdaa61113a3444f0af6d858c72a995b52b3338cd421b830da6995c48c8895",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.1.nbc": "0dcbc87b1862dabc17879c685328fe4d3440d023983e3ba342670e403dafb20d",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.f0_recurrence_1-554.py314.nbi": "f22260a03baa0264c23b81cd378a818feeb67a47bea6e0902091e8935fba7d92",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.1.nbc": "9c96194a8a376b4dbff94925cb572c7bd0dbff250665bb751a23f96b2182ed69",
+    "numba/candidate-strict_40825f567543ffbb8c3927e71fbcf2c50bf18f47/rc_heap_e1608e92092c158d0062c70d.mul_i-111.py314.nbi": "8df3082aaeef4320c3be2eef63306159fea4fdece7953a531de7091617e52fe1",
+    "rc_heap_0bc4322814ec5c10910c6684.py": "733a95f74730ce19aeca5450b9f375ee66dd5f34fe17d46536fe29608bc9b1ad",
+    "rc_heap_3ccb1a4c2558e2f7afd382de.py": "8cce3e29d8f1dcee671403f3f85b3b7cc07cb215053b8fdf1b2c20f069641f9b",
+    "rc_heap_57152f1561b845507fca6255.py": "3412f552ef5c66dd02c78d0be310793333427a21f0f3956a7b70f906f2001092",
+    "rc_heap_5b5b61a3bf0b3ec88f796210.py": "28c6ef1728a5b4ed719af5b6032d6a176d9838413d86f9ae7c004d8acd01d3e9",
+    "rc_heap_73547edce78f3bbe0466b8e9.py": "5ece0a8280d553af17cdb1bb7f3364e062ab2a6652ac615b0aea0329f7e381ca",
+    "rc_heap_76885d8ba89d2be1fa3724cd.py": "26cc0d593581dd6ce068115793bbfdcbf1023c2e5963d9416c4559bfc6ee80a2",
+    "rc_heap_b3a9bfa1769a9e7651c5e8a3.py": "c4bdb78600365dbbd5c627585c9da6ccefa475f53c7f154b79dfa7001d98d56d",
+    "rc_heap_cc640ec9e29e6464b99a6ead.py": "d8225e5a0acc7e273d93af0df0223a773f05e6d9aac654ca752626a7320a6a39",
+    "rc_heap_e1608e92092c158d0062c70d.py": "a2f33cf69430461eadd844470bc8964abe125a29cbf1fd42644dbf49297be705",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

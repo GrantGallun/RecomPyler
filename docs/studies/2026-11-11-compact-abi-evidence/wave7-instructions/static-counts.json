@@ -1,0 +1,638 @@
+{
+  "baseline": {
+    "force": {
+      "begin": "0x180003c20",
+      "end": "0x180004870",
+      "span_bytes": 3152,
+      "instruction_lines": 524,
+      "stack_operand_lines": 275,
+      "frame_reservations": [
+        "180003c2c:     \tsubq\t$0x1e8, %rsp            # imm = 0x1E8"
+      ],
+      "direct_calls": [
+        {
+          "at": "0x1800040fe",
+          "operand": "0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>"
+        },
+        {
+          "at": "0x180004333",
+          "operand": "0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>"
+        },
+        {
+          "at": "0x180004552",
+          "operand": "0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>"
+        },
+        {
+          "at": "0x1800047b4",
+          "operand": "0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>"
+        }
+      ],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180003d65",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003da4",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dba",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dd9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003de7",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003e00",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "pushq": 8,
+        "subq": 1,
+        "movapd": 10,
+        "movq": 271,
+        "movb": 22,
+        "movsd": 16,
+        "xorpd": 8,
+        "ucomisd": 10,
+        "jne": 10,
+        "jp": 3,
+        "jmp": 16,
+        "sarq": 2,
+        "andq": 2,
+        "leaq": 10,
+        "cmpq": 12,
+        "xorl": 2,
+        "cmovlq": 1,
+        "je": 6,
+        "setne": 10,
+        "subsd": 2,
+        "andb": 8,
+        "cmpb": 14,
+        "andpd": 2,
+        "jae": 3,
+        "addsd": 13,
+        "mulsd": 9,
+        "setae": 3,
+        "testb": 2,
+        "xorps": 1,
+        "sqrtsd": 1,
+        "divsd": 4,
+        "jbe": 1,
+        "maxsd": 1,
+        "movaps": 3,
+        "addq": 1,
+        "popq": 8,
+        "retq": 1,
+        "testq": 4,
+        "js": 4,
+        "jge": 4,
+        "callq": 4,
+        "decq": 4,
+        "movzbl": 5,
+        "movl": 1,
+        "nopl": 1
+      }
+    },
+    "fields": {
+      "begin": "0x180003d2a",
+      "end": "0x180003e44",
+      "span_bytes": 282,
+      "instruction_lines": 63,
+      "stack_operand_lines": 0,
+      "frame_reservations": [],
+      "direct_calls": [],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180003d65",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003da4",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dba",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dd9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003de7",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003e00",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "movq": 4,
+        "movsd": 2,
+        "cmpq": 4,
+        "setne": 2,
+        "subsd": 2,
+        "andb": 2,
+        "cmpb": 2,
+        "jne": 4,
+        "movapd": 6,
+        "andpd": 2,
+        "ucomisd": 6,
+        "jae": 3,
+        "xorpd": 2,
+        "addsd": 4,
+        "je": 2,
+        "mulsd": 4,
+        "setae": 3,
+        "testb": 2,
+        "jmp": 3,
+        "movb": 2,
+        "xorps": 1,
+        "sqrtsd": 1
+      }
+    },
+    "first-call": {
+      "begin": "0x180003f7a",
+      "end": "0x180004103",
+      "span_bytes": 393,
+      "instruction_lines": 55,
+      "stack_operand_lines": 51,
+      "frame_reservations": [],
+      "direct_calls": [
+        {
+          "at": "0x1800040fe",
+          "operand": "0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>"
+        }
+      ],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "cmpq": 1,
+        "jge": 1,
+        "movq": 50,
+        "movsd": 1,
+        "leaq": 1,
+        "callq": 1
+      }
+    },
+    "first-return": {
+      "begin": "0x1800040fe",
+      "end": "0x180004176",
+      "span_bytes": 120,
+      "instruction_lines": 19,
+      "stack_operand_lines": 10,
+      "frame_reservations": [],
+      "direct_calls": [
+        {
+          "at": "0x1800040fe",
+          "operand": "0x180003c20 <PyInit_rcaotr_d69a5295b7dfe3ae8e1e45a1+0x60>"
+        }
+      ],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "callq": 1,
+        "cmpb": 3,
+        "jne": 1,
+        "setne": 2,
+        "xorpd": 1,
+        "movsd": 1,
+        "addsd": 2,
+        "decq": 1,
+        "movq": 6,
+        "jmp": 1
+      }
+    }
+  },
+  "candidate": {
+    "force": {
+      "begin": "0x180002c30",
+      "end": "0x180003260",
+      "span_bytes": 1584,
+      "instruction_lines": 341,
+      "stack_operand_lines": 69,
+      "frame_reservations": [
+        "180002c3c:     \tsubq\t$0x118, %rsp            # imm = 0x118"
+      ],
+      "direct_calls": [
+        {
+          "at": "0x180002f78",
+          "operand": "0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>"
+        },
+        {
+          "at": "0x180003034",
+          "operand": "0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>"
+        },
+        {
+          "at": "0x1800030e4",
+          "operand": "0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>"
+        },
+        {
+          "at": "0x1800031d5",
+          "operand": "0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>"
+        }
+      ],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180002d3d",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002d7d",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002d93",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002db2",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002dc0",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002dd9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "pushq": 8,
+        "subq": 1,
+        "movapd": 10,
+        "movq": 87,
+        "movb": 20,
+        "movsd": 16,
+        "xorpd": 8,
+        "ucomisd": 10,
+        "jne": 10,
+        "jp": 3,
+        "jmp": 15,
+        "sarq": 2,
+        "andq": 2,
+        "leaq": 10,
+        "cmpq": 12,
+        "xorl": 2,
+        "cmovlq": 1,
+        "je": 6,
+        "setne": 10,
+        "subsd": 2,
+        "andb": 8,
+        "cmpb": 14,
+        "andpd": 2,
+        "jae": 3,
+        "addsd": 13,
+        "mulsd": 9,
+        "setae": 3,
+        "testb": 2,
+        "xorps": 1,
+        "sqrtsd": 1,
+        "divsd": 4,
+        "jbe": 1,
+        "maxsd": 1,
+        "movaps": 3,
+        "addq": 1,
+        "popq": 8,
+        "retq": 1,
+        "testq": 4,
+        "js": 4,
+        "jge": 4,
+        "callq": 4,
+        "decq": 4,
+        "movl": 8,
+        "movzbl": 2,
+        "nopl": 1
+      }
+    },
+    "fields": {
+      "begin": "0x180002d01",
+      "end": "0x180002e1d",
+      "span_bytes": 284,
+      "instruction_lines": 63,
+      "stack_operand_lines": 0,
+      "frame_reservations": [],
+      "direct_calls": [],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180002d3d",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002d7d",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002d93",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002db2",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002dc0",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180002dd9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000a3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "movq": 4,
+        "movsd": 2,
+        "cmpq": 4,
+        "setne": 2,
+        "subsd": 2,
+        "andb": 2,
+        "cmpb": 2,
+        "jne": 4,
+        "movapd": 6,
+        "andpd": 2,
+        "ucomisd": 6,
+        "jae": 3,
+        "xorpd": 2,
+        "addsd": 4,
+        "je": 2,
+        "mulsd": 4,
+        "setae": 3,
+        "testb": 2,
+        "jmp": 3,
+        "movb": 2,
+        "xorps": 1,
+        "sqrtsd": 1
+      }
+    },
+    "first-call": {
+      "begin": "0x180002f48",
+      "end": "0x180002f7d",
+      "span_bytes": 53,
+      "instruction_lines": 11,
+      "stack_operand_lines": 7,
+      "frame_reservations": [],
+      "direct_calls": [
+        {
+          "at": "0x180002f78",
+          "operand": "0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>"
+        }
+      ],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "movq": 8,
+        "movsd": 1,
+        "leaq": 1,
+        "callq": 1
+      }
+    },
+    "first-return": {
+      "begin": "0x180002f78",
+      "end": "0x180002fc9",
+      "span_bytes": 81,
+      "instruction_lines": 16,
+      "stack_operand_lines": 4,
+      "frame_reservations": [],
+      "direct_calls": [
+        {
+          "at": "0x180002f78",
+          "operand": "0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>"
+        }
+      ],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "callq": 1,
+        "cmpb": 3,
+        "jne": 1,
+        "setne": 2,
+        "xorpd": 1,
+        "movsd": 1,
+        "addsd": 2,
+        "decq": 1,
+        "movq": 3,
+        "jmp": 1
+      }
+    },
+    "array-adapter": {
+      "begin": "0x180001090",
+      "end": "0x1800011d0",
+      "span_bytes": 320,
+      "instruction_lines": 69,
+      "stack_operand_lines": 31,
+      "frame_reservations": [
+        "180001095:     \tsubq\t$0x78, %rsp"
+      ],
+      "direct_calls": [
+        {
+          "at": "0x180001195",
+          "operand": "0x1800025d0 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x60>"
+        }
+      ],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "pushq": 4,
+        "subq": 1,
+        "movq": 29,
+        "xorq": 7,
+        "orq": 6,
+        "jne": 2,
+        "movsd": 4,
+        "leaq": 3,
+        "callq": 1,
+        "testl": 1,
+        "xorl": 1,
+        "jmp": 2,
+        "movl": 1,
+        "addq": 1,
+        "popq": 4,
+        "retq": 1,
+        "nopl": 1
+      }
+    },
+    "advance": {
+      "begin": "0x1800025d0",
+      "end": "0x180002c30",
+      "span_bytes": 1632,
+      "instruction_lines": 320,
+      "stack_operand_lines": 60,
+      "frame_reservations": [
+        "1800025dc:     \tsubq\t$0xf8, %rsp"
+      ],
+      "direct_calls": [
+        {
+          "at": "0x180002913",
+          "operand": "0x180003260 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0xcf0>"
+        },
+        {
+          "at": "0x180002a1e",
+          "operand": "0x180002c30 <PyInit_rcaotr_b767982c3d43c6022e2cef09+0x6c0>"
+        }
+      ],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "pushq": 8,
+        "subq": 1,
+        "movapd": 2,
+        "movaps": 4,
+        "movq": 112,
+        "movabsq": 2,
+        "leaq": 19,
+        "cmpq": 17,
+        "jb": 1,
+        "addq": 5,
+        "jae": 1,
+        "movb": 8,
+        "xorl": 10,
+        "popq": 8,
+        "retq": 1,
+        "jle": 4,
+        "jmp": 10,
+        "cmpb": 12,
+        "jne": 15,
+        "cvtsi2sd": 2,
+        "movsd": 22,
+        "mulsd": 6,
+        "jg": 2,
+        "sarq": 5,
+        "andq": 5,
+        "movl": 2,
+        "cmovlq": 2,
+        "cmovgeq": 2,
+        "shlq": 2,
+        "jge": 4,
+        "callq": 2,
+        "testl": 2,
+        "incq": 3,
+        "decq": 2,
+        "jl": 1,
+        "xorpd": 1,
+        "ucomisd": 2,
+        "jnp": 1,
+        "divsd": 2,
+        "addsd": 6,
+        "jp": 1,
+        "je": 1,
+        "nopw": 1,
+        "nopl": 1
+      }
+    }
+  },
+  "c": {
+    "force": {
+      "begin": "0x140002710",
+      "end": "0x1400028f0",
+      "span_bytes": 480,
+      "instruction_lines": 116,
+      "stack_operand_lines": 22,
+      "frame_reservations": [
+        "140002715:     \tsubq\t$0x58, %rsp"
+      ],
+      "direct_calls": [
+        {
+          "at": "0x140002814",
+          "operand": "0x140002710 <.text+0x1710>"
+        },
+        {
+          "at": "0x140002844",
+          "operand": "0x140002710 <.text+0x1710>"
+        },
+        {
+          "at": "0x140002870",
+          "operand": "0x140002710 <.text+0x1710>"
+        },
+        {
+          "at": "0x140002899",
+          "operand": "0x140002710 <.text+0x1710>"
+        }
+      ],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "pushq": 4,
+        "subq": 1,
+        "vmovapd": 2,
+        "movq": 18,
+        "vxorpd": 4,
+        "vmovsd": 10,
+        "vucomisd": 2,
+        "jne": 3,
+        "jnp": 1,
+        "cmpl": 3,
+        "je": 6,
+        "movslq": 1,
+        "imulq": 1,
+        "vsubsd": 2,
+        "vmulsd": 7,
+        "vaddsd": 10,
+        "vsqrtsd": 1,
+        "vdivsd": 4,
+        "jbe": 1,
+        "addq": 2,
+        "vmaxsd": 1,
+        "jmp": 2,
+        "testq": 5,
+        "leaq": 8,
+        "movl": 5,
+        "callq": 4,
+        "vmovaps": 2,
+        "popq": 4,
+        "retq": 1,
+        "nopl": 1
+      }
+    }
+  }
+}

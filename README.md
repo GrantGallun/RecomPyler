@@ -54,6 +54,19 @@ Compiled code is kept on disk, in `%LOCALAPPDATA%\recompyler\cache` on Windows a
 
 Compiled code uses 64-bit integers, where Python's are unbounded. Wherever the two could disagree (integer overflow, shifts, `int()` of a large float, values of mixed type), the compiled version either checks at run time and hands the call back to the original function, or is not offered.
 
+`run` also turns places where one verified function is applied to many independent inputs into batches: `[f(x, k) for x in xs]`, `sum(f(x) for x in xs)` (and `list`, `tuple`, `min`, `max`, `sorted`), `list(map(f, xs))`, `Pool.map`/`starmap` and `Executor.map`. Each batch runs on whichever of one core, all cores or the GPU the profile measured fastest for its size, with the same results as Python.
+
+### See what depends on what, and declare input-chosen types
+
+```bash
+recompyler map path/to/script.py
+recompyler profile --types args.exact=int,float --json plan.json path/to/script.py
+```
+
+`map` prints the script's dependency map: each function's region (the function plus everything it reaches) and its tier (`native` when the whole region can be compiled, otherwise what blocks it), and for each parameter which inputs its value and its type depend on. Inputs are argparse options (`args.NAME`), `argv[N]` and environment variables (`env:NAME`). `--plan` adds a profile's call counts and times; `--json` saves the map.
+
+A profile only sees the types its own run used. When a flag chooses the number type of the work, `--types SOURCE=TYPE[,TYPE]` declares the alternatives. The map finds the parameters whose type depends on that input; each verified function's captured calls are copied with those arguments converted, run compiled and in Python, and must match exactly. Verified variants are built ahead of time with the rest, so `recompyler run` starts any declared variant without compiling. In `examples/flag_types.py`, profiled without `--exact`, an `--exact` run hands all 30,000 calls back to Python unless `args.exact=int,float` was declared; with it, every call runs compiled and Numba is never imported.
+
 ### Apply a verified optimization in Python
 
 ```python

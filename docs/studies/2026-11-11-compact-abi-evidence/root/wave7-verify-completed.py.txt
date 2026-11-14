@@ -1,0 +1,178 @@
+"""Read-only independent verification of the completed compact-ABI study."""
+import hashlib
+import json
+import re
+import statistics
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+STUDY = ROOT / 'wave7-study'
+RESULTS = STUDY / 'results'
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding='utf8'))
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def git(*args):
+    return subprocess.check_output(['git', '-c', 'safe.directory=*', '-C', str(STUDY), *args], stderr=subprocess.PIPE)
+
+
+def modes(totals, count):
+    assert totals['aot_calls'] == count
+    for key in ('jit_calls', 'fallback_calls', 'unknown_native_calls', 'rejected_attempts'):
+        assert totals.get(key, 0) == 0, (key, totals)
+
+
+def stdout_values(path):
+    checks = {}
+    seconds = None
+    for line in path.read_text().splitlines():
+        fields = line.split()
+        if len(fields) == 3 and fields[0] == 'check':
+            assert fields[1] not in checks
+            checks[fields[1]] = fields[2]
+        if len(fields) == 2 and fields[0] == 'seconds':
+            assert seconds is None
+            seconds = float(fields[1])
+    assert len(checks) == 3 and seconds and seconds > 0
+    return checks, seconds
+
+
+commit = git('rev-parse', 'HEAD').decode().strip()
+assert commit == 'f087533ec047216fd4f7dccea0286e03f45c1628'
+assert not git('status', '--porcelain')
+tracked = git('ls-files', '-z').decode().split('\0')[:-1]
+# Batch object reads keep the check light and do not execute any benchmark.
+requests = ''.join(f'HEAD:{name}\n' for name in tracked).encode()
+blob_data = subprocess.check_output(['git', '-C', str(STUDY), 'cat-file', '--batch'], input=requests, stderr=subprocess.PIPE)
+pos = 0
+blob_bytes = 0
+for name in tracked:
+    end = blob_data.index(b'\n', pos)
+    header = blob_data[pos:end].split()
+    assert header[1] == b'blob', (name, header)
+    size = int(header[2])
+    blob = blob_data[end + 1:end + 1 + size]
+    assert blob == (STUDY / name).read_bytes(), name
+    pos = end + 2 + size
+    blob_bytes += size
+assert len(tracked) == 392 and blob_bytes == 5005987
+
+manifest_sha = sha(RESULTS / 'manifest.json')
+assert manifest_sha == '308adefb126b9d36f4742ec29bb4590f807d2955293f168aa2c90d0dd6bcaabc'
+assert sha(STUDY / 'results-regression/manifest.json') == '3696d2640f48ead8dc5ca89d8aa3086e6af4691e711871e1682db4733e538516'
+analysis = read(RESULTS / 'ANALYSIS.json')
+assert analysis['all_valid'] and not analysis['failures']
+assert analysis['manifest_sha256'] == manifest_sha
+raw_processes = 0
+for name in tracked:
+    if not name.endswith('.json'):
+        continue
+    path = STUDY / name
+    data = read(path)
+    if isinstance(data, dict) and 'stdout_sha256' in data and 'command' in data:
+        assert data['exit_code'] == 0 and data['status'] == 'ok', name
+        out = path.with_suffix('.stdout')
+        assert sha(out) == data['stdout_sha256']
+        assert out.stat().st_size == data['stdout_bytes']
+        raw_processes += 1
+assert raw_processes == 54
+
+table = {}
+expected_checks = None
+for case in ('plain', 'c', 'baseline', 'candidate'):
+    kernels, walls = [], []
+    for index in range(5):
+        prefix = RESULTS / 'timings' / f'{case}-{index}'
+        process = read(prefix.with_suffix('.json'))
+        checks, kernel = stdout_values(prefix.with_suffix('.stdout'))
+        if expected_checks is None:
+            expected_checks = checks
+        assert checks == expected_checks
+        kernels.append(kernel)
+        walls.append(process['wall_s'])
+        if case in ('baseline', 'candidate'):
+            counts = read(prefix.with_suffix('.counts.json'))
+            assert len(counts['functions']) == 1
+            modes(counts['functions'][0], 500)
+    row = analysis['rows'][case]
+    assert kernels == row['kernel_samples_s']
+    assert walls == row['process_wall_samples_s']
+    assert statistics.median(kernels) == row['median_best_kernel_s']
+    assert statistics.median(walls) == row['median_process_wall_s']
+    table[case] = {'kernel_ms': statistics.median(kernels)*1000, 'process_ms': statistics.median(walls)*1000}
+
+plain = read(RESULTS / 'plain-state.json')
+assert len(plain['checkpoints']) == 100
+for case in ('baseline', 'candidate'):
+    state = read(RESULTS / f'{case}-state.json')
+    assert state['checkpoints'] == plain['checkpoints']
+    assert state['initial'] == plain['initial'] and state['final'] == plain['final']
+    assert len(state['initial']['numbers']) == len(state['final']['numbers']) == 1400
+    audit = read(RESULTS / f'{case}-state-selected-audit.json')
+    modes(audit['totals'], 100)
+    assert not audit['numba_imported']
+    assert audit['compiled_total_reconciles'] and audit['product_exact_counter_matches_audit']
+    assert sha(RESULTS / f'{case}-state.json') == audit['source_state_audit_sha256']
+    phase = read(RESULTS / f'{case}-phase.json')
+    assert len(phase['attempts']) == len(phase['arena_native_entries']) == 600
+    assert len(phase['driver_times_s']) == 6
+    assert not phase['numba_imported'] and phase['growth_native_exits'] == 0
+    assert phase['max_capacity_bytes'] == 524288 and phase['max_top_slots'] == 7538
+    modes(phase['runner']['functions'][0], 600)
+    assert all(e['aot'] and e['status'] == 0 and e['capacity_slots'] == 65536 for e in phase['arena_native_entries'])
+    assert len(phase['program_selection']) == 1
+    mapping = read(RESULTS / f'{case}-aot-map.json')
+    for selected in mapping['entries'] if 'entries' in mapping else analysis['rows'][case]['selected_AOT']:
+        assert sha(selected['artifact']) == selected['artifact_sha256']
+
+reg = read(STUDY / 'results-regression/ANALYSIS.json')
+assert reg['all_valid'] and reg['actual_aot_calls_total'] == 48 and len(reg['programs']) == 3
+for program, variants in reg['programs'].items():
+    directory = STUDY / 'results-regression/programs' / program
+    reference = (directory / 'plain.stdout').read_bytes()
+    for case in ('baseline', 'candidate'):
+        assert (directory / f'{case}-audit.stdout').read_bytes() == reference
+        audit = read(directory / f'{case}.audit.json')
+        modes(audit['totals'], 8)
+        assert not audit['numba_imported_after']
+        assert audit['compiled_total_reconciles'] and audit['product_exact_counter_matches_audit']
+        assert variants[case]['output_and_modes_valid']
+        profile = variants[case]['candidate_verification']
+        assert profile['status'] == 'verified' and profile['compiled_samples'] == 8 and profile['fallback_samples'] == 0
+
+counts = read(ROOT / 'wave7-instructions/static-counts.json')
+assembly = {}
+for case in ('baseline', 'candidate', 'c'):
+    path = ROOT / f'wave7-instructions/{case}-force.asm'
+    lines = [line for line in path.read_text().splitlines() if re.match(r'^[0-9a-f]+:', line)]
+    expected = counts[case]['force']
+    assert len(lines) == expected['instruction_lines']
+    stack = sum(bool(re.search(r'%[re]sp\b', line)) for line in lines)
+    assert stack == expected['stack_operand_lines'], (case, stack)
+    assembly[case] = {key: expected[key] for key in ('instruction_lines','stack_operand_lines','span_bytes')}
+
+validation = read(ROOT / 'wave7-validation/abi-manifest.json')
+for rel, expected in validation['final_inputs'].items():
+    assert sha(ROOT / 'integration' / rel) == expected
+    assert sha(ROOT / 'wave7-compact-abi' / rel) == expected
+assert '465 passed, 22 warnings, 52 subtests passed in 282.91s' in (ROOT / 'wave7-validation/abi-full.log').read_text()
+assert '1 passed, 23 deselected' in (ROOT / 'wave7-validation/abi-recursive-precision-final.log').read_text()
+
+receipt = {'all_verified': True, 'study_commit': commit, 'tracked_files_equal_git_blobs': len(tracked),
+           'blob_bytes': blob_bytes, 'successful_raw_process_records': raw_processes,
+           'raw_process_record_note': '54 includes one reused historical profile record; 53 are new preparation/measurement/control/mapping records.',
+           'timing_processes': 20, 'timing_AOT_calls': 5000, 'phase_AOT_calls': 1200,
+           'state_AOT_calls': 200, 'control_AOT_calls': 48, 'JIT_or_fallback_calls': 0,
+           'full_state_checkpoints_per_source': 100, 'full_scalar_vectors_per_snapshot': 1400,
+           'measurements': table, 'independently_recounted_static_assembly': assembly,
+           'full_suite': '465 passed, 52 subtests; final assertion refinement separately passed',
+           'note': 'Read-only archive/raw-output/state/counter/static-assembly verification; no timings, builds or tests rerun.'}
+(ROOT / 'wave7-root-verification.json').write_text(json.dumps(receipt, indent=2)+'\n', encoding='utf8')
+print(json.dumps(receipt, indent=2))

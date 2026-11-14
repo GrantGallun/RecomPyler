@@ -1,0 +1,165 @@
+"""Two unchanged native/C cases; all current/final profiles and latency fresh."""
+import argparse
+import os
+from pathlib import Path
+import shutil
+import statistics
+import struct
+import sys
+import common
+import postverify
+
+HERE=Path(__file__).resolve().parent;ROOT=HERE.parent
+TARGETS={'barnes_hut':('advance_system',100),'raytrace':('Scene.render',1)}
+HELPERS=['native.py','common.py','profile_target.py','state_audit.py','ray_state_audit.py','postverify.py','audit.py','warm_bytecode.py','map_aot.py','PROTOCOL.md','BASELINE-PROVENANCE.json','archive_cohort.py','analyze_cohort.py']
+def sha(path):return common.digest(Path(path).read_bytes())
+def parse(path):
+    checks,times={},{}
+    for line in Path(path).read_text(errors='replace').splitlines():
+        f=line.split()
+        if len(f)==3 and f[0]=='check':checks[f[1]]=f[2]
+        if len(f)==2 and f[0].startswith('seconds'):times[f[0]]=float(f[1])
+    return checks,times
+def equal(a,b):
+    if not a or a.keys()!=b.keys():return False
+    for k,v in a.items():
+        other=b[k]
+        if '0x' in v.lower() or '0x' in other.lower():
+            if struct.pack('!d',float.fromhex(v))!=struct.pack('!d',float.fromhex(other)):return False
+        elif v!=other:return False
+    return True
+
+def prepare(args):
+    out=args.output.resolve()
+    if (out/'manifest.json').exists():raise SystemExit('Manifest exists; choose new output.')
+    if not args.final or not args.final_commit:raise SystemExit('Reviewed final source and full commit required.')
+    initial=common.read(ROOT/'wave8-native/results-final/manifest.json')
+    sources={'current':common.revision(ROOT/'wave8-header-fix'),'final':common.revision(args.final.resolve())}
+    if sources['current']!=initial['sources']['final'] or sources['final']['git_head']!=args.final_commit or any(s['git_status'] for s in sources.values()):raise SystemExit('Require frozen clean sources/exact saved a9b baseline.')
+    if common.runtime_identity()!=initial['runtime_identity']:raise SystemExit('Runtime changed from current cohort.')
+    proposed=common.read(ROOT/'wave8-assembly-analysis/native-input-metadata.json');old=common.read(ROOT/'wave5-study/results/manifest.json')
+    programs={};out.mkdir(parents=True,exist_ok=True)
+    for name,(target,calls) in TARGETS.items():
+        row={'target':target,'audit_aot_calls':calls}
+        for key,folder,suffix in [('script','drivers','.py'),('binary','bin','.exe'),('source','c-sources','.c')]:
+            path=(ROOT/'wave5-study/results'/folder/(name+suffix)).resolve()
+            if sha(path)!=proposed['input_sha256'][str(path)]:raise SystemExit('Original native/C input changed: '+str(path))
+            row[key]=str(path);row[key+'_sha256']=sha(path)
+        programs[name]=row
+    shutil.copytree(ROOT/'wave8-study/results-current/shim',out/'shim',ignore=shutil.ignore_patterns('__pycache__'))
+    m={'schema':8,'sources':sources,'python':sys.executable,'runtime_identity':common.runtime_identity(),
+       'execution_environment':initial['execution_environment'],'programs':programs,'shim_sha256':common.file_hashes(out/'shim'),
+       'helpers':{n:sha(HERE/n) for n in HELPERS},'limit':40,'samples':8,'repetitions':5,'timeout_s':300,'python_inner_reps':5,'c_inner_reps':20,
+       'saved_a9b_native_manifest_sha256':sha(ROOT/'wave8-native/results-final/manifest.json'),'baseline_provenance':common.read(HERE/'BASELINE-PROVENANCE.json'),'c_provenance':old['c_provenance'],
+       'method':'Fresh all4targetprofiles; original absolute drivers/Cbins;40rotatingfresh timingchildren,6untimed fullstateaudits,4compile-onlywarmups. No phases; no historicalprofile/artifact/latency reuse. Explicit manualtarget --force diagnostic, not defaultdeployment.'}
+    common.save(out/'manifest.json',m);print('FROZEN native manifest '+sha(out/'manifest.json'))
+
+def verify(out,m):
+    if common.runtime_identity()!=m['runtime_identity']:raise SystemExit('Runtime changed.')
+    for s in m['sources'].values():
+        if common.revision(Path(s['path']))!=s:raise SystemExit('Frozen source changed.')
+    for n,h in m['helpers'].items():
+        if sha(HERE/n)!=h:raise SystemExit('Frozen helper changed.')
+    if common.file_hashes(out/'shim')!=m['shim_sha256']:raise SystemExit('Shim changed.')
+    for row in m['programs'].values():
+        for k in ['script','binary','source']:
+            if sha(row[k])!=row[k+'_sha256']:raise SystemExit('Original input changed.')
+
+def env(out,m,name,source,writes=False):
+    cache=out/'cache'/name/source;temp=cache/'temp';temp.mkdir(parents=True,exist_ok=True)
+    e=dict(m['execution_environment']);e.update(PYTHONPATH=os.pathsep.join([str(out/'shim'),str(Path(m['sources'][source]['path'])/'src')]),
+      RECOMPYLER_CACHE=str(cache/'recompyler'),NUMBA_CACHE_DIR=str(cache/'numba'),TEMP=str(temp),TMP=str(temp),
+      PYTHONHASHSEED='0',PYTHONWARNINGS='ignore',PYTHONPYCACHEPREFIX=str(out/'bytecode'/name),PYTHONDONTWRITEBYTECODE='0' if writes else '1')
+    return e
+def execute(out,m,stem,cmd,name,source='current',writes=False):
+    r=common.execute(stem,cmd,out,env(out,m,name,source,writes),m['timeout_s'])
+    if r['status']!='ok' or r['exit_code']!=0:raise SystemExit('FAILED '+str(stem)+'; raw evidence retained.')
+    return r
+
+def validate_modes(data,expected,path):
+    e=data['mode_evidence'];t=e['totals'];report=e['runner']
+    counts={k:sum(f.get(k,0) for f in report['functions']) for k in ['aot_calls','jit_calls','fallback_calls','compiled_calls']}
+    valid=(t['aot_calls']==expected and not any(t[k] for k in ['jit_calls','fallback_calls','unknown_native_calls','rejected_attempts'])
+        and counts=={'aot_calls':expected,'jit_calls':0,'fallback_calls':0,'compiled_calls':expected}
+        and not e['numba_imported'] and not report.get('not_found') and not report.get('batches'))
+    common.save(path,{**e,'runner_report':report,'compiled_total_reconciles':valid,'product_exact_counter_matches_audit':valid})
+    if not valid:raise SystemExit('Native mode/reconciliation failed; evidence retained.')
+
+def run(args):
+    out=args.output.resolve();m=common.read(out/'manifest.json');verify(out,m);py=m['python']
+    for index,(name,item) in enumerate(m['programs'].items()):
+        folder=out/'programs'/name;script=item['script'];freeze=folder/'bytecode-frozen.json'
+        warm=[py,str(HERE/'warm_bytecode.py'),*[str(Path(s['path'])/'src') for s in m['sources'].values()],str(out/'shim'),script]
+        if not freeze.exists():execute(out,m,folder/'warmup-before',warm,name,writes=True)
+        order=list(m['sources']) if index%2==0 else list(reversed(m['sources']))
+        for source in order:
+            cmd=[py,str(HERE/'profile_target.py'),'--script',script,'--target',item['target'],'--expected-source',m['sources'][source]['path'],'--output',str(folder/(source+'.plan.json'))]
+            execute(out,m,folder/(source+'-profile'),cmd,name,source,True)
+        artifacts={}
+        for source in m['sources']:
+            sec=common.read(folder/(source+'.plan.json'))['plan']['aot_regions']
+            for p in Path(sec['folder']).glob(sec['module']+'*.pyd'):artifacts[str(p)]=sha(p)
+        afile=folder/'aot-artifacts-frozen.json'
+        if afile.exists() and common.read(afile)!=artifacts:raise SystemExit('AOT changed on resume.')
+        common.save(afile,artifacts)
+        if not freeze.exists():
+            execute(out,m,folder/'warmup-final',warm,name,writes=True);common.save(freeze,common.bytecode_inventory(out/'bytecode'/name))
+        common.verify_bytecode(out/'bytecode'/name,common.read(freeze))
+        states={}
+        for source in ['plain',*m['sources']]:
+            cmd=[py,str(HERE/('state_audit.py' if name=='barnes_hut' else 'ray_state_audit.py')),'--script',script,'--output',str(folder/(source+'-state.json'))]
+            if name=='barnes_hut':cmd+=['--target','advance_system','--group','1']
+            if source!='plain':cmd+=['--plan',str(folder/(source+'.plan.json')),'--expected-source',m['sources'][source]['path']]
+            execute(out,m,folder/(source+'-state-process'),cmd,name,'current' if source=='plain' else source)
+            states[source]=common.read(folder/(source+'-state.json'))
+            if source!='plain':
+                if name=='barnes_hut':valid=postverify.pair(states['plain'],states[source])['valid']
+                else:valid=(states[source]['final']==states['plain']['final'] and states[source]['observed']==states['plain']['observed'])
+                if not valid:raise SystemExit('Full state/type/identity output mismatch; retained.')
+                validate_modes(states[source],item['audit_aot_calls'],folder/(source+'-selected.audit.json'))
+        labels=['plain','c',*m['sources']]
+        for rep in range(5):
+            at=(index+rep)%4
+            for label in labels[at:]+labels[:at]:
+                source='current' if label in ['plain','c'] else label
+                if label=='plain':cmd=[py,script,'5']
+                elif label=='c':cmd=[item['binary'],'20']
+                else:cmd=[py,'-m','recompyler','run','--force','--plan',str(folder/(label+'.plan.json')),'--json',str(folder/f'{label}-{rep}.counts.json'),script,'5']
+                execute(out,m,folder/f'{label}-{rep}',cmd,name,source)
+                if label in m['sources']:
+                    count=common.read(folder/f'{label}-{rep}.counts.json');rows=count['functions']
+                    if (sum(r.get('aot_calls',0) for r in rows)!=5*item['audit_aot_calls'] or any(r.get('jit_calls',0) or r.get('fallback_calls',0) for r in rows) or count.get('not_found') or count.get('batches')):raise SystemExit('Timing used invalid native mode; retained.')
+        reference=parse(folder/'plain-0.stdout')[0]
+        for label in labels:
+            for rep in range(5):
+                if not equal(reference,parse(folder/f'{label}-{rep}.stdout')[0]):raise SystemExit('Timing checksum mismatch; no valid comparison.')
+        for source in m['sources']:
+            cmd=[py,str(HERE/'map_aot.py'),'--plan',str(folder/(source+'.plan.json')),'--audit',str(folder/(source+'-selected.audit.json')),'--output',str(folder/(source+'-aot-map.json'))]
+            execute(out,m,folder/(source+'-map-process'),cmd,name,source)
+        common.verify_bytecode(out/'bytecode'/name,common.read(freeze))
+        if any(sha(p)!=h for p,h in artifacts.items()):raise SystemExit('Native artifact changed.')
+        summarize(out);print('NATIVE CASE COMPLETE '+name,flush=True)
+    verify(out,m);common.save(out/'complete.json',{'completed':True,'manifest_sha256':sha(out/'manifest.json')})
+
+def summarize(out):
+    m=common.read(out/'manifest.json');result={}
+    for name,item in m['programs'].items():
+        folder=out/'programs'/name;rows={}
+        if not (folder/'plain-0.stdout').exists():continue
+        reference=parse(folder/'plain-0.stdout')[0]
+        for label in ['plain','c',*m['sources']]:
+            records=[common.read(folder/f'{label}-{r}.json') for r in range(5) if (folder/f'{label}-{r}.json').exists()]
+            times=[parse(folder/f'{label}-{r}.stdout')[1]['seconds'] for r in range(len(records))]
+            counts=[common.read(folder/f'{label}-{r}.counts.json') for r in range(5) if (folder/f'{label}-{r}.counts.json').exists()]
+            aot,jit=common.exact_timing_modes(counts,5) if counts else (None,None)
+            rows[label]={'complete':len(records)==5,'checks_valid':len(records)==5 and all(equal(reference,parse(folder/f'{label}-{r}.stdout')[0]) for r in range(5)),
+                'kernel_samples_s':times,'median_best_kernel_s':statistics.median(times) if times else None,
+                'process_wall_samples_s':[r['wall_s'] for r in records],'median_process_wall_s':statistics.median(r['wall_s'] for r in records) if records else None,
+                'aot_calls_total':aot,'jit_calls_total':jit,'fallback_calls_total':sum(f.get('fallback_calls',0) for c in counts for f in c['functions']) if counts else None}
+        result[name]=rows
+    common.save(out/'SUMMARY.json',{'manifest_sha256':sha(out/'manifest.json'),'programs':result})
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['prepare','run','summary']);p.add_argument('--final',type=Path);p.add_argument('--final-commit');p.add_argument('--output',type=Path,default=HERE/'results');a=p.parse_args()
+    if a.action=='summary':summarize(a.output.resolve())
+    else:{'prepare':prepare,'run':run}[a.action](a)

@@ -1,0 +1,707 @@
+{
+  "current-direct": {
+    "force": {
+      "begin": "0x180003c20",
+      "end": "0x180004a80",
+      "span_bytes": 3680,
+      "instruction_lines": 632,
+      "stack_operand_lines": 277,
+      "recursive_calls": [
+        "0x180004101",
+        "0x180004337",
+        "0x180004692",
+        "0x180004937"
+      ],
+      "frame_reservations": [
+        "180003c2c:     \tsubq\t$0x1e8, %rsp            # imm = 0x1E8"
+      ],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180003d65",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003da4",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dba",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dd9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003de7",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003e00",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180004152",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x1800043a9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x18000442c",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x18000446e",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x18000471f",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180004755",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x1800049c8",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x1800049fe",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "pushq": 8,
+        "subq": 1,
+        "movapd": 17,
+        "movq": 291,
+        "movb": 34,
+        "movsd": 20,
+        "xorpd": 12,
+        "ucomisd": 18,
+        "jne": 15,
+        "jp": 3,
+        "jmp": 26,
+        "sarq": 2,
+        "andq": 2,
+        "leaq": 10,
+        "cmpq": 12,
+        "xorl": 6,
+        "cmovlq": 1,
+        "je": 9,
+        "setne": 9,
+        "subsd": 2,
+        "andb": 8,
+        "cmpb": 15,
+        "andpd": 10,
+        "jae": 7,
+        "addsd": 17,
+        "mulsd": 9,
+        "setae": 3,
+        "testb": 8,
+        "xorps": 1,
+        "sqrtsd": 1,
+        "divsd": 4,
+        "jbe": 1,
+        "maxsd": 1,
+        "movaps": 3,
+        "addq": 1,
+        "popq": 8,
+        "retq": 1,
+        "testq": 4,
+        "js": 4,
+        "jge": 4,
+        "callq": 4,
+        "movzbl": 8,
+        "decq": 4,
+        "jb": 4,
+        "movl": 3,
+        "nopw": 1
+      }
+    },
+    "first-return": {
+      "begin": "0x180004101",
+      "end": "0x180004170",
+      "span_bytes": 111,
+      "instruction_lines": 20,
+      "stack_operand_lines": 4,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180004152",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "callq": 1,
+        "movzbl": 2,
+        "testb": 2,
+        "setne": 1,
+        "cmpb": 1,
+        "jne": 1,
+        "movsd": 2,
+        "decq": 1,
+        "movq": 2,
+        "je": 1,
+        "movapd": 1,
+        "andpd": 1,
+        "ucomisd": 1,
+        "jb": 1,
+        "movb": 1,
+        "jmp": 1
+      }
+    },
+    "fields": {
+      "begin": "0x180003d2a",
+      "end": "0x180003e44",
+      "span_bytes": 282,
+      "instruction_lines": 63,
+      "stack_operand_lines": 0,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180003d65",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003da4",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dba",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dd9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003de7",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003e00",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "movq": 4,
+        "movsd": 2,
+        "cmpq": 4,
+        "setne": 2,
+        "subsd": 2,
+        "andb": 2,
+        "cmpb": 2,
+        "jne": 4,
+        "movapd": 6,
+        "andpd": 2,
+        "ucomisd": 6,
+        "jae": 3,
+        "xorpd": 2,
+        "addsd": 4,
+        "je": 2,
+        "mulsd": 4,
+        "setae": 3,
+        "testb": 2,
+        "jmp": 3,
+        "movb": 2,
+        "xorps": 1,
+        "sqrtsd": 1
+      }
+    },
+    "call-marshalling": {
+      "begin": "0x180003f7a",
+      "end": "0x180004106",
+      "span_bytes": 396,
+      "instruction_lines": 55,
+      "stack_operand_lines": 52,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "jge": 1,
+        "movq": 51,
+        "movsd": 1,
+        "leaq": 1,
+        "callq": 1
+      }
+    }
+  },
+  "production": {
+    "force": {
+      "begin": "0x180003c20",
+      "end": "0x180004870",
+      "span_bytes": 3152,
+      "instruction_lines": 524,
+      "stack_operand_lines": 275,
+      "recursive_calls": [
+        "0x1800040fe",
+        "0x180004333",
+        "0x180004552",
+        "0x1800047b4"
+      ],
+      "frame_reservations": [
+        "180003c2c:     \tsubq\t$0x1e8, %rsp            # imm = 0x1E8"
+      ],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180003d65",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003da4",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dba",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dd9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003de7",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003e00",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "pushq": 8,
+        "subq": 1,
+        "movapd": 10,
+        "movq": 271,
+        "movb": 22,
+        "movsd": 16,
+        "xorpd": 8,
+        "ucomisd": 10,
+        "jne": 10,
+        "jp": 3,
+        "jmp": 16,
+        "sarq": 2,
+        "andq": 2,
+        "leaq": 10,
+        "cmpq": 12,
+        "xorl": 2,
+        "cmovlq": 1,
+        "je": 6,
+        "setne": 10,
+        "subsd": 2,
+        "andb": 8,
+        "cmpb": 14,
+        "andpd": 2,
+        "jae": 3,
+        "addsd": 13,
+        "mulsd": 9,
+        "setae": 3,
+        "testb": 2,
+        "xorps": 1,
+        "sqrtsd": 1,
+        "divsd": 4,
+        "jbe": 1,
+        "maxsd": 1,
+        "movaps": 3,
+        "addq": 1,
+        "popq": 8,
+        "retq": 1,
+        "testq": 4,
+        "js": 4,
+        "jge": 4,
+        "callq": 4,
+        "decq": 4,
+        "movzbl": 5,
+        "movl": 1,
+        "nopl": 1
+      }
+    },
+    "first-return": {
+      "begin": "0x1800040fe",
+      "end": "0x180004176",
+      "span_bytes": 120,
+      "instruction_lines": 19,
+      "stack_operand_lines": 10,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "callq": 1,
+        "cmpb": 3,
+        "jne": 1,
+        "setne": 2,
+        "xorpd": 1,
+        "movsd": 1,
+        "addsd": 2,
+        "decq": 1,
+        "movq": 6,
+        "jmp": 1
+      }
+    },
+    "fields": {
+      "begin": "0x180003d2a",
+      "end": "0x180003e44",
+      "span_bytes": 282,
+      "instruction_lines": 63,
+      "stack_operand_lines": 0,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180003d65",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003da4",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dba",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dd9",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003de7",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003e00",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "movq": 4,
+        "movsd": 2,
+        "cmpq": 4,
+        "setne": 2,
+        "subsd": 2,
+        "andb": 2,
+        "cmpb": 2,
+        "jne": 4,
+        "movapd": 6,
+        "andpd": 2,
+        "ucomisd": 6,
+        "jae": 3,
+        "xorpd": 2,
+        "addsd": 4,
+        "je": 2,
+        "mulsd": 4,
+        "setae": 3,
+        "testb": 2,
+        "jmp": 3,
+        "movb": 2,
+        "xorps": 1,
+        "sqrtsd": 1
+      }
+    },
+    "call-marshalling": {
+      "begin": "0x180003f7a",
+      "end": "0x180004103",
+      "span_bytes": 393,
+      "instruction_lines": 55,
+      "stack_operand_lines": 51,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "cmpq": 1,
+        "jge": 1,
+        "movq": 50,
+        "movsd": 1,
+        "leaq": 1,
+        "callq": 1
+      }
+    }
+  },
+  "forceonly-direct": {
+    "force": {
+      "begin": "0x180003bf0",
+      "end": "0x1800046f0",
+      "span_bytes": 2816,
+      "instruction_lines": 471,
+      "stack_operand_lines": 249,
+      "recursive_calls": [
+        "0x18000406f",
+        "0x180004275",
+        "0x180004463",
+        "0x180004684"
+      ],
+      "frame_reservations": [
+        "180003bfc:     \tsubq\t$0x198, %rsp            # imm = 0x198"
+      ],
+      "exact_threshold_rip_references": [
+        {
+          "at": "0x180003d22",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003d61",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003d77",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003d96",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003da4",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        },
+        {
+          "at": "0x180003dbd",
+          "instruction": "ucomisd",
+          "constant_address": "0x18000d3d0",
+          "value": 9007199254740992.0
+        }
+      ],
+      "mnemonic_counts": {
+        "pushq": 8,
+        "subq": 1,
+        "movapd": 10,
+        "movq": 260,
+        "movsd": 16,
+        "xorpd": 8,
+        "ucomisd": 10,
+        "jne": 10,
+        "jp": 3,
+        "xorl": 2,
+        "movaps": 3,
+        "addq": 1,
+        "popq": 8,
+        "retq": 1,
+        "sarq": 2,
+        "andq": 2,
+        "leaq": 10,
+        "cmpq": 12,
+        "cmovlq": 1,
+        "je": 6,
+        "setne": 2,
+        "subsd": 2,
+        "andb": 2,
+        "cmpb": 6,
+        "andpd": 2,
+        "jae": 3,
+        "addsd": 13,
+        "mulsd": 9,
+        "setae": 3,
+        "testb": 2,
+        "jmp": 15,
+        "movb": 9,
+        "xorps": 1,
+        "sqrtsd": 1,
+        "divsd": 4,
+        "jbe": 1,
+        "maxsd": 1,
+        "testq": 4,
+        "js": 4,
+        "jge": 4,
+        "callq": 4,
+        "decq": 4,
+        "nopl": 1
+      }
+    }
+  },
+  "fullfloat-direct": {
+    "force": {
+      "begin": "0x180003b40",
+      "end": "0x180004550",
+      "span_bytes": 2576,
+      "instruction_lines": 418,
+      "stack_operand_lines": 249,
+      "recursive_calls": [
+        "0x180003ed0",
+        "0x1800040d6",
+        "0x1800042c4",
+        "0x1800044e5"
+      ],
+      "frame_reservations": [
+        "180003b4c:     \tsubq\t$0x198, %rsp            # imm = 0x198"
+      ],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "pushq": 8,
+        "subq": 1,
+        "movapd": 6,
+        "movq": 257,
+        "movsd": 16,
+        "xorpd": 6,
+        "ucomisd": 4,
+        "jne": 6,
+        "jp": 3,
+        "xorl": 2,
+        "movaps": 3,
+        "addq": 1,
+        "popq": 8,
+        "retq": 1,
+        "sarq": 2,
+        "andq": 2,
+        "leaq": 10,
+        "cmpq": 8,
+        "cmovlq": 1,
+        "je": 4,
+        "subsd": 2,
+        "mulsd": 7,
+        "addsd": 10,
+        "xorps": 1,
+        "sqrtsd": 1,
+        "movb": 6,
+        "jmp": 11,
+        "divsd": 4,
+        "jbe": 1,
+        "maxsd": 1,
+        "testq": 4,
+        "js": 4,
+        "jge": 4,
+        "callq": 4,
+        "cmpb": 4,
+        "decq": 4,
+        "nopw": 1
+      }
+    },
+    "fields": {
+      "begin": "0x180003c37",
+      "end": "0x180003c72",
+      "span_bytes": 59,
+      "instruction_lines": 13,
+      "stack_operand_lines": 0,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "movq": 2,
+        "movsd": 2,
+        "subsd": 2,
+        "movapd": 2,
+        "mulsd": 2,
+        "addsd": 1,
+        "xorps": 1,
+        "sqrtsd": 1
+      }
+    },
+    "call-marshalling": {
+      "begin": "0x180003d58",
+      "end": "0x180003ed5",
+      "span_bytes": 381,
+      "instruction_lines": 53,
+      "stack_operand_lines": 51,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "movq": 50,
+        "movsd": 1,
+        "leaq": 1,
+        "callq": 1
+      }
+    },
+    "first-return": {
+      "begin": "0x180003ed0",
+      "end": "0x180003f2c",
+      "span_bytes": 92,
+      "instruction_lines": 15,
+      "stack_operand_lines": 7,
+      "recursive_calls": [],
+      "frame_reservations": [],
+      "exact_threshold_rip_references": [],
+      "mnemonic_counts": {
+        "callq": 1,
+        "cmpb": 1,
+        "jne": 1,
+        "xorpd": 1,
+        "movsd": 1,
+        "addsd": 2,
+        "decq": 1,
+        "movq": 6,
+        "jmp": 1
+      }
+    }
+  }
+}

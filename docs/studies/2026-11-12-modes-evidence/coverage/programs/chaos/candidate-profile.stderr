@@ -1,0 +1,85 @@
+
+RecomPyler profile — D:\Code\Datathon\recompyler-coverage\corpus\pyperformance-1.14.0\benchmarks\bm_chaos\run_benchmark.py
+__call__:89  23,000 calls  41.491 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.21x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.21x Python.
+linear_combination:48  137,970 calls  8.818 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.02x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.02x Python.
+transform_point:178  10,000 calls  7.923 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.23x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.23x Python.
+Mag:26  30,000 calls  5.785 ms self
+  Compiled CPU version matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.04x.
+  Note: not batched: the function takes objects.
+  Not recommended: one call at a time it is 0.04x Python.
+GetIndex:112  22,995 calls  5.008 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.03x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.03x Python.
+GetDomain:84  55,995 calls  4.544 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.01x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.01x Python.
+create_image_chaos:214  2 calls  4.030 ms self
+  Compiled as one region with the functions it calls, matched 2 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 29.13x.
+  Note: not batched: compiled as one region.
+  Recommended: saves 3 ms a run once the compiled code is cached.
+get_random_trafo:169  10,000 calls  2.750 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.02x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.02x Python.
+__init__:21  157,987 calls  2.261 ms self
+  skipped: the compiled version did not apply to the captured calls
+__sub__:40  10,000 calls  1.554 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.03x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.03x Python.
+truncate:204  10,000 calls  0.954 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.01x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.01x Python.
+dist:29  2,997 calls  0.730 ms self
+  Compiled CPU version matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.04x.
+  Note: not batched: the function takes objects.
+  Not recommended: one call at a time it is 0.04x Python.
+__add__:34  10,000 calls  0.605 ms self
+  Compiled as one region with the functions it calls, matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.01x.
+  Note: not batched: compiled as one region.
+  Not recommended: one call at a time it is 0.01x Python.
+__mul__:43  10,000 calls  0.378 ms self
+  Compiled CPU version matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.02x.
+  Note: not batched: the function takes objects.
+  Not recommended: one call at a time it is 0.02x Python.
+__init__:147  1 calls  0.365 ms self
+  skipped: outside the supported subset: comprehension at line 4
+<module>:1  1 calls  0.015 ms self
+  skipped: not captured: the function not a module-level function or a method
+main:238  1 calls  0.005 ms self
+  skipped: outside the supported subset: call at line 3
+__init__:66  3 calls  0.003 ms self
+  skipped: the compiled version did not apply to the captured calls
+GVector:19  1 calls  0.002 ms self
+  skipped: not captured: the function not a module-level function or a method
+Spline:63  1 calls  0.001 ms self
+  skipped: not captured: the function not a module-level function or a method
+Chaosgame:145  1 calls  0.000 ms self
+  skipped: not captured: the function not a module-level function or a method
+
+Running with recompyler run: not worth it. The recommended functions save about 3 ms a run; loading the compiler takes about 124 ms.

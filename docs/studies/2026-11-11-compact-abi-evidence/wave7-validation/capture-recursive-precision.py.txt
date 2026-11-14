@@ -1,0 +1,52 @@
+"""Bind retained fixture native evidence to the actual self-recursive helper."""
+import hashlib
+import json
+from pathlib import Path
+import re
+import sys
+
+repo = Path(__file__).resolve().parents[1] / "wave7-compact-abi"
+sys.path[:0] = [str(repo / "src"), str(repo / "tests")]
+from recompyler import heap
+from test_heap_compact_abi import recursive_sum
+
+out = Path(__file__).with_name("fixture-native-precision-final")
+out.mkdir(exist_ok=False)
+heap._cached_module = lambda source: None
+region = heap.lift_region(recursive_sum)
+assert region(4, 1.25) == 10.0 and region.compiled_calls == 1, region.problem
+program = region.latest
+(out / "generated.py").write_text(program.source, encoding="utf-8")
+functions = []
+for info in program.order:
+    body = getattr(program.module, info.name + "_borrowed")
+    for signature in body.signatures:
+        symbol = body.overloads[signature].fndesc.llvm_func_name
+        llvm = body.inspect_llvm(signature)
+        native = next(block.split("\n}", 1)[0] for block in llvm.split("define ")[1:]
+                      if "@" + symbol + "(" in block.splitlines()[0])
+        self_calls = re.findall(r"\bcall\b[^\n]*@" + re.escape(symbol) + r"\([^\n]*", native)
+        nrt = re.findall(r"call[^\n]*@NRT_(?:incref|decref|MemInfo_alloc)[^\n]*", native)
+        assert not nrt
+        for name in ("_heap_F", "_heap_I"):
+            parameter = re.search(r"[^,\n]*%arg\." + name + r"(?:\.\d+)?(?=,|\))", native)
+            assert parameter is not None and "noalias" not in parameter.group()
+        if info.recursive:
+            assert self_calls
+        for suffix, value in [("ll", llvm), ("native.ll", "define " + native + "\n}\n"),
+                              ("asm", body.inspect_asm(signature))]:
+            (out / (info.name + "." + suffix)).write_text(value, encoding="utf-8")
+        functions.append({"info": info.name, "recursive": info.recursive, "symbol": symbol,
+                          "signature": str(signature), "total_parameters": len(signature),
+                          "context_parameters": 5, "self_calls": self_calls,
+                          "native_nrt_owner_operations": nrt,
+                          "definition": native.splitlines()[0]})
+assert any(function["recursive"] and function["self_calls"] for function in functions)
+report = {"kind": "actual-jit-fixture-not-workload-aot", "result": 10.0,
+          "digest": program.digest, "public_signature": str(program.run.signatures[0]),
+          "source_sha256": hashlib.sha256(Path(heap.__file__).read_bytes()).hexdigest(),
+          "functions": functions,
+          "files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in out.iterdir()}}
+(out / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+print(json.dumps([{key: function[key] for key in ("info", "recursive", "signature", "total_parameters")}
+                  | {"self_call_count": len(function["self_calls"])} for function in functions]))

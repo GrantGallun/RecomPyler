@@ -1,0 +1,17 @@
+{
+  "note": "Read-only after freeze. Product semantic change is compact recursive heap ABI. _region_seed.py raw newline differs LF baseline vs CRLF candidate, normalized source equal. Fullsuite/AOTfixtures/candidate profiles use exact frozen CRLF bytes. No source/manifest/helper modified or rerun. Baseline reused AOT strict source match remains LF.",
+  "source_differences": [
+    {
+      "file": "recompyler/_region_seed.py",
+      "baseline_sha256": "cbca700e53dae98906d5e1e75e77f1414d5cf1928a4cf92138ffa7f71f6da88f",
+      "candidate_sha256": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+      "LF_normalized_equal": true
+    },
+    {
+      "file": "recompyler/heap.py",
+      "baseline_sha256": "e7ee3bb1fb2b8c42a6848383388ef28ed3eaf79e6a1f50e0fc53b210570e5109",
+      "candidate_sha256": "38b77af3e77c73b132db4d973242eb30e8cbc590003b7cb9820e7430c9b3edd6",
+      "LF_normalized_equal": false
+    }
+  ]
+}

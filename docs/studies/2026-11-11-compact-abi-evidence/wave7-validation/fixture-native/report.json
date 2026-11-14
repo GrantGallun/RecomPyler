@@ -1,0 +1,19 @@
+{
+  "kind": "actual-jit-fixture-not-workload-aot",
+  "result": 10.0,
+  "compiled_calls": 1,
+  "digest": "16f7b1f0e8438d0bfd562d61840a9b694458d0784de9a3a1bdf8c36e6a4bddc6",
+  "public_signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, float64)",
+  "recursive_signature": "(float64*, int64*, int64*, uint8*, int64, int64, float64)",
+  "recursive_context_parameters": 5,
+  "recursive_total_parameters": 7,
+  "native_definition": "range(i32 -1, -2) i32 @_ZN26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr noalias writeonly captures(none) %retptr, ptr noalias writeonly captures(none) %excinfo, ptr %arg._heap_F, ptr %arg._heap_I, ptr %arg._heap_top, ptr %arg._heap_st, i64 %arg._heap_len, i64 %arg.v_depth, double %arg.v_value) local_unnamed_addr {",
+  "native_nrt_owner_operations": [],
+  "source_sha256": "38b77af3e77c73b132db4d973242eb30e8cbc590003b7cb9820e7430c9b3edd6",
+  "files": {
+    "generated.py": "9e641700dc1026a6b89349ae06a634be1b877e13e157ba8ee5992c5311629f56",
+    "recursive-native.ll": "2c109a1531935bb930bad5ee74ff68d90c36e9b1a87607b301bc5b69270379f4",
+    "recursive.asm": "e5dfa5dee3635529bcdb629b7af405a90a2bc20ce6529ee08f505ba43a8dc80b",
+    "recursive.ll": "1ca5366a97f7135f36e509a581e217c16ddaa1713adbad9856e934bf82cb54bb"
+  }
+}

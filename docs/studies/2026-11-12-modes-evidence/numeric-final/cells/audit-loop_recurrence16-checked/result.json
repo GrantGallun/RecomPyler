@@ -1,0 +1,1567 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "checked",
+  "function": "loop_recurrence16",
+  "task": "audit",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ],
+    "n": [
+      0,
+      1024
+    ]
+  },
+  "corpus_count": 392,
+  "expected_results_sha256": "a20c051a6a31c8a5fdf53f4206625a81332b99fe0941095fed0f8ce598978deb",
+  "valid_exact_results": true,
+  "construction_s": 0.2766783000115538,
+  "first_call_s": 0.6728021000017179,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 1,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 392,
+    "aot_calls": 0,
+    "jit_calls": 392,
+    "fallback_calls": 0,
+    "contract_native_calls": 392,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "loop_recurrence16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "b5ae3bb6685078518eed9a23a9037b44108be6cbf308ee2bb9dce07a222d21c0",
+    "function_bytecode_sha256": "1d23dac200bc0f0d85991e5d5a2578605c991488a6fb66650a27c73dc59fae7a",
+    "selected_mode": "checked",
+    "identity": "a4f682fa8963e537ed73d2ac9be924a25afd2694b471bd497fb3e1597d0eb6d4",
+    "contract": "IntIntervals(_items=(('n', (0, 1024)), ('x', (-1048576, 1048576)), ('y', (-1, 1)), ('z', (-1048576, 1048576))))",
+    "proof_certificates": "(IntervalCertificate(origin=(4, 12, 4, 17, 'mul'), left=(-17164140544, 17164140544), right=(-1, 1), result=(-17164140544, 17164140544)), IntervalCertificate(origin=(4, 12, 4, 21, 'add'), left=(-17164140544, 17164140544), right=(-1048576, 1048576), result=(-17165189120, 17165189120)), IntervalCertificate(origin=(5, 12, 5, 17, 'mul'), left=(-17165189120, 17165189120), right=(-1, 1), result=(-17165189120, 17165189120)), IntervalCertificate(origin=(5, 12, 5, 21, 'add'), left=(-17165189120, 17165189120), right=(-1048576, 1048576), result=(-17166237696, 17166237696)), IntervalCertificate(origin=(6, 12, 6, 17, 'mul'), left=(-17166237696, 17166237696), right=(-1, 1), result=(-17166237696, 17166237696)), IntervalCertificate(origin=(6, 12, 6, 21, 'add'), left=(-17166237696, 17166237696), right=(-1048576, 1048576), result=(-17167286272, 17167286272)), IntervalCertificate(origin=(7, 12, 7, 17, 'mul'), left=(-17167286272, 17167286272), right=(-1, 1), result=(-17167286272, 17167286272)), IntervalCertificate(origin=(7, 12, 7, 21, 'add'), left=(-17167286272, 17167286272), right=(-1048576, 1048576), result=(-17168334848, 17168334848)), IntervalCertificate(origin=(8, 12, 8, 17, 'mul'), left=(-17168334848, 17168334848), right=(-1, 1), result=(-17168334848, 17168334848)), IntervalCertificate(origin=(8, 12, 8, 21, 'add'), left=(-17168334848, 17168334848), right=(-1048576, 1048576), result=(-17169383424, 17169383424)), IntervalCertificate(origin=(9, 12, 9, 17, 'mul'), left=(-17169383424, 17169383424), right=(-1, 1), result=(-17169383424, 17169383424)), IntervalCertificate(origin=(9, 12, 9, 21, 'add'), left=(-17169383424, 17169383424), right=(-1048576, 1048576), result=(-17170432000, 17170432000)), IntervalCertificate(origin=(10, 12, 10, 17, 'mul'), left=(-17170432000, 17170432000), right=(-1, 1), result=(-17170432000, 17170432000)), IntervalCertificate(origin=(10, 12, 10, 21, 'add'), left=(-17170432000, 17170432000), right=(-1048576, 1048576), result=(-17171480576, 17171480576)), IntervalCertificate(origin=(11, 12, 11, 17, 'mul'), left=(-17171480576, 17171480576), right=(-1, 1), result=(-17171480576, 17171480576)), IntervalCertificate(origin=(11, 12, 11, 21, 'add'), left=(-17171480576, 17171480576), right=(-1048576, 1048576), result=(-17172529152, 17172529152)), IntervalCertificate(origin=(12, 12, 12, 17, 'mul'), left=(-17172529152, 17172529152), right=(-1, 1), result=(-17172529152, 17172529152)), IntervalCertificate(origin=(12, 12, 12, 21, 'add'), left=(-17172529152, 17172529152), right=(-1048576, 1048576), result=(-17173577728, 17173577728)), IntervalCertificate(origin=(13, 12, 13, 17, 'mul'), left=(-17173577728, 17173577728), right=(-1, 1), result=(-17173577728, 17173577728)), IntervalCertificate(origin=(13, 12, 13, 21, 'add'), left=(-17173577728, 17173577728), right=(-1048576, 1048576), result=(-17174626304, 17174626304)), IntervalCertificate(origin=(14, 12, 14, 17, 'mul'), left=(-17174626304, 17174626304), right=(-1, 1), result=(-17174626304, 17174626304)), IntervalCertificate(origin=(14, 12, 14, 21, 'add'), left=(-17174626304, 17174626304), right=(-1048576, 1048576), result=(-17175674880, 17175674880)), IntervalCertificate(origin=(15, 12, 15, 17, 'mul'), left=(-17175674880, 17175674880), right=(-1, 1), result=(-17175674880, 17175674880)), IntervalCertificate(origin=(15, 12, 15, 21, 'add'), left=(-17175674880, 17175674880), right=(-1048576, 1048576), result=(-17176723456, 17176723456)), IntervalCertificate(origin=(16, 12, 16, 17, 'mul'), left=(-17176723456, 17176723456), right=(-1, 1), result=(-17176723456, 17176723456)), IntervalCertificate(origin=(16, 12, 16, 21, 'add'), left=(-17176723456, 17176723456), right=(-1048576, 1048576), result=(-17177772032, 17177772032)), IntervalCertificate(origin=(17, 12, 17, 17, 'mul'), left=(-17177772032, 17177772032), right=(-1, 1), result=(-17177772032, 17177772032)), IntervalCertificate(origin=(17, 12, 17, 21, 'add'), left=(-17177772032, 17177772032), right=(-1048576, 1048576), result=(-17178820608, 17178820608)), IntervalCertificate(origin=(18, 12, 18, 17, 'mul'), left=(-17178820608, 17178820608), right=(-1, 1), result=(-17178820608, 17178820608)), IntervalCertificate(origin=(18, 12, 18, 21, 'add'), left=(-17178820608, 17178820608), right=(-1048576, 1048576), result=(-17179869184, 17179869184)), IntervalCertificate(origin=(19, 12, 19, 17, 'mul'), left=(-17179869184, 17179869184), right=(-1, 1), result=(-17179869184, 17179869184)), IntervalCertificate(origin=(19, 12, 19, 21, 'add'), left=(-17179869184, 17179869184), right=(-1048576, 1048576), result=(-17180917760, 17180917760)))",
+    "problem": null,
+    "policy_metadata": {
+      "certificates": [
+        [
+          [
+            4,
+            12,
+            4,
+            17,
+            "mul"
+          ],
+          [
+            -17164140544,
+            17164140544
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17164140544,
+            17164140544
+          ]
+        ],
+        [
+          [
+            4,
+            12,
+            4,
+            21,
+            "add"
+          ],
+          [
+            -17164140544,
+            17164140544
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17165189120,
+            17165189120
+          ]
+        ],
+        [
+          [
+            5,
+            12,
+            5,
+            17,
+            "mul"
+          ],
+          [
+            -17165189120,
+            17165189120
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17165189120,
+            17165189120
+          ]
+        ],
+        [
+          [
+            5,
+            12,
+            5,
+            21,
+            "add"
+          ],
+          [
+            -17165189120,
+            17165189120
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17166237696,
+            17166237696
+          ]
+        ],
+        [
+          [
+            6,
+            12,
+            6,
+            17,
+            "mul"
+          ],
+          [
+            -17166237696,
+            17166237696
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17166237696,
+            17166237696
+          ]
+        ],
+        [
+          [
+            6,
+            12,
+            6,
+            21,
+            "add"
+          ],
+          [
+            -17166237696,
+            17166237696
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17167286272,
+            17167286272
+          ]
+        ],
+        [
+          [
+            7,
+            12,
+            7,
+            17,
+            "mul"
+          ],
+          [
+            -17167286272,
+            17167286272
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17167286272,
+            17167286272
+          ]
+        ],
+        [
+          [
+            7,
+            12,
+            7,
+            21,
+            "add"
+          ],
+          [
+            -17167286272,
+            17167286272
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17168334848,
+            17168334848
+          ]
+        ],
+        [
+          [
+            8,
+            12,
+            8,
+            17,
+            "mul"
+          ],
+          [
+            -17168334848,
+            17168334848
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17168334848,
+            17168334848
+          ]
+        ],
+        [
+          [
+            8,
+            12,
+            8,
+            21,
+            "add"
+          ],
+          [
+            -17168334848,
+            17168334848
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17169383424,
+            17169383424
+          ]
+        ],
+        [
+          [
+            9,
+            12,
+            9,
+            17,
+            "mul"
+          ],
+          [
+            -17169383424,
+            17169383424
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17169383424,
+            17169383424
+          ]
+        ],
+        [
+          [
+            9,
+            12,
+            9,
+            21,
+            "add"
+          ],
+          [
+            -17169383424,
+            17169383424
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17170432000,
+            17170432000
+          ]
+        ],
+        [
+          [
+            10,
+            12,
+            10,
+            17,
+            "mul"
+          ],
+          [
+            -17170432000,
+            17170432000
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17170432000,
+            17170432000
+          ]
+        ],
+        [
+          [
+            10,
+            12,
+            10,
+            21,
+            "add"
+          ],
+          [
+            -17170432000,
+            17170432000
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17171480576,
+            17171480576
+          ]
+        ],
+        [
+          [
+            11,
+            12,
+            11,
+            17,
+            "mul"
+          ],
+          [
+            -17171480576,
+            17171480576
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17171480576,
+            17171480576
+          ]
+        ],
+        [
+          [
+            11,
+            12,
+            11,
+            21,
+            "add"
+          ],
+          [
+            -17171480576,
+            17171480576
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17172529152,
+            17172529152
+          ]
+        ],
+        [
+          [
+            12,
+            12,
+            12,
+            17,
+            "mul"
+          ],
+          [
+            -17172529152,
+            17172529152
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17172529152,
+            17172529152
+          ]
+        ],
+        [
+          [
+            12,
+            12,
+            12,
+            21,
+            "add"
+          ],
+          [
+            -17172529152,
+            17172529152
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17173577728,
+            17173577728
+          ]
+        ],
+        [
+          [
+            13,
+            12,
+            13,
+            17,
+            "mul"
+          ],
+          [
+            -17173577728,
+            17173577728
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17173577728,
+            17173577728
+          ]
+        ],
+        [
+          [
+            13,
+            12,
+            13,
+            21,
+            "add"
+          ],
+          [
+            -17173577728,
+            17173577728
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17174626304,
+            17174626304
+          ]
+        ],
+        [
+          [
+            14,
+            12,
+            14,
+            17,
+            "mul"
+          ],
+          [
+            -17174626304,
+            17174626304
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17174626304,
+            17174626304
+          ]
+        ],
+        [
+          [
+            14,
+            12,
+            14,
+            21,
+            "add"
+          ],
+          [
+            -17174626304,
+            17174626304
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17175674880,
+            17175674880
+          ]
+        ],
+        [
+          [
+            15,
+            12,
+            15,
+            17,
+            "mul"
+          ],
+          [
+            -17175674880,
+            17175674880
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17175674880,
+            17175674880
+          ]
+        ],
+        [
+          [
+            15,
+            12,
+            15,
+            21,
+            "add"
+          ],
+          [
+            -17175674880,
+            17175674880
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17176723456,
+            17176723456
+          ]
+        ],
+        [
+          [
+            16,
+            12,
+            16,
+            17,
+            "mul"
+          ],
+          [
+            -17176723456,
+            17176723456
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17176723456,
+            17176723456
+          ]
+        ],
+        [
+          [
+            16,
+            12,
+            16,
+            21,
+            "add"
+          ],
+          [
+            -17176723456,
+            17176723456
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17177772032,
+            17177772032
+          ]
+        ],
+        [
+          [
+            17,
+            12,
+            17,
+            17,
+            "mul"
+          ],
+          [
+            -17177772032,
+            17177772032
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17177772032,
+            17177772032
+          ]
+        ],
+        [
+          [
+            17,
+            12,
+            17,
+            21,
+            "add"
+          ],
+          [
+            -17177772032,
+            17177772032
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17178820608,
+            17178820608
+          ]
+        ],
+        [
+          [
+            18,
+            12,
+            18,
+            17,
+            "mul"
+          ],
+          [
+            -17178820608,
+            17178820608
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17178820608,
+            17178820608
+          ]
+        ],
+        [
+          [
+            18,
+            12,
+            18,
+            21,
+            "add"
+          ],
+          [
+            -17178820608,
+            17178820608
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17179869184,
+            17179869184
+          ]
+        ],
+        [
+          [
+            19,
+            12,
+            19,
+            17,
+            "mul"
+          ],
+          [
+            -17179869184,
+            17179869184
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17179869184,
+            17179869184
+          ]
+        ],
+        [
+          [
+            19,
+            12,
+            19,
+            21,
+            "add"
+          ],
+          [
+            -17179869184,
+            17179869184
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17180917760,
+            17180917760
+          ]
+        ]
+      ],
+      "contract": [
+        [
+          "n",
+          [
+            0,
+            1024
+          ]
+        ],
+        [
+          "x",
+          [
+            -1048576,
+            1048576
+          ]
+        ],
+        [
+          "y",
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          "z",
+          [
+            -1048576,
+            1048576
+          ]
+        ]
+      ],
+      "implementation": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+      "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+      "max_trips": 1024,
+      "mode": "checked",
+      "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+      "origin": "e7301d3f36b08531296b43ff26b2b44946f71cf595873ac147023bc91ddd2ed0",
+      "proof": 1,
+      "schema": 1
+    },
+    "program_digest": "044aff8761aa92a681da1ce0dc37f8f5d40929e8f8ef8208349e65b9ac34a1ff",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_loop_recurrence16",
+    "program_source_sha256": "212334e80a1f08db3fbe667b4b00e88044653d18d05f6623168736f77fd55c98",
+    "dispatcher_module": "rc_heap_d23626c1a00ab6fa8be1ca09",
+    "dispatcher_qualname": "f0_loop_recurrence16",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_d23626c1a00ab6fa8be1ca0920f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_d23626c1a00ab6fa8be1ca0920f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "code_capture_requested": false,
+        "code_capture_note": "No cached LLVM/ASM inspection requested or claimed"
+      }
+    ],
+    "dispatcher_cache_hits": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)": 1
+    },
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "invalid_audits": [
+    {
+      "args": [
+        "1048577",
+        "1",
+        "0",
+        "16"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "bound_values": [
+        "1048577",
+        "1",
+        "0",
+        "16"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1099511627776",
+        "1099511627776",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "22887284938275379073209020876478544547459876696240605379143567921401229194635390521531593992375926147753704711196832136165647163781896860689459713299065525895619517863742099239634841598830825399410808286309334714246027443025828896982300582702768008983456200733770736438207494301362797381893641396371719689591109784347784921076483327025701370690350140760288021909021930961276721445295410715539013633"
+      },
+      "bound_values": [
+        "1099511627776",
+        "1099511627776",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "22887284938275379073209020876478544547459876696240605379143567921401229194635390521531593992375926147753704711196832136165647163781896860689459713299065525895619517863742099239634841598830825399410808286309334714246027443025828896982300582702768008983456200733770736438207494301362797381893641396371719689591109784347784921076483327025701370690350140760288021909021930961276721445295410715539013633"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "22887284938275379073209020876478544547459876696240605379143567921401229194635390521531593992375926147753704711196832136165647163781896860689459713299065525895619517863742099239634841598830825399410808286309334714246027443025828896982300582702768008983456200733770736438207494301362797381893641396371719689591109784347784921076483327025701370690350140760288021909021930961276721445295410715539013633"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "9223372036854775807",
+        "1",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775823"
+      },
+      "bound_values": [
+        "9223372036854775807",
+        "1",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775823"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775823"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "-9223372036854775808",
+        "-1",
+        "0",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "bound_values": [
+        "-9223372036854775808",
+        "-1",
+        "0",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "True",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "bool",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "65"
+      },
+      "bound_values": [
+        "True",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "65"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "65"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "2",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "semantic_audits.<locals>.IntSubclass",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "66"
+      },
+      "bound_values": [
+        "2",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "66"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "66"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "2.0",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "float",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "66.0"
+      },
+      "bound_values": [
+        "2.0",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "66.0"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "66.0"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1208925819614629174706176",
+        "1",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706208"
+      },
+      "bound_values": [
+        "1208925819614629174706176",
+        "1",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706208"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706208"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "-1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "1",
+        "-1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "1025"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "16401"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "1",
+        "1025"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "16401"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "16401"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() missing 4 required positional arguments: 'x', 'y', 'z', and 'n'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() missing 4 required positional arguments: 'x', 'y', 'z', and 'n'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() missing 4 required positional arguments: 'x', 'y', 'z', and 'n'"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {
+        "bad": "1"
+      },
+      "actual": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() got an unexpected keyword argument 'bad'"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() got an unexpected keyword argument 'bad'"
+      },
+      "expected": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() got an unexpected keyword argument 'bad'"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1,
+        "contract_native_calls": 0,
+        "guard_misses": 1,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 1,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {}
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {
+        "x": "1",
+        "y": "1",
+        "z": "2",
+        "n": "3"
+      },
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "2",
+        "3"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "policy": "Python-compatible",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "044aff8761aa92a681da1ce0dc37f8f5d40929e8f8ef8208349e65b9ac34a1ff": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    }
+  ],
+  "audit_observations": {
+    "attempts": 13,
+    "rejected_attempts": 12,
+    "attempt_exceptions": 0,
+    "programs": {
+      "044aff8761aa92a681da1ce0dc37f8f5d40929e8f8ef8208349e65b9ac34a1ff": {
+        "mode": "JIT",
+        "entered": 1,
+        "returned": 1,
+        "successful_status": 1,
+        "failed_status": 0
+      }
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 394,
+    "aot_calls": 0,
+    "jit_calls": 394,
+    "fallback_calls": 12,
+    "contract_native_calls": 394,
+    "guard_misses": 12,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_446f6285c0257f2b8923f244.f0_recurrence_64-586.py314.1.nbc": "2086c717518d68aa784121802b6dcea72b599e59d4760acc49f71b9c919016a0",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_446f6285c0257f2b8923f244.f0_recurrence_64-586.py314.nbi": "4a75b5147e7cee6745f722e88d6b92a812bf1de5a67a3de29477840356b63c8e",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_ccbac43f29e8e3fbd19174ad.f0_fibonacci-586.py314.1.nbc": "3fb4fa26fbceb9d8eaa0d45d7c1892c0acba63df93b53de83cc7f0c9a912cc1d",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_ccbac43f29e8e3fbd19174ad.f0_fibonacci-586.py314.nbi": "b34f7678caadef9fcd5a146eab45d46522430ec6b60ff54041a8c20a4ee28693",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_d23626c1a00ab6fa8be1ca09.f0_loop_recurrence16-586.py314.1.nbc": "e4aa9583c488175f28bfc11cf9860c5596b15392af67253f0977fd92a68cff65",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_d23626c1a00ab6fa8be1ca09.f0_loop_recurrence16-586.py314.nbi": "17883cd156055fb54d4d3c46fc7b9a6e6cc68194652472a83c1b8680216c3f0e",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_f338bb5fde6d1517bff40a73.f0_recurrence_16-586.py314.1.nbc": "2e3aec4fd312e10e55ea675acf6aa2fe578fdf1ef4b39aeca996671b3fc0443f",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_f338bb5fde6d1517bff40a73.f0_recurrence_16-586.py314.nbi": "045c921fbe9a5dbbbcee913d939f58653c5943bf4925752d24c1c9ab20ef1f03",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_f37b5547959aa7d04e8e663a.f0_recurrence_1-586.py314.1.nbc": "ddb1ebfab97fc466172a6f4c36d7a399e6b727ee762208c3b90158052bab2081",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_f37b5547959aa7d04e8e663a.f0_recurrence_1-586.py314.nbi": "7711c55fa45a37fdde24ca93d314754231953f47fe0653550af17465150ee8f6",
+    "rc_heap_446f6285c0257f2b8923f244.py": "5692acf48313f91f8af41a692dd093d878affe0c730dc74370665812ca46b7f6",
+    "rc_heap_ccbac43f29e8e3fbd19174ad.py": "b8b531a650c9a45c359b41e6d3e9c3c8e9796022387ceb4d73f8d8c5cd1e0cd2",
+    "rc_heap_d23626c1a00ab6fa8be1ca09.py": "237945e53aa84ec356227b6b0f969826b52e01ac6a9aae0d5693fed220db4e01",
+    "rc_heap_f338bb5fde6d1517bff40a73.py": "c4d8aca1d16a3668b42de9b540e76eb9ab50b8dd4a8abeaacc64a0e25b6a5971",
+    "rc_heap_f37b5547959aa7d04e8e663a.py": "97da910cc6a04536a947c0ba4fa4037c8d87cf8ac7045c4ca59da4ac0311aef9",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

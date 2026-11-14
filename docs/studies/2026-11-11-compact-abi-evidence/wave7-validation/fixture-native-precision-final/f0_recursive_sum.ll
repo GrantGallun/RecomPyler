@@ -1,0 +1,401 @@
+; ModuleID = 'f0_recursive_sum_borrowed'
+source_filename = "<string>"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-pc-windows-msvc"
+
+@.const.f0_recursive_sum_borrowed = internal constant [26 x i8] c"f0_recursive_sum_borrowed\00"
+@_ZN08NumbaEnv26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd = common local_unnamed_addr global ptr null
+@".const.missing Environment: _ZN08NumbaEnv26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd" = internal constant [185 x i8] c"missing Environment: _ZN08NumbaEnv26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd\00"
+@".const.can't unbox float64* type" = internal constant [26 x i8] c"can't unbox float64* type\00"
+@".const.Error creating Python tuple from runtime exception arguments" = internal constant [61 x i8] c"Error creating Python tuple from runtime exception arguments\00"
+@".const.unknown error when calling native function" = internal constant [43 x i8] c"unknown error when calling native function\00"
+@".const.<numba.core.cpu.CPUContext>" = internal constant [28 x i8] c"<numba.core.cpu.CPUContext>\00"
+@_ZN08NumbaEnv26recompyler_generated_heap025f1_recursive_sum_borrowedB3v17B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd = common local_unnamed_addr global ptr null
+@PyExc_StopIteration = external global i8
+@PyExc_SystemError = external global i8
+@_ZN08NumbaEnv5numba2np8arrayobj11impl_carray12_3clocals_3e4implB3v13B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dE10float64_2ax27omitted_28default_3dNone_29 = common local_unnamed_addr global ptr null
+@_ZN08NumbaEnv5numba2np8arrayobj11impl_carray12_3clocals_3e4implB3v14B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dE8int64_2ax27omitted_28default_3dNone_29 = common local_unnamed_addr global ptr null
+@_ZN08NumbaEnv5numba2np8arrayobj11impl_carray12_3clocals_3e4implB3v15B54c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAw4hWqFpgsIBZmgA_3dE8uint8_2ax27omitted_28default_3dNone_29 = common local_unnamed_addr global ptr null
+@_ZN08NumbaEnv26recompyler_generated_heap05sub_iB3v16B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIhLi1E1C7mutable7alignedEx23Literal_5bint_5d_281_29 = common local_unnamed_addr global ptr null
+@_ZN08NumbaEnv26recompyler_generated_heap05sub_iB3v18B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIhLi1E1C7mutable7alignedEx23Literal_5bint_5d_282_29 = common local_unnamed_addr global ptr null
+@PyExc_TypeError = external global i8
+@PyExc_RuntimeError = external global i8
+
+define range(i32 -1, -2) i32 @_ZN26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr noalias writeonly captures(none) %retptr, ptr noalias writeonly captures(none) %excinfo, ptr %arg._heap_F, ptr %arg._heap_I, ptr %arg._heap_top, ptr %arg._heap_st, i64 %arg._heap_len, i64 %arg.v_depth, double %arg.v_value) local_unnamed_addr {
+B0.endif.endif.endif.endif:
+  %.535 = alloca double, align 8
+  %excinfo.6 = alloca ptr, align 8
+  %.1001 = alloca double, align 8
+  %excinfo.8 = alloca ptr, align 8
+  %.192 = icmp slt i64 %arg.v_depth, 1
+  br i1 %.192, label %B108, label %B114.endif
+
+common.ret:                                       ; preds = %B632.if.if, %B280.if.if, %B776, %B770, %B606, %B518, %B418, %B254, %B166, %B108
+  %common.ret.op = phi i32 [ 0, %B108 ], [ 0, %B166 ], [ 0, %B254 ], [ 0, %B418 ], [ 0, %B518 ], [ 0, %B606 ], [ 0, %B770 ], [ 0, %B776 ], [ %.1005, %B632.if.if ], [ %.539, %B280.if.if ]
+  ret i32 %common.ret.op
+
+B108:                                             ; preds = %B0.endif.endif.endif.endif
+  store double %arg.v_value, ptr %retptr, align 8
+  br label %common.ret
+
+B166:                                             ; preds = %B114.endif
+  store double 0.000000e+00, ptr %retptr, align 8
+  br label %common.ret
+
+B172:                                             ; preds = %B114.endif
+  %.341 = getelementptr i8, ptr %arg._heap_top, i64 8
+  %.342 = load i64, ptr %.341, align 8
+  %.343 = add nsw i64 %.342, 1
+  store i64 %.343, ptr %.341, align 8
+  %.432 = getelementptr i8, ptr %arg._heap_top, i64 16
+  %.433 = load i64, ptr %.432, align 8
+  %.434.not = icmp slt i64 %.342, %.433
+  br i1 %.434.not, label %B280, label %B254
+
+B254:                                             ; preds = %B172
+  store i8 1, ptr %arg._heap_st, align 1
+  %.516 = getelementptr i8, ptr %arg._heap_top, i64 24
+  store i64 4, ptr %.516, align 8
+  store double 0.000000e+00, ptr %retptr, align 8
+  br label %common.ret
+
+B280:                                             ; preds = %B172
+  %.539 = call i32 @_ZN26recompyler_generated_heap025f1_recursive_sum_borrowedB3v17B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr nonnull %.535, ptr nonnull %excinfo.6, ptr %arg._heap_F, ptr %arg._heap_I, ptr nonnull %arg._heap_top, ptr nonnull %arg._heap_st, i64 %arg._heap_len, i64 %.20.i, double %arg.v_value)
+  %.549 = load double, ptr %.535, align 8
+  %cond = icmp eq i32 %.539, 0
+  br i1 %cond, label %B280.endif, label %B280.if.if, !prof !0
+
+B418:                                             ; preds = %B280.endif
+  store double 0.000000e+00, ptr %retptr, align 8
+  br label %common.ret
+
+B424:                                             ; preds = %B280.endif
+  %sunkaddr = getelementptr i8, ptr %arg._heap_top, i64 8
+  %.651 = load i64, ptr %sunkaddr, align 8
+  %.652 = add nsw i64 %.651, -1
+  store i64 %.652, ptr %sunkaddr, align 8
+  %.746.pr = load i8, ptr %arg._heap_st, align 1
+  %.20.i2 = add nsw i64 %arg.v_depth, -2
+  %.747.not = icmp eq i8 %.746.pr, 0
+  br i1 %.747.not, label %B524, label %B518
+
+B518:                                             ; preds = %B424
+  store double 0.000000e+00, ptr %retptr, align 8
+  br label %common.ret
+
+B524:                                             ; preds = %B424
+  %sunkaddr38 = getelementptr i8, ptr %arg._heap_top, i64 8
+  store i64 %.651, ptr %sunkaddr38, align 8
+  %sunkaddr39 = getelementptr i8, ptr %arg._heap_top, i64 16
+  %.897 = load i64, ptr %sunkaddr39, align 8
+  %.898.not.not = icmp sgt i64 %.651, %.897
+  br i1 %.898.not.not, label %B606, label %B632
+
+B606:                                             ; preds = %B524
+  store i8 1, ptr %arg._heap_st, align 1
+  %.980 = getelementptr i8, ptr %arg._heap_top, i64 24
+  store i64 4, ptr %.980, align 8
+  store double 0.000000e+00, ptr %retptr, align 8
+  br label %common.ret
+
+B632:                                             ; preds = %B524
+  %.1005 = call i32 @_ZN26recompyler_generated_heap025f1_recursive_sum_borrowedB3v17B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr nonnull %.1001, ptr nonnull %excinfo.8, ptr %arg._heap_F, ptr %arg._heap_I, ptr nonnull %arg._heap_top, ptr nonnull %arg._heap_st, i64 %arg._heap_len, i64 %.20.i2, double %arg.v_value)
+  %.1015 = load double, ptr %.1001, align 8
+  %cond37 = icmp eq i32 %.1005, 0
+  br i1 %cond37, label %B632.endif, label %B632.if.if, !prof !0
+
+B770:                                             ; preds = %B632.endif
+  store double 0.000000e+00, ptr %retptr, align 8
+  br label %common.ret
+
+B776:                                             ; preds = %B632.endif
+  %sunkaddr40 = getelementptr i8, ptr %arg._heap_top, i64 8
+  %.1115 = load i64, ptr %sunkaddr40, align 8
+  %.1116 = add nsw i64 %.1115, -1
+  store i64 %.1116, ptr %sunkaddr40, align 8
+  %.1154 = fadd double %.549, %.1015
+  store double %.1154, ptr %retptr, align 8
+  br label %common.ret
+
+B114.endif:                                       ; preds = %B0.endif.endif.endif.endif
+  %.20.i = add nsw i64 %arg.v_depth, -1
+  %.282 = load i8, ptr %arg._heap_st, align 1
+  %.283.not = icmp eq i8 %.282, 0
+  br i1 %.283.not, label %B172, label %B166
+
+B280.endif:                                       ; preds = %B280
+  %.591 = load i8, ptr %arg._heap_st, align 1
+  %.592.not = icmp eq i8 %.591, 0
+  br i1 %.592.not, label %B424, label %B418
+
+B280.if.if:                                       ; preds = %B280
+  store ptr null, ptr %excinfo, align 8
+  br label %common.ret
+
+B632.endif:                                       ; preds = %B632
+  %.1067 = load i8, ptr %arg._heap_st, align 1
+  %.1073.not = icmp eq i8 %.1067, 0
+  br i1 %.1073.not, label %B776, label %B770
+
+B632.if.if:                                       ; preds = %B632
+  store ptr null, ptr %excinfo, align 8
+  br label %common.ret
+}
+
+define noalias noundef ptr @_ZN7cpython26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr readnone captures(none) %py_closure, ptr %py_args, ptr readnone captures(none) %py_kws) local_unnamed_addr {
+entry:
+  %.5 = alloca ptr, align 8
+  %.6 = alloca ptr, align 8
+  %.7 = alloca ptr, align 8
+  %.8 = alloca ptr, align 8
+  %.9 = alloca ptr, align 8
+  %.10 = alloca ptr, align 8
+  %.11 = alloca ptr, align 8
+  %.12 = call i32 (ptr, ptr, i64, i64, ...) @PyArg_UnpackTuple(ptr %py_args, ptr nonnull @.const.f0_recursive_sum_borrowed, i64 7, i64 7, ptr nonnull %.5, ptr nonnull %.6, ptr nonnull %.7, ptr nonnull %.8, ptr nonnull %.9, ptr nonnull %.10, ptr nonnull %.11)
+  %.13 = icmp eq i32 %.12, 0
+  br i1 %.13, label %common.ret, label %entry.endif, !prof !1
+
+common.ret:                                       ; preds = %entry, %entry.endif.if, %entry.endif.endif.if
+  ret ptr null
+
+entry.endif:                                      ; preds = %entry
+  %.17 = load ptr, ptr @_ZN08NumbaEnv26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd, align 8
+  %.20 = icmp eq ptr %.17, null
+  br i1 %.20, label %entry.endif.if, label %entry.endif.endif.if, !prof !1
+
+entry.endif.if:                                   ; preds = %entry.endif
+  call void @PyErr_SetString(ptr nonnull @PyExc_RuntimeError, ptr nonnull @".const.missing Environment: _ZN08NumbaEnv26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd")
+  br label %common.ret
+
+entry.endif.endif.if:                             ; preds = %entry.endif
+  call void @PyErr_SetString(ptr nonnull @PyExc_TypeError, ptr nonnull @".const.can't unbox float64* type")
+  br label %common.ret
+}
+
+declare i32 @PyArg_UnpackTuple(ptr, ptr, i64, i64, ...) local_unnamed_addr
+
+declare void @PyErr_SetString(ptr, ptr) local_unnamed_addr
+
+define double @cfunc._ZN26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr %.1, ptr %.2, ptr %.3, ptr %.4, i64 %.5, i64 %.6, double %.7) local_unnamed_addr {
+entry:
+  %.9 = alloca double, align 8
+  store double 0.000000e+00, ptr %.9, align 8
+  %excinfo = alloca ptr, align 8
+  store ptr null, ptr %excinfo, align 8
+  %.13 = call i32 @_ZN26recompyler_generated_heap025f0_recursive_sum_borrowedB3v12B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr nonnull %.9, ptr nonnull %excinfo, ptr %.1, ptr %.2, ptr %.3, ptr %.4, i64 %.5, i64 %.6, double %.7) #0
+  %.14 = load ptr, ptr %excinfo, align 8
+  %.23 = load double, ptr %.9, align 8
+  %.25 = alloca i32, align 4
+  store i32 0, ptr %.25, align 4
+  %cond = icmp eq i32 %.13, 0
+  br i1 %cond, label %common.ret, label %entry.if, !prof !0
+
+entry.if:                                         ; preds = %entry
+  %.21 = icmp sgt i32 %.13, 0
+  call void @numba_gil_ensure(ptr nonnull %.25)
+  br i1 %.21, label %entry.if.if, label %entry.if.endif
+
+common.ret:                                       ; preds = %entry, %.28, %entry.if.if.if.if
+  %common.ret.op = phi double [ 0.000000e+00, %entry.if.if.if.if ], [ %.23, %.28 ], [ %.23, %entry ]
+  ret double %common.ret.op
+
+.28:                                              ; preds = %entry.if.endif, %entry.if.if.endif, %entry.if.if.endif.if, %entry.if.endif.endif.endif, %entry.if.endif.if
+  %.76 = call ptr @PyUnicode_FromString(ptr nonnull @".const.<numba.core.cpu.CPUContext>")
+  call void @PyErr_WriteUnraisable(ptr %.76)
+  call void @Py_DecRef(ptr %.76)
+  call void @numba_gil_release(ptr nonnull %.25)
+  br label %common.ret
+
+entry.if.if:                                      ; preds = %entry.if
+  call void @PyErr_Clear()
+  %.31 = load { ptr, i32, ptr, ptr, i32 }, ptr %.14, align 8
+  %.32 = extractvalue { ptr, i32, ptr, ptr, i32 } %.31, 4
+  %.33 = icmp sgt i32 %.32, 0
+  %.36 = extractvalue { ptr, i32, ptr, ptr, i32 } %.31, 0
+  %.38 = extractvalue { ptr, i32, ptr, ptr, i32 } %.31, 1
+  br i1 %.33, label %entry.if.if.if, label %entry.if.if.else
+
+entry.if.endif:                                   ; preds = %entry.if
+  switch i32 %.13, label %entry.if.endif.endif.endif [
+    i32 -3, label %entry.if.endif.if
+    i32 -1, label %.28
+  ]
+
+entry.if.if.if:                                   ; preds = %entry.if.if
+  %.39 = sext i32 %.38 to i64
+  %.40 = call ptr @PyBytes_FromStringAndSize(ptr %.36, i64 %.39)
+  %.41 = load { ptr, i32, ptr, ptr, i32 }, ptr %.14, align 8
+  %.42 = extractvalue { ptr, i32, ptr, ptr, i32 } %.41, 2
+  %.44 = extractvalue { ptr, i32, ptr, ptr, i32 } %.41, 3
+  %.46 = call ptr %.44(ptr %.42)
+  %.47 = icmp eq ptr %.46, null
+  br i1 %.47, label %entry.if.if.if.if, label %entry.if.if.if.endif, !prof !1
+
+entry.if.if.else:                                 ; preds = %entry.if.if
+  %.60 = extractvalue { ptr, i32, ptr, ptr, i32 } %.31, 2
+  %.61 = call ptr @numba_unpickle(ptr %.36, i32 %.38, ptr %.60)
+  br label %entry.if.if.endif
+
+entry.if.if.endif:                                ; preds = %entry.if.if.if.endif, %entry.if.if.else
+  %.63 = phi ptr [ %.51, %entry.if.if.if.endif ], [ %.61, %entry.if.if.else ]
+  %.64.not = icmp eq ptr %.63, null
+  br i1 %.64.not, label %.28, label %entry.if.if.endif.if, !prof !1
+
+entry.if.if.if.if:                                ; preds = %entry.if.if.if
+  call void @PyErr_SetString(ptr nonnull @PyExc_RuntimeError, ptr nonnull @".const.Error creating Python tuple from runtime exception arguments")
+  br label %common.ret
+
+entry.if.if.if.endif:                             ; preds = %entry.if.if.if
+  %.51 = call ptr @numba_runtime_build_excinfo_struct(ptr %.40, ptr nonnull %.46)
+  call void @NRT_Free(ptr nonnull %.14)
+  br label %entry.if.if.endif
+
+entry.if.if.endif.if:                             ; preds = %entry.if.if.endif
+  call void @numba_do_raise(ptr nonnull %.63)
+  br label %.28
+
+entry.if.endif.if:                                ; preds = %entry.if.endif
+  call void @PyErr_SetNone(ptr nonnull @PyExc_StopIteration)
+  br label %.28
+
+entry.if.endif.endif.endif:                       ; preds = %entry.if.endif
+  call void @PyErr_SetString(ptr nonnull @PyExc_SystemError, ptr nonnull @".const.unknown error when calling native function")
+  br label %.28
+}
+
+declare void @numba_gil_ensure(ptr) local_unnamed_addr
+
+declare ptr @PyUnicode_FromString(ptr) local_unnamed_addr
+
+declare void @PyErr_WriteUnraisable(ptr) local_unnamed_addr
+
+declare void @Py_DecRef(ptr) local_unnamed_addr
+
+declare void @numba_gil_release(ptr) local_unnamed_addr
+
+declare void @PyErr_Clear() local_unnamed_addr
+
+declare ptr @PyBytes_FromStringAndSize(ptr, i64) local_unnamed_addr
+
+declare ptr @numba_unpickle(ptr, i32, ptr) local_unnamed_addr
+
+declare ptr @numba_runtime_build_excinfo_struct(ptr, ptr) local_unnamed_addr
+
+declare void @NRT_Free(ptr) local_unnamed_addr
+
+declare void @numba_do_raise(ptr) local_unnamed_addr
+
+declare void @PyErr_SetNone(ptr) local_unnamed_addr
+
+; Function Attrs: noinline
+define linkonce_odr void @NRT_decref(ptr %.1) local_unnamed_addr #0 {
+.3:
+  %.4 = icmp eq ptr %.1, null
+  br i1 %.4, label %common.ret, label %.3.endif, !prof !1
+
+common.ret:                                       ; preds = %.3, %.3.endif
+  ret void
+
+.3.endif:                                         ; preds = %.3
+  fence release
+  %0 = tail call i8 @llvm.x86.atomic.sub.cc.i64(ptr nonnull %.1, i64 1, i32 4)
+  %1 = trunc i8 %0 to i1
+  br i1 %1, label %.3.endif.if, label %common.ret, !prof !1
+
+.3.endif.if:                                      ; preds = %.3.endif
+  fence acquire
+  tail call void @NRT_MemInfo_call_dtor(ptr nonnull %.1)
+  ret void
+}
+
+; Function Attrs: nounwind
+declare i8 @llvm.x86.atomic.sub.cc.i64(ptr, i64, i32 immarg) #1
+
+declare void @NRT_MemInfo_call_dtor(ptr) local_unnamed_addr
+
+define linkonce_odr noundef range(i32 -1, -2) i32 @_ZN26recompyler_generated_heap025f1_recursive_sum_borrowedB3v17B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr noalias writeonly captures(none) initializes((0, 8)) %retptr.2, ptr noalias readnone captures(none) %excinfo.9, ptr %arg._heap_F.2, ptr %arg._heap_I.2, ptr %arg._heap_top.2, ptr %arg._heap_st.2, i64 %arg._heap_len.2, i64 %arg.v_depth.2, double %arg.v_value.2) local_unnamed_addr {
+B0.endif.endif.endif.endif:
+  %.534 = alloca double, align 8
+  %.999 = alloca double, align 8
+  %.192 = icmp slt i64 %arg.v_depth.2, 1
+  br i1 %.192, label %common.ret, label %B114.endif
+
+common.ret:                                       ; preds = %B632.endif, %B280.endif, %B114.endif, %B776, %B606, %B424, %B254, %B0.endif.endif.endif.endif
+  %.1152.sink = phi double [ %.1152, %B776 ], [ 0.000000e+00, %B424 ], [ 0.000000e+00, %B606 ], [ 0.000000e+00, %B280.endif ], [ 0.000000e+00, %B114.endif ], [ 0.000000e+00, %B254 ], [ %arg.v_value.2, %B0.endif.endif.endif.endif ], [ 0.000000e+00, %B632.endif ]
+  store double %.1152.sink, ptr %retptr.2, align 8
+  ret i32 0
+
+B172:                                             ; preds = %B114.endif
+  %.341 = getelementptr i8, ptr %arg._heap_top.2, i64 8
+  %.342 = load i64, ptr %.341, align 8
+  %.343 = add nsw i64 %.342, 1
+  store i64 %.343, ptr %.341, align 8
+  %.432 = getelementptr i8, ptr %arg._heap_top.2, i64 16
+  %.433 = load i64, ptr %.432, align 8
+  %.434.not = icmp slt i64 %.342, %.433
+  br i1 %.434.not, label %B280.endif, label %B254
+
+B254:                                             ; preds = %B172
+  store i8 1, ptr %arg._heap_st.2, align 1
+  %.516 = getelementptr i8, ptr %arg._heap_top.2, i64 24
+  store i64 1000004, ptr %.516, align 8
+  br label %common.ret
+
+B424:                                             ; preds = %B280.endif
+  %sunkaddr = getelementptr i8, ptr %arg._heap_top.2, i64 8
+  %.650 = load i64, ptr %sunkaddr, align 8
+  %.651 = add nsw i64 %.650, -1
+  store i64 %.651, ptr %sunkaddr, align 8
+  %.745.pr = load i8, ptr %arg._heap_st.2, align 1
+  %.20.i2 = add nsw i64 %arg.v_depth.2, -2
+  %.746.not = icmp eq i8 %.745.pr, 0
+  br i1 %.746.not, label %B524, label %common.ret
+
+B524:                                             ; preds = %B424
+  %sunkaddr1 = getelementptr i8, ptr %arg._heap_top.2, i64 8
+  store i64 %.650, ptr %sunkaddr1, align 8
+  %sunkaddr2 = getelementptr i8, ptr %arg._heap_top.2, i64 16
+  %.896 = load i64, ptr %sunkaddr2, align 8
+  %.897.not.not = icmp sgt i64 %.650, %.896
+  br i1 %.897.not.not, label %B606, label %B632.endif
+
+B606:                                             ; preds = %B524
+  store i8 1, ptr %arg._heap_st.2, align 1
+  %.979 = getelementptr i8, ptr %arg._heap_top.2, i64 24
+  store i64 1000004, ptr %.979, align 8
+  br label %common.ret
+
+B776:                                             ; preds = %B632.endif
+  %.1013 = load double, ptr %.999, align 8
+  %sunkaddr3 = getelementptr i8, ptr %arg._heap_top.2, i64 8
+  %.1113 = load i64, ptr %sunkaddr3, align 8
+  %.1114 = add nsw i64 %.1113, -1
+  store i64 %.1114, ptr %sunkaddr3, align 8
+  %.1152 = fadd double %.548, %.1013
+  br label %common.ret
+
+B114.endif:                                       ; preds = %B0.endif.endif.endif.endif
+  %.20.i = add nsw i64 %arg.v_depth.2, -1
+  %.282 = load i8, ptr %arg._heap_st.2, align 1
+  %.283.not = icmp eq i8 %.282, 0
+  br i1 %.283.not, label %B172, label %common.ret
+
+B280.endif:                                       ; preds = %B172
+  %.538 = call i32 @_ZN26recompyler_generated_heap025f1_recursive_sum_borrowedB3v17B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr nonnull %.534, ptr nonnull poison, ptr %arg._heap_F.2, ptr %arg._heap_I.2, ptr nonnull %arg._heap_top.2, ptr nonnull %arg._heap_st.2, i64 %arg._heap_len.2, i64 %.20.i, double %arg.v_value.2)
+  %.548 = load double, ptr %.534, align 8
+  %.590 = load i8, ptr %arg._heap_st.2, align 1
+  %.591.not = icmp eq i8 %.590, 0
+  br i1 %.591.not, label %B424, label %common.ret
+
+B632.endif:                                       ; preds = %B524
+  %.1003 = call i32 @_ZN26recompyler_generated_heap025f1_recursive_sum_borrowedB3v17B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE10float64_2a8int64_2a8int64_2a8uint8_2axxd(ptr nonnull %.999, ptr nonnull poison, ptr %arg._heap_F.2, ptr %arg._heap_I.2, ptr nonnull %arg._heap_top.2, ptr nonnull %arg._heap_st.2, i64 %arg._heap_len.2, i64 %.20.i2, double %arg.v_value.2)
+  %.1065 = load i8, ptr %arg._heap_st.2, align 1
+  %.1071.not = icmp eq i8 %.1065, 0
+  br i1 %.1071.not, label %B776, label %common.ret
+}
+
+attributes #0 = { noinline }
+attributes #1 = { nounwind }
+
+!0 = !{!"branch_weights", i32 49, i32 1}
+!1 = !{!"branch_weights", i32 1, i32 99}

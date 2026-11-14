@@ -1,0 +1,12 @@
+--- D:\Code\Datathon\recompyler-codex-20261111\wave5-instructions\baseline-force-mass.asm
++++ D:\Code\Datathon\recompyler-codex-20261111\wave5-instructions\candidate-force-mass.asm
+@@ -1,7 +1,3 @@
+-"# Existing measured PE, baseline force-mass: [0x1800040c7, 0x1800040db)\r\n"
++"# Existing measured PE, candidate force-mass: [0x180003c9f, 0x180003ca6)\r\n"
+ "# Source/call-site inferred range; nearest-export labels are not helper symbols.\r\n"
+-"1800040c7:     \txorl\t%eax, %eax\r\n"
+-"1800040c9:     \tcmpq\t$-0x9, %rsi\r\n"
+-"1800040cd:     \tcmovlq\t%rdi, %rax\r\n"
+-"1800040d1:     \tleaq\t(%r12,%rsi,8), %rdx\r\n"
+-"1800040d5:     \tmovsd\t0x48(%rdx,%rax,8), %xmm0\r\n"
++"180003c9f:     \tmovsd\t0x48(%rbx,%r13,8), %xmm0\r\n"

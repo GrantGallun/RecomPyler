@@ -1,0 +1,575 @@
+.FFFF.                                                               [100%]
+================================== FAILURES ===================================
+_ ContractTests.test_real_empty_defaults_remain_present_in_python_binding (mode='checked') _
+
+self = <test_experimental_numeric.ContractTests testMethod=test_real_empty_defaults_remain_present_in_python_binding>
+
+    def test_real_empty_defaults_remain_present_in_python_binding(self):
+        contract = self.contract(x=(-10, 10), y=(-10, 10), z=(-10, 10))
+        for mode in ("checked", "unchecked-int64"):
+            with self.subTest(mode=mode):
+>               region = self.api.lift_numeric(trailing_empty_defaults, mode=mode, contract=contract)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_experimental_numeric.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\experimental.py:465: in lift_numeric
+    return NumericRegion(fn, _policy(fn, mode, contract))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\experimental.py:321: in _policy
+    signature = _binding_signature(fn)
+                ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\experimental.py:141: in _binding_signature
+    return inspect.Signature(parameters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <[AttributeError("'inspect.Signature' object has no attribute '_parameters'") raised in repr()] Signature object at 0x201dbbecdf0>
+parameters = [<Parameter "x=1">, <Parameter "y">, <Parameter "z">]
+return_annotation = <class 'inspect._empty'>, __validate_parameters__ = True
+
+    def __init__(self, parameters=None, *, return_annotation=_empty,
+                 __validate_parameters__=True):
+        """Constructs Signature from the given list of Parameter
+        objects and 'return_annotation'.  All arguments are optional.
+        """
+    
+        if parameters is None:
+            params = OrderedDict()
+        else:
+            if __validate_parameters__:
+                params = OrderedDict()
+                top_kind = _POSITIONAL_ONLY
+                seen_default = False
+                seen_var_parameters = set()
+    
+                for param in parameters:
+                    kind = param.kind
+                    name = param.name
+    
+                    if kind in (_VAR_POSITIONAL, _VAR_KEYWORD):
+                        if kind in seen_var_parameters:
+                            msg = f'more than one {kind.description} parameter'
+                            raise ValueError(msg)
+    
+                        seen_var_parameters.add(kind)
+    
+                    if kind < top_kind:
+                        msg = (
+                            'wrong parameter order: {} parameter before {} '
+                            'parameter'
+                        )
+                        msg = msg.format(top_kind.description,
+                                         kind.description)
+                        raise ValueError(msg)
+                    elif kind > top_kind:
+                        top_kind = kind
+    
+                    if kind in (_POSITIONAL_ONLY, _POSITIONAL_OR_KEYWORD):
+                        if param.default is _empty:
+                            if seen_default:
+                                # No default for this parameter, but the
+                                # previous parameter of had a default
+                                msg = 'non-default argument follows default ' \
+                                      'argument'
+>                               raise ValueError(msg)
+E                               ValueError: non-default argument follows default argument
+
+C:\Python314\Lib\inspect.py:3017: ValueError
+_ ContractTests.test_real_empty_defaults_remain_present_in_python_binding (mode='unchecked-int64') _
+
+self = <test_experimental_numeric.ContractTests testMethod=test_real_empty_defaults_remain_present_in_python_binding>
+
+    def test_real_empty_defaults_remain_present_in_python_binding(self):
+        contract = self.contract(x=(-10, 10), y=(-10, 10), z=(-10, 10))
+        for mode in ("checked", "unchecked-int64"):
+            with self.subTest(mode=mode):
+>               region = self.api.lift_numeric(trailing_empty_defaults, mode=mode, contract=contract)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_experimental_numeric.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\experimental.py:465: in lift_numeric
+    return NumericRegion(fn, _policy(fn, mode, contract))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\experimental.py:321: in _policy
+    signature = _binding_signature(fn)
+                ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\experimental.py:141: in _binding_signature
+    return inspect.Signature(parameters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <[AttributeError("'inspect.Signature' object has no attribute '_parameters'") raised in repr()] Signature object at 0x201dbbecdf0>
+parameters = [<Parameter "x=1">, <Parameter "y">, <Parameter "z">]
+return_annotation = <class 'inspect._empty'>, __validate_parameters__ = True
+
+    def __init__(self, parameters=None, *, return_annotation=_empty,
+                 __validate_parameters__=True):
+        """Constructs Signature from the given list of Parameter
+        objects and 'return_annotation'.  All arguments are optional.
+        """
+    
+        if parameters is None:
+            params = OrderedDict()
+        else:
+            if __validate_parameters__:
+                params = OrderedDict()
+                top_kind = _POSITIONAL_ONLY
+                seen_default = False
+                seen_var_parameters = set()
+    
+                for param in parameters:
+                    kind = param.kind
+                    name = param.name
+    
+                    if kind in (_VAR_POSITIONAL, _VAR_KEYWORD):
+                        if kind in seen_var_parameters:
+                            msg = f'more than one {kind.description} parameter'
+                            raise ValueError(msg)
+    
+                        seen_var_parameters.add(kind)
+    
+                    if kind < top_kind:
+                        msg = (
+                            'wrong parameter order: {} parameter before {} '
+                            'parameter'
+                        )
+                        msg = msg.format(top_kind.description,
+                                         kind.description)
+                        raise ValueError(msg)
+                    elif kind > top_kind:
+                        top_kind = kind
+    
+                    if kind in (_POSITIONAL_ONLY, _POSITIONAL_OR_KEYWORD):
+                        if param.default is _empty:
+                            if seen_default:
+                                # No default for this parameter, but the
+                                # previous parameter of had a default
+                                msg = 'non-default argument follows default ' \
+                                      'argument'
+>                               raise ValueError(msg)
+E                               ValueError: non-default argument follows default argument
+
+C:\Python314\Lib\inspect.py:3017: ValueError
+___ ContractTests.test_unchecked_binding_failure_never_calls_original_body ____
+
+self = <test_experimental_numeric.ContractTests testMethod=test_unchecked_binding_failure_never_calls_original_body>
+
+    def test_unchecked_binding_failure_never_calls_original_body(self):
+        region = self.api.lift_numeric(real_empty_default, mode="unchecked-int64",
+                                       contract=self.contract(x=(-10, 10)))
+        original_calls = []
+        def observe(frame, event, arg):
+            if event == "call" and frame.f_code is real_empty_default.__code__:
+                original_calls.append(event)
+        previous = sys.getprofile()
+        sys.setprofile(observe)
+        try:
+            with self.assertRaises(self.api.NumericContractError):
+                region()
+        finally:
+            sys.setprofile(previous)
+>       self.assertEqual(original_calls, [])
+E       AssertionError: Lists differ: ['call'] != []
+E       
+E       First list contains 1 additional elements.
+E       First extra element 0:
+E       'call'
+E       
+E       - ['call']
+E       + []
+
+tests\test_experimental_numeric.py:161: AssertionError
+_ ContractTests.test_unchecked_invalid_arguments_raise_contract_error_without_python_replay _
+
+    def attempt(self, args, kwargs=None):
+        if (self.original.__code__ is not self.policy.code
+                or "__signature__" in vars(self.original) or "__wrapped__" in vars(self.original)):
+            return self._reject("experimental function code/binding metadata changed")
+        # Re-read defaults each call, including in-place __kwdefaults__ edits.
+        try:
+>           bound = _binding_signature(self.original).bind(*args, **(kwargs or {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src\recompyler\experimental.py:408: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\inspect.py:3236: in bind
+    return self._bind(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Signature (x)>, args = (1,), kwargs = {'unknown': 2}, partial = False
+
+    def _bind(self, args, kwargs, *, partial=False):
+        """Private method. Don't use directly."""
+    
+        arguments = {}
+    
+        parameters = iter(self.parameters.values())
+        parameters_ex = ()
+        arg_vals = iter(args)
+    
+        pos_only_param_in_kwargs = []
+    
+        while True:
+            # Let's iterate through the positional arguments and corresponding
+            # parameters
+            try:
+                arg_val = next(arg_vals)
+            except StopIteration:
+                # No more positional arguments
+                try:
+                    param = next(parameters)
+                except StopIteration:
+                    # No more parameters. That's it. Just need to check that
+                    # we have no `kwargs` after this while loop
+                    break
+                else:
+                    if param.kind == _VAR_POSITIONAL:
+                        # That's OK, just empty *args.  Let's start parsing
+                        # kwargs
+                        break
+                    elif param.name in kwargs:
+                        if param.kind == _POSITIONAL_ONLY:
+                            if param.default is _empty:
+                                msg = f'missing a required positional-only argument: {param.name!r}'
+                                raise TypeError(msg)
+                            # Raise a TypeError once we are sure there is no
+                            # **kwargs param later.
+                            pos_only_param_in_kwargs.append(param)
+                            continue
+                        parameters_ex = (param,)
+                        break
+                    elif (param.kind == _VAR_KEYWORD or
+                                                param.default is not _empty):
+                        # That's fine too - we have a default value for this
+                        # parameter.  So, lets start parsing `kwargs`, starting
+                        # with the current parameter
+                        parameters_ex = (param,)
+                        break
+                    else:
+                        # No default, not VAR_KEYWORD, not VAR_POSITIONAL,
+                        # not in `kwargs`
+                        if partial:
+                            parameters_ex = (param,)
+                            break
+                        else:
+                            if param.kind == _KEYWORD_ONLY:
+                                argtype = ' keyword-only'
+                            else:
+                                argtype = ''
+                            msg = 'missing a required{argtype} argument: {arg!r}'
+                            msg = msg.format(arg=param.name, argtype=argtype)
+                            raise TypeError(msg) from None
+            else:
+                # We have a positional argument to process
+                try:
+                    param = next(parameters)
+                except StopIteration:
+                    raise TypeError('too many positional arguments') from None
+                else:
+                    if param.kind in (_VAR_KEYWORD, _KEYWORD_ONLY):
+                        # Looks like we have no parameter for this positional
+                        # argument
+                        raise TypeError(
+                            'too many positional arguments') from None
+    
+                    if param.kind == _VAR_POSITIONAL:
+                        # We have an '*args'-like argument, let's fill it with
+                        # all positional arguments we have left and move on to
+                        # the next phase
+                        values = [arg_val]
+                        values.extend(arg_vals)
+                        arguments[param.name] = tuple(values)
+                        break
+    
+                    if param.name in kwargs and param.kind != _POSITIONAL_ONLY:
+                        raise TypeError(
+                            'multiple values for argument {arg!r}'.format(
+                                arg=param.name)) from None
+    
+                    arguments[param.name] = arg_val
+    
+        # Now, we iterate through the remaining parameters to process
+        # keyword arguments
+        kwargs_param = None
+        for param in itertools.chain(parameters_ex, parameters):
+            if param.kind == _VAR_KEYWORD:
+                # Memorize that we have a '**kwargs'-like parameter
+                kwargs_param = param
+                continue
+    
+            if param.kind == _VAR_POSITIONAL:
+                # Named arguments don't refer to '*args'-like parameters.
+                # We only arrive here if the positional arguments ended
+                # before reaching the last parameter before *args.
+                continue
+    
+            param_name = param.name
+            try:
+                arg_val = kwargs.pop(param_name)
+            except KeyError:
+                # We have no value for this parameter.  It's fine though,
+                # if it has a default value, or it is an '*args'-like
+                # parameter, left alone by the processing of positional
+                # arguments.
+                if (not partial and param.kind != _VAR_POSITIONAL and
+                                                    param.default is _empty):
+                    raise TypeError('missing a required argument: {arg!r}'. \
+                                    format(arg=param_name)) from None
+    
+            else:
+                arguments[param_name] = arg_val
+    
+        if kwargs:
+            if kwargs_param is not None:
+                # Process our '**kwargs'-like parameter
+                arguments[kwargs_param.name] = kwargs
+            elif pos_only_param_in_kwargs:
+                raise TypeError(
+                    'got some positional-only arguments passed as '
+                    'keyword arguments: {arg!r}'.format(
+                        arg=', '.join(
+                            param.name
+                            for param in pos_only_param_in_kwargs
+                        ),
+                    ),
+                )
+            else:
+>               raise TypeError(
+                    'got an unexpected keyword argument {arg!r}'.format(
+                        arg=next(iter(kwargs))))
+E               TypeError: got an unexpected keyword argument 'unknown'
+
+C:\Python314\Lib\inspect.py:3225: TypeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_experimental_numeric.ContractTests testMethod=test_unchecked_invalid_arguments_raise_contract_error_without_python_replay>
+
+    def test_unchecked_invalid_arguments_raise_contract_error_without_python_replay(self):
+        region = self.api.lift_numeric(real_empty_default, mode="unchecked-int64",
+                                       contract=self.contract(x=(-10, 10)))
+        with self.assertRaises(self.api.NumericContractError):
+>           region(1, unknown=2)
+
+tests\test_experimental_numeric.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\experimental.py:446: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def attempt(self, args, kwargs=None):
+        if (self.original.__code__ is not self.policy.code
+                or "__signature__" in vars(self.original) or "__wrapped__" in vars(self.original)):
+            return self._reject("experimental function code/binding metadata changed")
+        # Re-read defaults each call, including in-place __kwdefaults__ edits.
+        try:
+            bound = _binding_signature(self.original).bind(*args, **(kwargs or {}))
+        except TypeError:
+            if self.mode == "unchecked-int64":
+                # Invalid binding raises before the original body can execute.
+>               self.original(*args, **(kwargs or {}))
+E               TypeError: real_empty_default() got an unexpected keyword argument 'unknown'
+
+src\recompyler\experimental.py:412: TypeError
+________ ProofTests.test_reparsed_ast_must_match_the_certified_origin _________
+
+self = <test_experimental_numeric.ProofTests testMethod=test_reparsed_ast_must_match_the_certified_origin>
+
+    def test_reparsed_ast_must_match_the_certified_origin(self):
+        from unittest.mock import patch
+        region = self.api.lift_numeric(proved_source, mode="checked",
+                                       contract=self.contract(x=(2**60, 2**60)))
+        original_getsource = inspect.getsource
+        def changed_source(fn):
+            source = original_getsource(fn)
+            return source.replace("x * 1", "x * 9") if fn is proved_source else source
+        with patch.object(heap.inspect, "getsource", side_effect=changed_source):
+>           with self.assertRaises(self.api.UnsupportedNumericRegion):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           AssertionError: UnsupportedNumericRegion not raised
+
+tests\test_experimental_numeric.py:250: AssertionError
+__ NativeTests.test_changed_same_span_ast_cannot_use_old_numeric_certificate __
+
+self = <test_experimental_numeric.NativeTests testMethod=test_changed_same_span_ast_cannot_use_old_numeric_certificate>
+
+    def test_changed_same_span_ast_cannot_use_old_numeric_certificate(self):
+        from unittest.mock import patch
+        contract = self.contract(x=(2**60, 2**60))
+        checked = self.api.lift_numeric(proved_source, mode="checked", contract=contract)
+        unchecked = self.api.lift_numeric(proved_source, mode="unchecked-int64", contract=contract)
+        original_getsource = inspect.getsource
+        def changed_source(fn):
+            source = original_getsource(fn)
+            return source.replace("x * 1", "x * 9") if fn is proved_source else source
+        with patch.object(heap.inspect, "getsource", side_effect=changed_source):
+>           self.assertEqual(checked(2**60), 2**60)
+E           AssertionError: -8070450532247928832 != 1152921504606846976
+
+tests\test_experimental_numeric.py:371: AssertionError
+_ NativeTests.test_real_empty_defaults_explicit_values_compile_and_current_defaults_replay (mode='checked') _
+
+self = <test_experimental_numeric.NativeTests testMethod=test_real_empty_defaults_explicit_values_compile_and_current_defaults_replay>
+
+    def test_real_empty_defaults_explicit_values_compile_and_current_defaults_replay(self):
+        contract = self.contract(x=(-10, 10), y=(-10, 10), z=(-10, 10))
+        for mode in ("checked", "unchecked-int64"):
+            with self.subTest(mode=mode):
+>               region = self.api.lift_numeric(trailing_empty_defaults, mode=mode, contract=contract)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_experimental_numeric.py:342: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\experimental.py:465: in lift_numeric
+    return NumericRegion(fn, _policy(fn, mode, contract))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\experimental.py:321: in _policy
+    signature = _binding_signature(fn)
+                ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\experimental.py:141: in _binding_signature
+    return inspect.Signature(parameters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <[AttributeError("'inspect.Signature' object has no attribute '_parameters'") raised in repr()] Signature object at 0x201ff86c880>
+parameters = [<Parameter "x=1">, <Parameter "y">, <Parameter "z">]
+return_annotation = <class 'inspect._empty'>, __validate_parameters__ = True
+
+    def __init__(self, parameters=None, *, return_annotation=_empty,
+                 __validate_parameters__=True):
+        """Constructs Signature from the given list of Parameter
+        objects and 'return_annotation'.  All arguments are optional.
+        """
+    
+        if parameters is None:
+            params = OrderedDict()
+        else:
+            if __validate_parameters__:
+                params = OrderedDict()
+                top_kind = _POSITIONAL_ONLY
+                seen_default = False
+                seen_var_parameters = set()
+    
+                for param in parameters:
+                    kind = param.kind
+                    name = param.name
+    
+                    if kind in (_VAR_POSITIONAL, _VAR_KEYWORD):
+                        if kind in seen_var_parameters:
+                            msg = f'more than one {kind.description} parameter'
+                            raise ValueError(msg)
+    
+                        seen_var_parameters.add(kind)
+    
+                    if kind < top_kind:
+                        msg = (
+                            'wrong parameter order: {} parameter before {} '
+                            'parameter'
+                        )
+                        msg = msg.format(top_kind.description,
+                                         kind.description)
+                        raise ValueError(msg)
+                    elif kind > top_kind:
+                        top_kind = kind
+    
+                    if kind in (_POSITIONAL_ONLY, _POSITIONAL_OR_KEYWORD):
+                        if param.default is _empty:
+                            if seen_default:
+                                # No default for this parameter, but the
+                                # previous parameter of had a default
+                                msg = 'non-default argument follows default ' \
+                                      'argument'
+>                               raise ValueError(msg)
+E                               ValueError: non-default argument follows default argument
+
+C:\Python314\Lib\inspect.py:3017: ValueError
+_ NativeTests.test_real_empty_defaults_explicit_values_compile_and_current_defaults_replay (mode='unchecked-int64') _
+
+self = <test_experimental_numeric.NativeTests testMethod=test_real_empty_defaults_explicit_values_compile_and_current_defaults_replay>
+
+    def test_real_empty_defaults_explicit_values_compile_and_current_defaults_replay(self):
+        contract = self.contract(x=(-10, 10), y=(-10, 10), z=(-10, 10))
+        for mode in ("checked", "unchecked-int64"):
+            with self.subTest(mode=mode):
+>               region = self.api.lift_numeric(trailing_empty_defaults, mode=mode, contract=contract)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_experimental_numeric.py:342: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\experimental.py:465: in lift_numeric
+    return NumericRegion(fn, _policy(fn, mode, contract))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\experimental.py:321: in _policy
+    signature = _binding_signature(fn)
+                ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\experimental.py:141: in _binding_signature
+    return inspect.Signature(parameters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <[AttributeError("'inspect.Signature' object has no attribute '_parameters'") raised in repr()] Signature object at 0x201ff86c880>
+parameters = [<Parameter "x=1">, <Parameter "y">, <Parameter "z">]
+return_annotation = <class 'inspect._empty'>, __validate_parameters__ = True
+
+    def __init__(self, parameters=None, *, return_annotation=_empty,
+                 __validate_parameters__=True):
+        """Constructs Signature from the given list of Parameter
+        objects and 'return_annotation'.  All arguments are optional.
+        """
+    
+        if parameters is None:
+            params = OrderedDict()
+        else:
+            if __validate_parameters__:
+                params = OrderedDict()
+                top_kind = _POSITIONAL_ONLY
+                seen_default = False
+                seen_var_parameters = set()
+    
+                for param in parameters:
+                    kind = param.kind
+                    name = param.name
+    
+                    if kind in (_VAR_POSITIONAL, _VAR_KEYWORD):
+                        if kind in seen_var_parameters:
+                            msg = f'more than one {kind.description} parameter'
+                            raise ValueError(msg)
+    
+                        seen_var_parameters.add(kind)
+    
+                    if kind < top_kind:
+                        msg = (
+                            'wrong parameter order: {} parameter before {} '
+                            'parameter'
+                        )
+                        msg = msg.format(top_kind.description,
+                                         kind.description)
+                        raise ValueError(msg)
+                    elif kind > top_kind:
+                        top_kind = kind
+    
+                    if kind in (_POSITIONAL_ONLY, _POSITIONAL_OR_KEYWORD):
+                        if param.default is _empty:
+                            if seen_default:
+                                # No default for this parameter, but the
+                                # previous parameter of had a default
+                                msg = 'non-default argument follows default ' \
+                                      'argument'
+>                               raise ValueError(msg)
+E                               ValueError: non-default argument follows default argument
+
+C:\Python314\Lib\inspect.py:3017: ValueError
+=========================== short test summary info ===========================
+SUBFAILED(mode='checked') tests/test_experimental_numeric.py::ContractTests::test_real_empty_defaults_remain_present_in_python_binding
+SUBFAILED(mode='unchecked-int64') tests/test_experimental_numeric.py::ContractTests::test_real_empty_defaults_remain_present_in_python_binding
+FAILED tests/test_experimental_numeric.py::ContractTests::test_unchecked_binding_failure_never_calls_original_body
+FAILED tests/test_experimental_numeric.py::ContractTests::test_unchecked_invalid_arguments_raise_contract_error_without_python_replay
+FAILED tests/test_experimental_numeric.py::ProofTests::test_reparsed_ast_must_match_the_certified_origin
+FAILED tests/test_experimental_numeric.py::NativeTests::test_changed_same_span_ast_cannot_use_old_numeric_certificate
+SUBFAILED(mode='checked') tests/test_experimental_numeric.py::NativeTests::test_real_empty_defaults_explicit_values_compile_and_current_defaults_replay
+SUBFAILED(mode='unchecked-int64') tests/test_experimental_numeric.py::NativeTests::test_real_empty_defaults_explicit_values_compile_and_current_defaults_replay
+8 failed, 2 passed, 36 deselected in 2.17s

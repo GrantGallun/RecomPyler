@@ -1,0 +1,15 @@
+{
+  "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "base": "5d0fe5296e077b893a0d9c920f6ccfe798696eeb",
+  "inputs": {
+    "src/recompyler/heap.py": "38b77af3e77c73b132db4d973242eb30e8cbc590003b7cb9820e7430c9b3edd6",
+    "tests/test_heap_compact_abi.py": "8ae4c2a48fe92f7a0acc9268667a053114e1996e68e5793c75216dfc02798c93"
+  },
+  "note": "Full suite uses this pre-precision-refinement test file; final targeted verification is recorded separately."
+}

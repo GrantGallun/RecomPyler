@@ -1,0 +1,2021 @@
+{
+  "schema": 8,
+  "stage": "paired-final",
+  "manifest_sha256": "92d2cbf74740bad09c91feb84a391928e9cef31a580df5b8af5e08e97d8a72b6",
+  "config": {
+    "limit": 40,
+    "samples": 8,
+    "repetitions": 5,
+    "timeout_s": 180,
+    "shim_loops": 2,
+    "audit_repetitions": 5
+  },
+  "groups": {
+    "heldout": {
+      "fixed_population": 38,
+      "paired_meaningful_timing_n": 37,
+      "paired_names": [
+        "async_generators",
+        "asyncio_tcp",
+        "asyncio_websockets",
+        "base64",
+        "chaos",
+        "comprehensions",
+        "concurrent_imap",
+        "decimal_factorial",
+        "decimal_pi",
+        "deepcopy",
+        "deltablue",
+        "fastapi",
+        "gc_collect",
+        "gc_traversal",
+        "generators",
+        "hexiom",
+        "json_dumps",
+        "json_loads",
+        "logging",
+        "mdp",
+        "meteor_contest",
+        "nqueens",
+        "pathlib",
+        "pidigits",
+        "pprint",
+        "regex_compile",
+        "regex_dna",
+        "regex_effbot",
+        "regex_v8",
+        "richards_super",
+        "sqlalchemy_declarative",
+        "sqlite_synth",
+        "sympy",
+        "typing_runtime_protocols",
+        "unpack_sequence",
+        "xml_etree",
+        "yaml"
+      ],
+      "current": {
+        "successful_profiles": 38,
+        "timed_programs_with_native_calls": 0,
+        "programs_with_reconciled_audits": 38,
+        "audited_programs_with_native_calls": 0,
+        "audit_native_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.0212692880276397,
+        "over_10pct_verified": 3,
+        "process_speedup_geomean_paired": 0.9600132244215857,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.0,
+        "top_blockers_mean_self_fraction": [
+          [
+            "outside the supported subset: '...' has a closure, keyword-only arguments, *args or is a generator",
+            0.022205100655817028
+          ],
+          [
+            "as a region: With of '...'",
+            0.02086595028145928
+          ],
+          [
+            "outside the supported subset: global '...' is not a numeric constant",
+            0.01941623087067787
+          ],
+          [
+            "outside the supported subset: '...' is recursive",
+            0.018425811895496816
+          ],
+          [
+            "as a region: an int argument too large for 64 bits",
+            0.0177062860792324
+          ],
+          [
+            "outside the supported subset: call",
+            0.017538665454004343
+          ],
+          [
+            "not captured: the function not a module-level function or a method",
+            0.007766965005717717
+          ],
+          [
+            "outside the supported subset: '...' returns a value on some paths and None on others",
+            0.005477673522762691
+          ],
+          [
+            "outside the supported subset: '...' may be read before assignment",
+            0.0053175731731202784
+          ],
+          [
+            "as a region: range() on int of '...'",
+            0.0028360511576098397
+          ],
+          [
+            "outside the supported subset: constant '...'",
+            0.0015632737827541174
+          ],
+          [
+            "as a region: async for over something other than an async generator of '...'",
+            0.0011436941302830524
+          ]
+        ],
+        "deployment_categories": {
+          "no_selected_wrappers": 38
+        }
+      },
+      "candidate": {
+        "successful_profiles": 38,
+        "timed_programs_with_native_calls": 0,
+        "programs_with_reconciled_audits": 38,
+        "audited_programs_with_native_calls": 0,
+        "audit_native_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.03955283858077929,
+        "over_10pct_verified": 3,
+        "process_speedup_geomean_paired": 0.967145534746099,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.0,
+        "top_blockers_mean_self_fraction": [
+          [
+            "outside the supported subset: '...' has a closure, keyword-only arguments, *args or is a generator",
+            0.028381257912789427
+          ],
+          [
+            "outside the supported subset: global '...' is not a numeric constant",
+            0.023620660438621505
+          ],
+          [
+            "as a region: With of '...'",
+            0.023130980775454675
+          ],
+          [
+            "outside the supported subset: '...' is recursive",
+            0.022965112584549356
+          ],
+          [
+            "outside the supported subset: call",
+            0.022927777596449008
+          ],
+          [
+            "as a region: an int argument too large for 64 bits",
+            0.0216203285839725
+          ],
+          [
+            "not captured: the function not a module-level function or a method",
+            0.009056051874242277
+          ],
+          [
+            "outside the supported subset: '...' returns a value on some paths and None on others",
+            0.008378615508303745
+          ],
+          [
+            "outside the supported subset: '...' may be read before assignment",
+            0.006431299298554536
+          ],
+          [
+            "as a region: range() on int of '...'",
+            0.00455026606868482
+          ],
+          [
+            "outside the supported subset: constant None",
+            0.0026653473435006812
+          ],
+          [
+            "as a region, only 5 of 8 captured calls ran compiled",
+            0.001979104613185052
+          ]
+        ],
+        "deployment_categories": {
+          "no_selected_wrappers": 38
+        }
+      }
+    },
+    "tuned": {
+      "fixed_population": 9,
+      "paired_meaningful_timing_n": 9,
+      "paired_names": [
+        "barnes_hut",
+        "coroutines",
+        "fannkuch",
+        "float",
+        "nbody",
+        "raytrace",
+        "richards",
+        "scimark",
+        "spectral_norm"
+      ],
+      "current": {
+        "successful_profiles": 9,
+        "timed_programs_with_native_calls": 4,
+        "programs_with_reconciled_audits": 9,
+        "audited_programs_with_native_calls": 4,
+        "audit_native_program_counts_by_repetition": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.4677203166818065,
+        "over_10pct_verified": 9,
+        "process_speedup_geomean_paired": 1.2533781960645922,
+        "audit_native_program_count_min_max": [
+          4,
+          4
+        ],
+        "audit_aot_program_count_min_max": [
+          4,
+          4
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.39015300710295664,
+        "top_blockers_mean_self_fraction": [
+          [
+            "as a region: an array of typecode '...'",
+            0.018220499389768594
+          ],
+          [
+            "as a region: '...' uses the new object before setting all its attributes",
+            0.01365896757811446
+          ],
+          [
+            "no calls with numeric arguments and results were captured",
+            0.008559084546560784
+          ],
+          [
+            "as a region, only 5 of 8 captured calls ran compiled",
+            0.004414810407991484
+          ],
+          [
+            "as a region: a '...' object with attributes its __init__ does not set",
+            0.003662557171487898
+          ],
+          [
+            "outside the supported subset: assignment target",
+            0.0030620494469957155
+          ],
+          [
+            "as a region, only 4 of 8 captured calls ran compiled",
+            0.0015353254378036112
+          ],
+          [
+            "result differs from a captured call",
+            0.0008593684152739564
+          ],
+          [
+            "outside the supported subset: call",
+            0.00036711392892606093
+          ],
+          [
+            "as a region: range() on int of '...'",
+            0.00026963943967883117
+          ],
+          [
+            "as a region: '...' customises attribute access",
+            0.0001963131612814251
+          ],
+          [
+            "as a region: name '...' used as a value of '...'",
+            4.6055024295846175e-06
+          ]
+        ],
+        "deployment_categories": {
+          "native_called": 4,
+          "no_selected_wrappers": 5
+        }
+      },
+      "candidate": {
+        "successful_profiles": 9,
+        "timed_programs_with_native_calls": 4,
+        "programs_with_reconciled_audits": 9,
+        "audited_programs_with_native_calls": 4,
+        "audit_native_program_counts_by_repetition": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.5900364852184612,
+        "over_10pct_verified": 9,
+        "process_speedup_geomean_paired": 1.2467516567650974,
+        "audit_native_program_count_min_max": [
+          4,
+          4
+        ],
+        "audit_aot_program_count_min_max": [
+          4,
+          4
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.4962836673780613,
+        "top_blockers_mean_self_fraction": [
+          [
+            "as a region: an array of typecode '...'",
+            0.019935639476157497
+          ],
+          [
+            "as a region: '...' uses the new object before setting all its attributes",
+            0.015161778157966297
+          ],
+          [
+            "no calls with numeric arguments and results were captured",
+            0.011918835828610553
+          ],
+          [
+            "outside the supported subset: assignment target",
+            0.009363010304671742
+          ],
+          [
+            "as a region, only 5 of 8 captured calls ran compiled",
+            0.00664040802009006
+          ],
+          [
+            "as a region: a '...' object with attributes its __init__ does not set",
+            0.003263478292020397
+          ],
+          [
+            "as a region, only 4 of 8 captured calls ran compiled",
+            0.0024100681028116867
+          ],
+          [
+            "result differs from a captured call",
+            0.0012403222483680979
+          ],
+          [
+            "as a region: range() on int of '...'",
+            0.0004495523672438039
+          ],
+          [
+            "outside the supported subset: call",
+            0.0004467746733245277
+          ],
+          [
+            "as a region: '...' customises attribute access",
+            0.0002045009577443906
+          ],
+          [
+            "as a region: name '...' used as a value of '...'",
+            7.074713767802721e-06
+          ]
+        ],
+        "deployment_categories": {
+          "native_called": 4,
+          "no_selected_wrappers": 5
+        }
+      }
+    },
+    "addition": {
+      "fixed_population": 2,
+      "paired_meaningful_timing_n": 2,
+      "paired_names": [
+        "go",
+        "poker_selfplay"
+      ],
+      "current": {
+        "successful_profiles": 2,
+        "timed_programs_with_native_calls": 0,
+        "programs_with_reconciled_audits": 2,
+        "audited_programs_with_native_calls": 0,
+        "audit_native_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.00026566230379212547,
+        "over_10pct_verified": 0,
+        "process_speedup_geomean_paired": 0.9792861663673962,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.0,
+        "top_blockers_mean_self_fraction": [
+          [
+            "as a region: '...' declares globals or defines functions inside itself",
+            0.16643577821644961
+          ],
+          [
+            "as a region: a '...' object with attributes its __init__ does not set",
+            0.08266386306022366
+          ],
+          [
+            "outside the supported subset: AnnAssign",
+            0.08058039927514532
+          ],
+          [
+            "as a region: '...' uses the new object before setting all its attributes",
+            0.07843716358022398
+          ],
+          [
+            "as a region: no source for '...'",
+            0.0234848816934634
+          ],
+          [
+            "arguments were changed differently from a captured call",
+            0.0171867595395543
+          ],
+          [
+            "not captured: the function not a module-level function or a method",
+            0.01709019528157302
+          ],
+          [
+            "as a region: GeneratorExp of '...'",
+            0.004261409158308048
+          ],
+          [
+            "as a region: an array of dtype int32 and 2 dimensions",
+            0.0034189923211339467
+          ],
+          [
+            "result differs from a captured call",
+            0.0021064981078801354
+          ],
+          [
+            "outside the supported subset: Dict",
+            0.001354477640950178
+          ],
+          [
+            "outside the supported subset: GeneratorExp",
+            0.0012281587638925029
+          ]
+        ],
+        "deployment_categories": {
+          "no_selected_wrappers": 2
+        }
+      },
+      "candidate": {
+        "successful_profiles": 2,
+        "timed_programs_with_native_calls": 0,
+        "programs_with_reconciled_audits": 2,
+        "audited_programs_with_native_calls": 0,
+        "audit_native_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "audit_aot_program_counts_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_largest_verified_fraction_fixed_denominator": 0.00041113491924207705,
+        "over_10pct_verified": 0,
+        "process_speedup_geomean_paired": 0.9679927458416895,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ],
+        "mean_recommended_reach_fixed_denominator": 0.0,
+        "top_blockers_mean_self_fraction": [
+          [
+            "as a region: '...' declares globals or defines functions inside itself",
+            0.22010204193540253
+          ],
+          [
+            "outside the supported subset: AnnAssign",
+            0.13036686561168187
+          ],
+          [
+            "as a region: a '...' object with attributes its __init__ does not set",
+            0.10573048543742897
+          ],
+          [
+            "as a region: '...' uses the new object before setting all its attributes",
+            0.09517298708837743
+          ],
+          [
+            "as a region: no source for '...'",
+            0.02909228083692851
+          ],
+          [
+            "not captured: the function not a module-level function or a method",
+            0.02295106014317183
+          ],
+          [
+            "arguments were changed differently from a captured call",
+            0.02273814253682094
+          ],
+          [
+            "as a region: GeneratorExp of '...'",
+            0.006373872384010113
+          ],
+          [
+            "as a region: an array of dtype int32 and 2 dimensions",
+            0.0050776441830654795
+          ],
+          [
+            "result differs from a captured call",
+            0.0028314481071340307
+          ],
+          [
+            "outside the supported subset: Dict",
+            0.0021739035947518186
+          ],
+          [
+            "outside the supported subset: GeneratorExp",
+            0.0018370298744324752
+          ]
+        ],
+        "deployment_categories": {
+          "no_selected_wrappers": 2
+        }
+      }
+    }
+  },
+  "source_totals": {
+    "current": {
+      "successful_profiles": 49,
+      "profile_wall_s": 530.6484386000229,
+      "valid_timed_programs": 49,
+      "native_timing_programs": [
+        "barnes_hut",
+        "fannkuch",
+        "raytrace",
+        "scimark"
+      ],
+      "timing_compiled_calls_total_observed": 2020,
+      "timing_aot_calls_total_observed": 2020,
+      "timing_jit_calls_total_observed": 0,
+      "timing_mode_unknown_or_incomplete_programs": [],
+      "timing_fallback_calls_total_observed": 0,
+      "timing_batch_rows_total": 0,
+      "reconciled_audit_programs": 49,
+      "separate_audit_mode_totals": {
+        "aot_calls": 2020,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "unknown_native_calls": 0
+      },
+      "audit_counter_or_output_failures": []
+    },
+    "candidate": {
+      "successful_profiles": 49,
+      "profile_wall_s": 462.5363813000149,
+      "valid_timed_programs": 49,
+      "native_timing_programs": [
+        "barnes_hut",
+        "fannkuch",
+        "raytrace",
+        "scimark"
+      ],
+      "timing_compiled_calls_total_observed": 2020,
+      "timing_aot_calls_total_observed": 2020,
+      "timing_jit_calls_total_observed": 0,
+      "timing_mode_unknown_or_incomplete_programs": [],
+      "timing_fallback_calls_total_observed": 0,
+      "timing_batch_rows_total": 0,
+      "reconciled_audit_programs": 49,
+      "separate_audit_mode_totals": {
+        "aot_calls": 2020,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "unknown_native_calls": 0
+      },
+      "audit_counter_or_output_failures": []
+    }
+  },
+  "rankings": {
+    "current": {
+      "slowest_processes": [
+        {
+          "name": "fastapi",
+          "group": "heldout",
+          "median_wall_s": 10.711644499999238,
+          "plain_median_wall_s": 10.75530780000554,
+          "process_speedup": 1.0040762461829558,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pprint",
+          "group": "heldout",
+          "median_wall_s": 2.9557299000007333,
+          "plain_median_wall_s": 2.9373367999942275,
+          "process_speedup": 0.993777137753182,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "base64",
+          "group": "heldout",
+          "median_wall_s": 2.5869957999966573,
+          "plain_median_wall_s": 2.514995199991972,
+          "process_speedup": 0.9721682578669907,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "mdp",
+          "group": "heldout",
+          "median_wall_s": 1.6978641000023345,
+          "plain_median_wall_s": 1.6842013000132283,
+          "process_speedup": 0.9919529484196719,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sympy",
+          "group": "heldout",
+          "median_wall_s": 1.4135743999941042,
+          "plain_median_wall_s": 1.4159971000044607,
+          "process_speedup": 1.0017138822055398,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_tcp",
+          "group": "heldout",
+          "median_wall_s": 1.1214447999955155,
+          "plain_median_wall_s": 1.0607920000038575,
+          "process_speedup": 0.9459154833194638,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "async_generators",
+          "group": "heldout",
+          "median_wall_s": 0.6673996999888914,
+          "plain_median_wall_s": 0.6903405000048224,
+          "process_speedup": 1.0343734047472795,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pathlib",
+          "group": "heldout",
+          "median_wall_s": 0.5987300000124378,
+          "plain_median_wall_s": 0.5807539000088582,
+          "process_speedup": 0.9699762831272757,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "scimark",
+          "group": "tuned",
+          "median_wall_s": 0.5979681000026176,
+          "plain_median_wall_s": 0.7910995999991428,
+          "process_speedup": 1.3229796037542467,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "xml_etree",
+          "group": "heldout",
+          "median_wall_s": 0.5974140999896917,
+          "plain_median_wall_s": 0.5906645999930333,
+          "process_speedup": 0.9887021414513403,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "poker_selfplay",
+          "group": "addition",
+          "median_wall_s": 0.5701433000067482,
+          "plain_median_wall_s": 0.5624985000031302,
+          "process_speedup": 0.986591441127998,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlalchemy_declarative",
+          "group": "heldout",
+          "median_wall_s": 0.5128667999961181,
+          "plain_median_wall_s": 0.49718659999780357,
+          "process_speedup": 0.9694263695789371,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_pi",
+          "group": "heldout",
+          "median_wall_s": 0.5046350000047823,
+          "plain_median_wall_s": 0.4970889999967767,
+          "process_speedup": 0.9850466178367847,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_websockets",
+          "group": "heldout",
+          "median_wall_s": 0.49176160000206437,
+          "plain_median_wall_s": 0.4851340000022901,
+          "process_speedup": 0.9865227378474724,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_factorial",
+          "group": "heldout",
+          "median_wall_s": 0.47273439999844413,
+          "plain_median_wall_s": 0.4532628000015393,
+          "process_speedup": 0.9588106979374276,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "concurrent_imap",
+          "group": "heldout",
+          "median_wall_s": 0.46768030000384897,
+          "plain_median_wall_s": 0.45711990000563674,
+          "process_speedup": 0.9774196176359677,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "raytrace",
+          "group": "tuned",
+          "median_wall_s": 0.406718300000648,
+          "plain_median_wall_s": 0.46113389999663923,
+          "process_speedup": 1.133791865268675,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "regex_dna",
+          "group": "heldout",
+          "median_wall_s": 0.4061125999869546,
+          "plain_median_wall_s": 0.39835329999914393,
+          "process_speedup": 0.9808937226078188,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pidigits",
+          "group": "heldout",
+          "median_wall_s": 0.3954696000000695,
+          "plain_median_wall_s": 0.3866243999946164,
+          "process_speedup": 0.977633679035123,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "barnes_hut",
+          "group": "tuned",
+          "median_wall_s": 0.39111150000826456,
+          "plain_median_wall_s": 1.2637102000007872,
+          "process_speedup": 3.2310740031272,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "regex_compile",
+          "group": "heldout",
+          "median_wall_s": 0.3166787999944063,
+          "plain_median_wall_s": 0.3064207000134047,
+          "process_speedup": 0.9676072412135489,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "go",
+          "group": "addition",
+          "median_wall_s": 0.27844789999653585,
+          "plain_median_wall_s": 0.27066110000305343,
+          "process_speedup": 0.9720349839464428,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "fannkuch",
+          "group": "tuned",
+          "median_wall_s": 0.2771278000000166,
+          "plain_median_wall_s": 0.5437731999991229,
+          "process_speedup": 1.962174852176831,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "nbody",
+          "group": "tuned",
+          "median_wall_s": 0.2768262999888975,
+          "plain_median_wall_s": 0.26867950000450946,
+          "process_speedup": 0.9705707153376872,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "meteor_contest",
+          "group": "heldout",
+          "median_wall_s": 0.2648033999867039,
+          "plain_median_wall_s": 0.2546913000114728,
+          "process_speedup": 0.9618128015888813,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nqueens",
+          "group": "heldout",
+          "median_wall_s": 0.2534639000077732,
+          "plain_median_wall_s": 0.24530199999571778,
+          "process_speedup": 0.9677985700851084,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "spectral_norm",
+          "group": "tuned",
+          "median_wall_s": 0.24760109999624547,
+          "plain_median_wall_s": 0.23909740000090096,
+          "process_speedup": 0.9656556453284195,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "chaos",
+          "group": "heldout",
+          "median_wall_s": 0.22717099999135826,
+          "plain_median_wall_s": 0.2126933999970788,
+          "process_speedup": 0.936270034490185,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "float",
+          "group": "tuned",
+          "median_wall_s": 0.21446379998815246,
+          "plain_median_wall_s": 0.21134609999717213,
+          "process_speedup": 0.9854628147447142,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "generators",
+          "group": "heldout",
+          "median_wall_s": 0.2019711000029929,
+          "plain_median_wall_s": 0.1920315000024857,
+          "process_speedup": 0.950787018537009,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards_super",
+          "group": "heldout",
+          "median_wall_s": 0.1872737999947276,
+          "plain_median_wall_s": 0.17806230000860523,
+          "process_speedup": 0.9508126604662174,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "yaml",
+          "group": "heldout",
+          "median_wall_s": 0.18053149999468587,
+          "plain_median_wall_s": 0.1730760999926133,
+          "process_speedup": 0.9587030518092853,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards",
+          "group": "tuned",
+          "median_wall_s": 0.18044710000685882,
+          "plain_median_wall_s": 0.1717724000045564,
+          "process_speedup": 0.9519266311180801,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_v8",
+          "group": "heldout",
+          "median_wall_s": 0.17910609999671578,
+          "plain_median_wall_s": 0.17173950000142213,
+          "process_speedup": 0.9588701892597252,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "coroutines",
+          "group": "tuned",
+          "median_wall_s": 0.16673630000150297,
+          "plain_median_wall_s": 0.15223170000535902,
+          "process_speedup": 0.9130087449702722,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_effbot",
+          "group": "heldout",
+          "median_wall_s": 0.15917619998799637,
+          "plain_median_wall_s": 0.14616809999279212,
+          "process_speedup": 0.9182786120275191,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "hexiom",
+          "group": "heldout",
+          "median_wall_s": 0.1523006999923382,
+          "plain_median_wall_s": 0.13992400000279304,
+          "process_speedup": 0.9187351076510627,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_traversal",
+          "group": "heldout",
+          "median_wall_s": 0.15141949999087956,
+          "plain_median_wall_s": 0.13861930000712164,
+          "process_speedup": 0.9154653133544298,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deltablue",
+          "group": "heldout",
+          "median_wall_s": 0.15140400000382215,
+          "plain_median_wall_s": 0.1438966999994591,
+          "process_speedup": 0.9504154447427179,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_dumps",
+          "group": "heldout",
+          "median_wall_s": 0.1445882999978494,
+          "plain_median_wall_s": 0.13724890000594314,
+          "process_speedup": 0.9492393230156561,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_collect",
+          "group": "heldout",
+          "median_wall_s": 0.14195140000083484,
+          "plain_median_wall_s": 0.12665560000459664,
+          "process_speedup": 0.8922462195078862,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_loads",
+          "group": "heldout",
+          "median_wall_s": 0.13928419999137986,
+          "plain_median_wall_s": 0.13181960000656545,
+          "process_speedup": 0.9464074174581439,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "comprehensions",
+          "group": "heldout",
+          "median_wall_s": 0.1378440000116825,
+          "plain_median_wall_s": 0.1311407000030158,
+          "process_speedup": 0.9513703896571589,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "typing_runtime_protocols",
+          "group": "heldout",
+          "median_wall_s": 0.13648600000306033,
+          "plain_median_wall_s": 0.12666860000172164,
+          "process_speedup": 0.9280702782621034,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlite_synth",
+          "group": "heldout",
+          "median_wall_s": 0.13604140000825282,
+          "plain_median_wall_s": 0.12644380000710953,
+          "process_speedup": 0.9294508877403418,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "logging",
+          "group": "heldout",
+          "median_wall_s": 0.13263919999008067,
+          "plain_median_wall_s": 0.12367689999518916,
+          "process_speedup": 0.9324309857450758,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "unpack_sequence",
+          "group": "heldout",
+          "median_wall_s": 0.13228279999748338,
+          "plain_median_wall_s": 0.12707669999508653,
+          "process_speedup": 0.9606441653601534,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deepcopy",
+          "group": "heldout",
+          "median_wall_s": 0.13152910000644624,
+          "plain_median_wall_s": 0.12520080000103917,
+          "process_speedup": 0.9518866927159318,
+          "deployment_status": "no_selected_wrappers"
+        }
+      ],
+      "largest_process_overhead": [
+        {
+          "name": "base64",
+          "overhead_s": 0.07200060000468511,
+          "process_speedup": 0.9721682578669907,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_tcp",
+          "overhead_s": 0.06065279999165796,
+          "process_speedup": 0.9459154833194638,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_factorial",
+          "overhead_s": 0.019471599996904843,
+          "process_speedup": 0.9588106979374276,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pprint",
+          "overhead_s": 0.018393100006505847,
+          "process_speedup": 0.993777137753182,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pathlib",
+          "overhead_s": 0.01797610000357963,
+          "process_speedup": 0.9699762831272757,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlalchemy_declarative",
+          "overhead_s": 0.015680199998314492,
+          "process_speedup": 0.9694263695789371,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_collect",
+          "overhead_s": 0.015295799996238202,
+          "process_speedup": 0.8922462195078862,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "coroutines",
+          "overhead_s": 0.014504599996143952,
+          "process_speedup": 0.9130087449702722,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "chaos",
+          "overhead_s": 0.014477599994279444,
+          "process_speedup": 0.936270034490185,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "mdp",
+          "overhead_s": 0.013662799989106134,
+          "process_speedup": 0.9919529484196719,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_effbot",
+          "overhead_s": 0.013008099995204248,
+          "process_speedup": 0.9182786120275191,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_traversal",
+          "overhead_s": 0.01280019998375792,
+          "process_speedup": 0.9154653133544298,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "hexiom",
+          "overhead_s": 0.012376699989545159,
+          "process_speedup": 0.9187351076510627,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "concurrent_imap",
+          "overhead_s": 0.010560399998212233,
+          "process_speedup": 0.9774196176359677,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_compile",
+          "overhead_s": 0.010258099981001578,
+          "process_speedup": 0.9676072412135489,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "meteor_contest",
+          "overhead_s": 0.010112099975231104,
+          "process_speedup": 0.9618128015888813,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "generators",
+          "overhead_s": 0.009939600000507198,
+          "process_speedup": 0.950787018537009,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "typing_runtime_protocols",
+          "overhead_s": 0.009817400001338683,
+          "process_speedup": 0.9280702782621034,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlite_synth",
+          "overhead_s": 0.009597600001143292,
+          "process_speedup": 0.9294508877403418,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards_super",
+          "overhead_s": 0.009211499986122362,
+          "process_speedup": 0.9508126604662174,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "logging",
+          "overhead_s": 0.00896229999489151,
+          "process_speedup": 0.9324309857450758,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pidigits",
+          "overhead_s": 0.00884520000545308,
+          "process_speedup": 0.977633679035123,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards",
+          "overhead_s": 0.008674700002302416,
+          "process_speedup": 0.9519266311180801,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "spectral_norm",
+          "overhead_s": 0.008503699995344505,
+          "process_speedup": 0.9656556453284195,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nqueens",
+          "overhead_s": 0.008161900012055412,
+          "process_speedup": 0.9677985700851084,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nbody",
+          "overhead_s": 0.008146799984388053,
+          "process_speedup": 0.9705707153376872,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "go",
+          "overhead_s": 0.007786799993482418,
+          "process_speedup": 0.9720349839464428,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_dna",
+          "overhead_s": 0.007759299987810664,
+          "process_speedup": 0.9808937226078188,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "poker_selfplay",
+          "overhead_s": 0.007644800003618002,
+          "process_speedup": 0.986591441127998,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_pi",
+          "overhead_s": 0.007546000008005649,
+          "process_speedup": 0.9850466178367847,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deltablue",
+          "overhead_s": 0.00750730000436306,
+          "process_speedup": 0.9504154447427179,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_loads",
+          "overhead_s": 0.007464599984814413,
+          "process_speedup": 0.9464074174581439,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "yaml",
+          "overhead_s": 0.007455400002072565,
+          "process_speedup": 0.9587030518092853,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_v8",
+          "overhead_s": 0.0073665999952936545,
+          "process_speedup": 0.9588701892597252,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_dumps",
+          "overhead_s": 0.007339399991906248,
+          "process_speedup": 0.9492393230156561,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "xml_etree",
+          "overhead_s": 0.006749499996658415,
+          "process_speedup": 0.9887021414513403,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "comprehensions",
+          "overhead_s": 0.006703300008666702,
+          "process_speedup": 0.9513703896571589,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_websockets",
+          "overhead_s": 0.006627599999774247,
+          "process_speedup": 0.9865227378474724,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deepcopy",
+          "overhead_s": 0.006328300005407073,
+          "process_speedup": 0.9518866927159318,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "unpack_sequence",
+          "overhead_s": 0.005206100002396852,
+          "process_speedup": 0.9606441653601534,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "float",
+          "overhead_s": 0.003117699990980327,
+          "process_speedup": 0.9854628147447142,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sympy",
+          "overhead_s": -0.0024227000103564933,
+          "process_speedup": 1.0017138822055398,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "async_generators",
+          "overhead_s": -0.022940800015931018,
+          "process_speedup": 1.0343734047472795,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "fastapi",
+          "overhead_s": -0.04366330000630114,
+          "process_speedup": 1.0040762461829558,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "raytrace",
+          "overhead_s": -0.054415599995991215,
+          "process_speedup": 1.133791865268675,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "scimark",
+          "overhead_s": -0.19313149999652524,
+          "process_speedup": 1.3229796037542467,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "fannkuch",
+          "overhead_s": -0.2666453999991063,
+          "process_speedup": 1.962174852176831,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "barnes_hut",
+          "overhead_s": -0.8725986999925226,
+          "process_speedup": 3.2310740031272,
+          "deployment_status": "native_called"
+        }
+      ]
+    },
+    "candidate": {
+      "slowest_processes": [
+        {
+          "name": "fastapi",
+          "group": "heldout",
+          "median_wall_s": 10.804572399996687,
+          "plain_median_wall_s": 10.75530780000554,
+          "process_speedup": 0.9954403933661305,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pprint",
+          "group": "heldout",
+          "median_wall_s": 2.9141041999973822,
+          "plain_median_wall_s": 2.9373367999942275,
+          "process_speedup": 1.0079724671468049,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "base64",
+          "group": "heldout",
+          "median_wall_s": 2.579673999993247,
+          "plain_median_wall_s": 2.514995199991972,
+          "process_speedup": 0.9749275296020179,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "mdp",
+          "group": "heldout",
+          "median_wall_s": 1.7136694000073476,
+          "plain_median_wall_s": 1.6842013000132283,
+          "process_speedup": 0.9828040927882631,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sympy",
+          "group": "heldout",
+          "median_wall_s": 1.4184640999883413,
+          "plain_median_wall_s": 1.4159971000044607,
+          "process_speedup": 0.998260794909155,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_tcp",
+          "group": "heldout",
+          "median_wall_s": 1.0544771999993827,
+          "plain_median_wall_s": 1.0607920000038575,
+          "process_speedup": 1.0059885600224248,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "async_generators",
+          "group": "heldout",
+          "median_wall_s": 0.6618446999927983,
+          "plain_median_wall_s": 0.6903405000048224,
+          "process_speedup": 1.0430551155162748,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pathlib",
+          "group": "heldout",
+          "median_wall_s": 0.6051861000014469,
+          "plain_median_wall_s": 0.5807539000088582,
+          "process_speedup": 0.9596286167304069,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "scimark",
+          "group": "tuned",
+          "median_wall_s": 0.5903590000089025,
+          "plain_median_wall_s": 0.7910995999991428,
+          "process_speedup": 1.3400314045982413,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "xml_etree",
+          "group": "heldout",
+          "median_wall_s": 0.5883859000023222,
+          "plain_median_wall_s": 0.5906645999930333,
+          "process_speedup": 1.0038727984316114,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "poker_selfplay",
+          "group": "addition",
+          "median_wall_s": 0.5767826000083005,
+          "plain_median_wall_s": 0.5624985000031302,
+          "process_speedup": 0.9752348631790128,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_pi",
+          "group": "heldout",
+          "median_wall_s": 0.5194803000049433,
+          "plain_median_wall_s": 0.4970889999967767,
+          "process_speedup": 0.9568967292735576,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlalchemy_declarative",
+          "group": "heldout",
+          "median_wall_s": 0.50271350001276,
+          "plain_median_wall_s": 0.49718659999780357,
+          "process_speedup": 0.9890058651402515,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_websockets",
+          "group": "heldout",
+          "median_wall_s": 0.48782420001225546,
+          "plain_median_wall_s": 0.4851340000022901,
+          "process_speedup": 0.9944853084166432,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_factorial",
+          "group": "heldout",
+          "median_wall_s": 0.46332389999588486,
+          "plain_median_wall_s": 0.4532628000015393,
+          "process_speedup": 0.9782849535833681,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "concurrent_imap",
+          "group": "heldout",
+          "median_wall_s": 0.46066260000225157,
+          "plain_median_wall_s": 0.45711990000563674,
+          "process_speedup": 0.9923095558515115,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "raytrace",
+          "group": "tuned",
+          "median_wall_s": 0.406306200005929,
+          "plain_median_wall_s": 0.46113389999663923,
+          "process_speedup": 1.1349418246384382,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "regex_dna",
+          "group": "heldout",
+          "median_wall_s": 0.4061799999908544,
+          "plain_median_wall_s": 0.39835329999914393,
+          "process_speedup": 0.9807309567386707,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pidigits",
+          "group": "heldout",
+          "median_wall_s": 0.40142419999756385,
+          "plain_median_wall_s": 0.3866243999946164,
+          "process_speedup": 0.9631317693277155,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "barnes_hut",
+          "group": "tuned",
+          "median_wall_s": 0.3972959999955492,
+          "plain_median_wall_s": 1.2637102000007872,
+          "process_speedup": 3.1807775563180707,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "regex_compile",
+          "group": "heldout",
+          "median_wall_s": 0.3136839000071632,
+          "plain_median_wall_s": 0.3064207000134047,
+          "process_speedup": 0.9768454804547106,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "go",
+          "group": "addition",
+          "median_wall_s": 0.2817025999975158,
+          "plain_median_wall_s": 0.27066110000305343,
+          "process_speedup": 0.9608044086403188,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "fannkuch",
+          "group": "tuned",
+          "median_wall_s": 0.280694000000949,
+          "plain_median_wall_s": 0.5437731999991229,
+          "process_speedup": 1.9372455413984069,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "nbody",
+          "group": "tuned",
+          "median_wall_s": 0.2763284999964526,
+          "plain_median_wall_s": 0.26867950000450946,
+          "process_speedup": 0.9723191781085146,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "meteor_contest",
+          "group": "heldout",
+          "median_wall_s": 0.2638928000087617,
+          "plain_median_wall_s": 0.2546913000114728,
+          "process_speedup": 0.9651316746914527,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nqueens",
+          "group": "heldout",
+          "median_wall_s": 0.2494999999908032,
+          "plain_median_wall_s": 0.24530199999571778,
+          "process_speedup": 0.9831743487164724,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "spectral_norm",
+          "group": "tuned",
+          "median_wall_s": 0.24856649999856018,
+          "plain_median_wall_s": 0.23909740000090096,
+          "process_speedup": 0.9619051642207858,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "float",
+          "group": "tuned",
+          "median_wall_s": 0.22620799999276642,
+          "plain_median_wall_s": 0.21134609999717213,
+          "process_speedup": 0.9342998479449466,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "chaos",
+          "group": "heldout",
+          "median_wall_s": 0.22194030000537168,
+          "plain_median_wall_s": 0.2126933999970788,
+          "process_speedup": 0.9583360930481347,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "generators",
+          "group": "heldout",
+          "median_wall_s": 0.19948849998763762,
+          "plain_median_wall_s": 0.1920315000024857,
+          "process_speedup": 0.9626193991853463,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards_super",
+          "group": "heldout",
+          "median_wall_s": 0.1867010999994818,
+          "plain_median_wall_s": 0.17806230000860523,
+          "process_speedup": 0.9537292496353768,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards",
+          "group": "tuned",
+          "median_wall_s": 0.17980539999553002,
+          "plain_median_wall_s": 0.1717724000045564,
+          "process_speedup": 0.955323922467438,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_v8",
+          "group": "heldout",
+          "median_wall_s": 0.17784400000527967,
+          "plain_median_wall_s": 0.17173950000142213,
+          "process_speedup": 0.9656749735516728,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "coroutines",
+          "group": "tuned",
+          "median_wall_s": 0.16363269998691976,
+          "plain_median_wall_s": 0.15223170000535902,
+          "process_speedup": 0.9303256623983341,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "yaml",
+          "group": "heldout",
+          "median_wall_s": 0.16319919998932164,
+          "plain_median_wall_s": 0.1730760999926133,
+          "process_speedup": 1.060520517281567,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_effbot",
+          "group": "heldout",
+          "median_wall_s": 0.16235499999311287,
+          "plain_median_wall_s": 0.14616809999279212,
+          "process_speedup": 0.9002993440238527,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "hexiom",
+          "group": "heldout",
+          "median_wall_s": 0.15227749999030493,
+          "plain_median_wall_s": 0.13992400000279304,
+          "process_speedup": 0.9188750801116488,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deltablue",
+          "group": "heldout",
+          "median_wall_s": 0.15052429999923334,
+          "plain_median_wall_s": 0.1438966999994591,
+          "process_speedup": 0.9559698998779067,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_traversal",
+          "group": "heldout",
+          "median_wall_s": 0.1478979000094114,
+          "plain_median_wall_s": 0.13861930000712164,
+          "process_speedup": 0.9372634770223288,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_dumps",
+          "group": "heldout",
+          "median_wall_s": 0.1446120000036899,
+          "plain_median_wall_s": 0.13724890000594314,
+          "process_speedup": 0.9490837551685968,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_loads",
+          "group": "heldout",
+          "median_wall_s": 0.13975880001089536,
+          "plain_median_wall_s": 0.13181960000656545,
+          "process_speedup": 0.9431935591625645,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_collect",
+          "group": "heldout",
+          "median_wall_s": 0.13758780001080595,
+          "plain_median_wall_s": 0.12665560000459664,
+          "process_speedup": 0.9205438272481229,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "comprehensions",
+          "group": "heldout",
+          "median_wall_s": 0.13702020001073834,
+          "plain_median_wall_s": 0.1311407000030158,
+          "process_speedup": 0.9570902683891737,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "typing_runtime_protocols",
+          "group": "heldout",
+          "median_wall_s": 0.13669850000587758,
+          "plain_median_wall_s": 0.12666860000172164,
+          "process_speedup": 0.9266275781831939,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "unpack_sequence",
+          "group": "heldout",
+          "median_wall_s": 0.13466680000419728,
+          "plain_median_wall_s": 0.12707669999508653,
+          "process_speedup": 0.943637927025264,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "logging",
+          "group": "heldout",
+          "median_wall_s": 0.1343409000110114,
+          "plain_median_wall_s": 0.12367689999518916,
+          "process_speedup": 0.920619855792628,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlite_synth",
+          "group": "heldout",
+          "median_wall_s": 0.13405960000818595,
+          "plain_median_wall_s": 0.12644380000710953,
+          "process_speedup": 0.9431909389509487,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deepcopy",
+          "group": "heldout",
+          "median_wall_s": 0.13374650001060218,
+          "plain_median_wall_s": 0.12520080000103917,
+          "process_speedup": 0.9361052438091046,
+          "deployment_status": "no_selected_wrappers"
+        }
+      ],
+      "largest_process_overhead": [
+        {
+          "name": "base64",
+          "overhead_s": 0.0646788000012748,
+          "process_speedup": 0.9749275296020179,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "fastapi",
+          "overhead_s": 0.049264599991147406,
+          "process_speedup": 0.9954403933661305,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "mdp",
+          "overhead_s": 0.029468099994119257,
+          "process_speedup": 0.9828040927882631,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pathlib",
+          "overhead_s": 0.02443219999258872,
+          "process_speedup": 0.9596286167304069,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_pi",
+          "overhead_s": 0.02239130000816658,
+          "process_speedup": 0.9568967292735576,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_effbot",
+          "overhead_s": 0.016186900000320747,
+          "process_speedup": 0.9002993440238527,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "float",
+          "overhead_s": 0.014861899995594285,
+          "process_speedup": 0.9342998479449466,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pidigits",
+          "overhead_s": 0.01479980000294745,
+          "process_speedup": 0.9631317693277155,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "poker_selfplay",
+          "overhead_s": 0.01428410000517033,
+          "process_speedup": 0.9752348631790128,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "hexiom",
+          "overhead_s": 0.012353499987511896,
+          "process_speedup": 0.9188750801116488,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "coroutines",
+          "overhead_s": 0.011400999981560744,
+          "process_speedup": 0.9303256623983341,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "go",
+          "overhead_s": 0.011041499994462356,
+          "process_speedup": 0.9608044086403188,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_collect",
+          "overhead_s": 0.010932200006209314,
+          "process_speedup": 0.9205438272481229,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "logging",
+          "overhead_s": 0.01066400001582224,
+          "process_speedup": 0.920619855792628,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "decimal_factorial",
+          "overhead_s": 0.010061099994345568,
+          "process_speedup": 0.9782849535833681,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "typing_runtime_protocols",
+          "overhead_s": 0.010029900004155934,
+          "process_speedup": 0.9266275781831939,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "spectral_norm",
+          "overhead_s": 0.009469099997659214,
+          "process_speedup": 0.9619051642207858,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "gc_traversal",
+          "overhead_s": 0.00927860000228975,
+          "process_speedup": 0.9372634770223288,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "chaos",
+          "overhead_s": 0.009246900008292869,
+          "process_speedup": 0.9583360930481347,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "meteor_contest",
+          "overhead_s": 0.00920149999728892,
+          "process_speedup": 0.9651316746914527,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards_super",
+          "overhead_s": 0.008638799990876578,
+          "process_speedup": 0.9537292496353768,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deepcopy",
+          "overhead_s": 0.008545700009563006,
+          "process_speedup": 0.9361052438091046,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "richards",
+          "overhead_s": 0.008032999990973622,
+          "process_speedup": 0.955323922467438,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_loads",
+          "overhead_s": 0.007939200004329905,
+          "process_speedup": 0.9431935591625645,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_dna",
+          "overhead_s": 0.007826699991710484,
+          "process_speedup": 0.9807309567386707,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nbody",
+          "overhead_s": 0.007648999991943128,
+          "process_speedup": 0.9723191781085146,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlite_synth",
+          "overhead_s": 0.007615800001076423,
+          "process_speedup": 0.9431909389509487,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "unpack_sequence",
+          "overhead_s": 0.007590100009110756,
+          "process_speedup": 0.943637927025264,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "generators",
+          "overhead_s": 0.007456999985151924,
+          "process_speedup": 0.9626193991853463,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "json_dumps",
+          "overhead_s": 0.007363099997746758,
+          "process_speedup": 0.9490837551685968,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_compile",
+          "overhead_s": 0.007263199993758462,
+          "process_speedup": 0.9768454804547106,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "deltablue",
+          "overhead_s": 0.006627599999774247,
+          "process_speedup": 0.9559698998779067,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "regex_v8",
+          "overhead_s": 0.006104500003857538,
+          "process_speedup": 0.9656749735516728,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "comprehensions",
+          "overhead_s": 0.005879500007722527,
+          "process_speedup": 0.9570902683891737,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sqlalchemy_declarative",
+          "overhead_s": 0.005526900014956482,
+          "process_speedup": 0.9890058651402515,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "nqueens",
+          "overhead_s": 0.004197999995085411,
+          "process_speedup": 0.9831743487164724,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "concurrent_imap",
+          "overhead_s": 0.0035426999966148287,
+          "process_speedup": 0.9923095558515115,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_websockets",
+          "overhead_s": 0.002690200009965338,
+          "process_speedup": 0.9944853084166432,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "sympy",
+          "overhead_s": 0.002466999983880669,
+          "process_speedup": 0.998260794909155,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "xml_etree",
+          "overhead_s": -0.002278699990711175,
+          "process_speedup": 1.0038727984316114,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "asyncio_tcp",
+          "overhead_s": -0.006314800004474819,
+          "process_speedup": 1.0059885600224248,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "yaml",
+          "overhead_s": -0.009876900003291667,
+          "process_speedup": 1.060520517281567,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "pprint",
+          "overhead_s": -0.023232599996845238,
+          "process_speedup": 1.0079724671468049,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "async_generators",
+          "overhead_s": -0.02849580001202412,
+          "process_speedup": 1.0430551155162748,
+          "deployment_status": "no_selected_wrappers"
+        },
+        {
+          "name": "raytrace",
+          "overhead_s": -0.054827699990710244,
+          "process_speedup": 1.1349418246384382,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "scimark",
+          "overhead_s": -0.2007405999902403,
+          "process_speedup": 1.3400314045982413,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "fannkuch",
+          "overhead_s": -0.26307919999817386,
+          "process_speedup": 1.9372455413984069,
+          "deployment_status": "native_called"
+        },
+        {
+          "name": "barnes_hut",
+          "overhead_s": -0.8664142000052379,
+          "process_speedup": 3.1807775563180707,
+          "deployment_status": "native_called"
+        }
+      ]
+    }
+  },
+  "execution": {
+    "completed_child_records": 1423,
+    "child_wall_s": 1905.5058484998299,
+    "failures": [],
+    "bytecode_compile_only_wall_s": 70.87800309994782,
+    "separate_audit_wall_s": 338.93234419991495,
+    "first_finished_utc": "2026-11-12T16:23:37.890548+00:00",
+    "last_finished_utc": "2026-11-12T16:56:33.798355+00:00"
+  },
+  "limits": [
+    "Exact stdout bytes/exit equality only; empty stdout is not full result-equivalence proof. Captured samples/verification counts retained separately. Profile CLI output not script-equivalence evidence.",
+    "Largest verified candidate reach is an opportunity proxy, not dynamic union or actual native-time coverage.",
+    "Kernel candidate speedups exclude process/profile cost and are never process-speedup claims.",
+    "Historical failed packages/data are exclusions recorded in manifest; attempted additions separate.",
+    "Actual counts are successful runner-process entry calls, not dynamic recursive-call counts or cross-process native-time union.",
+    "Zero wrapper fallback for unselected execution does not mean no Python work.",
+    "Initial and later paired medians are never pooled."
+  ]
+}

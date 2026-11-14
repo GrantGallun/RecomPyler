@@ -1,0 +1,206 @@
+{
+  "raytrace-retained-aot": {
+    "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\raytrace\\candidate\\recompyler\\rcaotr_ced2c43c3452451226d0f64a.cp314-win_amd64.pyd",
+    "artifact_sha256": "ef001c5a6907ee2012dc3bb1d218dc4effc9cc8adedf4f86348d4f4c6c087b6b",
+    "export": "r0",
+    "preferred_image_base": "0x180000000",
+    "method": {
+      "name_file_offset": "0x9170",
+      "name_address": "0x18000a770",
+      "methoddef_file_offset": "0xee00",
+      "methoddef_address": "0x180011000",
+      "function_address": "0x1800028b0",
+      "flags": "0x3",
+      "doc_pointer": "0x0"
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "size": 34088,
+        "rawsize": 34304,
+        "offset": 1024,
+        "executable": true
+      },
+      {
+        "name": ".rdata",
+        "rva": 40960,
+        "size": 25142,
+        "rawsize": 25600,
+        "offset": 35328,
+        "executable": false
+      },
+      {
+        "name": ".data",
+        "rva": 69632,
+        "size": 3208,
+        "rawsize": 2560,
+        "offset": 60928,
+        "executable": false
+      },
+      {
+        "name": ".pdata",
+        "rva": 73728,
+        "size": 1140,
+        "rawsize": 1536,
+        "offset": 63488,
+        "executable": false
+      },
+      {
+        "name": ".rsrc",
+        "rva": 77824,
+        "size": 248,
+        "rawsize": 512,
+        "offset": 65024,
+        "executable": false
+      },
+      {
+        "name": ".reloc",
+        "rva": 81920,
+        "size": 188,
+        "rawsize": 512,
+        "offset": 65536,
+        "executable": false
+      }
+    ],
+    "note": "Static PyMethodDef candidate only; bind export to independent successful-call digest/plan audit. No artifact imported or executed.",
+    "function": "Scene.render",
+    "digest": "0ed2b2e934d6be111a7f709c78ab62e052e513796dcf3372079253dc4f72d035",
+    "actual_selected_counts": {
+      "function": "Scene.render",
+      "kind": "region",
+      "aot_calls": 5,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "0ed2b2e934d6be111a7f709c78ab62e052e513796dcf3372079253dc4f72d035": {
+          "aot_calls": 5,
+          "jit_calls": 0,
+          "unknown_native_calls": 0
+        }
+      }
+    },
+    "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\raytrace\\candidate.plan.json",
+    "plan_sha256": "43106da5c6cc1b703bdd902b47d5e6199353ad81a17268a937120cd3ca73b4d0",
+    "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\raytrace\\candidate-forced.audit.json",
+    "audit_sha256": "ba66c19ced6e793214aa9149aa3771b12351d804104cf98a553d6c4343c44a8d",
+    "historical": true,
+    "native_artifact_executed": false,
+    "command": [
+      "C:\\Users\\grant\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.3.2+Asserts\\usr\\bin\\llvm-objdump.exe",
+      "--disassemble",
+      "--demangle",
+      "--no-show-raw-insn",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\raytrace\\candidate\\recompyler\\rcaotr_ced2c43c3452451226d0f64a.cp314-win_amd64.pyd"
+    ],
+    "tool_sha256": "87b482f03bacc867cb05f4fcc42b45b25ab38544dc07a4efd12211cc5a8639ba",
+    "assembly_sha256": "0928b8c1ce2be6ca3249216aaf8945ea7424d5f5bcf6e30ba4b0d9ddcd6700fe"
+  },
+  "raytrace-c": {
+    "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\bin\\raytrace.exe",
+    "artifact_sha256": "3913b4bb6c6203042230c72da1fa46b6cad7899281c3cd3f2764fce29f7a2abc",
+    "assembly_sha256": "2bbd1e24c47a5ab691d93e9cc56ab01a5f562bf70bcdcc03828860a8274fe6c4",
+    "native_artifact_executed": false
+  },
+  "scimark-retained-aot": {
+    "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\scimark\\candidate\\recompyler\\rcaot_05cb37762ef1645705ed4668.cp314-win_amd64.pyd",
+    "artifact_sha256": "185a02839775a091d004f7f5e87f20a57aa366fb63a72001058445e6c6eb0a20",
+    "export": "f1",
+    "preferred_image_base": "0x180000000",
+    "method": {
+      "name_file_offset": "0x60e2",
+      "name_address": "0x180007ae2",
+      "methoddef_file_offset": "0xc420",
+      "methoddef_address": "0x18000e020",
+      "function_address": "0x180002f10",
+      "flags": "0x3",
+      "doc_pointer": "0x0"
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": 4096,
+        "size": 20568,
+        "rawsize": 20992,
+        "offset": 1024,
+        "executable": true
+      },
+      {
+        "name": ".rdata",
+        "rva": 28672,
+        "size": 27892,
+        "rawsize": 28160,
+        "offset": 22016,
+        "executable": false
+      },
+      {
+        "name": ".data",
+        "rva": 57344,
+        "size": 3600,
+        "rawsize": 2560,
+        "offset": 50176,
+        "executable": false
+      },
+      {
+        "name": ".pdata",
+        "rva": 61440,
+        "size": 1164,
+        "rawsize": 1536,
+        "offset": 52736,
+        "executable": false
+      },
+      {
+        "name": ".rsrc",
+        "rva": 65536,
+        "size": 248,
+        "rawsize": 512,
+        "offset": 54272,
+        "executable": false
+      },
+      {
+        "name": ".reloc",
+        "rva": 69632,
+        "size": 456,
+        "rawsize": 512,
+        "offset": 54784,
+        "executable": false
+      }
+    ],
+    "note": "Static PyMethodDef candidate only; bind export to independent successful-call digest/plan audit. No artifact imported or executed.",
+    "function": "FFT_inverse",
+    "digest": "21f96acd5ba27875040fad65de84c40fcabd58fd4121099b3b0c3755c431c017",
+    "actual_selected_counts": {
+      "function": "FFT_inverse",
+      "kind": "ordinary",
+      "aot_calls": 250,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {}
+    },
+    "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\scimark\\candidate.warm.plan.json",
+    "plan_sha256": "f6c6527f6f1233e3f3594b899adc4751220b9695dad97c2064363efa3d01d2df",
+    "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\scimark\\candidate-warm.audit.json",
+    "audit_sha256": "851a9b39a41e493959822ac14f140e4b2165becf6e1453240a703fa738038b00",
+    "historical": true,
+    "native_artifact_executed": false,
+    "command": [
+      "C:\\Users\\grant\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.3.2+Asserts\\usr\\bin\\llvm-objdump.exe",
+      "--disassemble",
+      "--demangle",
+      "--no-show-raw-insn",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\scimark\\candidate\\recompyler\\rcaot_05cb37762ef1645705ed4668.cp314-win_amd64.pyd"
+    ],
+    "tool_sha256": "87b482f03bacc867cb05f4fcc42b45b25ab38544dc07a4efd12211cc5a8639ba",
+    "assembly_sha256": "d8196df5f35f85ea9e1d2c7c4cb7aa43761f69c99e05e0b65d62d9f640c2a213"
+  },
+  "scimark-c": {
+    "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\bin\\scimark.exe",
+    "artifact_sha256": "6515759b4497e31bc5d015ec3ab483ce118893e4c394c2ab3fafaa31dc4ec186",
+    "assembly_sha256": "2ae62136a880b30902f25fe63c1e7347f5b2f72c82ff97602efa5d80c8877149",
+    "native_artifact_executed": false
+  }
+}

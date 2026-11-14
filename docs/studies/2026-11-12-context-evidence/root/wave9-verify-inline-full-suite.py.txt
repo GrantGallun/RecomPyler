@@ -1,0 +1,27 @@
+"""Verify the refined candidate's retained full-suite evidence, without reruns."""
+import hashlib
+import json
+from pathlib import Path
+
+root = Path(__file__).resolve().parent
+analysis = root / 'wave9-inline-context-analysis'
+folder = analysis / 'full-suite'
+read = lambda p: json.loads(p.read_text())
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+receipt = read(folder / 'receipt.json')
+freeze = read(analysis / 'candidate-freeze.json')
+before = read(folder / 'before-inputs.json')
+after = read(folder / 'after-inputs.json')
+assert freeze['commit'] == '0373788b7be436e5e43b0a6a6f3fd40b2871c3a3'
+assert receipt['exit_code'] == 0 and receipt['inputs_unchanged'] and not receipt['changed_inputs']
+assert before == after == freeze['inputs'] and len(after) == 61
+assert sha(folder / 'stdout.log') == receipt['stdout_sha256']
+assert sha(folder / 'stderr.log') == receipt['stderr_sha256']
+for name, digest in after.items():
+    assert sha(root / 'wave9-inline-context-fix' / name) == digest, name
+output = (folder / 'stdout.log').read_text()
+for fragment in ('599 passed', '52 subtests passed', '22 warnings', '300.90s'):
+    assert fragment in output, fragment
+result = {'root_full_suite_verified': True, 'candidate': freeze['commit'], 'frozen_inputs': 61, 'passed': 599, 'subtests_passed': 52, 'warnings': 22, 'pytest_seconds': 300.90, 'stdout_sha256': receipt['stdout_sha256'], 'source_unchanged': True, 'note': 'Verified raw logs, before/after/freeze equality and current bytes; no tests rerun.'}
+(root / 'wave9-root-inline-full-suite-verification.json').write_text(json.dumps(result, indent=2) + '\n')
+print(json.dumps(result))

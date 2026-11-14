@@ -1,0 +1,106 @@
+"""Check retained hashes, checkpoints, call setup and measurements without execution."""
+import hashlib
+import json
+from pathlib import Path
+import re
+import statistics
+import struct
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+STUDY = ROOT/'wave7-study/results'
+def read(path):
+    return json.loads(path.read_text())
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+manifest = read(STUDY/'manifest.json')
+frozen = read(STUDY/'aot-artifacts-frozen.json')
+result = {'manifest_sha256': sha(STUDY/'manifest.json'), 'artifacts': {}, 'checkpoints': {},
+          'measurements': {}, 'outgoing_stack_argument_slots': {}}
+plain = read(STUDY/'plain-state.json')
+pc = {row['step']: row for row in plain['checkpoints']}
+for name in ('baseline', 'candidate'):
+    p = read(HERE/(name+'-provenance.json'))
+    actual = sha(Path(p['artifact']))
+    assert actual == p['artifact_sha256'] == frozen[p['artifact']]
+    assert sha(Path(p['audit'])) == p['audit_sha256']
+    assert sha(Path(p['plan'])) == p['plan_sha256']
+    assert sha(HERE/(name+'.asm')) == p['assembly_sha256']
+    m = read(STUDY/(name+'-aot-map.json'))[0]
+    assert m['artifact_sha256'] == actual and m['selected_digest'] == p['digest']
+    assert m['wrapper_preferred_address'] == p['method']['function_address']
+    assert sha(Path(m['audit'])) == m['audit_sha256']
+    result['artifacts'][name] = {'sha256': actual, 'digest': p['digest'],
+                               'wrapper': p['method']['function_address'], 'aot_calls': p['actual_aot_calls']}
+    state = read(STUDY/(name+'-state.json'))
+    sc = {row['step']: row for row in state['checkpoints']}
+    assert set(pc) == set(sc) and len(sc) == 100
+    for step in pc:
+        for key in ('numeric_sha256', 'types_sha256', 'aliases_sha256'):
+            assert pc[step][key] == sc[step][key]
+    for boundary in ('initial', 'final'):
+        for key in ('numbers', 'types', 'aliases'):
+            assert plain[boundary][key] == state[boundary][key]
+    result['checkpoints'][name] = '100 numeric/type/alias hashes and full initial/final vectors equal plain'
+    force = (HERE/(name+'-force.asm')).read_text().splitlines()
+    maximum = 0x100 if name == 'baseline' else 0x48
+    expected = list(range(0x20, maximum+1, 8))
+    writes, calls = set(), []
+    for line in force:
+        store = re.search(r'\bmov(?:q|sd)\s+[^#]*, (0x[0-9a-f]+)\(%rsp\)', line)
+        if store and 0x20 <= int(store[1],16) <= maximum:
+            writes.add(int(store[1],16))
+        if '\tcallq\t' in line:
+            assert sorted(writes) == expected
+            calls.append({'instruction': line.strip(), 'outgoing_offsets': [hex(x) for x in sorted(writes)]})
+            writes.clear()
+    assert len(calls) == 4
+    result['outgoing_stack_argument_slots'][name] = calls
+
+analysis = read(STUDY/'ANALYSIS.json')
+for name in ('baseline', 'candidate', 'c'):
+    row = analysis['rows'][name]
+    assert row['checks_valid'] and len(row['kernel_samples_s']) == 5
+    assert statistics.median(row['kernel_samples_s']) == row['median_best_kernel_s']
+    if name != 'c':
+        assert row['actual_modes_valid'] and row['aot_calls_total'] == 2500
+        assert row['jit_calls_total'] == row['fallback_calls_total'] == 0
+    result['measurements'][name] = {'kernel_samples_ms': [x*1000 for x in row['kernel_samples_s']],
+                                    'kernel_median_ms': row['median_best_kernel_s']*1000,
+                                    'process_wall_median_ms': row['median_process_wall_s']*1000}
+baseline = analysis['rows']['baseline']['median_best_kernel_s']
+candidate = analysis['rows']['candidate']['median_best_kernel_s']
+c = analysis['rows']['c']['median_best_kernel_s']
+result['ratios'] = {'speedup': baseline/candidate, 'kernel_reduction_percent': (1-candidate/baseline)*100,
+                    'candidate_time_over_c': candidate/c, 'baseline_time_over_c': baseline/c}
+seed_paths = [Path(manifest['sources'][n]['path'])/'src/recompyler/_region_seed.py' for n in ('baseline','candidate')]
+assert seed_paths[0].read_bytes().replace(b'\r\n',b'\n') == seed_paths[1].read_bytes().replace(b'\r\n',b'\n')
+result['seed_newline_only'] = {str(p): sha(p) for p in seed_paths}
+
+cp = STUDY/'bin/barnes_hut.exe'
+raw = cp.read_bytes()
+assert sha(cp) == '4fd003eeea3b3bf997c90889340719fd71e8f698da5feca673ece46e9418f9ff'
+pe = struct.unpack_from('<I', raw, 0x3c)[0]
+opt, optlen = pe+24, struct.unpack_from('<H', raw, pe+20)[0]
+base = struct.unpack_from('<Q', raw, opt+24)[0]
+theta = None
+for i in range(struct.unpack_from('<H', raw, pe+6)[0]):
+    size, rva, rawsize, offset = struct.unpack_from('<IIII', raw, opt+optlen+i*40+8)
+    if base+rva <= 0x1400042f8 < base+rva+rawsize:
+        theta = struct.unpack_from('<d', raw, offset+0x1400042f8-base-rva)[0]
+assert theta == 0.5
+assert sha(HERE/'c-force.asm') == sha(ROOT/'wave6-instructions/c-force.asm')
+result['c'] = {'artifact_sha256': sha(cp), 'theta_address': '0x1400042f8', 'theta': theta,
+               'excerpt_sha256': sha(HERE/'c-force.asm')}
+reg = read(ROOT/'wave7-study/results-regression/SUMMARY.json')
+assert reg['complete']
+for name, case in reg['programs'].items():
+    for mode in ('baseline','candidate'):
+        assert case[mode]['valid']
+        totals = case[mode]['audit']['totals']
+        assert totals['aot_calls'] == 8 and all(totals[k] == 0 for k in ('jit_calls','fallback_calls','unknown_native_calls','rejected_attempts'))
+result['generality_controls'] = list(reg['programs'])
+result['native_artifacts_executed'] = False
+(HERE/'verification.json').write_text(json.dumps(result, indent=2)+'\n')
+print(json.dumps({'ratios': result['ratios'], 'artifacts': result['artifacts'], 'checkpoints': result['checkpoints']}, indent=2))

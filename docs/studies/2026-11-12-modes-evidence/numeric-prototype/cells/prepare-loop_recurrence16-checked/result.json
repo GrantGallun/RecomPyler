@@ -1,0 +1,839 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "checked",
+  "function": "loop_recurrence16",
+  "task": "prepare",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ],
+    "n": [
+      0,
+      1024
+    ]
+  },
+  "corpus_count": 392,
+  "expected_results_sha256": "a20c051a6a31c8a5fdf53f4206625a81332b99fe0941095fed0f8ce598978deb",
+  "valid_exact_results": true,
+  "construction_s": 0.28514810001070146,
+  "first_call_s": 0.7834853999956977,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 1,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 392,
+    "aot_calls": 0,
+    "jit_calls": 392,
+    "fallback_calls": 0,
+    "contract_native_calls": 392,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "loop_recurrence16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "b5ae3bb6685078518eed9a23a9037b44108be6cbf308ee2bb9dce07a222d21c0",
+    "function_bytecode_sha256": "1d23dac200bc0f0d85991e5d5a2578605c991488a6fb66650a27c73dc59fae7a",
+    "selected_mode": "checked",
+    "identity": "f4cd3923fe2b366e38c0c7e34fd01a2c38b581bdc798b602c2929a3e73ff1c94",
+    "contract": "IntIntervals(_items=(('n', (0, 1024)), ('x', (-1048576, 1048576)), ('y', (-1, 1)), ('z', (-1048576, 1048576))))",
+    "proof_certificates": "(IntervalCertificate(origin=(4, 12, 4, 17, 'mul'), left=(-17164140544, 17164140544), right=(-1, 1), result=(-17164140544, 17164140544)), IntervalCertificate(origin=(4, 12, 4, 21, 'add'), left=(-17164140544, 17164140544), right=(-1048576, 1048576), result=(-17165189120, 17165189120)), IntervalCertificate(origin=(5, 12, 5, 17, 'mul'), left=(-17165189120, 17165189120), right=(-1, 1), result=(-17165189120, 17165189120)), IntervalCertificate(origin=(5, 12, 5, 21, 'add'), left=(-17165189120, 17165189120), right=(-1048576, 1048576), result=(-17166237696, 17166237696)), IntervalCertificate(origin=(6, 12, 6, 17, 'mul'), left=(-17166237696, 17166237696), right=(-1, 1), result=(-17166237696, 17166237696)), IntervalCertificate(origin=(6, 12, 6, 21, 'add'), left=(-17166237696, 17166237696), right=(-1048576, 1048576), result=(-17167286272, 17167286272)), IntervalCertificate(origin=(7, 12, 7, 17, 'mul'), left=(-17167286272, 17167286272), right=(-1, 1), result=(-17167286272, 17167286272)), IntervalCertificate(origin=(7, 12, 7, 21, 'add'), left=(-17167286272, 17167286272), right=(-1048576, 1048576), result=(-17168334848, 17168334848)), IntervalCertificate(origin=(8, 12, 8, 17, 'mul'), left=(-17168334848, 17168334848), right=(-1, 1), result=(-17168334848, 17168334848)), IntervalCertificate(origin=(8, 12, 8, 21, 'add'), left=(-17168334848, 17168334848), right=(-1048576, 1048576), result=(-17169383424, 17169383424)), IntervalCertificate(origin=(9, 12, 9, 17, 'mul'), left=(-17169383424, 17169383424), right=(-1, 1), result=(-17169383424, 17169383424)), IntervalCertificate(origin=(9, 12, 9, 21, 'add'), left=(-17169383424, 17169383424), right=(-1048576, 1048576), result=(-17170432000, 17170432000)), IntervalCertificate(origin=(10, 12, 10, 17, 'mul'), left=(-17170432000, 17170432000), right=(-1, 1), result=(-17170432000, 17170432000)), IntervalCertificate(origin=(10, 12, 10, 21, 'add'), left=(-17170432000, 17170432000), right=(-1048576, 1048576), result=(-17171480576, 17171480576)), IntervalCertificate(origin=(11, 12, 11, 17, 'mul'), left=(-17171480576, 17171480576), right=(-1, 1), result=(-17171480576, 17171480576)), IntervalCertificate(origin=(11, 12, 11, 21, 'add'), left=(-17171480576, 17171480576), right=(-1048576, 1048576), result=(-17172529152, 17172529152)), IntervalCertificate(origin=(12, 12, 12, 17, 'mul'), left=(-17172529152, 17172529152), right=(-1, 1), result=(-17172529152, 17172529152)), IntervalCertificate(origin=(12, 12, 12, 21, 'add'), left=(-17172529152, 17172529152), right=(-1048576, 1048576), result=(-17173577728, 17173577728)), IntervalCertificate(origin=(13, 12, 13, 17, 'mul'), left=(-17173577728, 17173577728), right=(-1, 1), result=(-17173577728, 17173577728)), IntervalCertificate(origin=(13, 12, 13, 21, 'add'), left=(-17173577728, 17173577728), right=(-1048576, 1048576), result=(-17174626304, 17174626304)), IntervalCertificate(origin=(14, 12, 14, 17, 'mul'), left=(-17174626304, 17174626304), right=(-1, 1), result=(-17174626304, 17174626304)), IntervalCertificate(origin=(14, 12, 14, 21, 'add'), left=(-17174626304, 17174626304), right=(-1048576, 1048576), result=(-17175674880, 17175674880)), IntervalCertificate(origin=(15, 12, 15, 17, 'mul'), left=(-17175674880, 17175674880), right=(-1, 1), result=(-17175674880, 17175674880)), IntervalCertificate(origin=(15, 12, 15, 21, 'add'), left=(-17175674880, 17175674880), right=(-1048576, 1048576), result=(-17176723456, 17176723456)), IntervalCertificate(origin=(16, 12, 16, 17, 'mul'), left=(-17176723456, 17176723456), right=(-1, 1), result=(-17176723456, 17176723456)), IntervalCertificate(origin=(16, 12, 16, 21, 'add'), left=(-17176723456, 17176723456), right=(-1048576, 1048576), result=(-17177772032, 17177772032)), IntervalCertificate(origin=(17, 12, 17, 17, 'mul'), left=(-17177772032, 17177772032), right=(-1, 1), result=(-17177772032, 17177772032)), IntervalCertificate(origin=(17, 12, 17, 21, 'add'), left=(-17177772032, 17177772032), right=(-1048576, 1048576), result=(-17178820608, 17178820608)), IntervalCertificate(origin=(18, 12, 18, 17, 'mul'), left=(-17178820608, 17178820608), right=(-1, 1), result=(-17178820608, 17178820608)), IntervalCertificate(origin=(18, 12, 18, 21, 'add'), left=(-17178820608, 17178820608), right=(-1048576, 1048576), result=(-17179869184, 17179869184)), IntervalCertificate(origin=(19, 12, 19, 17, 'mul'), left=(-17179869184, 17179869184), right=(-1, 1), result=(-17179869184, 17179869184)), IntervalCertificate(origin=(19, 12, 19, 21, 'add'), left=(-17179869184, 17179869184), right=(-1048576, 1048576), result=(-17180917760, 17180917760)))",
+    "problem": null,
+    "policy_metadata": {
+      "certificates": [
+        [
+          [
+            4,
+            12,
+            4,
+            17,
+            "mul"
+          ],
+          [
+            -17164140544,
+            17164140544
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17164140544,
+            17164140544
+          ]
+        ],
+        [
+          [
+            4,
+            12,
+            4,
+            21,
+            "add"
+          ],
+          [
+            -17164140544,
+            17164140544
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17165189120,
+            17165189120
+          ]
+        ],
+        [
+          [
+            5,
+            12,
+            5,
+            17,
+            "mul"
+          ],
+          [
+            -17165189120,
+            17165189120
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17165189120,
+            17165189120
+          ]
+        ],
+        [
+          [
+            5,
+            12,
+            5,
+            21,
+            "add"
+          ],
+          [
+            -17165189120,
+            17165189120
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17166237696,
+            17166237696
+          ]
+        ],
+        [
+          [
+            6,
+            12,
+            6,
+            17,
+            "mul"
+          ],
+          [
+            -17166237696,
+            17166237696
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17166237696,
+            17166237696
+          ]
+        ],
+        [
+          [
+            6,
+            12,
+            6,
+            21,
+            "add"
+          ],
+          [
+            -17166237696,
+            17166237696
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17167286272,
+            17167286272
+          ]
+        ],
+        [
+          [
+            7,
+            12,
+            7,
+            17,
+            "mul"
+          ],
+          [
+            -17167286272,
+            17167286272
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17167286272,
+            17167286272
+          ]
+        ],
+        [
+          [
+            7,
+            12,
+            7,
+            21,
+            "add"
+          ],
+          [
+            -17167286272,
+            17167286272
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17168334848,
+            17168334848
+          ]
+        ],
+        [
+          [
+            8,
+            12,
+            8,
+            17,
+            "mul"
+          ],
+          [
+            -17168334848,
+            17168334848
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17168334848,
+            17168334848
+          ]
+        ],
+        [
+          [
+            8,
+            12,
+            8,
+            21,
+            "add"
+          ],
+          [
+            -17168334848,
+            17168334848
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17169383424,
+            17169383424
+          ]
+        ],
+        [
+          [
+            9,
+            12,
+            9,
+            17,
+            "mul"
+          ],
+          [
+            -17169383424,
+            17169383424
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17169383424,
+            17169383424
+          ]
+        ],
+        [
+          [
+            9,
+            12,
+            9,
+            21,
+            "add"
+          ],
+          [
+            -17169383424,
+            17169383424
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17170432000,
+            17170432000
+          ]
+        ],
+        [
+          [
+            10,
+            12,
+            10,
+            17,
+            "mul"
+          ],
+          [
+            -17170432000,
+            17170432000
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17170432000,
+            17170432000
+          ]
+        ],
+        [
+          [
+            10,
+            12,
+            10,
+            21,
+            "add"
+          ],
+          [
+            -17170432000,
+            17170432000
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17171480576,
+            17171480576
+          ]
+        ],
+        [
+          [
+            11,
+            12,
+            11,
+            17,
+            "mul"
+          ],
+          [
+            -17171480576,
+            17171480576
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17171480576,
+            17171480576
+          ]
+        ],
+        [
+          [
+            11,
+            12,
+            11,
+            21,
+            "add"
+          ],
+          [
+            -17171480576,
+            17171480576
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17172529152,
+            17172529152
+          ]
+        ],
+        [
+          [
+            12,
+            12,
+            12,
+            17,
+            "mul"
+          ],
+          [
+            -17172529152,
+            17172529152
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17172529152,
+            17172529152
+          ]
+        ],
+        [
+          [
+            12,
+            12,
+            12,
+            21,
+            "add"
+          ],
+          [
+            -17172529152,
+            17172529152
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17173577728,
+            17173577728
+          ]
+        ],
+        [
+          [
+            13,
+            12,
+            13,
+            17,
+            "mul"
+          ],
+          [
+            -17173577728,
+            17173577728
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17173577728,
+            17173577728
+          ]
+        ],
+        [
+          [
+            13,
+            12,
+            13,
+            21,
+            "add"
+          ],
+          [
+            -17173577728,
+            17173577728
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17174626304,
+            17174626304
+          ]
+        ],
+        [
+          [
+            14,
+            12,
+            14,
+            17,
+            "mul"
+          ],
+          [
+            -17174626304,
+            17174626304
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17174626304,
+            17174626304
+          ]
+        ],
+        [
+          [
+            14,
+            12,
+            14,
+            21,
+            "add"
+          ],
+          [
+            -17174626304,
+            17174626304
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17175674880,
+            17175674880
+          ]
+        ],
+        [
+          [
+            15,
+            12,
+            15,
+            17,
+            "mul"
+          ],
+          [
+            -17175674880,
+            17175674880
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17175674880,
+            17175674880
+          ]
+        ],
+        [
+          [
+            15,
+            12,
+            15,
+            21,
+            "add"
+          ],
+          [
+            -17175674880,
+            17175674880
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17176723456,
+            17176723456
+          ]
+        ],
+        [
+          [
+            16,
+            12,
+            16,
+            17,
+            "mul"
+          ],
+          [
+            -17176723456,
+            17176723456
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17176723456,
+            17176723456
+          ]
+        ],
+        [
+          [
+            16,
+            12,
+            16,
+            21,
+            "add"
+          ],
+          [
+            -17176723456,
+            17176723456
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17177772032,
+            17177772032
+          ]
+        ],
+        [
+          [
+            17,
+            12,
+            17,
+            17,
+            "mul"
+          ],
+          [
+            -17177772032,
+            17177772032
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17177772032,
+            17177772032
+          ]
+        ],
+        [
+          [
+            17,
+            12,
+            17,
+            21,
+            "add"
+          ],
+          [
+            -17177772032,
+            17177772032
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17178820608,
+            17178820608
+          ]
+        ],
+        [
+          [
+            18,
+            12,
+            18,
+            17,
+            "mul"
+          ],
+          [
+            -17178820608,
+            17178820608
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17178820608,
+            17178820608
+          ]
+        ],
+        [
+          [
+            18,
+            12,
+            18,
+            21,
+            "add"
+          ],
+          [
+            -17178820608,
+            17178820608
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17179869184,
+            17179869184
+          ]
+        ],
+        [
+          [
+            19,
+            12,
+            19,
+            17,
+            "mul"
+          ],
+          [
+            -17179869184,
+            17179869184
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -17179869184,
+            17179869184
+          ]
+        ],
+        [
+          [
+            19,
+            12,
+            19,
+            21,
+            "add"
+          ],
+          [
+            -17179869184,
+            17179869184
+          ],
+          [
+            -1048576,
+            1048576
+          ],
+          [
+            -17180917760,
+            17180917760
+          ]
+        ]
+      ],
+      "contract": [
+        [
+          "n",
+          [
+            0,
+            1024
+          ]
+        ],
+        [
+          "x",
+          [
+            -1048576,
+            1048576
+          ]
+        ],
+        [
+          "y",
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          "z",
+          [
+            -1048576,
+            1048576
+          ]
+        ]
+      ],
+      "implementation": "c681942f89604e42708e20fac650baa7813f2be9c1f9b8164a463e135035e3b5",
+      "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+      "max_trips": 1024,
+      "mode": "checked",
+      "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+      "origin": "4ae8c94e8da2062f0f96dcc5449ecb1b834317b8b2c2176819d4b40cbd905c28",
+      "proof": 1,
+      "schema": 1
+    },
+    "program_digest": "202f683b665d056f07b8d3ed299c5069eafddc74cf520492d703e67087cba0b6",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_loop_recurrence16",
+    "program_source_sha256": "6e724cf67a73ad27cfd0553a184a7caf1576584811996e8fe0d9e6faa5694516",
+    "dispatcher_module": "rc_heap_ec96b18ef2b3e13226bd6fd6",
+    "dispatcher_qualname": "f0_loop_recurrence16",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_ec96b18ef2b3e13226bd6fd620f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_ec96b18ef2b3e13226bd6fd620f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "code_capture_requested": true,
+        "llvm_sha256": "fc7675d13e4eddf00e2e00e97035fb3bd92febbecbe4c8649927cfb672d28a7b",
+        "asm_sha256": "4c61c0ca055b88438f304d9864797e2b668b6e525c72afc9b81b74f3a62d5c3d"
+      }
+    ],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)": 1
+    }
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "final_counts": {
+    "compiled_calls": 393,
+    "aot_calls": 0,
+    "jit_calls": 393,
+    "fallback_calls": 0,
+    "contract_native_calls": 393,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_5e7efe73112c375b46e5348d.f0_recurrence_64-586.py314.1.nbc": "10e02fd611eb49e1283ded5b6e116eb739460752afa55cae43e3928c0335cc7c",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_5e7efe73112c375b46e5348d.f0_recurrence_64-586.py314.nbi": "872b3d02591e8b541e08d05b6220b7a220609a0d0b142caece22800e03e5bad8",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_85f07cc79ec7251995a72298.f0_fibonacci-586.py314.1.nbc": "181deebe4c22f61add4377ccd8b511910ff568f795e0918252a5f36c0b784b81",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_85f07cc79ec7251995a72298.f0_fibonacci-586.py314.nbi": "f878845d8b182dd2fb9066d8e7ceeafaf510f18f2a56aba2025cc624c0d57009",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_a044c7d78212f1595140e8fa.f0_recurrence_16-586.py314.1.nbc": "b373d6c4f903c77a62977bcd8ffe90ee390d89caebeaacd51048556c232a755d",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_a044c7d78212f1595140e8fa.f0_recurrence_16-586.py314.nbi": "57901bfa2ce82005946962fe8d7de4dc075498680fa48c0ffc2cc4f8705f228f",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_c5b6e2f0892c8f086a959ea3.f0_recurrence_1-586.py314.1.nbc": "d02d87648ac2cb8bbabe31e523a91cf0ef1a41f6910b05cdc505c75f6b43ad67",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_c5b6e2f0892c8f086a959ea3.f0_recurrence_1-586.py314.nbi": "f8334f921a8eb6863643a85298611af739dc699c0629b8c21e232b0be598c3a9",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_ec96b18ef2b3e13226bd6fd6.f0_loop_recurrence16-586.py314.1.nbc": "c6135cfed240bddfb01dd6d86203130cef2684fd1c18dc59db7f58dd889866ba",
+    "numba/checked_4e66c3825546040a52251c0b570e9063b093a258/rc_heap_ec96b18ef2b3e13226bd6fd6.f0_loop_recurrence16-586.py314.nbi": "940884bd26003a549a30b1729f683c85e85329163bf4dac1338afff98c42b754",
+    "rc_heap_5e7efe73112c375b46e5348d.py": "763101d12c47f4b2659818891f6d363ff68f79fbf84df76260b3aad863a706d0",
+    "rc_heap_85f07cc79ec7251995a72298.py": "d4ccac9589e33e74bff4a8d8a53511ccf4471e579b9c5553e6eacd42114a1dba",
+    "rc_heap_a044c7d78212f1595140e8fa.py": "47aa192ace6bdb7d8349b39928929031998e10be1c038b1abb120bcdff6d9333",
+    "rc_heap_c5b6e2f0892c8f086a959ea3.py": "409e13bc8b915a5db47007cc4b2080fac0f573880c7d66bfd29e78d3984cefe5",
+    "rc_heap_ec96b18ef2b3e13226bd6fd6.py": "6cdc2d0fa0c326494fc894d9f955fe1f07ccf05fac76ffb32f4eb9f3f9921eb1",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

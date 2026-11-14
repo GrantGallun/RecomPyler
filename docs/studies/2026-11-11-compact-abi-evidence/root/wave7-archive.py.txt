@@ -1,0 +1,53 @@
+"""Capture completed exact evidence; never execute captured Python fixtures."""
+import hashlib
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+INTEGRATION = ROOT / 'integration'
+OUT = INTEGRATION / 'docs/studies/2026-11-11-compact-abi-evidence'
+assert not OUT.exists(), 'Never overwrite a completed archive.'
+OUT.mkdir()
+(OUT / '.gitattributes').write_bytes(b'* -text\n')
+files = []
+
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def capture(source, destination):
+    if destination.suffix == '.py':
+        destination = destination.with_suffix('.py.txt')
+    target = OUT / destination
+    assert not target.exists(), target
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(source, target)
+    assert source.read_bytes() == target.read_bytes()
+    files.append({'source': str(source), 'archive': destination.as_posix(),
+                  'bytes': target.stat().st_size, 'sha256': digest(target)})
+
+
+study = ROOT / 'wave7-study'
+tracked = subprocess.check_output(['git','-C',str(study),'ls-files','-z']).decode().split('\0')[:-1]
+assert len(tracked) == 392
+for name in tracked:
+    capture(study / name, Path('study') / name)
+for name in ('wave7-validation', 'wave7-instructions', 'wave7-analysis'):
+    for source in sorted((ROOT / name).rglob('*')):
+        if source.is_file() and '__pycache__' not in source.parts:
+            capture(source, Path(name) / source.relative_to(ROOT / name))
+for name in ('wave7-verify-completed.py', 'wave7-root-verification.json', 'wave7-integration-source.json', 'wave7-archive.py'):
+    capture(ROOT / name, Path('root') / name)
+capture(study / '.git/archive-verification.json', Path('root/study-agent-archive-verification.json'))
+files.append({'source': 'archive attribute policy', 'archive': '.gitattributes',
+              'bytes': (OUT / '.gitattributes').stat().st_size, 'sha256': digest(OUT / '.gitattributes')})
+manifest = {'schema': 1, 'study_commit': 'f087533ec047216fd4f7dccea0286e03f45c1628',
+            'product_commit': 'a033ca14c40afed052a6266a0a575f6cc11559ea',
+            'file_count_excluding_manifest': len(files), 'bytes_excluding_manifest': sum(f['bytes'] for f in files),
+            'capture_note': 'Every Python source capture is named .py.txt to prevent unintended test discovery. Bytes are unchanged. Original executable helpers remain in the separate committed study. Absolute paths in captures identify the performed local study.',
+            'files': sorted(files, key=lambda f:f['archive'])}
+(OUT / 'archive-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf8')
+print(json.dumps({k:v for k,v in manifest.items() if k != 'files'},indent=2))

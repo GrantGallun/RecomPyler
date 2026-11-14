@@ -1,0 +1,13 @@
+{
+  "base": "a5d11d7745da8d324e46e544f929849c0598cddd",
+  "cwd": "D:/Code/Datathon/recompyler-codex-20261111/wave10-binding",
+  "test_environment_overrides": {
+    "RECOMPYLER_CACHE": "D:/Code/Datathon/recompyler-codex-20261111/wave10-binding-analysis/cache"
+  },
+  "runs": [
+    {"command": "python -m pytest tests/test_experimental_numeric.py -k FastBindingTests -q", "log": "red-fast-binding.txt", "exit": 1, "elapsed_s": 4.0405079, "summary": "7 failed, 5 passed, 43 deselected in 2.17s; expected Signature-construction assertions"},
+    {"command": "python -m pytest tests/test_experimental_numeric.py -k FastBindingTests -q", "log": "green-fast-binding.txt", "exit": 0, "elapsed_s": 3.1209275, "summary": "6 passed, 43 deselected, 6 subtests passed in 1.54s"},
+    {"command": "python -m pytest tests/test_experimental_numeric.py tests/test_heap_callable_objects.py tests/test_heap_mixed_indices.py tests/test_heap_print_exit.py -q", "log": "focused-union.txt", "exit": 0, "elapsed_s": 15.7204539, "summary": "113 passed, 46 subtests passed in 14.17s"}
+  ],
+  "scope": "Focused verification only; no full suite, benchmark or profiling run at this freeze."
+}

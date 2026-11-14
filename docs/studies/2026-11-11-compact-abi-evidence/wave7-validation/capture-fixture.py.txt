@@ -1,0 +1,44 @@
+"""Retain actual JIT fixture code separately from selected workload AOT evidence."""
+import hashlib
+import json
+from pathlib import Path
+import re
+import sys
+
+repo = Path(__file__).resolve().parents[1] / "wave7-compact-abi"
+sys.path[:0] = [str(repo / "src"), str(repo / "tests")]
+from recompyler import heap
+from test_heap_compact_abi import recursive_sum
+
+out = Path(__file__).with_name("fixture-native")
+out.mkdir(exist_ok=False)
+heap._cached_module = lambda source: None
+region = heap.lift_region(recursive_sum)
+assert region(4, 1.25) == 10.0 and region.compiled_calls == 1, region.problem
+program = region.latest
+body = getattr(program.module, program.entry.name + "_borrowed")
+signature = body.signatures[0]
+llvm = body.inspect_llvm(signature)
+native = llvm.split("define ", 1)[1].split("\n}", 1)[0]
+assembly = body.inspect_asm(signature)
+for name, value in [("generated.py", program.source), ("recursive.ll", llvm),
+                    ("recursive.asm", assembly), ("recursive-native.ll", "define " + native + "\n}\n")]:
+    (out / name).write_text(value, encoding="utf-8")
+report = {
+    "kind": "actual-jit-fixture-not-workload-aot",
+    "result": 10.0,
+    "compiled_calls": region.compiled_calls,
+    "digest": program.digest,
+    "public_signature": str(program.run.signatures[0]),
+    "recursive_signature": str(signature),
+    "recursive_context_parameters": 5,
+    "recursive_total_parameters": len(signature),
+    "native_definition": native.splitlines()[0],
+    "native_nrt_owner_operations": re.findall(r"call[^\n]*@NRT_(?:incref|decref|MemInfo_alloc)[^\n]*", native),
+    "source_sha256": hashlib.sha256(Path(heap.__file__).read_bytes()).hexdigest(),
+    "files": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in out.iterdir()},
+}
+assert not report["native_nrt_owner_operations"]
+(out / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+print(json.dumps({key: report[key] for key in ("kind", "public_signature", "recursive_signature",
+                                               "recursive_total_parameters", "native_nrt_owner_operations")}))

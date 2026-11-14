@@ -1,0 +1,83 @@
+"""Three bounded recursion generality profiles/audits, never timed speed claims."""
+import argparse
+from pathlib import Path
+import shutil
+import sys
+import bench
+import common
+
+HERE=Path(__file__).resolve().parent
+NAMES=['recursive_object','recursive_containers','recursive_returns']
+
+def prepare(args):
+    primary=args.primary.resolve();original=common.read(primary/'manifest.json');bench.verify(primary,original)
+    out=args.output.resolve()
+    if (out/'manifest.json').exists():raise SystemExit('Manifest exists; choose new folder.')
+    out.mkdir(parents=True,exist_ok=True)
+    m=dict(original)
+    m['primary_manifest']={'path':str(primary/'manifest.json'),'sha256':bench.sha(primary/'manifest.json')}
+    m['method']='Three bounded recursive object/container/return controls. Both sources fresh target-only profiles; plain and both native audits8calls each. No latency/headline/Cspeed claim.'
+    m.pop('baseline_plan_sha256');m.pop('reused_profile');m.pop('script');m.pop('script_sha256')
+    shutil.copytree(primary/'shim',out/'shim')
+    shutil.copytree(HERE/'regressions',out/'drivers')
+    m['programs']={n:{'script':str(out/'drivers'/(n+'.py')),'target':'run','expected_aot_calls':8} for n in NAMES}
+    m['input_inventory']={n:common.file_hashes(out/n) for n in ['shim','drivers']}
+    m['helpers'][str(HERE/'regression.py')]=bench.sha(HERE/'regression.py')
+    common.save(out/'manifest.json',m)
+    print('Prepared six small fresh profiles and nine correctness/audit children; no execution.')
+
+def verify(out,m):
+    if common.runtime_identity()!=m['runtime_identity']:raise SystemExit('Runtime changed.')
+    for s in m['sources'].values():
+        if common.revision(Path(s['path']))!=s:raise SystemExit('Frozen source changed.')
+    for path,h in m['helpers'].items():
+        if bench.sha(path)!=h:raise SystemExit('Helper changed.')
+    for folder,h in m['input_inventory'].items():
+        if common.file_hashes(out/folder)!=h:raise SystemExit('Input inventory changed.')
+    if bench.sha(m['primary_manifest']['path'])!=m['primary_manifest']['sha256']:raise SystemExit('Primary manifest changed.')
+
+def run(args):
+    out=args.output.resolve();m=common.read(out/'manifest.json');verify(out,m);py=m['python'];records={}
+    warm=[py,str(HERE/'warm_bytecode.py'),*[str(Path(s['path'])/'src') for s in m['sources'].values()],str(out/'drivers'),str(out/'shim')]
+    freeze=out/'bytecode-frozen.json'
+    if not freeze.exists():bench.execute(out,m,out/'warmup-before',warm,writes=True)
+    for index,(name,item) in enumerate(m['programs'].items()):
+        folder=out/'programs'/name;script=item['script']
+        order=['baseline','candidate'] if index%2==0 else ['candidate','baseline']
+        for source in order:
+            cmd=[py,str(HERE/'profile_target.py'),'--script',script,'--target','run','--output',str(folder/(source+'.plan.json'))]
+            bench.execute(out,m,folder/(source+'-profile'),cmd,source,True)
+    artifacts={}
+    for name in m['programs']:
+        for source in m['sources']:
+            sec=common.read(out/'programs'/name/(source+'.plan.json'))['plan']['aot_regions']
+            for p in Path(sec['folder']).glob(sec['module']+'*.pyd'):artifacts[str(p)]=bench.sha(p)
+    apath=out/'aot-artifacts-frozen.json'
+    if apath.exists() and common.read(apath)!=artifacts:raise SystemExit('AOT changed.')
+    common.save(apath,artifacts)
+    if not freeze.exists():
+        bench.execute(out,m,out/'warmup-final',warm,writes=True)
+        common.save(freeze,common.bytecode_inventory(out/'bytecode'))
+    for name,item in m['programs'].items():
+        folder=out/'programs'/name;script=item['script'];results={}
+        plain=bench.execute(out,m,folder/'plain',[py,script])
+        results['plain']=plain
+        for source in m['sources']:
+            cmd=[py,str(HERE/'audit.py'),'--output',str(folder/(source+'.audit.json')),'--plan',str(folder/(source+'.plan.json')),'--force',script]
+            native=bench.execute(out,m,folder/(source+'-audit'),cmd,source)
+            report=common.read(folder/(source+'.audit.json'));t=report['totals']
+            valid=(common.same_output(plain,native) and t['aot_calls']==8 and not any(t[k] for k in ['jit_calls','unknown_native_calls','fallback_calls','rejected_attempts'])
+                   and report['compiled_total_reconciles'] and report['product_exact_counter_matches_audit'] and not report['numba_imported_after'])
+            results[source]={'valid':valid,'audit':report,'process':native}
+            if not valid:
+                common.save(out/'SUMMARY.json',{'complete':False,'programs':records,'failure':name+':'+source,'evidence':results})
+                raise SystemExit('Regression output/mode mismatch; preserved '+name+':'+source)
+        records[name]=results
+        common.save(out/'SUMMARY.json',{'complete':False,'programs':records})
+        print('REGRESSION PASS '+name,flush=True)
+    verify(out,m);common.verify_bytecode(out/'bytecode',common.read(freeze))
+    if any(bench.sha(p)!=h for p,h in artifacts.items()):raise SystemExit('AOT artifact changed.')
+    common.save(out/'SUMMARY.json',{'complete':True,'programs':records,'all_valid':True,'manifest_sha256':bench.sha(out/'manifest.json')})
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('action',choices=['prepare','run']);p.add_argument('--primary',type=Path,default=HERE/'results');p.add_argument('--output',type=Path,default=HERE/'results-regression');a=p.parse_args();{'prepare':prepare,'run':run}[a.action](a)

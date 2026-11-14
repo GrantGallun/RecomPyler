@@ -1,0 +1,2093 @@
+{
+  "kind": "instrumented-region-diagnostic",
+  "script": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+    "bytes": 13599,
+    "sha256": "75c2550e69a0b565a8fdf1651a723f51e7f63333eb960fc778163722844bf7fa"
+  },
+  "plan": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\barnes_hut\\candidate.plan.json",
+    "bytes": 103621,
+    "sha256": "7d5aacc5254488f1a961ea801c8c94a37dc1c9aeef0034e3ec99b696d8aade0f"
+  },
+  "python": {
+    "path": "C:\\Python314\\python.exe",
+    "bytes": 106328,
+    "sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a"
+  },
+  "source": [
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\__init__.py",
+      "bytes": 441,
+      "sha256": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\__main__.py",
+      "bytes": 8428,
+      "sha256": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_heap.c",
+      "bytes": 16050,
+      "sha256": "bd5381d22f680550b1043f585b6941285854b1d4bcf21b6a89b556d76019cf0a"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_monitor.c",
+      "bytes": 30484,
+      "sha256": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_nd.py",
+      "bytes": 1834,
+      "sha256": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_optimize.py",
+      "bytes": 5451,
+      "sha256": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_pycc\\__init__.py",
+      "bytes": 626,
+      "sha256": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_pycc\\cc.py",
+      "bytes": 11217,
+      "sha256": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_pycc\\compiler.py",
+      "bytes": 19961,
+      "sha256": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_pycc\\llvm_types.py",
+      "bytes": 1276,
+      "sha256": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_pycc\\modulemixin.c",
+      "bytes": 6187,
+      "sha256": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_pycc\\platform.py",
+      "bytes": 9127,
+      "sha256": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_record_types.py",
+      "bytes": 233,
+      "sha256": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_region_seed.py",
+      "bytes": 19305,
+      "sha256": "cbca700e53dae98906d5e1e75e77f1414d5cf1928a4cf92138ffa7f71f6da88f"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_rng.py",
+      "bytes": 7747,
+      "sha256": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\aot.py",
+      "bytes": 7562,
+      "sha256": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\batch.py",
+      "bytes": 11016,
+      "sha256": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\benchmark.py",
+      "bytes": 7490,
+      "sha256": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\depmap.py",
+      "bytes": 35030,
+      "sha256": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\flow.py",
+      "bytes": 17581,
+      "sha256": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\heap.py",
+      "bytes": 311337,
+      "sha256": "3bdbb2e20b5544bd60ad8c4100d37c5a1146a2d859ad0adf59201e2c99383279"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\lift.py",
+      "bytes": 174872,
+      "sha256": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\monitor.py",
+      "bytes": 32169,
+      "sha256": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\profiler.py",
+      "bytes": 46262,
+      "sha256": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\report.py",
+      "bytes": 1774,
+      "sha256": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\runner.py",
+      "bytes": 15008,
+      "sha256": "60d0673001cb2e75515478c7b2d37c6d8e60f8a7eadef815f311790966084c3f"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\variants.py",
+      "bytes": 7340,
+      "sha256": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+    }
+  ],
+  "artifacts": [],
+  "planned_artifacts": [
+    {
+      "section": "aot_regions",
+      "module": "rcaotr_2fe5e05e91a653421cd9997e",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\barnes_hut\\candidate\\recompyler",
+      "candidates": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\barnes_hut\\candidate\\recompyler\\rcaotr_2fe5e05e91a653421cd9997e.cp314-win_amd64.pyd",
+          "bytes": 79872,
+          "sha256": "226403d22c98758ad52a79d49d3daf4641f9e2cdd6b1cad9c6e23a11e5f7bc9e"
+        }
+      ],
+      "loaded": {
+        "module": "rcaotr_2fe5e05e91a653421cd9997e",
+        "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\barnes_hut\\candidate\\recompyler\\rcaotr_2fe5e05e91a653421cd9997e.cp314-win_amd64.pyd",
+        "sha256": "226403d22c98758ad52a79d49d3daf4641f9e2cdd6b1cad9c6e23a11e5f7bc9e"
+      }
+    }
+  ],
+  "cache": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-aot\\cache",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\integration\\tools\\_phase_worker.py",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-aot\\config.json"
+  ],
+  "returncode": 0,
+  "error": null,
+  "timeout_scope": "direct child only; descendants created by the target/tool may survive a timeout",
+  "worker": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\integration\\tools\\_phase_worker.py",
+    "bytes": 7720,
+    "sha256": "6e443b3ed80ace34475d7c7bd6fdb32383cfd732b27db77f5ba2de22301a429e"
+  },
+  "checks": [
+    "check initial_energy 0x1.a753b7cd2b73fp+11",
+    "check final_energy 0x1.a753b7cbd6e9dp+11",
+    "check position_sum 0x1.5f562dcc10c33p+17"
+  ],
+  "diagnostic": {
+    "instrumented": true,
+    "timing_note": "Diagnostic timers add overhead; not an uninstrumented performance result. Native entries include retries; actual successful mode counts and Python fallbacks are in runner. Other attempt time includes preparation/compilation and unmeasured conversion/commit work. Timers attribute only the selected region.",
+    "attempts": [
+      {
+        "load_ns": 684900,
+        "guards_ns": 25600,
+        "native_ns": 323900,
+        "result_ns": 1400,
+        "writeback_ns": 74200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 41008900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39898900
+      },
+      {
+        "load_ns": 102400,
+        "guards_ns": 12300,
+        "native_ns": 302900,
+        "result_ns": 1300,
+        "writeback_ns": 40700,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 530100,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 70500
+      },
+      {
+        "load_ns": 190000,
+        "guards_ns": 13500,
+        "native_ns": 286700,
+        "result_ns": 600,
+        "writeback_ns": 34000,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 590600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 65800
+      },
+      {
+        "load_ns": 101700,
+        "guards_ns": 8000,
+        "native_ns": 279500,
+        "result_ns": 300,
+        "writeback_ns": 31200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 466800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 46100
+      },
+      {
+        "load_ns": 94000,
+        "guards_ns": 7000,
+        "native_ns": 266200,
+        "result_ns": 400,
+        "writeback_ns": 30700,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 441400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 43100
+      },
+      {
+        "load_ns": 96500,
+        "guards_ns": 7000,
+        "native_ns": 265500,
+        "result_ns": 300,
+        "writeback_ns": 30800,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 441500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 41400
+      },
+      {
+        "load_ns": 89400,
+        "guards_ns": 6500,
+        "native_ns": 264000,
+        "result_ns": 300,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40100
+      },
+      {
+        "load_ns": 89300,
+        "guards_ns": 6400,
+        "native_ns": 269200,
+        "result_ns": 200,
+        "writeback_ns": 30600,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 436400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40700
+      },
+      {
+        "load_ns": 88200,
+        "guards_ns": 6700,
+        "native_ns": 264100,
+        "result_ns": 200,
+        "writeback_ns": 30000,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39500
+      },
+      {
+        "load_ns": 89200,
+        "guards_ns": 6400,
+        "native_ns": 271300,
+        "result_ns": 200,
+        "writeback_ns": 30400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 437100,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39600
+      },
+      {
+        "load_ns": 89700,
+        "guards_ns": 6800,
+        "native_ns": 265200,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 431400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39100
+      },
+      {
+        "load_ns": 88600,
+        "guards_ns": 6600,
+        "native_ns": 264700,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40300
+      },
+      {
+        "load_ns": 182000,
+        "guards_ns": 14300,
+        "native_ns": 275300,
+        "result_ns": 600,
+        "writeback_ns": 36500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 567300,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 58600
+      },
+      {
+        "load_ns": 102300,
+        "guards_ns": 8200,
+        "native_ns": 269800,
+        "result_ns": 300,
+        "writeback_ns": 38600,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 465600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 46400
+      },
+      {
+        "load_ns": 95400,
+        "guards_ns": 7400,
+        "native_ns": 266400,
+        "result_ns": 300,
+        "writeback_ns": 30500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 442400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 42400
+      },
+      {
+        "load_ns": 91800,
+        "guards_ns": 6800,
+        "native_ns": 265900,
+        "result_ns": 300,
+        "writeback_ns": 32400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 437600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40400
+      },
+      {
+        "load_ns": 93900,
+        "guards_ns": 6900,
+        "native_ns": 266200,
+        "result_ns": 300,
+        "writeback_ns": 30700,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 438300,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40300
+      },
+      {
+        "load_ns": 89800,
+        "guards_ns": 6600,
+        "native_ns": 265100,
+        "result_ns": 300,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 431800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39800
+      },
+      {
+        "load_ns": 88900,
+        "guards_ns": 6400,
+        "native_ns": 269400,
+        "result_ns": 200,
+        "writeback_ns": 30600,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 435400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39900
+      },
+      {
+        "load_ns": 89100,
+        "guards_ns": 6500,
+        "native_ns": 265800,
+        "result_ns": 200,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 89100,
+        "guards_ns": 6600,
+        "native_ns": 267600,
+        "result_ns": 300,
+        "writeback_ns": 30600,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 433600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39400
+      },
+      {
+        "load_ns": 89300,
+        "guards_ns": 6400,
+        "native_ns": 264800,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 429800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 88800,
+        "guards_ns": 6400,
+        "native_ns": 274000,
+        "result_ns": 200,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 438400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38800
+      },
+      {
+        "load_ns": 97500,
+        "guards_ns": 6700,
+        "native_ns": 274000,
+        "result_ns": 200,
+        "writeback_ns": 30500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 448500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39600
+      },
+      {
+        "load_ns": 88700,
+        "guards_ns": 6300,
+        "native_ns": 273500,
+        "result_ns": 300,
+        "writeback_ns": 30000,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 438000,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39200
+      },
+      {
+        "load_ns": 89600,
+        "guards_ns": 6700,
+        "native_ns": 289100,
+        "result_ns": 1400,
+        "writeback_ns": 35100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 475500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 53600
+      },
+      {
+        "load_ns": 102400,
+        "guards_ns": 11900,
+        "native_ns": 277900,
+        "result_ns": 300,
+        "writeback_ns": 31400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 473200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 49300
+      },
+      {
+        "load_ns": 91600,
+        "guards_ns": 7100,
+        "native_ns": 268800,
+        "result_ns": 200,
+        "writeback_ns": 30800,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 441200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 42700
+      },
+      {
+        "load_ns": 89500,
+        "guards_ns": 6500,
+        "native_ns": 263700,
+        "result_ns": 200,
+        "writeback_ns": 30500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40300
+      },
+      {
+        "load_ns": 88400,
+        "guards_ns": 6300,
+        "native_ns": 266300,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 431600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40000
+      },
+      {
+        "load_ns": 88900,
+        "guards_ns": 6400,
+        "native_ns": 264400,
+        "result_ns": 300,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430100,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39900
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6200,
+        "native_ns": 265400,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40900
+      },
+      {
+        "load_ns": 88700,
+        "guards_ns": 6400,
+        "native_ns": 263600,
+        "result_ns": 200,
+        "writeback_ns": 30000,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39300
+      },
+      {
+        "load_ns": 87800,
+        "guards_ns": 6300,
+        "native_ns": 264000,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39300
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6300,
+        "native_ns": 271500,
+        "result_ns": 300,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 435400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39200
+      },
+      {
+        "load_ns": 87800,
+        "guards_ns": 6300,
+        "native_ns": 269000,
+        "result_ns": 300,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 432800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39200
+      },
+      {
+        "load_ns": 87800,
+        "guards_ns": 6200,
+        "native_ns": 266100,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 429700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 87900,
+        "guards_ns": 6200,
+        "native_ns": 265500,
+        "result_ns": 300,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38600
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6200,
+        "native_ns": 265600,
+        "result_ns": 200,
+        "writeback_ns": 31600,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39300
+      },
+      {
+        "load_ns": 88200,
+        "guards_ns": 6200,
+        "native_ns": 264000,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6300,
+        "native_ns": 264000,
+        "result_ns": 300,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38800
+      },
+      {
+        "load_ns": 87900,
+        "guards_ns": 6400,
+        "native_ns": 265400,
+        "result_ns": 200,
+        "writeback_ns": 30500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 429600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39200
+      },
+      {
+        "load_ns": 87400,
+        "guards_ns": 6200,
+        "native_ns": 263000,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 425900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 87100,
+        "guards_ns": 6100,
+        "native_ns": 267000,
+        "result_ns": 200,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 429800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39200
+      },
+      {
+        "load_ns": 88300,
+        "guards_ns": 6300,
+        "native_ns": 264100,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38900
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6300,
+        "native_ns": 263200,
+        "result_ns": 300,
+        "writeback_ns": 30400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40600
+      },
+      {
+        "load_ns": 87500,
+        "guards_ns": 6300,
+        "native_ns": 263600,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 426800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39100
+      },
+      {
+        "load_ns": 87300,
+        "guards_ns": 6200,
+        "native_ns": 264100,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 426800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38900
+      },
+      {
+        "load_ns": 87400,
+        "guards_ns": 7900,
+        "native_ns": 328700,
+        "result_ns": 1300,
+        "writeback_ns": 35100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 513900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 53500
+      },
+      {
+        "load_ns": 100200,
+        "guards_ns": 11200,
+        "native_ns": 270600,
+        "result_ns": 300,
+        "writeback_ns": 31200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 460400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 46900
+      },
+      {
+        "load_ns": 91000,
+        "guards_ns": 7000,
+        "native_ns": 267700,
+        "result_ns": 300,
+        "writeback_ns": 31200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 439200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 42000
+      },
+      {
+        "load_ns": 89300,
+        "guards_ns": 6600,
+        "native_ns": 263500,
+        "result_ns": 200,
+        "writeback_ns": 30400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430100,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40100
+      },
+      {
+        "load_ns": 90000,
+        "guards_ns": 6500,
+        "native_ns": 266000,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 432800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39700
+      },
+      {
+        "load_ns": 88400,
+        "guards_ns": 6600,
+        "native_ns": 264400,
+        "result_ns": 200,
+        "writeback_ns": 30500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 429400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39300
+      },
+      {
+        "load_ns": 88500,
+        "guards_ns": 6300,
+        "native_ns": 264900,
+        "result_ns": 200,
+        "writeback_ns": 30400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 429900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39600
+      },
+      {
+        "load_ns": 87600,
+        "guards_ns": 6400,
+        "native_ns": 263100,
+        "result_ns": 300,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427300,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39700
+      },
+      {
+        "load_ns": 88900,
+        "guards_ns": 6300,
+        "native_ns": 263900,
+        "result_ns": 300,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39100
+      },
+      {
+        "load_ns": 94400,
+        "guards_ns": 6400,
+        "native_ns": 264700,
+        "result_ns": 300,
+        "writeback_ns": 30800,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 437100,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40500
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6600,
+        "native_ns": 264100,
+        "result_ns": 200,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39400
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6500,
+        "native_ns": 265700,
+        "result_ns": 200,
+        "writeback_ns": 31700,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 431200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39100
+      },
+      {
+        "load_ns": 87900,
+        "guards_ns": 6400,
+        "native_ns": 263500,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38800
+      },
+      {
+        "load_ns": 87600,
+        "guards_ns": 6300,
+        "native_ns": 264400,
+        "result_ns": 300,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428000,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39200
+      },
+      {
+        "load_ns": 87600,
+        "guards_ns": 6300,
+        "native_ns": 263000,
+        "result_ns": 200,
+        "writeback_ns": 30000,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 425800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38700
+      },
+      {
+        "load_ns": 87400,
+        "guards_ns": 6500,
+        "native_ns": 262800,
+        "result_ns": 300,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 425900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38800
+      },
+      {
+        "load_ns": 89400,
+        "guards_ns": 6400,
+        "native_ns": 263400,
+        "result_ns": 200,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38800
+      },
+      {
+        "load_ns": 87200,
+        "guards_ns": 6500,
+        "native_ns": 263300,
+        "result_ns": 300,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 425900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38500
+      },
+      {
+        "load_ns": 87400,
+        "guards_ns": 6400,
+        "native_ns": 264600,
+        "result_ns": 200,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38700
+      },
+      {
+        "load_ns": 87400,
+        "guards_ns": 6300,
+        "native_ns": 262900,
+        "result_ns": 200,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 425600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38700
+      },
+      {
+        "load_ns": 87700,
+        "guards_ns": 6200,
+        "native_ns": 263900,
+        "result_ns": 300,
+        "writeback_ns": 30400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6500,
+        "native_ns": 262900,
+        "result_ns": 200,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 426600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38800
+      },
+      {
+        "load_ns": 87800,
+        "guards_ns": 6400,
+        "native_ns": 263200,
+        "result_ns": 200,
+        "writeback_ns": 30400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427000,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 89600,
+        "guards_ns": 6300,
+        "native_ns": 262400,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428000,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39100
+      },
+      {
+        "load_ns": 87400,
+        "guards_ns": 6200,
+        "native_ns": 262900,
+        "result_ns": 300,
+        "writeback_ns": 30100,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 425900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 87500,
+        "guards_ns": 6300,
+        "native_ns": 264600,
+        "result_ns": 300,
+        "writeback_ns": 30400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39100
+      },
+      {
+        "load_ns": 87800,
+        "guards_ns": 6300,
+        "native_ns": 263500,
+        "result_ns": 300,
+        "writeback_ns": 29900,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 426700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38900
+      },
+      {
+        "load_ns": 87800,
+        "guards_ns": 6300,
+        "native_ns": 264500,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427900,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38700
+      },
+      {
+        "load_ns": 87600,
+        "guards_ns": 6300,
+        "native_ns": 262200,
+        "result_ns": 200,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 425100,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38600
+      },
+      {
+        "load_ns": 87100,
+        "guards_ns": 6300,
+        "native_ns": 262900,
+        "result_ns": 200,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 425400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38600
+      },
+      {
+        "load_ns": 89400,
+        "guards_ns": 6400,
+        "native_ns": 262200,
+        "result_ns": 200,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 427200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38700
+      },
+      {
+        "load_ns": 87700,
+        "guards_ns": 6400,
+        "native_ns": 265000,
+        "result_ns": 300,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 428400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38700
+      },
+      {
+        "load_ns": 87100,
+        "guards_ns": 6300,
+        "native_ns": 271400,
+        "result_ns": 1700,
+        "writeback_ns": 38000,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 459500,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 55000
+      },
+      {
+        "load_ns": 99900,
+        "guards_ns": 10900,
+        "native_ns": 267600,
+        "result_ns": 400,
+        "writeback_ns": 31000,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 457300,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 47500
+      },
+      {
+        "load_ns": 90400,
+        "guards_ns": 7000,
+        "native_ns": 292000,
+        "result_ns": 1400,
+        "writeback_ns": 42000,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 500400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 67600
+      },
+      {
+        "load_ns": 108700,
+        "guards_ns": 13000,
+        "native_ns": 275400,
+        "result_ns": 400,
+        "writeback_ns": 33800,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 482700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 51400
+      },
+      {
+        "load_ns": 95600,
+        "guards_ns": 8000,
+        "native_ns": 286000,
+        "result_ns": 1400,
+        "writeback_ns": 44400,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 506400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 71000
+      },
+      {
+        "load_ns": 111200,
+        "guards_ns": 14900,
+        "native_ns": 273000,
+        "result_ns": 500,
+        "writeback_ns": 31500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 482200,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 51100
+      },
+      {
+        "load_ns": 95900,
+        "guards_ns": 7700,
+        "native_ns": 281300,
+        "result_ns": 1400,
+        "writeback_ns": 40200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 489300,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 62800
+      },
+      {
+        "load_ns": 112600,
+        "guards_ns": 13300,
+        "native_ns": 277700,
+        "result_ns": 400,
+        "writeback_ns": 31700,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 486700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 51000
+      },
+      {
+        "load_ns": 95700,
+        "guards_ns": 7700,
+        "native_ns": 272800,
+        "result_ns": 300,
+        "writeback_ns": 30900,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 450100,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 42700
+      },
+      {
+        "load_ns": 91700,
+        "guards_ns": 6900,
+        "native_ns": 269600,
+        "result_ns": 200,
+        "writeback_ns": 32200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 441400,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 40800
+      },
+      {
+        "load_ns": 89900,
+        "guards_ns": 6800,
+        "native_ns": 268800,
+        "result_ns": 400,
+        "writeback_ns": 31200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 450000,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 52900
+      },
+      {
+        "load_ns": 89500,
+        "guards_ns": 6700,
+        "native_ns": 267900,
+        "result_ns": 300,
+        "writeback_ns": 29900,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 433600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39300
+      },
+      {
+        "load_ns": 88200,
+        "guards_ns": 6700,
+        "native_ns": 266800,
+        "result_ns": 200,
+        "writeback_ns": 30500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 431800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39400
+      },
+      {
+        "load_ns": 90900,
+        "guards_ns": 6500,
+        "native_ns": 266500,
+        "result_ns": 300,
+        "writeback_ns": 30600,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 433700,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38900
+      },
+      {
+        "load_ns": 88400,
+        "guards_ns": 6400,
+        "native_ns": 266400,
+        "result_ns": 200,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39100
+      },
+      {
+        "load_ns": 88000,
+        "guards_ns": 6500,
+        "native_ns": 268100,
+        "result_ns": 300,
+        "writeback_ns": 30500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 432600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39200
+      },
+      {
+        "load_ns": 88300,
+        "guards_ns": 6500,
+        "native_ns": 266500,
+        "result_ns": 300,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39000
+      },
+      {
+        "load_ns": 88700,
+        "guards_ns": 6400,
+        "native_ns": 268000,
+        "result_ns": 300,
+        "writeback_ns": 30500,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 432800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 38900
+      },
+      {
+        "load_ns": 88100,
+        "guards_ns": 6500,
+        "native_ns": 266500,
+        "result_ns": 200,
+        "writeback_ns": 30200,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 430800,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39300
+      },
+      {
+        "load_ns": 88900,
+        "guards_ns": 6400,
+        "native_ns": 266700,
+        "result_ns": 200,
+        "writeback_ns": 30300,
+        "function": "advance_system",
+        "line": 314,
+        "native_entries": 1,
+        "native_modes": [
+          "aot"
+        ],
+        "ok": true,
+        "attempt_ns": 431600,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "other_attempt_ns": 39100
+      }
+    ],
+    "runner": {
+      "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+      "functions": [
+        {
+          "function": "advance_system",
+          "compiled_calls": 100,
+          "aot_calls": 100,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "lifted": true,
+          "ahead_of_time": true,
+          "aot_loaded": true,
+          "region": true
+        }
+      ],
+      "not_found": [],
+      "batches": {},
+      "batch_failures": {},
+      "exit_code": null
+    },
+    "loaded_native_modules": [
+      {
+        "module": "_hashlib",
+        "path": "C:\\Python314\\DLLs\\_hashlib.pyd",
+        "sha256": "58c5c9ff93f989e2a233b8c5e06420ea73dd6c013e1f08d996fb0f2828eba0aa"
+      },
+      {
+        "module": "_wmi",
+        "path": "C:\\Python314\\DLLs\\_wmi.pyd",
+        "sha256": "eccb72a070d63f0ddde054c7a15d375b11b1dfc3362452c55ccabb487dee87fc"
+      },
+      {
+        "module": "recompyler._heap",
+        "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\heldout-fixes\\src\\recompyler\\_heap.cp314-win_amd64.pyd",
+        "sha256": "5d9a652e6a33c02d53ae7ab1a4465b5fb926414230b74b2300a0e52b6af0ab10"
+      },
+      {
+        "module": "_socket",
+        "path": "C:\\Python314\\DLLs\\_socket.pyd",
+        "sha256": "435a86973131c5d5dc90f828e72d7bb0607578a48ab5bc5377f4a280a6beb8f7"
+      },
+      {
+        "module": "_ssl",
+        "path": "C:\\Python314\\DLLs\\_ssl.pyd",
+        "sha256": "06f51fbe150c831af619890eea2d9fca9ce8b49758bfe3f382883551c592e6b3"
+      },
+      {
+        "module": "_asyncio",
+        "path": "C:\\Python314\\DLLs\\_asyncio.pyd",
+        "sha256": "13b374175108c266f4a5bdf907f990d0ccd5b486d0313856e08a60ba9bf856cf"
+      },
+      {
+        "module": "_overlapped",
+        "path": "C:\\Python314\\DLLs\\_overlapped.pyd",
+        "sha256": "43b9e0bdc41646fc363f144bf050600dab647ce9e7c251a2b6d0e75358cb10cf"
+      },
+      {
+        "module": "select",
+        "path": "C:\\Python314\\DLLs\\select.pyd",
+        "sha256": "56441c3148743a0890986ccdf93fea8174155b0ee84db2493151f075d8e7c51a"
+      },
+      {
+        "module": "numpy._core._multiarray_umath",
+        "path": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\_core\\_multiarray_umath.cp314-win_amd64.pyd",
+        "sha256": "c4d8aa9b07deebc0f6e437098c1c3055145f7d810af770453f9cd74452b9d96a"
+      },
+      {
+        "module": "_ctypes",
+        "path": "C:\\Python314\\DLLs\\_ctypes.pyd",
+        "sha256": "79967d8614f735cc62b81649641fd8d0414ca66d3d6656fa7788334bbdbbd35b"
+      },
+      {
+        "module": "numpy.linalg._umath_linalg",
+        "path": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\linalg\\_umath_linalg.cp314-win_amd64.pyd",
+        "sha256": "ec000e9fdc121f44449a123080819ec28ee696b093c5c71f1ca802e9f88392e4"
+      },
+      {
+        "module": "rcaotr_2fe5e05e91a653421cd9997e",
+        "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\barnes_hut\\candidate\\recompyler\\rcaotr_2fe5e05e91a653421cd9997e.cp314-win_amd64.pyd",
+        "sha256": "226403d22c98758ad52a79d49d3daf4641f9e2cdd6b1cad9c6e23a11e5f7bc9e"
+      }
+    ],
+    "numba_imported": false,
+    "totals_ns": {
+      "load_ns": 9851300,
+      "guards_ns": 732000,
+      "native_ns": 26914700,
+      "result_ns": 36200,
+      "writeback_ns": 3173600,
+      "attempt_ns": 84810300,
+      "other_attempt_ns": 44102500
+    }
+  },
+  "status": "ok"
+}

@@ -1,0 +1,74 @@
+{
+  "manifest_sha256": "095ecab621b1cf7876b3c165fb7bef5bc9ae4088512c3fcd7b8a6c3d63fe9133",
+  "coordinator_session": 93742,
+  "coordinator_exit_code": 0,
+  "all_frozen_source_runtime_helpers_inputs_pass": true,
+  "all58processes_analysis_valid": true,
+  "selected_aot_calls_timing": 5050,
+  "separate_audit_aot_calls": 202,
+  "owned_measurement_python_processes": [],
+  "execution": {
+    "completed_top_level_records": 58,
+    "child_wall_s": 225.43468740001845,
+    "fresh_profile_wall_s": 190.8246810000128,
+    "compile_only_warmup_wall_s": 3.016409100004239,
+    "state_audit_wall_s": 2.649810000002617,
+    "address_mapping_wall_s": 0.6743179000040982
+  },
+  "programs": {
+    "barnes_hut": {
+      "current_kernel_ms": 35.97309999167919,
+      "candidate_kernel_ms": 33.06079999310896,
+      "c_kernel_ms": 9.088993,
+      "current_process_ms": 490.1196999999229,
+      "candidate_process_ms": 475.17010000592563,
+      "candidate_over_C_time": 3.6374546655618456,
+      "current_kernel_samples_ms": [
+        35.179299986339174,
+        38.927700006752275,
+        36.53420000046026,
+        35.97309999167919,
+        35.591200008639134
+      ],
+      "candidate_kernel_samples_ms": [
+        32.66480000456795,
+        32.36490000563208,
+        33.63399999216199,
+        33.074500010116026,
+        33.06079999310896
+      ],
+      "comparison": {
+        "kernel_time_ratio_final_over_current": 0.9190422843946208,
+        "kernel_speedup_current_over_final": 1.0880892174169186,
+        "process_time_ratio_final_over_current": 0.9694980634445022
+      }
+    },
+    "raytrace": {
+      "current_kernel_ms": 3.660899994429201,
+      "candidate_kernel_ms": 3.429200005484745,
+      "c_kernel_ms": 0.6079669999999999,
+      "current_process_ms": 388.49179999670014,
+      "candidate_process_ms": 385.8284000016283,
+      "candidate_over_C_time": 5.640437730147763,
+      "current_kernel_samples_ms": [
+        3.646099998150021,
+        3.6782999959541485,
+        3.660899994429201,
+        3.6995999980717897,
+        3.6066999891772866
+      ],
+      "candidate_kernel_samples_ms": [
+        3.4014999982900918,
+        3.427099989494309,
+        3.429200005484745,
+        3.6054000083822757,
+        3.5216000105720013
+      ],
+      "comparison": {
+        "kernel_time_ratio_final_over_current": 0.9367095552194722,
+        "kernel_speedup_current_over_final": 1.0675667760917618,
+        "process_time_ratio_final_over_current": 0.9931442568540844
+      }
+    }
+  }
+}

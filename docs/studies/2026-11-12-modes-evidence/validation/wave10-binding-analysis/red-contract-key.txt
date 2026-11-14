@@ -1,0 +1,20 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_ ContractTests.test_interval_names_require_exact_strings_before_identifier_hooks _
+
+self = <test_experimental_numeric.ContractTests testMethod=test_interval_names_require_exact_strings_before_identifier_hooks>
+
+    def test_interval_names_require_exact_strings_before_identifier_hooks(self):
+        calls = []
+        class HookedName(str):
+            def isidentifier(self):
+                calls.append("isidentifier")
+                return True
+>       with self.assertRaises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: TypeError not raised
+
+tests\test_experimental_numeric.py:162: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_experimental_numeric.py::ContractTests::test_interval_names_require_exact_strings_before_identifier_hooks
+1 failed, 51 deselected in 0.15s

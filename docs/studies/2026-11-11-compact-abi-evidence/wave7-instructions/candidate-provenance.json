@@ -1,0 +1,92 @@
+{
+  "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\cache\\candidate\\recompyler\\rcaotr_b767982c3d43c6022e2cef09.cp314-win_amd64.pyd",
+  "artifact_sha256": "76a7b0c2a9475553633ed9aa1621d27bdb4af76abdd3e5cbfeb2b5b37f6ea564",
+  "export": "r0",
+  "preferred_image_base": "0x180000000",
+  "method": {
+    "name_file_offset": "0x9970",
+    "name_address": "0x18000ab70",
+    "methoddef_file_offset": "0xf800",
+    "methoddef_address": "0x180011000",
+    "function_address": "0x1800011d0",
+    "flags": "0x3",
+    "doc_pointer": "0x0"
+  },
+  "sections": [
+    {
+      "name": ".text",
+      "rva": 4096,
+      "size": 34888,
+      "rawsize": 35328,
+      "offset": 1024,
+      "executable": true
+    },
+    {
+      "name": ".rdata",
+      "rva": 40960,
+      "size": 26822,
+      "rawsize": 27136,
+      "offset": 36352,
+      "executable": false
+    },
+    {
+      "name": ".data",
+      "rva": 69632,
+      "size": 3344,
+      "rawsize": 2560,
+      "offset": 63488,
+      "executable": false
+    },
+    {
+      "name": ".pdata",
+      "rva": 73728,
+      "size": 1260,
+      "rawsize": 1536,
+      "offset": 66048,
+      "executable": false
+    },
+    {
+      "name": ".rsrc",
+      "rva": 77824,
+      "size": 248,
+      "rawsize": 512,
+      "offset": 67584,
+      "executable": false
+    },
+    {
+      "name": ".reloc",
+      "rva": 81920,
+      "size": 256,
+      "rawsize": 512,
+      "offset": 68096,
+      "executable": false
+    }
+  ],
+  "note": "Static PyMethodDef candidate only; bind export to independent successful-call digest/plan audit. No artifact imported or executed.",
+  "case": "candidate",
+  "digest": "8b850a3ec40ed1c9992ac80e245679f7e785fa6b866f2c2a6a64d7f9f892e495",
+  "actual_aot_calls": 100,
+  "audit_totals": {
+    "aot_calls": 100,
+    "jit_calls": 0,
+    "unknown_native_calls": 0,
+    "rejected_attempts": 0,
+    "fallback_calls": 0
+  },
+  "numba_imported": false,
+  "function": "advance_system",
+  "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\plans\\candidate.json",
+  "plan_sha256": "788182821bffdadc01c40a57b1b3fd28f1f7a9d2cf68d6449ebc599e7b01c7b4",
+  "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\candidate-state.json",
+  "audit_sha256": "866086a5e0b317ff795735ea9353a080e506f650f1a12dc820548298606d46e1",
+  "command": [
+    "C:\\Users\\grant\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.3.2+Asserts\\usr\\bin\\llvm-objdump.exe",
+    "--disassemble",
+    "--demangle",
+    "--no-show-raw-insn",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\cache\\candidate\\recompyler\\rcaotr_b767982c3d43c6022e2cef09.cp314-win_amd64.pyd"
+  ],
+  "tool_sha256": "87b482f03bacc867cb05f4fcc42b45b25ab38544dc07a4efd12211cc5a8639ba",
+  "assembly_sha256": "572f0d09ba0dafeeb96c3a6e84a13a83680b0d8e4e976d17bc0f7b40be0216a4",
+  "artifact_executed": false
+}

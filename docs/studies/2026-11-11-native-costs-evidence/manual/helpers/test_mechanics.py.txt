@@ -1,0 +1,55 @@
+import types
+import unittest
+import ast
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+
+import state_audit
+import variants
+
+class Mechanics(unittest.TestCase):
+    def test_numeric_type_and_identity_are_distinct(self):
+        P = lambda: types.SimpleNamespace(x=0, y=0)
+        p = types.SimpleNamespace(position=P(), velocity=P(), acceleration=P(), mass=1.0)
+        particles, ids = [p], {}
+        a = state_audit.state(particles, ids)
+        p.acceleration.x = 0.0
+        b = state_audit.state(particles, ids)
+        self.assertEqual(a['numeric_sha256'], b['numeric_sha256'])
+        self.assertNotEqual(a['types_sha256'], b['types_sha256'])
+        p.position = P()
+        c = state_audit.state(particles, ids)
+        self.assertNotEqual(b['aliases_sha256'], c['aliases_sha256'])
+        p.position.x = -0.0
+        self.assertNotEqual(c['numeric_sha256'], state_audit.state(particles, ids)['numeric_sha256'])
+
+    def test_case_counts(self):
+        self.assertEqual(len(variants.CASES), 6)
+        self.assertEqual([x[2] for x in variants.CASES], [0, 1, 4, 0, 0, 4])
+
+    def test_exact_generated_interventions(self):
+        source=(Path(__file__).parent.parent/'wave5-study/results/drivers/barnes_hut.py').read_text()
+        for name,contract,group in variants.CASES:
+            text,target,edits=variants.driver(source,contract,group)
+            ast.parse(text)
+            self.assertEqual(len(edits),{'current':0,'forceonly':6,'fullfloat':11}[contract])
+            self.assertEqual(target,'advance_block' if group else 'advance_system')
+            if group:
+                self.assertIn('range(DEFAULT_ITERATIONS // '+str(group)+')',text)
+            if name=='current-direct': self.assertEqual(text,source)
+
+    def test_explicit_results_path_is_warmed_without_execution(self):
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name);script=root/'results'/'drivers'/'tiny.py'
+            script.parent.mkdir(parents=True)
+            script.write_text('raise RuntimeError("must never execute")\n')
+            e=dict(os.environ,PYTHONPYCACHEPREFIX=str(root/'pycache'))
+            r=subprocess.run([sys.executable,str(Path(__file__).parent/'warm_bytecode.py'),str(script.parent)],env=e,capture_output=True)
+            self.assertEqual(r.returncode,0,r.stderr)
+            self.assertTrue(list((root/'pycache').rglob('tiny.*.pyc')))
+
+if __name__ == '__main__':
+    unittest.main()

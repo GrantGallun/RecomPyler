@@ -1,0 +1,681 @@
+{
+  "manifest_sha256": "308adefb126b9d36f4742ec29bb4590f807d2955293f168aa2c90d0dd6bcaabc",
+  "rows": {
+    "plain": {
+      "checks_valid": true,
+      "kernel_samples_s": [
+        0.5547885000050883,
+        0.5522853000002215,
+        0.5390740000002552,
+        0.553105200000573,
+        0.5298456999953487
+      ],
+      "median_best_kernel_s": 0.5522853000002215,
+      "process_wall_samples_s": [
+        2.961464200001501,
+        3.0033538000061526,
+        2.89132729999983,
+        2.9682821999958833,
+        2.8573520999998436
+      ],
+      "median_process_wall_s": 2.961464200001501,
+      "aot_calls_total": null,
+      "jit_calls_total": null,
+      "fallback_calls_total": null,
+      "actual_modes_valid": null,
+      "kernel_time_over_C": 60.58777298959871,
+      "speedup_over_plain": 1.0
+    },
+    "c": {
+      "checks_valid": true,
+      "kernel_samples_s": [
+        0.00913167,
+        0.009114265,
+        0.009126186,
+        0.009115458,
+        0.009093523
+      ],
+      "median_best_kernel_s": 0.009115458,
+      "process_wall_samples_s": [
+        0.21823549999680836,
+        0.20547259999875678,
+        0.1968205000011949,
+        0.2078505999961635,
+        0.2077994999999646
+      ],
+      "median_process_wall_s": 0.2077994999999646,
+      "aot_calls_total": null,
+      "jit_calls_total": null,
+      "fallback_calls_total": null,
+      "actual_modes_valid": null,
+      "kernel_time_over_C": 1.0,
+      "speedup_over_plain": 60.58777298959871
+    },
+    "baseline": {
+      "checks_valid": true,
+      "kernel_samples_s": [
+        0.04690359999949578,
+        0.04749180000362685,
+        0.05072059999656631,
+        0.0494299999991199,
+        0.0474778999996488
+      ],
+      "median_best_kernel_s": 0.04749180000362685,
+      "process_wall_samples_s": [
+        0.5357911000028253,
+        0.5796945999973104,
+        0.5798021999944467,
+        0.5596179999993183,
+        0.5301970000000438
+      ],
+      "median_process_wall_s": 0.5596179999993183,
+      "aot_calls_total": 2500,
+      "jit_calls_total": 0,
+      "fallback_calls_total": 0,
+      "actual_modes_valid": true,
+      "kernel_time_over_C": 5.210028942443358,
+      "speedup_over_plain": 11.629066490595104,
+      "phase": {
+        "valid": true,
+        "cold_and_warm_rep_component_ms": [
+          {
+            "load_ns": 9.264199999999999,
+            "guards_ns": 0.7349,
+            "native_ns": 27.5548,
+            "result_ns": 0.0405,
+            "writeback_ns": 3.1412999999999998,
+            "other_attempt_ns": 52.015699999999995,
+            "attempt_ns": 92.75139999999999
+          },
+          {
+            "load_ns": 9.787899999999999,
+            "guards_ns": 0.8010999999999999,
+            "native_ns": 29.3948,
+            "result_ns": 0.047799999999999995,
+            "writeback_ns": 3.4798999999999998,
+            "other_attempt_ns": 4.4607,
+            "attempt_ns": 47.9722
+          },
+          {
+            "load_ns": 11.8337,
+            "guards_ns": 0.8569,
+            "native_ns": 32.556999999999995,
+            "result_ns": 0.0493,
+            "writeback_ns": 3.8148999999999997,
+            "other_attempt_ns": 5.4939,
+            "attempt_ns": 54.6057
+          },
+          {
+            "load_ns": 9.1154,
+            "guards_ns": 0.716,
+            "native_ns": 27.3326,
+            "result_ns": 0.0326,
+            "writeback_ns": 3.135,
+            "other_attempt_ns": 4.1815999999999995,
+            "attempt_ns": 44.5132
+          },
+          {
+            "load_ns": 10.411,
+            "guards_ns": 1.0185,
+            "native_ns": 30.6576,
+            "result_ns": 0.0462,
+            "writeback_ns": 3.6494,
+            "other_attempt_ns": 4.7905999999999995,
+            "attempt_ns": 50.573299999999996
+          },
+          {
+            "load_ns": 11.1526,
+            "guards_ns": 1.0781,
+            "native_ns": 30.693199999999997,
+            "result_ns": 0.051399999999999994,
+            "writeback_ns": 3.7542,
+            "other_attempt_ns": 5.1882,
+            "attempt_ns": 51.917699999999996
+          }
+        ],
+        "warm_component_medians_ms": {
+          "load_ns": 10.411,
+          "guards_ns": 0.8569,
+          "native_ns": 30.6576,
+          "result_ns": 0.047799999999999995,
+          "writeback_ns": 3.6494,
+          "other_attempt_ns": 4.7905999999999995,
+          "attempt_ns": 50.573299999999996
+        },
+        "actual_calls": {
+          "aot_calls": 600,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "numba_imported": false,
+        "max_capacity_bytes": 524288,
+        "max_top_slots": 7538,
+        "growth_native_exits": 0,
+        "driver_times_s": [
+          0.17099589999997988,
+          0.05094149999786168,
+          0.057589799995184876,
+          0.04736849999608239,
+          0.05380010000226321,
+          0.05499219999910565
+        ],
+        "instrumented_cold_kernel_s": 0.17099589999997988,
+        "instrumented_warm_kernel_median_s": 0.05380010000226321,
+        "program_selection": {
+          "observed_invocations": 1,
+          "cold_uncached_records": [
+            {
+              "cached_programs_before": 0,
+              "wall_ns": 47990000,
+              "cached_programs_after": 1
+            }
+          ],
+          "cached_call_median_ns": null,
+          "per_reset_sum_ms": null,
+          "missing_cached_calls_note": "No fabricated zeros: repeated valid calls may use Region prepared fastpath and bypass program_for entirely.",
+          "note": "Region.program_for wall includes cold saved-graph/source reconstruction, AOT preparation/validation and any nested load; cached calls retain selection overhead. Overlaps existing phase timers, not an additive new component or pure source-restore timer. No eager seed-module import added."
+        },
+        "note": "Instrumented; six state resets, first excluded from warm medians. Component and program-selection timers overlap as declared; not headline latency."
+      },
+      "selected_AOT": [
+        {
+          "function": "advance_system",
+          "actual_aot_calls_in_audit": 100,
+          "selected_digest": "ab7a5260a3ecad9c50cc0b5ca7997455e7a913b7da1c1c35ccdfc32c43c50e2a",
+          "selected_export": "r0",
+          "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave6-proof-study\\results\\cache\\candidate\\recompyler\\rcaotr_d69a5295b7dfe3ae8e1e45a1.cp314-win_amd64.pyd",
+          "artifact_sha256": "94afcc7bfed19eeb450e1f3aae3fe0f37aab6e48ba1e08ae1f3122997e4e2fda",
+          "wrapper_rva": "0x19e0",
+          "preferred_image_base": "0x180000000",
+          "wrapper_preferred_address": "0x1800019e0",
+          "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\plans\\baseline.json",
+          "plan_sha256": "7c8f75eb48549a796fa84f27bf1f668d3efbe5825dfed39deeaf7f2f019ba68f",
+          "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\baseline-state-selected-audit.json",
+          "audit_sha256": "7c4576939c5b466bdec8897cdb2cc25f3e54336faefc6fc025f568bc21db56b3",
+          "limitations": [
+            "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+            "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+            "No kernel executed, compiled, profiled or timed by this mapping script."
+          ]
+        }
+      ],
+      "state_comparison": {
+        "all_checkpoints_match": true,
+        "checkpoint_comparison": {
+          "valid": true,
+          "missing_reference_steps": [],
+          "declared_type_relaxation": false,
+          "metrics": {
+            "numeric_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            },
+            "types_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            },
+            "aliases_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            }
+          },
+          "full_initial_final_vectors_equal": {
+            "initial": {
+              "numbers": true,
+              "types": true,
+              "aliases": true
+            },
+            "final": {
+              "numbers": true,
+              "types": true,
+              "aliases": true
+            }
+          }
+        },
+        "final_type_deltas": {},
+        "initial_type_differences": 0
+      }
+    },
+    "candidate": {
+      "checks_valid": true,
+      "kernel_samples_s": [
+        0.035881800002243835,
+        0.03564840000035474,
+        0.036593199998605996,
+        0.03582880000612931,
+        0.035059000001638196
+      ],
+      "median_best_kernel_s": 0.03582880000612931,
+      "process_wall_samples_s": [
+        0.5272398000015528,
+        0.4962061999976868,
+        0.516776900003606,
+        0.5118624999959138,
+        0.5075007999985246
+      ],
+      "median_process_wall_s": 0.5118624999959138,
+      "aot_calls_total": 2500,
+      "jit_calls_total": 0,
+      "fallback_calls_total": 0,
+      "actual_modes_valid": true,
+      "kernel_time_over_C": 3.93055401123337,
+      "speedup_over_plain": 15.414563142101906,
+      "phase": {
+        "valid": true,
+        "cold_and_warm_rep_component_ms": [
+          {
+            "load_ns": 9.5345,
+            "guards_ns": 0.7593,
+            "native_ns": 16.5358,
+            "result_ns": 0.0404,
+            "writeback_ns": 3.2098999999999998,
+            "other_attempt_ns": 69.3545,
+            "attempt_ns": 99.4344
+          },
+          {
+            "load_ns": 9.838899999999999,
+            "guards_ns": 0.9527,
+            "native_ns": 17.4821,
+            "result_ns": 0.0366,
+            "writeback_ns": 3.7028,
+            "other_attempt_ns": 4.638999999999999,
+            "attempt_ns": 36.6521
+          },
+          {
+            "load_ns": 11.0269,
+            "guards_ns": 0.8349,
+            "native_ns": 18.2741,
+            "result_ns": 0.0445,
+            "writeback_ns": 3.7438,
+            "other_attempt_ns": 4.8881,
+            "attempt_ns": 38.8123
+          },
+          {
+            "load_ns": 10.2906,
+            "guards_ns": 0.7616999999999999,
+            "native_ns": 17.9761,
+            "result_ns": 0.0409,
+            "writeback_ns": 3.5888999999999998,
+            "other_attempt_ns": 5.0503,
+            "attempt_ns": 37.7085
+          },
+          {
+            "load_ns": 9.7768,
+            "guards_ns": 0.7591,
+            "native_ns": 16.758399999999998,
+            "result_ns": 0.0372,
+            "writeback_ns": 3.2697,
+            "other_attempt_ns": 4.3339,
+            "attempt_ns": 34.9351
+          },
+          {
+            "load_ns": 9.3225,
+            "guards_ns": 0.7522,
+            "native_ns": 16.4893,
+            "result_ns": 0.036899999999999995,
+            "writeback_ns": 3.2895,
+            "other_attempt_ns": 4.3499,
+            "attempt_ns": 34.2403
+          }
+        ],
+        "warm_component_medians_ms": {
+          "load_ns": 9.838899999999999,
+          "guards_ns": 0.7616999999999999,
+          "native_ns": 17.4821,
+          "result_ns": 0.0372,
+          "writeback_ns": 3.5888999999999998,
+          "other_attempt_ns": 4.638999999999999,
+          "attempt_ns": 36.6521
+        },
+        "actual_calls": {
+          "aot_calls": 600,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "numba_imported": false,
+        "max_capacity_bytes": 524288,
+        "max_top_slots": 7538,
+        "growth_native_exits": 0,
+        "driver_times_s": [
+          0.18788449999556178,
+          0.03957470000023022,
+          0.04195379999873694,
+          0.041838899996946566,
+          0.0378093000035733,
+          0.03713880000577774
+        ],
+        "instrumented_cold_kernel_s": 0.18788449999556178,
+        "instrumented_warm_kernel_median_s": 0.03957470000023022,
+        "program_selection": {
+          "observed_invocations": 1,
+          "cold_uncached_records": [
+            {
+              "cached_programs_before": 0,
+              "wall_ns": 65311000,
+              "cached_programs_after": 1
+            }
+          ],
+          "cached_call_median_ns": null,
+          "per_reset_sum_ms": null,
+          "missing_cached_calls_note": "No fabricated zeros: repeated valid calls may use Region prepared fastpath and bypass program_for entirely.",
+          "note": "Region.program_for wall includes cold saved-graph/source reconstruction, AOT preparation/validation and any nested load; cached calls retain selection overhead. Overlaps existing phase timers, not an additive new component or pure source-restore timer. No eager seed-module import added."
+        },
+        "note": "Instrumented; six state resets, first excluded from warm medians. Component and program-selection timers overlap as declared; not headline latency."
+      },
+      "selected_AOT": [
+        {
+          "function": "advance_system",
+          "actual_aot_calls_in_audit": 100,
+          "selected_digest": "8b850a3ec40ed1c9992ac80e245679f7e785fa6b866f2c2a6a64d7f9f892e495",
+          "selected_export": "r0",
+          "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\cache\\candidate\\recompyler\\rcaotr_b767982c3d43c6022e2cef09.cp314-win_amd64.pyd",
+          "artifact_sha256": "76a7b0c2a9475553633ed9aa1621d27bdb4af76abdd3e5cbfeb2b5b37f6ea564",
+          "wrapper_rva": "0x11d0",
+          "preferred_image_base": "0x180000000",
+          "wrapper_preferred_address": "0x1800011d0",
+          "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\plans\\candidate.json",
+          "plan_sha256": "788182821bffdadc01c40a57b1b3fd28f1f7a9d2cf68d6449ebc599e7b01c7b4",
+          "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results\\candidate-state-selected-audit.json",
+          "audit_sha256": "1e25c3bfa4a23048a4b24899a6dbbdf099d7ca77ad41c1f49109c6b350d84173",
+          "limitations": [
+            "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+            "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+            "No kernel executed, compiled, profiled or timed by this mapping script."
+          ]
+        }
+      ],
+      "state_comparison": {
+        "all_checkpoints_match": true,
+        "checkpoint_comparison": {
+          "valid": true,
+          "missing_reference_steps": [],
+          "declared_type_relaxation": false,
+          "metrics": {
+            "numeric_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            },
+            "types_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            },
+            "aliases_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            }
+          },
+          "full_initial_final_vectors_equal": {
+            "initial": {
+              "numbers": true,
+              "types": true,
+              "aliases": true
+            },
+            "final": {
+              "numbers": true,
+              "types": true,
+              "aliases": true
+            }
+          }
+        },
+        "final_type_deltas": {},
+        "initial_type_differences": 0
+      }
+    }
+  },
+  "candidate_profile_wall_s": 65.16033819999575,
+  "baseline_profile_cost_note": "Reused historical profile evidence; no fresh baseline profiling cost.",
+  "source_revisions": {
+    "baseline": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\baseline",
+      "git_head": "5d0fe5296e077b893a0d9c920f6ccfe798696eeb",
+      "git_status": "",
+      "src_sha256": {
+        "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+        "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+        "recompyler/_heap.c": "bd5381d22f680550b1043f585b6941285854b1d4bcf21b6a89b556d76019cf0a",
+        "recompyler/_heap.cp314-win_amd64.pyd": "5d9a652e6a33c02d53ae7ab1a4465b5fb926414230b74b2300a0e52b6af0ab10",
+        "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+        "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+        "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+        "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+        "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+        "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+        "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+        "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+        "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+        "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+        "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+        "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+        "recompyler/_region_seed.py": "cbca700e53dae98906d5e1e75e77f1414d5cf1928a4cf92138ffa7f71f6da88f",
+        "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+        "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+        "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+        "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+        "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+        "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+        "recompyler/heap.py": "e7ee3bb1fb2b8c42a6848383388ef28ed3eaf79e6a1f50e0fc53b210570e5109",
+        "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+        "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+        "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+        "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+        "recompyler/runner.py": "60d0673001cb2e75515478c7b2d37c6d8e60f8a7eadef815f311790966084c3f",
+        "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+      }
+    },
+    "candidate": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-compact-abi",
+      "git_head": "a033ca14c40afed052a6266a0a575f6cc11559ea",
+      "git_status": "",
+      "src_sha256": {
+        "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+        "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+        "recompyler/_heap.c": "bd5381d22f680550b1043f585b6941285854b1d4bcf21b6a89b556d76019cf0a",
+        "recompyler/_heap.cp314-win_amd64.pyd": "5d9a652e6a33c02d53ae7ab1a4465b5fb926414230b74b2300a0e52b6af0ab10",
+        "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+        "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+        "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+        "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+        "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+        "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+        "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+        "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+        "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+        "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+        "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+        "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+        "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+        "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+        "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+        "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+        "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+        "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+        "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+        "recompyler/heap.py": "38b77af3e77c73b132db4d973242eb30e8cbc590003b7cb9820e7430c9b3edd6",
+        "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+        "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+        "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+        "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+        "recompyler/runner.py": "60d0673001cb2e75515478c7b2d37c6d8e60f8a7eadef815f311790966084c3f",
+        "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+      }
+    }
+  },
+  "all_valid": true,
+  "failures": [],
+  "checkpoint_postverification": {
+    "manifest_sha256": "308adefb126b9d36f4742ec29bb4590f807d2955293f168aa2c90d0dd6bcaabc",
+    "all_valid": true,
+    "comparisons": {
+      "baseline-vs-plain": {
+        "valid": true,
+        "missing_reference_steps": [],
+        "declared_type_relaxation": false,
+        "metrics": {
+          "numeric_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          },
+          "types_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          },
+          "aliases_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          }
+        },
+        "full_initial_final_vectors_equal": {
+          "initial": {
+            "numbers": true,
+            "types": true,
+            "aliases": true
+          },
+          "final": {
+            "numbers": true,
+            "types": true,
+            "aliases": true
+          }
+        }
+      },
+      "candidate-vs-plain": {
+        "valid": true,
+        "missing_reference_steps": [],
+        "declared_type_relaxation": false,
+        "metrics": {
+          "numeric_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          },
+          "types_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          },
+          "aliases_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          }
+        },
+        "full_initial_final_vectors_equal": {
+          "initial": {
+            "numbers": true,
+            "types": true,
+            "aliases": true
+          },
+          "final": {
+            "numbers": true,
+            "types": true,
+            "aliases": true
+          }
+        }
+      },
+      "candidate-vs-baseline": {
+        "valid": true,
+        "missing_reference_steps": [],
+        "declared_type_relaxation": false,
+        "metrics": {
+          "numeric_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          },
+          "types_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          },
+          "aliases_sha256": {
+            "matched_steps": 100,
+            "compared_steps": 100,
+            "different_steps": []
+          }
+        },
+        "full_initial_final_vectors_equal": {
+          "initial": {
+            "numbers": true,
+            "types": true,
+            "aliases": true
+          },
+          "final": {
+            "numbers": true,
+            "types": true,
+            "aliases": true
+          }
+        }
+      }
+    },
+    "actual_mode_reconciliation": {
+      "baseline": {
+        "valid": true,
+        "expected_actual_aot_calls": 100,
+        "audit_totals": {
+          "aot_calls": 100,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        },
+        "runner_counts": {
+          "compiled_calls": 100,
+          "aot_calls": 100,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "compiled_total_reconciles": true,
+        "product_exact_counter_matches_audit": true,
+        "numba_imported": false
+      },
+      "candidate": {
+        "valid": true,
+        "expected_actual_aot_calls": 100,
+        "audit_totals": {
+          "aot_calls": 100,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        },
+        "runner_counts": {
+          "compiled_calls": 100,
+          "aot_calls": 100,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "compiled_total_reconciles": true,
+        "product_exact_counter_matches_audit": true,
+        "numba_imported": false
+      }
+    },
+    "note": "Numeric/type/alias hashes compared at every retained common logical step. Fullfloat cross-contract type deltas declared; native versus own plain types always required identical. Raw full initial/final vectors retained separately."
+  },
+  "comparison": {
+    "kernel_time_ratio_candidate_over_baseline": 0.7544207632347719,
+    "kernel_speedup_baseline_over_candidate": 1.3255202517388893,
+    "process_wall_ratio_candidate_over_baseline": 0.9146641101546722
+  },
+  "costs": {
+    "fresh_candidate_profile_s": 65.16033819999575,
+    "reused_baseline_profile_historical_s": 56.73110789999919,
+    "compile_only_warmup_s": 1.4716389999957755,
+    "state_audit_processes_s": 1.9489953000011155,
+    "phase_processes_s": 1.2299592999988818
+  },
+  "limits": [
+    "Finite state/output/alias/type corpus checks, not universal semantic proof",
+    "Explicit forced target-only diagnostic policy",
+    "RP generic AOT target versus C -march=native impact unmeasured",
+    "Shared background load; no OS-wide quiet claim",
+    "Instrumented phases not headline timing"
+  ]
+}

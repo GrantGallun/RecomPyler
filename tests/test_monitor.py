@@ -33,8 +33,26 @@ SCRIPT = textwrap.dedent("""
     def key(x):
         return -x
 
+    def naturals(start):
+        while True:
+            yield start
+            start += 1
+
+    def first_naturals():
+        for value in naturals(3):
+            if value > 5:
+                break
+
     def boom():
         raise ValueError
+
+    def broken_generator():
+        yield 7
+        raise ValueError
+
+    def uncopyable_generator():
+        yield 7
+        yield object()
 
     def catcher():
         for _ in range(10):
@@ -54,6 +72,12 @@ SCRIPT = textwrap.dedent("""
         uses_json(20000)
         fib(12)
         sum(counter(5))
+        first_naturals()
+        try:
+            list(broken_generator())
+        except ValueError:
+            pass
+        list(uncopyable_generator())
         sorted(range(100), key=key)
         catcher()
         for _ in range(300):
@@ -146,11 +170,35 @@ class MonitorTest(unittest.TestCase):
 
     def test_reasons_for_functions_not_captured(self):
         reasons = {key[1]: reason for key, reason in self.monitor.skipped.items()}
-        self.assertEqual(reasons["counter"], "is a generator")
+        self.assertNotIn("counter", reasons)
         self.assertIn("<module>", reasons)
+
+    def test_generator_samples_hold_what_was_yielded(self):
+        (arguments, result, after), = self.sampler("counter").samples
+        self.assertEqual(arguments, (5,))
+        self.assertEqual((result.values, result.finished, result.truncated, result.value),
+                         ([2475.0] * 5, True, False, None))
+        # Closed by the consumer's break: the values it yielded until then.
+        (arguments, result, after), = self.sampler("naturals").samples
+        self.assertEqual(arguments, (3,))
+        self.assertEqual((result.values, result.finished), ([3, 4, 5, 6], False))
 
     def test_failed_calls_are_not_sampled(self):
         self.assertEqual(self.sampler("boom").samples, [])
+
+    def test_failed_generator_calls_are_not_sampled_as_closed_early(self):
+        sampler = self.sampler("broken_generator")
+        self.assertEqual(sampler.samples, [])
+        self.assertEqual(sampler.extra(), [])
+        self.assertEqual(sampler.open, {})
+        self.assertEqual((sampler.finished, sampler.closed, sampler.truncated), (0, 0, 0))
+
+    def test_failed_yield_capture_does_not_keep_a_closed_early_sample(self):
+        sampler = self.sampler("uncopyable_generator")
+        self.assertEqual(sampler.samples, [])
+        self.assertEqual(sampler.extra(), [])
+        self.assertEqual(sampler.open, {})
+        self.assertEqual(sampler.failures, 1)
 
     def test_watches_folders(self):
         monitor = CallMonitor([self.folder.name])

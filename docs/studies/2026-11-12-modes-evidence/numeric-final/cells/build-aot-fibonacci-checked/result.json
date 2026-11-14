@@ -1,0 +1,228 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "checked",
+  "function": "fibonacci",
+  "task": "build-aot",
+  "contract": {
+    "n": [
+      0,
+      80
+    ]
+  },
+  "corpus_count": 81,
+  "expected_results_sha256": "a8e29982451912a80ff9466a6a4630cd90a30305544a5de79841ce5042599f6c",
+  "valid_exact_results": true,
+  "construction_s": 0.2279532999964431,
+  "first_call_s": 0.7054170000046724,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 1,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 81,
+    "aot_calls": 0,
+    "jit_calls": 81,
+    "fallback_calls": 0,
+    "contract_native_calls": 81,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "fibonacci",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "04d31e40e4e6dc61337c3e2e39e015c1d76241cb0199f6b40cb26e80f8a18344",
+    "function_bytecode_sha256": "3be6f8b101655e687df46a1c67db5226839d397b34c52a14866c6e92984a5b80",
+    "selected_mode": "checked",
+    "identity": "22d105df9a4be14500e16437fd14823e35478df2f659426e0808fe42d6ca7c1a",
+    "contract": "IntIntervals(_items=(('n', (0, 80)),))",
+    "proof_certificates": "(IntervalCertificate(origin=(4, 18, 4, 23, 'add'), left=(0, 14472334024676221), right=(1, 23416728348467685), result=(1, 37889062373143906)),)",
+    "problem": null,
+    "policy_metadata": {
+      "certificates": [
+        [
+          [
+            4,
+            18,
+            4,
+            23,
+            "add"
+          ],
+          [
+            0,
+            14472334024676221
+          ],
+          [
+            1,
+            23416728348467685
+          ],
+          [
+            1,
+            37889062373143906
+          ]
+        ]
+      ],
+      "contract": [
+        [
+          "n",
+          [
+            0,
+            80
+          ]
+        ]
+      ],
+      "implementation": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+      "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+      "max_trips": 1024,
+      "mode": "checked",
+      "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+      "origin": "e410434055aff5a2559c374a70d3cc38a1037a68d1a5a947da676f0dab617204",
+      "proof": 1,
+      "schema": 1
+    },
+    "program_digest": "af549252f50e53d51d68bcc574811bf8a63930cc3b4a8503be84431842d17739",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_fibonacci",
+    "program_source_sha256": "04787ea74b96c38dbf396f80084ab0fce7f9c428a69f289b549fa4100ebd8127",
+    "dispatcher_module": "rc_heap_ccbac43f29e8e3fbd19174ad",
+    "dispatcher_qualname": "f0_fibonacci",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64)",
+        "native_symbol": "_ZN32rc_heap_ccbac43f29e8e3fbd19174ad12f0_fibonacciB2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedEx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_ccbac43f29e8e3fbd19174ad12f0_fibonacciB2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedEx",
+        "code_capture_requested": false,
+        "code_capture_note": "No cached LLVM/ASM inspection requested or claimed"
+      }
+    ],
+    "dispatcher_cache_hits": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64)": 1
+    },
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "aot_build": {
+    "manifest": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\aot\\checked\\fibonacci\\rcnumeric_af549252f50e53d51d68bcc5.json",
+    "manifest_sha256": "61f550090346cc28b9fc565286fdbb5af3bc9d32e55e4d298789fa5660aff56e",
+    "policy": {
+      "binary": "rcnumeric_af549252f50e53d51d68bcc5.cp314-win_amd64.pyd",
+      "binary_sha256": "62997bf15775873b7e93e288df109e8e8458f9fcd4a0f3c0104fed40c8bcba72",
+      "export": "entry",
+      "identity": "22d105df9a4be14500e16437fd14823e35478df2f659426e0808fe42d6ca7c1a",
+      "kind": "recompyler-experimental-numeric",
+      "module": "rcnumeric_af549252f50e53d51d68bcc5",
+      "policy": {
+        "certificates": [
+          [
+            [
+              4,
+              18,
+              4,
+              23,
+              "add"
+            ],
+            [
+              0,
+              14472334024676221
+            ],
+            [
+              1,
+              23416728348467685
+            ],
+            [
+              1,
+              37889062373143906
+            ]
+          ]
+        ],
+        "contract": [
+          [
+            "n",
+            [
+              0,
+              80
+            ]
+          ]
+        ],
+        "implementation": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+        "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+        "max_trips": 1024,
+        "mode": "checked",
+        "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+        "origin": "e410434055aff5a2559c374a70d3cc38a1037a68d1a5a947da676f0dab617204",
+        "proof": 1,
+        "schema": 1
+      },
+      "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+      "schema": 1,
+      "source_digest": "af549252f50e53d51d68bcc574811bf8a63930cc3b4a8503be84431842d17739"
+    },
+    "build_s": 3.898221999988891,
+    "pycc_native_sources": {
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\candidate\\recompyler\\_pycc\\modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\cext\\dictobject.c": "064853bc9f4db3058292f4494398e56068400adc3359f2de78049e09b181133c",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\cext\\listobject.c": "7a76c04b28f4efd408abecec3dd60396ce4fa9ab5a48ef1a69aa4cceca9d6613",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\cext\\setobject.c": "087bb35f175c3d76497987628368fd2f4bdefbc73e3fe55a41fd6569eef3ee8e",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\cext\\utils.c": "dbca51601e027789fa169b86e598ad01804c0c3c4ebba84aa9dc57ef2f0d083c",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\core\\runtime\\nrt.cpp": "e85b57cd869efd20b48c9ae2a754a61e0e10d53f411e1929239756b249f546b8"
+    },
+    "frozen_pycc_mixin": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\candidate\\recompyler\\_pycc\\modulemixin.c",
+      "sha256": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a"
+    },
+    "files": {
+      "rcnumeric_af549252f50e53d51d68bcc5.cp314-win_amd64.pyd": "62997bf15775873b7e93e288df109e8e8458f9fcd4a0f3c0104fed40c8bcba72",
+      "rcnumeric_af549252f50e53d51d68bcc5.json": "61f550090346cc28b9fc565286fdbb5af3bc9d32e55e4d298789fa5660aff56e"
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 82,
+    "aot_calls": 0,
+    "jit_calls": 82,
+    "fallback_calls": 0,
+    "contract_native_calls": 82,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_446f6285c0257f2b8923f244.f0_recurrence_64-586.py314.1.nbc": "2086c717518d68aa784121802b6dcea72b599e59d4760acc49f71b9c919016a0",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_446f6285c0257f2b8923f244.f0_recurrence_64-586.py314.nbi": "4a75b5147e7cee6745f722e88d6b92a812bf1de5a67a3de29477840356b63c8e",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_ccbac43f29e8e3fbd19174ad.f0_fibonacci-586.py314.1.nbc": "3fb4fa26fbceb9d8eaa0d45d7c1892c0acba63df93b53de83cc7f0c9a912cc1d",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_ccbac43f29e8e3fbd19174ad.f0_fibonacci-586.py314.nbi": "b34f7678caadef9fcd5a146eab45d46522430ec6b60ff54041a8c20a4ee28693",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_d23626c1a00ab6fa8be1ca09.f0_loop_recurrence16-586.py314.1.nbc": "e4aa9583c488175f28bfc11cf9860c5596b15392af67253f0977fd92a68cff65",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_d23626c1a00ab6fa8be1ca09.f0_loop_recurrence16-586.py314.nbi": "17883cd156055fb54d4d3c46fc7b9a6e6cc68194652472a83c1b8680216c3f0e",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_f338bb5fde6d1517bff40a73.f0_recurrence_16-586.py314.1.nbc": "2e3aec4fd312e10e55ea675acf6aa2fe578fdf1ef4b39aeca996671b3fc0443f",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_f338bb5fde6d1517bff40a73.f0_recurrence_16-586.py314.nbi": "045c921fbe9a5dbbbcee913d939f58653c5943bf4925752d24c1c9ab20ef1f03",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_f37b5547959aa7d04e8e663a.f0_recurrence_1-586.py314.1.nbc": "ddb1ebfab97fc466172a6f4c36d7a399e6b727ee762208c3b90158052bab2081",
+    "numba/checked_bb826f3d3786ad853b5af0dbf1a469bf0d0780d0/rc_heap_f37b5547959aa7d04e8e663a.f0_recurrence_1-586.py314.nbi": "7711c55fa45a37fdde24ca93d314754231953f47fe0653550af17465150ee8f6",
+    "rc_heap_446f6285c0257f2b8923f244.py": "5692acf48313f91f8af41a692dd093d878affe0c730dc74370665812ca46b7f6",
+    "rc_heap_ccbac43f29e8e3fbd19174ad.py": "b8b531a650c9a45c359b41e6d3e9c3c8e9796022387ceb4d73f8d8c5cd1e0cd2",
+    "rc_heap_d23626c1a00ab6fa8be1ca09.py": "237945e53aa84ec356227b6b0f969826b52e01ac6a9aae0d5693fed220db4e01",
+    "rc_heap_f338bb5fde6d1517bff40a73.py": "c4d8aca1d16a3668b42de9b540e76eb9ab50b8dd4a8abeaacc64a0e25b6a5971",
+    "rc_heap_f37b5547959aa7d04e8e663a.py": "97da910cc6a04536a947c0ba4fa4037c8d87cf8ac7045c4ca59da4ac0311aef9",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "grant_sha256": "fd40fd8a1c9740f12154cff2925017244daf980ed62229e383722ab4138c0efd",
+  "commands": [
+    [
+      "C:\\Users\\grant\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.3.2+Asserts\\usr\\bin\\clang.exe",
+      "-O3",
+      "-march=x86-64",
+      "-ffp-contract=off",
+      "-fms-runtime-lib=dll",
+      "-c",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.c",
+      "-o",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\build\\kernels.obj"
+    ],
+    [
+      "C:\\Users\\grant\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.3.2+Asserts\\usr\\bin\\clang.exe",
+      "-O3",
+      "-march=x86-64",
+      "-ffp-contract=off",
+      "-fms-runtime-lib=dll",
+      "-c",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\helpers\\batch.c",
+      "-o",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\build\\batch.obj"
+    ],
+    [
+      "C:\\Users\\grant\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.3.2+Asserts\\usr\\bin\\clang.exe",
+      "-shared",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\build\\kernels.obj",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\build\\batch.obj",
+      "-o",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\build\\kernels.dll"
+    ],
+    [
+      "C:\\Users\\grant\\AppData\\Local\\Programs\\Swift\\Toolchains\\6.3.2+Asserts\\usr\\bin\\clang.exe",
+      "-O3",
+      "-march=x86-64",
+      "-ffp-contract=off",
+      "-fms-runtime-lib=dll",
+      "-S",
+      "-emit-llvm",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.c",
+      "-o",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\build\\kernels.ll"
+    ]
+  ],
+  "link_time_optimization": false,
+  "files": {
+    "batch.obj": "9e6f457b3ef4a234ef8ba7adda47d28a8f34bbb86a00ece5b88b345aa3b035d7",
+    "kernels.dll": "6f1a419292125f7b72ed3be3a475c8dda8036c92f936f93c006b90c3c67ea540",
+    "kernels.exp": "98374f83f6939a4dfc716eea887ea3d4f2845e5a1e4a5459535f37095a57d157",
+    "kernels.lib": "fccc0a993390354c4a5f6be22ee099db36a4e0056bc64874daee32f57f2e4587",
+    "kernels.ll": "2c7f962afb2db7dccffb57b38330bcf0e6c7e3ecc1e1f7335e4d0531f1bdf579",
+    "kernels.obj": "3425defa30990bdbf01df937f9c0441d2c5b76a5ec2259b57e385559439fc144"
+  }
+}

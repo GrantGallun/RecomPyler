@@ -1,0 +1,13 @@
+# Compact internal calling convention
+
+The user explicitly requests a smaller recursive calling convention, generalized beyond Barnes, preserving Python behavior, and actual assembly/benchmark comparison against current source and C. They also want a precise explanation of remaining assembly differences, without invented cycle attribution.
+
+Baseline is integration5d0fe5296e077b893a0d9c920f6ccfe798696eeb, product9ff4908. The public generated entry accepts the existing F/I/top/status arrays and semantic arguments. Inside recursive regions, replace repeated array-descriptor arguments with four typed borrowed pointers and one common arena length. Reconstruct local unmanaged array views so existing signed/negative-index behavior, nullable tuple reads, numeric tags, status, recursion and helper logic remain intact. This is a compiler representation change, not a numeric-contract relaxation.
+
+Owners must remain alive throughout a synchronous native attempt. Backing arrays cannot move during that attempt; capacity retry occurs after native exit. F/I can alias the same backing storage and must not receive a false noalias promise. Validate equal F/I lengths, contiguous strides and top4/status1 before pointer extraction; invalid contexts must fail without accessing an empty status buffer. New view construction must not add surviving allocation/refcount work in the recursive body.
+
+Rewrite after cycle merging, covering ordinary internal calls, merged SCC dispatch and a self-recursive entry through an unchanged public adapter. Generated intrinsic/helpers must be covered by source/cache identity. AOT replay must remain free of Numba imports. Conservatively leave regions without recursion on their existing calling convention unless separate evidence justifies extension.
+
+Tests must demonstrate reduced actual native parameter/marshalling width, public ABI stability, both loaders, self/mutual recursion, unchanged tags/types/signed zero, negative indexing/nullable values, F/I aliasing, growth/retry, rollback/exactly-once effects, ndarray and RNG state, fresh-process AOT reuse and disk cache behavior. Unsupported optional lowering must not remove original compiler eligibility.
+
+Measure unchanged original Barnes source with fresh paired current/candidate/C timings, full state/type/alias checkpoints and actual mode audits. Separate instrumented phases from ordinary timing and retain complete-process walls/profile costs. Include small independent recursion controls for generality. Preserve all old evidence and the original user's checkout. No pushes, dependency changes or unsafe global settings.

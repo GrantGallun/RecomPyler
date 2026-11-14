@@ -1,0 +1,363 @@
+{
+  "all_valid": true,
+  "manifest_sha256": "3696d2640f48ead8dc5ca89d8aa3086e6af4691e711871e1682db4733e538516",
+  "programs": {
+    "recursive_object": {
+      "baseline": {
+        "actual_mode_totals": {
+          "aot_calls": 8,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        },
+        "numba_imported": false,
+        "profile_wall_s": 9.122177100005501,
+        "candidate_verification": {
+          "status": "verified",
+          "engine": "region",
+          "samples": 8,
+          "compiled_samples": 8,
+          "fallback_samples": 0,
+          "rare_samples_checked": 0,
+          "recommended": true,
+          "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+          "net_s_first_run": -0.685205954627113,
+          "net_s_cached": -0.00515915463426148,
+          "first_pass_s": 0.6850438999972539,
+          "warm_start_s": 0.004997100004402455,
+          "python_us_per_call": 7.719784171451151,
+          "compiled_cpu_us_per_call": 27.97661290382929,
+          "speedup": 0.2759370549247049,
+          "changes_arguments": false,
+          "disk_cached": true,
+          "batch_backends": {},
+          "backend_note": "not batched: compiled as one region",
+          "lift_reason": "the compiled version did not apply to the captured calls",
+          "diagnostic_original_recommended": false,
+          "diagnostic_original_recommendation": "one call at a time it is 0.28x Python"
+        },
+        "selected_AOT": [
+          {
+            "function": "run",
+            "actual_aot_calls_in_audit": 8,
+            "selected_digest": "0fdc56641302703a3bb7b9b575f98b4fe4880f24cffc3e6f0f0e3faa4168450b",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\cache\\baseline\\recompyler\\rcaotr_17528ece4cd4935bb5c326bf.cp314-win_amd64.pyd",
+            "artifact_sha256": "a1f9405fb844e5ffbecf433eccb6041e87fbaa80f1efdad207c3604c1e4bb9c0",
+            "wrapper_rva": "0x12c0",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x1800012c0",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_object\\baseline.plan.json",
+            "plan_sha256": "fc34fa5d8a60731da8968e85b8669d889bbd61f4df1e2bd6b2daed76e54bc9fb",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_object\\baseline.audit.json",
+            "audit_sha256": "e62c73126f17454b5b11daffc3c93720853c0a1265db3eef29ebcd1d7512d0db",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "output_and_modes_valid": true
+      },
+      "candidate": {
+        "actual_mode_totals": {
+          "aot_calls": 8,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        },
+        "numba_imported": false,
+        "profile_wall_s": 7.303432300002896,
+        "candidate_verification": {
+          "status": "verified",
+          "engine": "region",
+          "samples": 8,
+          "compiled_samples": 8,
+          "fallback_samples": 0,
+          "rare_samples_checked": 0,
+          "recommended": true,
+          "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+          "net_s_first_run": -0.7423586466268253,
+          "net_s_cached": -0.01943574662641282,
+          "first_pass_s": 0.7422170999998343,
+          "warm_start_s": 0.019294199999421835,
+          "python_us_per_call": 7.738868609428946,
+          "compiled_cpu_us_per_call": 25.432196983302042,
+          "speedup": 0.3042941439353445,
+          "changes_arguments": false,
+          "disk_cached": true,
+          "batch_backends": {},
+          "backend_note": "not batched: compiled as one region",
+          "lift_reason": "the compiled version did not apply to the captured calls",
+          "diagnostic_original_recommended": false,
+          "diagnostic_original_recommendation": "one call at a time it is 0.30x Python"
+        },
+        "selected_AOT": [
+          {
+            "function": "run",
+            "actual_aot_calls_in_audit": 8,
+            "selected_digest": "6def163e237355486385952b947df28179cd5ebfa5b37cff5f1068c0c43da6f3",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\cache\\candidate\\recompyler\\rcaotr_9a0de151760ee3be0d4b70d8.cp314-win_amd64.pyd",
+            "artifact_sha256": "46c33492601332e34fc4efe48a01fce8db14e522220a76322608fa87fb697580",
+            "wrapper_rva": "0x11c0",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x1800011c0",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_object\\candidate.plan.json",
+            "plan_sha256": "88441aad2d196c9a05410a30f769682c147379f38bcab1152a6d4c8ad25d7c73",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_object\\candidate.audit.json",
+            "audit_sha256": "133b47e54d0747b5d31a545b1f466605540a430315bd64fa44fd22bee9912490",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "output_and_modes_valid": true
+      }
+    },
+    "recursive_containers": {
+      "baseline": {
+        "actual_mode_totals": {
+          "aot_calls": 8,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        },
+        "numba_imported": false,
+        "profile_wall_s": 5.527691900002537,
+        "candidate_verification": {
+          "status": "verified",
+          "engine": "region",
+          "samples": 8,
+          "compiled_samples": 8,
+          "fallback_samples": 0,
+          "rare_samples_checked": 0,
+          "recommended": true,
+          "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+          "net_s_first_run": -0.28944071828543755,
+          "net_s_cached": -0.0031802182808643104,
+          "first_pass_s": 0.2893580000018119,
+          "warm_start_s": 0.0030974999972386286,
+          "python_us_per_call": 1.3682147123165231,
+          "compiled_cpu_us_per_call": 11.708000165526755,
+          "speedup": 0.11686152143601082,
+          "changes_arguments": true,
+          "disk_cached": true,
+          "batch_backends": {},
+          "backend_note": "not batched: compiled as one region",
+          "lift_reason": "the compiled version did not apply to the captured calls",
+          "diagnostic_original_recommended": false,
+          "diagnostic_original_recommendation": "one call at a time it is 0.12x Python"
+        },
+        "selected_AOT": [
+          {
+            "function": "run",
+            "actual_aot_calls_in_audit": 8,
+            "selected_digest": "da8bc1d36eed91d7c89a958fbfdb6e289e1a36c15e61274707f2d9f3d6c6907f",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\cache\\baseline\\recompyler\\rcaotr_5e1125360d9743763eee47ef.cp314-win_amd64.pyd",
+            "artifact_sha256": "53a8d7612df9bce23f67b1896d976a6107972fe249193ef75c87dbcff3024f52",
+            "wrapper_rva": "0x12d0",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x1800012d0",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\baseline.plan.json",
+            "plan_sha256": "cf7b7584da3238f289929ee5ce70dd02b77eaa80f426ceff0bf4d011bc8ae7d2",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\baseline.audit.json",
+            "audit_sha256": "0618f1bc53fe8a4319134ebbc380aa378bd7a6ebdb90c88440c98e2059851368",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "output_and_modes_valid": true
+      },
+      "candidate": {
+        "actual_mode_totals": {
+          "aot_calls": 8,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        },
+        "numba_imported": false,
+        "profile_wall_s": 5.9431362000032095,
+        "candidate_verification": {
+          "status": "verified",
+          "engine": "region",
+          "samples": 8,
+          "compiled_samples": 8,
+          "fallback_samples": 0,
+          "rare_samples_checked": 0,
+          "recommended": true,
+          "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+          "net_s_first_run": -0.3937321654334222,
+          "net_s_cached": -0.004318165435935374,
+          "first_pass_s": 0.39359419999527745,
+          "warm_start_s": 0.0041801999977906235,
+          "python_us_per_call": 1.3158202692280114,
+          "compiled_cpu_us_per_call": 18.56150003732182,
+          "speedup": 0.07088975926419075,
+          "changes_arguments": true,
+          "disk_cached": true,
+          "batch_backends": {},
+          "backend_note": "not batched: compiled as one region",
+          "lift_reason": "the compiled version did not apply to the captured calls",
+          "diagnostic_original_recommended": false,
+          "diagnostic_original_recommendation": "one call at a time it is 0.07x Python"
+        },
+        "selected_AOT": [
+          {
+            "function": "run",
+            "actual_aot_calls_in_audit": 8,
+            "selected_digest": "c465a326ec936a78c26cb713d39d08ff06818e2b7a20c6ff75131df56d1d173f",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\cache\\candidate\\recompyler\\rcaotr_5fe5628b0b07a3febccd990e.cp314-win_amd64.pyd",
+            "artifact_sha256": "36dd4f089bc900f2c0aa676a783cd684743c4e73dabe8edef6d50426d94f3267",
+            "wrapper_rva": "0x11d0",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x1800011d0",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\candidate.plan.json",
+            "plan_sha256": "d546850fccf33dd6f23e6671680a626c7ae6dc90b421cebf20b53e0ed0a95ce7",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_containers\\candidate.audit.json",
+            "audit_sha256": "5074e281ca0a3e63be2bac15c9c5f598dac8b3debed83ea038bbad1565f82e7d",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "output_and_modes_valid": true
+      }
+    },
+    "recursive_returns": {
+      "baseline": {
+        "actual_mode_totals": {
+          "aot_calls": 8,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        },
+        "numba_imported": false,
+        "profile_wall_s": 5.468416700001399,
+        "candidate_verification": {
+          "status": "verified",
+          "engine": "region",
+          "samples": 8,
+          "compiled_samples": 8,
+          "fallback_samples": 0,
+          "rare_samples_checked": 0,
+          "recommended": true,
+          "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+          "net_s_first_run": -0.41256066781416834,
+          "net_s_cached": -0.003783067812682784,
+          "first_pass_s": 0.4124554000009084,
+          "warm_start_s": 0.0036777999994228594,
+          "python_us_per_call": 0.2563150197632976,
+          "compiled_cpu_us_per_call": 13.414791677253865,
+          "speedup": 0.019106895278732182,
+          "changes_arguments": false,
+          "disk_cached": true,
+          "batch_backends": {},
+          "backend_note": "not batched: compiled as one region",
+          "lift_reason": "outside the supported subset: comparison at line 2",
+          "diagnostic_original_recommended": false,
+          "diagnostic_original_recommendation": "one call at a time it is 0.02x Python"
+        },
+        "selected_AOT": [
+          {
+            "function": "run",
+            "actual_aot_calls_in_audit": 8,
+            "selected_digest": "57c70ee5b935e7ea0d4d2e61cf7cdbf1e4b264c7fa2f6026c4107206ac7b3f64",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\cache\\baseline\\recompyler\\rcaotr_31ffc24e7cb0b53535efef77.cp314-win_amd64.pyd",
+            "artifact_sha256": "8e56b91bbaa14755ad31f93d3404f897c86919cfc5ef6a76858dd52fd3f40638",
+            "wrapper_rva": "0x1330",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x180001330",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_returns\\baseline.plan.json",
+            "plan_sha256": "2c2bba19d75a5d8dcd06d094bf24502f6e3675e7386ec92d238a9c6e3265080d",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_returns\\baseline.audit.json",
+            "audit_sha256": "8ed93a3485fb9ea74ae7da385771c0a94eebe49aafb288fafac9a6fda5adaa5e",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "output_and_modes_valid": true
+      },
+      "candidate": {
+        "actual_mode_totals": {
+          "aot_calls": 8,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        },
+        "numba_imported": false,
+        "profile_wall_s": 5.632575399999041,
+        "candidate_verification": {
+          "status": "verified",
+          "engine": "region",
+          "samples": 8,
+          "compiled_samples": 8,
+          "fallback_samples": 0,
+          "rare_samples_checked": 0,
+          "recommended": true,
+          "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+          "net_s_first_run": -0.48012841687720786,
+          "net_s_cached": -0.0059497168751229046,
+          "first_pass_s": 0.4800262999997358,
+          "warm_start_s": 0.005847599997650832,
+          "python_us_per_call": 0.24215260551414494,
+          "compiled_cpu_us_per_call": 13.00676228952323,
+          "speedup": 0.01861743915387733,
+          "changes_arguments": false,
+          "disk_cached": true,
+          "batch_backends": {},
+          "backend_note": "not batched: compiled as one region",
+          "lift_reason": "outside the supported subset: comparison at line 2",
+          "diagnostic_original_recommended": false,
+          "diagnostic_original_recommendation": "one call at a time it is 0.02x Python"
+        },
+        "selected_AOT": [
+          {
+            "function": "run",
+            "actual_aot_calls_in_audit": 8,
+            "selected_digest": "9584e0fcefc7498bdede346f0c6cac6c6de8e15f79703eebc8226877b1c7b817",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\cache\\candidate\\recompyler\\rcaotr_dcf29c122463b2c3892a5ebc.cp314-win_amd64.pyd",
+            "artifact_sha256": "80ceaa5c92768867370cbb5417cad55679776eeda2a53d87145e55de4e9f1963",
+            "wrapper_rva": "0x1230",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x180001230",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_returns\\candidate.plan.json",
+            "plan_sha256": "deee9b676c08e687f5c3980597370c709553d4b4015204daa6a0978f20671742",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave7-study\\results-regression\\programs\\recursive_returns\\candidate.audit.json",
+            "audit_sha256": "34440e06911a1536725ff9cc4e0b72ba8b4cf7de170b10233d133c6f623aa0d4",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "output_and_modes_valid": true
+      }
+    }
+  },
+  "fresh_profiles_total_s": 38.997429600014584,
+  "actual_aot_calls_total": 48,
+  "note": "Three bounded semantic controls; no latency or Cspeed claims."
+}

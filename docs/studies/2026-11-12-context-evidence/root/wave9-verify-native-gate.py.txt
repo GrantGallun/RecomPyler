@@ -1,0 +1,39 @@
+"""Independently verify metadata for the saved/candidate/C experiment."""
+import hashlib
+import json
+import sys
+from pathlib import Path
+
+root = Path(__file__).resolve().parent
+read = lambda p: json.loads(p.read_text())
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+folder = root / 'wave9-native' / (sys.argv[1] if len(sys.argv) > 1 else 'results')
+expected_manifest = sys.argv[2] if len(sys.argv) > 2 else 'd058c448e449e26f405b9f1d5f508291ab61227500d9e6b9a66e564ea57d2806'
+expected_candidate = sys.argv[3] if len(sys.argv) > 3 else '57835fa8a89d0d846e291abc7f9f6f335aa272a8'
+m = read(folder / 'manifest.json')
+saved = read(root / 'wave8-native/results-final/manifest.json')
+assert sha(folder / 'manifest.json') == expected_manifest
+assert m['sources']['current'] == saved['sources']['final']
+assert m['sources']['final']['git_head'] == expected_candidate
+if folder.name == 'results-inline':
+    assert m['helpers'] == read(root / 'wave9-native/results/manifest.json')['helpers']
+for key in ('runtime_identity', 'execution_environment', 'programs', 'shim_sha256', 'limit', 'samples', 'repetitions', 'timeout_s', 'python_inner_reps', 'c_inner_reps', 'c_provenance'):
+    assert m[key] == saved[key], key
+for source in m['sources'].values():
+    assert not source['git_status'] and len(source['src_sha256']) == 30
+    for name, digest in source['src_sha256'].items():
+        assert sha(Path(source['path']) / 'src' / name) == digest, name
+changed = [n for n, digest in m['sources']['current']['src_sha256'].items() if digest != m['sources']['final']['src_sha256'][n]]
+assert changed == ['recompyler/heap.py']
+for name, digest in m['helpers'].items():
+    assert sha(folder.parent / name) == digest, name
+for name, digest in saved['helpers'].items():
+    if name not in ('native.py', 'PROTOCOL.md'):
+        assert m['helpers'][name] == digest, name
+for row in m['programs'].values():
+    for name in ('script', 'binary', 'source'):
+        assert sha(Path(row[name])) == row[name + '_sha256'], name
+receipt = {'root_metadata_verified': True, 'manifest_sha256': sha(folder / 'manifest.json'), 'baseline': m['sources']['current']['git_head'], 'candidate': m['sources']['final']['git_head'], 'changed_source_files': changed, 'runtime_environment_original_inputs_and_protocol_equal_saved': True, 'frozen_helper_count': len(m['helpers']), 'note': 'Metadata only. Execution still requires full-suite PASS and CPU release.'}
+target = root / (sys.argv[4] if len(sys.argv) > 4 else 'wave9-root-native-gate.json')
+target.write_text(json.dumps(receipt, indent=2) + '\n')
+print(json.dumps(receipt))

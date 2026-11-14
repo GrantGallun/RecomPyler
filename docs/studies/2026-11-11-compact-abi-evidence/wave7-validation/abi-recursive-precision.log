@@ -1,0 +1,37 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________ test_recursive_native_context_borrows_five_scalars ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001D6FF457490>
+
+    def test_recursive_native_context_borrows_five_scalars(monkeypatch):
+        monkeypatch.setattr(heap, "_cached_module", lambda source: None)
+        region = heap.lift_region(recursive_sum)
+        assert region(4, 1.25) == 10.0
+        assert region.compiled_calls == 1, region.problem
+        program = region.latest
+        from numba import types
+    
+        assert all(isinstance(kind, types.Array) for kind in program.run.signatures[0][:4])
+        checked_recursive = False
+        for info in program.order:
+            body = getattr(program.module, info.name + "_borrowed", None)
+            assert body is not None
+            for signature in body.signatures:
+                assert sum(isinstance(kind, types.CPointer) for kind in signature) == 4
+                assert signature[4] == types.int64
+                assert len(signature) == 7  # four pointers, length, and two semantic scalars
+                llvm = body.inspect_llvm(signature)
+                symbol = body.overloads[signature].fndesc.llvm_func_name
+                native = next(block.split("\n}", 1)[0] for block in llvm.split("define ")[1:]
+                              if "@" + symbol + "(" in block.splitlines()[0])
+                assert not re.search(r"call[^\n]*@NRT_(?:incref|decref|MemInfo_alloc)", native)
+                for name in ("_heap_F", "_heap_I"):
+                    parameter = re.search(r"[^,\n]*%arg\." + name + r"(?=,|\))", native)
+>                   assert parameter is not None and "noalias" not in parameter.group()
+E                   assert (None is not None)
+
+tests\test_heap_compact_abi.py:164: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_heap_compact_abi.py::test_recursive_native_context_borrows_five_scalars
+1 failed, 23 deselected in 1.47s

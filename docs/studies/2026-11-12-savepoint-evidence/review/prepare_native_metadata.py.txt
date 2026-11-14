@@ -1,0 +1,38 @@
+"""Read-only old/current byte comparison; imports no product or workload."""
+import hashlib
+import json
+from pathlib import Path
+
+root = Path(__file__).resolve().parent.parent
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+old = json.loads((root / 'wave7-study/results/manifest.json').read_text())
+expected = old['sources']['candidate']['src_sha256']
+source = root / 'integration/src'
+differences = []
+for name, wanted in expected.items():
+    path = source / name
+    got = sha(path) if path.exists() else None
+    if got != wanted:
+        differences.append({'path': name, 'expected': wanted, 'actual': got})
+inputs = {}
+for workload in ('barnes_hut', 'raytrace'):
+    for part, suffix in (('drivers', '.py'), ('c-sources', '.c'), ('bin', '.exe')):
+        path = root / 'wave5-study/results' / part / (workload + suffix)
+        inputs[str(path)] = sha(path)
+artifact = root / 'wave7-study/results/cache/candidate/recompyler/rcaotr_b767982c3d43c6022e2cef09.cp314-win_amd64.pyd'
+for path in (artifact, root / 'wave7-study/results/plans/candidate.json',
+             root / 'wave7-study/results/candidate-state-selected-audit.json'):
+    inputs[str(path)] = sha(path)
+report = {
+    'mode': 'metadata-only; no artifact/product imports or benchmark execution',
+    'current_integration_expected_commit': '93986c89a5b512ef82a33af1f101bf6f796ae61f',
+    'reference_source_manifest': str(root / 'wave7-study/results/manifest.json'),
+    'reference_source_manifest_sha256': sha(root / 'wave7-study/results/manifest.json'),
+    'reference_source_entry_count': len(expected),
+    'raw_source_differences': differences,
+    'input_sha256': inputs,
+    'reuse_status': 'Conditional only: source inventory/runtime/environment/current successful mode audit still required.',
+}
+(Path(__file__).resolve().parent / 'native-input-metadata.json').write_text(json.dumps(report, indent=2) + '\n')
+print(json.dumps({'source_entries_checked': len(expected), 'raw_source_differences': differences,
+                  'inputs_hashed': len(inputs)}))

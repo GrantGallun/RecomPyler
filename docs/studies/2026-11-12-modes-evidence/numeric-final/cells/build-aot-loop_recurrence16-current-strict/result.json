@@ -1,0 +1,259 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "current-strict",
+  "function": "loop_recurrence16",
+  "task": "build-aot",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ],
+    "n": [
+      0,
+      1024
+    ]
+  },
+  "corpus_count": 392,
+  "expected_results_sha256": "a20c051a6a31c8a5fdf53f4206625a81332b99fe0941095fed0f8ce598978deb",
+  "valid_exact_results": true,
+  "construction_s": 0.22624899999937043,
+  "first_call_s": 0.6968629000039073,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 392,
+    "aot_calls": 0,
+    "jit_calls": 392,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "loop_recurrence16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "b5ae3bb6685078518eed9a23a9037b44108be6cbf308ee2bb9dce07a222d21c0",
+    "function_bytecode_sha256": "1d23dac200bc0f0d85991e5d5a2578605c991488a6fb66650a27c73dc59fae7a",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null,
+    "program_digest": "a28d914bd450093c6bfdc6ea80dfe30a1c9e2ff872fae91491094943a721cffe",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_loop_recurrence16",
+    "program_source_sha256": "273f21ce77fb0f406fd3546b37df1b479d725709daffb63e5e81022ef9fefcdd",
+    "dispatcher_module": "rc_heap_a840a9a92cd3a10be28522e4",
+    "dispatcher_qualname": "f0_loop_recurrence16",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\current\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_a840a9a92cd3a10be28522e420f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_a840a9a92cd3a10be28522e420f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "code_capture_requested": false,
+        "code_capture_note": "No cached LLVM/ASM inspection requested or claimed"
+      }
+    ],
+    "dispatcher_cache_hits": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)": 1
+    },
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "aot_build": {
+    "plan": {
+      "module": "rcaotr_0cedc59f0901480dc0803d7c",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\aot\\current-strict\\loop_recurrence16",
+      "functions": [
+        {
+          "function": "loop_recurrence16",
+          "line": 100,
+          "qualname": "loop_recurrence16",
+          "exports": {
+            "a28d914bd450093c6bfdc6ea80dfe30a1c9e2ff872fae91491094943a721cffe": "r0",
+            "6608ea6636abf18dea6c635a16861f70917227e84a57eb55ba6f6de76ffc90f2": "r0"
+          },
+          "seeds": {
+            "6608ea6636abf18dea6c635a16861f70917227e84a57eb55ba6f6de76ffc90f2": {
+              "version": 1,
+              "classes": [],
+              "families": [],
+              "functions": [
+                {
+                  "ref": [
+                    "$entry"
+                  ],
+                  "owner": null,
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "c397014c56475fa6c9e7ce2fe519dc9de2d0cdd9375ae9a10530ba639027ef90",
+                  "vars": [
+                    [
+                      "x",
+                      "i"
+                    ],
+                    [
+                      "y",
+                      "i"
+                    ],
+                    [
+                      "z",
+                      "i"
+                    ],
+                    [
+                      "n",
+                      "i"
+                    ],
+                    [
+                      "t",
+                      "i"
+                    ],
+                    [
+                      "i",
+                      "i"
+                    ]
+                  ],
+                  "ret": "i"
+                }
+              ],
+              "globals": [],
+              "cells": [],
+              "dependencies": {
+                "functions": [
+                  [
+                    [
+                      "$entry"
+                    ],
+                    "c397014c56475fa6c9e7ce2fe519dc9de2d0cdd9375ae9a10530ba639027ef90",
+                    null
+                  ]
+                ],
+                "classes": []
+              }
+            }
+          },
+          "seed_policy": "guarded",
+          "seed_policy_reason": null
+        }
+      ]
+    },
+    "binary": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\aot\\current-strict\\loop_recurrence16\\rcaotr_0cedc59f0901480dc0803d7c.cp314-win_amd64.pyd",
+    "binary_sha256": "8be971a687e2adec17d2c40501bc370f4e65463e4848c0842a3f985d7500f38b",
+    "manifest": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\aot\\current-strict\\loop_recurrence16\\strict-plan.json",
+    "build_s": 4.279433600007906,
+    "pycc_native_sources": {
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\current\\recompyler\\_pycc\\modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\cext\\dictobject.c": "064853bc9f4db3058292f4494398e56068400adc3359f2de78049e09b181133c",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\cext\\listobject.c": "7a76c04b28f4efd408abecec3dd60396ce4fa9ab5a48ef1a69aa4cceca9d6613",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\cext\\setobject.c": "087bb35f175c3d76497987628368fd2f4bdefbc73e3fe55a41fd6569eef3ee8e",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\cext\\utils.c": "dbca51601e027789fa169b86e598ad01804c0c3c4ebba84aa9dc57ef2f0d083c",
+      "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numba\\core\\runtime\\nrt.cpp": "e85b57cd869efd20b48c9ae2a754a61e0e10d53f411e1929239756b249f546b8"
+    },
+    "frozen_pycc_mixin": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\current\\recompyler\\_pycc\\modulemixin.c",
+      "sha256": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a"
+    },
+    "files": {
+      "rcaotr_0cedc59f0901480dc0803d7c.cp314-win_amd64.pyd": "8be971a687e2adec17d2c40501bc370f4e65463e4848c0842a3f985d7500f38b",
+      "strict-plan.json": "abb5e354c291c3414defc662e7d5228195adb977cb7338b9196f3d0701e69d91"
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 393,
+    "aot_calls": 0,
+    "jit_calls": 393,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_16371f099018d0a4b008fe19.add_i-95.py314.1.nbc": "12e8d801985c3916bb029e503c726fb03f8a33e194b2a2f20335b5bd4edb8f34",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_16371f099018d0a4b008fe19.add_i-95.py314.2.nbc": "e00b794afdf27fbdb9ac79950bd30234e72bbf552c776f02c11ef8ce066f1636",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_16371f099018d0a4b008fe19.add_i-95.py314.nbi": "868f2ddf2c937198b1dc5ebe0300a0660e31ae3016b23488b19cf718da74c5e6",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_16371f099018d0a4b008fe19.f0_fibonacci-554.py314.1.nbc": "536a01b8d378bff313194e17461a4f923fc7cf8b44c978796187b307bfb1e84a",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_16371f099018d0a4b008fe19.f0_fibonacci-554.py314.nbi": "b4a8a3525cd7d726d8388f97256447c8642f87df878f31d71fd254a003687371",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.add_i-95.py314.1.nbc": "0a984f2f190b9c5f90e7fa6f8e0e3a8cab9eb6fdf760bc1ff012db7fa6ceb3f9",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.add_i-95.py314.nbi": "d3d77b6bb61cd2f9bd6349295874a9fcefe7e805925de837166d2c7e7392b009",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.f0_recurrence_16-554.py314.1.nbc": "e98f9a9cc6c6d505e6439d404d2a2769de365938ccf34fd0260fa5d204cb47d9",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.f0_recurrence_16-554.py314.nbi": "96a79239eb690af049611e1dc330012d3404f280b4f8e6e7b356707df5e84a02",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.mul_i-111.py314.1.nbc": "3e39f79c9f34a586de3cb1ea7f6d163f902759207f0cf0c4a8cc3f4e6028a666",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.mul_i-111.py314.nbi": "580c4dcd1e5601a2667a825f4c0dd54b53580d852604b3ecdb0cc67a59d2729d",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_5dbcd3c19ea2e7adcd43e3db.f0_loop_recurrence16-554.py314.1.nbc": "d6279b7a3789933b907ca1e86d4161ad7da32093499f049ec1c20d654cf8cd11",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_5dbcd3c19ea2e7adcd43e3db.f0_loop_recurrence16-554.py314.nbi": "1473712e80f17283927597efb31f2fece9c17cd8a005b345a6fb440993a2ea39",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_8bf7a2f1e77f8b23d8bdfb8e.add_i-95.py314.1.nbc": "554ea13ebbf509dd0a2b20105dcf58a4889eeb04c4fe0542cea58d0424e89703",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_8bf7a2f1e77f8b23d8bdfb8e.add_i-95.py314.nbi": "6cd5224927f9649561e394ca2d95268ed0964d6a68a7852830558242a980fcab",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_8bf7a2f1e77f8b23d8bdfb8e.f0_recurrence_64-554.py314.1.nbc": "6ce468319f39eb1413fb4ef879241a8a9d760048a3624d2abbe7bc7a57585a0d",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_8bf7a2f1e77f8b23d8bdfb8e.f0_recurrence_64-554.py314.nbi": "e2bb598b5f2afc4254c36e115ff1c769f8949bb8e21e543bf0470e45511c2e30",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_8bf7a2f1e77f8b23d8bdfb8e.mul_i-111.py314.1.nbc": "f84a4ffe6c8cebae62affa5bf24f1253a9372f61f58e48ab3c71717c60e53f5b",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_8bf7a2f1e77f8b23d8bdfb8e.mul_i-111.py314.nbi": "f73ca1f32fd93d2c9ca60c4293f0bf3baacb3d54f39f34df0af8eb76046ee3db",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a2fa6015217f7e9a727c9317.add_i-95.py314.1.nbc": "8cff327bb18f55ca6c9323433dd9c1d7d4a59f9f98f338a4eb3a6e69f8426913",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a2fa6015217f7e9a727c9317.add_i-95.py314.2.nbc": "a404539d7f044506597289ba33828578d9288b5f192c7547156ec17ce104a03e",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a2fa6015217f7e9a727c9317.add_i-95.py314.nbi": "e647db82f58a1d3a441f3ea5cdc74130fb49364f74260f36d934b9588752e64a",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a2fa6015217f7e9a727c9317.f0_fibonacci-554.py314.1.nbc": "db3b150083d462ba5fd27682a88b8bab95c17e9340b6d3ef73cce4b1cbf5009d",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a2fa6015217f7e9a727c9317.f0_fibonacci-554.py314.nbi": "4105c13727614838c19937717dd618e8e9b229f8cdc8a5b8101e96d5154235eb",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a840a9a92cd3a10be28522e4.add_i-95.py314.1.nbc": "4a46cae93107dc77e055c7d8753e2134eddd90c0cd4869f664eba078a00a2fc2",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a840a9a92cd3a10be28522e4.add_i-95.py314.nbi": "36894ee9de23dc8b80ef87c8cbc022f1e439fecb07b0b96162a7b9adf295a28e",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a840a9a92cd3a10be28522e4.f0_loop_recurrence16-554.py314.1.nbc": "2b4afb1a4551e44b1f014e630a36e740c59b54fd9370ba4d919987b32c751e67",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a840a9a92cd3a10be28522e4.f0_loop_recurrence16-554.py314.nbi": "d8ab6b748740bf9fe887862bd898e411b8f9a1778f12e49ae925ff0b369c4094",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a840a9a92cd3a10be28522e4.mul_i-111.py314.1.nbc": "1e4f6456cc72d8c2dfdc14dae7181671b261f3fb4e16a1bbb82c181181135da3",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_a840a9a92cd3a10be28522e4.mul_i-111.py314.nbi": "722357e8876db64679c1ff0d82b9d220b86a125333230e30872e4a7db5ccc9d3",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_b06fa0540b5e51651901871b.f0_recurrence_16-554.py314.1.nbc": "9436ba2c40cbaf30cd12dff72ea01459d5f683e0dc4c1bfebea853d9dafa269a",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_b06fa0540b5e51651901871b.f0_recurrence_16-554.py314.nbi": "7de9f2f446fbbc2c3603a93f23f6777e8922536dfd18331ea5b598181df4994a",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c291c9d1c46b95f1619e16e2.f0_recurrence_1-554.py314.1.nbc": "393f2c5ae80d755178dd53a587723225717fe1ec01314b62b7d24210b1e71f79",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c291c9d1c46b95f1619e16e2.f0_recurrence_1-554.py314.nbi": "5cccee9bb00952a447062d96e201c2b220a3450cdb2a4b7ba988efbd2c02f9be",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.add_i-95.py314.1.nbc": "8f8543596cdfae072d2f7d56db1e06bceeb5de80cc4b1ae5e3b3bbe42fb611fd",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.add_i-95.py314.nbi": "a62bf8fbcc7fdd1ee5eb5ae233ace972fa81d37973f591360dbe44d1694d3797",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.f0_recurrence_1-554.py314.1.nbc": "e93e7f320a1bd40d02e804cfba81a4267b55652b7303f300d91e1b7795532540",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.f0_recurrence_1-554.py314.nbi": "d05c20f8292df9de72f8c673e45698487f46da7d50fd646813425ad17d47bbd9",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.mul_i-111.py314.1.nbc": "3fac7350ad0862c52a72c93f9bbcc8c119b3cc1d4391d01fe6941b456cc4431e",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.mul_i-111.py314.nbi": "5a8d2d17ddebc78f5de0c0814b68bc1be8fcef61d8ceaf65017ad99db7b06a29",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_e66b84cfa753e23a6d15f784.f0_recurrence_64-554.py314.1.nbc": "62aaac68753a6768663664f34621aefc4e03579b0229e78047ef81b65ce0f4d6",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_e66b84cfa753e23a6d15f784.f0_recurrence_64-554.py314.nbi": "67286ec6a36d6b985f05c57d87f777976af7e65ca18d234f3641aa753391fdf0",
+    "rc_heap_16371f099018d0a4b008fe19.py": "26cc0d593581dd6ce068115793bbfdcbf1023c2e5963d9416c4559bfc6ee80a2",
+    "rc_heap_2b6ae51a3c827ac03ab1c7cf.py": "733a95f74730ce19aeca5450b9f375ee66dd5f34fe17d46536fe29608bc9b1ad",
+    "rc_heap_5dbcd3c19ea2e7adcd43e3db.py": "0bec3141164e1538fb6798932dd26423f4da968aca81bc4d4a48fe07909c4ee4",
+    "rc_heap_8bf7a2f1e77f8b23d8bdfb8e.py": "28c6ef1728a5b4ed719af5b6032d6a176d9838413d86f9ae7c004d8acd01d3e9",
+    "rc_heap_a2fa6015217f7e9a727c9317.py": "8cce3e29d8f1dcee671403f3f85b3b7cc07cb215053b8fdf1b2c20f069641f9b",
+    "rc_heap_a840a9a92cd3a10be28522e4.py": "5ece0a8280d553af17cdb1bb7f3364e062ab2a6652ac615b0aea0329f7e381ca",
+    "rc_heap_b06fa0540b5e51651901871b.py": "c4bdb78600365dbbd5c627585c9da6ccefa475f53c7f154b79dfa7001d98d56d",
+    "rc_heap_c291c9d1c46b95f1619e16e2.py": "d8225e5a0acc7e273d93af0df0223a773f05e6d9aac654ca752626a7320a6a39",
+    "rc_heap_c5aad4acdf89efbc0f278e3b.py": "a2f33cf69430461eadd844470bc8964abe125a29cbf1fd42644dbf49297be705",
+    "rc_heap_e66b84cfa753e23a6d15f784.py": "3412f552ef5c66dd02c78d0be310793333427a21f0f3956a7b70f906f2001092",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

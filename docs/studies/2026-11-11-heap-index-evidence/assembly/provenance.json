@@ -1,0 +1,783 @@
+{
+  "sources": {
+    "baseline": {
+      "git_head": "3f0370d5fe5c358b4a0b3fd8e1ea10a2f22f87bf",
+      "heap_sha256": "c375838cadbacad84d79cfa3df501aac6a2e7875e8d6a21746d8c8308cc09c92"
+    },
+    "candidate": {
+      "git_head": "e35dce1b7cef4019400696a9d7712ae8571a0b81",
+      "heap_sha256": "3bdbb2e20b5544bd60ad8c4100d37c5a1146a2d859ad0adf59201e2c99383279"
+    }
+  },
+  "artifacts": {
+    "baseline": {
+      "function": "advance_system",
+      "actual_aot_calls_in_audit": 500,
+      "selected_digest": "eabc9168344178edfe14396b2bb28bfe114e71f6a567618667853a68b61a627b",
+      "selected_export": "r0",
+      "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\barnes_hut\\baseline\\recompyler\\rcaotr_2c76336ff39711e0671e54df.cp314-win_amd64.pyd",
+      "artifact_sha256": "aa2eb8d294278e83f30114866303abe52ad475a9e489cf5d4fd3559b685dfd7c",
+      "wrapper_rva": "0x1d20",
+      "preferred_image_base": "0x180000000",
+      "wrapper_preferred_address": "0x180001d20",
+      "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\barnes_hut\\baseline.plan.json",
+      "plan_sha256": "7ce950b9c2c6e28e13544e7cafaf6655c39cb4df93bf1ff4c1b8186dc9a6773f",
+      "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\barnes_hut\\baseline-forced.audit.json",
+      "audit_sha256": "79e57dddc94d64d855c5a22e802bb29b66da2fc53f101d3ebdb7d6d81a9e7e06",
+      "limitations": [
+        "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+        "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+        "No kernel executed, compiled, profiled or timed by this mapping script."
+      ],
+      "mapping_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-aot-map.payload.json",
+      "mapping_sha256": "1f7d7f3842c15268610a1c175769ea602eebcd84248f06005d3c584396ab9185"
+    },
+    "candidate": {
+      "function": "advance_system",
+      "actual_aot_calls_in_audit": 500,
+      "selected_digest": "a0f9dde9c40c4c638a5a799fba1be65e7c353ab533d9f75c68334174b1f19c1f",
+      "selected_export": "r0",
+      "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\cache\\barnes_hut\\candidate\\recompyler\\rcaotr_2fe5e05e91a653421cd9997e.cp314-win_amd64.pyd",
+      "artifact_sha256": "226403d22c98758ad52a79d49d3daf4641f9e2cdd6b1cad9c6e23a11e5f7bc9e",
+      "wrapper_rva": "0x19e0",
+      "preferred_image_base": "0x180000000",
+      "wrapper_preferred_address": "0x1800019e0",
+      "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\barnes_hut\\candidate.plan.json",
+      "plan_sha256": "7d5aacc5254488f1a961ea801c8c94a37dc1c9aeef0034e3ec99b696d8aade0f",
+      "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\programs\\barnes_hut\\candidate-forced.audit.json",
+      "audit_sha256": "9853ab17217079f90054a225fb06ea7e6e223daf89681fe6dc47a8c7582a8024",
+      "limitations": [
+        "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+        "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+        "No kernel executed, compiled, profiled or timed by this mapping script."
+      ],
+      "mapping_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-aot-map.payload.json",
+      "mapping_sha256": "22c56651a32d1943ad41a52abbcec823d1807e156071689476a962d4f74c9613"
+    },
+    "c": {
+      "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\bin\\barnes_hut.exe",
+      "sha256": "4fd003eeea3b3bf997c90889340719fd71e8f698da5feca673ece46e9418f9ff",
+      "same_as_wave4_c": true
+    }
+  },
+  "static_ranges": {
+    "baseline-entry": {
+      "start": "0x180001090",
+      "end_exclusive": "0x180001d20",
+      "address_span_bytes": 3216,
+      "instruction_lines": 587,
+      "cmovlq": 36,
+      "sarq_63": 16,
+      "negative_immediate_cmpq": 36,
+      "direct_calls": [
+        {
+          "at": "0x1800016bf",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x180001954",
+          "target": "0x180004040"
+        }
+      ]
+    },
+    "baseline-wrapper": {
+      "start": "0x180001d20",
+      "end_exclusive": "0x180002540",
+      "address_span_bytes": 2080,
+      "instruction_lines": 364,
+      "cmovlq": 0,
+      "sarq_63": 0,
+      "negative_immediate_cmpq": 0,
+      "direct_calls": [
+        {
+          "at": "0x180001dce",
+          "target": "0x18000d4f1"
+        },
+        {
+          "at": "0x180001e2c",
+          "target": "0x18000c1b0"
+        },
+        {
+          "at": "0x180001eaf",
+          "target": "0x18000c1b0"
+        },
+        {
+          "at": "0x180001f52",
+          "target": "0x18000c1b0"
+        },
+        {
+          "at": "0x180002005",
+          "target": "0x18000c1b0"
+        },
+        {
+          "at": "0x180002091",
+          "target": "0x18000d4f7"
+        },
+        {
+          "at": "0x1800020bd",
+          "target": "0x18000d4fd"
+        },
+        {
+          "at": "0x1800020c8",
+          "target": "0x18000d503"
+        },
+        {
+          "at": "0x1800020cd",
+          "target": "0x18000d509"
+        },
+        {
+          "at": "0x1800020e3",
+          "target": "0x18000d50f"
+        },
+        {
+          "at": "0x1800020ee",
+          "target": "0x18000d515"
+        },
+        {
+          "at": "0x1800020f9",
+          "target": "0x18000d503"
+        },
+        {
+          "at": "0x1800020fe",
+          "target": "0x18000d509"
+        },
+        {
+          "at": "0x180002114",
+          "target": "0x18000d50f"
+        },
+        {
+          "at": "0x18000211f",
+          "target": "0x18000d515"
+        },
+        {
+          "at": "0x18000212a",
+          "target": "0x18000d503"
+        },
+        {
+          "at": "0x18000212f",
+          "target": "0x18000d509"
+        },
+        {
+          "at": "0x180002145",
+          "target": "0x18000d4f7"
+        },
+        {
+          "at": "0x180002159",
+          "target": "0x18000d4fd"
+        },
+        {
+          "at": "0x180002164",
+          "target": "0x18000d503"
+        },
+        {
+          "at": "0x180002169",
+          "target": "0x18000d509"
+        },
+        {
+          "at": "0x18000217f",
+          "target": "0x18000d4f7"
+        },
+        {
+          "at": "0x180002193",
+          "target": "0x18000d4fd"
+        },
+        {
+          "at": "0x18000219e",
+          "target": "0x18000d503"
+        },
+        {
+          "at": "0x1800021a3",
+          "target": "0x18000d509"
+        },
+        {
+          "at": "0x18000234a",
+          "target": "0x180001090"
+        },
+        {
+          "at": "0x18000235c",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x180002364",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x18000236c",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x180002374",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x180002387",
+          "target": "0x18000d51b"
+        },
+        {
+          "at": "0x1800023b9",
+          "target": "0x18000d521"
+        },
+        {
+          "at": "0x1800023d1",
+          "target": "0x18000d527"
+        },
+        {
+          "at": "0x1800023ef",
+          "target": "0x18000b9c0"
+        },
+        {
+          "at": "0x1800023fa",
+          "target": "0x18000d450"
+        },
+        {
+          "at": "0x180002412",
+          "target": "0x18000d52d"
+        },
+        {
+          "at": "0x18000242a",
+          "target": "0x18000d52d"
+        },
+        {
+          "at": "0x180002442",
+          "target": "0x18000d52d"
+        },
+        {
+          "at": "0x18000245a",
+          "target": "0x18000d52d"
+        },
+        {
+          "at": "0x18000246f",
+          "target": "0x18000d52d"
+        },
+        {
+          "at": "0x180002479",
+          "target": "0x18000d509"
+        },
+        {
+          "at": "0x18000248c",
+          "target": "0x18000d509"
+        },
+        {
+          "at": "0x18000249e",
+          "target": "0x18000d509"
+        },
+        {
+          "at": "0x1800024af",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x1800024c7",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x1800024cf",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x1800024d7",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x1800024fb",
+          "target": "0x18000d52d"
+        },
+        {
+          "at": "0x180002506",
+          "target": "0x18000b8e0"
+        },
+        {
+          "at": "0x180002516",
+          "target": "0x18000b480"
+        },
+        {
+          "at": "0x180002524",
+          "target": "0x18000d533"
+        },
+        {
+          "at": "0x180002539",
+          "target": "0x18000d52d"
+        }
+      ]
+    },
+    "baseline-force": {
+      "start": "0x180004040",
+      "end_exclusive": "0x180005180",
+      "address_span_bytes": 4416,
+      "instruction_lines": 772,
+      "cmovlq": 18,
+      "sarq_63": 5,
+      "negative_immediate_cmpq": 18,
+      "direct_calls": [
+        {
+          "at": "0x1800046b2",
+          "target": "0x180004040"
+        },
+        {
+          "at": "0x1800048bf",
+          "target": "0x180004040"
+        },
+        {
+          "at": "0x180004d19",
+          "target": "0x180004040"
+        },
+        {
+          "at": "0x180004fff",
+          "target": "0x180004040"
+        }
+      ]
+    },
+    "baseline-insert": {
+      "start": "0x180005180",
+      "end_exclusive": "0x180007d80",
+      "address_span_bytes": 11264,
+      "instruction_lines": 1977,
+      "cmovlq": 105,
+      "sarq_63": 46,
+      "negative_immediate_cmpq": 108,
+      "direct_calls": [
+        {
+          "at": "0x180005583",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x180005924",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x180005ef3",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x18000669f",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x180007424",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x18000761f",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x18000781a",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x180007a25",
+          "target": "0x180005180"
+        },
+        {
+          "at": "0x180007cd3",
+          "target": "0x180005180"
+        }
+      ]
+    },
+    "baseline-force-fields": {
+      "start": "0x180004160",
+      "end_exclusive": "0x180004229",
+      "address_span_bytes": 201,
+      "instruction_lines": 44,
+      "cmovlq": 4,
+      "sarq_63": 2,
+      "negative_immediate_cmpq": 4,
+      "direct_calls": []
+    },
+    "baseline-force-mass": {
+      "start": "0x1800040c7",
+      "end_exclusive": "0x1800040db",
+      "address_span_bytes": 20,
+      "instruction_lines": 5,
+      "cmovlq": 1,
+      "sarq_63": 0,
+      "negative_immediate_cmpq": 1,
+      "direct_calls": []
+    },
+    "candidate-entry": {
+      "start": "0x180001090",
+      "end_exclusive": "0x1800019e0",
+      "address_span_bytes": 2384,
+      "instruction_lines": 411,
+      "cmovlq": 4,
+      "sarq_63": 5,
+      "negative_immediate_cmpq": 4,
+      "direct_calls": [
+        {
+          "at": "0x18000155b",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x1800017c6",
+          "target": "0x180003c20"
+        }
+      ]
+    },
+    "candidate-wrapper": {
+      "start": "0x1800019e0",
+      "end_exclusive": "0x180002200",
+      "address_span_bytes": 2080,
+      "instruction_lines": 364,
+      "cmovlq": 0,
+      "sarq_63": 0,
+      "negative_immediate_cmpq": 0,
+      "direct_calls": [
+        {
+          "at": "0x180001a8e",
+          "target": "0x18000bcc1"
+        },
+        {
+          "at": "0x180001aec",
+          "target": "0x18000a980"
+        },
+        {
+          "at": "0x180001b6f",
+          "target": "0x18000a980"
+        },
+        {
+          "at": "0x180001c12",
+          "target": "0x18000a980"
+        },
+        {
+          "at": "0x180001cc5",
+          "target": "0x18000a980"
+        },
+        {
+          "at": "0x180001d51",
+          "target": "0x18000bcc7"
+        },
+        {
+          "at": "0x180001d7d",
+          "target": "0x18000bccd"
+        },
+        {
+          "at": "0x180001d88",
+          "target": "0x18000bcd3"
+        },
+        {
+          "at": "0x180001d8d",
+          "target": "0x18000bcd9"
+        },
+        {
+          "at": "0x180001da3",
+          "target": "0x18000bcdf"
+        },
+        {
+          "at": "0x180001dae",
+          "target": "0x18000bce5"
+        },
+        {
+          "at": "0x180001db9",
+          "target": "0x18000bcd3"
+        },
+        {
+          "at": "0x180001dbe",
+          "target": "0x18000bcd9"
+        },
+        {
+          "at": "0x180001dd4",
+          "target": "0x18000bcdf"
+        },
+        {
+          "at": "0x180001ddf",
+          "target": "0x18000bce5"
+        },
+        {
+          "at": "0x180001dea",
+          "target": "0x18000bcd3"
+        },
+        {
+          "at": "0x180001def",
+          "target": "0x18000bcd9"
+        },
+        {
+          "at": "0x180001e05",
+          "target": "0x18000bcc7"
+        },
+        {
+          "at": "0x180001e19",
+          "target": "0x18000bccd"
+        },
+        {
+          "at": "0x180001e24",
+          "target": "0x18000bcd3"
+        },
+        {
+          "at": "0x180001e29",
+          "target": "0x18000bcd9"
+        },
+        {
+          "at": "0x180001e3f",
+          "target": "0x18000bcc7"
+        },
+        {
+          "at": "0x180001e53",
+          "target": "0x18000bccd"
+        },
+        {
+          "at": "0x180001e5e",
+          "target": "0x18000bcd3"
+        },
+        {
+          "at": "0x180001e63",
+          "target": "0x18000bcd9"
+        },
+        {
+          "at": "0x18000200a",
+          "target": "0x180001090"
+        },
+        {
+          "at": "0x18000201c",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x180002024",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x18000202c",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x180002034",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x180002047",
+          "target": "0x18000bceb"
+        },
+        {
+          "at": "0x180002079",
+          "target": "0x18000bcf1"
+        },
+        {
+          "at": "0x180002091",
+          "target": "0x18000bcf7"
+        },
+        {
+          "at": "0x1800020af",
+          "target": "0x18000a190"
+        },
+        {
+          "at": "0x1800020ba",
+          "target": "0x18000bc20"
+        },
+        {
+          "at": "0x1800020d2",
+          "target": "0x18000bcfd"
+        },
+        {
+          "at": "0x1800020ea",
+          "target": "0x18000bcfd"
+        },
+        {
+          "at": "0x180002102",
+          "target": "0x18000bcfd"
+        },
+        {
+          "at": "0x18000211a",
+          "target": "0x18000bcfd"
+        },
+        {
+          "at": "0x18000212f",
+          "target": "0x18000bcfd"
+        },
+        {
+          "at": "0x180002139",
+          "target": "0x18000bcd9"
+        },
+        {
+          "at": "0x18000214c",
+          "target": "0x18000bcd9"
+        },
+        {
+          "at": "0x18000215e",
+          "target": "0x18000bcd9"
+        },
+        {
+          "at": "0x18000216f",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x180002187",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x18000218f",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x180002197",
+          "target": "0x180001060"
+        },
+        {
+          "at": "0x1800021bb",
+          "target": "0x18000bcfd"
+        },
+        {
+          "at": "0x1800021c6",
+          "target": "0x18000a0b0"
+        },
+        {
+          "at": "0x1800021d6",
+          "target": "0x180009c50"
+        },
+        {
+          "at": "0x1800021e4",
+          "target": "0x18000bd03"
+        },
+        {
+          "at": "0x1800021f9",
+          "target": "0x18000bcfd"
+        }
+      ]
+    },
+    "candidate-force": {
+      "start": "0x180003c20",
+      "end_exclusive": "0x180004a80",
+      "address_span_bytes": 3680,
+      "instruction_lines": 632,
+      "cmovlq": 1,
+      "sarq_63": 2,
+      "negative_immediate_cmpq": 1,
+      "direct_calls": [
+        {
+          "at": "0x180004101",
+          "target": "0x180003c20"
+        },
+        {
+          "at": "0x180004337",
+          "target": "0x180003c20"
+        },
+        {
+          "at": "0x180004692",
+          "target": "0x180003c20"
+        },
+        {
+          "at": "0x180004937",
+          "target": "0x180003c20"
+        }
+      ]
+    },
+    "candidate-insert": {
+      "start": "0x180004a80",
+      "end_exclusive": "0x180006a50",
+      "address_span_bytes": 8144,
+      "instruction_lines": 1387,
+      "cmovlq": 12,
+      "sarq_63": 27,
+      "negative_immediate_cmpq": 14,
+      "direct_calls": [
+        {
+          "at": "0x1800050a1",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x1800052b1",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x1800054c7",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x180005ab1",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x180006215",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x1800063e7",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x1800065b9",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x18000678b",
+          "target": "0x180004a80"
+        },
+        {
+          "at": "0x1800069ec",
+          "target": "0x180004a80"
+        }
+      ]
+    },
+    "candidate-force-fields": {
+      "start": "0x180003d2a",
+      "end_exclusive": "0x180003d7b",
+      "address_span_bytes": 81,
+      "instruction_lines": 17,
+      "cmovlq": 0,
+      "sarq_63": 0,
+      "negative_immediate_cmpq": 0,
+      "direct_calls": []
+    },
+    "candidate-force-mass": {
+      "start": "0x180003c9f",
+      "end_exclusive": "0x180003ca6",
+      "address_span_bytes": 7,
+      "instruction_lines": 1,
+      "cmovlq": 0,
+      "sarq_63": 0,
+      "negative_immediate_cmpq": 0,
+      "direct_calls": []
+    },
+    "candidate-remaining-list": {
+      "start": "0x180003cdf",
+      "end_exclusive": "0x180003d1a",
+      "address_span_bytes": 59,
+      "instruction_lines": 16,
+      "cmovlq": 1,
+      "sarq_63": 2,
+      "negative_immediate_cmpq": 1,
+      "direct_calls": []
+    },
+    "c-force": {
+      "start": "0x140002710",
+      "end_exclusive": "0x1400028f0",
+      "address_span_bytes": 480,
+      "instruction_lines": 116,
+      "cmovlq": 0,
+      "sarq_63": 0,
+      "negative_immediate_cmpq": 0,
+      "direct_calls": [
+        {
+          "at": "0x140002814",
+          "target": "0x140002710"
+        },
+        {
+          "at": "0x140002844",
+          "target": "0x140002710"
+        },
+        {
+          "at": "0x140002870",
+          "target": "0x140002710"
+        },
+        {
+          "at": "0x140002899",
+          "target": "0x140002710"
+        }
+      ]
+    },
+    "c-force-fields": {
+      "start": "0x140002750",
+      "end_exclusive": "0x140002790",
+      "address_span_bytes": 64,
+      "instruction_lines": 13,
+      "cmovlq": 0,
+      "sarq_63": 0,
+      "negative_immediate_cmpq": 0,
+      "direct_calls": []
+    }
+  },
+  "limitations": [
+    "No artifact imported, compiled, executed, or timed by this extraction.",
+    "Full native helper ranges include alignment padding before the next mapped helper.",
+    "Static pattern counts are not executed counts, cycles, or a performance attribution.",
+    "Selected artifacts and wrappers are bound to independent successful-call audit metadata.",
+    "No generated source reconstructed here; no claim of a new source digest reconstruction check."
+  ]
+}

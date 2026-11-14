@@ -1,0 +1,35 @@
+"""Recursive mutable list/negative-index regression; no C speed claim."""
+import hashlib
+import json
+
+class Node:
+    def __init__(self,value,next):
+        self.value=value
+        self.next=next
+    def apply(self,values):
+        self.value+=values[-1]
+        values[0]+=0.5
+        total=self.value
+        if self.next is not None:total+=self.next.apply(values)
+        return total
+
+def run(root,values):
+    return root.apply(values)
+
+root=None
+for value in range(12,0,-1):root=Node(float(value),root)
+nodes=[];node=root
+while node is not None:
+    nodes.append(node);node=node.next
+identities=[id(n) for n in nodes]
+values=[0.0,1.0,2.0];original_values=values
+results=[]
+for index in range(8):
+    result=run(root,values)
+    assert type(result) is float and result==78.0+24.0*(index+1)
+    results.append(result.hex())
+assert values is original_values and values==[48.0,1.0,2.0]
+assert identities==[id(n) for n in nodes]
+assert all(type(n.value) is float and n.value==float(i+17) for i,n in enumerate(nodes))
+print('check digest',hashlib.sha256(json.dumps([results,[v.hex() for v in values],[n.value.hex() for n in nodes]]).encode()).hexdigest())
+print('check nodes',len(nodes))

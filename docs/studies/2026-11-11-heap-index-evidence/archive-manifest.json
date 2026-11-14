@@ -1,0 +1,467 @@
+{
+  "source_baseline": "3f0370d5fe5c358b4a0b3fd8e1ea10a2f22f87bf",
+  "source_candidate": "e35dce1b7cef4019400696a9d7712ae8571a0b81",
+  "raw_evidence_root": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results",
+  "files": {
+    "validation/IMPLEMENTATION.md": {
+      "sha256": "10e6e30d71df93688738a9e5197a6e0b88c544251c7e17ac5e11e343c451101e",
+      "bytes": 5638,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\IMPLEMENTATION.md"
+    },
+    "validation/full-suite.txt": {
+      "sha256": "9f1c993ebc8ffd7e7b1fdfff61732e40de3825fd411a3cab8470943d63439966",
+      "bytes": 9398,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\full-suite.txt"
+    },
+    "validation/indices-red.txt": {
+      "sha256": "3e2cfe17ec15945bdc92acab15f1d8f2e7e3bb22e32fd3aebf6af2b9ab65f106",
+      "bytes": 8912,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\indices-red.txt"
+    },
+    "validation/indices-red-scoped.txt": {
+      "sha256": "2c064f6c6a798862118fc9ff2993c0e9ba883fa5fa328104da1977041fa99509",
+      "bytes": 7462,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\indices-red-scoped.txt"
+    },
+    "validation/indices-green.txt": {
+      "sha256": "0ca6637841ec59f19923aed9b2360fb8e5ab1f9989b0c0afb61591ea75643b37",
+      "bytes": 101,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\indices-green.txt"
+    },
+    "validation/indices-focused.txt": {
+      "sha256": "e723e8567bd8eaf852e9f5edb88e588d37c22e5dad9da20005f2db54508b691b",
+      "bytes": 101,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\indices-focused.txt"
+    },
+    "validation/tools-integrated.txt": {
+      "sha256": "7957b0a2a33a99a75aba99ddd19b6a97c60187f99327cdfe536d39554291f0e0",
+      "bytes": 101,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-integrated.txt"
+    },
+    "tool-smoke/config.json": {
+      "sha256": "d139854b58e3add9aa1d5dd2833182c95b5ec7b34153ced344f438ae1c5a9171",
+      "bytes": 530,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-aot\\config.json"
+    },
+    "tool-smoke/diagnostic.json": {
+      "sha256": "fda6c326a0aa2d368e3452457ce960bad6fb515ef44f2ec456c7677eb2fac943",
+      "bytes": 44914,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-aot\\diagnostic.json"
+    },
+    "tool-smoke/report.json": {
+      "sha256": "0cb80d743578f3c072aa36139e7a0f07b0319bfe928e6f382f77639e174321b9",
+      "bytes": 57565,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-aot\\report.json"
+    },
+    "tool-smoke/stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-aot\\stderr.bin"
+    },
+    "tool-smoke/stdout.bin": {
+      "sha256": "ca52ce99e58a81747414865ebf27c6a014c28f88524a4644527546edfc0f740c",
+      "bytes": 157,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-aot\\stdout.bin"
+    },
+    "tool-smoke/verification.json": {
+      "sha256": "002b089f7b78573cc8fe0235689efb9ff9245e9a6c0981c9c40dc6d61d716250",
+      "bytes": 642,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-aot\\verification.json"
+    },
+    "tool-fix/red.txt": {
+      "sha256": "370741042dad9fe58cc3a4be898b64e611d8d4a021e04f389132712c86b38438",
+      "bytes": 2350,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-timing-fix\\red.txt"
+    },
+    "tool-fix/green.txt": {
+      "sha256": "7957b0a2a33a99a75aba99ddd19b6a97c60187f99327cdfe536d39554291f0e0",
+      "bytes": 101,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-timing-fix\\green.txt"
+    },
+    "tool-files-diff/diff.txt": {
+      "sha256": "548bc544b801d2698c2caec01ffe4e85df48f7ac4f16d523325a0f7a9d4eee65",
+      "bytes": 744,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\diff\\diff.txt"
+    },
+    "tool-files-diff/left.raw": {
+      "sha256": "d6f985ba0a4d70a6f16c6f0cd8dd6d1b90121fcbc7883a20992a57d32a4ac577",
+      "bytes": 347,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\diff\\left.raw"
+    },
+    "tool-files-diff/report.json": {
+      "sha256": "6067132edfc66edd1694b4cd9f1a5bd81f2ee137068496b0518f293fda081966",
+      "bytes": 565,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\diff\\report.json"
+    },
+    "tool-files-diff/right.raw": {
+      "sha256": "65b1ba8874e6f12836a55f04e97dbc0dcf500d9123967658f37fdd42542e5b4f",
+      "bytes": 204,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\diff\\right.raw"
+    },
+    "tool-files-asm/assembly-stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\asm-approved\\assembly-stderr.bin"
+    },
+    "tool-files-asm/assembly-stdout.bin": {
+      "sha256": "bb4daf8c63945ed80bb0326e1514cf2b49879453569660b5b5ba7cf33c7e9a92",
+      "bytes": 674665,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\asm-approved\\assembly-stdout.bin"
+    },
+    "tool-files-asm/assembly.txt": {
+      "sha256": "bb4daf8c63945ed80bb0326e1514cf2b49879453569660b5b5ba7cf33c7e9a92",
+      "bytes": 674665,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\asm-approved\\assembly.txt"
+    },
+    "tool-files-asm/headers-stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\asm-approved\\headers-stderr.bin"
+    },
+    "tool-files-asm/headers-stdout.bin": {
+      "sha256": "4ca5120b4250b2dd523d3308e4b0a740431bda2b963e040c8b7fbfb8fb0a447e",
+      "bytes": 7188,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\asm-approved\\headers-stdout.bin"
+    },
+    "tool-files-asm/report.json": {
+      "sha256": "f00dda4ea12c0c4fc8b8462201f5f08fd9eb3b4b08089b4a5cd97611ef39784c",
+      "bytes": 2830,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\asm-approved\\report.json"
+    },
+    "tool-files-asm/version-stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\asm-approved\\version-stderr.bin"
+    },
+    "tool-files-asm/version-stdout.bin": {
+      "sha256": "0ab6eb0438ea9b3a0385fba3f05e1f98deece2f5454242dd604acb9de771919c",
+      "bytes": 598,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\asm-approved\\version-stdout.bin"
+    },
+    "tool-files-c/report.json": {
+      "sha256": "86fda21d0179746e1cf5bb516b30a5c8561fea449e232d25d0994230900aab04",
+      "bytes": 702,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\c\\report.json"
+    },
+    "tool-files-c/source.raw": {
+      "sha256": "ea6988a337c98a3e7eee9733ec6da57303d7aa0ebd37e032c74f26d797096152",
+      "bytes": 7327,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\c\\source.raw"
+    },
+    "tool-files-cases/report.json": {
+      "sha256": "a873a542ca99766b97336ec6bacef1fe2e419d9a64f6812dcacd9c0502404ec3",
+      "bytes": 721,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\cases\\report.json"
+    },
+    "tool-files-cases/stderr.bin": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\cases\\stderr.bin"
+    },
+    "tool-files-cases/stdout.bin": {
+      "sha256": "4000eecbea34aad8312b0c5a00bc2aaa169f24ea5b2ce1079aca27200365c79b",
+      "bytes": 115,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\cases\\stdout.bin"
+    },
+    "tool-files/verification.json": {
+      "sha256": "64ee8234378804e9d4f8e6837a76661e569d629e9d4d523a447f34cf90330be9",
+      "bytes": 931,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-validation\\tools-real-files\\verification.json"
+    },
+    "review/REVIEW.md": {
+      "sha256": "f1afbfd295f2ce54f302c0fc9f3fe10b5796340766c882d56484289d2b67a9d9",
+      "bytes": 6355,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-final-review\\REVIEW.md"
+    },
+    "assembly/baseline-aot.asm": {
+      "sha256": "ea0a14925811983138c6a38b31c65359e6828883d9fb41572ddc0ef5095ece2c",
+      "bytes": 449237,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\baseline-aot.asm"
+    },
+    "assembly/baseline-entry.asm": {
+      "sha256": "0665ebec4d69ba7c1839c45743045db939bc070adeaf1f7faed4fb941ce21c30",
+      "bytes": 22907,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\baseline-entry.asm"
+    },
+    "assembly/baseline-force-fields.asm": {
+      "sha256": "390c1aca325bb2d26b2a56911ffecd00afbcfaae9f6ef7b071fa1b512eefbcb4",
+      "bytes": 1908,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\baseline-force-fields.asm"
+    },
+    "assembly/baseline-force-mass.asm": {
+      "sha256": "d6f985ba0a4d70a6f16c6f0cd8dd6d1b90121fcbc7883a20992a57d32a4ac577",
+      "bytes": 347,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\baseline-force-mass.asm"
+    },
+    "assembly/baseline-force.asm": {
+      "sha256": "a4ef17b292a403a645de8483e87d978fa6fc9ecadf7e11d7ab12cfd9ffee7b57",
+      "bytes": 33586,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\baseline-force.asm"
+    },
+    "assembly/baseline-insert.asm": {
+      "sha256": "18b3cba0ed90481f3ddeb52d2a727ae43531698a84b0a630a98ed05114b2c74b",
+      "bytes": 81761,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\baseline-insert.asm"
+    },
+    "assembly/baseline-wrapper.asm": {
+      "sha256": "e092af9aa44d2a3ad646595b132bca3d9a3e94831fdeb197d8ac77f3eaee9662",
+      "bytes": 15987,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\baseline-wrapper.asm"
+    },
+    "assembly/c-barnes_hut.asm": {
+      "sha256": "45969e63e5b97ca68c13aad75144ece2167014756b33f5f7701045b85a431186",
+      "bytes": 89900,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\c-barnes_hut.asm"
+    },
+    "assembly/c-force-fields.asm": {
+      "sha256": "5e8335108710d8694005d48752f66bdd185e29ab4454efede78580085aaca5b8",
+      "bytes": 736,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\c-force-fields.asm"
+    },
+    "assembly/c-force.asm": {
+      "sha256": "9f2376da0c51928562e25abaafe8afa955a3cdf7dd32bbd1ba10b665a8362a9f",
+      "bytes": 4869,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\c-force.asm"
+    },
+    "assembly/candidate-aot.asm": {
+      "sha256": "a45c02cb756c2c39f151344970032faaffb709256cbe78ef2d7695fa270218db",
+      "bytes": 406180,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\candidate-aot.asm"
+    },
+    "assembly/candidate-entry.asm": {
+      "sha256": "ea790af8838b77ded73560e16089c1f600e4c7e10b0fc8cf4ca893434f78f63a",
+      "bytes": 16591,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\candidate-entry.asm"
+    },
+    "assembly/candidate-force-fields.asm": {
+      "sha256": "bacda26b8ad75d1cc40b00c04953fcd073fe23cb443c88c070afe7b73bdeaf43",
+      "bytes": 942,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\candidate-force-fields.asm"
+    },
+    "assembly/candidate-force-mass.asm": {
+      "sha256": "65b1ba8874e6f12836a55f04e97dbc0dcf500d9123967658f37fdd42542e5b4f",
+      "bytes": 204,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\candidate-force-mass.asm"
+    },
+    "assembly/candidate-force.asm": {
+      "sha256": "8061902f7f4f273ad5d61186aa3d730d9f077eb2492778aca215ae15806c878d",
+      "bytes": 28395,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\candidate-force.asm"
+    },
+    "assembly/candidate-insert.asm": {
+      "sha256": "39d76d030a7eae9a842c95dbaa50cad3bcfb85333add8eca1982526f57ced406",
+      "bytes": 59963,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\candidate-insert.asm"
+    },
+    "assembly/candidate-remaining-list.asm": {
+      "sha256": "8a1c48e0a33b694d065b3341a5fdd2cace39ed39ae4ee451de96efb01ed8610d",
+      "bytes": 849,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\candidate-remaining-list.asm"
+    },
+    "assembly/candidate-wrapper.asm": {
+      "sha256": "c5f3aa876d35099f451641a836dac4080f6ae081869d7cb0de6ade91f2256960",
+      "bytes": 15985,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\candidate-wrapper.asm"
+    },
+    "assembly/compare_nbody.py": {
+      "sha256": "6b8e62344c7567170b7c1b13068d879161af52a4178904127e445eb3e583fe97",
+      "bytes": 2239,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\compare_nbody.py"
+    },
+    "assembly/extract.py": {
+      "sha256": "7189ecd6498b35da8de161ebfb345e1d0aefd19c024ccb9638d705a4631556c9",
+      "bytes": 4630,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\extract.py"
+    },
+    "assembly/nbody-sections.json": {
+      "sha256": "348af3f035e61ecc051c0837204f9b7c580cef9fa0334c1a2211b9741420fd5e",
+      "bytes": 4286,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\nbody-sections.json"
+    },
+    "assembly/provenance.json": {
+      "sha256": "8b410b8fcefb6609719f1045e4bbdfb7a97101c2e7f2a98067423ff6f3a803b5",
+      "bytes": 21132,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\provenance.json"
+    },
+    "assembly/REPORT.md": {
+      "sha256": "300822e1e5c695cc149c1c664f24acdee691cbb6b6080c5a4b8f99f1d8cfdbfa",
+      "bytes": 7645,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-instructions\\REPORT.md"
+    },
+    "study/PROTOCOL.md": {
+      "sha256": "e33f04c1eaa8b33ed2df8bc50681c28d00aec7fb98c60a8ccc48c2be31d18d05",
+      "bytes": 9008,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\PROTOCOL.md"
+    },
+    "study/BASELINE-RAW-ALIGNMENT.json": {
+      "sha256": "cd2153cac260f2aa8de551ad49a5c1aada176f633f62b5ad4ab0304a339be4d6",
+      "bytes": 3367,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\BASELINE-RAW-ALIGNMENT.json"
+    },
+    "study/bench.py": {
+      "sha256": "ce702ee22a75d8197e747bf0d9a88fd1930d9390150738c3e63433432bb82b0a",
+      "bytes": 18110,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\bench.py"
+    },
+    "study/common.py": {
+      "sha256": "9ad22e07d174c1add937004efb4a7f2c2569b11a350272a2f70fc8531cb2f40c",
+      "bytes": 9197,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\common.py"
+    },
+    "study/audit.py": {
+      "sha256": "c98c9eef8f4c6685afa94f12b5bd577eed1c41dd057052dc39e0acfd5006bdbd",
+      "bytes": 7980,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\audit.py"
+    },
+    "study/warm_bytecode.py": {
+      "sha256": "57b9909ce5f164b40c190721120f1fd3538cd009ae2677928758941ecbf805ab",
+      "bytes": 954,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\warm_bytecode.py"
+    },
+    "study/phase_breakdown.py": {
+      "sha256": "0fa62207adf29cdc81ab92d67831391ef4c6772cf791302ded7632296efac645",
+      "bytes": 5127,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\phase_breakdown.py"
+    },
+    "study/map_aot.py": {
+      "sha256": "68063f5cfe1a0d07bc2c4d48e0a5deffec3d0ddfb402d2e2cf6d7031d78f032d",
+      "bytes": 4136,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\map_aot.py"
+    },
+    "study/test_bench.py": {
+      "sha256": "6da8dfad92328c4324f1e6db8c434f348517effad475984bde1baea69554b32e",
+      "bytes": 1378,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\test_bench.py"
+    },
+    "study/SUMMARY.json": {
+      "sha256": "7d432822bc5e5ac28750aae857beea551c226f826d9b999c5dc2753a257256c7",
+      "bytes": 187700,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\SUMMARY.json"
+    },
+    "study/RESULTS.md": {
+      "sha256": "3b15c60c13b8ab1f4bbd076b0f0f1bfc1b5149cf805c7e49bb0443c7eb1ad573",
+      "bytes": 8238,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\RESULTS.md"
+    },
+    "study/analyze.py": {
+      "sha256": "dbfb5310eecd3a4e782eff078413ab07fc0bbf1dc36927af14f25a780fcf2b9d",
+      "bytes": 17639,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\analyze.py"
+    },
+    "matrix/manifest.json": {
+      "sha256": "158e4e6183652faa1318c47dc3c9ee7a4a8946a178829919f92e26bd806ea392",
+      "bytes": 73434,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\manifest.json"
+    },
+    "matrix/summary.json": {
+      "sha256": "b6f74f3ede2216a7a0e1b38fff76ced31b1f384db1f6d77189ec1852c810b5f3",
+      "bytes": 343142,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\summary.json"
+    },
+    "diagnostics/baseline-aot-map.payload.json": {
+      "sha256": "1f7d7f3842c15268610a1c175769ea602eebcd84248f06005d3c584396ab9185",
+      "bytes": 1380,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-aot-map.payload.json"
+    },
+    "diagnostics/baseline-map-aot.json": {
+      "sha256": "e626f092ffdc06189b83c05b55bf1aa796884f827321530a060979c7fd2e50e9",
+      "bytes": 859,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-map-aot.json"
+    },
+    "diagnostics/baseline-map-aot.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-map-aot.stderr"
+    },
+    "diagnostics/baseline-map-aot.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-map-aot.stdout"
+    },
+    "diagnostics/baseline-phases.json": {
+      "sha256": "d01ab1db9f5f412e7601a944a81984d72fde1868ab3ffd0c1b6b82dbf83dd48c",
+      "bytes": 937,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-phases.json"
+    },
+    "diagnostics/baseline-phases.payload.json": {
+      "sha256": "bf53be618d0bd525275940ea92f9b366eea97b37b78b64ee0c31a8ea344fc2df",
+      "bytes": 2835,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-phases.payload.json"
+    },
+    "diagnostics/baseline-phases.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-phases.stderr"
+    },
+    "diagnostics/baseline-phases.stdout": {
+      "sha256": "8190c66b94322d8429f78aaba6717f86722d5db69b24c11a826d4bde91b44801",
+      "bytes": 377,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\baseline-phases.stdout"
+    },
+    "diagnostics/candidate-aot-map.payload.json": {
+      "sha256": "22c56651a32d1943ad41a52abbcec823d1807e156071689476a962d4f74c9613",
+      "bytes": 1383,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-aot-map.payload.json"
+    },
+    "diagnostics/candidate-map-aot.json": {
+      "sha256": "ef99649d411d21edd945a1ace7bc951f1ea5e003b0f335f4cde52a990224a1f7",
+      "bytes": 863,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-map-aot.json"
+    },
+    "diagnostics/candidate-map-aot.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-map-aot.stderr"
+    },
+    "diagnostics/candidate-map-aot.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-map-aot.stdout"
+    },
+    "diagnostics/candidate-phases.json": {
+      "sha256": "7598ae0117ce296a9187d0af798f4af77bff19821477cdb78f4961b108611e62",
+      "bytes": 931,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-phases.json"
+    },
+    "diagnostics/candidate-phases.payload.json": {
+      "sha256": "d55f5c7868aa7c01daa47bda88be62377e4a8022f28984fa16be64857ca04b66",
+      "bytes": 2847,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-phases.payload.json"
+    },
+    "diagnostics/candidate-phases.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-phases.stderr"
+    },
+    "diagnostics/candidate-phases.stdout": {
+      "sha256": "e46bba8cad9ee01b62d022691a5977155d6a73675a73469d57fc52fa6e945be3",
+      "bytes": 387,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\candidate-phases.stdout"
+    },
+    "diagnostics/map-aot-summary.json": {
+      "sha256": "68ebd76bc3ef35202318b926d4acd98af16206dc23cdfedbcdceda12e7a8377e",
+      "bytes": 2375,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\map-aot-summary.json"
+    },
+    "diagnostics/phases-summary.json": {
+      "sha256": "5399496d5ea659b65c5c490ec744fdcbb630e9bc54014c98f507921977197d52",
+      "bytes": 2535,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\diagnostics\\phases-summary.json"
+    },
+    "integration/wave5-integration-final-source.json": {
+      "sha256": "4a5700b813d798edcfaeb447cded7764ac1962ed56d7be548e139fd9bffb4fc3",
+      "bytes": 5205,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-integration-final-source.json"
+    },
+    "integration/wave5-verification.json": {
+      "sha256": "74dc5648c61f78529283c0bb731c5dcefff44064523b0e97f10603d5131f9915",
+      "bytes": 1742,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-verification.json"
+    },
+    "integration/wave5-verify.py": {
+      "sha256": "c26d2c3c11d359ed7fc035c8362934bb4b6f5424f0a66e091a79e56244dc11d0",
+      "bytes": 2954,
+      "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-verify.py"
+    }
+  }
+}

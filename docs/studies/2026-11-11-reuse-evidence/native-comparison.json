@@ -1,0 +1,712 @@
+[
+  {
+    "version": "baseline",
+    "name": "fannkuch",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.012197971,
+    "python_s": 0.22059399999852758,
+    "recompyler_s": 0.02327539999896544,
+    "time_relative_to_c": 1.9081370171289505,
+    "speed_relative_to_python": 9.477559999326871,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "baseline",
+    "name": "float",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.001024246,
+    "python_s": 0.04131320000306005,
+    "recompyler_s": 0.00145400000110385,
+    "time_relative_to_c": 1.4195808439611677,
+    "speed_relative_to_python": 28.413480035554212,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "baseline",
+    "name": "nbody",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.00330925,
+    "python_s": 0.06719230000089738,
+    "recompyler_s": 0.003554999999323627,
+    "time_relative_to_c": 1.074261539419393,
+    "speed_relative_to_python": 18.90078762691459,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "baseline",
+    "name": "spectral_norm",
+    "kernel": "seconds",
+    "mode": "warm-diagnostic",
+    "c_s": 0.000517845,
+    "python_s": 0.05656589999853168,
+    "recompyler_s": 0.024735400002100505,
+    "time_relative_to_c": 47.76603037994092,
+    "speed_relative_to_python": 2.2868399133924724,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 0,
+        "jit_calls": 26000,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": true,
+      "timing_eligible": false
+    },
+    "execution_path": "JIT helpers only; outer Python work remains"
+  },
+  {
+    "version": "baseline",
+    "name": "coroutines",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.000119448,
+    "python_s": 0.013836399997671833,
+    "recompyler_s": 0.0013392999971983954,
+    "time_relative_to_c": 11.212410397816585,
+    "speed_relative_to_python": 10.331068488475623,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "baseline",
+    "name": "richards",
+    "kernel": "seconds",
+    "mode": "warm-diagnostic",
+    "c_s": 0.000183582,
+    "python_s": 0.02678329999980633,
+    "recompyler_s": 0.0014555000016116537,
+    "time_relative_to_c": 7.928337209593826,
+    "speed_relative_to_python": 18.40144278265172,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 0,
+        "jit_calls": 5,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": true,
+      "timing_eligible": false
+    },
+    "execution_path": "Explicit warm diagnostic; JIT"
+  },
+  {
+    "version": "baseline",
+    "name": "raytrace",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.000602961,
+    "python_s": 0.15552340000067488,
+    "recompyler_s": 0.00440330000128597,
+    "time_relative_to_c": 7.302794046855387,
+    "speed_relative_to_python": 35.3197374594633,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "baseline",
+    "name": "barnes_hut",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.009145737,
+    "python_s": 0.5250311999989208,
+    "recompyler_s": 0.04924609999943641,
+    "time_relative_to_c": 5.384596123793677,
+    "speed_relative_to_python": 10.661376230908223,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "baseline",
+    "name": "scimark",
+    "kernel": "seconds_sor",
+    "mode": "forced",
+    "c_s": 0.000170708,
+    "python_s": 0.06482640000103856,
+    "recompyler_s": 0.06613279999874067,
+    "time_relative_to_c": 387.40305081625155,
+    "speed_relative_to_python": 0.9802458084683096,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "Python fallback",
+    "kernel_mode_note": "Only FFT_transform and FFT_inverse had successful native calls in this workload audit; aggregate workload counts do not describe this kernel."
+  },
+  {
+    "version": "baseline",
+    "name": "scimark",
+    "kernel": "seconds_sparse_mat_mult",
+    "mode": "forced",
+    "c_s": 1.1444e-05,
+    "python_s": 0.002246500000183005,
+    "recompyler_s": 0.002227400000265334,
+    "time_relative_to_c": 194.6347431200047,
+    "speed_relative_to_python": 1.0085750201649437,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "Python fallback",
+    "kernel_mode_note": "Only FFT_transform and FFT_inverse had successful native calls in this workload audit; aggregate workload counts do not describe this kernel."
+  },
+  {
+    "version": "baseline",
+    "name": "scimark",
+    "kernel": "seconds_monte_carlo",
+    "mode": "forced",
+    "c_s": 0.000238657,
+    "python_s": 0.03672480000022915,
+    "recompyler_s": 0.036982500001613516,
+    "time_relative_to_c": 154.96088529401408,
+    "speed_relative_to_python": 0.9930318393463633,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "Python fallback",
+    "kernel_mode_note": "Only FFT_transform and FFT_inverse had successful native calls in this workload audit; aggregate workload counts do not describe this kernel."
+  },
+  {
+    "version": "baseline",
+    "name": "scimark",
+    "kernel": "seconds_lu",
+    "mode": "forced",
+    "c_s": 4.1246e-05,
+    "python_s": 0.054601300002104836,
+    "recompyler_s": 0.055816100000811275,
+    "time_relative_to_c": 1353.2487999032944,
+    "speed_relative_to_python": 0.9782356703766694,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "Python fallback",
+    "kernel_mode_note": "Only FFT_transform and FFT_inverse had successful native calls in this workload audit; aggregate workload counts do not describe this kernel."
+  },
+  {
+    "version": "baseline",
+    "name": "scimark",
+    "kernel": "seconds_fft",
+    "mode": "forced",
+    "c_s": 0.000426769,
+    "python_s": 0.15665530000114813,
+    "recompyler_s": 0.002764000000752276,
+    "time_relative_to_c": 6.476571636534696,
+    "speed_relative_to_python": 56.677026034193695,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": null,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "candidate",
+    "name": "fannkuch",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.012238979,
+    "python_s": 0.21697040000071866,
+    "recompyler_s": 0.0235506000026362,
+    "time_relative_to_c": 1.9242291373027276,
+    "speed_relative_to_python": 9.212945741358244,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "candidate",
+    "name": "float",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.00102663,
+    "python_s": 0.04095460000098683,
+    "recompyler_s": 0.001433600002201274,
+    "time_relative_to_c": 1.396413510418821,
+    "speed_relative_to_python": 28.567661787180228,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "candidate",
+    "name": "nbody",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.003116131,
+    "python_s": 0.0682764999983192,
+    "recompyler_s": 0.0035613000000012107,
+    "time_relative_to_c": 1.142859526766112,
+    "speed_relative_to_python": 19.17179119936427,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "candidate",
+    "name": "spectral_norm",
+    "kernel": "seconds",
+    "mode": "warm-diagnostic",
+    "c_s": 0.000518322,
+    "python_s": 0.058852500002103625,
+    "recompyler_s": 0.02453060000334517,
+    "time_relative_to_c": 47.326951206673016,
+    "speed_relative_to_python": 2.399146372044633,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 0,
+        "jit_calls": 26000,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": true,
+      "timing_eligible": false
+    },
+    "execution_path": "JIT helpers only; outer Python work remains"
+  },
+  {
+    "version": "candidate",
+    "name": "coroutines",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.000127554,
+    "python_s": 0.01374039999791421,
+    "recompyler_s": 0.0012129999995522667,
+    "time_relative_to_c": 9.509697849947997,
+    "speed_relative_to_python": 11.32761747979057,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "candidate",
+    "name": "richards",
+    "kernel": "seconds",
+    "mode": "warm-diagnostic",
+    "c_s": 0.000187635,
+    "python_s": 0.022740299998986302,
+    "recompyler_s": 0.0010851999977603555,
+    "time_relative_to_c": 5.783569151599411,
+    "speed_relative_to_python": 20.954939224030518,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 0,
+        "jit_calls": 5,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": true,
+      "timing_eligible": false
+    },
+    "execution_path": "Explicit warm diagnostic; JIT"
+  },
+  {
+    "version": "candidate",
+    "name": "raytrace",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.000603676,
+    "python_s": 0.15734660000089207,
+    "recompyler_s": 0.004481899999518646,
+    "time_relative_to_c": 7.424346834259844,
+    "speed_relative_to_python": 35.10711975229055,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 5,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "candidate",
+    "name": "barnes_hut",
+    "kernel": "seconds",
+    "mode": "forced",
+    "c_s": 0.009108067,
+    "python_s": 0.5280273999997007,
+    "recompyler_s": 0.052324400003271876,
+    "time_relative_to_c": 5.744841359123937,
+    "speed_relative_to_python": 10.091418152270888,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  },
+  {
+    "version": "candidate",
+    "name": "scimark",
+    "kernel": "seconds_sor",
+    "mode": "forced",
+    "c_s": 0.000172615,
+    "python_s": 0.06656490000023041,
+    "recompyler_s": 0.06477699999959441,
+    "time_relative_to_c": 375.2686614697124,
+    "speed_relative_to_python": 1.0276008459892738,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "Python fallback",
+    "kernel_mode_note": "Only FFT_transform and FFT_inverse had successful native calls in this workload audit; aggregate workload counts do not describe this kernel."
+  },
+  {
+    "version": "candidate",
+    "name": "scimark",
+    "kernel": "seconds_sparse_mat_mult",
+    "mode": "forced",
+    "c_s": 1.0729e-05,
+    "python_s": 0.002227400000265334,
+    "recompyler_s": 0.002240199999505421,
+    "time_relative_to_c": 208.79858323286618,
+    "speed_relative_to_python": 0.9942862247822011,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "Python fallback",
+    "kernel_mode_note": "Only FFT_transform and FFT_inverse had successful native calls in this workload audit; aggregate workload counts do not describe this kernel."
+  },
+  {
+    "version": "candidate",
+    "name": "scimark",
+    "kernel": "seconds_monte_carlo",
+    "mode": "forced",
+    "c_s": 0.000238895,
+    "python_s": 0.036496500000794185,
+    "recompyler_s": 0.037174599998252233,
+    "time_relative_to_c": 155.6106239069559,
+    "speed_relative_to_python": 0.9817590506020258,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "Python fallback",
+    "kernel_mode_note": "Only FFT_transform and FFT_inverse had successful native calls in this workload audit; aggregate workload counts do not describe this kernel."
+  },
+  {
+    "version": "candidate",
+    "name": "scimark",
+    "kernel": "seconds_lu",
+    "mode": "forced",
+    "c_s": 4.3392e-05,
+    "python_s": 0.0541893000008713,
+    "recompyler_s": 0.053846500002691755,
+    "time_relative_to_c": 1240.9315081741279,
+    "speed_relative_to_python": 1.0063662447542998,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "Python fallback",
+    "kernel_mode_note": "Only FFT_transform and FFT_inverse had successful native calls in this workload audit; aggregate workload counts do not describe this kernel."
+  },
+  {
+    "version": "candidate",
+    "name": "scimark",
+    "kernel": "seconds_fft",
+    "mode": "forced",
+    "c_s": 0.000426531,
+    "python_s": 0.15844239999933052,
+    "recompyler_s": 0.0027669999981299043,
+    "time_relative_to_c": 6.487218978526541,
+    "speed_relative_to_python": 57.26143841937654,
+    "workload_mode_audit": {
+      "exit_code": 0,
+      "checks_match_python": true,
+      "totals": {
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported_after": false,
+      "timing_eligible": false
+    },
+    "execution_path": "AOT"
+  }
+]

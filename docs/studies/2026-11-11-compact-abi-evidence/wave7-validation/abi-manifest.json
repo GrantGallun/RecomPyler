@@ -1,0 +1,60 @@
+{
+  "base": "5d0fe5296e077b893a0d9c920f6ccfe798696eeb",
+  "final_inputs": {
+    "src/recompyler/heap.py": "38b77af3e77c73b132db4d973242eb30e8cbc590003b7cb9820e7430c9b3edd6",
+    "tests/test_heap_compact_abi.py": "fb63b694ec7fd9009b3cb9e98c78f8206b546cebeec904f7a3f36d4cea9d7533"
+  },
+  "full_suite": {
+    "tests": 465,
+    "subtests": 52,
+    "warnings": 22,
+    "seconds": 282.91,
+    "input_hashes": {
+      "src/recompyler/heap.py": "38b77af3e77c73b132db4d973242eb30e8cbc590003b7cb9820e7430c9b3edd6",
+      "tests/test_heap_compact_abi.py": "8ae4c2a48fe92f7a0acc9268667a053114e1996e68e5793c75216dfc02798c93"
+    },
+    "note": "Pre-refinement fixture inspected compact outer helper. Final test adds symbol-bound actual-recursive and all-borrowed-native checks, with product source unchanged."
+  },
+  "final_targeted": {
+    "command": "python -m pytest tests/test_heap_compact_abi.py -q -k recursive_native_context",
+    "tests": 1,
+    "deselected": 23,
+    "seconds": 1.26,
+    "input_hashes": {
+      "src/recompyler/heap.py": "38b77af3e77c73b132db4d973242eb30e8cbc590003b7cb9820e7430c9b3edd6",
+      "tests/test_heap_compact_abi.py": "fb63b694ec7fd9009b3cb9e98c78f8206b546cebeec904f7a3f36d4cea9d7533"
+    }
+  },
+  "fixture_precision": {
+    "report": "fixture-native-precision-final/report.json",
+    "actual_recursive_info": "f1_recursive_sum",
+    "self_calls": 2,
+    "context_parameters": 5,
+    "native_parameters": 7,
+    "nrt_owner_operations": [],
+    "note": "Actual JIT fixture; no workload AOT or timing claim."
+  },
+  "initial_precision_failure": "LLVM argument names have numeric SSA suffixes; initial matcher failed, corrected final matcher and capture passed. Product source was unchanged.",
+  "logs": {
+    "abi-red.log": "b6a346ad9187f9782ddc235cf6b04fed8b5df3e810484ccab949e4e855ed01c5",
+    "abi-green-initial.log": "bed0318378fc9f1e527a277d8d87650b7d72e5db9ea4e02440df6244401db7d0",
+    "abi-focused.log": "12e3f23912dc173717fdf86ef73a638becb792e145261f336a39c81fa1ecb9d4",
+    "abi-focused-expanded.log": "15903f4db1c9c516adb8d2d8d8fecff6f32cce494b43bcff4682f065331f55ed",
+    "abi-nonrecursive-red.log": "50199447219c871e9eb54f2b96fe6518cf8513e9868640b79e484d9f41159421",
+    "abi-focused-final.log": "63c6fda2041b92e59a7c1376e2fdc39ccf94e40cce8868da7faa1617987e5cf7",
+    "abi-boundary.log": "63e02873d0f8de416cd63a6f6d0a3119905e567bfefed2479e8f60643de8d78f",
+    "abi-cache-reload.log": "42476d59906032d6e3dcae2083be10d5ea36a2cc6c1940ff7eb9ae1fa982e926",
+    "abi-full.log": "2abdddc2a7e5ac86897dc2e1fabc3f806cbc8baec8e8f4b4e1c0e3387ffd8679",
+    "abi-recursive-precision.log": "1a5d181453079dbaf88297e890b8170eca0bbfc92c2456b381d3cb1392c4b191",
+    "abi-recursive-precision-final.log": "8f5dc5e3f1a1451f656a9bdc11a24b00eb2827af778552036b6e145feb7c4c6d"
+  },
+  "commit": "a033ca14c40afed052a6266a0a575f6cc11559ea",
+  "clone_source_verification": "clone-source-verification.json",
+  "newline_identity_note": "The initial independent clone used CRLF _region_seed.py (e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e), while the pre-integration baseline used LF (cbca700e53dae98906d5e1e75e77f1414d5cf1928a4cf92138ffa7f71f6da88f). These are newline-equivalent. Root aligned integration to all frozen worker bytes after merge; the post-alignment read-only receipt compares 29 source/native files exactly, including both native modules. Product/full-suite/candidate runtime use the frozen CRLF seed; the baseline/candidate seed difference changes raw source identity but not semantics. No frozen worker files changed.",
+  "normalized_seed_equivalence": {
+    "baseline_sha256": "cbca700e53dae98906d5e1e75e77f1414d5cf1928a4cf92138ffa7f71f6da88f",
+    "candidate_sha256": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+    "newline_normalized_equal": true,
+    "resolution": "integration aligned to frozen worker bytes by root"
+  }
+}

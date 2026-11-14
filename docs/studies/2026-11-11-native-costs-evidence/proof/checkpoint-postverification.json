@@ -1,0 +1,151 @@
+{
+  "manifest_sha256": "b58ae5be6211787fae5a47cf5943b277d61443edf70a12e05d3cde6eda58c46d",
+  "all_valid": true,
+  "comparisons": {
+    "baseline-vs-plain": {
+      "valid": true,
+      "missing_reference_steps": [],
+      "declared_type_relaxation": false,
+      "metrics": {
+        "numeric_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        },
+        "types_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        },
+        "aliases_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        }
+      },
+      "full_initial_final_vectors_equal": {
+        "initial": {
+          "numbers": true,
+          "types": true,
+          "aliases": true
+        },
+        "final": {
+          "numbers": true,
+          "types": true,
+          "aliases": true
+        }
+      }
+    },
+    "candidate-vs-plain": {
+      "valid": true,
+      "missing_reference_steps": [],
+      "declared_type_relaxation": false,
+      "metrics": {
+        "numeric_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        },
+        "types_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        },
+        "aliases_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        }
+      },
+      "full_initial_final_vectors_equal": {
+        "initial": {
+          "numbers": true,
+          "types": true,
+          "aliases": true
+        },
+        "final": {
+          "numbers": true,
+          "types": true,
+          "aliases": true
+        }
+      }
+    },
+    "candidate-vs-baseline": {
+      "valid": true,
+      "missing_reference_steps": [],
+      "declared_type_relaxation": false,
+      "metrics": {
+        "numeric_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        },
+        "types_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        },
+        "aliases_sha256": {
+          "matched_steps": 100,
+          "compared_steps": 100,
+          "different_steps": []
+        }
+      },
+      "full_initial_final_vectors_equal": {
+        "initial": {
+          "numbers": true,
+          "types": true,
+          "aliases": true
+        },
+        "final": {
+          "numbers": true,
+          "types": true,
+          "aliases": true
+        }
+      }
+    }
+  },
+  "actual_mode_reconciliation": {
+    "baseline": {
+      "valid": true,
+      "expected_actual_aot_calls": 100,
+      "audit_totals": {
+        "aot_calls": 100,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "runner_counts": {
+        "compiled_calls": 100,
+        "aot_calls": 100,
+        "jit_calls": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported": false
+    },
+    "candidate": {
+      "valid": true,
+      "expected_actual_aot_calls": 100,
+      "audit_totals": {
+        "aot_calls": 100,
+        "jit_calls": 0,
+        "unknown_native_calls": 0,
+        "rejected_attempts": 0,
+        "fallback_calls": 0
+      },
+      "runner_counts": {
+        "compiled_calls": 100,
+        "aot_calls": 100,
+        "jit_calls": 0,
+        "fallback_calls": 0
+      },
+      "compiled_total_reconciles": true,
+      "product_exact_counter_matches_audit": true,
+      "numba_imported": false
+    }
+  },
+  "note": "Numeric/type/alias hashes compared at every retained common logical step. Fullfloat cross-contract type deltas declared; native versus own plain types always required identical. Raw full initial/final vectors retained separately."
+}

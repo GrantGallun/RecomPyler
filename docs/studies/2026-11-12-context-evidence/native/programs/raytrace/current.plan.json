@@ -1,0 +1,65 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\raytrace.py",
+  "profiler": "c",
+  "total_s": 0.2986029104415713,
+  "script_self_s": 0.00842863169964403,
+  "functions": [
+    {
+      "function": "render",
+      "qualname": "Scene.render",
+      "line": 245,
+      "calls": 1,
+      "self_s": 0.00842863169964403,
+      "cumulative_s": 0.25108688374166377,
+      "library_s": 0.0008642751490697265,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 1,
+        "compiled_samples": 1,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+        "net_s_first_run": -6.371759100016789,
+        "net_s_cached": 0.00549749999481719,
+        "first_pass_s": 6.5344839000026695,
+        "warm_start_s": 0.15722729999106377,
+        "python_us_per_call": 167675.5999942543,
+        "compiled_cpu_us_per_call": 4950.800008373335,
+        "speedup": 33.86838484904722,
+        "changes_arguments": true,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "outside the supported subset: global 'Vector' is not a numeric constant",
+        "diagnostic_original_recommended": true,
+        "diagnostic_original_recommendation": "saves 5 ms a run once the compiled code is cached"
+      }
+    }
+  ],
+  "plan": {
+    "startup_s": 0.09861860000819433,
+    "saving_s": 0.00549749999481719,
+    "worth_running": false,
+    "aot_regions": {
+      "module": "rcaotr_a3422bdefd5ad5f63247c998",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave9-native\\results-inline\\cache\\raytrace\\current\\recompyler",
+      "functions": [
+        {
+          "function": "render",
+          "line": 245,
+          "qualname": "Scene.render",
+          "exports": {
+            "1252f9c7f38bf2286cae6fe9be2bc2afe878b51deb27878387b90211f68e6727": "r0"
+          },
+          "seeds": {},
+          "seed_policy": "legacy-only",
+          "seed_policy_reason": "not all verified signatures have guarded strict seeds"
+        }
+      ]
+    }
+  },
+  "manual_diagnostic_contract": "Target-only rows; original recommendation retained; exactly verified heapRegion required; force explicitly permitted, actual AOT required by study."
+}

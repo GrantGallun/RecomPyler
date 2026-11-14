@@ -1,0 +1,637 @@
+{
+  "schema": 8,
+  "manifest_sha256": "836382bb3dbdfdcf67a46c45a1f65ce8137a108e0a00cdcd404426a743fa00e2",
+  "sources": {
+    "current": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-study\\current",
+      "git_head": "93986c89a5b512ef82a33af1f101bf6f796ae61f",
+      "git_status": "",
+      "src_sha256": {
+        "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+        "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+        "recompyler/_heap.c": "bd5381d22f680550b1043f585b6941285854b1d4bcf21b6a89b556d76019cf0a",
+        "recompyler/_heap.cp314-win_amd64.pyd": "5d9a652e6a33c02d53ae7ab1a4465b5fb926414230b74b2300a0e52b6af0ab10",
+        "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+        "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+        "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+        "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+        "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+        "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+        "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+        "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+        "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+        "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+        "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+        "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+        "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+        "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+        "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+        "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+        "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+        "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+        "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+        "recompyler/heap.py": "38b77af3e77c73b132db4d973242eb30e8cbc590003b7cb9820e7430c9b3edd6",
+        "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+        "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+        "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+        "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+        "recompyler/runner.py": "60d0673001cb2e75515478c7b2d37c6d8e60f8a7eadef815f311790966084c3f",
+        "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+      }
+    },
+    "final": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-runtime-fix",
+      "git_head": "411624630f818bc548a3183e3a25cecf13116640",
+      "git_status": "",
+      "src_sha256": {
+        "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+        "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+        "recompyler/_heap.c": "bd5381d22f680550b1043f585b6941285854b1d4bcf21b6a89b556d76019cf0a",
+        "recompyler/_heap.cp314-win_amd64.pyd": "5d9a652e6a33c02d53ae7ab1a4465b5fb926414230b74b2300a0e52b6af0ab10",
+        "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+        "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+        "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+        "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+        "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+        "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+        "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+        "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+        "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+        "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+        "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+        "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+        "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+        "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+        "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+        "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+        "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+        "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+        "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+        "recompyler/heap.py": "81e6a9a153a3da3adec8914dbf8e73b734da0d27149314cf2bbccd42aee2e106",
+        "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+        "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+        "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+        "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+        "recompyler/runner.py": "c3fecf59d1ff65b689d4e6157a132efabac620e712c4e5b4dd545e3137235386",
+        "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+      }
+    }
+  },
+  "all_valid": true,
+  "failures": [],
+  "programs": {
+    "barnes_hut": {
+      "plain": {
+        "complete": true,
+        "checks_valid": true,
+        "kernel_samples_s": [
+          0.5538315000012517,
+          0.5468676000018604,
+          0.5397056000001612,
+          0.5338428999966709,
+          0.5379925000015646
+        ],
+        "median_best_kernel_s": 0.5397056000001612,
+        "process_wall_samples_s": [
+          2.9138508000032743,
+          2.903709299993352,
+          2.9157520000007935,
+          2.8856793999948422,
+          2.8844788999995217
+        ],
+        "median_process_wall_s": 2.903709299993352,
+        "aot_calls_total": null,
+        "jit_calls_total": null,
+        "fallback_calls_total": null
+      },
+      "c": {
+        "complete": true,
+        "checks_valid": true,
+        "kernel_samples_s": [
+          0.009187222,
+          0.009134054,
+          0.009129524,
+          0.009120464,
+          0.009173155
+        ],
+        "median_best_kernel_s": 0.009134054,
+        "process_wall_samples_s": [
+          0.21900810000079218,
+          0.20565260000148555,
+          0.19535670000186656,
+          0.19903419999900507,
+          0.19531730000016978
+        ],
+        "median_process_wall_s": 0.19903419999900507,
+        "aot_calls_total": null,
+        "jit_calls_total": null,
+        "fallback_calls_total": null
+      },
+      "current": {
+        "complete": true,
+        "checks_valid": true,
+        "kernel_samples_s": [
+          0.03737330000149086,
+          0.039475099998526275,
+          0.03634749999764608,
+          0.03616969999711728,
+          0.03571940000256291
+        ],
+        "median_best_kernel_s": 0.03634749999764608,
+        "process_wall_samples_s": [
+          0.5200193999990006,
+          0.5231073000031756,
+          0.5082650999975158,
+          0.5120595000043977,
+          0.5012376000013319
+        ],
+        "median_process_wall_s": 0.5120595000043977,
+        "aot_calls_total": 2500,
+        "jit_calls_total": 0,
+        "fallback_calls_total": 0,
+        "valid": true,
+        "expected_timing_aot_calls": 2500,
+        "state_check": {
+          "valid": true,
+          "missing_reference_steps": [],
+          "declared_type_relaxation": false,
+          "metrics": {
+            "numeric_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            },
+            "types_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            },
+            "aliases_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            }
+          },
+          "full_initial_final_vectors_equal": {
+            "initial": {
+              "numbers": true,
+              "types": true,
+              "aliases": true
+            },
+            "final": {
+              "numbers": true,
+              "types": true,
+              "aliases": true
+            }
+          }
+        },
+        "selected_AOT": [
+          {
+            "function": "advance_system",
+            "actual_aot_calls_in_audit": 100,
+            "selected_digest": "8b850a3ec40ed1c9992ac80e245679f7e785fa6b866f2c2a6a64d7f9f892e495",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\cache\\barnes_hut\\current\\recompyler\\rcaotr_b767982c3d43c6022e2cef09.cp314-win_amd64.pyd",
+            "artifact_sha256": "04b0aa1bd9bfeda8e7ee5ff62c48387c2599e686202cffcaddbb1148db5ccf95",
+            "wrapper_rva": "0x11d0",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x1800011d0",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\programs\\barnes_hut\\current.plan.json",
+            "plan_sha256": "c1a2af6876406ba9b636574828e63d2f608d722cd6d19ed17093f6d35ffdf3e6",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\programs\\barnes_hut\\current-selected.audit.json",
+            "audit_sha256": "e996c52101fb2dca8994a59defa4d5300224b8ad28ae75c3c5d1ff3f6fd87e30",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "kernel_time_over_C": 3.9793392942111003,
+        "kernel_speedup_over_plain": 14.848493019743128,
+        "audit_mode_totals_separate_from_timing": {
+          "aot_calls": 100,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        }
+      },
+      "final": {
+        "complete": true,
+        "checks_valid": true,
+        "kernel_samples_s": [
+          0.03639869999460643,
+          0.03664200000639539,
+          0.03627379999670666,
+          0.035705599999346305,
+          0.03601969999726862
+        ],
+        "median_best_kernel_s": 0.03627379999670666,
+        "process_wall_samples_s": [
+          0.512888600002043,
+          0.5080585999967298,
+          0.5116030999997747,
+          0.498093100002734,
+          0.509108300000662
+        ],
+        "median_process_wall_s": 0.509108300000662,
+        "aot_calls_total": 2500,
+        "jit_calls_total": 0,
+        "fallback_calls_total": 0,
+        "valid": true,
+        "expected_timing_aot_calls": 2500,
+        "state_check": {
+          "valid": true,
+          "missing_reference_steps": [],
+          "declared_type_relaxation": false,
+          "metrics": {
+            "numeric_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            },
+            "types_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            },
+            "aliases_sha256": {
+              "matched_steps": 100,
+              "compared_steps": 100,
+              "different_steps": []
+            }
+          },
+          "full_initial_final_vectors_equal": {
+            "initial": {
+              "numbers": true,
+              "types": true,
+              "aliases": true
+            },
+            "final": {
+              "numbers": true,
+              "types": true,
+              "aliases": true
+            }
+          }
+        },
+        "selected_AOT": [
+          {
+            "function": "advance_system",
+            "actual_aot_calls_in_audit": 100,
+            "selected_digest": "fbc6f83614deee922decaefa802a50c2e8ed8f00a510f99f3351a328c23eac71",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\cache\\barnes_hut\\final\\recompyler\\rcaotr_962a53ce990e9bd4541a3246.cp314-win_amd64.pyd",
+            "artifact_sha256": "7c1bfc3e5c3eae92a8a75e3fe13cf0bd93996274b762e4a3723d8ccd98f44c6c",
+            "wrapper_rva": "0x11d0",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x1800011d0",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\programs\\barnes_hut\\final.plan.json",
+            "plan_sha256": "bf40c183527dcc59ad386fcb0e96e580d19777e821074f12fd858b0d6c630f6c",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\programs\\barnes_hut\\final-selected.audit.json",
+            "audit_sha256": "8d219fff9406c21f91456106d3a7ddf7c9c9898c8dba4d52a0c1620d34c00ed7",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "kernel_time_over_C": 3.9712705877047205,
+        "kernel_speedup_over_plain": 14.878661735168683,
+        "audit_mode_totals_separate_from_timing": {
+          "aot_calls": 100,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        }
+      },
+      "comparison": {
+        "kernel_time_ratio_final_over_current": 0.9979723502044378,
+        "kernel_speedup_current_over_final": 1.002031769512599,
+        "process_time_ratio_final_over_current": 0.9942366072620265
+      }
+    },
+    "raytrace": {
+      "plain": {
+        "complete": true,
+        "checks_valid": true,
+        "kernel_samples_s": [
+          0.1564721999966423,
+          0.16332329999568174,
+          0.16716689999884693,
+          0.15658080000139307,
+          0.16113189999305177
+        ],
+        "median_best_kernel_s": 0.16113189999305177,
+        "process_wall_samples_s": [
+          0.9517202999995789,
+          0.9599866999997175,
+          1.0025692999988678,
+          0.9277086000001873,
+          0.9436283000031835
+        ],
+        "median_process_wall_s": 0.9517202999995789,
+        "aot_calls_total": null,
+        "jit_calls_total": null,
+        "fallback_calls_total": null
+      },
+      "c": {
+        "complete": true,
+        "checks_valid": true,
+        "kernel_samples_s": [
+          0.000605345,
+          0.000603914,
+          0.00060463,
+          0.000604391,
+          0.000605583
+        ],
+        "median_best_kernel_s": 0.00060463,
+        "process_wall_samples_s": [
+          0.03292759999749251,
+          0.016521199999260716,
+          0.017744999997376,
+          0.017261100001633167,
+          0.017361699996399693
+        ],
+        "median_process_wall_s": 0.017361699996399693,
+        "aot_calls_total": null,
+        "jit_calls_total": null,
+        "fallback_calls_total": null
+      },
+      "current": {
+        "complete": true,
+        "checks_valid": true,
+        "kernel_samples_s": [
+          0.004008700001577381,
+          0.003682700000354089,
+          0.003963800001656637,
+          0.003931100000045262,
+          0.0036812999969697557
+        ],
+        "median_best_kernel_s": 0.003931100000045262,
+        "process_wall_samples_s": [
+          0.4203720000004978,
+          0.4166570000015781,
+          0.4316913000002387,
+          0.42230019999988144,
+          0.41908080000575865
+        ],
+        "median_process_wall_s": 0.4203720000004978,
+        "aot_calls_total": 25,
+        "jit_calls_total": 0,
+        "fallback_calls_total": 0,
+        "valid": true,
+        "expected_timing_aot_calls": 25,
+        "state_check": {
+          "valid": true,
+          "complete_output_bytes": 30000,
+          "output_sha256": "11f2c36b02044f115c3937cae1156e9528b95da70f9d6b737a262f06757c2e6b",
+          "array_identity_preserved": true,
+          "note": "All30000bytes/types/dimensions/identity compared toplain; Cusesunchangedchecksumoracle."
+        },
+        "selected_AOT": [
+          {
+            "function": "Scene.render",
+            "actual_aot_calls_in_audit": 1,
+            "selected_digest": "de39e8545ceea82bdcb2cf264e5dbfb9c41aa7fc53966b95558d1859f23f2fff",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\cache\\raytrace\\current\\recompyler\\rcaotr_61fae00d4878711302f71448.cp314-win_amd64.pyd",
+            "artifact_sha256": "c90fe871bc362c55a1157754424a28dee9dac0e7aa531a3da67e0f156ccadac5",
+            "wrapper_rva": "0x11a0",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x1800011a0",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\programs\\raytrace\\current.plan.json",
+            "plan_sha256": "30f33de1c0f9ec6eb1949c76487d9396e13b01d6f65946a623489a11017fa391",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\programs\\raytrace\\current-selected.audit.json",
+            "audit_sha256": "80ff777fac5590d38905e5ed9a047f2506f9a4b64df0f439b9bbb6b42d910258",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "kernel_time_over_C": 6.50166217363555,
+        "kernel_speedup_over_plain": 40.98901070723119,
+        "audit_mode_totals_separate_from_timing": {
+          "aot_calls": 1,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        }
+      },
+      "final": {
+        "complete": true,
+        "checks_valid": true,
+        "kernel_samples_s": [
+          0.0038560999964829534,
+          0.003736999999091495,
+          0.003827200001978781,
+          0.004654399999708403,
+          0.0036469999977271073
+        ],
+        "median_best_kernel_s": 0.003827200001978781,
+        "process_wall_samples_s": [
+          0.43396950000169454,
+          0.4300978000028408,
+          0.4133690000016941,
+          0.439963999997417,
+          0.4120803999976488
+        ],
+        "median_process_wall_s": 0.4300978000028408,
+        "aot_calls_total": 25,
+        "jit_calls_total": 0,
+        "fallback_calls_total": 0,
+        "valid": true,
+        "expected_timing_aot_calls": 25,
+        "state_check": {
+          "valid": true,
+          "complete_output_bytes": 30000,
+          "output_sha256": "11f2c36b02044f115c3937cae1156e9528b95da70f9d6b737a262f06757c2e6b",
+          "array_identity_preserved": true,
+          "note": "All30000bytes/types/dimensions/identity compared toplain; Cusesunchangedchecksumoracle."
+        },
+        "selected_AOT": [
+          {
+            "function": "Scene.render",
+            "actual_aot_calls_in_audit": 1,
+            "selected_digest": "42761df0d821422b7eb8eebdafa0dad92c55a6956b5f4571024fa84aafe924d8",
+            "selected_export": "r0",
+            "artifact": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\cache\\raytrace\\final\\recompyler\\rcaotr_bee84dfb472143a382ca4af1.cp314-win_amd64.pyd",
+            "artifact_sha256": "c5f726b445dec8376bac1500f13e6925c0c5ab232b0c2ba4d34d5706d7dde4d5",
+            "wrapper_rva": "0x11a0",
+            "preferred_image_base": "0x180000000",
+            "wrapper_preferred_address": "0x1800011a0",
+            "plan": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\programs\\raytrace\\final.plan.json",
+            "plan_sha256": "be3e2cee2ad07f94828c73203a897176a242b95c5b4dac6f476bb54546a315ff",
+            "audit": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave8-native\\results\\programs\\raytrace\\final-selected.audit.json",
+            "audit_sha256": "fb8bae035d1af58e825190f3afe9c4ca33037c538cc3d8a797ecb45430a98c29",
+            "limitations": [
+              "Wrapper address maps the actual measured artifact; follow its machine call targets to identify the internal body.",
+              "Static instruction/pattern counts do not measure cycles or establish hot-path frequency.",
+              "No kernel executed, compiled, profiled or timed by this mapping script."
+            ]
+          }
+        ],
+        "kernel_time_over_C": 6.329821547026746,
+        "kernel_speedup_over_plain": 42.101771506516926,
+        "audit_mode_totals_separate_from_timing": {
+          "aot_calls": 1,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0,
+          "fallback_calls": 0
+        }
+      },
+      "comparison": {
+        "kernel_time_ratio_final_over_current": 0.9735697392421243,
+        "kernel_speedup_current_over_final": 1.0271477837616956,
+        "process_time_ratio_final_over_current": 1.0231361746318297
+      }
+    }
+  },
+  "profiles": {
+    "barnes_hut": {
+      "current": {
+        "profile_wall_s": 64.5498066999935,
+        "verification": [
+          {
+            "status": "verified",
+            "engine": "region",
+            "samples": 8,
+            "compiled_samples": 8,
+            "fallback_samples": 0,
+            "rare_samples_checked": 0,
+            "recommended": true,
+            "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+            "net_s_first_run": -9.696019650025846,
+            "net_s_cached": 0.493643149977288,
+            "first_pass_s": 10.26992590000009,
+            "warm_start_s": 0.08026309999695513,
+            "python_us_per_call": 6220.462501005386,
+            "compiled_cpu_us_per_call": 481.4000012629549,
+            "speedup": 12.92160881737843,
+            "changes_arguments": true,
+            "disk_cached": true,
+            "batch_backends": {},
+            "backend_note": "not batched: compiled as one region",
+            "lift_reason": "outside the supported subset: constant None at line 8",
+            "diagnostic_original_recommended": true,
+            "diagnostic_original_recommendation": "saves 494 ms a run once the compiled code is cached"
+          }
+        ]
+      },
+      "final": {
+        "profile_wall_s": 59.73139269999956,
+        "verification": [
+          {
+            "status": "verified",
+            "engine": "region",
+            "samples": 8,
+            "compiled_samples": 8,
+            "fallback_samples": 0,
+            "rare_samples_checked": 0,
+            "recommended": true,
+            "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+            "net_s_first_run": -9.587731675155737,
+            "net_s_cached": 0.5227493248330575,
+            "first_pass_s": 10.182337299993378,
+            "warm_start_s": 0.07185630000458332,
+            "python_us_per_call": 6429.787498746009,
+            "compiled_cpu_us_per_call": 483.7312503696012,
+            "speedup": 13.292065571189056,
+            "changes_arguments": true,
+            "disk_cached": true,
+            "batch_backends": {},
+            "backend_note": "not batched: compiled as one region",
+            "lift_reason": "outside the supported subset: constant None at line 8",
+            "diagnostic_original_recommended": true,
+            "diagnostic_original_recommendation": "saves 523 ms a run once the compiled code is cached"
+          }
+        ]
+      }
+    },
+    "raytrace": {
+      "current": {
+        "profile_wall_s": 37.03644619999977,
+        "verification": [
+          {
+            "status": "verified",
+            "engine": "region",
+            "samples": 1,
+            "compiled_samples": 1,
+            "fallback_samples": 0,
+            "rare_samples_checked": 0,
+            "recommended": true,
+            "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+            "net_s_first_run": -6.78585870000461,
+            "net_s_cached": 0.006687500001135049,
+            "first_pass_s": 6.95631520000461,
+            "warm_start_s": 0.16376899999886518,
+            "python_us_per_call": 174712.30000228388,
+            "compiled_cpu_us_per_call": 4255.8000022836495,
+            "speedup": 41.05275151758395,
+            "changes_arguments": true,
+            "disk_cached": true,
+            "batch_backends": {},
+            "backend_note": "not batched: compiled as one region",
+            "lift_reason": "outside the supported subset: global 'Vector' is not a numeric constant",
+            "diagnostic_original_recommended": true,
+            "diagnostic_original_recommendation": "saves 7 ms a run once the compiled code is cached"
+          }
+        ]
+      },
+      "final": {
+        "profile_wall_s": 38.454371799998626,
+        "verification": [
+          {
+            "status": "verified",
+            "engine": "region",
+            "samples": 1,
+            "compiled_samples": 1,
+            "fallback_samples": 0,
+            "rare_samples_checked": 0,
+            "recommended": true,
+            "recommendation": "Manual causal target-only diagnostic selection; not default deployment.",
+            "net_s_first_run": -6.876702050005406,
+            "net_s_cached": -0.01956055000118795,
+            "first_pass_s": 7.046756600000663,
+            "warm_start_s": 0.18961509999644477,
+            "python_us_per_call": 174747.799996112,
+            "compiled_cpu_us_per_call": 4693.250000855187,
+            "speedup": 37.23385712763439,
+            "changes_arguments": true,
+            "disk_cached": true,
+            "batch_backends": {},
+            "backend_note": "not batched: compiled as one region",
+            "lift_reason": "outside the supported subset: global 'Vector' is not a numeric constant",
+            "diagnostic_original_recommended": false,
+            "diagnostic_original_recommendation": "it would save 170.1 ms over 1 calls, less than the 190 ms it takes to start"
+          }
+        ]
+      }
+    }
+  },
+  "actual_timing_aot_calls_total": 5050,
+  "separate_audit_aot_calls_total": 202,
+  "execution": {
+    "completed_top_level_records": 58,
+    "child_wall_s": 236.2917629999938,
+    "fresh_profile_wall_s": 199.77201739999146,
+    "compile_only_warmup_wall_s": 3.205867999997281,
+    "state_audit_wall_s": 2.8328880999979447,
+    "address_mapping_wall_s": 0.7316978000017116
+  },
+  "limits": [
+    "Explicit target-only forced diagnostic, not defaultdeployment.",
+    "Fiveprocessbest-of-fivePython/RP versusbest-of20C; processworkcounts differ.",
+    "RayPythonallocatesCanvas/Scene insidekernel; Cbufferallocationoutsideitsloop.",
+    "Generic RP AOT versus C -march=native target; impactunmeasured.",
+    "Overlapping samples/sharedbackgroundload; noformalsignificance orstaticinstructions-to-cycles claim.",
+    "Combined heap annotation/AugAssign repair/runner startup change; timingnotisolatedperpatch.",
+    "Initialfullcohortlatenciesneverpooled."
+  ]
+}

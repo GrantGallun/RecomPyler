@@ -1,0 +1,53 @@
+{
+  "all_verified": true,
+  "study_commit": "f087533ec047216fd4f7dccea0286e03f45c1628",
+  "tracked_files_equal_git_blobs": 392,
+  "blob_bytes": 5005987,
+  "successful_raw_process_records": 54,
+  "raw_process_record_note": "54 includes one reused historical profile record; 53 are new preparation/measurement/control/mapping records.",
+  "timing_processes": 20,
+  "timing_AOT_calls": 5000,
+  "phase_AOT_calls": 1200,
+  "state_AOT_calls": 200,
+  "control_AOT_calls": 48,
+  "JIT_or_fallback_calls": 0,
+  "full_state_checkpoints_per_source": 100,
+  "full_scalar_vectors_per_snapshot": 1400,
+  "measurements": {
+    "plain": {
+      "kernel_ms": 552.2853000002215,
+      "process_ms": 2961.464200001501
+    },
+    "c": {
+      "kernel_ms": 9.115458,
+      "process_ms": 207.7994999999646
+    },
+    "baseline": {
+      "kernel_ms": 47.49180000362685,
+      "process_ms": 559.6179999993183
+    },
+    "candidate": {
+      "kernel_ms": 35.82880000612931,
+      "process_ms": 511.8624999959138
+    }
+  },
+  "independently_recounted_static_assembly": {
+    "baseline": {
+      "instruction_lines": 524,
+      "stack_operand_lines": 275,
+      "span_bytes": 3152
+    },
+    "candidate": {
+      "instruction_lines": 341,
+      "stack_operand_lines": 69,
+      "span_bytes": 1584
+    },
+    "c": {
+      "instruction_lines": 116,
+      "stack_operand_lines": 22,
+      "span_bytes": 480
+    }
+  },
+  "full_suite": "465 passed, 52 subtests; final assertion refinement separately passed",
+  "note": "Read-only archive/raw-output/state/counter/static-assembly verification; no timings, builds or tests rerun."
+}

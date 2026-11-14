@@ -1,0 +1,15 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________ test_nonrecursive_region_keeps_existing_array_bodies _____________
+
+    def test_nonrecursive_region_keeps_existing_array_bodies():
+        program = generated(nonrecursive, 1.25)
+        functions = [node for node in ast.parse(program.source).body if isinstance(node, ast.FunctionDef)]
+>       assert not any(node.name.endswith("_borrowed") or node.name == "_heap_data" for node in functions)
+E       assert not True
+E        +  where True = any(<generator object test_nonrecursive_region_keeps_existing_array_bodies.<locals>.<genexpr> at 0x0000020B71D197E0>)
+
+tests\test_heap_compact_abi.py:117: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_heap_compact_abi.py::test_nonrecursive_region_keeps_existing_array_bodies
+1 failed, 19 deselected in 0.21s

@@ -1,0 +1,603 @@
+{
+  "sources": {
+    "baseline": "dba45a7379402ea33664a5754a2fe6f0927b6855",
+    "candidate": "0d2c3d33215f7c289b89944214d4c7b8eaf9ac89"
+  },
+  "config": {
+    "limit": 40,
+    "samples": 8,
+    "repetitions": 5,
+    "timeout_s": 180,
+    "shim_loops": 2,
+    "audit_repetitions": 5
+  },
+  "fixed_groups": {
+    "heldout": {
+      "fixed_n": 38,
+      "meaningful_timing_n": 37,
+      "baseline": {
+        "successful_profiles": 38,
+        "process_speedup_geomean_paired": 0.959741853251788,
+        "mean_largest_verified_fraction_fixed_denominator": 0.036458865957596426,
+        "mean_recommended_reach": 0.0,
+        "timed_programs_with_native_calls": 0,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ]
+      },
+      "candidate": {
+        "successful_profiles": 38,
+        "process_speedup_geomean_paired": 0.9587556023936233,
+        "mean_largest_verified_fraction_fixed_denominator": 0.029414598950307215,
+        "mean_recommended_reach": 0.0,
+        "timed_programs_with_native_calls": 0,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ]
+      }
+    },
+    "tuned": {
+      "fixed_n": 9,
+      "meaningful_timing_n": 9,
+      "baseline": {
+        "successful_profiles": 9,
+        "process_speedup_geomean_paired": 1.2898557359431753,
+        "mean_largest_verified_fraction_fixed_denominator": 0.5421641381057903,
+        "mean_recommended_reach": 0.4794182922937006,
+        "timed_programs_with_native_calls": 4,
+        "audit_native_program_count_min_max": [
+          4,
+          4
+        ],
+        "audit_aot_program_count_min_max": [
+          4,
+          4
+        ]
+      },
+      "candidate": {
+        "successful_profiles": 9,
+        "process_speedup_geomean_paired": 1.294032650217144,
+        "mean_largest_verified_fraction_fixed_denominator": 0.5079081175028398,
+        "mean_recommended_reach": 0.40626529590679367,
+        "timed_programs_with_native_calls": 4,
+        "audit_native_program_count_min_max": [
+          4,
+          4
+        ],
+        "audit_aot_program_count_min_max": [
+          4,
+          4
+        ]
+      }
+    },
+    "addition": {
+      "fixed_n": 2,
+      "meaningful_timing_n": 2,
+      "baseline": {
+        "successful_profiles": 2,
+        "process_speedup_geomean_paired": 0.9716652793494549,
+        "mean_largest_verified_fraction_fixed_denominator": 0.00026665349111249897,
+        "mean_recommended_reach": 0.0,
+        "timed_programs_with_native_calls": 0,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ]
+      },
+      "candidate": {
+        "successful_profiles": 2,
+        "process_speedup_geomean_paired": 0.9889608762863596,
+        "mean_largest_verified_fraction_fixed_denominator": 0.00037721993798845235,
+        "mean_recommended_reach": 0.0,
+        "timed_programs_with_native_calls": 0,
+        "audit_native_program_count_min_max": [
+          0,
+          0
+        ],
+        "audit_aot_program_count_min_max": [
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "fixed_source_totals": {
+    "baseline": {
+      "profile_wall_s": 480.6634781999892,
+      "timing_compiled_calls": 2020,
+      "timing_aot_calls": null,
+      "timing_jit_calls": null,
+      "timing_fallback_calls": 0,
+      "timing_batch_rows": 0,
+      "native_timing_programs": [
+        "barnes_hut",
+        "fannkuch",
+        "raytrace",
+        "scimark"
+      ],
+      "legacy_native_timing_mode_unknown_programs": [
+        "barnes_hut",
+        "fannkuch",
+        "raytrace",
+        "scimark"
+      ],
+      "separate_audit_calls": {
+        "aot_calls": 2020,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "unknown_native_calls": 0
+      },
+      "audit_children": 245,
+      "audit_counter_reconciliation_failures": 0
+    },
+    "candidate": {
+      "profile_wall_s": 484.9406433000004,
+      "timing_compiled_calls": 2020,
+      "timing_aot_calls": 2020,
+      "timing_jit_calls": 0,
+      "timing_fallback_calls": 0,
+      "timing_batch_rows": 0,
+      "native_timing_programs": [
+        "barnes_hut",
+        "fannkuch",
+        "raytrace",
+        "scimark"
+      ],
+      "legacy_native_timing_mode_unknown_programs": [],
+      "separate_audit_calls": {
+        "aot_calls": 2020,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "unknown_native_calls": 0
+      },
+      "audit_children": 245,
+      "audit_counter_reconciliation_failures": 0
+    }
+  },
+  "fixed_costs": {
+    "completed_child_records": 1423,
+    "failures": 0,
+    "timeouts": 0,
+    "child_wall_s": 1894.1088947000935,
+    "first_finished_utc": "2026-11-12T01:12:11.686315+00:00",
+    "last_finished_utc": "2026-11-12T01:44:55.669827+00:00",
+    "bytecode_compile_only_warmup_wall_s": 70.18725990000894,
+    "separate_audit_wall_s": 348.624414200076
+  },
+  "long_source_totals": {
+    "baseline": {
+      "profile_wall_s": 153.0794223999983,
+      "timing_compiled_calls": 0,
+      "timing_aot_calls": null,
+      "timing_jit_calls": null,
+      "timing_fallback_calls": 100,
+      "timing_batch_rows": 0,
+      "native_timing_programs": [],
+      "legacy_native_timing_mode_unknown_programs": [],
+      "separate_audit_calls": {
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 100,
+        "unknown_native_calls": 0
+      },
+      "audit_children": 10,
+      "audit_counter_reconciliation_failures": 0
+    },
+    "candidate": {
+      "profile_wall_s": 189.42733339999904,
+      "timing_compiled_calls": 100,
+      "timing_aot_calls": 100,
+      "timing_jit_calls": 0,
+      "timing_fallback_calls": 0,
+      "timing_batch_rows": 0,
+      "native_timing_programs": [
+        "richards_super"
+      ],
+      "legacy_native_timing_mode_unknown_programs": [],
+      "separate_audit_calls": {
+        "aot_calls": 100,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "unknown_native_calls": 0
+      },
+      "audit_children": 10,
+      "audit_counter_reconciliation_failures": 0
+    }
+  },
+  "long_costs": {
+    "completed_child_records": 60,
+    "failures": 0,
+    "timeouts": 0,
+    "child_wall_s": 384.6189332999893,
+    "first_finished_utc": "2026-11-12T01:45:13.818013+00:00",
+    "last_finished_utc": "2026-11-12T01:51:40.891988+00:00",
+    "bytecode_compile_only_warmup_wall_s": 2.803044600001158,
+    "separate_audit_wall_s": 15.699787199999264
+  },
+  "long_programs": [
+    {
+      "name": "chaos",
+      "group": "diagnostic",
+      "meaningful_work": true,
+      "plain_median_wall_s": 0.8500249999997322,
+      "stdout_nonempty": false,
+      "baseline": {
+        "median_wall_s": 0.8698084999996354,
+        "process_speedup": 0.9772553383878044,
+        "compiled_calls_total": 0,
+        "aot_calls_total": null,
+        "jit_calls_total": null,
+        "fallback_calls_total": 0,
+        "actual_mode_evidence_valid": true,
+        "audit_mode_totals_separate_from_timing": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0
+        },
+        "audit_native_calls_min_max": [
+          0,
+          0
+        ],
+        "verified_opportunity": 0.5724867642058055,
+        "recommended_reach": 0.0,
+        "audit_mode_calls_by_repetition": [
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          }
+        ],
+        "audit_numba_imported_after": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "audit_numba_imported_before": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "audit_numba_imported_by_bootstrap": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      },
+      "candidate": {
+        "median_wall_s": 0.8720308000010846,
+        "process_speedup": 0.9747648821563126,
+        "compiled_calls_total": 0,
+        "aot_calls_total": null,
+        "jit_calls_total": null,
+        "fallback_calls_total": 0,
+        "actual_mode_evidence_valid": true,
+        "audit_mode_totals_separate_from_timing": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0
+        },
+        "audit_native_calls_min_max": [
+          0,
+          0
+        ],
+        "verified_opportunity": 0.6310319699103968,
+        "recommended_reach": 0.0,
+        "audit_mode_calls_by_repetition": [
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          }
+        ],
+        "audit_numba_imported_after": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "audit_numba_imported_before": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "audit_numba_imported_by_bootstrap": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "name": "richards_super",
+      "group": "diagnostic",
+      "meaningful_work": true,
+      "plain_median_wall_s": 0.6891718000006222,
+      "stdout_nonempty": false,
+      "baseline": {
+        "median_wall_s": 0.9743608999997377,
+        "process_speedup": 0.7073065021398207,
+        "compiled_calls_total": 0,
+        "aot_calls_total": null,
+        "jit_calls_total": null,
+        "fallback_calls_total": 100,
+        "actual_mode_evidence_valid": true,
+        "audit_mode_totals_separate_from_timing": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 100,
+          "unknown_native_calls": 0
+        },
+        "audit_native_calls_min_max": [
+          0,
+          0
+        ],
+        "verified_opportunity": 0.9095422040426323,
+        "recommended_reach": 0.9095422040426323,
+        "audit_mode_calls_by_repetition": [
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 20,
+            "fallback_calls": 20
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 20,
+            "fallback_calls": 20
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 20,
+            "fallback_calls": 20
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 20,
+            "fallback_calls": 20
+          },
+          {
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 20,
+            "fallback_calls": 20
+          }
+        ],
+        "audit_numba_imported_after": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "audit_numba_imported_before": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "audit_numba_imported_by_bootstrap": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "selected_functions": [
+          {
+            "function": "Richards.run",
+            "line": 385,
+            "engine": "region"
+          }
+        ],
+        "default_policy": {
+          "force": false,
+          "worth_running": true,
+          "startup_s": 0.10079240000050049,
+          "saving_s": 0.42072785000164004,
+          "region_export_alias_count": 1,
+          "region_seed_count": 0,
+          "aot_only_policy": "Selected recommendation has nonempty AOT exports; default frozen runner forbids unbudgeted JIT on a digest miss."
+        }
+      },
+      "candidate": {
+        "median_wall_s": 0.38213829999949667,
+        "process_speedup": 1.8034617310055807,
+        "compiled_calls_total": 100,
+        "aot_calls_total": 100,
+        "jit_calls_total": 0,
+        "fallback_calls_total": 0,
+        "actual_mode_evidence_valid": true,
+        "audit_mode_totals_separate_from_timing": {
+          "aot_calls": 100,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0
+        },
+        "audit_native_calls_min_max": [
+          20,
+          20
+        ],
+        "verified_opportunity": 0.854723708131742,
+        "recommended_reach": 0.854723708131742,
+        "audit_mode_calls_by_repetition": [
+          {
+            "aot_calls": 20,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 20,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 20,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 20,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          },
+          {
+            "aot_calls": 20,
+            "jit_calls": 0,
+            "unknown_native_calls": 0,
+            "rejected_attempts": 0,
+            "fallback_calls": 0
+          }
+        ],
+        "audit_numba_imported_after": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "audit_numba_imported_before": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "audit_numba_imported_by_bootstrap": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "selected_functions": [
+          {
+            "function": "Richards.run",
+            "line": 385,
+            "engine": "region"
+          }
+        ],
+        "default_policy": {
+          "force": false,
+          "worth_running": true,
+          "startup_s": 0.11000380000041332,
+          "saving_s": 0.4350685499939573,
+          "region_export_alias_count": 3,
+          "region_seed_count": 2,
+          "aot_only_policy": "Selected recommendation has nonempty AOT exports; default frozen runner forbids unbudgeted JIT on a digest miss."
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Warm task-owned bytecode differs from historical wave2 protocol; dba45a7 is the comparator.",
+    "Largest verified reach is an overlap-safe opportunity proxy, not actual compiled runtime or a union.",
+    "Audit process mode counts are independent of timing processes; legacy timing modes stay unknown.",
+    "Only bot stdout is nonempty in fixed workloads; empty output/exit equality is not full result equivalence.",
+    "Fresh profile wall combines capture/verification/JIT/AOT/startup probes; build-only time is unavailable.",
+    "Five repetitions and a single machine do not establish significance or universal absence of regressions."
+  ]
+}

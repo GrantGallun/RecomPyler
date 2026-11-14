@@ -1,0 +1,79 @@
+FF................                                                       [100%]
+================================== FAILURES ===================================
+_ test_object_slot_machine_code_has_no_negative_index_adjustment[field_read-args0-3.5] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002037FA0F360>
+fn = <function field_read at 0x000002036F6C7CC0>
+args = (<test_heap_indices.Cell object at 0x000002037F9FEE40>,), result = 3.5
+
+    @pytest.mark.parametrize("fn,args,result", [
+        (field_read, (Cell(3.5),), 3.5),
+        (field_write, (Cell(3.5), 4.5), None),
+    ])
+    def test_object_slot_machine_code_has_no_negative_index_adjustment(monkeypatch, fn, args, result):
+        # Reintroducing signed physical indexing adds a sign test/select to the real
+        # native entry. Disable disk reuse so inspect_llvm sees the compiled body.
+        monkeypatch.setattr(heap, "_cached_module", lambda source: None)
+        region = heap.lift_region(fn)
+        actual = region(*args)
+        assert actual == result if fn is field_read else actual is args[0] and actual.value == 4.5
+        assert region.compiled_calls == 1, region.problem
+        llvm = region.latest.run.inspect_llvm(region.latest.run.signatures[0])
+        native = llvm.split("define ", 1)[1].split("\n}", 1)[0]
+        assert re.search(r"load double|store double", native)
+>       assert not re.search(r"icmp slt i64 %arg\.v_cell[^,]*,", native), native
+E       AssertionError: noundef i32 @_ZN26recompyler_generated_heap013f0_field_readB2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedEx(ptr noalias writeonly captures(none) initializes((0, 8)) %retptr, ptr noalias readnone captures(none) %excinfo, ptr readnone captures(none) %arg.F.0, ptr readnone captures(none) %arg.F.1, i64 %arg.F.2, i64 %arg.F.3, ptr readonly captures(none) %arg.F.4, i64 %arg.F.5.0, i64 %arg.F.6.0, ptr readnone captures(none) %arg.I.0, ptr readnone captures(none) %arg.I.1, i64 %arg.I.2, i64 %arg.I.3, ptr readnone captures(none) %arg.I.4, i64 %arg.I.5.0, i64 %arg.I.6.0, ptr readnone captures(none) %arg.top.0, ptr readnone captures(none) %arg.top.1, i64 %arg.top.2, i64 %arg.top.3, ptr readnone captures(none) %arg.top.4, i64 %arg.top.5.0, i64 %arg.top.6.0, ptr readnone captures(none) %arg.st.0, ptr readnone captures(none) %arg.st.1, i64 %arg.st.2, i64 %arg.st.3, ptr readnone captures(none) %arg.st.4, i64 %arg.st.5.0, i64 %arg.st.6.0, i64 %arg.v_cell) local_unnamed_addr #0 {
+E         B0:
+E           %.75 = icmp slt i64 %arg.v_cell, 0
+E           %.76 = select i1 %.75, i64 %arg.F.5.0, i64 0
+E           %0 = getelementptr double, ptr %arg.F.4, i64 %arg.v_cell
+E           %.90 = getelementptr double, ptr %0, i64 %.76
+E           %.91 = load double, ptr %.90, align 8
+E           store double %.91, ptr %retptr, align 8
+E           ret i32 0
+E       assert not <re.Match object; span=(1120, 1145), match='icmp slt i64 %arg.v_cell,'>
+E        +  where <re.Match object; span=(1120, 1145), match='icmp slt i64 %arg.v_cell,'> = <function search at 0x000002036978DF30>('icmp slt i64 %arg\\.v_cell[^,]*,', 'noundef i32 @_ZN26recompyler_generated_heap013f0_field_readB2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5Array...ble, ptr %0, i64 %.76\n  %.91 = load double, ptr %.90, align 8\n  store double %.91, ptr %retptr, align 8\n  ret i32 0')
+E        +    where <function search at 0x000002036978DF30> = re.search
+
+tests\test_heap_indices.py:92: AssertionError
+_ test_object_slot_machine_code_has_no_negative_index_adjustment[field_write-args1-None] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002032E8BED70>
+fn = <function field_write at 0x000002037FADADA0>
+args = (<test_heap_indices.Cell object at 0x000002037FA60050>, 4.5)
+result = None
+
+    @pytest.mark.parametrize("fn,args,result", [
+        (field_read, (Cell(3.5),), 3.5),
+        (field_write, (Cell(3.5), 4.5), None),
+    ])
+    def test_object_slot_machine_code_has_no_negative_index_adjustment(monkeypatch, fn, args, result):
+        # Reintroducing signed physical indexing adds a sign test/select to the real
+        # native entry. Disable disk reuse so inspect_llvm sees the compiled body.
+        monkeypatch.setattr(heap, "_cached_module", lambda source: None)
+        region = heap.lift_region(fn)
+        actual = region(*args)
+        assert actual == result if fn is field_read else actual is args[0] and actual.value == 4.5
+        assert region.compiled_calls == 1, region.problem
+        llvm = region.latest.run.inspect_llvm(region.latest.run.signatures[0])
+        native = llvm.split("define ", 1)[1].split("\n}", 1)[0]
+        assert re.search(r"load double|store double", native)
+>       assert not re.search(r"icmp slt i64 %arg\.v_cell[^,]*,", native), native
+E       AssertionError: noundef i32 @_ZN26recompyler_generated_heap114f0_field_writeB2v2B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExd(ptr noalias writeonly captures(none) initializes((0, 8)) %retptr, ptr noalias readnone captures(none) %excinfo, ptr readnone captures(none) %arg.F.0, ptr readnone captures(none) %arg.F.1, i64 %arg.F.2, i64 %arg.F.3, ptr writeonly captures(none) %arg.F.4, i64 %arg.F.5.0, i64 %arg.F.6.0, ptr readnone captures(none) %arg.I.0, ptr readnone captures(none) %arg.I.1, i64 %arg.I.2, i64 %arg.I.3, ptr readnone captures(none) %arg.I.4, i64 %arg.I.5.0, i64 %arg.I.6.0, ptr readnone captures(none) %arg.top.0, ptr readnone captures(none) %arg.top.1, i64 %arg.top.2, i64 %arg.top.3, ptr readnone captures(none) %arg.top.4, i64 %arg.top.5.0, i64 %arg.top.6.0, ptr readnone captures(none) %arg.st.0, ptr readnone captures(none) %arg.st.1, i64 %arg.st.2, i64 %arg.st.3, ptr readnone captures(none) %arg.st.4, i64 %arg.st.5.0, i64 %arg.st.6.0, i64 %arg.v_cell, double %arg.v_value) local_unnamed_addr #0 {
+E         B0:
+E           %.76 = icmp slt i64 %arg.v_cell, 0
+E           %.77 = select i1 %.76, i64 %arg.F.5.0, i64 0
+E           %0 = getelementptr double, ptr %arg.F.4, i64 %arg.v_cell
+E           %.91 = getelementptr double, ptr %0, i64 %.77
+E           store double %arg.v_value, ptr %.91, align 8
+E           store i64 %arg.v_cell, ptr %retptr, align 8
+E           ret i32 0
+E       assert not <re.Match object; span=(1144, 1169), match='icmp slt i64 %arg.v_cell,'>
+E        +  where <re.Match object; span=(1144, 1169), match='icmp slt i64 %arg.v_cell,'> = <function search at 0x000002036978DF30>('icmp slt i64 %arg\\.v_cell[^,]*,', 'noundef i32 @_ZN26recompyler_generated_heap114f0_field_writeB2v2B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5Arra..., i64 %.77\n  store double %arg.v_value, ptr %.91, align 8\n  store i64 %arg.v_cell, ptr %retptr, align 8\n  ret i32 0')
+E        +    where <function search at 0x000002036978DF30> = re.search
+
+tests\test_heap_indices.py:92: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_heap_indices.py::test_object_slot_machine_code_has_no_negative_index_adjustment[field_read-args0-3.5]
+FAILED tests/test_heap_indices.py::test_object_slot_machine_code_has_no_negative_index_adjustment[field_write-args1-None]
+2 failed, 16 passed in 1.46s

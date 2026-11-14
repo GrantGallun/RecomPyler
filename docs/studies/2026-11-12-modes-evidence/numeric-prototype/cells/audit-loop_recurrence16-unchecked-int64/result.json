@@ -1,0 +1,962 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "694bc91952b9342fe098aa50fb7d6450f9361985c1b6670887e67323298f7941",
+  "variant": "unchecked-int64",
+  "function": "loop_recurrence16",
+  "task": "audit",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ],
+    "n": [
+      0,
+      1024
+    ]
+  },
+  "corpus_count": 392,
+  "expected_results_sha256": "a20c051a6a31c8a5fdf53f4206625a81332b99fe0941095fed0f8ce598978deb",
+  "valid_exact_results": true,
+  "construction_s": 0.2660907999961637,
+  "first_call_s": 0.7476871000108076,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 1,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 392,
+    "aot_calls": 0,
+    "jit_calls": 392,
+    "fallback_calls": 0,
+    "contract_native_calls": 392,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "loop_recurrence16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\kernels.py",
+    "function_source_sha256": "b5ae3bb6685078518eed9a23a9037b44108be6cbf308ee2bb9dce07a222d21c0",
+    "function_bytecode_sha256": "1d23dac200bc0f0d85991e5d5a2578605c991488a6fb66650a27c73dc59fae7a",
+    "selected_mode": "unchecked-int64",
+    "identity": "0d0e9fd9374667e05290cecc4ef3db2bfc2cdeff7bd3fcc77f23abb8b73ece49",
+    "contract": "IntIntervals(_items=(('n', (0, 1024)), ('x', (-1048576, 1048576)), ('y', (-1, 1)), ('z', (-1048576, 1048576))))",
+    "proof_certificates": "()",
+    "problem": null,
+    "policy_metadata": {
+      "certificates": [],
+      "contract": [
+        [
+          "n",
+          [
+            0,
+            1024
+          ]
+        ],
+        [
+          "x",
+          [
+            -1048576,
+            1048576
+          ]
+        ],
+        [
+          "y",
+          [
+            -1,
+            1
+          ]
+        ],
+        [
+          "z",
+          [
+            -1048576,
+            1048576
+          ]
+        ]
+      ],
+      "implementation": "c681942f89604e42708e20fac650baa7813f2be9c1f9b8164a463e135035e3b5",
+      "intrinsics": "2131bd502b177de531c5dafadb63c8ddae35b7dcd7e84d2686e5e4df83aa9a36",
+      "max_trips": 1024,
+      "mode": "unchecked-int64",
+      "native_abi": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+      "origin": "4ae8c94e8da2062f0f96dcc5449ecb1b834317b8b2c2176819d4b40cbd905c28",
+      "proof": 1,
+      "schema": 1
+    },
+    "program_digest": "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_loop_recurrence16",
+    "program_source_sha256": "87bf405d8b9f95217573ccd8fdfe9cf9cdb15cec09832ecfd8f492c3e6a456a6",
+    "dispatcher_module": "rc_heap_90b0c6f3cf785308b7ee93d3",
+    "dispatcher_qualname": "f0_loop_recurrence16",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-formal-v1\\inputs\\candidate\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_90b0c6f3cf785308b7ee93d320f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_90b0c6f3cf785308b7ee93d320f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx",
+        "code_capture_requested": false,
+        "code_capture_note": "No cached LLVM/ASM inspection requested or claimed"
+      }
+    ],
+    "dispatcher_cache_hits": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64, int64)": 1
+    },
+    "dispatcher_cache_misses": {}
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "invalid_audits": [
+    {
+      "args": [
+        "1048577",
+        "1",
+        "0",
+        "16"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "bound_values": [
+        "1048577",
+        "1",
+        "0",
+        "16"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1048577"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1099511627776",
+        "1099511627776",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1099511627777"
+      },
+      "bound_values": [
+        "1099511627776",
+        "1099511627776",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "22887284938275379073209020876478544547459876696240605379143567921401229194635390521531593992375926147753704711196832136165647163781896860689459713299065525895619517863742099239634841598830825399410808286309334714246027443025828896982300582702768008983456200733770736438207494301362797381893641396371719689591109784347784921076483327025701370690350140760288021909021930961276721445295410715539013633"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1099511627777"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "9223372036854775807",
+        "1",
+        "1",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775793"
+      },
+      "bound_values": [
+        "9223372036854775807",
+        "1",
+        "1",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "9223372036854775823"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775793"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "-9223372036854775808",
+        "-1",
+        "0",
+        "1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "bound_values": [
+        "-9223372036854775808",
+        "-1",
+        "0",
+        "1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "-9223372036854775808"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "True",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "bool",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "x must be an exact Python int representable in signed int64"
+      },
+      "bound_values": [
+        "True",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "65"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "semantic_audits.<locals>.IntSubclass",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "x must be an exact Python int representable in signed int64"
+      },
+      "bound_values": [
+        "2",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "66"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "2.0",
+        "1",
+        "2",
+        "2"
+      ],
+      "arg_types": [
+        "float",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "x must be an exact Python int representable in signed int64"
+      },
+      "bound_values": [
+        "2.0",
+        "1",
+        "2",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.float",
+        "value": "66.0"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1208925819614629174706176",
+        "1",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "x must be an exact Python int representable in signed int64"
+      },
+      "bound_values": [
+        "1208925819614629174706176",
+        "1",
+        "1",
+        "2"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1208925819614629174706208"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "-1"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "1",
+        "-1"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "1"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "1025"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "loop exceeds the 1024-trip operational limit"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "1",
+        "1025"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "16401"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 1,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {},
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "arguments do not bind"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() missing 4 required positional arguments: 'x', 'y', 'z', and 'n'"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [
+        "1",
+        "1",
+        "1",
+        "2"
+      ],
+      "arg_types": [
+        "int",
+        "int",
+        "int",
+        "int"
+      ],
+      "kwargs": {
+        "bad": "1"
+      },
+      "actual": {
+        "kind": "error",
+        "type": "recompyler.experimental.NumericContractError",
+        "message": "arguments do not bind"
+      },
+      "bound_values": null,
+      "python": {
+        "kind": "error",
+        "type": "builtins.TypeError",
+        "message": "loop_recurrence16() got an unexpected keyword argument 'bad'"
+      },
+      "expected": "NumericContractError before native/body execution",
+      "policy": "rejection-before-native",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "contract_native_calls": 0,
+        "guard_misses": 0,
+        "representation_rejections": 1,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 1
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 0,
+          "returned": 0,
+          "successful_status": 0,
+          "failed_status": 0
+        }
+      }
+    },
+    {
+      "args": [],
+      "arg_types": [],
+      "kwargs": {
+        "x": "1",
+        "y": "1",
+        "z": "2",
+        "n": "3"
+      },
+      "actual": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "bound_values": [
+        "1",
+        "1",
+        "2",
+        "3"
+      ],
+      "python": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "expected": {
+        "kind": "value",
+        "type": "builtins.int",
+        "value": "97"
+      },
+      "policy": "defined-modulo-int64",
+      "matched": true,
+      "counter_delta": {
+        "compiled_calls": 1,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "fallback_calls": 0,
+        "contract_native_calls": 1,
+        "guard_misses": 0,
+        "representation_rejections": 0,
+        "loop_limit_rejections": 0,
+        "native_failures": 0,
+        "foreign_calls": 0
+      },
+      "observed_attempt_delta": {
+        "attempts": 1,
+        "rejected_attempts": 0,
+        "attempt_exceptions": 0
+      },
+      "observed_native_entries": {
+        "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+          "mode": "JIT",
+          "entered": 1,
+          "returned": 1,
+          "successful_status": 1,
+          "failed_status": 0
+        }
+      }
+    }
+  ],
+  "audit_observations": {
+    "attempts": 13,
+    "rejected_attempts": 0,
+    "attempt_exceptions": 7,
+    "programs": {
+      "123ef0b2d30a1c1895b018d663448026d600339ae6695cf43e8d0fc480092a42": {
+        "mode": "JIT",
+        "entered": 6,
+        "returned": 6,
+        "successful_status": 6,
+        "failed_status": 0
+      }
+    }
+  },
+  "final_counts": {
+    "compiled_calls": 399,
+    "aot_calls": 0,
+    "jit_calls": 399,
+    "fallback_calls": 0,
+    "contract_native_calls": 399,
+    "guard_misses": 0,
+    "representation_rejections": 6,
+    "loop_limit_rejections": 1,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_272a2580db4628ec9a7dd061.f0_recurrence_1-586.py314.1.nbc": "a37ad6ffcfe40471208b0cb6c752b2ee8e772ee7b6b2186f6297a6e853afca66",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_272a2580db4628ec9a7dd061.f0_recurrence_1-586.py314.nbi": "22e6ed30dd648648b42c25297c4fc21590360d353f9fff5bce8d1abed307a6e4",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_90b0c6f3cf785308b7ee93d3.f0_loop_recurrence16-586.py314.1.nbc": "3e37874dd5cb2dbe0c0597c16667cfdcbded77a2be9bfd9a16bd9bc11ae11259",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_90b0c6f3cf785308b7ee93d3.f0_loop_recurrence16-586.py314.nbi": "3b14581a81a558afe4e6ddceb27e70ebb7cbcc04a33f86087a501c076ba48565",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_a39a8e178a9a302942ae2ac2.f0_recurrence_16-586.py314.1.nbc": "57b0f5f4449a9a9b1a0053a6c0e9eb7ec262c47c979218196e94e90aeeb74a36",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_a39a8e178a9a302942ae2ac2.f0_recurrence_16-586.py314.nbi": "bfd808dfbffc5ef1e83a46927eacf34f0c41a69547fd9c6f43deca662a1ba4f9",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_dc0a616c86c4f17f273ddd82.f0_recurrence_64-586.py314.1.nbc": "c554a8714974086d0ea7ed7a9b95c0a43e894fca3563d1f0866a68d0cabd919c",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_dc0a616c86c4f17f273ddd82.f0_recurrence_64-586.py314.nbi": "2fa0227cbd6700987a701c039bc09e3a2a1cedd8221597458379d342ebb617f8",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_fd62efb1f1d505f678775a81.f0_fibonacci-586.py314.1.nbc": "868c0b380036b8c1e1e45975fbabc09db2c0acd20e46ae6049ca16446df3c7ae",
+    "numba/unchecked-int64_f83c0fecc6baaf3a78f01910a860ca524a59c46a/rc_heap_fd62efb1f1d505f678775a81.f0_fibonacci-586.py314.nbi": "6814ab367199fb049a28dcab30040e2a9e8d4966b072435b16a27fe58579de3f",
+    "rc_heap_272a2580db4628ec9a7dd061.py": "dc6c1b1682252182c515b19aa8dfe7f37d79587f81a9604026f8de13299f6e62",
+    "rc_heap_90b0c6f3cf785308b7ee93d3.py": "e094624fa9fa83ff7e476ad000068cf99fa3cad2aa1d0ade9bc7a2c6652aa4ab",
+    "rc_heap_a39a8e178a9a302942ae2ac2.py": "add67654d042986e844dff5e8609b2ce035d568f6b82a8d86fee2a9b7a0e1d9c",
+    "rc_heap_dc0a616c86c4f17f273ddd82.py": "de473d8abc5f8c5c745aff9842e8dbabdd21fc3b665e93d16e2c49b66af9b86e",
+    "rc_heap_fd62efb1f1d505f678775a81.py": "6a8826fa0b930ddded6ae4f3ea98926bb6dac045ba57f60f415c633ff3c743ea",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

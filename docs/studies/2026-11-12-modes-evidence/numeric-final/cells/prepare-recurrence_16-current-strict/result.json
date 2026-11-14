@@ -1,0 +1,123 @@
+{
+  "schema": "wave10-numeric-study-v1",
+  "manifest_sha256": "8ebc59b17b956fd233c1605e2030d7dc7539c9a55ca8ec113def846d14ffefd7",
+  "variant": "current-strict",
+  "function": "recurrence_16",
+  "task": "prepare",
+  "contract": {
+    "x": [
+      -1048576,
+      1048576
+    ],
+    "y": [
+      -1,
+      1
+    ],
+    "z": [
+      -1048576,
+      1048576
+    ]
+  },
+  "corpus_count": 284,
+  "expected_results_sha256": "dc673682d0f04197db3e170492b393023b5282c41d6deeb46c297eb5c7538fd5",
+  "valid_exact_results": true,
+  "construction_s": 0.21508379999431781,
+  "first_call_s": 0.9173012999963248,
+  "first_call_counts": {
+    "compiled_calls": 1,
+    "aot_calls": 0,
+    "jit_calls": 1,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "validation_counts": {
+    "compiled_calls": 284,
+    "aot_calls": 0,
+    "jit_calls": 284,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "program": {
+    "function": "recurrence_16",
+    "function_module": "wave10_fixed_kernels",
+    "function_file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\kernels.py",
+    "function_source_sha256": "21d321a223fe51ff44430bacfe216ffab032516eedcd3f7613a9e404dd549d67",
+    "function_bytecode_sha256": "e91b1989418bb801a4874f438979bc7c3c320586a833474766145ecfd02524f3",
+    "selected_mode": "strict",
+    "identity": null,
+    "contract": "None",
+    "proof_certificates": "None",
+    "problem": null,
+    "program_digest": "7418cd63af9cd8b24ce0a5c926626eeee1a09fcb7cf83a558df6dcf1202b4e8c",
+    "program_cached": true,
+    "program_ahead_of_time": false,
+    "entry_name": "f0_recurrence_16",
+    "program_source_sha256": "8ac3acbca715415767ef1924d11e58922754a2b235ad71b63aba60c85fc85e77",
+    "dispatcher_module": "rc_heap_2b6ae51a3c827ac03ab1c7cf",
+    "dispatcher_qualname": "f0_recurrence_16",
+    "native_loader": {
+      "available": true,
+      "enabled": true,
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave10-measurements\\results-binding-final\\inputs\\current\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "overloads": [
+      {
+        "signature": "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64)",
+        "native_symbol": "_ZN32rc_heap_2b6ae51a3c827ac03ab1c7cf16f0_recurrence_16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx",
+        "cpython_wrapper_symbol": "_ZN7cpython32rc_heap_2b6ae51a3c827ac03ab1c7cf16f0_recurrence_16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxx",
+        "code_capture_requested": true,
+        "llvm_sha256": "5fdc5f9f3dd3a9e3d33905cdb6f1c94cc5464f463957cbfacd8dd0c681a40b61",
+        "asm_sha256": "7842efefea8b432e6720ff0b186628c81552b40cfaed912597375b0bba09641c"
+      }
+    ],
+    "dispatcher_cache_hits": {},
+    "dispatcher_cache_misses": {
+      "(Array(float64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(int64, 1, 'C', False, aligned=True), Array(uint8, 1, 'C', False, aligned=True), int64, int64, int64)": 1
+    }
+  },
+  "numba_imported": true,
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "final_counts": {
+    "compiled_calls": 285,
+    "aot_calls": 0,
+    "jit_calls": 285,
+    "fallback_calls": 0,
+    "contract_native_calls": 0,
+    "guard_misses": 0,
+    "representation_rejections": 0,
+    "loop_limit_rejections": 0,
+    "native_failures": 0,
+    "foreign_calls": 0
+  },
+  "cache_files": {
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.add_i-95.py314.1.nbc": "0a984f2f190b9c5f90e7fa6f8e0e3a8cab9eb6fdf760bc1ff012db7fa6ceb3f9",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.add_i-95.py314.nbi": "d3d77b6bb61cd2f9bd6349295874a9fcefe7e805925de837166d2c7e7392b009",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.f0_recurrence_16-554.py314.1.nbc": "e98f9a9cc6c6d505e6439d404d2a2769de365938ccf34fd0260fa5d204cb47d9",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.f0_recurrence_16-554.py314.nbi": "96a79239eb690af049611e1dc330012d3404f280b4f8e6e7b356707df5e84a02",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.mul_i-111.py314.1.nbc": "3e39f79c9f34a586de3cb1ea7f6d163f902759207f0cf0c4a8cc3f4e6028a666",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_2b6ae51a3c827ac03ab1c7cf.mul_i-111.py314.nbi": "580c4dcd1e5601a2667a825f4c0dd54b53580d852604b3ecdb0cc67a59d2729d",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c291c9d1c46b95f1619e16e2.f0_recurrence_1-554.py314.1.nbc": "393f2c5ae80d755178dd53a587723225717fe1ec01314b62b7d24210b1e71f79",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c291c9d1c46b95f1619e16e2.f0_recurrence_1-554.py314.nbi": "5cccee9bb00952a447062d96e201c2b220a3450cdb2a4b7ba988efbd2c02f9be",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.add_i-95.py314.1.nbc": "8f8543596cdfae072d2f7d56db1e06bceeb5de80cc4b1ae5e3b3bbe42fb611fd",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.add_i-95.py314.nbi": "a62bf8fbcc7fdd1ee5eb5ae233ace972fa81d37973f591360dbe44d1694d3797",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.f0_recurrence_1-554.py314.1.nbc": "e93e7f320a1bd40d02e804cfba81a4267b55652b7303f300d91e1b7795532540",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.f0_recurrence_1-554.py314.nbi": "d05c20f8292df9de72f8c673e45698487f46da7d50fd646813425ad17d47bbd9",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.mul_i-111.py314.1.nbc": "3fac7350ad0862c52a72c93f9bbcc8c119b3cc1d4391d01fe6941b456cc4431e",
+    "numba/current-strict_267a8249893840527e0451ed8b70f3624067a536/rc_heap_c5aad4acdf89efbc0f278e3b.mul_i-111.py314.nbi": "5a8d2d17ddebc78f5de0c0814b68bc1be8fcef61d8ceaf65017ad99db7b06a29",
+    "rc_heap_2b6ae51a3c827ac03ab1c7cf.py": "733a95f74730ce19aeca5450b9f375ee66dd5f34fe17d46536fe29608bc9b1ad",
+    "rc_heap_c291c9d1c46b95f1619e16e2.py": "d8225e5a0acc7e273d93af0df0223a773f05e6d9aac654ca752626a7320a6a39",
+    "rc_heap_c5aad4acdf89efbc0f278e3b.py": "a2f33cf69430461eadd844470bc8964abe125a29cbf1fd42644dbf49297be705",
+    "selftest-e3aac1718153c612fdefa35c.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187"
+  }
+}

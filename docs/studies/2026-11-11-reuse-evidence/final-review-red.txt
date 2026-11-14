@@ -1,0 +1,461 @@
+FF.FFFFFFFF                                                              [100%]
+================================== FAILURES ===================================
+__________ test_invalid_family_topology_rejects_before_replay[cycle] __________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/test_invalid_family_topology_r0')
+malformation = 'cycle'
+
+    @pytest.mark.parametrize("malformation", ["cycle", "conflicting_own_root"])
+    def test_invalid_family_topology_rejects_before_replay(tmp_path, malformation):
+        (tmp_path / "families.py").write_text(FAMILY_SOURCE)
+>       result = process(tmp_path, '''import json,sys,families as f
+    from recompyler import heap
+    from recompyler._region_seed import capture,seal,restore
+    from recompyler.runner import _AotOnlyExports
+    from recompyler.lift import Unsupported
+    class SourceOnly(dict):
+        def __bool__(self): return True
+        def get(self,*args): return lambda *args:None
+    args=(f.A(1),f.B(2),f.C(3))
+    p=heap.lift_region(f.read,SourceOnly()).program_for(args)
+    s=json.loads(json.dumps(seal(capture(p,widen_objects=False),p)))
+    rows={row[0][-1]:row for row in s['families']}
+    if sys.argv[1]=='cycle':
+        rows['BaseA'][0],rows['BaseB'][0]=rows['BaseB'][0],rows['BaseA'][0]
+    else:
+        rows['BaseA'][1].remove(['C'])
+        rows['BaseB'][1].append(['C'])
+    try:
+        restore(f.read,s)
+    except Unsupported:
+        rejected=True
+    else:
+        rejected=False
+    r=heap.lift_region(f.read,_AotOnlyExports({'missing-digest':object()}),seeds={'missing-digest':s})
+    out=r(*args)
+    print(json.dumps(dict(rejected=rejected,out=out,calls=f.CALLS[0],fallback=r.fallback_calls,
+                         compiled=r.compiled_calls,numba='numba' in sys.modules)))
+    ''', malformation, timeout=5)
+
+tests\test_region_reuse.py:567:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_region_reuse.py:46: in process
+    run = subprocess.run([sys.executable, "-c", code, *map(str, args)], cwd=folder,
+C:\Python314\Lib\subprocess.py:557: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\subprocess.py:1221: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Popen: returncode: 1 args: ['C:\\Python314\\python.exe', '-c', "import json...>
+input = None, endtime = 23710.2511637, orig_timeout = 5
+
+    def _communicate(self, input, endtime, orig_timeout):
+        # Start reader threads feeding into a list hanging off of this
+        # object, unless they've already been started.
+        if self.stdout and not hasattr(self, "_stdout_buff"):
+            self._stdout_buff = []
+            self.stdout_thread = \
+                    threading.Thread(target=self._readerthread,
+                                     args=(self.stdout, self._stdout_buff))
+            self.stdout_thread.daemon = True
+            self.stdout_thread.start()
+        if self.stderr and not hasattr(self, "_stderr_buff"):
+            self._stderr_buff = []
+            self.stderr_thread = \
+                    threading.Thread(target=self._readerthread,
+                                     args=(self.stderr, self._stderr_buff))
+            self.stderr_thread.daemon = True
+            self.stderr_thread.start()
+
+        # Start writer thread to send input to stdin, unless already
+        # started.  The thread writes input and closes stdin when done,
+        # or continues in the background on timeout.
+        if self.stdin and not hasattr(self, "_stdin_thread"):
+            self._stdin_thread = \
+                    threading.Thread(target=self._writerthread,
+                                     args=(input,))
+            self._stdin_thread.daemon = True
+            self._stdin_thread.start()
+
+        # Wait for the writer thread, or time out.  If we time out, the
+        # thread remains writing and the fd left open in case the user
+        # calls communicate again.
+        if hasattr(self, "_stdin_thread"):
+            self._stdin_thread.join(self._remaining_time(endtime))
+            if self._stdin_thread.is_alive():
+                raise TimeoutExpired(self.args, orig_timeout)
+
+        # Wait for the reader threads, or time out.  If we time out, the
+        # threads remain reading and the fds left open in case the user
+        # calls communicate again.
+        if self.stdout is not None:
+            self.stdout_thread.join(self._remaining_time(endtime))
+            if self.stdout_thread.is_alive():
+>               raise TimeoutExpired(self.args, orig_timeout)
+E               subprocess.TimeoutExpired: Command '['C:\\Python314\\python.exe', '-c', "import json,sys,families as f\nfrom recompyler import heap\nfrom recompyler._region_seed import capture,seal,restore\nfrom recompyler.runner import _AotOnlyExports\nfrom recompyler.lift import Unsupported\nclass SourceOnly(dict):\n    def __bool__(self): return True\n    def get(self,*args): return lambda *args:None\nargs=(f.A(1),f.B(2),f.C(3))\np=heap.lift_region(f.read,SourceOnly()).program_for(args)\ns=json.loads(json.dumps(seal(capture(p,widen_objects=False),p)))\nrows={row[0][-1]:row for row in s['families']}\nif sys.argv[1]=='cycle':\n    rows['BaseA'][0],rows['BaseB'][0]=rows['BaseB'][0],rows['BaseA'][0]\nelse:\n    rows['BaseA'][1].remove(['C'])\n    rows['BaseB'][1].append(['C'])\ntry:\n    restore(f.read,s)\nexcept Unsupported:\n    rejected=True\nelse:\n    rejected=False\nr=heap.lift_region(f.read,_AotOnlyExports({'missing-digest':object()}),seeds={'missing-digest':s})\nout=r(*args)\nprint(json.dumps(dict(rejected=rejected,out=out,calls=f.CALLS[0],fallback=r.fallback_calls,\n                     compiled=r.compiled_calls,numba='numba' in sys.modules)))\n", 'cycle']' timed out after 5 seconds
+
+C:\Python314\Lib\subprocess.py:1664: TimeoutExpired
+__ test_invalid_family_topology_rejects_before_replay[conflicting_own_root] ___
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/test_invalid_family_topology_r1')
+malformation = 'conflicting_own_root'
+
+    @pytest.mark.parametrize("malformation", ["cycle", "conflicting_own_root"])
+    def test_invalid_family_topology_rejects_before_replay(tmp_path, malformation):
+        (tmp_path / "families.py").write_text(FAMILY_SOURCE)
+        result = process(tmp_path, '''import json,sys,families as f
+    from recompyler import heap
+    from recompyler._region_seed import capture,seal,restore
+    from recompyler.runner import _AotOnlyExports
+    from recompyler.lift import Unsupported
+    class SourceOnly(dict):
+        def __bool__(self): return True
+        def get(self,*args): return lambda *args:None
+    args=(f.A(1),f.B(2),f.C(3))
+    p=heap.lift_region(f.read,SourceOnly()).program_for(args)
+    s=json.loads(json.dumps(seal(capture(p,widen_objects=False),p)))
+    rows={row[0][-1]:row for row in s['families']}
+    if sys.argv[1]=='cycle':
+        rows['BaseA'][0],rows['BaseB'][0]=rows['BaseB'][0],rows['BaseA'][0]
+    else:
+        rows['BaseA'][1].remove(['C'])
+        rows['BaseB'][1].append(['C'])
+    try:
+        restore(f.read,s)
+    except Unsupported:
+        rejected=True
+    else:
+        rejected=False
+    r=heap.lift_region(f.read,_AotOnlyExports({'missing-digest':object()}),seeds={'missing-digest':s})
+    out=r(*args)
+    print(json.dumps(dict(rejected=rejected,out=out,calls=f.CALLS[0],fallback=r.fallback_calls,
+                         compiled=r.compiled_calls,numba='numba' in sys.modules)))
+    ''', malformation, timeout=5)
+>       assert result == dict(rejected=True, out=6, calls=1, fallback=1, compiled=0, numba=False)
+E       AssertionError: assert {'rejected': ...back': 1, ...} == {'rejected': ...back': 1, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'rejected': False} != {'rejected': True}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:595: AssertionError
+_ test_partial_seeding_preserves_legacy_native_coverage[generator-True-True] __
+
+partial_native_artifact = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/partial-native0')
+native = True, none_first = True
+
+    @pytest.mark.parametrize("native", [True, False])
+    @pytest.mark.parametrize("none_first", [True, False])
+    def test_partial_seeding_preserves_legacy_native_coverage(partial_native_artifact, native, none_first):
+        result = process(partial_native_artifact, '''import json,sys,partial as p
+    from recompyler import heap,aot
+    from recompyler.runner import _AotOnlyExports
+    heap.NATIVE=sys.argv[1]=='True'
+    s=json.load(open('artifact.json'));e,other=s['functions'];m=aot.load(s)
+    assert set(e['exports'].values()).isdisjoint(other['exports'].values())
+    r=heap.lift_region(p.choose,_AotOnlyExports({d:getattr(m,n) for d,n in e['exports'].items()}),seeds=e['seeds'])
+    node=p.Node(10)
+    values=[r(arg) for arg in ([None,node] if sys.argv[2]=='True' else [node,None])]
+    second=heap.lift_region(p.other,_AotOnlyExports({d:getattr(m,n) for d,n in other['exports'].items()}),seeds=other['seeds'])
+    assert second(10)==12 and second.aot_calls==1 and second.fallback_calls==0,second.problem
+    print(json.dumps(dict(values=values,value=node.value,calls=p.CALLS[0],aot=r.aot_calls,jit=r.jit_calls,
+        fallback=r.fallback_calls,numba='numba' in sys.modules,seeds=len(e['seeds']),
+        policy=e.get('seed_policy'),other_policy=other.get('seed_policy'))))
+    ''', native, none_first)
+>       assert result == dict(values=[1.5,11] if none_first else [11,1.5], value=11, calls=2,
+                              aot=2, jit=0, fallback=0, numba=False, seeds=0,
+                              policy="legacy-only", other_policy="guarded")
+E       AssertionError: assert {'values': [1...'aot': 1, ...} == {'values': [1...'aot': 2, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'seeds': 1} != {'seeds': 0}
+E         {'policy': None} != {'policy': 'legacy-only'}
+E         {'other_policy': None} != {'other_policy': 'guarded'}
+E         {'aot': 1} != {'aot': 2}
+E         {'fallback': 1} != {'fallback': 0}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:669: AssertionError
+_ test_partial_seeding_preserves_legacy_native_coverage[generator-True-False] _
+
+partial_native_artifact = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/partial-native0')
+native = False, none_first = True
+
+    @pytest.mark.parametrize("native", [True, False])
+    @pytest.mark.parametrize("none_first", [True, False])
+    def test_partial_seeding_preserves_legacy_native_coverage(partial_native_artifact, native, none_first):
+        result = process(partial_native_artifact, '''import json,sys,partial as p
+    from recompyler import heap,aot
+    from recompyler.runner import _AotOnlyExports
+    heap.NATIVE=sys.argv[1]=='True'
+    s=json.load(open('artifact.json'));e,other=s['functions'];m=aot.load(s)
+    assert set(e['exports'].values()).isdisjoint(other['exports'].values())
+    r=heap.lift_region(p.choose,_AotOnlyExports({d:getattr(m,n) for d,n in e['exports'].items()}),seeds=e['seeds'])
+    node=p.Node(10)
+    values=[r(arg) for arg in ([None,node] if sys.argv[2]=='True' else [node,None])]
+    second=heap.lift_region(p.other,_AotOnlyExports({d:getattr(m,n) for d,n in other['exports'].items()}),seeds=other['seeds'])
+    assert second(10)==12 and second.aot_calls==1 and second.fallback_calls==0,second.problem
+    print(json.dumps(dict(values=values,value=node.value,calls=p.CALLS[0],aot=r.aot_calls,jit=r.jit_calls,
+        fallback=r.fallback_calls,numba='numba' in sys.modules,seeds=len(e['seeds']),
+        policy=e.get('seed_policy'),other_policy=other.get('seed_policy'))))
+    ''', native, none_first)
+>       assert result == dict(values=[1.5,11] if none_first else [11,1.5], value=11, calls=2,
+                              aot=2, jit=0, fallback=0, numba=False, seeds=0,
+                              policy="legacy-only", other_policy="guarded")
+E       AssertionError: assert {'values': [1...'aot': 1, ...} == {'values': [1...'aot': 2, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'seeds': 1} != {'seeds': 0}
+E         {'policy': None} != {'policy': 'legacy-only'}
+E         {'other_policy': None} != {'other_policy': 'guarded'}
+E         {'aot': 1} != {'aot': 2}
+E         {'fallback': 1} != {'fallback': 0}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:669: AssertionError
+_ test_partial_seeding_preserves_legacy_native_coverage[generator-False-True] _
+
+partial_native_artifact = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/partial-native0')
+native = True, none_first = False
+
+    @pytest.mark.parametrize("native", [True, False])
+    @pytest.mark.parametrize("none_first", [True, False])
+    def test_partial_seeding_preserves_legacy_native_coverage(partial_native_artifact, native, none_first):
+        result = process(partial_native_artifact, '''import json,sys,partial as p
+    from recompyler import heap,aot
+    from recompyler.runner import _AotOnlyExports
+    heap.NATIVE=sys.argv[1]=='True'
+    s=json.load(open('artifact.json'));e,other=s['functions'];m=aot.load(s)
+    assert set(e['exports'].values()).isdisjoint(other['exports'].values())
+    r=heap.lift_region(p.choose,_AotOnlyExports({d:getattr(m,n) for d,n in e['exports'].items()}),seeds=e['seeds'])
+    node=p.Node(10)
+    values=[r(arg) for arg in ([None,node] if sys.argv[2]=='True' else [node,None])]
+    second=heap.lift_region(p.other,_AotOnlyExports({d:getattr(m,n) for d,n in other['exports'].items()}),seeds=other['seeds'])
+    assert second(10)==12 and second.aot_calls==1 and second.fallback_calls==0,second.problem
+    print(json.dumps(dict(values=values,value=node.value,calls=p.CALLS[0],aot=r.aot_calls,jit=r.jit_calls,
+        fallback=r.fallback_calls,numba='numba' in sys.modules,seeds=len(e['seeds']),
+        policy=e.get('seed_policy'),other_policy=other.get('seed_policy'))))
+    ''', native, none_first)
+>       assert result == dict(values=[1.5,11] if none_first else [11,1.5], value=11, calls=2,
+                              aot=2, jit=0, fallback=0, numba=False, seeds=0,
+                              policy="legacy-only", other_policy="guarded")
+E       AssertionError: assert {'values': [1...'aot': 1, ...} == {'values': [1...'aot': 2, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'seeds': 1} != {'seeds': 0}
+E         {'policy': None} != {'policy': 'legacy-only'}
+E         {'other_policy': None} != {'other_policy': 'guarded'}
+E         {'aot': 1} != {'aot': 2}
+E         {'fallback': 1} != {'fallback': 0}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:669: AssertionError
+_ test_partial_seeding_preserves_legacy_native_coverage[generator-False-False] _
+
+partial_native_artifact = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/partial-native0')
+native = False, none_first = False
+
+    @pytest.mark.parametrize("native", [True, False])
+    @pytest.mark.parametrize("none_first", [True, False])
+    def test_partial_seeding_preserves_legacy_native_coverage(partial_native_artifact, native, none_first):
+        result = process(partial_native_artifact, '''import json,sys,partial as p
+    from recompyler import heap,aot
+    from recompyler.runner import _AotOnlyExports
+    heap.NATIVE=sys.argv[1]=='True'
+    s=json.load(open('artifact.json'));e,other=s['functions'];m=aot.load(s)
+    assert set(e['exports'].values()).isdisjoint(other['exports'].values())
+    r=heap.lift_region(p.choose,_AotOnlyExports({d:getattr(m,n) for d,n in e['exports'].items()}),seeds=e['seeds'])
+    node=p.Node(10)
+    values=[r(arg) for arg in ([None,node] if sys.argv[2]=='True' else [node,None])]
+    second=heap.lift_region(p.other,_AotOnlyExports({d:getattr(m,n) for d,n in other['exports'].items()}),seeds=other['seeds'])
+    assert second(10)==12 and second.aot_calls==1 and second.fallback_calls==0,second.problem
+    print(json.dumps(dict(values=values,value=node.value,calls=p.CALLS[0],aot=r.aot_calls,jit=r.jit_calls,
+        fallback=r.fallback_calls,numba='numba' in sys.modules,seeds=len(e['seeds']),
+        policy=e.get('seed_policy'),other_policy=other.get('seed_policy'))))
+    ''', native, none_first)
+>       assert result == dict(values=[1.5,11] if none_first else [11,1.5], value=11, calls=2,
+                              aot=2, jit=0, fallback=0, numba=False, seeds=0,
+                              policy="legacy-only", other_policy="guarded")
+E       AssertionError: assert {'values': [1...'aot': 1, ...} == {'values': [1...'aot': 2, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'seeds': 1} != {'seeds': 0}
+E         {'policy': None} != {'policy': 'legacy-only'}
+E         {'other_policy': None} != {'other_policy': 'guarded'}
+E         {'aot': 1} != {'aot': 2}
+E         {'fallback': 1} != {'fallback': 0}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:669: AssertionError
+_ test_partial_seeding_preserves_legacy_native_coverage[mutable_default-True-True] _
+
+partial_native_artifact = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/partial-native1')
+native = True, none_first = True
+
+    @pytest.mark.parametrize("native", [True, False])
+    @pytest.mark.parametrize("none_first", [True, False])
+    def test_partial_seeding_preserves_legacy_native_coverage(partial_native_artifact, native, none_first):
+        result = process(partial_native_artifact, '''import json,sys,partial as p
+    from recompyler import heap,aot
+    from recompyler.runner import _AotOnlyExports
+    heap.NATIVE=sys.argv[1]=='True'
+    s=json.load(open('artifact.json'));e,other=s['functions'];m=aot.load(s)
+    assert set(e['exports'].values()).isdisjoint(other['exports'].values())
+    r=heap.lift_region(p.choose,_AotOnlyExports({d:getattr(m,n) for d,n in e['exports'].items()}),seeds=e['seeds'])
+    node=p.Node(10)
+    values=[r(arg) for arg in ([None,node] if sys.argv[2]=='True' else [node,None])]
+    second=heap.lift_region(p.other,_AotOnlyExports({d:getattr(m,n) for d,n in other['exports'].items()}),seeds=other['seeds'])
+    assert second(10)==12 and second.aot_calls==1 and second.fallback_calls==0,second.problem
+    print(json.dumps(dict(values=values,value=node.value,calls=p.CALLS[0],aot=r.aot_calls,jit=r.jit_calls,
+        fallback=r.fallback_calls,numba='numba' in sys.modules,seeds=len(e['seeds']),
+        policy=e.get('seed_policy'),other_policy=other.get('seed_policy'))))
+    ''', native, none_first)
+>       assert result == dict(values=[1.5,11] if none_first else [11,1.5], value=11, calls=2,
+                              aot=2, jit=0, fallback=0, numba=False, seeds=0,
+                              policy="legacy-only", other_policy="guarded")
+E       AssertionError: assert {'values': [1...'aot': 1, ...} == {'values': [1...'aot': 2, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'seeds': 1} != {'seeds': 0}
+E         {'policy': None} != {'policy': 'legacy-only'}
+E         {'other_policy': None} != {'other_policy': 'guarded'}
+E         {'aot': 1} != {'aot': 2}
+E         {'fallback': 1} != {'fallback': 0}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:669: AssertionError
+_ test_partial_seeding_preserves_legacy_native_coverage[mutable_default-True-False] _
+
+partial_native_artifact = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/partial-native1')
+native = False, none_first = True
+
+    @pytest.mark.parametrize("native", [True, False])
+    @pytest.mark.parametrize("none_first", [True, False])
+    def test_partial_seeding_preserves_legacy_native_coverage(partial_native_artifact, native, none_first):
+        result = process(partial_native_artifact, '''import json,sys,partial as p
+    from recompyler import heap,aot
+    from recompyler.runner import _AotOnlyExports
+    heap.NATIVE=sys.argv[1]=='True'
+    s=json.load(open('artifact.json'));e,other=s['functions'];m=aot.load(s)
+    assert set(e['exports'].values()).isdisjoint(other['exports'].values())
+    r=heap.lift_region(p.choose,_AotOnlyExports({d:getattr(m,n) for d,n in e['exports'].items()}),seeds=e['seeds'])
+    node=p.Node(10)
+    values=[r(arg) for arg in ([None,node] if sys.argv[2]=='True' else [node,None])]
+    second=heap.lift_region(p.other,_AotOnlyExports({d:getattr(m,n) for d,n in other['exports'].items()}),seeds=other['seeds'])
+    assert second(10)==12 and second.aot_calls==1 and second.fallback_calls==0,second.problem
+    print(json.dumps(dict(values=values,value=node.value,calls=p.CALLS[0],aot=r.aot_calls,jit=r.jit_calls,
+        fallback=r.fallback_calls,numba='numba' in sys.modules,seeds=len(e['seeds']),
+        policy=e.get('seed_policy'),other_policy=other.get('seed_policy'))))
+    ''', native, none_first)
+>       assert result == dict(values=[1.5,11] if none_first else [11,1.5], value=11, calls=2,
+                              aot=2, jit=0, fallback=0, numba=False, seeds=0,
+                              policy="legacy-only", other_policy="guarded")
+E       AssertionError: assert {'values': [1...'aot': 1, ...} == {'values': [1...'aot': 2, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'seeds': 1} != {'seeds': 0}
+E         {'policy': None} != {'policy': 'legacy-only'}
+E         {'other_policy': None} != {'other_policy': 'guarded'}
+E         {'aot': 1} != {'aot': 2}
+E         {'fallback': 1} != {'fallback': 0}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:669: AssertionError
+_ test_partial_seeding_preserves_legacy_native_coverage[mutable_default-False-True] _
+
+partial_native_artifact = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/partial-native1')
+native = True, none_first = False
+
+    @pytest.mark.parametrize("native", [True, False])
+    @pytest.mark.parametrize("none_first", [True, False])
+    def test_partial_seeding_preserves_legacy_native_coverage(partial_native_artifact, native, none_first):
+        result = process(partial_native_artifact, '''import json,sys,partial as p
+    from recompyler import heap,aot
+    from recompyler.runner import _AotOnlyExports
+    heap.NATIVE=sys.argv[1]=='True'
+    s=json.load(open('artifact.json'));e,other=s['functions'];m=aot.load(s)
+    assert set(e['exports'].values()).isdisjoint(other['exports'].values())
+    r=heap.lift_region(p.choose,_AotOnlyExports({d:getattr(m,n) for d,n in e['exports'].items()}),seeds=e['seeds'])
+    node=p.Node(10)
+    values=[r(arg) for arg in ([None,node] if sys.argv[2]=='True' else [node,None])]
+    second=heap.lift_region(p.other,_AotOnlyExports({d:getattr(m,n) for d,n in other['exports'].items()}),seeds=other['seeds'])
+    assert second(10)==12 and second.aot_calls==1 and second.fallback_calls==0,second.problem
+    print(json.dumps(dict(values=values,value=node.value,calls=p.CALLS[0],aot=r.aot_calls,jit=r.jit_calls,
+        fallback=r.fallback_calls,numba='numba' in sys.modules,seeds=len(e['seeds']),
+        policy=e.get('seed_policy'),other_policy=other.get('seed_policy'))))
+    ''', native, none_first)
+>       assert result == dict(values=[1.5,11] if none_first else [11,1.5], value=11, calls=2,
+                              aot=2, jit=0, fallback=0, numba=False, seeds=0,
+                              policy="legacy-only", other_policy="guarded")
+E       AssertionError: assert {'values': [1...'aot': 1, ...} == {'values': [1...'aot': 2, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'seeds': 1} != {'seeds': 0}
+E         {'policy': None} != {'policy': 'legacy-only'}
+E         {'other_policy': None} != {'other_policy': 'guarded'}
+E         {'aot': 1} != {'aot': 2}
+E         {'fallback': 1} != {'fallback': 0}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:669: AssertionError
+_ test_partial_seeding_preserves_legacy_native_coverage[mutable_default-False-False] _
+
+partial_native_artifact = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/heldout-fixes/.tmp/pytest-of-grant/pytest-34/partial-native1')
+native = False, none_first = False
+
+    @pytest.mark.parametrize("native", [True, False])
+    @pytest.mark.parametrize("none_first", [True, False])
+    def test_partial_seeding_preserves_legacy_native_coverage(partial_native_artifact, native, none_first):
+        result = process(partial_native_artifact, '''import json,sys,partial as p
+    from recompyler import heap,aot
+    from recompyler.runner import _AotOnlyExports
+    heap.NATIVE=sys.argv[1]=='True'
+    s=json.load(open('artifact.json'));e,other=s['functions'];m=aot.load(s)
+    assert set(e['exports'].values()).isdisjoint(other['exports'].values())
+    r=heap.lift_region(p.choose,_AotOnlyExports({d:getattr(m,n) for d,n in e['exports'].items()}),seeds=e['seeds'])
+    node=p.Node(10)
+    values=[r(arg) for arg in ([None,node] if sys.argv[2]=='True' else [node,None])]
+    second=heap.lift_region(p.other,_AotOnlyExports({d:getattr(m,n) for d,n in other['exports'].items()}),seeds=other['seeds'])
+    assert second(10)==12 and second.aot_calls==1 and second.fallback_calls==0,second.problem
+    print(json.dumps(dict(values=values,value=node.value,calls=p.CALLS[0],aot=r.aot_calls,jit=r.jit_calls,
+        fallback=r.fallback_calls,numba='numba' in sys.modules,seeds=len(e['seeds']),
+        policy=e.get('seed_policy'),other_policy=other.get('seed_policy'))))
+    ''', native, none_first)
+>       assert result == dict(values=[1.5,11] if none_first else [11,1.5], value=11, calls=2,
+                              aot=2, jit=0, fallback=0, numba=False, seeds=0,
+                              policy="legacy-only", other_policy="guarded")
+E       AssertionError: assert {'values': [1...'aot': 1, ...} == {'values': [1...'aot': 2, ...}
+E
+E         Omitting 5 identical items, use -vv to show
+E         Differing items:
+E         {'seeds': 1} != {'seeds': 0}
+E         {'policy': None} != {'policy': 'legacy-only'}
+E         {'other_policy': None} != {'other_policy': 'guarded'}
+E         {'aot': 1} != {'aot': 2}
+E         {'fallback': 1} != {'fallback': 0}
+E         Use -v to get more diff
+
+tests\test_region_reuse.py:669: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_region_reuse.py::test_invalid_family_topology_rejects_before_replay[cycle]
+FAILED tests/test_region_reuse.py::test_invalid_family_topology_rejects_before_replay[conflicting_own_root]
+FAILED tests/test_region_reuse.py::test_partial_seeding_preserves_legacy_native_coverage[generator-True-True]
+FAILED tests/test_region_reuse.py::test_partial_seeding_preserves_legacy_native_coverage[generator-True-False]
+FAILED tests/test_region_reuse.py::test_partial_seeding_preserves_legacy_native_coverage[generator-False-True]
+FAILED tests/test_region_reuse.py::test_partial_seeding_preserves_legacy_native_coverage[generator-False-False]
+FAILED tests/test_region_reuse.py::test_partial_seeding_preserves_legacy_native_coverage[mutable_default-True-True]
+FAILED tests/test_region_reuse.py::test_partial_seeding_preserves_legacy_native_coverage[mutable_default-True-False]
+FAILED tests/test_region_reuse.py::test_partial_seeding_preserves_legacy_native_coverage[mutable_default-False-True]
+FAILED tests/test_region_reuse.py::test_partial_seeding_preserves_legacy_native_coverage[mutable_default-False-False]
+10 failed, 1 passed, 46 deselected in 19.35s

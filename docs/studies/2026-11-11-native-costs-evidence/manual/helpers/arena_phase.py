@@ -1,0 +1,54 @@
+"""Task-local arena observer around the frozen repository phase worker."""
+import argparse
+import functools
+import importlib.util
+import json
+from pathlib import Path
+import sys
+
+p = argparse.ArgumentParser(description=__doc__)
+p.add_argument('--repo', type=Path, required=True)
+p.add_argument('--script', type=Path, required=True)
+p.add_argument('--plan', type=Path, required=True)
+p.add_argument('--target', required=True)
+p.add_argument('--output', type=Path, required=True)
+args = p.parse_args()
+sys.path.insert(0, str(args.repo / 'src'))
+from recompyler import heap
+spec = importlib.util.spec_from_file_location('frozen_phase_worker', args.repo / 'tools' / '_phase_worker.py')
+worker = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(worker)
+entries = []
+original = heap._Program.compile
+def compile(program, *values, **named):
+    result = original(program, *values, **named)
+    if program.entry_fn.__name__ != args.target:
+        return result
+    native = program.run
+    @functools.wraps(native)
+    def run(*passed, **kw):
+        F, I, top, st = passed[:4]
+        record = {'capacity_slots':len(F), 'top_before':int(top[0]),
+                  'digest':program.digest, 'aot':bool(program.ahead_of_time)}
+        try:
+            return native(*passed, **kw)
+        finally:
+            record.update(top_after=int(top[0]), status=int(st[0]))
+            entries.append(record)
+    program.run = run
+    return result
+heap._Program.compile = compile
+try:
+    result = worker.instrument(dict(repo=str(args.repo.resolve()), script=str(args.script.resolve()),
+        plan=str(args.plan.resolve()), function=args.target, line=None, force=True, script_args=['6']))
+finally:
+    heap._Program.compile = original
+result['arena_native_entries'] = entries
+result['arena_note'] = 'F/I alias one8byte-per-slot arena; capacity is not live bytes. top includes loaded roots plus retained transient allocations; status2 indicates growth retry. Instrumented, not headline timing.'
+result['max_capacity_bytes'] = max((e['capacity_slots']*8 for e in entries), default=0)
+result['max_top_slots'] = max((e['top_after'] for e in entries), default=0)
+result['growth_native_exits'] = sum(e['status'] == 2 for e in entries)
+args.output.parent.mkdir(parents=True, exist_ok=True)
+args.output.write_text(json.dumps(result, indent=2)+'\n')
+if result.get('error') or not entries or any(not e['aot'] for e in entries):
+    raise SystemExit('Arena/phase diagnostic failed or used non-AOT path; evidence retained.')

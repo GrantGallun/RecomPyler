@@ -1,0 +1,32 @@
+"""Recursive tuple/object return and original-object identity regression."""
+import hashlib
+import json
+
+class Node:
+    def __init__(self,value,next):
+        self.value=value
+        self.next=next
+
+def choose(node,steps):
+    if steps<=0 or node.next is None:return node,node.value
+    return choose(node.next,steps-1)
+
+def run(root,steps):
+    return choose(root,steps)
+
+root=None
+for value in range(15,-1,-1):root=Node(float(value),root)
+nodes=[];node=root
+while node is not None:
+    nodes.append(node);node=node.next
+identities=[id(n) for n in nodes];results=[]
+for index in range(8):
+    result=run(root,index)
+    assert type(result) is tuple and len(result)==2
+    assert result[0] is nodes[index] and type(result[0]) is Node
+    assert type(result[1]) is float and result[1]==float(index)
+    results.append([index,result[1].hex()])
+assert identities==[id(n) for n in nodes]
+assert all(type(n.value) is float and n.value==float(i) for i,n in enumerate(nodes))
+print('check digest',hashlib.sha256(json.dumps([results,[n.value.hex() for n in nodes]]).encode()).hexdigest())
+print('check nodes',len(nodes))

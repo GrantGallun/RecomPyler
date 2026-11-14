@@ -1,0 +1,53 @@
+define noundef i32 @_ZN32rc_heap_d23626c1a00ab6fa8be1ca0920f0_loop_recurrence16B2v1B44c8tJTIeFIjxB2IKSgI4CrvQCk0Z4yRYcWsBAK4JIagIAE5ArrayIdLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIxLi1E1C7mutable7alignedE5ArrayIhLi1E1C7mutable7alignedExxxx(ptr noalias writeonly captures(none) %retptr, ptr noalias readnone captures(none) %excinfo, ptr readnone captures(none) %arg.F.0, ptr readnone captures(none) %arg.F.1, i64 %arg.F.2, i64 %arg.F.3, ptr readnone captures(none) %arg.F.4, i64 %arg.F.5.0, i64 %arg.F.6.0, ptr readnone captures(none) %arg.I.0, ptr readnone captures(none) %arg.I.1, i64 %arg.I.2, i64 %arg.I.3, ptr readnone captures(none) %arg.I.4, i64 %arg.I.5.0, i64 %arg.I.6.0, ptr readnone captures(none) %arg.top.0, ptr readnone captures(none) %arg.top.1, i64 %arg.top.2, i64 %arg.top.3, ptr readnone captures(none) %arg.top.4, i64 %arg.top.5.0, i64 %arg.top.6.0, ptr readnone captures(none) %arg.st.0, ptr readnone captures(none) %arg.st.1, i64 %arg.st.2, i64 %arg.st.3, ptr readnone captures(none) %arg.st.4, i64 %arg.st.5.0, i64 %arg.st.6.0, i64 %arg.v_x, i64 %arg.v_y, i64 %arg.v_z, i64 %arg.v_n) local_unnamed_addr #0 {
+B0.endif:
+  %.15675.not = icmp slt i64 %arg.v_n, 1
+  br i1 %.15675.not, label %B848, label %B40.preheader
+
+B40.preheader:                                    ; preds = %B0.endif
+  %0 = add i64 %arg.v_n, 1
+  br label %B40
+
+B40:                                              ; preds = %B40.preheader, %B40
+  %lsr.iv = phi i64 [ %0, %B40.preheader ], [ %lsr.iv.next, %B40 ]
+  %v_t.17.078 = phi i64 [ %.258, %B40 ], [ %arg.v_x, %B40.preheader ]
+  %.196 = mul i64 %v_t.17.078, %arg.v_y
+  %.198 = add i64 %.196, %arg.v_z
+  %.200 = mul i64 %.198, %arg.v_y
+  %.202 = add i64 %.200, %arg.v_z
+  %.204 = mul i64 %.202, %arg.v_y
+  %.206 = add i64 %.204, %arg.v_z
+  %.208 = mul i64 %.206, %arg.v_y
+  %.210 = add i64 %.208, %arg.v_z
+  %.212 = mul i64 %.210, %arg.v_y
+  %.214 = add i64 %.212, %arg.v_z
+  %.216 = mul i64 %.214, %arg.v_y
+  %.218 = add i64 %.216, %arg.v_z
+  %.220 = mul i64 %.218, %arg.v_y
+  %.222 = add i64 %.220, %arg.v_z
+  %.224 = mul i64 %.222, %arg.v_y
+  %.226 = add i64 %.224, %arg.v_z
+  %.228 = mul i64 %.226, %arg.v_y
+  %.230 = add i64 %.228, %arg.v_z
+  %.232 = mul i64 %.230, %arg.v_y
+  %.234 = add i64 %.232, %arg.v_z
+  %.236 = mul i64 %.234, %arg.v_y
+  %.238 = add i64 %.236, %arg.v_z
+  %.240 = mul i64 %.238, %arg.v_y
+  %.242 = add i64 %.240, %arg.v_z
+  %.244 = mul i64 %.242, %arg.v_y
+  %.246 = add i64 %.244, %arg.v_z
+  %.248 = mul i64 %.246, %arg.v_y
+  %.250 = add i64 %.248, %arg.v_z
+  %.252 = mul i64 %.250, %arg.v_y
+  %.254 = add i64 %.252, %arg.v_z
+  %.256 = mul i64 %.254, %arg.v_y
+  %.258 = add i64 %.256, %arg.v_z
+  %lsr.iv.next = add i64 %lsr.iv, -1
+  %.156 = icmp samesign ugt i64 %lsr.iv.next, 1
+  br i1 %.156, label %B40, label %B848
+
+B848:                                             ; preds = %B40, %B0.endif
+  %v_t.17.0.lcssa = phi i64 [ %arg.v_x, %B0.endif ], [ %.258, %B40 ]
+  store i64 %v_t.17.0.lcssa, ptr %retptr, align 8
+  ret i32 0
+}

@@ -1,0 +1,1984 @@
+{
+  "all_verified": true,
+  "manifest_sha256": "07a61e41f7f763e55af8433a647710376406d26d56e73bf607cbcdff16b2da51",
+  "successful_process_records": 883,
+  "groups": {
+    "heldout": {
+      "fixed_population": 38,
+      "meaningful_pairs": 37,
+      "current": {
+        "speed_vs_python_geomean": 0.9651193740132307,
+        "timed_native_programs": 0,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "audit_native_programs_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "tuned": {
+      "fixed_population": 9,
+      "meaningful_pairs": 9,
+      "current": {
+        "speed_vs_python_geomean": 1.2533174315292168,
+        "timed_native_programs": 4,
+        "timing_modes": {
+          "compiled_calls": 2020,
+          "aot_calls": 2020,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "audit_native_programs_by_repetition": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    },
+    "addition": {
+      "fixed_population": 2,
+      "meaningful_pairs": 2,
+      "current": {
+        "speed_vs_python_geomean": 0.9879457114166547,
+        "timed_native_programs": 0,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "audit_native_programs_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "rows": [
+    {
+      "name": "async_generators",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.65718989999732,
+      "current": {
+        "median_s": 0.655598999997892,
+        "speed_vs_python": 1.0024266357932718,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 3.9314322999998694,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "asyncio_tcp",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 1.164009599997371,
+      "current": {
+        "median_s": 1.149428299999272,
+        "speed_vs_python": 1.0126856977491403,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 3.0079747999989195,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "asyncio_websockets",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.4877284000031068,
+      "current": {
+        "median_s": 0.5029409999988275,
+        "speed_vs_python": 0.9697527145415543,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.341932800001814,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "barnes_hut",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 1.2930651000060607,
+      "current": {
+        "median_s": 0.41543210000236286,
+        "speed_vs_python": 3.1125786861407825,
+        "timing_modes": {
+          "compiled_calls": 1000,
+          "aot_calls": 1000,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "native",
+          "native",
+          "native",
+          "native",
+          "native"
+        ],
+        "audit_totals": {
+          "aot_calls": 1000,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "profile_wall_s": 104.3094287999993,
+        "recommended_functions": 1
+      }
+    },
+    {
+      "name": "base64",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 2.6673470999958226,
+      "current": {
+        "median_s": 2.6606830999953672,
+        "speed_vs_python": 1.0025046199603656,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 4.442362300003879,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "chaos",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.22515199999907054,
+      "current": {
+        "median_s": 0.2369377000068198,
+        "speed_vs_python": 0.9502582324070419,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 10.66544459999568,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "comprehensions",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.1390255000005709,
+      "current": {
+        "median_s": 0.14606579999963287,
+        "speed_vs_python": 0.9518004899224892,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 1.7444931999998516,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "concurrent_imap",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.44354220000241185,
+      "current": {
+        "median_s": 0.4592363000047044,
+        "speed_vs_python": 0.9658256544569065,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 3.5830019999993965,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "coroutines",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 0.1651586000007228,
+      "current": {
+        "median_s": 0.17178360000252724,
+        "speed_vs_python": 0.9614340367665658,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 8.108298099999956,
+        "recommended_functions": 1
+      }
+    },
+    {
+      "name": "decimal_factorial",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.46917369999573566,
+      "current": {
+        "median_s": 0.4818146000034176,
+        "speed_vs_python": 0.9737639747579416,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.162689800003136,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "decimal_pi",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.5120816999988165,
+      "current": {
+        "median_s": 0.5155808999988949,
+        "speed_vs_python": 0.993213092261397,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.1382773000004818,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "deepcopy",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.12971240000479156,
+      "current": {
+        "median_s": 0.13729160000366392,
+        "speed_vs_python": 0.9447948745686547,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.2816609000001336,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "deltablue",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.14364609999756794,
+      "current": {
+        "median_s": 0.14772709999670042,
+        "speed_vs_python": 0.9723747369357171,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 3.1867099000010057,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "fannkuch",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 0.5730562999960966,
+      "current": {
+        "median_s": 0.2897632000021986,
+        "speed_vs_python": 1.9776710775962876,
+        "timing_modes": {
+          "compiled_calls": 10,
+          "aot_calls": 10,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "native",
+          "native",
+          "native",
+          "native",
+          "native"
+        ],
+        "audit_totals": {
+          "aot_calls": 10,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "profile_wall_s": 13.748075899995456,
+        "recommended_functions": 1
+      }
+    },
+    {
+      "name": "fastapi",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 10.525700999998662,
+      "current": {
+        "median_s": 10.740281200000027,
+        "speed_vs_python": 0.9800209886495929,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 20.738522300001932,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "float",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 0.22846690000005765,
+      "current": {
+        "median_s": 0.23764179999852786,
+        "speed_vs_python": 0.9613918931832403,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 14.24502489999577,
+        "recommended_functions": 1
+      }
+    },
+    {
+      "name": "gc_collect",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.1417490000021644,
+      "current": {
+        "median_s": 0.1553157000016654,
+        "speed_vs_python": 0.9126508137982475,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 5.415747299994109,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "gc_traversal",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.15762579999864101,
+      "current": {
+        "median_s": 0.17199369999434566,
+        "speed_vs_python": 0.9164626378979173,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 1.9683189999996102,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "generators",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.20244760000059614,
+      "current": {
+        "median_s": 0.22013910000532633,
+        "speed_vs_python": 0.9196349035482468,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 3.5963785000058124,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "hexiom",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.14341639999474864,
+      "current": {
+        "median_s": 0.1484651999999187,
+        "speed_vs_python": 0.9659933775378148,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 15.22335110000131,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "json_dumps",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.1482938999979524,
+      "current": {
+        "median_s": 0.1568466000026092,
+        "speed_vs_python": 0.9454709250661824,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 1.717571900000621,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "json_loads",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.1352139000009629,
+      "current": {
+        "median_s": 0.14191739999660058,
+        "speed_vs_python": 0.952764777287364,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.1300797000003513,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "logging",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.14180920000217156,
+      "current": {
+        "median_s": 0.1488857999938773,
+        "speed_vs_python": 0.9524696109904588,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.310128600001917,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "mdp",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 1.7799405999976443,
+      "current": {
+        "median_s": 1.7392504000017652,
+        "speed_vs_python": 1.0233952511931794,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 8.566555999997945,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "meteor_contest",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.27346449999458855,
+      "current": {
+        "median_s": 0.29303530000470346,
+        "speed_vs_python": 0.9332135070081974,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.827656000001298,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "nbody",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 0.2814349999971455,
+      "current": {
+        "median_s": 0.29451310000149533,
+        "speed_vs_python": 0.955594165406281,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 14.77753980000125,
+        "recommended_functions": 1
+      }
+    },
+    {
+      "name": "nqueens",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.25826709999819286,
+      "current": {
+        "median_s": 0.2649593999958597,
+        "speed_vs_python": 0.9747421680537794,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.5830392999996548,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "pathlib",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.6782631999958539,
+      "current": {
+        "median_s": 0.6949174000037601,
+        "speed_vs_python": 0.9760342739902381,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.2787008000013884,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "pidigits",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.4055004000038025,
+      "current": {
+        "median_s": 0.42463990000396734,
+        "speed_vs_python": 0.954927692852259,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.5080781999931787,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "pprint",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 3.036149600004137,
+      "current": {
+        "median_s": 3.106255200000305,
+        "speed_vs_python": 0.9774308305395638,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 4.5591685000035795,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "python_startup",
+      "group": "heldout",
+      "meaningful": false,
+      "plain_median_s": 0.13584789999731584,
+      "current": {
+        "median_s": 0.1437143000002834,
+        "speed_vs_python": 0.945263623710709,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 0.3352673999979743,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "raytrace",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 0.48612539999885485,
+      "current": {
+        "median_s": 0.4166019000040251,
+        "speed_vs_python": 1.1668823401769364,
+        "timing_modes": {
+          "compiled_calls": 10,
+          "aot_calls": 10,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "native",
+          "native",
+          "native",
+          "native",
+          "native"
+        ],
+        "audit_totals": {
+          "aot_calls": 10,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "profile_wall_s": 94.51331239999854,
+        "recommended_functions": 1
+      }
+    },
+    {
+      "name": "regex_compile",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.3173255000001518,
+      "current": {
+        "median_s": 0.3377623999986099,
+        "speed_vs_python": 0.9394932650924371,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.0719015000067884,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "regex_dna",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.4232045000026119,
+      "current": {
+        "median_s": 0.4299260000043432,
+        "speed_vs_python": 0.9843659141301911,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.100984899996547,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "regex_effbot",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.16620539999712491,
+      "current": {
+        "median_s": 0.17816860000311863,
+        "speed_vs_python": 0.9328546107126379,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 1.8257697999943048,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "regex_v8",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.19532559999788646,
+      "current": {
+        "median_s": 0.19421259999944596,
+        "speed_vs_python": 1.0057308331099202,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.316663300000073,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "richards",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 0.18776870000147028,
+      "current": {
+        "median_s": 0.19929940000292845,
+        "speed_vs_python": 0.9421438298294489,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 51.02643999999418,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "richards_super",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.20196579999901587,
+      "current": {
+        "median_s": 0.21262740000383928,
+        "speed_vs_python": 0.9498578263919377,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 53.6288274000035,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "scimark",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 0.8456835000033607,
+      "current": {
+        "median_s": 0.6367832000032649,
+        "speed_vs_python": 1.3280556082494397,
+        "timing_modes": {
+          "compiled_calls": 1000,
+          "aot_calls": 1000,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "native",
+          "native",
+          "native",
+          "native",
+          "native"
+        ],
+        "audit_totals": {
+          "aot_calls": 1000,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "profile_wall_s": 30.575873499998124,
+        "recommended_functions": 4
+      }
+    },
+    {
+      "name": "spectral_norm",
+      "group": "tuned",
+      "meaningful": true,
+      "plain_median_s": 0.26720750000094995,
+      "current": {
+        "median_s": 0.27798880000045756,
+        "speed_vs_python": 0.9612167828362514,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 7.210459200003243,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "sqlalchemy_declarative",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.5223620000033407,
+      "current": {
+        "median_s": 0.5352991999970982,
+        "speed_vs_python": 0.9758318338719212,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 4.162269000000379,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "sqlite_synth",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.13709080000262475,
+      "current": {
+        "median_s": 0.14732699999876786,
+        "speed_vs_python": 0.9305205427638605,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.949614199998905,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "sympy",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 1.527946599999268,
+      "current": {
+        "median_s": 1.55450700000074,
+        "speed_vs_python": 0.9829139399169903,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 7.6208011000053375,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "typing_runtime_protocols",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.14228320000256645,
+      "current": {
+        "median_s": 0.1534518000044045,
+        "speed_vs_python": 0.9272175367019645,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.6961108000032254,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "unpack_sequence",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.14660600000206614,
+      "current": {
+        "median_s": 0.14103379999869503,
+        "speed_vs_python": 1.0395096778461805,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 1.967893400003959,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "xml_etree",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.6245595000000321,
+      "current": {
+        "median_s": 0.6253058000002056,
+        "speed_vs_python": 0.9988065039534685,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 2.4543842999992194,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "yaml",
+      "group": "heldout",
+      "meaningful": true,
+      "plain_median_s": 0.15998079999553738,
+      "current": {
+        "median_s": 0.17103130000032252,
+        "speed_vs_python": 0.9353890194089368,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 1.7222712000002502,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "go",
+      "group": "addition",
+      "meaningful": true,
+      "plain_median_s": 0.2900881000023219,
+      "current": {
+        "median_s": 0.2983128999985638,
+        "speed_vs_python": 0.972428949615382,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 11.641078399996331,
+        "recommended_functions": 0
+      }
+    },
+    {
+      "name": "poker_selfplay",
+      "group": "addition",
+      "meaningful": true,
+      "plain_median_s": 0.6100061999968602,
+      "current": {
+        "median_s": 0.6077513999989606,
+        "speed_vs_python": 1.0037100696072498,
+        "timing_modes": {
+          "compiled_calls": 0,
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        },
+        "timing_statuses": [
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected",
+          "unselected"
+        ],
+        "audit_totals": {
+          "aot_calls": 0,
+          "jit_calls": 0,
+          "fallback_calls": 0,
+          "unknown_native_calls": 0,
+          "rejected_attempts": 0
+        },
+        "audit_native_by_repetition": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profile_wall_s": 4.51476890000049,
+        "recommended_functions": 0
+      }
+    }
+  ],
+  "note": "Complete successful cohort only. Raw output/exit/hash/bytecode/artifact/mode verification; no workload executed. Empty stdout is not full semantic equivalence."
+}
