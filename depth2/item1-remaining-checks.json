@@ -1,0 +1,266 @@
+[
+  {
+    "kernel": "fannkuch",
+    "function": "_rcv1_fannkuch",
+    "expression": "_rc_nadd(_rc_st, flips_count, 1)",
+    "reason": "unbounded flip count / mutable count-element range"
+  },
+  {
+    "kernel": "fannkuch",
+    "function": "_rcv1_fannkuch",
+    "expression": "_rc_sub(_rc_st, _rc_proven_getitem(_rc_st, count, r), 1)",
+    "reason": "unbounded flip count / mutable count-element range"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_lshift(_rc_st, j, 1)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_nadd(_rc_st, j, k)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_setitem(_rc_st, data, jj, tmp_real)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_setitem(_rc_st, data, _rc_add(_rc_st, jj, 1), tmp_imag)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_sub(_rc_st, j, k)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_rshift(_rc_st, k, 1)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_getitem(_rc_st, data, jj)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_getitem(_rc_st, data, _rc_add(_rc_st, jj, 1))",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_FFT_bitreverse",
+    "expression": "_rc_add(_rc_st, jj, 1)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_int_log2",
+    "expression": "_rc_nadd(_rc_st, log, 1)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv1_int_log2",
+    "expression": "_rc_lshift(_rc_st, 1, log)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_lshift(_rc_st, j, 1)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_nadd(_rc_st, j, k)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_setitem(_rc_st, data, jj, tmp_real)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_setitem(_rc_st, data, _rc_add(_rc_st, jj, 1), tmp_imag)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_sub(_rc_st, j, k)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_rshift(_rc_st, k, 1)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_getitem(_rc_st, data, jj)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_getitem(_rc_st, data, _rc_add(_rc_st, jj, 1))",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv2_FFT_bitreverse",
+    "expression": "_rc_add(_rc_st, jj, 1)",
+    "reason": "carry-dependent j/k relation not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_step(_rc_st, 2 * dual)",
+    "reason": "positive range-step client still checked"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_sub(_rc_st, _rc_sub(_rc_st, w_real, _rc_mul(_rc_st, s, w_imag)), _rc_mul(_rc_st, s2, w_real))",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_sub(_rc_st, _rc_add(_rc_st, w_imag, _rc_mul(_rc_st, s, w_real)), _rc_mul(_rc_st, s2, w_imag))",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_sub(_rc_st, _rc_proven_getitem(_rc_st, data, i), wd_real)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_sub(_rc_st, _rc_proven_getitem(_rc_st, data, i + 1), wd_imag)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_nadd(_rc_st, _rc_proven_getitem(_rc_st, data, i), wd_real)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_nadd(_rc_st, _rc_proven_getitem(_rc_st, data, i + 1), wd_imag)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_sub(_rc_st, w_real, _rc_mul(_rc_st, s, w_imag))",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_mul(_rc_st, s2, w_real)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_add(_rc_st, w_imag, _rc_mul(_rc_st, s, w_real))",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_mul(_rc_st, s2, w_imag)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_sub(_rc_st, _rc_mul(_rc_st, w_real, z1_real), _rc_mul(_rc_st, w_imag, z1_imag))",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_add(_rc_st, _rc_mul(_rc_st, w_real, z1_imag), _rc_mul(_rc_st, w_imag, z1_real))",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_mul(_rc_st, s, w_imag)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_mul(_rc_st, s, w_real)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_mul(_rc_st, w_real, z1_real)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_mul(_rc_st, w_imag, z1_imag)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_mul(_rc_st, w_real, z1_imag)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv3_FFT_transform_internal",
+    "expression": "_rc_mul(_rc_st, w_imag, z1_real)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv4_FFT_inverse",
+    "expression": "_rc_div(_rc_st, N, 2)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv4_FFT_inverse",
+    "expression": "_rc_div(_rc_st, 1, float(n))",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  },
+  {
+    "kernel": "scimark",
+    "function": "_rcv4_FFT_inverse",
+    "expression": "_rc_nmul(_rc_st, _rc_proven_getitem(_rc_st, data, i), norm)",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved"
+  }
+]

@@ -1,0 +1,1105 @@
+{
+  "population": 49,
+  "scope": "source-only generated eligibility in fixed saved selections, no timing or new deployment",
+  "rows": [
+    {
+      "program": "async_generators",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "asyncio_tcp",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "asyncio_websockets",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "barnes_hut",
+      "selected_native": true,
+      "numeric_versions": 6,
+      "details": [
+        {
+          "digest": "c39972b2996cf59b9332617626afbd30f427137b24cde22f3f16f211a96cd6c9",
+          "report": {
+            "rule": "R7",
+            "versions": [
+              {
+                "function": "f0_advance_system",
+                "fixed_function": "_kf_f0_advance_system",
+                "guards": [
+                  "v_height < -9007199254740992",
+                  "v_height > 9007199254740992",
+                  "v_width < -9007199254740992",
+                  "v_width > 9007199254740992"
+                ],
+                "range_guards": [
+                  "v_height < -9007199254740992",
+                  "v_height > 9007199254740992",
+                  "v_width < -9007199254740992",
+                  "v_width > 9007199254740992"
+                ],
+                "kind": "entry-conversions",
+                "fact_state": "proven"
+              },
+              {
+                "function": "f21_apply_force",
+                "fixed_function": "_kf_f21_apply_force",
+                "guards": [
+                  "v_fx_1",
+                  "v_fy_1"
+                ],
+                "range_guards": [],
+                "kind": "fixed-inputs",
+                "fact_state": "guarded"
+              },
+              {
+                "function": "sr4_f8_calculate_force",
+                "fixed_function": "_kf_sr4_f8_calculate_force",
+                "guards": [
+                  "v_sr0_I10 != 0"
+                ],
+                "range_guards": [],
+                "kind": "fixed-inputs",
+                "fact_state": "guarded"
+              }
+            ],
+            "direct_edges": [],
+            "blocked": []
+          },
+          "function_origins": {
+            "f0_advance_system": "advance_system",
+            "f2___init__": "Rectangle.__init__",
+            "f4___init__": "QuadTree.__init__",
+            "f6_insert": "QuadTree.insert",
+            "f8_calculate_force": "QuadTree.calculate_force",
+            "f21_apply_force": "Particle.apply_force",
+            "f12_update": "Particle.update",
+            "f14___init__": "Point.__init__",
+            "f16_contains": "Rectangle.contains",
+            "f18_update_mass_distribution": "QuadTree.update_mass_distribution",
+            "f20_subdivide": "QuadTree.subdivide",
+            "sr0_f4___init__": "QuadTree.__init__",
+            "sr1_f6_insert": "QuadTree.insert",
+            "sr2_f18_update_mass_distribution": "QuadTree.update_mass_distribution",
+            "sr3_f20_subdivide": "QuadTree.subdivide",
+            "sr4_f8_calculate_force": "QuadTree.calculate_force",
+            "_kf_f0_advance_system": "advance_system",
+            "_kf_f21_apply_force": "Particle.apply_force",
+            "_kf_sr4_f8_calculate_force": "QuadTree.calculate_force"
+          },
+          "mixed_fields": {
+            "Particle": [],
+            "Point": [
+              "x",
+              "y"
+            ],
+            "Rectangle": [],
+            "QuadTree": [
+              "total_mass"
+            ]
+          },
+          "comparison_source_count": 54
+        },
+        {
+          "digest": "d3b38716c0823243157dc6fb31f4a97deb55d07f65a7d057e2bc4896f40a2b78",
+          "report": {
+            "rule": "R7",
+            "versions": [
+              {
+                "function": "f0_advance_system",
+                "fixed_function": "_kf_f0_advance_system",
+                "guards": [
+                  "v_height < -9007199254740992",
+                  "v_height > 9007199254740992",
+                  "v_width < -9007199254740992",
+                  "v_width > 9007199254740992"
+                ],
+                "range_guards": [
+                  "v_height < -9007199254740992",
+                  "v_height > 9007199254740992",
+                  "v_width < -9007199254740992",
+                  "v_width > 9007199254740992"
+                ],
+                "kind": "entry-conversions",
+                "fact_state": "proven"
+              },
+              {
+                "function": "f21_apply_force",
+                "fixed_function": "_kf_f21_apply_force",
+                "guards": [
+                  "v_fx_1",
+                  "v_fy_1"
+                ],
+                "range_guards": [],
+                "kind": "fixed-inputs",
+                "fact_state": "guarded"
+              },
+              {
+                "function": "sr4_f24_calculate_force",
+                "fixed_function": "_kf_sr4_f24_calculate_force",
+                "guards": [
+                  "v_sr0_I10 != 0"
+                ],
+                "range_guards": [],
+                "kind": "fixed-inputs",
+                "fact_state": "guarded"
+              }
+            ],
+            "direct_edges": [],
+            "blocked": []
+          },
+          "function_origins": {
+            "f0_advance_system": "advance_system",
+            "f2___init__": "Rectangle.__init__",
+            "f22___init__": "QuadTree.__init__",
+            "f23_insert": "QuadTree.insert",
+            "f24_calculate_force": "QuadTree.calculate_force",
+            "f21_apply_force": "Particle.apply_force",
+            "f12_update": "Particle.update",
+            "f14___init__": "Point.__init__",
+            "f25_contains": "Rectangle.contains",
+            "f26_update_mass_distribution": "QuadTree.update_mass_distribution",
+            "f20_subdivide": "QuadTree.subdivide",
+            "sr0_f22___init__": "QuadTree.__init__",
+            "sr1_f23_insert": "QuadTree.insert",
+            "sr2_f26_update_mass_distribution": "QuadTree.update_mass_distribution",
+            "sr3_f20_subdivide": "QuadTree.subdivide",
+            "sr4_f24_calculate_force": "QuadTree.calculate_force",
+            "_kf_f0_advance_system": "advance_system",
+            "_kf_f21_apply_force": "Particle.apply_force",
+            "_kf_sr4_f24_calculate_force": "QuadTree.calculate_force"
+          },
+          "mixed_fields": {
+            "Particle": [],
+            "Point": [
+              "x",
+              "y"
+            ],
+            "Rectangle": [],
+            "QuadTree": [
+              "total_mass"
+            ]
+          },
+          "comparison_source_count": 54
+        }
+      ],
+      "status": "existing selected native"
+    },
+    {
+      "program": "base64",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "chaos",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "comprehensions",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "concurrent_imap",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "coroutines",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "decimal_factorial",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "decimal_pi",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "deepcopy",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "deltablue",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "fannkuch",
+      "selected_native": true,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "existing selected native"
+    },
+    {
+      "program": "fastapi",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "float",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "gc_collect",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "gc_traversal",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "generators",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "go",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "hexiom",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "json_dumps",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "json_loads",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "logging",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "mdp",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "meteor_contest",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "nbody",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "nqueens",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "pathlib",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "pidigits",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "poker_selfplay",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "pprint",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "python_startup",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "raytrace",
+      "selected_native": true,
+      "numeric_versions": 31,
+      "details": [
+        {
+          "rule": "R7",
+          "versions": [
+            {
+              "function": "f2___sub__",
+              "fixed_function": "_kf_f2___sub__",
+              "guards": [
+                "I[np.uint64(v_other + 0 + 1)] != 0",
+                "I[np.uint64(v_other + 2 + 1)] != 0",
+                "I[np.uint64(v_other + 4 + 1)] != 0",
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f24_cross",
+              "fixed_function": "_kf_f24_cross",
+              "guards": [
+                "I[np.uint64(v_other + 0 + 1)] != 0",
+                "I[np.uint64(v_other + 2 + 1)] != 0",
+                "I[np.uint64(v_other + 4 + 1)] != 0",
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f21_scale",
+              "fixed_function": "_kf_f21_scale",
+              "guards": [
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f27___add__",
+              "fixed_function": "_kf_f27___add__",
+              "guards": [
+                "I[np.uint64(v_other + 0 + 1)] != 0",
+                "I[np.uint64(v_other + 2 + 1)] != 0",
+                "I[np.uint64(v_other + 4 + 1)] != 0",
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f71_plot",
+              "fixed_function": "_kf_f71_plot",
+              "guards": [
+                "v_b_1",
+                "v_g_1",
+                "v_r_1"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f32_intersectionTime",
+              "fixed_function": "_kf_f32_intersectionTime",
+              "guards": [
+                "I[np.uint64(v_self + 2 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f18_dot",
+              "fixed_function": "_kf_f18_dot",
+              "guards": [
+                "I[np.uint64(v_other + 0 + 1)] != 0",
+                "I[np.uint64(v_other + 2 + 1)] != 0",
+                "I[np.uint64(v_other + 4 + 1)] != 0",
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f16_scale",
+              "fixed_function": "_kf_f16_scale",
+              "guards": [
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f48___add__",
+              "fixed_function": "_kf_f48___add__",
+              "guards": [
+                "I[np.uint64(v_other + 0 + 1)] != 0",
+                "I[np.uint64(v_other + 2 + 1)] != 0",
+                "I[np.uint64(v_other + 4 + 1)] != 0",
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f67_addColours",
+              "fixed_function": "_kf_f67_addColours",
+              "guards": [
+                "v_a_1",
+                "v_a_3",
+                "v_a_5",
+                "v_b_1",
+                "v_b_3",
+                "v_b_5"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f64_scale",
+              "fixed_function": "_kf_f64_scale",
+              "guards": [
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0",
+                "v_factor_1"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f68_scale",
+              "fixed_function": "_kf_f68_scale",
+              "guards": [
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0",
+                "v_factor < -9007199254740992",
+                "v_factor > 9007199254740992"
+              ],
+              "range_guards": [
+                "v_factor < -9007199254740992",
+                "v_factor > 9007199254740992"
+              ],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f70___sub__",
+              "fixed_function": "_kf_f70___sub__",
+              "guards": [
+                "I[np.uint64(v_other + 0 + 1)] != 0",
+                "I[np.uint64(v_other + 2 + 1)] != 0",
+                "I[np.uint64(v_other + 4 + 1)] != 0",
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr8_f18_dot",
+              "fixed_function": "_kf_sr8_f18_dot",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr9_f18_dot",
+              "fixed_function": "_kf_sr9_f18_dot",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr14_f48___add__",
+              "fixed_function": "_kf_sr14_f48___add__",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr20_f64_scale",
+              "fixed_function": "_kf_sr20_f64_scale",
+              "guards": [
+                "v_factor_1"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr22_f68_scale",
+              "fixed_function": "_kf_sr22_f68_scale",
+              "guards": [
+                "v_factor < -9007199254740992",
+                "v_factor > 9007199254740992",
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [
+                "v_factor < -9007199254740992",
+                "v_factor > 9007199254740992"
+              ],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr23_f70___sub__",
+              "fixed_function": "_kf_sr23_f70___sub__",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr27_f21_scale",
+              "fixed_function": "_kf_sr27_f21_scale",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr28_f21_scale",
+              "fixed_function": "_kf_sr28_f21_scale",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr38_f24_cross",
+              "fixed_function": "_kf_sr38_f24_cross",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr41_f27___add__",
+              "fixed_function": "_kf_sr41_f27___add__",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr43_f27___add__",
+              "fixed_function": "_kf_sr43_f27___add__",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0",
+                "v_sr1_I1 != 0",
+                "v_sr1_I3 != 0",
+                "v_sr1_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr45_f70___sub__",
+              "fixed_function": "_kf_sr45_f70___sub__",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f12_normalized",
+              "fixed_function": "_kf_f12_normalized",
+              "guards": [
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f14_magnitude",
+              "fixed_function": "_kf_f14_magnitude",
+              "guards": [
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "f60_reflectThrough",
+              "fixed_function": "_kf_f60_reflectThrough",
+              "guards": [
+                "I[np.uint64(v_normal + 0 + 1)] != 0",
+                "I[np.uint64(v_normal + 2 + 1)] != 0",
+                "I[np.uint64(v_normal + 4 + 1)] != 0",
+                "I[np.uint64(v_self + 0 + 1)] != 0",
+                "I[np.uint64(v_self + 2 + 1)] != 0",
+                "I[np.uint64(v_self + 4 + 1)] != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr25_f12_normalized",
+              "fixed_function": "_kf_sr25_f12_normalized",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr26_f14_magnitude",
+              "fixed_function": "_kf_sr26_f14_magnitude",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            },
+            {
+              "function": "sr29_f12_normalized",
+              "fixed_function": "_kf_sr29_f12_normalized",
+              "guards": [
+                "v_sr0_I1 != 0",
+                "v_sr0_I3 != 0",
+                "v_sr0_I5 != 0"
+              ],
+              "range_guards": [],
+              "kind": "fixed-inputs",
+              "fact_state": "guarded"
+            }
+          ],
+          "direct_edges": [
+            [
+              "f12_normalized",
+              "f14_magnitude"
+            ],
+            [
+              "f12_normalized",
+              "f21_scale"
+            ],
+            [
+              "f14_magnitude",
+              "f18_dot"
+            ],
+            [
+              "f60_reflectThrough",
+              "f18_dot"
+            ],
+            [
+              "sr25_f12_normalized",
+              "sr26_f14_magnitude"
+            ],
+            [
+              "sr25_f12_normalized",
+              "sr27_f21_scale"
+            ],
+            [
+              "sr26_f14_magnitude",
+              "sr9_f18_dot"
+            ],
+            [
+              "sr29_f12_normalized",
+              "sr26_f14_magnitude"
+            ],
+            [
+              "sr29_f12_normalized",
+              "sr28_f21_scale"
+            ]
+          ],
+          "blocked": [],
+          "function_origins": {
+            "f0_render": "Scene.render",
+            "f2___sub__": "Point.__sub__",
+            "f10___init__": "Ray.__init__",
+            "f24_cross": "Vector.cross",
+            "f12_normalized": "Vector.normalized",
+            "f21_scale": "Vector.scale",
+            "f27___add__": "Vector.__add__",
+            "f30_rayColour": "Scene.rayColour",
+            "f71_plot": "Canvas.plot",
+            "f7_isPoint": "Point.isPoint",
+            "f25___init__": "Vector.__init__",
+            "f20_mustBeVector": "Vector.mustBeVector",
+            "f14_magnitude": "Vector.magnitude",
+            "f22___init__": "Vector.__init__",
+            "f29_isPoint": "Vector.isPoint",
+            "f32_intersectionTime": "Sphere.intersectionTime",
+            "f34_intersectionTime": "Halfspace.intersectionTime",
+            "f36_firstIntersection": "firstIntersection",
+            "f38_pointAtTime": "Ray.pointAtTime",
+            "f51_normalAt": "Sphere.normalAt",
+            "f52_normalAt": "Halfspace.normalAt",
+            "f54_colourAt": "SimpleSurface.colourAt",
+            "f18_dot": "Vector.dot",
+            "f16_scale": "Vector.scale",
+            "f48___add__": "Point.__add__",
+            "f56_baseColourAt": "SimpleSurface.baseColourAt",
+            "f58_baseColourAt": "CheckerboardSurface.baseColourAt",
+            "f60_reflectThrough": "Vector.reflectThrough",
+            "f67_addColours": "addColours",
+            "f63_visibleLights": "Scene.visibleLights",
+            "f50___init__": "Point.__init__",
+            "f64_scale": "Vector.scale",
+            "f68_scale": "Vector.scale",
+            "f70___sub__": "Vector.__sub__",
+            "f66__lightIsVisible": "Scene._lightIsVisible",
+            "sr3_f22___init__": "Vector.__init__",
+            "sr4_f30_rayColour": "Scene.rayColour",
+            "sr5_f32_intersectionTime": "Sphere.intersectionTime",
+            "sr6_f2___sub__": "Point.__sub__",
+            "sr7_f25___init__": "Vector.__init__",
+            "sr8_f18_dot": "Vector.dot",
+            "sr9_f18_dot": "Vector.dot",
+            "sr10_f20_mustBeVector": "Vector.mustBeVector",
+            "sr11_f34_intersectionTime": "Halfspace.intersectionTime",
+            "sr12_f38_pointAtTime": "Ray.pointAtTime",
+            "sr13_f16_scale": "Vector.scale",
+            "sr14_f48___add__": "Point.__add__",
+            "sr17_f54_colourAt": "SimpleSurface.colourAt",
+            "sr18_f60_reflectThrough": "Vector.reflectThrough",
+            "sr20_f64_scale": "Vector.scale",
+            "sr22_f68_scale": "Vector.scale",
+            "sr23_f70___sub__": "Vector.__sub__",
+            "sr25_f12_normalized": "Vector.normalized",
+            "sr26_f14_magnitude": "Vector.magnitude",
+            "sr27_f21_scale": "Vector.scale",
+            "sr28_f21_scale": "Vector.scale",
+            "sr29_f12_normalized": "Vector.normalized",
+            "sr30_f10___init__": "Ray.__init__",
+            "sr36_f24_cross": "Vector.cross",
+            "sr38_f24_cross": "Vector.cross",
+            "sr40_f29_isPoint": "Vector.isPoint",
+            "sr41_f27___add__": "Vector.__add__",
+            "sr43_f27___add__": "Vector.__add__",
+            "sr45_f70___sub__": "Vector.__sub__",
+            "_kf_f2___sub__": "Point.__sub__",
+            "_kf_f24_cross": "Vector.cross",
+            "_kf_f21_scale": "Vector.scale",
+            "_kf_f27___add__": "Vector.__add__",
+            "_kf_f71_plot": "Canvas.plot",
+            "_kf_f32_intersectionTime": "Sphere.intersectionTime",
+            "_kf_f18_dot": "Vector.dot",
+            "_kf_f16_scale": "Vector.scale",
+            "_kf_f48___add__": "Point.__add__",
+            "_kf_f67_addColours": "addColours",
+            "_kf_f64_scale": "Vector.scale",
+            "_kf_f68_scale": "Vector.scale",
+            "_kf_f70___sub__": "Vector.__sub__",
+            "_kf_sr8_f18_dot": "Vector.dot",
+            "_kf_sr9_f18_dot": "Vector.dot",
+            "_kf_sr14_f48___add__": "Point.__add__",
+            "_kf_sr20_f64_scale": "Vector.scale",
+            "_kf_sr22_f68_scale": "Vector.scale",
+            "_kf_sr23_f70___sub__": "Vector.__sub__",
+            "_kf_sr27_f21_scale": "Vector.scale",
+            "_kf_sr28_f21_scale": "Vector.scale",
+            "_kf_sr38_f24_cross": "Vector.cross",
+            "_kf_sr41_f27___add__": "Vector.__add__",
+            "_kf_sr43_f27___add__": "Vector.__add__",
+            "_kf_sr45_f70___sub__": "Vector.__sub__",
+            "_kf_f12_normalized": "Vector.normalized",
+            "_kf_f14_magnitude": "Vector.magnitude",
+            "_kf_f60_reflectThrough": "Vector.reflectThrough",
+            "_kf_sr25_f12_normalized": "Vector.normalized",
+            "_kf_sr26_f14_magnitude": "Vector.magnitude",
+            "_kf_sr29_f12_normalized": "Vector.normalized"
+          }
+        }
+      ],
+      "status": "existing selected native"
+    },
+    {
+      "program": "regex_compile",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "regex_dna",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "regex_effbot",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "regex_v8",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "richards",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "richards_super",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "scimark",
+      "selected_native": true,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "existing selected native"
+    },
+    {
+      "program": "spectral_norm",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "sqlalchemy_declarative",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "sqlite_synth",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "sympy",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "unpack_sequence",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "xml_etree",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    },
+    {
+      "program": "yaml",
+      "selected_native": false,
+      "numeric_versions": 0,
+      "details": [],
+      "status": "no selected region; no new deployment"
+    }
+  ],
+  "ray_unique_original_functions": [
+    "f12_normalized",
+    "f14_magnitude",
+    "f16_scale",
+    "f18_dot",
+    "f21_scale",
+    "f24_cross",
+    "f27___add__",
+    "f2___sub__",
+    "f32_intersectionTime",
+    "f48___add__",
+    "f60_reflectThrough",
+    "f64_scale",
+    "f67_addColours",
+    "f68_scale",
+    "f70___sub__",
+    "f71_plot"
+  ],
+  "ray_version_contexts": 31,
+  "ray_direct_edges": 9,
+  "emitted_version_contexts_total": 37,
+  "unique_functions_by_workload": {
+    "raytrace": [
+      "Canvas.plot",
+      "Point.__add__",
+      "Point.__sub__",
+      "Sphere.intersectionTime",
+      "Vector.__add__",
+      "Vector.__sub__",
+      "Vector.cross",
+      "Vector.dot",
+      "Vector.magnitude",
+      "Vector.normalized",
+      "Vector.reflectThrough",
+      "Vector.scale",
+      "addColours"
+    ],
+    "barnes_hut": [
+      "Particle.apply_force",
+      "QuadTree.calculate_force",
+      "advance_system"
+    ]
+  }
+}

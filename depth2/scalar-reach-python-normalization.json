@@ -1,0 +1,102 @@
+{
+  "scope": "normalize already accepted R8 typed allocation contexts to original Python functions using final unchanged original function mapping; no new execution",
+  "ray_rows": [
+    {
+      "typed_site": "f2___sub__:t17",
+      "python_function": "Point.__sub__",
+      "removed_bumps": 277865,
+      "baseline_bumps": 277865,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f0_render:t17",
+      "python_function": "Scene.render",
+      "removed_bumps": 1,
+      "baseline_bumps": 1,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f21_scale:t7",
+      "python_function": "Vector.scale",
+      "removed_bumps": 34095,
+      "baseline_bumps": 133743,
+      "remaining_bumps": 99648
+    },
+    {
+      "typed_site": "f24_cross:t36",
+      "python_function": "Vector.cross",
+      "removed_bumps": 2,
+      "baseline_bumps": 2,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f27___add__:t17",
+      "python_function": "Vector.__add__",
+      "removed_bumps": 20000,
+      "baseline_bumps": 20000,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f0_render:t44",
+      "python_function": "Scene.render",
+      "removed_bumps": 10000,
+      "baseline_bumps": 10000,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f16_scale:t7",
+      "python_function": "Vector.scale",
+      "removed_bumps": 5333,
+      "baseline_bumps": 5333,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f64_scale:t10",
+      "python_function": "Vector.scale",
+      "removed_bumps": 5333,
+      "baseline_bumps": 5333,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f68_scale:t13",
+      "python_function": "Vector.scale",
+      "removed_bumps": 5333,
+      "baseline_bumps": 5333,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f70___sub__:t18",
+      "python_function": "Vector.__sub__",
+      "removed_bumps": 5333,
+      "baseline_bumps": 5333,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f54_colourAt:t16",
+      "python_function": "SimpleSurface.colourAt",
+      "removed_bumps": 5333,
+      "baseline_bumps": 5333,
+      "remaining_bumps": 0
+    },
+    {
+      "typed_site": "f66__lightIsVisible:t9",
+      "python_function": "Scene._lightIsVisible",
+      "removed_bumps": 82838,
+      "baseline_bumps": 82838,
+      "remaining_bumps": 0
+    }
+  ],
+  "ray_typed_sites": 12,
+  "ray_python_functions": [
+    "Point.__sub__",
+    "Scene._lightIsVisible",
+    "Scene.render",
+    "SimpleSurface.colourAt",
+    "Vector.__add__",
+    "Vector.__sub__",
+    "Vector.cross",
+    "Vector.scale"
+  ],
+  "total_removed": 451466,
+  "barnes_additional_site_function": "advance_system: root QuadTree allocation,100bumps"
+}

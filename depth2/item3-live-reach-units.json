@@ -1,0 +1,40 @@
+{
+  "emitted_contexts": 37,
+  "emitted_python_functions_by_workload": {
+    "raytrace": [
+      "Canvas.plot",
+      "Point.__add__",
+      "Point.__sub__",
+      "Sphere.intersectionTime",
+      "Vector.__add__",
+      "Vector.__sub__",
+      "Vector.cross",
+      "Vector.dot",
+      "Vector.magnitude",
+      "Vector.normalized",
+      "Vector.reflectThrough",
+      "Vector.scale",
+      "addColours"
+    ],
+    "barnes_hut": [
+      "Particle.apply_force",
+      "QuadTree.calculate_force",
+      "advance_system"
+    ]
+  },
+  "ray_actual_nonzero_fixed_contexts": 17,
+  "ray_actual_python_functions": {
+    "Vector.normalized": 109885,
+    "Vector.magnitude": 109885,
+    "Vector.dot": 369869,
+    "Vector.scale": 144408,
+    "Vector.cross": 1,
+    "Vector.__add__": 20000,
+    "Point.__add__": 5333,
+    "Vector.__sub__": 5333,
+    "Canvas.plot": 3789,
+    "addColours": 756
+  },
+  "remaining_predicates": 431538,
+  "scope": "native selected outer regions tested by acceptance, inner fixed entries counted in separately gated checkedIR; Barnes inner version dynamic entries not measured"
+}

@@ -1,0 +1,842 @@
+{
+  "scope": "fixed saved49selections; frozen a+b+c source proof reach, no new native deployment",
+  "rows": [
+    {
+      "program": "async_generators",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "asyncio_tcp",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "asyncio_websockets",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "barnes_hut",
+      "selected_native": true,
+      "r8_selected_source_sites": 1,
+      "direct_source_analysis_not_new_deployment": {
+        "rule": "R8",
+        "fresh_sites": [],
+        "removed_sites": [
+          {
+            "site": "f0_advance_system:t10",
+            "class": "b",
+            "record": "QuadTree"
+          }
+        ],
+        "blocked": [],
+        "field_clones": [
+          "sr0_f4___init__",
+          "sr1_f6_insert",
+          "sr2_f18_update_mass_distribution",
+          "sr3_f20_subdivide",
+          "sr4_f8_calculate_force"
+        ],
+        "fresh_return_clones": [],
+        "classes_enabled": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "status": "selected native region"
+    },
+    {
+      "program": "base64",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "chaos",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {
+        "rule": "R8",
+        "fresh_sites": [
+          {
+            "site": "f4_transform_point:t45_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f4_transform_point:t55_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f13___call__:t80_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t80_0"
+          },
+          {
+            "site": "f20___sub__:t2_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f20___sub__:t4_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t4_0"
+          }
+        ],
+        "removed_sites": [],
+        "blocked": [
+          {
+            "site": "f0_create_image_chaos:t14",
+            "unknown": "F2/F5 pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f4_transform_point:t45_0",
+            "unknown": "F5 pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f4_transform_point:t55_0",
+            "unknown": "F5 pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f13___call__:t80_0",
+            "unknown": "F5 unrecognized pointer use t80_0"
+          },
+          {
+            "site": "f20___sub__:t4_0",
+            "unknown": "F5 unrecognized pointer use t4_0"
+          }
+        ],
+        "field_clones": [
+          "sr2_f23___mul__",
+          "sr3_f24___init__",
+          "sr4_f26___add__"
+        ],
+        "fresh_return_clones": [
+          "sr2_f23___mul__"
+        ],
+        "classes_enabled": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "status": "no selected native region"
+    },
+    {
+      "program": "comprehensions",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "concurrent_imap",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "coroutines",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "decimal_factorial",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "decimal_pi",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "deepcopy",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "deltablue",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "fannkuch",
+      "selected_native": true,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "selected native region"
+    },
+    {
+      "program": "fastapi",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "float",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {
+        "rule": "R8",
+        "fresh_sites": [],
+        "removed_sites": [],
+        "blocked": [],
+        "field_clones": [],
+        "fresh_return_clones": [],
+        "classes_enabled": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "status": "no selected native region"
+    },
+    {
+      "program": "gc_collect",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "gc_traversal",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "generators",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "go",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {
+        "removed_sites": [],
+        "blocked": [
+          {
+            "unknown": "'Board.__init__' uses the new object before setting all its attributes"
+          }
+        ],
+        "typed_region_declined": true
+      },
+      "status": "no selected native region"
+    },
+    {
+      "program": "hexiom",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "json_dumps",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "json_loads",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "logging",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "mdp",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "meteor_contest",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "nbody",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {
+        "removed_sites": [],
+        "blocked": [
+          {
+            "unknown": "a power other than ** 2 at line 8 of 'advance'"
+          }
+        ],
+        "typed_region_declined": true
+      },
+      "status": "no selected native region"
+    },
+    {
+      "program": "nqueens",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "pathlib",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "pidigits",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "poker_selfplay",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "pprint",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "python_startup",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "raytrace",
+      "selected_native": true,
+      "r8_selected_source_sites": 4,
+      "direct_source_analysis_not_new_deployment": {
+        "rule": "R8",
+        "fresh_sites": [
+          {
+            "site": "sr5_f32_intersectionTime:t4_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr12_f38_pointAtTime:t4_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr12_f38_pointAtTime:t6_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t6_0"
+          },
+          {
+            "site": "sr18_f60_reflectThrough:t4_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr18_f60_reflectThrough:t6_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr18_f60_reflectThrough:t8_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr25_f12_normalized:t5_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t5_0"
+          },
+          {
+            "site": "sr29_f12_normalized:t5_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr17_f54_colourAt:t15_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr17_f54_colourAt:t28_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr17_f54_colourAt:t30_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "sr30_f10___init__:t2_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t2_0"
+          },
+          {
+            "site": "sr4_f30_rayColour:t43_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unknown returned object may alias virtual parameter"
+          },
+          {
+            "site": "sr4_f30_rayColour:t48_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f0_render:t16_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f0_render:t20_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f0_render:t22_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f0_render:t25_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f0_render:t27_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f0_render:t35_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f0_render:t37_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f0_render:t41_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f0_render:t43_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f10___init__:t2_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t2_0"
+          },
+          {
+            "site": "f12_normalized:t5_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t5_0"
+          },
+          {
+            "site": "f30_rayColour:t43_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unknown returned object may alias virtual parameter"
+          },
+          {
+            "site": "f30_rayColour:t48_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f32_intersectionTime:t4_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f38_pointAtTime:t4_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f38_pointAtTime:t6_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t6_0"
+          },
+          {
+            "site": "f51_normalAt:t3_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f51_normalAt:t5_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t5_0"
+          },
+          {
+            "site": "f54_colourAt:t15_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f54_colourAt:t28_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f54_colourAt:t30_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f58_baseColourAt:t2_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f58_baseColourAt:t6_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f60_reflectThrough:t4_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f60_reflectThrough:t6_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          },
+          {
+            "site": "f60_reflectThrough:t8_0",
+            "fact": "F5",
+            "state": "blocked",
+            "unknown": "unrecognized pointer use t8_0"
+          },
+          {
+            "site": "f66__lightIsVisible:t8_0",
+            "fact": "F5",
+            "state": "fired",
+            "unknown": ""
+          }
+        ],
+        "removed_sites": [
+          {
+            "site": "f0_render:t17",
+            "class": "a",
+            "record": "Ray"
+          },
+          {
+            "site": "f0_render:t44",
+            "class": "b",
+            "record": "Ray"
+          },
+          {
+            "site": "f54_colourAt:t16",
+            "class": "b",
+            "record": "Ray"
+          },
+          {
+            "site": "f66__lightIsVisible:t9",
+            "class": "b",
+            "record": "Ray"
+          }
+        ],
+        "blocked": [
+          {
+            "site": "sr12_f38_pointAtTime:t6_0",
+            "unknown": "F5 unrecognized pointer use t6_0"
+          },
+          {
+            "site": "sr25_f12_normalized:t5_0",
+            "unknown": "F5 unrecognized pointer use t5_0"
+          },
+          {
+            "site": "sr30_f10___init__:t2_0",
+            "unknown": "F5 unrecognized pointer use t2_0"
+          },
+          {
+            "site": "sr4_f30_rayColour:t43_0",
+            "unknown": "F5 unknown returned object may alias virtual parameter"
+          },
+          {
+            "site": "sr4_f30_rayColour:t48_0",
+            "unknown": "F5 pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f10___init__:t2_0",
+            "unknown": "F5 unrecognized pointer use t2_0"
+          },
+          {
+            "site": "f12_normalized:t5_0",
+            "unknown": "F5 unrecognized pointer use t5_0"
+          },
+          {
+            "site": "f30_rayColour:t43_0",
+            "unknown": "F5 unknown returned object may alias virtual parameter"
+          },
+          {
+            "site": "f30_rayColour:t48_0",
+            "unknown": "F5 pointer merge mixes virtual identities"
+          },
+          {
+            "site": "f38_pointAtTime:t6_0",
+            "unknown": "F5 unrecognized pointer use t6_0"
+          },
+          {
+            "site": "f51_normalAt:t5_0",
+            "unknown": "F5 unrecognized pointer use t5_0"
+          },
+          {
+            "site": "f60_reflectThrough:t8_0",
+            "unknown": "F5 unrecognized pointer use t8_0"
+          }
+        ],
+        "field_clones": [
+          "sr10_f20_mustBeVector",
+          "sr11_f34_intersectionTime",
+          "sr12_f38_pointAtTime",
+          "sr13_f16_scale",
+          "sr14_f48___add__",
+          "sr17_f54_colourAt",
+          "sr18_f60_reflectThrough",
+          "sr20_f64_scale",
+          "sr22_f68_scale",
+          "sr23_f70___sub__",
+          "sr25_f12_normalized",
+          "sr26_f14_magnitude",
+          "sr27_f21_scale",
+          "sr28_f21_scale",
+          "sr29_f12_normalized",
+          "sr30_f10___init__",
+          "sr36_f24_cross",
+          "sr38_f24_cross",
+          "sr3_f22___init__",
+          "sr40_f29_isPoint",
+          "sr41_f27___add__",
+          "sr43_f27___add__",
+          "sr45_f70___sub__",
+          "sr4_f30_rayColour",
+          "sr5_f32_intersectionTime",
+          "sr6_f2___sub__",
+          "sr7_f25___init__",
+          "sr8_f18_dot",
+          "sr9_f18_dot"
+        ],
+        "fresh_return_clones": [
+          "sr13_f16_scale",
+          "sr18_f60_reflectThrough",
+          "sr20_f64_scale",
+          "sr22_f68_scale",
+          "sr23_f70___sub__",
+          "sr28_f21_scale",
+          "sr29_f12_normalized",
+          "sr36_f24_cross",
+          "sr38_f24_cross",
+          "sr41_f27___add__",
+          "sr43_f27___add__",
+          "sr6_f2___sub__"
+        ],
+        "classes_enabled": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "status": "selected native region"
+    },
+    {
+      "program": "regex_compile",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "regex_dna",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "regex_effbot",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "regex_v8",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "richards",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "richards_super",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "scimark",
+      "selected_native": true,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "selected native region"
+    },
+    {
+      "program": "spectral_norm",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "sqlalchemy_declarative",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "sqlite_synth",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "sympy",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "unpack_sequence",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "xml_etree",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    },
+    {
+      "program": "yaml",
+      "selected_native": false,
+      "r8_selected_source_sites": 0,
+      "direct_source_analysis_not_new_deployment": {},
+      "status": "no selected native region"
+    }
+  ]
+}

@@ -1,0 +1,561 @@
+{
+  "population": 49,
+  "scope": "fixed saved selections, actual frozen owner-v1 compiled source reports; no new selector/profile deployment",
+  "workloads": 1,
+  "functions": 1,
+  "sites": 1,
+  "contributors": [
+    {
+      "program": "fannkuch",
+      "function": "fannkuch",
+      "sites": 1
+    }
+  ],
+  "rows": [
+    {
+      "program": "async_generators",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "asyncio_tcp",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "asyncio_websockets",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "barnes_hut",
+      "selected_native": true,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "selected heap backend, R4 lift rule not applicable"
+    },
+    {
+      "program": "base64",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "chaos",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "comprehensions",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "concurrent_imap",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "coroutines",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "decimal_factorial",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "decimal_pi",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "deepcopy",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "deltablue",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "fannkuch",
+      "selected_native": true,
+      "r4_fired_sites": 1,
+      "reports": [
+        {
+          "function": "fannkuch",
+          "rules": {
+            "R4": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1/F2/F3/F9 equal kind/extent or dominating owners"
+            },
+            "R5": {
+              "fired": 6,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 9,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              1,
+              16777216
+            ]
+          ]
+        }
+      ],
+      "status": "compiled lift source"
+    },
+    {
+      "program": "fastapi",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "float",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "gc_collect",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "gc_traversal",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "generators",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "go",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "hexiom",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "json_dumps",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "json_loads",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "logging",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "mdp",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "meteor_contest",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "nbody",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "nqueens",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "pathlib",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "pidigits",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "poker_selfplay",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "pprint",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "python_startup",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "raytrace",
+      "selected_native": true,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "selected heap backend, R4 lift rule not applicable"
+    },
+    {
+      "program": "regex_compile",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "regex_dna",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "regex_effbot",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "regex_v8",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "richards",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "richards_super",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "scimark",
+      "selected_native": true,
+      "r4_fired_sites": 0,
+      "reports": [
+        {
+          "function": "FFT_bitreverse",
+          "rules": {
+            "R4": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1/F2/F3/F9 equal kind/extent or dominating owners"
+            },
+            "R5": {
+              "fired": 6,
+              "blocked": 6,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 4,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "even",
+              "N"
+            ],
+            [
+              "int",
+              "N",
+              -16777216,
+              16777216
+            ],
+            [
+              "extent",
+              "data",
+              "N"
+            ]
+          ]
+        },
+        {
+          "function": "int_log2",
+          "rules": {
+            "R4": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1/F2/F3/F9 equal kind/extent or dominating owners"
+            },
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              1,
+              16777216
+            ],
+            [
+              "power",
+              "n",
+              1
+            ]
+          ]
+        },
+        {
+          "function": "FFT_transform_internal",
+          "rules": {
+            "R4": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1/F2/F3/F9 equal kind/extent or dominating owners"
+            },
+            "R5": {
+              "fired": 30,
+              "blocked": 20,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 16,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "even",
+              "N"
+            ],
+            [
+              "int",
+              "N",
+              2,
+              16777216
+            ],
+            [
+              "power",
+              "N",
+              2
+            ],
+            [
+              "int",
+              "direction",
+              -16777216,
+              16777216
+            ],
+            [
+              "extent",
+              "data",
+              "N"
+            ]
+          ]
+        },
+        {
+          "function": "FFT_inverse",
+          "rules": {
+            "R4": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1/F2/F3/F9 equal kind/extent or dominating owners"
+            },
+            "R5": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "extent",
+              "data",
+              "N"
+            ],
+            [
+              "int",
+              "N",
+              -16777216,
+              16777216
+            ]
+          ]
+        },
+        {
+          "function": "FFT_transform",
+          "rules": {
+            "R4": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1/F2/F3/F9 equal kind/extent or dominating owners"
+            },
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": []
+        }
+      ],
+      "status": "compiled lift source"
+    },
+    {
+      "program": "spectral_norm",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "sqlalchemy_declarative",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "sqlite_synth",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "sympy",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "unpack_sequence",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "xml_etree",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    },
+    {
+      "program": "yaml",
+      "selected_native": false,
+      "r4_fired_sites": 0,
+      "reports": [],
+      "status": "no selected native region; not generated, no new deployment"
+    }
+  ]
+}

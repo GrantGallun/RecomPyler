@@ -1,0 +1,4722 @@
+{
+  "population": 49,
+  "actual_compiled_reach": {
+    "R5": {
+      "workloads": 2,
+      "functions": 5,
+      "sites": 44,
+      "contributors": [
+        [
+          "fannkuch",
+          "fannkuch",
+          6
+        ],
+        [
+          "scimark",
+          "FFT_bitreverse",
+          6
+        ],
+        [
+          "scimark",
+          "int_log2",
+          1
+        ],
+        [
+          "scimark",
+          "FFT_transform_internal",
+          30
+        ],
+        [
+          "scimark",
+          "FFT_transform",
+          1
+        ]
+      ],
+      "leave_largest_workload_out_sites": 6
+    },
+    "R6": {
+      "workloads": 2,
+      "functions": 4,
+      "sites": 30,
+      "contributors": [
+        [
+          "fannkuch",
+          "fannkuch",
+          9
+        ],
+        [
+          "scimark",
+          "FFT_bitreverse",
+          4
+        ],
+        [
+          "scimark",
+          "FFT_transform_internal",
+          16
+        ],
+        [
+          "scimark",
+          "FFT_inverse",
+          1
+        ]
+      ],
+      "leave_largest_workload_out_sites": 9
+    }
+  },
+  "compiled_reports": [
+    {
+      "function": "fannkuch",
+      "rules": {
+        "R5": {
+          "fired": 6,
+          "blocked": 3,
+          "unknown": "F1 loop-carried or numeric domain"
+        },
+        "R6": {
+          "fired": 9,
+          "blocked": 0,
+          "unknown": "F1 extent, content or carry relation"
+        }
+      },
+      "guards": [
+        [
+          "int",
+          "n",
+          1,
+          16777216
+        ]
+      ]
+    },
+    {
+      "function": "FFT_bitreverse",
+      "rules": {
+        "R5": {
+          "fired": 6,
+          "blocked": 6,
+          "unknown": "F1 loop-carried or numeric domain"
+        },
+        "R6": {
+          "fired": 4,
+          "blocked": 4,
+          "unknown": "F1 extent, content or carry relation"
+        }
+      },
+      "guards": [
+        [
+          "even",
+          "N"
+        ],
+        [
+          "int",
+          "N",
+          -16777216,
+          16777216
+        ],
+        [
+          "extent",
+          "data",
+          "N"
+        ]
+      ]
+    },
+    {
+      "function": "int_log2",
+      "rules": {
+        "R5": {
+          "fired": 1,
+          "blocked": 3,
+          "unknown": "F1 loop-carried or numeric domain"
+        },
+        "R6": {
+          "fired": 0,
+          "blocked": 0,
+          "unknown": "F1 extent, content or carry relation"
+        }
+      },
+      "guards": [
+        [
+          "int",
+          "n",
+          1,
+          16777216
+        ],
+        [
+          "power",
+          "n",
+          1
+        ]
+      ]
+    },
+    {
+      "function": "FFT_transform_internal",
+      "rules": {
+        "R5": {
+          "fired": 30,
+          "blocked": 20,
+          "unknown": "F1 loop-carried or numeric domain"
+        },
+        "R6": {
+          "fired": 16,
+          "blocked": 0,
+          "unknown": "F1 extent, content or carry relation"
+        }
+      },
+      "guards": [
+        [
+          "even",
+          "N"
+        ],
+        [
+          "int",
+          "N",
+          2,
+          16777216
+        ],
+        [
+          "power",
+          "N",
+          2
+        ],
+        [
+          "int",
+          "direction",
+          -16777216,
+          16777216
+        ],
+        [
+          "extent",
+          "data",
+          "N"
+        ]
+      ]
+    },
+    {
+      "function": "FFT_inverse",
+      "rules": {
+        "R5": {
+          "fired": 0,
+          "blocked": 4,
+          "unknown": "F1 loop-carried or numeric domain"
+        },
+        "R6": {
+          "fired": 1,
+          "blocked": 0,
+          "unknown": "F1 extent, content or carry relation"
+        }
+      },
+      "guards": [
+        [
+          "extent",
+          "data",
+          "N"
+        ],
+        [
+          "int",
+          "N",
+          -16777216,
+          16777216
+        ]
+      ]
+    },
+    {
+      "function": "FFT_transform",
+      "rules": {
+        "R5": {
+          "fired": 1,
+          "blocked": 0,
+          "unknown": "F1 loop-carried or numeric domain"
+        },
+        "R6": {
+          "fired": 0,
+          "blocked": 0,
+          "unknown": "F1 extent, content or carry relation"
+        }
+      },
+      "guards": []
+    }
+  ],
+  "programs": [
+    {
+      "program": "async_generators",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "tree",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "input",
+              null
+            ]
+          ],
+          "line": 31,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\async_generators\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "asyncio_tcp",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "asyncio_websockets",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "barnes_hut",
+      "group": "tuned",
+      "static_candidates": [
+        {
+          "function": "create_deterministic_galaxy",
+          "rules": {
+            "R5": {
+              "fired": 7,
+              "blocked": 52,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "num_particles",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "radius",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 203,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\barnes_hut\\run_benchmark.py"
+        },
+        {
+          "function": "calculate_system_energy",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 15,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "particles",
+              null
+            ],
+            [
+              "extent",
+              "particles",
+              "len:particles"
+            ]
+          ],
+          "line": 286,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\barnes_hut\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": [
+        "advance_system"
+      ]
+    },
+    {
+      "program": "base64",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "chaos",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "__sub__",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "other",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "self",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 40,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\chaos\\run_benchmark.py"
+        },
+        {
+          "function": "linear_combination",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 9,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "l1",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 48,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\chaos\\run_benchmark.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 4,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "knots",
+              null
+            ],
+            [
+              "int",
+              "degree",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 66,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\chaos\\run_benchmark.py"
+        },
+        {
+          "function": "__call__",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 23,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 13,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 89,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\chaos\\run_benchmark.py"
+        },
+        {
+          "function": "get_random_trafo",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 169,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\chaos\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "comprehensions",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "make_some_widgets",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 64,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\comprehensions\\run_benchmark.py"
+        },
+        {
+          "function": "_add_widgets",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 5,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 41,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\comprehensions\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "concurrent_imap",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "coroutines",
+      "group": "tuned",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "decimal_factorial",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "factorial",
+          "rules": {
+            "R5": {
+              "fired": 5,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "m",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 23,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\decimal_factorial\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "decimal_pi",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "deepcopy",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "deltablue",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "chain_test",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 513,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\deltablue\\run_benchmark.py"
+        },
+        {
+          "function": "projection_test",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 561,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\deltablue\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "fannkuch",
+      "group": "tuned",
+      "static_candidates": [
+        {
+          "function": "fannkuch",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 9,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              1,
+              16777216
+            ]
+          ],
+          "line": 14,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\fannkuch\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": [
+        "fannkuch"
+      ]
+    },
+    {
+      "program": "fastapi",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "float",
+      "group": "tuned",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "gc_collect",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "benchamark_collection",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "links",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 44,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\gc_collect\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "gc_traversal",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "generators",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "tree",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "input",
+              null
+            ]
+          ],
+          "line": 29,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\generators\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "go",
+      "group": "addition",
+      "static_candidates": [
+        {
+          "function": "reset",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 167,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\go\\run_benchmark.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 321,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\go\\run_benchmark.py"
+        },
+        {
+          "function": "best_child",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 395,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\go\\run_benchmark.py"
+        },
+        {
+          "function": "best_visited",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 404,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\go\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "hexiom",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "next_cell_min_choice",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 90,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\hexiom\\run_benchmark.py"
+        },
+        {
+          "function": "next_cell_max_choice",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 99,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\hexiom\\run_benchmark.py"
+        },
+        {
+          "function": "next_cell_highest_value",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 108,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\hexiom\\run_benchmark.py"
+        },
+        {
+          "function": "next_cell_first",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 119,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\hexiom\\run_benchmark.py"
+        },
+        {
+          "function": "next_cell_max_neighbors",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 125,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\hexiom\\run_benchmark.py"
+        },
+        {
+          "function": "next_cell_min_neighbors",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 138,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\hexiom\\run_benchmark.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 7,
+              "blocked": 5,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "size",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 182,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\hexiom\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "json_dumps",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "json_loads",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "logging",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "bench_simple_output",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "loops",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 62,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\logging\\run_benchmark.py"
+        },
+        {
+          "function": "bench_formatted_output",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "loops",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 92,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\logging\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "mdp",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "getDamages",
+          "rules": {
+            "R5": {
+              "fired": 4,
+              "blocked": 9,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "L",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "D",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 35,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\mdp\\run_benchmark.py"
+        },
+        {
+          "function": "getCritDist",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "L",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 44,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\mdp\\run_benchmark.py"
+        },
+        {
+          "function": "plus12",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "x",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 57,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\mdp\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "meteor_contest",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "permute",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 96,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\meteor_contest\\run_benchmark.py"
+        },
+        {
+          "function": "convert",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 107,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\meteor_contest\\run_benchmark.py"
+        },
+        {
+          "function": "solve",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 159,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\meteor_contest\\run_benchmark.py"
+        },
+        {
+          "function": "bench_meteor_contest",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 192,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\meteor_contest\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "nbody",
+      "group": "tuned",
+      "static_candidates": [
+        {
+          "function": "combinations",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "l",
+              null
+            ],
+            [
+              "extent",
+              "l",
+              "len:l"
+            ]
+          ],
+          "line": 24,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\nbody\\run_benchmark.py"
+        },
+        {
+          "function": "advance",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 30,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 9,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 78,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\nbody\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "nqueens",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "permutations",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 10,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 10,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 9,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\nqueens\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "pathlib",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "pidigits",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "gen_pi_digits",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 39,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\pidigits\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "poker_selfplay",
+      "group": "addition",
+      "static_candidates": [
+        {
+          "function": "river_batch_values",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 28,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 19,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 29,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\batched_river.py"
+        },
+        {
+          "function": "terminal",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 7,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 80,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\batched_river.py"
+        },
+        {
+          "function": "solve",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 6,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 112,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\batched_river.py"
+        },
+        {
+          "function": "calibrate_marginal",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 17,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 44,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\bet_response.py"
+        },
+        {
+          "function": "state_key",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "equity",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 19,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\blueprint.py"
+        },
+        {
+          "function": "_load_library",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 7,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 40,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\blueprint_cpu.py"
+        },
+        {
+          "function": "_completion_classes",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 13,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 136,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\blueprint_cpu.py"
+        },
+        {
+          "function": "_initialize",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 14,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 8,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 206,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\blueprint_gpu.py"
+        },
+        {
+          "function": "_incomplete",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 17,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 24,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 102,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\blueprint_oracle.py"
+        },
+        {
+          "function": "collect_dataset",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 25,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "max_states",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 234,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\collect_teacher_data.py"
+        },
+        {
+          "function": "load",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 5,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 113,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\counter_policy.py"
+        },
+        {
+          "function": "flush_draw_bonus",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 27,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 10,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\draw_features.py"
+        },
+        {
+          "function": "card_rank",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "card",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 41,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\evaluator.py"
+        },
+        {
+          "function": "card_to_str",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "card",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 51,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\evaluator.py"
+        },
+        {
+          "function": "public_opponent_decisions",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 48,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_belief.py"
+        },
+        {
+          "function": "enumerate_opponent_hands",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 45,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_river.py"
+        },
+        {
+          "function": "exact_river_values",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 40,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 49,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 140,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_river.py"
+        },
+        {
+          "function": "terminal",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 5,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 220,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_river.py"
+        },
+        {
+          "function": "enumerate_turn_hands",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 37,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_turn.py"
+        },
+        {
+          "function": "public_turn_opponent_decisions",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 90,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_turn.py"
+        },
+        {
+          "function": "exact_turn_values",
+          "rules": {
+            "R5": {
+              "fired": 4,
+              "blocked": 34,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 24,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 62,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_turn_search.py"
+        },
+        {
+          "function": "merge_river_plan",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 135,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_turn_search.py"
+        },
+        {
+          "function": "solve",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 17,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 12,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 145,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\exact_turn_search.py"
+        },
+        {
+          "function": "warmup",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 5,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 11,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 25,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\fast_equity.py"
+        },
+        {
+          "function": "_triple_indices",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 6,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 51,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\fast_equity.py"
+        },
+        {
+          "function": "_cards_array",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 63,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\fast_equity.py"
+        },
+        {
+          "function": "score_many",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 78,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\fast_equity.py"
+        },
+        {
+          "function": "_draw",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "board",
+              null
+            ]
+          ],
+          "line": 113,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\fast_equity.py"
+        },
+        {
+          "function": "_preflop_strengths",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 19,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "holes",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 134,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\fast_equity.py"
+        },
+        {
+          "function": "_public_actions",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 18,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 41,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\fit_strategy_profiles.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "button_seat",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 369,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\game.py"
+        },
+        {
+          "function": "_to_call",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "seat",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 406,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\game.py"
+        },
+        {
+          "function": "_can_raise",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "seat",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 410,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\game.py"
+        },
+        {
+          "function": "_min_raise_to",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "seat",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 418,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\game.py"
+        },
+        {
+          "function": "_raise_to",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 6,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "seat",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 422,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\game.py"
+        },
+        {
+          "function": "observation",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "seat",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 493,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\game.py"
+        },
+        {
+          "function": "potential_strengths",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 7,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 121,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\hand_potential.py"
+        },
+        {
+          "function": "strengths",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 5,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 5,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 47,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\hand_potential.py"
+        },
+        {
+          "function": "information_value",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 40,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 6,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\information_value.py"
+        },
+        {
+          "function": "values",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 20,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 49,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\information_value.py"
+        },
+        {
+          "function": "_outcomes",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 6,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "board",
+              null
+            ]
+          ],
+          "line": 52,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\legacy_strategy.py"
+        },
+        {
+          "function": "_range_equity",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 22,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "rows",
+              null
+            ]
+          ],
+          "line": 120,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\legacy_strategy.py"
+        },
+        {
+          "function": "calibrate_grid",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 10,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "evidence",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 7,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\model_calibration.py"
+        },
+        {
+          "function": "fit_scale",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "gap",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 32,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\model_calibration.py"
+        },
+        {
+          "function": "_ramp",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "x",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "threshold",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "width",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 25,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\opponent_model.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 74,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\opponent_model.py"
+        },
+        {
+          "function": "probabilities",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 82,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\opponent_model.py"
+        },
+        {
+          "function": "observe",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 10,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 5,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 99,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\opponent_model.py"
+        },
+        {
+          "function": "refine",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 115,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\opponent_model.py"
+        },
+        {
+          "function": "bet_response_key",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 6,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 7,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 22,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\opportunity.py"
+        },
+        {
+          "function": "hand_indices",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 22,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\preflop.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 13,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\public_blueprint_state.py"
+        },
+        {
+          "function": "_replay",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 41,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\river_search.py"
+        },
+        {
+          "function": "mc_equity",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "board",
+              null
+            ]
+          ],
+          "line": 28,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\sparring\\_common.py"
+        },
+        {
+          "function": "raise_value",
+          "rules": {
+            "R5": {
+              "fired": 4,
+              "blocked": 6,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "raise_to",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "my_bet",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "opp_bet",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "fold_probability",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "pot",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 214,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\strategy.py"
+        },
+        {
+          "function": "reraise_value",
+          "rules": {
+            "R5": {
+              "fired": 9,
+              "blocked": 13,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "target",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "my_bet",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "opp_bet",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "pot",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "opp_stack",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "my_stack",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 221,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\strategy.py"
+        },
+        {
+          "function": "choose_action",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 8,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 20,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 531,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\strategy.py"
+        },
+        {
+          "function": "on_hand_end",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 27,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 41,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 587,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\strategy.py"
+        },
+        {
+          "function": "_history",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "street",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 104,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\student_features.py"
+        },
+        {
+          "function": "test_reraise_ev_includes_exact_response_cost_and_option_to_fold",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 73,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_adaptive.py"
+        },
+        {
+          "function": "fixture",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "rows",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 10,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_batched_river.py"
+        },
+        {
+          "function": "scalar_value",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 12,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 36,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_batched_river.py"
+        },
+        {
+          "function": "test_terminal_public_fold_uses_winner_and_incremental_chips",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 108,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_batched_river.py"
+        },
+        {
+          "function": "test_complete_plan_records_per_river_actions_and_marks_zero_reach_rows",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 7,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 194,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_batched_river.py"
+        },
+        {
+          "function": "test_entire_owned_python_process_tree_uses_the_requested_core",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 11,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_benchmark_affinity.py"
+        },
+        {
+          "function": "test_malformed_calibration_inputs_are_rejected",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 9,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 169,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_bet_response.py"
+        },
+        {
+          "function": "test_positive_regret_matching_and_legal_projection",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 4,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint.py"
+        },
+        {
+          "function": "candidates",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "size",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "seed",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 43,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_cpu.py"
+        },
+        {
+          "function": "test_order_duplicates_and_batch_boundaries_do_not_change_features",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 65,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_cpu.py"
+        },
+        {
+          "function": "test_large_positive_stride_retains_source_single_completion_semantics",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 145,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_cpu.py"
+        },
+        {
+          "function": "candidates",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "seed",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "board_size",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 48,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_gpu.py"
+        },
+        {
+          "function": "test_candidate_order_and_other_private_candidates_do_not_change_features",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 67,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_gpu.py"
+        },
+        {
+          "function": "test_gpu_bucket_assignment_matches_all_64_reference_centroids",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "board_size",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 112,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_gpu.py"
+        },
+        {
+          "function": "test_vectorized_buckets_and_exact_strength_match_scalar_reference",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 57,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_oracle.py"
+        },
+        {
+          "function": "test_same_river_bucket_does_not_replace_exact_heuristic_strength",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 129,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_oracle.py"
+        },
+        {
+          "function": "test_heuristic_fallback_distinguishes_exact_hs_inside_one_river_bucket",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 7,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 10,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 207,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_oracle.py"
+        },
+        {
+          "function": "test_cached_features_recheck_deadline_after_validation",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 234,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_blueprint_oracle.py"
+        },
+        {
+          "function": "tiny_components",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 86,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_collect_teacher_data.py"
+        },
+        {
+          "function": "test_regret_and_average_reach_arithmetic",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 13,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_counter_policy.py"
+        },
+        {
+          "function": "test_external_sampling_enumerates_our_moves_and_samples_fixed_opponent",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 106,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_counter_policy.py"
+        },
+        {
+          "function": "test_nut_flush_draw_uses_short_deck_outs_and_two_hole_rule",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 6,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_draw_features.py"
+        },
+        {
+          "function": "test_legal_likelihood_floor_keeps_unexpected_weak_raises_possible",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 100,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_empirical_inference.py"
+        },
+        {
+          "function": "test_preflop_table_is_used_for_strength_ordering",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 179,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_empirical_inference.py"
+        },
+        {
+          "function": "turn_fixture",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 14,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_exact_turn.py"
+        },
+        {
+          "function": "test_allin_solver_does_not_depend_on_actual_unseen_river_or_opponent_cards",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 219,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_exact_turn.py"
+        },
+        {
+          "function": "test_informative_turn_response_conditions_reach_once_and_plan_marks_unreachable_river",
+          "rules": {
+            "R5": {
+              "fired": 7,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 14,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 147,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_exact_turn_search.py"
+        },
+        {
+          "function": "test_batch_scores_match_thousands_of_official_evaluations",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "board_size",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 26,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_fast_equity.py"
+        },
+        {
+          "function": "test_draws_have_no_replacement_and_keep_visible_board",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "board_size",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 72,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_fast_equity.py"
+        },
+        {
+          "function": "test_new_instance_starts_with_uniform_half_local_evidence",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 13,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_hand_evidence.py"
+        },
+        {
+          "function": "test_same_hand_begin_preserves_original_prior",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 31,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_hand_evidence.py"
+        },
+        {
+          "function": "test_common_log_shift_does_not_change_posterior",
+          "rules": {
+            "R5": {
+              "fired": 7,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 101,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_hand_evidence.py"
+        },
+        {
+          "function": "test_log_odds_beyond_sixty_are_preserved_and_can_recover",
+          "rules": {
+            "R5": {
+              "fired": 9,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 113,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_hand_evidence.py"
+        },
+        {
+          "function": "test_very_small_probabilities_are_bounded_and_normalized",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 126,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_hand_evidence.py"
+        },
+        {
+          "function": "test_invalid_replacement_is_rejected_without_mutating_evidence",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 10,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 140,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_hand_evidence.py"
+        },
+        {
+          "function": "test_uniform_belief_one_future_opportunity_has_one_sixth_chip_value",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 5,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_no_remaining_opportunities_has_no_information_value",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 10,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_concentrated_belief_has_small_value",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 17,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_belief_that_cannot_reach_an_action_switch_has_no_value",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 31,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_common_payoff_shift_preserves_information_value",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 37,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_positive_payoff_scale_scales_information_value",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 44,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_uniform_prior_information_is_bounded_by_perfect_information",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 51,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_future_opportunity_count_is_floored_and_capped",
+          "rules": {
+            "R5": {
+              "fired": 5,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 60,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_information_can_pay_for_a_small_current_probe_cost",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 67,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_stationary_negative_current_ev_can_be_offset_by_future_information",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 73,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_fold_and_continue_relabeling_preserves_value",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 81,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_repeated_calls_do_not_share_learned_state",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 87,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_extremely_large_finite_counts_produce_bounded_value",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 94,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_invalid_outside_reward_and_horizon_cap_are_rejected",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 111,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_information_value.py"
+        },
+        {
+          "function": "test_only_preflop_regrets_update_using_fixed_sampled_continuation",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 76,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_preflop_response.py"
+        },
+        {
+          "function": "test_public_shadow_matches_full_reference_actions_and_results",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "hero_seat",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 22,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_public_blueprint_state.py"
+        },
+        {
+          "function": "test_global_style_collapse_cannot_erase_empirical_range",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 10,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 22,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_ranges_integration.py"
+        },
+        {
+          "function": "test_ev_keeps_separate_fold_and_call_ranges_after_aggregation",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 8,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_response_moments.py"
+        },
+        {
+          "function": "test_rates_are_pure_copies_and_new_instances_reset_evidence",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 95,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_response_stats.py"
+        },
+        {
+          "function": "fixture",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 11,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_river_search.py"
+        },
+        {
+          "function": "test_candidate_permutation_does_not_change_values_or_dummy_utility",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 129,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_river_search.py"
+        },
+        {
+          "function": "memory",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 11,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_student_response.py"
+        },
+        {
+          "function": "features",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "array",
+              "holes",
+              null
+            ]
+          ],
+          "line": 20,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_table_river.py"
+        },
+        {
+          "function": "probabilities",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "strengths",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 29,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_table_river.py"
+        },
+        {
+          "function": "test_standings_honor_points_including_double_forfeit",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 7,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_tournament.py"
+        },
+        {
+          "function": "test_turn_features_keep_original_candidate_order_and_ignore_actual_node_private_cards",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 74,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_turn_oracle.py"
+        },
+        {
+          "function": "test_mapping_matches_unmodified_source_levels_and_official_showdown",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 47,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_turn_runouts.py"
+        },
+        {
+          "function": "test_transport_ignores_actual_unseen_river_and_preserves_inputs",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 95,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_turn_runouts.py"
+        },
+        {
+          "function": "test_predict_is_chip_scaled_fold_zero_and_checkpoint_roundtrip",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 17,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_value_student.py"
+        },
+        {
+          "function": "test_masked_huber_gradient_matches_finite_differences_and_ignores_illegal_nan",
+          "rules": {
+            "R5": {
+              "fired": 4,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 19,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 48,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\test_value_student.py"
+        },
+        {
+          "function": "run_tournament",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 8,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 10,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "deals",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 107,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\tournament.py"
+        },
+        {
+          "function": "_walk",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 10,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 16,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 29,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\train_blueprint.py"
+        },
+        {
+          "function": "save",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 85,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\train_blueprint.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "seed",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 49,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\train_counter_policy.py"
+        },
+        {
+          "function": "save",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 134,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\train_counter_policy.py"
+        },
+        {
+          "function": "validate",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 5,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 1,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "reference_samples",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 99,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\train_hand_potential.py"
+        },
+        {
+          "function": "sample_policy",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 2,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 29,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\train_preflop_response.py"
+        },
+        {
+          "function": "save",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 11,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 141,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\train_preflop_response.py"
+        },
+        {
+          "function": "_arrays",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 18,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\train_value_student.py"
+        },
+        {
+          "function": "actions",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 63,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\turn_oracle.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 167,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\turn_oracle.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 9,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 18,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 23,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\turn_runouts.py"
+        },
+        {
+          "function": "__init__",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 11,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 110,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\poker_selfplay\\turn_runouts.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "pprint",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "python_startup",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "raytrace",
+      "group": "tuned",
+      "static_candidates": [
+        {
+          "function": "bench_raytrace",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 357,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\raytrace\\run_benchmark.py"
+        },
+        {
+          "function": "negated",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 64,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\raytrace\\run_benchmark.py"
+        },
+        {
+          "function": "plot",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 7,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 3,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "r",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "g",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "b",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 200,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\raytrace\\run_benchmark.py"
+        },
+        {
+          "function": "_lightIsVisible",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "p",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "l",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 283,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\raytrace\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": [
+        "Scene.render"
+      ]
+    },
+    {
+      "program": "regex_compile",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "regex_dna",
+      "group": "heldout",
+      "static_candidates": [
+        {
+          "function": "repeat_fasta",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 12,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "src",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "n",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 56,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\regex_dna\\run_benchmark.py"
+        },
+        {
+          "function": "random_fasta",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 14,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 5,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 84,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\regex_dna\\run_benchmark.py"
+        },
+        {
+          "function": "init_benchmarks",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 134,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\regex_dna\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "regex_effbot",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "regex_v8",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "richards",
+      "group": "tuned",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "richards_super",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "scimark",
+      "group": "tuned",
+      "static_candidates": [
+        {
+          "function": "SOR_execute",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 12,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 6,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "omega",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 144,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "SparseCompRow_matmult",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 2,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "extent",
+              "row",
+              "M"
+            ],
+            [
+              "int",
+              "M",
+              -16777216,
+              16777216
+            ],
+            [
+              "extent",
+              "y",
+              "M"
+            ]
+          ],
+          "line": 164,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "bench_SparseMatMult",
+          "rules": {
+            "R5": {
+              "fired": 2,
+              "blocked": 11,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "N",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 178,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "int_log2",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 3,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "n",
+              1,
+              16777216
+            ],
+            [
+              "power",
+              "n",
+              1
+            ]
+          ],
+          "line": 271,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "FFT_num_flops",
+          "rules": {
+            "R5": {
+              "fired": 4,
+              "blocked": 2,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "N",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 282,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "FFT_transform_internal",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 47,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 16,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "even",
+              "N"
+            ],
+            [
+              "int",
+              "N",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "direction",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 286,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "FFT_bitreverse",
+          "rules": {
+            "R5": {
+              "fired": 6,
+              "blocked": 6,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 4,
+              "blocked": 4,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "even",
+              "N"
+            ],
+            [
+              "int",
+              "N",
+              -16777216,
+              16777216
+            ],
+            [
+              "extent",
+              "data",
+              "N"
+            ]
+          ],
+          "line": 337,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "FFT_transform",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [],
+          "line": 358,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "FFT_inverse",
+          "rules": {
+            "R5": {
+              "fired": 0,
+              "blocked": 4,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 1,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "extent",
+              "data",
+              "N"
+            ],
+            [
+              "int",
+              "N",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 362,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        },
+        {
+          "function": "bench_FFT",
+          "rules": {
+            "R5": {
+              "fired": 1,
+              "blocked": 1,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "N",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 371,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\scimark\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": [
+        "FFT_transform",
+        "FFT_inverse"
+      ]
+    },
+    {
+      "program": "spectral_norm",
+      "group": "tuned",
+      "static_candidates": [
+        {
+          "function": "eval_A",
+          "rules": {
+            "R5": {
+              "fired": 3,
+              "blocked": 5,
+              "unknown": "F1 loop-carried or numeric domain"
+            },
+            "R6": {
+              "fired": 0,
+              "blocked": 0,
+              "unknown": "F1 extent, content or carry relation"
+            }
+          },
+          "guards": [
+            [
+              "int",
+              "j",
+              -16777216,
+              16777216
+            ],
+            [
+              "int",
+              "i",
+              -16777216,
+              16777216
+            ]
+          ],
+          "line": 21,
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-census\\census\\inputs\\spectral_norm\\run_benchmark.py"
+        }
+      ],
+      "saved_deployed": []
+    },
+    {
+      "program": "sqlalchemy_declarative",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "sqlite_synth",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "sympy",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "unpack_sequence",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "xml_etree",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    },
+    {
+      "program": "yaml",
+      "group": "heldout",
+      "static_candidates": [],
+      "saved_deployed": []
+    }
+  ],
+  "interpretation": "Static candidates across all 49 scripts are potential applicability only. Actual compiled reach is from frozen AOT rule reports; held-out deployment remains the saved default set, not a new selection run. Only workloads with actual firing are retimed; four-kernel controls verify unchanged heap native bodies."
+}

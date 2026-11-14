@@ -1,0 +1,1 @@
+Before owner acceptance collection: ten alternating numeric-final-v2/owner-v1 pairs per kernel plus rotating C. Primary median paired saving with paired bootstrap95%,50000resamples/seed30. Accept if fann lower>0 and no control upper<0. Development gains>=half current2.0141ms are adequate; native fast-loop CFG and true native cleanup are required separately.

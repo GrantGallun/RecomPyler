@@ -1,0 +1,22 @@
+[
+  {
+    "kernel": "fannkuch",
+    "reason": "unbounded flip count / mutable count-element range",
+    "unique_retained_expressions": 2
+  },
+  {
+    "kernel": "scimark",
+    "reason": "carry-dependent j/k relation not proved",
+    "unique_retained_expressions": 18
+  },
+  {
+    "kernel": "scimark",
+    "reason": "typed floating arithmetic already raw in its overload, or numeric input/divisor domain not proved",
+    "unique_retained_expressions": 23
+  },
+  {
+    "kernel": "scimark",
+    "reason": "positive range-step client still checked",
+    "unique_retained_expressions": 1
+  }
+]

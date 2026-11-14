@@ -1,0 +1,3402 @@
+{
+  "scope": "successful checked-source-IR arena bumps at default render; no failed growth retries; not Python constructor or allocator events",
+  "total": 283475,
+  "counts": {
+    "f21_scale:t7": 99648,
+    "other:list_new": 20598,
+    "other:list_room": 35776,
+    "other:sr4_f30_rayColour": 122120,
+    "f48___add__:t18": 5333
+  },
+  "classes": {
+    "e": 99648,
+    "other": 178494,
+    "d": 5333
+  },
+  "highwater_slots": 1414615,
+  "full_pixel_bytes_match": true,
+  "analysis": {
+    "iterations": 3,
+    "summaries": {
+      "f0_render": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [
+              "I:5"
+            ],
+            "passed_to": [
+              "f30_rayColour:4"
+            ]
+          },
+          {
+            "name": "v_canvas",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f71_plot:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f2___sub__": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_other",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f7_isPoint:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f2___sub__:t17"
+        ],
+        "return_unknown": false
+      },
+      "f10___init__": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [
+              "I:0",
+              "I:1"
+            ],
+            "passed_to": []
+          },
+          {
+            "name": "v_point",
+            "object": true,
+            "captured": true,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_vector",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f12_normalized:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f24_cross": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_other",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f20_mustBeVector:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f24_cross:t36"
+        ],
+        "return_unknown": false
+      },
+      "f12_normalized": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f14_magnitude:4",
+              "f21_scale:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f21_scale:t7"
+        ],
+        "return_unknown": false
+      },
+      "f21_scale": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_factor",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f21_scale:t7"
+        ],
+        "return_unknown": false
+      },
+      "f27___add__": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_other",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f29_isPoint:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f27___add__:t17"
+        ],
+        "return_unknown": false
+      },
+      "f30_rayColour": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [
+              "I:5"
+            ],
+            "passed_to": [
+              "f54_colourAt:5"
+            ]
+          },
+          {
+            "name": "v_ray",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f32_intersectionTime:5",
+              "f34_intersectionTime:5",
+              "f38_pointAtTime:4",
+              "f54_colourAt:6"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f71_plot": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_x",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_y",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_r_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_r_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_g_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_g_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_b_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_b_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f7_isPoint": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f25___init__": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [
+              "F:0",
+              "F:2",
+              "F:4"
+            ],
+            "passed_to": []
+          },
+          {
+            "name": "v_initx_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_initx_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_inity_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_inity_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_initz_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_initz_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f20_mustBeVector": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": true,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [
+          4
+        ],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f14_magnitude": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f18_dot:4",
+              "f18_dot:5"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f22___init__": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [
+              "F:0",
+              "F:2",
+              "F:4"
+            ],
+            "passed_to": []
+          },
+          {
+            "name": "v_initx",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_inity",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_initz",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f29_isPoint": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f32_intersectionTime": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_ray",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f34_intersectionTime": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_ray",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f36_firstIntersection": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_intersections",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f38_pointAtTime": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_t_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_t_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f48___add__:t18"
+        ],
+        "return_unknown": false
+      },
+      "f51_normalAt": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_p",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f2___sub__:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f21_scale:t7"
+        ],
+        "return_unknown": false
+      },
+      "f52_normalAt": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_p",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": true
+      },
+      "f54_colourAt": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f56_baseColourAt:4",
+              "f58_baseColourAt:4"
+            ]
+          },
+          {
+            "name": "v_scene",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [
+              "I:5"
+            ],
+            "passed_to": [
+              "f30_rayColour:4",
+              "f63_visibleLights:4"
+            ]
+          },
+          {
+            "name": "v_ray",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_p",
+            "object": true,
+            "captured": true,
+            "capture_conditional": true,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f10___init__:5",
+              "f2___sub__:5",
+              "f56_baseColourAt:5",
+              "f58_baseColourAt:5",
+              "f63_visibleLights:5"
+            ]
+          },
+          {
+            "name": "v_normal",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f18_dot:5",
+              "f60_reflectThrough:5"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f18_dot": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_other",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f20_mustBeVector:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f16_scale": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_factor_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_factor_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f16_scale:t7"
+        ],
+        "return_unknown": false
+      },
+      "f48___add__": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_other",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f20_mustBeVector:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f48___add__:t18"
+        ],
+        "return_unknown": false
+      },
+      "f56_baseColourAt": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_p",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f58_baseColourAt": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_p",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f2___sub__:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f60_reflectThrough": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f18_dot:4",
+              "f70___sub__:4"
+            ]
+          },
+          {
+            "name": "v_normal",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f18_dot:5",
+              "f64_scale:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f70___sub__:t18"
+        ],
+        "return_unknown": false
+      },
+      "f67_addColours": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_a_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_a_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_a_2",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_a_3",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_a_4",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_a_5",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_scale",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_b_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_b_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_b_2",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_b_3",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_b_4",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_b_5",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f63_visibleLights": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f66__lightIsVisible:4"
+            ]
+          },
+          {
+            "name": "v_p",
+            "object": true,
+            "captured": true,
+            "capture_conditional": true,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f66__lightIsVisible:6"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f50___init__": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [
+              "F:0",
+              "F:2",
+              "F:4"
+            ],
+            "passed_to": []
+          },
+          {
+            "name": "v_initx_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_initx_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_inity_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_inity_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_initz_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_initz_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      },
+      "f64_scale": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_factor_0",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_factor_1",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f64_scale:t10"
+        ],
+        "return_unknown": false
+      },
+      "f68_scale": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_factor",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f68_scale:t13"
+        ],
+        "return_unknown": false
+      },
+      "f70___sub__": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_other",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f20_mustBeVector:4"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [
+          "f70___sub__:t18"
+        ],
+        "return_unknown": false
+      },
+      "f66__lightIsVisible": {
+        "parameters": [
+          {
+            "name": "F",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "I",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "top",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "st",
+            "object": false,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_self",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": []
+          },
+          {
+            "name": "v_l",
+            "object": true,
+            "captured": false,
+            "capture_conditional": false,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f2___sub__:4"
+            ]
+          },
+          {
+            "name": "v_p",
+            "object": true,
+            "captured": true,
+            "capture_conditional": true,
+            "returned": false,
+            "identity_observed": false,
+            "mutated": [],
+            "passed_to": [
+              "f10___init__:5",
+              "f2___sub__:5"
+            ]
+          }
+        ],
+        "return_aliases": [],
+        "fresh_returns": [],
+        "return_unknown": false
+      }
+    },
+    "allocations": {
+      "f0_render:t17": {
+        "function": "f0_render",
+        "variable": "t17",
+        "record": "Ray",
+        "class": "a",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1"
+        ]
+      },
+      "f0_render:t44": {
+        "function": "f0_render",
+        "variable": "t44",
+        "record": "Ray",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f30_rayColour:5"
+        ],
+        "mutated": [
+          "I:0",
+          "I:1"
+        ]
+      },
+      "f2___sub__:t17": {
+        "function": "f2___sub__",
+        "variable": "t17",
+        "record": "Vector",
+        "class": "c",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [
+          "f12_normalized:4",
+          "f18_dot:4",
+          "f18_dot:5",
+          "f21_scale:4"
+        ],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f24_cross:t36": {
+        "function": "f24_cross",
+        "variable": "t36",
+        "record": "Vector",
+        "class": "c",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [
+          "f12_normalized:4"
+        ],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f21_scale:t7": {
+        "function": "f21_scale",
+        "variable": "t7",
+        "record": "Vector",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [
+          "f18_dot:4",
+          "f21_scale:4",
+          "f24_cross:4",
+          "f27___add__:5",
+          "f54_colourAt:8"
+        ],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f27___add__:t17": {
+        "function": "f27___add__",
+        "variable": "t17",
+        "record": "Vector",
+        "class": "c",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [
+          "f27___add__:4"
+        ],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f54_colourAt:t16": {
+        "function": "f54_colourAt",
+        "variable": "t16",
+        "record": "Ray",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f30_rayColour:5"
+        ],
+        "mutated": [
+          "I:0",
+          "I:1"
+        ]
+      },
+      "f16_scale:t7": {
+        "function": "f16_scale",
+        "variable": "t7",
+        "record": "Vector",
+        "class": "c",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [
+          "f48___add__:5"
+        ],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f48___add__:t18": {
+        "function": "f48___add__",
+        "variable": "t18",
+        "record": "Point",
+        "class": "d",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [
+          "f51_normalAt:5",
+          "f52_normalAt:5",
+          "f54_colourAt:7",
+          "f54_colourAt:8"
+        ],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f64_scale:t10": {
+        "function": "f64_scale",
+        "variable": "t10",
+        "record": "Vector",
+        "class": "c",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [
+          "f68_scale:4"
+        ],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f68_scale:t13": {
+        "function": "f68_scale",
+        "variable": "t13",
+        "record": "Vector",
+        "class": "c",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [
+          "f70___sub__:5"
+        ],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f70___sub__:t18": {
+        "function": "f70___sub__",
+        "variable": "t18",
+        "record": "Vector",
+        "class": "c",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": true,
+        "passed_to": [],
+        "mutated": [
+          "F:0",
+          "F:2",
+          "F:4"
+        ]
+      },
+      "f66__lightIsVisible:t9": {
+        "function": "f66__lightIsVisible",
+        "variable": "t9",
+        "record": "Ray",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f32_intersectionTime:5",
+          "f34_intersectionTime:5"
+        ],
+        "mutated": [
+          "I:0",
+          "I:1"
+        ]
+      }
+    }
+  },
+  "scalar": {
+    "rule": "R8",
+    "fresh_sites": [
+      {
+        "site": "sr5_f32_intersectionTime:t4_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr12_f38_pointAtTime:t4_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr12_f38_pointAtTime:t6_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unrecognized pointer use t6_0"
+      },
+      {
+        "site": "sr18_f60_reflectThrough:t4_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr18_f60_reflectThrough:t6_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr18_f60_reflectThrough:t8_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr25_f12_normalized:t5_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unrecognized pointer use t5_0"
+      },
+      {
+        "site": "sr29_f12_normalized:t5_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr17_f54_colourAt:t15_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr17_f54_colourAt:t28_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr17_f54_colourAt:t30_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "sr30_f10___init__:t2_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unrecognized pointer use t2_0"
+      },
+      {
+        "site": "sr4_f30_rayColour:t43_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unknown returned object may alias virtual parameter"
+      },
+      {
+        "site": "sr4_f30_rayColour:t48_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "pointer merge mixes virtual identities"
+      },
+      {
+        "site": "f0_render:t16_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f0_render:t20_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f0_render:t22_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f0_render:t25_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f0_render:t27_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f0_render:t35_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f0_render:t37_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f0_render:t41_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f0_render:t43_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f10___init__:t2_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unrecognized pointer use t2_0"
+      },
+      {
+        "site": "f12_normalized:t5_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unrecognized pointer use t5_0"
+      },
+      {
+        "site": "f30_rayColour:t43_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unknown returned object may alias virtual parameter"
+      },
+      {
+        "site": "f30_rayColour:t48_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "pointer merge mixes virtual identities"
+      },
+      {
+        "site": "f32_intersectionTime:t4_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f38_pointAtTime:t4_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f38_pointAtTime:t6_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unrecognized pointer use t6_0"
+      },
+      {
+        "site": "f51_normalAt:t3_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f51_normalAt:t5_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unrecognized pointer use t5_0"
+      },
+      {
+        "site": "f54_colourAt:t15_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f54_colourAt:t28_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f54_colourAt:t30_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f58_baseColourAt:t2_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f58_baseColourAt:t6_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f60_reflectThrough:t4_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f60_reflectThrough:t6_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      },
+      {
+        "site": "f60_reflectThrough:t8_0",
+        "fact": "F5",
+        "state": "blocked",
+        "unknown": "unrecognized pointer use t8_0"
+      },
+      {
+        "site": "f66__lightIsVisible:t8_0",
+        "fact": "F5",
+        "state": "fired",
+        "unknown": ""
+      }
+    ],
+    "removed_sites": [
+      {
+        "site": "f0_render:t17",
+        "class": "a",
+        "record": "Ray"
+      },
+      {
+        "site": "f0_render:t44",
+        "class": "b",
+        "record": "Ray"
+      },
+      {
+        "site": "f54_colourAt:t16",
+        "class": "b",
+        "record": "Ray"
+      },
+      {
+        "site": "f66__lightIsVisible:t9",
+        "class": "b",
+        "record": "Ray"
+      }
+    ],
+    "blocked": [
+      {
+        "site": "sr12_f38_pointAtTime:t6_0",
+        "unknown": "F5 unrecognized pointer use t6_0"
+      },
+      {
+        "site": "sr25_f12_normalized:t5_0",
+        "unknown": "F5 unrecognized pointer use t5_0"
+      },
+      {
+        "site": "sr30_f10___init__:t2_0",
+        "unknown": "F5 unrecognized pointer use t2_0"
+      },
+      {
+        "site": "sr4_f30_rayColour:t43_0",
+        "unknown": "F5 unknown returned object may alias virtual parameter"
+      },
+      {
+        "site": "sr4_f30_rayColour:t48_0",
+        "unknown": "F5 pointer merge mixes virtual identities"
+      },
+      {
+        "site": "f10___init__:t2_0",
+        "unknown": "F5 unrecognized pointer use t2_0"
+      },
+      {
+        "site": "f12_normalized:t5_0",
+        "unknown": "F5 unrecognized pointer use t5_0"
+      },
+      {
+        "site": "f30_rayColour:t43_0",
+        "unknown": "F5 unknown returned object may alias virtual parameter"
+      },
+      {
+        "site": "f30_rayColour:t48_0",
+        "unknown": "F5 pointer merge mixes virtual identities"
+      },
+      {
+        "site": "f38_pointAtTime:t6_0",
+        "unknown": "F5 unrecognized pointer use t6_0"
+      },
+      {
+        "site": "f51_normalAt:t5_0",
+        "unknown": "F5 unrecognized pointer use t5_0"
+      },
+      {
+        "site": "f60_reflectThrough:t8_0",
+        "unknown": "F5 unrecognized pointer use t8_0"
+      }
+    ],
+    "field_clones": [
+      "sr10_f20_mustBeVector",
+      "sr11_f34_intersectionTime",
+      "sr12_f38_pointAtTime",
+      "sr13_f16_scale",
+      "sr14_f48___add__",
+      "sr17_f54_colourAt",
+      "sr18_f60_reflectThrough",
+      "sr20_f64_scale",
+      "sr22_f68_scale",
+      "sr23_f70___sub__",
+      "sr25_f12_normalized",
+      "sr26_f14_magnitude",
+      "sr27_f21_scale",
+      "sr28_f21_scale",
+      "sr29_f12_normalized",
+      "sr30_f10___init__",
+      "sr36_f24_cross",
+      "sr38_f24_cross",
+      "sr3_f22___init__",
+      "sr40_f29_isPoint",
+      "sr41_f27___add__",
+      "sr43_f27___add__",
+      "sr45_f70___sub__",
+      "sr4_f30_rayColour",
+      "sr5_f32_intersectionTime",
+      "sr6_f2___sub__",
+      "sr7_f25___init__",
+      "sr8_f18_dot",
+      "sr9_f18_dot"
+    ],
+    "fresh_return_clones": [
+      "sr13_f16_scale",
+      "sr18_f60_reflectThrough",
+      "sr20_f64_scale",
+      "sr22_f68_scale",
+      "sr23_f70___sub__",
+      "sr28_f21_scale",
+      "sr29_f12_normalized",
+      "sr36_f24_cross",
+      "sr38_f24_cross",
+      "sr41_f27___add__",
+      "sr43_f27___add__",
+      "sr6_f2___sub__"
+    ],
+    "classes_enabled": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  "matches_expected_scalar_ab_total": true
+}

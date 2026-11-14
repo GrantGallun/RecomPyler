@@ -1,0 +1,80 @@
+{
+  "mode": "float-tuples",
+  "module": "ray_current_fd9c7fd96622d270",
+  "digest": "e6f2cd4fb6042c6c29f2b16eb547e9acfd6a743dc35feed4f5eb64f9f11acf56",
+  "source_sha256": "0849849f20ea04ddc5b061ec0b1bfc9d688ef0d869900c435604e0cd0f7d76ad",
+  "generic": true,
+  "fastmath": false,
+  "diagnostic_only": true,
+  "report": [
+    {
+      "function": "f28_rayColour",
+      "kind": "preallocate scene object count",
+      "tuple_bump_sites_removed": 1,
+      "tuple_payload_stores_retained": true
+    },
+    {
+      "function": "f61_visibleLights",
+      "kind": "preallocate light count",
+      "sites": 1
+    },
+    {
+      "function": "sr4_f28_rayColour",
+      "kind": "preallocate scene object count",
+      "tuple_bump_sites_removed": 1,
+      "tuple_payload_stores_retained": true
+    }
+  ],
+  "fast_mixed": false,
+  "saw_mixed": false,
+  "mixed_fields": {
+    "Scene": [],
+    "Point": [],
+    "Sphere": [],
+    "SimpleSurface": [],
+    "Vector": [],
+    "Canvas": [],
+    "Ray": []
+  },
+  "numeric_versions": 0,
+  "scalar_return_abi": {
+    "sr2_f21_scale": [
+      "f",
+      "f",
+      "f"
+    ],
+    "sr6_f2___sub__": [
+      "f",
+      "f",
+      "f"
+    ],
+    "sr12_f16_scale": [
+      "f",
+      "f",
+      "f"
+    ],
+    "sr20_f62_scale": [
+      "f",
+      "f",
+      "f"
+    ],
+    "sr25_f21_scale": [
+      "i"
+    ],
+    "sr26_f21_scale": [
+      "f",
+      "f",
+      "f"
+    ],
+    "sr34_f23_cross": [
+      "f",
+      "f",
+      "f"
+    ],
+    "sr36_f23_cross": [
+      "f",
+      "f",
+      "f"
+    ]
+  }
+}

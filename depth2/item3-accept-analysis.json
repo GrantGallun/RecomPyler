@@ -1,0 +1,106 @@
+{
+  "criterion": "Accept only if paired-bootstrap95% median ray savings lower>0 and no control upper<0; otherwise leave numeric code uncommitted on named branch. No further optimization development.",
+  "accepted": true,
+  "kernels": {
+    "fannkuch": {
+      "paired_saved_ms": [
+        0.3706999705173075,
+        0.46120001934468746,
+        0.05310002597980201,
+        -0.17630000365898013,
+        -1.1654999980237335,
+        -0.04740001168102026,
+        1.1804000241681933,
+        -0.06849999772384763,
+        0.6330000469461083,
+        1.0099000064656138
+      ],
+      "median_paired_saved_ms": 0.21189999824855477,
+      "median_paired_percent_saved": 1.2915587927723806,
+      "paired_bootstrap_95_ms": [
+        -0.1118500076700002,
+        0.7355500129051507
+      ],
+      "bootstrap_resamples": 50000,
+      "seed": 30,
+      "exact_sign_test_two_sided_p": 0.75390625,
+      "resolved_faster": false,
+      "resolved_slower": false
+    },
+    "scimark": {
+      "paired_saved_ms": [
+        -0.0782000133767724,
+        0.06759996176697314,
+        0.038700003642588854,
+        -0.09649997809901834,
+        -0.011599971912801266,
+        -0.04499999340623617,
+        -0.03890000516548753,
+        0.08709999383427203,
+        -0.08570001227781177,
+        0.04379998426884413
+      ],
+      "median_paired_saved_ms": -0.025249988539144397,
+      "median_paired_percent_saved": -1.759544460970032,
+      "paired_bootstrap_95_ms": [
+        -0.0782000133767724,
+        0.053149982704780996
+      ],
+      "bootstrap_resamples": 50000,
+      "seed": 30,
+      "exact_sign_test_two_sided_p": 0.75390625,
+      "resolved_faster": false,
+      "resolved_slower": false
+    },
+    "barnes_hut": {
+      "paired_saved_ms": [
+        -3.108199976850301,
+        -0.8779999916441739,
+        4.253299965057522,
+        -0.3217000048607588,
+        -2.527200005715713,
+        0.34340002457611263,
+        -2.881899999920279,
+        1.0921000211965293,
+        4.122399986954406,
+        0.7974999898578972
+      ],
+      "median_paired_saved_ms": 0.010850009857676923,
+      "median_paired_percent_saved": 0.012622694891465724,
+      "paired_bootstrap_95_ms": [
+        -2.527200005715713,
+        2.4599499884061515
+      ],
+      "bootstrap_resamples": 50000,
+      "seed": 30,
+      "exact_sign_test_two_sided_p": 1.0,
+      "resolved_faster": false,
+      "resolved_slower": false
+    },
+    "raytrace": {
+      "paired_saved_ms": [
+        0.3513999981805682,
+        0.6263000250328332,
+        0.21160001051612198,
+        0.2330999996047467,
+        0.20209999638609588,
+        0.2663999912329018,
+        0.24530000519007444,
+        0.3724000125657767,
+        0.292200013063848,
+        0.18450000789016485
+      ],
+      "median_paired_saved_ms": 0.2558499982114881,
+      "median_paired_percent_saved": 8.067684817169406,
+      "paired_bootstrap_95_ms": [
+        0.21160001051612198,
+        0.3513999981805682
+      ],
+      "bootstrap_resamples": 50000,
+      "seed": 30,
+      "exact_sign_test_two_sided_p": 0.001953125,
+      "resolved_faster": true,
+      "resolved_slower": false
+    }
+  }
+}

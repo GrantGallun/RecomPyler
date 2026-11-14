@@ -1,0 +1,194 @@
+{
+  "variants": {
+    "product": {
+      "samples_ms": [
+        2.820199995767325,
+        2.897300000768155,
+        2.825799980200827
+      ],
+      "median_ms": 2.825799980200827
+    },
+    "current": {
+      "samples_ms": [
+        1.694599981419742,
+        1.6608000150881708,
+        1.668399985646829
+      ],
+      "median_ms": 1.668399985646829
+    },
+    "lists": {
+      "samples_ms": [
+        1.6704000008758157,
+        1.608099992154166,
+        1.5984000056050718
+      ],
+      "median_ms": 1.608099992154166
+    },
+    "tuples": {
+      "samples_ms": [
+        1.7251999815925956,
+        1.6571999876759946,
+        1.6806000203359872
+      ],
+      "median_ms": 1.6806000203359872
+    },
+    "float": {
+      "samples_ms": [
+        1.2761000252794474,
+        1.2906999909318984,
+        1.2732000031974167
+      ],
+      "median_ms": 1.2761000252794474
+    },
+    "float-tuples": {
+      "samples_ms": [
+        1.2336999934632331,
+        1.2373999925330281,
+        1.2647999974433333
+      ],
+      "median_ms": 1.2373999925330281
+    },
+    "float-stream": {
+      "samples_ms": [
+        0.8552999934181571,
+        0.8620000153314322,
+        0.8641000022180378
+      ],
+      "median_ms": 0.8620000153314322
+    },
+    "calls-replay": {
+      "samples_ms": [
+        0.8576000109314919,
+        0.8641000022180378,
+        0.8683000050950795
+      ],
+      "median_ms": 0.8641000022180378
+    },
+    "calls-inline": {
+      "samples_ms": [
+        0.8747999963816255,
+        0.8494000067003071,
+        0.9220000065397471
+      ],
+      "median_ms": 0.8747999963816255
+    },
+    "hand-core": {
+      "samples_ms": [
+        0.812400016002357,
+        0.7847999804653227,
+        0.7861999911256135
+      ],
+      "median_ms": 0.7861999911256135
+    },
+    "hand": {
+      "samples_ms": [
+        0.8067000017035753,
+        0.8123000152409077,
+        0.8129999914672226
+      ],
+      "median_ms": 0.8123000152409077
+    },
+    "c": {
+      "samples_ms": [
+        0.6041529999999999,
+        0.603437,
+        0.605822
+      ],
+      "median_ms": 0.6041529999999999
+    }
+  },
+  "conditional_steps": [
+    {
+      "from": "product",
+      "to": "current",
+      "median_difference_ms": 1.1573999945539981,
+      "median_paired_saved_ms": 1.1573999945539981,
+      "paired_savings_ms": [
+        1.125600014347583,
+        1.236499985679984,
+        1.1573999945539981
+      ],
+      "scope": "packing/validation/writeback and setup excluded from native timer",
+      "development_noise_floor_percent": 6
+    },
+    {
+      "from": "current",
+      "to": "lists",
+      "median_difference_ms": 0.06029999349266291,
+      "median_paired_saved_ms": 0.052700022934004664,
+      "paired_savings_ms": [
+        0.024199980543926358,
+        0.052700022934004664,
+        0.06999998004175723
+      ],
+      "scope": "all scene/light list growth and copy removed; upfront capacity reservation retained",
+      "development_noise_floor_percent": 6
+    },
+    {
+      "from": "lists",
+      "to": "tuples",
+      "median_difference_ms": -0.07250002818182111,
+      "median_paired_saved_ms": -0.05479998071677983,
+      "paired_savings_ms": [
+        -0.05479998071677983,
+        -0.04909999552182853,
+        -0.08220001473091543
+      ],
+      "scope": "all per-intersection tuple bumps batched; every tuple payload/handle store retained",
+      "development_noise_floor_percent": 6
+    },
+    {
+      "from": "tuples",
+      "to": "float-tuples",
+      "median_difference_ms": 0.4432000278029591,
+      "median_paired_saved_ms": 0.4197999951429665,
+      "paired_savings_ms": [
+        0.49149998812936246,
+        0.4197999951429665,
+        0.41580002289265394
+      ],
+      "scope": "whole-graph fixedFLOAT storage/scalar payload ABI and numeric checks together; diagnostic not general Python",
+      "development_noise_floor_percent": 6
+    },
+    {
+      "from": "float-tuples",
+      "to": "float-stream",
+      "median_difference_ms": 0.3753999772015959,
+      "median_paired_saved_ms": 0.378400000045076,
+      "paired_savings_ms": [
+        0.378400000045076,
+        0.3753999772015959,
+        0.4006999952252954
+      ],
+      "scope": "all intersection tuple payloads plus private list materialization and firstIntersection consumer fused; grouped, not pure tuple latency",
+      "development_noise_floor_percent": 6
+    },
+    {
+      "from": "calls-replay",
+      "to": "calls-inline",
+      "median_difference_ms": -0.01069999416358769,
+      "median_paired_saved_ms": -0.01719998545013368,
+      "paired_savings_ms": [
+        -0.01719998545013368,
+        0.014699995517730713,
+        -0.05370000144466758
+      ],
+      "scope": "one recursive dispatch/packed return edge removed, rayColour recursion retained",
+      "development_noise_floor_percent": 6
+    },
+    {
+      "from": "calls-inline",
+      "to": "hand-core",
+      "median_difference_ms": 0.08860000525601208,
+      "median_paired_saved_ms": 0.0646000262349844,
+      "paired_savings_ms": [
+        0.06239998037926853,
+        0.0646000262349844,
+        0.13580001541413367
+      ],
+      "scope": "unclosed grouped representation/control/remaining-call gap, not a single cost",
+      "development_noise_floor_percent": 6
+    }
+  ],
+  "method": "three fresh alternating processes per variant, each best-of-five native/product or Cbest20; all checks exact; signed conditional differences, partial ablations explicit; no historical timings reused"
+}

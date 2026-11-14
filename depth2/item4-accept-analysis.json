@@ -1,0 +1,106 @@
+{
+  "criterion": "Accept only if paired-bootstrap95% median fann savings lower>0 and no control upper<0; otherwise report unresolved owner gain without accepting.",
+  "accepted": true,
+  "kernels": {
+    "fannkuch": {
+      "paired_saved_ms": [
+        1.6505999956279993,
+        1.8363000126555562,
+        1.7422999953851104,
+        1.8706999835558236,
+        1.7902999825309962,
+        1.8218000186607242,
+        1.9505000382196158,
+        1.8028000195045024,
+        1.8894000095315278,
+        2.345600019907579
+      ],
+      "median_paired_saved_ms": 1.8290500156581402,
+      "median_paired_percent_saved": 12.457750538031027,
+      "paired_bootstrap_95_ms": [
+        1.7725500074448064,
+        1.9106000108877197
+      ],
+      "bootstrap_resamples": 50000,
+      "seed": 30,
+      "exact_sign_test_two_sided_p": 0.001953125,
+      "resolved_faster": true,
+      "resolved_slower": false
+    },
+    "scimark": {
+      "paired_saved_ms": [
+        -0.005299982149153948,
+        -0.012900010915473104,
+        -0.09360001422464848,
+        0.06639998173341155,
+        -0.02209996455349028,
+        -0.007499998901039362,
+        -0.052700022934004664,
+        0.037699996028095484,
+        0.017799990018829703,
+        0.0041000021155923605
+      ],
+      "median_paired_saved_ms": -0.006399990525096655,
+      "median_paired_percent_saved": -0.45206037518026104,
+      "paired_bootstrap_95_ms": [
+        -0.032800016924738884,
+        0.020899999071843922
+      ],
+      "bootstrap_resamples": 50000,
+      "seed": 30,
+      "exact_sign_test_two_sided_p": 0.75390625,
+      "resolved_faster": false,
+      "resolved_slower": false
+    },
+    "barnes_hut": {
+      "paired_saved_ms": [
+        -1.2960000312887132,
+        0.4461999924387783,
+        -0.4126999992877245,
+        -0.8544999873265624,
+        -0.001400010660290718,
+        -0.4119999648537487,
+        0.6628999835811555,
+        -0.19950000569224358,
+        -0.3453000099398196,
+        3.295300033641979
+      ],
+      "median_paired_saved_ms": -0.2724000078160316,
+      "median_paired_percent_saved": -0.8127910943811173,
+      "paired_bootstrap_95_ms": [
+        -0.6332499760901555,
+        0.4461999924387783
+      ],
+      "bootstrap_resamples": 50000,
+      "seed": 30,
+      "exact_sign_test_two_sided_p": 0.34375,
+      "resolved_faster": false,
+      "resolved_slower": false
+    },
+    "raytrace": {
+      "paired_saved_ms": [
+        0.1947999990079552,
+        -0.076299998909235,
+        -0.22550002904608846,
+        -0.01719998545013368,
+        -0.08239998714998364,
+        0.8796000329311937,
+        0.015600002370774746,
+        0.02950002090074122,
+        0.021499989088624716,
+        -0.10380000458098948
+      ],
+      "median_paired_saved_ms": -0.0007999915396794677,
+      "median_paired_percent_saved": -0.027373373736764628,
+      "paired_bootstrap_95_ms": [
+        -0.09005000174511224,
+        0.10814999404828995
+      ],
+      "bootstrap_resamples": 50000,
+      "seed": 30,
+      "exact_sign_test_two_sided_p": 1.0,
+      "resolved_faster": false,
+      "resolved_slower": false
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "baseline": {
+    "llvm": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave15-depth2\\depth2\\product-artifacts-v2\\fannkuch\\numeric-owner-capture\\rcaot_2019fb835f2ec4d9a8fa2ef8.post-module.ll",
+    "function": "_ZN35rc_28c05c76331a33289be3140d8cb1e81214_rcv1_fannkuchB2v1B32c8tJTC_2fWQMSlLSj2gb4vKgGzNAE_3dE5ArrayIhLi1E1C7mutable7alignedEx",
+    "entry_guard_true": "B0.endif.endif.endif.i.i.i",
+    "entry_guard_false": "B1504",
+    "blocks": 181,
+    "fast_reachable_blocks": 77,
+    "fast_cyclic_blocks": 42,
+    "fast_cyclic_nrt_call_sites": 6,
+    "fast_cyclic_nrt_calls_by_block": {
+      "B442": [
+        "tail call void @NRT_incref(ptr nonnull %.7.i.i.i.i.i252)"
+      ],
+      "B658": [
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i252)"
+      ],
+      "B976": [
+        "tail call void @NRT_incref(ptr nonnull %.7.i.i.i.i.i252)"
+      ],
+      "B1006": [
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i252)"
+      ],
+      "B1010.preheader": [
+        "tail call void @NRT_decref(ptr %perm.6.sroa.0.1.ph)",
+        "tail call void @NRT_decref(ptr %perm.4.sroa.0.1.ph)"
+      ]
+    },
+    "fast_noncyclic_nrt_calls_by_block": {
+      "B248.endif": [
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i182)",
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i252)",
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i)",
+        "tail call void @NRT_decref(ptr %arg._rc_st.0)"
+      ],
+      "B1476.if": [
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i182)",
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i252)",
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i)",
+        "tail call void @NRT_decref(ptr %arg._rc_st.0)"
+      ]
+    },
+    "fallback_cyclic_nrt_call_sites": 6,
+    "full_function_nrt_call_sites": 29,
+    "note": "static CFG sites, not timings or dynamic execution counts; entry domain selects exact fast region, exits may be shared"
+  },
+  "owner": {
+    "llvm": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave15-depth2\\depth2\\product-artifacts-v2\\fannkuch\\owner-v1\\rcaot_f541853f75ce1a3b1a002589.post-module.ll",
+    "function": "_ZN35rc_1db1d61e6e317943fcdaab2f0930cadc14_rcv1_fannkuchB4v202B32c8tJTC_2fWQMSlLSj2gb4vKgGzNAE_3dE5ArrayIhLi1E1C7mutable7alignedEx",
+    "entry_guard_true": "B0.endif.endif.endif.i.i.i",
+    "entry_guard_false": "B1444",
+    "blocks": 180,
+    "fast_reachable_blocks": 76,
+    "fast_cyclic_blocks": 41,
+    "fast_cyclic_nrt_call_sites": 0,
+    "fast_cyclic_nrt_calls_by_block": {},
+    "fast_noncyclic_nrt_calls_by_block": {
+      "B248.endif": [
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i158)",
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i228)",
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i)",
+        "tail call void @NRT_decref(ptr %arg._rc_st.0)"
+      ],
+      "B1416.if": [
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i158)",
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i228)",
+        "tail call void @NRT_decref(ptr nonnull %.7.i.i.i.i.i)",
+        "tail call void @NRT_decref(ptr %arg._rc_st.0)"
+      ]
+    },
+    "fallback_cyclic_nrt_call_sites": 6,
+    "full_function_nrt_call_sites": 23,
+    "note": "static CFG sites, not timings or dynamic execution counts; entry domain selects exact fast region, exits may be shared"
+  },
+  "fast_hot_loops_nrt_free": true,
+  "ordinary_exit_cleanup_retained": true
+}
