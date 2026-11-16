@@ -1,0 +1,642 @@
+{
+  "complete": true,
+  "label": "range-s49-s50-long-v1",
+  "class": "acceptance",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "lift-evidence/s50_programs.py",
+    "range-s49-s50-long-v1"
+  ],
+  "start": "2026-11-14T21:26:58.623625+00:00",
+  "end": "2026-11-14T21:29:36.786916+00:00",
+  "exit_code": 0,
+  "source_unchanged": true,
+  "seals": {
+    "source_seal_sha256": "bf8d0c4b6b683d650268d35357b8abf405ed68aadf052ce6414f7768c5fa04dd",
+    "artifact_receipt_sha256": "2b0a3872acada40dbd008a1d45c0044a829e3c116ba32e06bd9b3d21e6a6e8fb"
+  },
+  "audit_before": {
+    "time": "2026-11-14T21:26:57.430216+00:00",
+    "blockers": [],
+    "active": [
+      {
+        "pid": 0,
+        "name": "system idle process",
+        "cpu_s": 11.75,
+        "command": ""
+      },
+      {
+        "pid": 4,
+        "name": "system",
+        "cpu_s": 0.21875,
+        "command": ""
+      },
+      {
+        "pid": 11860,
+        "name": "python.exe",
+        "cpu_s": 0.640625,
+        "command": "python  -m webapp"
+      },
+      {
+        "pid": 10876,
+        "name": "firestorm.exe",
+        "cpu_s": 0.078125,
+        "command": ""
+      },
+      {
+        "pid": 37864,
+        "name": "node.exe",
+        "cpu_s": 0.078125,
+        "command": "\"C:\\Program Files\\Adobe\\Adobe Creative Cloud Experience\\libs\\node.exe\" \"C:\\Program Files\\Adobe\\Adobe Creative Cloud Experience\\js\\main.js\""
+      },
+      {
+        "pid": 28192,
+        "name": "chrome.exe",
+        "cpu_s": 0.34375,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=431 --launch-time-ticks=260130685372 --metrics-shmem-handle=12580,i,18185777964564051357,12078898740720541036,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709390176908413 --mojo-platform-channel-handle=13076 /prefetch:1"
+      },
+      {
+        "pid": 37788,
+        "name": "chrome.exe",
+        "cpu_s": 0.3125,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=gpu-process --gpu-recent-crash-count=1 --no-pre-read-main-dll --gpu-preferences=WAAAAAAAAABgAAACAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --metrics-shmem-handle=14952,i,5613230829822423301,6148461762105079766,262144 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709720015639261 --mojo-platform-channel-handle=15888 /prefetch:2"
+      },
+      {
+        "pid": 12428,
+        "name": "dwm.exe",
+        "cpu_s": 0.125,
+        "command": ""
+      }
+    ]
+  },
+  "audit_after_atomic_create": {
+    "time": "2026-11-14T21:26:58.604240+00:00",
+    "blockers": [],
+    "active": [
+      {
+        "pid": 0,
+        "name": "system idle process",
+        "cpu_s": 11.171875,
+        "command": ""
+      },
+      {
+        "pid": 4,
+        "name": "system",
+        "cpu_s": 0.0625,
+        "command": ""
+      },
+      {
+        "pid": 11860,
+        "name": "python.exe",
+        "cpu_s": 0.5,
+        "command": "python  -m webapp"
+      },
+      {
+        "pid": 10876,
+        "name": "firestorm.exe",
+        "cpu_s": 0.09375,
+        "command": ""
+      },
+      {
+        "pid": 41972,
+        "name": "python.exe",
+        "cpu_s": 0.828125,
+        "command": "C:\\Python314\\python.exe -m autonomy jobs-serve"
+      },
+      {
+        "pid": 28192,
+        "name": "chrome.exe",
+        "cpu_s": 0.46875,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=431 --launch-time-ticks=260130685372 --metrics-shmem-handle=12580,i,18185777964564051357,12078898740720541036,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709390176908413 --mojo-platform-channel-handle=13076 /prefetch:1"
+      },
+      {
+        "pid": 33428,
+        "name": "chrome.exe",
+        "cpu_s": 0.0625,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=659 --launch-time-ticks=264137550590 --metrics-shmem-handle=12008,i,14726033172487017491,809692289310347245,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709603822449985 --mojo-platform-channel-handle=11692 /prefetch:1"
+      },
+      {
+        "pid": 37788,
+        "name": "chrome.exe",
+        "cpu_s": 0.28125,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=gpu-process --gpu-recent-crash-count=1 --no-pre-read-main-dll --gpu-preferences=WAAAAAAAAABgAAACAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --metrics-shmem-handle=14952,i,5613230829822423301,6148461762105079766,262144 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709720015639261 --mojo-platform-channel-handle=15888 /prefetch:2"
+      },
+      {
+        "pid": 12428,
+        "name": "dwm.exe",
+        "cpu_s": 0.125,
+        "command": ""
+      }
+    ]
+  },
+  "test_process_observations": [
+    {
+      "time": "2026-11-14T21:26:58.623835+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:03.915392+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:09.230311+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:14.546344+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:19.832048+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:25.126037+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:30.486665+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:35.788058+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:41.109379+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:46.445282+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:51.758303+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:27:57.079155+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:02.395299+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:07.695909+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:13.012234+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:18.325138+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:23.627472+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:28.949404+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:34.241240+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:39.537759+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:44.847330+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:50.144885+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:28:55.470037+00:00",
+      "test_processes": [
+        {
+          "pid": 29280,
+          "name": "python.exe"
+        }
+      ]
+    },
+    {
+      "time": "2026-11-14T21:29:00.791094+00:00",
+      "test_processes": [
+        {
+          "pid": 6472,
+          "name": "python.exe"
+        }
+      ]
+    },
+    {
+      "time": "2026-11-14T21:29:06.108568+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:29:11.444120+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:29:16.778782+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:29:22.097269+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:29:27.398669+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:29:32.746734+00:00",
+      "test_processes": []
+    }
+  ],
+  "tests_seen_during_cohort": true,
+  "stdout_sha256": "c4563577093c3ccc3ebf2bc148d921b291193f5237b0fa449882611e51ebb4bb",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "summary_sha256": "70bea363f7fd4255722c982e337c97e6e235af322d6a373a7dbc7754c50ae51f",
+  "whole_program_results": [
+    {
+      "program": "scimark",
+      "loops": 20,
+      "pairs": 3,
+      "samples_s": {
+        "python": [
+          7.050864599994384,
+          7.454360399977304,
+          7.650195599999279
+        ],
+        "recompyler": [
+          4.408064699964598,
+          4.328878899978008,
+          4.431034300010651
+        ]
+      },
+      "median_python_s": 7.454360399977304,
+      "median_recompyler_s": 4.408064699964598,
+      "python_over_recompyler": 1.6910732730481863,
+      "stdout_identical": true,
+      "counts": [
+        {
+          "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+          "functions": [
+            {
+              "function": "FFT_transform_internal",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 0,
+              "aot_calls": 0,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": false,
+              "ahead_of_time": false,
+              "aot_loaded": false,
+              "region": false
+            },
+            {
+              "function": "FFT_bitreverse",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 0,
+              "aot_calls": 0,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": false,
+              "ahead_of_time": false,
+              "aot_loaded": false,
+              "region": false
+            },
+            {
+              "function": "FFT_transform",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 1000,
+              "aot_calls": 1000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            },
+            {
+              "function": "FFT_inverse",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 1000,
+              "aot_calls": 1000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            }
+          ],
+          "not_found": [],
+          "batches": {},
+          "batch_failures": {},
+          "exit_code": null
+        },
+        {
+          "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+          "functions": [
+            {
+              "function": "FFT_transform_internal",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 0,
+              "aot_calls": 0,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": false,
+              "ahead_of_time": false,
+              "aot_loaded": false,
+              "region": false
+            },
+            {
+              "function": "FFT_bitreverse",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 0,
+              "aot_calls": 0,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": false,
+              "ahead_of_time": false,
+              "aot_loaded": false,
+              "region": false
+            },
+            {
+              "function": "FFT_transform",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 1000,
+              "aot_calls": 1000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            },
+            {
+              "function": "FFT_inverse",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 1000,
+              "aot_calls": 1000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            }
+          ],
+          "not_found": [],
+          "batches": {},
+          "batch_failures": {},
+          "exit_code": null
+        },
+        {
+          "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+          "functions": [
+            {
+              "function": "FFT_transform_internal",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 0,
+              "aot_calls": 0,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": false,
+              "ahead_of_time": false,
+              "aot_loaded": false,
+              "region": false
+            },
+            {
+              "function": "FFT_bitreverse",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 0,
+              "aot_calls": 0,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": false,
+              "ahead_of_time": false,
+              "aot_loaded": false,
+              "region": false
+            },
+            {
+              "function": "FFT_transform",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 1000,
+              "aot_calls": 1000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            },
+            {
+              "function": "FFT_inverse",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+              "compiled_calls": 1000,
+              "aot_calls": 1000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            }
+          ],
+          "not_found": [],
+          "batches": {},
+          "batch_failures": {},
+          "exit_code": null
+        }
+      ],
+      "selection_profile_s": 86.25733399996534,
+      "source_inputs_sha256": {
+        "inputs\\scimark\\run_benchmark.py": "427b21b8a3802418ea3c2fe584335658a6c91c7f74fce4df9410efa60cd84d6e"
+      },
+      "plan_sha256": "d88b3280a18ec30dd48e78641ce187de739435f90b6aafaf521a4774eb2f728f",
+      "artifact_sha256": {
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\scimark.plan.json": "d88b3280a18ec30dd48e78641ce187de739435f90b6aafaf521a4774eb2f728f",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_06939d75284599f97f08ac251707a5a9.py": "7b95faeb53bcd3e8944311bb31a324366acad4ff72d7f578e7d87f65263dbd23",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_06939d75284599f97f08ac251707a5a9.verdicts.json": "170e558ee1083d70921686f82a7d3eb91a97c0a5ece8db8834d6c2318ebce2ec",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_4ac67337725be8e956e0d3719718a179.py": "96ff400bc270decc280bdae143c6d21795718609449959e59e502affbe281423",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_4ac67337725be8e956e0d3719718a179.verdicts.json": "53d2fcf1382aac49128ed517c82b5bf3ed809627ed42599bc9e234c599c69db4",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_5651b77e89bcaed0a4a2c0da9f2aa841.py": "b4b0c156d5d0e36d2a8526095ef1701cd733d2bef46dd32f9f7102458a53464e",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_5651b77e89bcaed0a4a2c0da9f2aa841.verdicts.json": "24ae1dc3cb1a399110d3f3be09d907b2c33ba6258f4f767c48de8b38d6fc3db5",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_5be71d6f09f68c865aef75a5e5197a67.py": "84b43f53c1e5b204a53b24f8b96f250555c2e50493f278f02a880a1ccd0ac79d",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_5be71d6f09f68c865aef75a5e5197a67.verdicts.json": "acf0867257ff695ab084dbe9ade09551c79d5e10253887099112834d259d54e8",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_60b4a68190c40b80c5a0933b3f8943de.py": "88b866d535f4773ba6584664460a7d7351c489c17b6421f65e710c2b9c9ca88e",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_6545ee19731b58014f331bd9ab81d0b5.py": "4f0755b75360761c373a59691e70f3475e3e3f523976e450ca834594632da579",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_74340b1037034625114bffc2d07f0b37.py": "f17b9f6923de6b2a1f823f6bca7fc36ef42422d76877c9f579cdfd00e97778bc",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_8ab28016cce81bda60503f4dfe3b3cd8.py": "0370e58e18a29e3c11dc2fd8f9e25986b2e8b8847686e410ca88c8f83fc355e6",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_8ab28016cce81bda60503f4dfe3b3cd8.verdicts.json": "b88d6b07de23ed67b82bd142cdb5dc9d39d255dbaefe7806e91626509e49a696",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_8d7d8e2e33caeae095cd2f21185bdfc0.py": "7c2f16c4136680670265c6470d2f55f4f822e5723fa5063888eec6a769426c23",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_8d7d8e2e33caeae095cd2f21185bdfc0.verdicts.json": "43179b034e179cb3861fbcf5d9eb34fd92ae2a231b0dbeab59a2be570bfa694e",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_a1ed8cb9e54578fa34beed0585ca375d.py": "27d14489be7b70951e45f64314a70aea7a175e7d6afc9f927a154578140e87af",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_c1dd9a6dffa4bce07f3604d40466a968.py": "d20d2b1c1a0c94b633b0fe62ca83592d6b339f6d86a94b40da571da79fda36ed",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_ebf7ad7ce66c65c0976523cd0d47ddce.py": "1bde8a05b89938738c1e248a818a0c2873abab6c68d647b39ec1830001fb4b4e",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rc_ebf7ad7ce66c65c0976523cd0d47ddce.verdicts.json": "465d06fbf489ed84702aaea221edbebd7974902fe7e1112e602b71cf3c10f2c2",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\rcaot_4cbebba3fc470b109c3a1b3e.cp314-win_amd64.pyd": "85dbd18b338fe36bdd8a4815278e3cb85180409e2cec5fc38251f77ab46de730",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\selftest-620c7b969ffee8fa1f78b3b3.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\startup-aot-regions-620c7b969ffee8fa1f78b3b3.json": "56e3c9acf867d2c14e4aefeaa9ab01cc49994bcb2a3462d83100f1965698942b",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp\\startup_probe.py": "ab2ced9f7df895d38323f202c1396a4e0d3170a37654d765c39a937a150053c6"
+      },
+      "note": "Unmodified profile/selection; whole-process wall includes startup; no PyPy rerun or speed claim for range."
+    },
+    {
+      "program": "spectral_norm",
+      "loops": 20,
+      "pairs": 3,
+      "samples_s": {
+        "python": [
+          1.570573900011368,
+          1.6315277999965474,
+          1.5936618000268936
+        ],
+        "recompyler": [
+          1.369897700031288,
+          1.318879799975548,
+          1.385496000002604
+        ]
+      },
+      "median_python_s": 1.5936618000268936,
+      "median_recompyler_s": 1.369897700031288,
+      "python_over_recompyler": 1.1633436569683233,
+      "stdout_identical": true,
+      "counts": [
+        {
+          "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+          "functions": [
+            {
+              "function": "part_A_times_u",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+              "compiled_calls": 52000,
+              "aot_calls": 52000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            },
+            {
+              "function": "part_At_times_u",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+              "compiled_calls": 52000,
+              "aot_calls": 52000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            }
+          ],
+          "not_found": [],
+          "batches": {},
+          "batch_failures": {},
+          "exit_code": null
+        },
+        {
+          "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+          "functions": [
+            {
+              "function": "part_A_times_u",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+              "compiled_calls": 52000,
+              "aot_calls": 52000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            },
+            {
+              "function": "part_At_times_u",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+              "compiled_calls": 52000,
+              "aot_calls": 52000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            }
+          ],
+          "not_found": [],
+          "batches": {},
+          "batch_failures": {},
+          "exit_code": null
+        },
+        {
+          "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+          "functions": [
+            {
+              "function": "part_A_times_u",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+              "compiled_calls": 52000,
+              "aot_calls": 52000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            },
+            {
+              "function": "part_At_times_u",
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+              "compiled_calls": 52000,
+              "aot_calls": 52000,
+              "jit_calls": 0,
+              "fallback_calls": 0,
+              "lifted": true,
+              "ahead_of_time": true,
+              "aot_loaded": true,
+              "region": false
+            }
+          ],
+          "not_found": [],
+          "batches": {},
+          "batch_failures": {},
+          "exit_code": null
+        }
+      ],
+      "selection_profile_s": 27.28646370000206,
+      "source_inputs_sha256": {
+        "inputs\\spectral_norm\\run_benchmark.py": "a3390ec6d75606fec30c4b59ad5f77d5292cd8e36f445197232a34560a880b18"
+      },
+      "plan_sha256": "e7e7fa5891bf7d6b83907d484b998f84a60bc44a941b1fc9f98dc5bc570191c3",
+      "artifact_sha256": {
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\spectral_norm.plan.json": "e7e7fa5891bf7d6b83907d484b998f84a60bc44a941b1fc9f98dc5bc570191c3",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_08b256cded6270e676d63d02d7c34067.py": "8554bdb323e84ea328f6244696887464dc5b74a05229869a78171be824f0efde",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_08b256cded6270e676d63d02d7c34067.verdicts.json": "7012c3145e1c876ef1a9635b50c39dc8d589007f399c39b8f1daafdca7bae5e2",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_5e2ff54ac0440a58f8bdedd448b7611d.py": "75e0ea71d60bbb8ff7607a5306ad1e120449e996d45461c9f435403c8e1d95f2",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_5e2ff54ac0440a58f8bdedd448b7611d.verdicts.json": "39dc1be6317b889094ee4d839a7e5ec0825e3c415a35927aaf818e114ffbb997",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_74fe3b335cb6d459801effef5edbfbb4.py": "143d0f6a67ace663e6961779f4bc3ae1352b693ea28a4507b27d83f2ace365cc",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_74fe3b335cb6d459801effef5edbfbb4.verdicts.json": "33dd74a4fd2bf769c5b035453603197590fc62bf4c41ec4306561f7e3dfb3d75",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_9a9573d028278189b25da6d6fb30c8b5.py": "7f276612de314721107c31ca41d5d48ec7ce53eaeec9baac8afc7f88c496e417",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_9a9573d028278189b25da6d6fb30c8b5.verdicts.json": "0255b3d8b6d3f2358ee9f5ce6fd1544771a7008c5313eee20023db85d0fa612a",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_a2e89fdcd4be3423eb7d73c7797750c2.py": "d9aa956ce0192768dd3d25990e7623d7629cc9d7f9d5d12054ba8da83823fe59",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rc_a2e89fdcd4be3423eb7d73c7797750c2.verdicts.json": "c428f06d89b7e8c62ebc2d18c21ea283831881eaf5f175f52c749f21df8c1a6f",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\rcaot_7e3f21d4da6e7935bb199fe9.cp314-win_amd64.pyd": "0727b63e3ff67c7c9cba86a281bfe5caa348a955538e2a5febf3176afeb36666",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\selftest-620c7b969ffee8fa1f78b3b3.json": "7c5645da5c7abe405da508912868139469caa7c7e060e57cf144737d825ec187",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\startup-aot-regions-620c7b969ffee8fa1f78b3b3.json": "b6cd47d5902c1b991e5cecf0be901cffeef141279a9a59f2e209a27a6dea1454",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp\\startup_probe.py": "ab2ced9f7df895d38323f202c1396a4e0d3170a37654d765c39a937a150053c6"
+      },
+      "note": "Unmodified profile/selection; whole-process wall includes startup; no PyPy rerun or speed claim for range."
+    }
+  ],
+  "cohort_receipt_sha256": "fe72a4768dab28033f01bcd7a8431753dccfc1b5ff604bfa61a378cfef4a6232"
+}

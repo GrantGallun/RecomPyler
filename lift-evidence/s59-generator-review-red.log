@@ -1,0 +1,14 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_generated_stop_flag_never_shadows_consumer_global ____________
+
+    def test_generated_stop_flag_never_shadows_consumer_global():
+        compiled = lift_region(consumer_with_control_names)
+>       assert compiled(3) == 140
+E       assert 103 == 140
+E        +  where 103 = <recompyler.heap.Region object at 0x0000014A853CFCB0>(3)
+
+lift-evidence\test_generator_loop_else_pending.py:114: AssertionError
+=========================== short test summary info ===========================
+FAILED lift-evidence/test_generator_loop_else_pending.py::test_generated_stop_flag_never_shadows_consumer_global
+1 failed, 11 deselected in 2.25s

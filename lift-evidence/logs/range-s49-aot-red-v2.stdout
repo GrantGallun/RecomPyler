@@ -1,0 +1,26 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_range_values_verified_build_and_fresh_prepared_aot ___________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave18-lift/lift-evidence/temp/range-s49-aot-red-v2/test_range_values_verified_bui0')
+
+    def test_range_values_verified_build_and_fresh_prepared_aot(tmp_path):
+        recipes = [(range_consume, (range(3),)), (range_repeated, (range(3),)),
+                   (range_argument, (6,)), (range_internal, (6,))]
+        entries = []
+        for fn, args in recipes:
+            with CallMonitor([SOURCE], 2, profiler.snapshot, backend='python', bias=0, yield_bias=0) as monitor:
+                fn(*args)
+            key = (str(SOURCE), fn.__qualname__, fn.__code__.co_firstlineno)
+            candidate = profiler.test_candidate(fn, monitor.samplers[key].samples, 1, extra=())
+>           assert candidate['status'] == 'verified', candidate
+E           AssertionError: {'status': 'skipped', 'reason': 'outside the supported subset: Dict at line 2', 'region_reason': 'as a region: an argument of type range'}
+E           assert 'skipped' == 'verified'
+E             
+E             - verified
+E             + skipped
+
+tests\test_range_values_aot.py:47: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_range_values_aot.py::test_range_values_verified_build_and_fresh_prepared_aot
+1 failed in 1.21s

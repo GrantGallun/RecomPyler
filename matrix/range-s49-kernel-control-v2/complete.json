@@ -1,0 +1,227 @@
+{
+  "complete": true,
+  "label": "range-s49-kernel-control-v2",
+  "class": "acceptance",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "matrix/kernel_pairs.py",
+    "lift-range-s49-v1",
+    "range-s49-kernel-control-v2",
+    "3",
+    "lift-range-base-s49-v1"
+  ],
+  "start": "2026-11-14T21:25:01.389666+00:00",
+  "end": "2026-11-14T21:25:50.653345+00:00",
+  "exit_code": 0,
+  "source_unchanged": true,
+  "seals": {
+    "source_seal_sha256": "bf8d0c4b6b683d650268d35357b8abf405ed68aadf052ce6414f7768c5fa04dd",
+    "artifact_receipt_sha256": "2b0a3872acada40dbd008a1d45c0044a829e3c116ba32e06bd9b3d21e6a6e8fb"
+  },
+  "audit_before": {
+    "time": "2026-11-14T21:24:58.995495+00:00",
+    "blockers": [],
+    "active": [
+      {
+        "pid": 0,
+        "name": "system idle process",
+        "cpu_s": 11.5625,
+        "command": ""
+      },
+      {
+        "pid": 4,
+        "name": "system",
+        "cpu_s": 0.203125,
+        "command": ""
+      },
+      {
+        "pid": 3528,
+        "name": "memory compression",
+        "cpu_s": 0.3125,
+        "command": ""
+      },
+      {
+        "pid": 14156,
+        "name": "chrome.exe",
+        "cpu_s": 0.09375,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --source-shortcut-location=taskbar"
+      },
+      {
+        "pid": 11860,
+        "name": "python.exe",
+        "cpu_s": 0.265625,
+        "command": "python  -m webapp"
+      },
+      {
+        "pid": 10876,
+        "name": "firestorm.exe",
+        "cpu_s": 0.078125,
+        "command": ""
+      },
+      {
+        "pid": 41972,
+        "name": "python.exe",
+        "cpu_s": 0.765625,
+        "command": "C:\\Python314\\python.exe -m autonomy jobs-serve"
+      },
+      {
+        "pid": 28192,
+        "name": "chrome.exe",
+        "cpu_s": 0.1875,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=431 --launch-time-ticks=260130685372 --metrics-shmem-handle=12580,i,18185777964564051357,12078898740720541036,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709390176908413 --mojo-platform-channel-handle=13076 /prefetch:1"
+      },
+      {
+        "pid": 33428,
+        "name": "chrome.exe",
+        "cpu_s": 0.0625,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=659 --launch-time-ticks=264137550590 --metrics-shmem-handle=12008,i,14726033172487017491,809692289310347245,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709603822449985 --mojo-platform-channel-handle=11692 /prefetch:1"
+      },
+      {
+        "pid": 37788,
+        "name": "chrome.exe",
+        "cpu_s": 0.171875,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=gpu-process --gpu-recent-crash-count=1 --no-pre-read-main-dll --gpu-preferences=WAAAAAAAAABgAAACAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --metrics-shmem-handle=14952,i,5613230829822423301,6148461762105079766,262144 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709720015639261 --mojo-platform-channel-handle=15888 /prefetch:2"
+      },
+      {
+        "pid": 12428,
+        "name": "dwm.exe",
+        "cpu_s": 0.125,
+        "command": ""
+      }
+    ]
+  },
+  "audit_after_atomic_create": {
+    "time": "2026-11-14T21:25:00.176102+00:00",
+    "blockers": [],
+    "active": [
+      {
+        "pid": 0,
+        "name": "system idle process",
+        "cpu_s": 11.765625,
+        "command": ""
+      },
+      {
+        "pid": 4,
+        "name": "system",
+        "cpu_s": 0.078125,
+        "command": ""
+      },
+      {
+        "pid": 5708,
+        "name": "msmpeng.exe",
+        "cpu_s": 0.09375,
+        "command": ""
+      },
+      {
+        "pid": 14156,
+        "name": "chrome.exe",
+        "cpu_s": 0.109375,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --source-shortcut-location=taskbar"
+      },
+      {
+        "pid": 20660,
+        "name": "claude.exe",
+        "cpu_s": 0.125,
+        "command": "\"C:\\Program Files\\WindowsApps\\Claude_5.11492.5.0_x64__pzs8sxrjxfjjc\\app\\Claude.exe\" "
+      },
+      {
+        "pid": 11860,
+        "name": "python.exe",
+        "cpu_s": 0.359375,
+        "command": "python  -m webapp"
+      },
+      {
+        "pid": 10876,
+        "name": "firestorm.exe",
+        "cpu_s": 0.09375,
+        "command": ""
+      },
+      {
+        "pid": 28192,
+        "name": "chrome.exe",
+        "cpu_s": 0.34375,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=431 --launch-time-ticks=260130685372 --metrics-shmem-handle=12580,i,18185777964564051357,12078898740720541036,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709390176908413 --mojo-platform-channel-handle=13076 /prefetch:1"
+      },
+      {
+        "pid": 33428,
+        "name": "chrome.exe",
+        "cpu_s": 0.234375,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=659 --launch-time-ticks=264137550590 --metrics-shmem-handle=12008,i,14726033172487017491,809692289310347245,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709603822449985 --mojo-platform-channel-handle=11692 /prefetch:1"
+      },
+      {
+        "pid": 37788,
+        "name": "chrome.exe",
+        "cpu_s": 0.234375,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=gpu-process --gpu-recent-crash-count=1 --no-pre-read-main-dll --gpu-preferences=WAAAAAAAAABgAAACAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --metrics-shmem-handle=14952,i,5613230829822423301,6148461762105079766,262144 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709720015639261 --mojo-platform-channel-handle=15888 /prefetch:2"
+      },
+      {
+        "pid": 12428,
+        "name": "dwm.exe",
+        "cpu_s": 0.140625,
+        "command": ""
+      }
+    ]
+  },
+  "test_process_observations": [
+    {
+      "time": "2026-11-14T21:25:01.390528+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:25:06.708364+00:00",
+      "test_processes": [
+        {
+          "pid": 12244,
+          "name": "python.exe"
+        }
+      ]
+    },
+    {
+      "time": "2026-11-14T21:25:12.037311+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:25:17.340928+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:25:22.615442+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:25:27.912880+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:25:33.208652+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:25:38.513357+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:25:43.820298+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T21:25:49.163985+00:00",
+      "test_processes": [
+        {
+          "pid": 8432,
+          "name": "python.exe"
+        }
+      ]
+    }
+  ],
+  "tests_seen_during_cohort": true,
+  "stdout_sha256": "165934f5bfe01cfd7e576b300a61267ee10f4d121a56d3ac95422e365aa2e0e4",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "summary_sha256": "84021802873f7e826339c62803e844c02705eded331a033d5abaf387f4502a26",
+  "ratios": {
+    "barnes_hut": 1.0277321274087632,
+    "fannkuch": 0.9900511331201748,
+    "scimark": 1.0054016708643179,
+    "raytrace": 1.016413424684503
+  }
+}

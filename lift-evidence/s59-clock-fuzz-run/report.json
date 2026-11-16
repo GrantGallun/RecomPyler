@@ -1,0 +1,38 @@
+{
+  "seed": 1729,
+  "commit": "1dcc9968f5fd4f4d9fa4c08478f4a5ed98eb845f",
+  "product_commit": "working-tree",
+  "product_source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\clock-development-src",
+  "inventory": {
+    "corpus": 1
+  },
+  "selected_subjects": 1,
+  "executed_subjects": 1,
+  "counts": {
+    "native": 27,
+    "declined": 173,
+    "resource-filtered": 56
+  },
+  "layer_a_findings": 0,
+  "mutated_findings": 0,
+  "findings_by_engine": {},
+  "seconds": 4.44,
+  "command": [
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\tools\\difffuzz\\__main__.py",
+    "--minutes",
+    "10",
+    "--workers",
+    "1",
+    "--sources",
+    "corpus",
+    "--replay",
+    "lift-evidence/s59-clock-fuzz-case.py",
+    "--product-source",
+    "lift-evidence/clock-development-src",
+    "--run",
+    "wave18-lift",
+    "--publish",
+    "--output",
+    "lift-evidence/s59-clock-fuzz-run"
+  ]
+}

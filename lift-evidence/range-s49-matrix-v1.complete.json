@@ -1,0 +1,65 @@
+{
+  "complete": true,
+  "counts": {
+    "native": 251,
+    "declined": 775
+  },
+  "original_rows": 1016,
+  "original_row_verdict_changes": [],
+  "new_rows": [
+    {
+      "id": "range_value.assigned",
+      "verdict": "native",
+      "reason": ""
+    },
+    {
+      "id": "range_value.repeated",
+      "verdict": "native",
+      "reason": ""
+    },
+    {
+      "id": "range_value.argument",
+      "verdict": "native",
+      "reason": ""
+    },
+    {
+      "id": "range_value.internal_argument",
+      "verdict": "native",
+      "reason": ""
+    },
+    {
+      "id": "range_value.internal_return",
+      "verdict": "native",
+      "reason": ""
+    },
+    {
+      "id": "range_value.length",
+      "verdict": "native",
+      "reason": ""
+    },
+    {
+      "id": "range_value.index",
+      "verdict": "native",
+      "reason": ""
+    },
+    {
+      "id": "range_value.contains",
+      "verdict": "native",
+      "reason": ""
+    },
+    {
+      "id": "range_value.zero_step_unused",
+      "verdict": "declined",
+      "reason": "Dict at line 2; runtime guard at ('construct', 4)"
+    },
+    {
+      "id": "range_value.huge",
+      "verdict": "declined",
+      "reason": "Dict at line 2"
+    }
+  ],
+  "raw_sha256": "6a052ed9a5391b0c35262c3054b18abc3cd1115df8cc1e1094923485ffbede51",
+  "catalogue_sha256": "008366519accf1bf074a9b66d00164eb0944e1b831e194713c502b4a916ee920",
+  "range_cases_sha256": "5d3d461aff13144f6755e6b2293d5734b166c7ec3644d8c8eeab2efd6061a769",
+  "receipt": "logs/range-s49-matrix-v1.receipt.json"
+}

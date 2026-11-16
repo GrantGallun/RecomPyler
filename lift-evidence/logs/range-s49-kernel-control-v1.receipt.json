@@ -1,0 +1,210 @@
+{
+  "complete": true,
+  "label": "range-s49-kernel-control-v1",
+  "class": "acceptance",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "matrix/kernel_pairs.py",
+    "lift-range-s49-v1",
+    "range-s49-kernel-control-v1",
+    "3",
+    "lift-range-base-s49-v1"
+  ],
+  "start": "2026-11-14T20:48:42.259605+00:00",
+  "end": "2026-11-14T20:49:31.022745+00:00",
+  "exit_code": 0,
+  "source_unchanged": true,
+  "seals": {
+    "source_seal_sha256": "bf8d0c4b6b683d650268d35357b8abf405ed68aadf052ce6414f7768c5fa04dd",
+    "artifact_receipt_sha256": "2b0a3872acada40dbd008a1d45c0044a829e3c116ba32e06bd9b3d21e6a6e8fb"
+  },
+  "audit_before": {
+    "time": "2026-11-14T20:48:40.505864+00:00",
+    "blockers": [],
+    "active": [
+      {
+        "pid": 0,
+        "name": "system idle process",
+        "cpu_s": 11.53125,
+        "command": ""
+      },
+      {
+        "pid": 4,
+        "name": "system",
+        "cpu_s": 0.265625,
+        "command": ""
+      },
+      {
+        "pid": 5708,
+        "name": "msmpeng.exe",
+        "cpu_s": 0.078125,
+        "command": ""
+      },
+      {
+        "pid": 11860,
+        "name": "python.exe",
+        "cpu_s": 0.640625,
+        "command": "python  -m webapp"
+      },
+      {
+        "pid": 10876,
+        "name": "firestorm.exe",
+        "cpu_s": 0.09375,
+        "command": ""
+      },
+      {
+        "pid": 41972,
+        "name": "python.exe",
+        "cpu_s": 0.484375,
+        "command": "C:\\Python314\\python.exe -m autonomy jobs-serve"
+      },
+      {
+        "pid": 28192,
+        "name": "chrome.exe",
+        "cpu_s": 0.125,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=431 --launch-time-ticks=260130685372 --metrics-shmem-handle=12580,i,18185777964564051357,12078898740720541036,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709390176908413 --mojo-platform-channel-handle=13076 /prefetch:1"
+      },
+      {
+        "pid": 42292,
+        "name": "dwm.exe",
+        "cpu_s": 0.09375,
+        "command": ""
+      },
+      {
+        "pid": 13796,
+        "name": "chrome.exe",
+        "cpu_s": 0.203125,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=gpu-process --gpu-recent-crash-count=1 --no-pre-read-main-dll --gpu-preferences=WAAAAAAAAABgAAACAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --metrics-shmem-handle=10372,i,4929602838122189728,15677280296127732551,262144 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709635681872851 --mojo-platform-channel-handle=14200 /prefetch:2"
+      }
+    ]
+  },
+  "audit_after_atomic_create": {
+    "time": "2026-11-14T20:48:41.664064+00:00",
+    "blockers": [],
+    "active": [
+      {
+        "pid": 0,
+        "name": "system idle process",
+        "cpu_s": 12.078125,
+        "command": ""
+      },
+      {
+        "pid": 4,
+        "name": "system",
+        "cpu_s": 0.0625,
+        "command": ""
+      },
+      {
+        "pid": 11860,
+        "name": "python.exe",
+        "cpu_s": 0.625,
+        "command": "python  -m webapp"
+      },
+      {
+        "pid": 10876,
+        "name": "firestorm.exe",
+        "cpu_s": 0.09375,
+        "command": ""
+      },
+      {
+        "pid": 41972,
+        "name": "python.exe",
+        "cpu_s": 0.078125,
+        "command": "C:\\Python314\\python.exe -m autonomy jobs-serve"
+      },
+      {
+        "pid": 28192,
+        "name": "chrome.exe",
+        "cpu_s": 0.109375,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=renderer --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --no-pre-read-main-dll --video-capture-use-gpu-memory-buffer --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=431 --launch-time-ticks=260130685372 --metrics-shmem-handle=12580,i,18185777964564051357,12078898740720541036,1572864 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709390176908413 --mojo-platform-channel-handle=13076 /prefetch:1"
+      },
+      {
+        "pid": 42292,
+        "name": "dwm.exe",
+        "cpu_s": 0.0625,
+        "command": ""
+      },
+      {
+        "pid": 13796,
+        "name": "chrome.exe",
+        "cpu_s": 0.09375,
+        "command": "\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" --type=gpu-process --gpu-recent-crash-count=1 --no-pre-read-main-dll --gpu-preferences=WAAAAAAAAABgAAACAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --metrics-shmem-handle=10372,i,4929602838122189728,15677280296127732551,262144 --field-trial-handle=2044,i,13956027162623969651,3249348825317897350,262144 --variations-seed-version=20261113-170055.076000-production --pseudonymization-salt-handle=1912,i,8809461138467825719,3305145083529947704,4 --trace-process-track-uuid=3190709635681872851 --mojo-platform-channel-handle=14200 /prefetch:2"
+      }
+    ]
+  },
+  "test_process_observations": [
+    {
+      "time": "2026-11-14T20:48:42.259879+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T20:48:47.535335+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T20:48:52.825769+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T20:48:58.126999+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T20:49:03.439583+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T20:49:08.741471+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T20:49:14.053540+00:00",
+      "test_processes": []
+    },
+    {
+      "time": "2026-11-14T20:49:19.341837+00:00",
+      "test_processes": [
+        {
+          "pid": 17280,
+          "name": "python.exe"
+        }
+      ]
+    },
+    {
+      "time": "2026-11-14T20:49:24.669388+00:00",
+      "test_processes": [
+        {
+          "pid": 17280,
+          "name": "python.exe"
+        }
+      ]
+    },
+    {
+      "time": "2026-11-14T20:49:29.964008+00:00",
+      "test_processes": [
+        {
+          "pid": 17280,
+          "name": "python.exe"
+        },
+        {
+          "pid": 42940,
+          "name": "python.exe"
+        },
+        {
+          "pid": 26568,
+          "name": "python.exe"
+        }
+      ]
+    }
+  ],
+  "tests_seen_during_cohort": true,
+  "stdout_sha256": "73b54e97f567ce681d271d9c47549b0b753e88aa249fc479feffb2acfce33145",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "summary_sha256": "8434c48c1fa110c0446054bba5762633a22d6a988c11f364d50e3b8b6f4ac880",
+  "ratios": {
+    "barnes_hut": 0.988307755329121,
+    "fannkuch": 0.9919029245403566,
+    "scimark": 1.0040816240871693,
+    "raytrace": 0.9967155254947903
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+  "profiler": "c",
+  "total_s": 7.678373877310808,
+  "script_self_s": 7.341561471228488,
+  "functions": [
+    {
+      "function": "bench_FFT",
+      "qualname": "bench_FFT",
+      "line": 371,
+      "calls": 1,
+      "self_s": 0.0007626664591953158,
+      "cumulative_s": 3.4257427231641486,
+      "library_s": 2.6751658879220486e-06,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: 'Random.__init__' does more than set attributes from its arguments",
+        "region_reason": "as a region: 'Random.__init__' uses the new object before setting all its attributes"
+      }
+    },
+    {
+      "function": "FFT_transform_internal",
+      "qualname": "FFT_transform_internal",
+      "line": 286,
+      "calls": 2000,
+      "self_s": 2.9357994913007133,
+      "cumulative_s": 3.33893901045667,
+      "library_s": 0.03784829220967367,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "saves 3229 ms a run once the compiled code is cached",
+        "net_s_first_run": -4.490476825500153,
+        "net_s_cached": 3.228724974505823,
+        "first_pass_s": 7.795584000006784,
+        "warm_start_s": 0.07638220000080764,
+        "python_us_per_call": 1930.4250017739832,
+        "compiled_cpu_us_per_call": 19.56005239069624,
+        "speedup": 98.69222041001241,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 19.56005239069624,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": true,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function changes its arguments"
+      }
+    },
+    {
+      "function": "FFT_inverse",
+      "qualname": "FFT_inverse",
+      "line": 362,
+      "calls": 1000,
+      "self_s": 0.08478291722713038,
+      "cumulative_s": 1.757267231005244,
+      "library_s": 9.570695692673326e-05,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "saves 1582 ms a run once the compiled code is cached",
+        "net_s_first_run": -11.87436700355745,
+        "net_s_cached": 1.5822424963743498,
+        "first_pass_s": 13.502319899969734,
+        "warm_start_s": 0.04571040003793314,
+        "python_us_per_call": 1642.3125125584193,
+        "compiled_cpu_us_per_call": 14.359616146136363,
+        "speedup": 114.37022381690225,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 14.359616146136363,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": true,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function changes its arguments"
+      }
+    },
+    {
+      "function": "FFT_transform",
+      "qualname": "FFT_transform",
+      "line": 358,
+      "calls": 1000,
+      "self_s": 0.00047521007945761085,
+      "cumulative_s": 1.6670256137149408,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "saves 1597 ms a run once the compiled code is cached",
+        "net_s_first_run": -5.122699485924325,
+        "net_s_cached": 1.5970290140176688,
+        "first_pass_s": 6.7713338999892585,
+        "warm_start_s": 0.05160540004726499,
+        "python_us_per_call": 1705.0875176209956,
+        "compiled_cpu_us_per_call": 18.81111165857874,
+        "speedup": 90.6425706554879,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 18.81111165857874,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": true,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function changes its arguments"
+      }
+    },
+    {
+      "function": "bench_LU",
+      "qualname": "bench_LU",
+      "line": 257,
+      "calls": 1,
+      "self_s": 2.37500062212348e-05,
+      "cumulative_s": 1.454593145113904,
+      "library_s": 6.389920599758625e-06,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: 'Random.__init__' does more than set attributes from its arguments",
+        "region_reason": "as a region: 'Random.__init__' uses the new object before setting all its attributes"
+      }
+    },
+    {
+      "function": "LU",
+      "qualname": "LU",
+      "line": 252,
+      "calls": 20,
+      "self_s": 3.470055526122451e-05,
+      "cumulative_s": 1.450277662370354,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: assignment target at line 18",
+        "region_reason": "as a region: an array of typecode 'd'"
+      }
+    },
+    {
+      "function": "LU_factor",
+      "qualname": "LU_factor",
+      "line": 222,
+      "calls": 20,
+      "self_s": 0.9472141426522285,
+      "cumulative_s": 1.4501091216225177,
+      "library_s": 0.005405688600149006,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: assignment target at line 18",
+        "region_reason": "as a region: an array of typecode 'd'"
+      }
+    },
+    {
+      "function": "bench_MonteCarlo",
+      "qualname": "bench_MonteCarlo",
+      "line": 212,
+      "calls": 1,
+      "self_s": 2.8796144761145115e-05,
+      "cumulative_s": 1.0890683004981838,
+      "library_s": 4.770699888467789e-07,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: global 'pyperf' is not a numeric constant",
+        "region_reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_MonteCarlo'"
+      }
+    },
+    {
+      "function": "MonteCarlo",
+      "qualname": "MonteCarlo",
+      "line": 201,
+      "calls": 20,
+      "self_s": 0.1930016254191287,
+      "cumulative_s": 1.0890390272834338,
+      "library_s": 2.2320484276860952e-05,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: 'Random.__init__' does more than set attributes from its arguments",
+        "region_reason": "as a region: 'Random.__init__' uses the new object before setting all its attributes"
+      }
+    },
+    {
+      "function": "nextDouble",
+      "qualname": "Random.nextDouble",
+      "line": 78,
+      "calls": 4012048,
+      "self_s": 0.888556759164203,
+      "cumulative_s": 0.8987500360817648,
+      "library_s": 0.010193276917561889,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "the compiled version did not apply to the captured calls",
+        "region_reason": "as a region: 'Random.__init__' uses the new object before setting all its attributes"
+      }
+    },
+    {
+      "function": "__getitem__",
+      "qualname": "Array2D.__getitem__",
+      "line": 21,
+      "calls": 9604000,
+      "self_s": 0.24825979280285537,
+      "cumulative_s": 0.7621669906657189,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.01x Python",
+        "net_s_first_run": -143.7367357169974,
+        "net_s_cached": -142.54959081702376,
+        "first_pass_s": 1.2199359000078402,
+        "warm_start_s": 0.03279100003419444,
+        "python_us_per_call": 0.1503889564858878,
+        "compiled_cpu_us_per_call": 14.989705888700543,
+        "speedup": 0.010032815693819126,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 14.989705888700543,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": false,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function takes objects"
+      }
+    },
+    {
+      "function": "_idx",
+      "qualname": "Array2D._idx",
+      "line": 16,
+      "calls": 11524800,
+      "self_s": 0.6155680749798194,
+      "cumulative_s": 0.6155680749798194,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.01x Python",
+        "net_s_first_run": -150.97382058561777,
+        "net_s_cached": -150.57682498559586,
+        "first_pass_s": 0.4325213000411168,
+        "warm_start_s": 0.03552570001920685,
+        "python_us_per_call": 0.11963899812279125,
+        "compiled_cpu_us_per_call": 13.182017458970414,
+        "speedup": 0.00907592472056517,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 13.182017458970414,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": false,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function takes objects"
+      }
+    },
+    {
+      "function": "__getitem__",
+      "qualname": "ArrayList.__getitem__",
+      "line": 127,
+      "calls": 19908780,
+      "self_s": 0.3272109384415671,
+      "cumulative_s": 0.497128551651258,
+      "library_s": 0.1699176132096909,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: name 'tuple' at line 2",
+        "region_reason": "as a region: an array of typecode 'd'"
+      }
+    },
+    {
+      "function": "FFT_bitreverse",
+      "qualname": "FFT_bitreverse",
+      "line": 337,
+      "calls": 2000,
+      "self_s": 0.3639308135025203,
+      "cumulative_s": 0.3640672199544497,
+      "library_s": 0.00013640645192936063,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "saves 300 ms a run once the compiled code is cached",
+        "net_s_first_run": -1.3495357801773884,
+        "net_s_cached": 0.30042491989589104,
+        "first_pass_s": 1.6815346000366844,
+        "warm_start_s": 0.03157389996340498,
+        "python_us_per_call": 174.13035467533126,
+        "compiled_cpu_us_per_call": 8.130944745683271,
+        "speedup": 21.415759191793466,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 8.130944745683271,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": true,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function changes its arguments"
+      }
+    },
+    {
+      "function": "__setitem__",
+      "qualname": "Array2D.__setitem__",
+      "line": 25,
+      "calls": 1920800,
+      "self_s": 0.12066457106266171,
+      "cumulative_s": 0.22232544817961752,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.01x Python",
+        "net_s_first_run": -30.24763812611569,
+        "net_s_cached": -29.038904026187865,
+        "first_pass_s": 1.245904499955941,
+        "warm_start_s": 0.037170400028117,
+        "python_us_per_call": 0.17091860658987315,
+        "compiled_cpu_us_per_call": 15.269697045865044,
+        "speedup": 0.011193320082021996,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 15.269697045865044,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": false,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function takes objects"
+      }
+    }
+  ],
+  "candidate_ranking": {
+    "priority": "cumulative_s",
+    "target_fraction": 0.99,
+    "hard_limit": 40,
+    "eligible_candidates": 72,
+    "attempted_candidates": 15,
+    "observed_positive_self_s": 7.34157744445838,
+    "replayable_positive_self_s": 6.78250280051725,
+    "selected_positive_self_s": 6.726314249797724,
+    "uncaptured_positive_self_s": 0.5590746439411305,
+    "unselected_replayable_positive_self_s": 0.056188550719525665,
+    "replayable_coverage": 0.9917156612577822,
+    "all_observed_coverage": 0.9161946871342924,
+    "stop_reason": "target_reached"
+  },
+  "uncaptured_hotspots": [
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 4.229811020195484e-05,
+      "cumulative_s": 7.678297518286854,
+      "library_s": 0.0007565670530311763,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "bench_time_func",
+      "qualname": "Runner.bench_time_func",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\shim\\pyperf.py",
+      "line": 33,
+      "calls": 5,
+      "self_s": 3.828515764325857e-05,
+      "cumulative_s": 7.564825810201,
+      "library_s": 0.0,
+      "capture_reason": "takes *args"
+    },
+    {
+      "function": "bench_SOR",
+      "qualname": "bench_SOR",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+      "line": 153,
+      "calls": 1,
+      "self_s": 5.04762283526361e-05,
+      "cumulative_s": 1.5432013582321815,
+      "library_s": 2.4837034288793802e-05,
+      "capture_reason": "snapshot rule: class not proven pure Python (extension or dynamic type)"
+    },
+    {
+      "function": "SOR_execute",
+      "qualname": "SOR_execute",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+      "line": 144,
+      "calls": 20,
+      "self_s": 0.5560549201909453,
+      "cumulative_s": 1.5429579047486186,
+      "library_s": 0.002410545712336898,
+      "capture_reason": "snapshot rule: class not proven pure Python (extension or dynamic type)"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\shim\\pyperf.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 4.277040716260672e-06,
+      "cumulative_s": 0.11223527346737683,
+      "library_s": 0.000760795024689287,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\asyncio\\__init__.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 5.249306559562683e-05,
+      "cumulative_s": 0.1114644524641335,
+      "library_s": 0.024726576113607734,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\asyncio\\base_events.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 3.147323150187731e-05,
+      "cumulative_s": 0.06770478386897594,
+      "library_s": 0.0234407396055758,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\concurrent\\futures\\__init__.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 5.736132152378559e-06,
+      "cumulative_s": 0.02166938123991713,
+      "library_s": 0.002779771981295198,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\concurrent\\futures\\_base.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 2.0603067241609097e-05,
+      "cumulative_s": 0.01888120616786182,
+      "library_s": 0.0065936342580243945,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\asyncio\\windows_events.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 2.374214818701148e-05,
+      "cumulative_s": 0.017673672875389457,
+      "library_s": 0.01396966102765873,
+      "capture_reason": "not a module-level function or a method"
+    }
+  ],
+  "plan": {
+    "startup_s": 0.6148941999999806,
+    "saving_s": 6.708421404793732,
+    "worth_running": true,
+    "aot": {
+      "module": "rcaot_4cbebba3fc470b109c3a1b3e",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\scimark\\rp",
+      "functions": [
+        {
+          "function": "FFT_transform_internal",
+          "line": 286,
+          "qualname": "FFT_transform_internal",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+            "sha256": "427b21b8a3802418ea3c2fe584335658a6c91c7f74fce4df9410efa60cd84d6e",
+            "module": "__main__",
+            "code_sha256": "964d4a2dfb79f155b19487b905440b749fe5fec201844ccc770c51b0792297f1",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "960300c1c31e2706635901387145f28c8cee62f00f3244babf733c872c668e54",
+          "exports": {
+            "('T', 'i', ('A', 'f'), 'i')": "f0"
+          },
+          "promote": {}
+        },
+        {
+          "function": "FFT_inverse",
+          "line": 362,
+          "qualname": "FFT_inverse",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+            "sha256": "427b21b8a3802418ea3c2fe584335658a6c91c7f74fce4df9410efa60cd84d6e",
+            "module": "__main__",
+            "code_sha256": "a1675413866068bf711ac8b8a4545528b02de507e7ed1ebc6ee9cffee39b76cd",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "de70e5e375cd0c19d9227d86971623822af6c0b56a1ec9363baac1909621785f",
+          "exports": {
+            "('T', 'i', ('A', 'f'))": "f1"
+          },
+          "promote": {}
+        },
+        {
+          "function": "FFT_transform",
+          "line": 358,
+          "qualname": "FFT_transform",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+            "sha256": "427b21b8a3802418ea3c2fe584335658a6c91c7f74fce4df9410efa60cd84d6e",
+            "module": "__main__",
+            "code_sha256": "4dae874363c70626d6ea61dfc6c4c6dcb428fdbea1730e0267d7048ab7025eae",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "1a3451ab078ed5a26b9960551e6598dd9b6b6f5ca504c50fb8b180f48c7d0c84",
+          "exports": {
+            "('T', 'i', ('A', 'f'))": "f2"
+          },
+          "promote": {}
+        },
+        {
+          "function": "FFT_bitreverse",
+          "line": 337,
+          "qualname": "FFT_bitreverse",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\scimark\\run_benchmark.py",
+            "sha256": "427b21b8a3802418ea3c2fe584335658a6c91c7f74fce4df9410efa60cd84d6e",
+            "module": "__main__",
+            "code_sha256": "84a17fa4f7ad4a4ca271a68cf29e6f90d7307126254fbbdd46409e71a0b32853",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "2cfa14db2bb216323e88f3dca5140931292e19401b42e238b0a42f146af14c9e",
+          "exports": {
+            "('T', 'i', ('A', 'f'))": "f3"
+          },
+          "promote": {}
+        }
+      ]
+    }
+  }
+}

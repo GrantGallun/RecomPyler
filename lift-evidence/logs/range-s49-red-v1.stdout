@@ -1,0 +1,1613 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.....FFFFF.......F..... [ 71%]
+.....FFFFFFFFF.FF...........F                                            [100%]
+================================== FAILURES ===================================
+________________________ test_assigned_range_native[0] ________________________
+
+n = 0
+
+    @pytest.mark.parametrize('n', [0, 1, 6, -6])
+    def test_assigned_range_native(n):
+>       native(assigned, n)
+
+tests\test_range_values.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function assigned at 0x000002B32E7F4A90>, args = (0,)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 3 of 'assigned'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EA052B0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+________________________ test_assigned_range_native[1] ________________________
+
+n = 1
+
+    @pytest.mark.parametrize('n', [0, 1, 6, -6])
+    def test_assigned_range_native(n):
+>       native(assigned, n)
+
+tests\test_range_values.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function assigned at 0x000002B32E7F4A90>, args = (1,)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 3 of 'assigned'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B3305D6710>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+________________________ test_assigned_range_native[6] ________________________
+
+n = 6
+
+    @pytest.mark.parametrize('n', [0, 1, 6, -6])
+    def test_assigned_range_native(n):
+>       native(assigned, n)
+
+tests\test_range_values.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function assigned at 0x000002B32E7F4A90>, args = (6,)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 3 of 'assigned'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EA5D6D0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_______________________ test_assigned_range_native[-6] ________________________
+
+n = -6
+
+    @pytest.mark.parametrize('n', [0, 1, 6, -6])
+    def test_assigned_range_native(n):
+>       native(assigned, n)
+
+tests\test_range_values.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function assigned at 0x000002B32E7F4A90>, args = (-6,)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 3 of 'assigned'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32FFC7E10>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[consume-r0] _____
+
+fn = <function consume at 0x000002B32EBADF30>, r = range(0, 0)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function consume at 0x000002B32EBADF30>, args = (range(0, 0),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B330600510>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[consume-r1] _____
+
+fn = <function consume at 0x000002B32EBADF30>, r = range(0, 1)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function consume at 0x000002B32EBADF30>, args = (range(0, 1),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B33059FBF0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[consume-r2] _____
+
+fn = <function consume at 0x000002B32EBADF30>, r = range(0, 6)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function consume at 0x000002B32EBADF30>, args = (range(0, 6),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32FFCBCE0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[consume-r3] _____
+
+fn = <function consume at 0x000002B32EBADF30>, r = range(7, -2, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function consume at 0x000002B32EBADF30>, args = (range(7, -2, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED90490>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[consume-r4] _____
+
+fn = <function consume at 0x000002B32EBADF30>, r = range(-7, 3, 2)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function consume at 0x000002B32EBADF30>, args = (range(-7, 3, 2),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B3305FF450>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[consume-r5] _____
+
+fn = <function consume at 0x000002B32EBADF30>, r = range(7, 2, 3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function consume at 0x000002B32EBADF30>, args = (range(7, 2, 3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B3305FFD50>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[consume-r6] _____
+
+fn = <function consume at 0x000002B32EBADF30>, r = range(2, 7, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function consume at 0x000002B32EBADF30>, args = (range(2, 7, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE05C70>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____ test_argument_iteration_reuse_and_internal_calls_native[repeated-r0] _____
+
+fn = <function repeated at 0x000002B32EAD3C10>, r = range(0, 0)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function repeated at 0x000002B32EAD3C10>, args = (range(0, 0),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE06C60>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____ test_argument_iteration_reuse_and_internal_calls_native[repeated-r1] _____
+
+fn = <function repeated at 0x000002B32EAD3C10>, r = range(0, 1)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function repeated at 0x000002B32EAD3C10>, args = (range(0, 1),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE07C50>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____ test_argument_iteration_reuse_and_internal_calls_native[repeated-r2] _____
+
+fn = <function repeated at 0x000002B32EAD3C10>, r = range(0, 6)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function repeated at 0x000002B32EAD3C10>, args = (range(0, 6),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDF89B0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____ test_argument_iteration_reuse_and_internal_calls_native[repeated-r3] _____
+
+fn = <function repeated at 0x000002B32EAD3C10>, r = range(7, -2, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function repeated at 0x000002B32EAD3C10>, args = (range(7, -2, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDF96D0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____ test_argument_iteration_reuse_and_internal_calls_native[repeated-r4] _____
+
+fn = <function repeated at 0x000002B32EAD3C10>, r = range(-7, 3, 2)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function repeated at 0x000002B32EAD3C10>, args = (range(-7, 3, 2),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDFA3F0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____ test_argument_iteration_reuse_and_internal_calls_native[repeated-r5] _____
+
+fn = <function repeated at 0x000002B32EAD3C10>, r = range(7, 2, 3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function repeated at 0x000002B32EAD3C10>, args = (range(7, 2, 3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDFB110>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____ test_argument_iteration_reuse_and_internal_calls_native[repeated-r6] _____
+
+fn = <function repeated at 0x000002B32EAD3C10>, r = range(2, 7, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function repeated at 0x000002B32EAD3C10>, args = (range(2, 7, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDFBE30>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[forward-r0] _____
+
+fn = <function forward at 0x000002B32EBADFE0>, r = range(0, 0)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function forward at 0x000002B32EBADFE0>, args = (range(0, 0),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDCCB90>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[forward-r1] _____
+
+fn = <function forward at 0x000002B32EBADFE0>, r = range(0, 1)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function forward at 0x000002B32EBADFE0>, args = (range(0, 1),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDCD8B0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[forward-r2] _____
+
+fn = <function forward at 0x000002B32EBADFE0>, r = range(0, 6)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function forward at 0x000002B32EBADFE0>, args = (range(0, 6),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDCE5D0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[forward-r3] _____
+
+fn = <function forward at 0x000002B32EBADFE0>, r = range(7, -2, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function forward at 0x000002B32EBADFE0>, args = (range(7, -2, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDCF2F0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[forward-r4] _____
+
+fn = <function forward at 0x000002B32EBADFE0>, r = range(-7, 3, 2)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function forward at 0x000002B32EBADFE0>, args = (range(-7, 3, 2),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDDC050>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[forward-r5] _____
+
+fn = <function forward at 0x000002B32EBADFE0>, r = range(7, 2, 3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function forward at 0x000002B32EBADFE0>, args = (range(7, 2, 3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDDCD70>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_argument_iteration_reuse_and_internal_calls_native[forward-r6] _____
+
+fn = <function forward at 0x000002B32EBADFE0>, r = range(2, 7, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function forward at 0x000002B32EBADFE0>, args = (range(2, 7, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDDDA90>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_ test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r0] _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, r = range(0, 0)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, args = (range(0, 0),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDDE7B0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_ test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r1] _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, r = range(0, 1)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, args = (range(0, 1),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDDF4D0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_ test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r2] _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, r = range(0, 6)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, args = (range(0, 6),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED8C230>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_ test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r3] _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, r = range(7, -2, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>
+args = (range(7, -2, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED8CF50>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_ test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r4] _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, r = range(-7, 3, 2)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>
+args = (range(-7, 3, 2),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED8DC70>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_ test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r5] _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, r = range(7, 2, 3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, args = (range(7, 2, 3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED8E990>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_ test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r6] _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>, r = range(2, 7, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function break_and_repeat at 0x000002B32EBAE2A0>
+args = (range(2, 7, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED8F6B0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__ test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r0] ___
+
+fn = <function nested_alias at 0x000002B32EBAE350>, r = range(0, 0)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function nested_alias at 0x000002B32EBAE350>, args = (range(0, 0),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED5C410>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__ test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r1] ___
+
+fn = <function nested_alias at 0x000002B32EBAE350>, r = range(0, 1)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function nested_alias at 0x000002B32EBAE350>, args = (range(0, 1),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED5D130>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__ test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r2] ___
+
+fn = <function nested_alias at 0x000002B32EBAE350>, r = range(0, 6)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function nested_alias at 0x000002B32EBAE350>, args = (range(0, 6),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED5DE50>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__ test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r3] ___
+
+fn = <function nested_alias at 0x000002B32EBAE350>, r = range(7, -2, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function nested_alias at 0x000002B32EBAE350>, args = (range(7, -2, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED5EB70>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__ test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r4] ___
+
+fn = <function nested_alias at 0x000002B32EBAE350>, r = range(-7, 3, 2)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function nested_alias at 0x000002B32EBAE350>, args = (range(-7, 3, 2),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED5F890>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__ test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r5] ___
+
+fn = <function nested_alias at 0x000002B32EBAE350>, r = range(7, 2, 3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function nested_alias at 0x000002B32EBAE350>, args = (range(7, 2, 3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED485F0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__ test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r6] ___
+
+fn = <function nested_alias at 0x000002B32EBAE350>, r = range(2, 7, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(1), range(6), range(7, -2, -3), range(-7, 3, 2), range(7, 2, 3), range(2, 7, -3)])
+    @pytest.mark.parametrize('fn', [consume, repeated, forward, break_and_repeat, nested_alias])
+    def test_argument_iteration_reuse_and_internal_calls_native(fn, r):
+>       native(fn, r)
+
+tests\test_range_values.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function nested_alias at 0x000002B32EBAE350>, args = (range(2, 7, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED49310>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____ test_constructed_range_passes_between_functions[constructed_argument] ____
+
+fn = <function constructed_argument at 0x000002B32EBAE140>
+
+    @pytest.mark.parametrize('fn', [constructed_argument, internal_return])
+    def test_constructed_range_passes_between_functions(fn):
+>       native(fn, 7)
+
+tests\test_range_values.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function constructed_argument at 0x000002B32EBAE140>, args = (7,)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 2 of 'constructed_argument'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED4A030>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+______ test_constructed_range_passes_between_functions[internal_return] _______
+
+fn = <function internal_return at 0x000002B32EBAE1F0>
+
+    @pytest.mark.parametrize('fn', [constructed_argument, internal_return])
+    def test_constructed_range_passes_between_functions(fn):
+>       native(fn, 7)
+
+tests\test_range_values.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function internal_return at 0x000002B32EBAE1F0>, args = (7,)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 2 of 'make_range'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED4AD50>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_______________________ test_length_uses_safe_count[r0] _______________________
+
+r = range(0, 0)
+
+    @pytest.mark.parametrize('r', [range(0), range(7, -5, -3), range(-(2**63), -(2**63)+1), range(2**63-2, 2**63-1, 2**63-1)])
+    def test_length_uses_safe_count(r):
+>       native(length, r)
+
+tests\test_range_values.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function length at 0x000002B32EBAE400>, args = (range(0, 0),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED4BA70>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_______________________ test_length_uses_safe_count[r1] _______________________
+
+r = range(7, -5, -3)
+
+    @pytest.mark.parametrize('r', [range(0), range(7, -5, -3), range(-(2**63), -(2**63)+1), range(2**63-2, 2**63-1, 2**63-1)])
+    def test_length_uses_safe_count(r):
+>       native(length, r)
+
+tests\test_range_values.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function length at 0x000002B32EBAE400>, args = (range(7, -5, -3),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED707D0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_______________________ test_length_uses_safe_count[r2] _______________________
+
+r = range(-9223372036854775808, -9223372036854775807)
+
+    @pytest.mark.parametrize('r', [range(0), range(7, -5, -3), range(-(2**63), -(2**63)+1), range(2**63-2, 2**63-1, 2**63-1)])
+    def test_length_uses_safe_count(r):
+>       native(length, r)
+
+tests\test_range_values.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function length at 0x000002B32EBAE400>
+args = (range(-9223372036854775808, -9223372036854775807),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE07E30>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_______________________ test_length_uses_safe_count[r3] _______________________
+
+r = range(9223372036854775806, 9223372036854775807, 9223372036854775807)
+
+    @pytest.mark.parametrize('r', [range(0), range(7, -5, -3), range(-(2**63), -(2**63)+1), range(2**63-2, 2**63-1, 2**63-1)])
+    def test_length_uses_safe_count(r):
+>       native(length, r)
+
+tests\test_range_values.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function length at 0x000002B32EBAE400>
+args = (range(9223372036854775806, 9223372036854775807, 9223372036854775807),)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE06E40>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+___________________ test_indexing_matches_type_value[r0-0] ____________________
+
+r = range(1, 9, 2), index = 0
+
+    @pytest.mark.parametrize('r,index', [(range(1, 9, 2), 0), (range(1, 9, 2), -1), (range(9, 0, -2), 2), (range(3), True)])
+    def test_indexing_matches_type_value(r, index):
+>       native(indexed, r, index)
+
+tests\test_range_values.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function indexed at 0x000002B32EBAE4B0>, args = (range(1, 9, 2), 0)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE07F20>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+___________________ test_indexing_matches_type_value[r1--1] ___________________
+
+r = range(1, 9, 2), index = -1
+
+    @pytest.mark.parametrize('r,index', [(range(1, 9, 2), 0), (range(1, 9, 2), -1), (range(9, 0, -2), 2), (range(3), True)])
+    def test_indexing_matches_type_value(r, index):
+>       native(indexed, r, index)
+
+tests\test_range_values.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function indexed at 0x000002B32EBAE4B0>, args = (range(1, 9, 2), -1)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE06030>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+___________________ test_indexing_matches_type_value[r2-2] ____________________
+
+r = range(9, 0, -2), index = 2
+
+    @pytest.mark.parametrize('r,index', [(range(1, 9, 2), 0), (range(1, 9, 2), -1), (range(9, 0, -2), 2), (range(3), True)])
+    def test_indexing_matches_type_value(r, index):
+>       native(indexed, r, index)
+
+tests\test_range_values.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function indexed at 0x000002B32EBAE4B0>, args = (range(9, 0, -2), 2)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE054F0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__________________ test_indexing_matches_type_value[r3-True] __________________
+
+r = range(0, 3), index = True
+
+    @pytest.mark.parametrize('r,index', [(range(1, 9, 2), 0), (range(1, 9, 2), -1), (range(9, 0, -2), 2), (range(3), True)])
+    def test_indexing_matches_type_value(r, index):
+>       native(indexed, r, index)
+
+tests\test_range_values.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function indexed at 0x000002B32EBAE4B0>, args = (range(0, 3), True)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EE047D0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____________________ test_integer_membership_native[r0-0] _____________________
+
+r = range(0, 0), query = 0
+
+    @pytest.mark.parametrize('r,query', [(range(0), 0), (range(1, 9, 2), 7), (range(1, 9, 2), 8), (range(9, 0, -2), 3), (range(3), True)])
+    def test_integer_membership_native(r, query):
+>       native(contains, r, query)
+
+tests\test_range_values.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function contains at 0x000002B32EBAE560>, args = (range(0, 0), 0)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED24410>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____________________ test_integer_membership_native[r1-7] _____________________
+
+r = range(1, 9, 2), query = 7
+
+    @pytest.mark.parametrize('r,query', [(range(0), 0), (range(1, 9, 2), 7), (range(1, 9, 2), 8), (range(9, 0, -2), 3), (range(3), True)])
+    def test_integer_membership_native(r, query):
+>       native(contains, r, query)
+
+tests\test_range_values.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function contains at 0x000002B32EBAE560>, args = (range(1, 9, 2), 7)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B3305AB7A0>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____________________ test_integer_membership_native[r2-8] _____________________
+
+r = range(1, 9, 2), query = 8
+
+    @pytest.mark.parametrize('r,query', [(range(0), 0), (range(1, 9, 2), 7), (range(1, 9, 2), 8), (range(9, 0, -2), 3), (range(3), True)])
+    def test_integer_membership_native(r, query):
+>       native(contains, r, query)
+
+tests\test_range_values.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function contains at 0x000002B32EBAE560>, args = (range(1, 9, 2), 8)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B33060CF50>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+____________________ test_integer_membership_native[r3-3] _____________________
+
+r = range(9, 0, -2), query = 3
+
+    @pytest.mark.parametrize('r,query', [(range(0), 0), (range(1, 9, 2), 7), (range(1, 9, 2), 8), (range(9, 0, -2), 3), (range(3), True)])
+    def test_integer_membership_native(r, query):
+>       native(contains, r, query)
+
+tests\test_range_values.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function contains at 0x000002B32EBAE560>, args = (range(9, 0, -2), 3)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B33060DA90>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+___________________ test_integer_membership_native[r4-True] ___________________
+
+r = range(0, 3), query = True
+
+    @pytest.mark.parametrize('r,query', [(range(0), 0), (range(1, 9, 2), 7), (range(1, 9, 2), 8), (range(9, 0, -2), 3), (range(3), True)])
+    def test_integer_membership_native(r, query):
+>       native(contains, r, query)
+
+tests\test_range_values.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function contains at 0x000002B32EBAE560>, args = (range(0, 3), True)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B33060C410>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_________ test_warmed_range_argument_checks_current_bounds_each_call __________
+
+    def test_warmed_range_argument_checks_current_bounds_each_call():
+        compiled = lift_region(consume)
+        for r in [range(3), range(1, 8, 2), range(8, -2, -3), range(0)]:
+            assert compiled(r) == consume(r)
+>       assert compiled.compiled_calls == 4, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 4
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED72B70>.compiled_calls
+
+tests\test_range_values.py:227: AssertionError
+_______ test_long_iterator_first_value_has_exact_integer_type_value[r0] _______
+
+r = range(1099511627776, 1099511627777)
+
+    @pytest.mark.parametrize('r', [range(2**40,2**40+1),range(10000,10001,2**40),range(2**31-2,2**31-1,3)])
+    def test_long_iterator_first_value_has_exact_integer_type_value(r):
+        reference = first_range(r)
+        assert reference is r.start
+        compiled = lift_region(first_range)
+        got = compiled(r)
+        assert type(got) is int and got == reference
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED71B80>.compiled_calls
+
+tests\test_range_values.py:317: AssertionError
+_______ test_long_iterator_first_value_has_exact_integer_type_value[r1] _______
+
+r = range(10000, 10001, 1099511627776)
+
+    @pytest.mark.parametrize('r', [range(2**40,2**40+1),range(10000,10001,2**40),range(2**31-2,2**31-1,3)])
+    def test_long_iterator_first_value_has_exact_integer_type_value(r):
+        reference = first_range(r)
+        assert reference is r.start
+        compiled = lift_region(first_range)
+        got = compiled(r)
+        assert type(got) is int and got == reference
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED24C80>.compiled_calls
+
+tests\test_range_values.py:317: AssertionError
+_______ test_long_iterator_first_value_has_exact_integer_type_value[r2] _______
+
+r = range(2147483646, 2147483647, 3)
+
+    @pytest.mark.parametrize('r', [range(2**40,2**40+1),range(10000,10001,2**40),range(2**31-2,2**31-1,3)])
+    def test_long_iterator_first_value_has_exact_integer_type_value(r):
+        reference = first_range(r)
+        assert reference is r.start
+        compiled = lift_region(first_range)
+        got = compiled(r)
+        assert type(got) is int and got == reference
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED259A0>.compiled_calls
+
+tests\test_range_values.py:317: AssertionError
+_________ test_constructed_long_iterator_returns_exact_integer_value __________
+
+    def test_constructed_long_iterator_returns_exact_integer_value():
+        start = int('1099511627776')
+        compiled = lift_region(constructed_first)
+        got = compiled(start,start+1,1)
+        assert type(got) is int and got == start
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int, int, int at line 2 of 'constructed_first'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED266C0>.compiled_calls
+
+tests\test_range_values.py:325: AssertionError
+________________ test_unused_range_returns_exact_integer_value ________________
+
+    def test_unused_range_returns_exact_integer_value():
+        n = int('10000')
+        compiled = lift_region(ignored_range)
+        got = compiled(n)
+        assert type(got) is int and got == n
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 2 of 'ignored_range'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED273E0>.compiled_calls
+
+tests\test_range_values.py:333: AssertionError
+______ test_two_stores_of_one_iteration_value_have_exact_integer_values _______
+
+    def test_two_stores_of_one_iteration_value_have_exact_integer_values():
+        compiled = lift_region(repeated_number_owner)
+        got = compiled(range(10000,10001))
+        assert type(got) is list and got == [10000,10000]
+        assert all(type(x) is int for x in got)
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED58140>.compiled_calls
+
+tests\test_range_values.py:341: AssertionError
+_________ test_range_branch_join_and_multiple_flat_parameters[False] __________
+
+choose = False
+
+    @pytest.mark.parametrize('choose', [False, True])
+    def test_range_branch_join_and_multiple_flat_parameters(choose):
+>       native(choose_range, 6, choose)
+
+tests\test_range_values.py:375: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function choose_range at 0x000002B32EB7C1A0>, args = (6, False)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 3 of 'choose_range'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED58E60>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+__________ test_range_branch_join_and_multiple_flat_parameters[True] __________
+
+choose = True
+
+    @pytest.mark.parametrize('choose', [False, True])
+    def test_range_branch_join_and_multiple_flat_parameters(choose):
+>       native(choose_range, 6, choose)
+
+tests\test_range_values.py:375: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function choose_range at 0x000002B32EB7C1A0>, args = (6, True)
+
+    def native(fn, *args):
+        compiled = lift_region(fn)
+        want = fn(*args)
+        got = compiled(*args)
+        assert type(got) is type(want) and got == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int at line 3 of 'choose_range'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED59B80>.compiled_calls
+
+tests\test_range_values.py:133: AssertionError
+_____ test_successful_constructor_evaluates_every_argument_once_in_order ______
+
+    def test_successful_constructor_evaluates_every_argument_once_in_order():
+        values = [2, 9, 1]
+        compiled = lift_region(successful_effect_order)
+        assert compiled(values) == 16
+        assert values == []
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int, int, int at line 2 of 'successful_effect_order'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED5A8A0>.compiled_calls
+
+tests\test_range_values.py:384: AssertionError
+_ test_runtime_span_miss_after_native_private_append_replays_once[9223372036854775807--9223372036854775808-1] _
+
+start = 9223372036854775807, stop = -9223372036854775808, step = 1
+
+    @pytest.mark.parametrize('start,stop,step', [(2**63-1,-2**63,1),(-2**63,2**63-1,-1)])
+    def test_runtime_span_miss_after_native_private_append_replays_once(start, stop, step):
+        compiled = lift_region(checked_after_private_mutation)
+        warm = []
+        assert compiled(warm, 0, 3, 1) == 3 and warm == [9]
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int, int, int at line 3 of 'checked_after_private_mutation'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32ED5B5C0>.compiled_calls
+
+tests\test_range_values.py:406: AssertionError
+_ test_runtime_span_miss_after_native_private_append_replays_once[-9223372036854775808-9223372036854775807--1] _
+
+start = -9223372036854775808, stop = 9223372036854775807, step = -1
+
+    @pytest.mark.parametrize('start,stop,step', [(2**63-1,-2**63,1),(-2**63,2**63-1,-1)])
+    def test_runtime_span_miss_after_native_private_append_replays_once(start, stop, step):
+        compiled = lift_region(checked_after_private_mutation)
+        warm = []
+        assert compiled(warm, 0, 3, 1) == 3 and warm == [9]
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: range() on int, int, int at line 3 of 'checked_after_private_mutation'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDB0410>.compiled_calls
+
+tests\test_range_values.py:406: AssertionError
+________________ test_boolean_results_keep_singleton_identity _________________
+
+    def test_boolean_results_keep_singleton_identity():
+        wrapped = lift_region(bool_result)
+        assert wrapped(range(1)) is True
+        assert wrapped(range(0)) is False
+>       assert wrapped.compiled_calls == 2, wrapped.problem
+E       AssertionError: an argument of type range
+E       assert 0 == 2
+E        +  where 0 = <recompyler.heap.Region object at 0x000002B32EDB1220>.compiled_calls
+
+tests\test_range_values.py:487: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_range_values.py::test_assigned_range_native[0] - AssertionE...
+FAILED tests/test_range_values.py::test_assigned_range_native[1] - AssertionE...
+FAILED tests/test_range_values.py::test_assigned_range_native[6] - AssertionE...
+FAILED tests/test_range_values.py::test_assigned_range_native[-6] - Assertion...
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[consume-r0]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[consume-r1]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[consume-r2]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[consume-r3]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[consume-r4]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[consume-r5]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[consume-r6]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[repeated-r0]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[repeated-r1]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[repeated-r2]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[repeated-r3]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[repeated-r4]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[repeated-r5]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[repeated-r6]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[forward-r0]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[forward-r1]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[forward-r2]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[forward-r3]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[forward-r4]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[forward-r5]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[forward-r6]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r0]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r1]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r2]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r3]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r4]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r5]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[break_and_repeat-r6]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r0]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r1]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r2]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r3]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r4]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r5]
+FAILED tests/test_range_values.py::test_argument_iteration_reuse_and_internal_calls_native[nested_alias-r6]
+FAILED tests/test_range_values.py::test_constructed_range_passes_between_functions[constructed_argument]
+FAILED tests/test_range_values.py::test_constructed_range_passes_between_functions[internal_return]
+FAILED tests/test_range_values.py::test_length_uses_safe_count[r0] - Assertio...
+FAILED tests/test_range_values.py::test_length_uses_safe_count[r1] - Assertio...
+FAILED tests/test_range_values.py::test_length_uses_safe_count[r2] - Assertio...
+FAILED tests/test_range_values.py::test_length_uses_safe_count[r3] - Assertio...
+FAILED tests/test_range_values.py::test_indexing_matches_type_value[r0-0] - A...
+FAILED tests/test_range_values.py::test_indexing_matches_type_value[r1--1] - ...
+FAILED tests/test_range_values.py::test_indexing_matches_type_value[r2-2] - A...
+FAILED tests/test_range_values.py::test_indexing_matches_type_value[r3-True]
+FAILED tests/test_range_values.py::test_integer_membership_native[r0-0] - Ass...
+FAILED tests/test_range_values.py::test_integer_membership_native[r1-7] - Ass...
+FAILED tests/test_range_values.py::test_integer_membership_native[r2-8] - Ass...
+FAILED tests/test_range_values.py::test_integer_membership_native[r3-3] - Ass...
+FAILED tests/test_range_values.py::test_integer_membership_native[r4-True] - ...
+FAILED tests/test_range_values.py::test_warmed_range_argument_checks_current_bounds_each_call
+FAILED tests/test_range_values.py::test_long_iterator_first_value_has_exact_integer_type_value[r0]
+FAILED tests/test_range_values.py::test_long_iterator_first_value_has_exact_integer_type_value[r1]
+FAILED tests/test_range_values.py::test_long_iterator_first_value_has_exact_integer_type_value[r2]
+FAILED tests/test_range_values.py::test_constructed_long_iterator_returns_exact_integer_value
+FAILED tests/test_range_values.py::test_unused_range_returns_exact_integer_value
+FAILED tests/test_range_values.py::test_two_stores_of_one_iteration_value_have_exact_integer_values
+FAILED tests/test_range_values.py::test_range_branch_join_and_multiple_flat_parameters[False]
+FAILED tests/test_range_values.py::test_range_branch_join_and_multiple_flat_parameters[True]
+FAILED tests/test_range_values.py::test_successful_constructor_evaluates_every_argument_once_in_order
+FAILED tests/test_range_values.py::test_runtime_span_miss_after_native_private_append_replays_once[9223372036854775807--9223372036854775808-1]
+FAILED tests/test_range_values.py::test_runtime_span_miss_after_native_private_append_replays_once[-9223372036854775808-9223372036854775807--1]
+FAILED tests/test_range_values.py::test_boolean_results_keep_singleton_identity
+67 failed, 34 passed in 1.27s

@@ -1,0 +1,34 @@
+
+RecomPyler profile — D:\Code\Datathon\recompyler-codex-20261111\wave18-lift\lift-evidence\range-s49-s50-long-v1\inputs\spectral_norm\run_benchmark.py
+Candidate attempts 5/40; priority cumulative_s; target 99.0% replayable own-self; stop target_reached.
+Attempted own-self coverage: replayable 100.0%; all-observed 98.8%. Positive own-self seconds: observed 1.40338, replayable 1.38697, attempted 1.38668.
+Coverage describes attempted candidates, not verified or native execution.
+No retained sample: <module>:1  not a module-level function or a method
+No retained sample: bench_time_func:33  takes *args
+No retained sample: eval_times_u:25  snapshot rule: class not proven pure Python (extension or dynamic type)
+No retained sample: <module>:1  not a module-level function or a method
+No retained sample: <module>:1  not a module-level function or a method
+No retained sample: <module>:1  not a module-level function or a method
+No retained sample: <module>:1  not a module-level function or a method
+No retained sample: <module>:1  not a module-level function or a method
+No retained sample: <module>:1  not a module-level function or a method
+No retained sample: <module>:1  not a module-level function or a method
+bench_spectral_norm:49  1 calls  0.607 ms self
+  skipped: outside the supported subset: 'v' may be read before assignment at line 14
+eval_AtA_times_u:29  400 calls  0.120 ms self
+  skipped: outside the supported subset: global 'part_At_times_u' is not a numeric constant
+eval_A:21  13,520,000 calls  738.494 ms self
+  Compiled CPU version matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 0.05x. Batches of 65,536: cpu 1.16x, parallel 1.10x (fastest: cpu).
+  Note: the GPU path does not support lists or float // and %.
+  Not recommended: one call at a time it is 0.05x Python.
+part_A_times_u:33  52,000 calls  327.234 ms self
+  Compiled CPU version matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 2.66x. Batches of 52,000: cpu 2.58x, parallel 2.54x, gpu 2.56x (fastest: cpu).
+  Recommended: saves 350 ms a run once the compiled code is cached.
+part_At_times_u:41  52,000 calls  320.222 ms self
+  Compiled CPU version matched 8 captured calls exactly (0 needed the Python fallback).
+  One call at a time: 2.43x. Batches of 52,000: cpu 2.05x, parallel 2.19x, gpu 2.32x (fastest: gpu).
+  Recommended: saves 303 ms a run once the compiled code is cached.
+
+Running with recompyler run: worth it. The recommended functions save about 653 ms a run; loading the compiler takes about 628 ms.

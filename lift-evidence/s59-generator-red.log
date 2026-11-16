@@ -1,0 +1,178 @@
+FFFFFFFFFFF                                                              [100%]
+================================== FAILURES ===================================
+__ test_generator_loop_else_exhaustion_and_own_break[0--1-want0-collect_for] __
+
+fn = <function collect_for at 0x000002652D6EDC70>, n = 0, stop = -1
+want = [100, 200]
+
+    @pytest.mark.parametrize('fn', [collect_for, collect_while])
+    @pytest.mark.parametrize('n,stop,want', [(0,-1,[100,200]), (3,-1,[0,1,2,100,200]), (3,1,[0,1,200])])
+    def test_generator_loop_else_exhaustion_and_own_break(fn, n, stop, want):
+        compiled = lift_region(fn)
+        assert compiled(n, stop) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 2
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652E88BA10>.compiled_calls
+
+tests\test_generator_loop_else.py:72: AssertionError
+_ test_generator_loop_else_exhaustion_and_own_break[0--1-want0-collect_while] _
+
+fn = <function collect_while at 0x000002652D6EDD20>, n = 0, stop = -1
+want = [100, 200]
+
+    @pytest.mark.parametrize('fn', [collect_for, collect_while])
+    @pytest.mark.parametrize('n,stop,want', [(0,-1,[100,200]), (3,-1,[0,1,2,100,200]), (3,1,[0,1,200])])
+    def test_generator_loop_else_exhaustion_and_own_break(fn, n, stop, want):
+        compiled = lift_region(fn)
+        assert compiled(n, stop) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 3
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652D45F4D0>.compiled_calls
+
+tests\test_generator_loop_else.py:72: AssertionError
+__ test_generator_loop_else_exhaustion_and_own_break[3--1-want1-collect_for] __
+
+fn = <function collect_for at 0x000002652D6EDC70>, n = 3, stop = -1
+want = [0, 1, 2, 100, 200]
+
+    @pytest.mark.parametrize('fn', [collect_for, collect_while])
+    @pytest.mark.parametrize('n,stop,want', [(0,-1,[100,200]), (3,-1,[0,1,2,100,200]), (3,1,[0,1,200])])
+    def test_generator_loop_else_exhaustion_and_own_break(fn, n, stop, want):
+        compiled = lift_region(fn)
+        assert compiled(n, stop) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 2
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652D45F250>.compiled_calls
+
+tests\test_generator_loop_else.py:72: AssertionError
+_ test_generator_loop_else_exhaustion_and_own_break[3--1-want1-collect_while] _
+
+fn = <function collect_while at 0x000002652D6EDD20>, n = 3, stop = -1
+want = [0, 1, 2, 100, 200]
+
+    @pytest.mark.parametrize('fn', [collect_for, collect_while])
+    @pytest.mark.parametrize('n,stop,want', [(0,-1,[100,200]), (3,-1,[0,1,2,100,200]), (3,1,[0,1,200])])
+    def test_generator_loop_else_exhaustion_and_own_break(fn, n, stop, want):
+        compiled = lift_region(fn)
+        assert compiled(n, stop) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 3
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652E980D60>.compiled_calls
+
+tests\test_generator_loop_else.py:72: AssertionError
+__ test_generator_loop_else_exhaustion_and_own_break[3-1-want2-collect_for] ___
+
+fn = <function collect_for at 0x000002652D6EDC70>, n = 3, stop = 1
+want = [0, 1, 200]
+
+    @pytest.mark.parametrize('fn', [collect_for, collect_while])
+    @pytest.mark.parametrize('n,stop,want', [(0,-1,[100,200]), (3,-1,[0,1,2,100,200]), (3,1,[0,1,200])])
+    def test_generator_loop_else_exhaustion_and_own_break(fn, n, stop, want):
+        compiled = lift_region(fn)
+        assert compiled(n, stop) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 2
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652E9815B0>.compiled_calls
+
+tests\test_generator_loop_else.py:72: AssertionError
+_ test_generator_loop_else_exhaustion_and_own_break[3-1-want2-collect_while] __
+
+fn = <function collect_while at 0x000002652D6EDD20>, n = 3, stop = 1
+want = [0, 1, 200]
+
+    @pytest.mark.parametrize('fn', [collect_for, collect_while])
+    @pytest.mark.parametrize('n,stop,want', [(0,-1,[100,200]), (3,-1,[0,1,2,100,200]), (3,1,[0,1,200])])
+    def test_generator_loop_else_exhaustion_and_own_break(fn, n, stop, want):
+        compiled = lift_region(fn)
+        assert compiled(n, stop) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 3
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652EA567B0>.compiled_calls
+
+tests\test_generator_loop_else.py:72: AssertionError
+__________ test_return_in_generator_else_leaves_outer_loop[0-want0] ___________
+
+n = 0, want = []
+
+    @pytest.mark.parametrize('n,want', [(0,[]), (3,[0,1,2])])
+    def test_return_in_generator_else_leaves_outer_loop(n, want):
+        compiled = lift_region(collect_return)
+        assert compiled(n) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 3
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652E7F8380>.compiled_calls
+
+tests\test_generator_loop_else.py:79: AssertionError
+__________ test_return_in_generator_else_leaves_outer_loop[3-want1] ___________
+
+n = 3, want = [0, 1, 2]
+
+    @pytest.mark.parametrize('n,want', [(0,[]), (3,[0,1,2])])
+    def test_return_in_generator_else_leaves_outer_loop(n, want):
+        compiled = lift_region(collect_return)
+        assert compiled(n) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 3
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652E7F8C00>.compiled_calls
+
+tests\test_generator_loop_else.py:79: AssertionError
+__________ test_consumer_break_skips_generator_else_and_tail[0-300] ___________
+
+n = 0, want = 300
+
+    @pytest.mark.parametrize('n,want', [(0,300), (3,1)])
+    def test_consumer_break_skips_generator_else_and_tail(n, want):
+        compiled = lift_region(stop_consumer)
+        assert compiled(n) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 2
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652E7CEC50>.compiled_calls
+
+tests\test_generator_loop_else.py:86: AssertionError
+___________ test_consumer_break_skips_generator_else_and_tail[3-1] ____________
+
+n = 3, want = 1
+
+    @pytest.mark.parametrize('n,want', [(0,300), (3,1)])
+    def test_consumer_break_skips_generator_else_and_tail(n, want):
+        compiled = lift_region(stop_consumer)
+        assert compiled(n) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 2
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652E7CF850>.compiled_calls
+
+tests\test_generator_loop_else.py:86: AssertionError
+____________ test_consumer_continue_preserves_generator_exhaustion ____________
+
+    def test_consumer_continue_preserves_generator_exhaustion():
+        compiled = lift_region(continue_consumer)
+        assert compiled(3) == 302
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a loop with else in a generator at line 2
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000002652E801400>.compiled_calls
+
+tests\test_generator_loop_else.py:92: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_generator_loop_else.py::test_generator_loop_else_exhaustion_and_own_break[0--1-want0-collect_for]
+FAILED tests/test_generator_loop_else.py::test_generator_loop_else_exhaustion_and_own_break[0--1-want0-collect_while]
+FAILED tests/test_generator_loop_else.py::test_generator_loop_else_exhaustion_and_own_break[3--1-want1-collect_for]
+FAILED tests/test_generator_loop_else.py::test_generator_loop_else_exhaustion_and_own_break[3--1-want1-collect_while]
+FAILED tests/test_generator_loop_else.py::test_generator_loop_else_exhaustion_and_own_break[3-1-want2-collect_for]
+FAILED tests/test_generator_loop_else.py::test_generator_loop_else_exhaustion_and_own_break[3-1-want2-collect_while]
+FAILED tests/test_generator_loop_else.py::test_return_in_generator_else_leaves_outer_loop[0-want0]
+FAILED tests/test_generator_loop_else.py::test_return_in_generator_else_leaves_outer_loop[3-want1]
+FAILED tests/test_generator_loop_else.py::test_consumer_break_skips_generator_else_and_tail[0-300]
+FAILED tests/test_generator_loop_else.py::test_consumer_break_skips_generator_else_and_tail[3-1]
+FAILED tests/test_generator_loop_else.py::test_consumer_continue_preserves_generator_exhaustion
+11 failed in 1.02s

@@ -1,0 +1,35 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_preimport_replacement_c_builtin_is_not_lowered_as_perf_clock ______
+
+    def test_preimport_replacement_c_builtin_is_not_lowered_as_perf_clock():
+        child = '''import ctypes,importlib.util,sys,time
+    +class Method(ctypes.Structure):
+    +    _fields_=[('name',ctypes.c_char_p),('method',ctypes.c_void_p),('flags',ctypes.c_int),('doc',ctypes.c_char_p)]
+    +get=ctypes.pythonapi.PyCFunction_GetFunction;get.argtypes=[ctypes.py_object];get.restype=ctypes.c_void_p
+    +flags=ctypes.pythonapi.PyCFunction_GetFlags;flags.argtypes=[ctypes.py_object];flags.restype=ctypes.c_int
+    +definition=Method(b'perf_counter',get(time.time),flags(time.time),b'replacement')
+    +make=ctypes.pythonapi.PyCFunction_NewEx;make.argtypes=[ctypes.POINTER(Method),ctypes.py_object,ctypes.py_object];make.restype=ctypes.py_object
+    +time.perf_counter=make(ctypes.byref(definition),time,'time')
+    +spec=importlib.util.spec_from_file_location('clock_replacement',sys.argv[1])
+    +mod=importlib.util.module_from_spec(spec);sys.modules[spec.name]=mod;spec.loader.exec_module(mod)
+    +compiled=mod.heap.lift_region(mod.direct_clock)
+    +before=time.time();got=compiled();after=time.time()
+    +assert type(got) is float and before<=got<=after,(before,got,after)
+    +assert compiled.fallback_calls==1 and compiled.compiled_calls==0,compiled.problem
+    +'''.replace('\n+', '\n')
+        done = subprocess.run([sys.executable, '-c', child, str(Path(__file__).resolve())],
+                              capture_output=True, text=True, timeout=60)
+>       assert done.returncode == 0, (done.stdout, done.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 13, in <module>
+E             assert type(got) is float and b... ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         AssertionError: (1794700295.0754795, 278834.7143451, 1794700296.343064)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "import ctypes,importlib.util,sys,time\nclass Method(ctypes.... ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (1794700295.0754795, 278834.7143451, 1794700296.343064)\n').returncode
+
+tests\test_scalar_clock_calls.py:139: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_scalar_clock_calls.py::test_preimport_replacement_c_builtin_is_not_lowered_as_perf_clock
+1 failed, 8 deselected in 2.86s

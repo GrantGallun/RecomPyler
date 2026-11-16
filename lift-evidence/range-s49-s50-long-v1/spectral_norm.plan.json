@@ -1,0 +1,342 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+  "profiler": "c",
+  "total_s": 1.5262793429905268,
+  "script_self_s": 1.4033812244888395,
+  "functions": [
+    {
+      "function": "bench_spectral_norm",
+      "qualname": "bench_spectral_norm",
+      "line": 49,
+      "calls": 1,
+      "self_s": 0.0006071579409763217,
+      "cumulative_s": 1.4059344623819925,
+      "library_s": 1.589301973581314e-05,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: 'v' may be read before assignment at line 14",
+        "region_reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_spectral_norm'"
+      }
+    },
+    {
+      "function": "eval_AtA_times_u",
+      "qualname": "eval_AtA_times_u",
+      "line": 29,
+      "calls": 400,
+      "self_s": 0.00012035632971674204,
+      "cumulative_s": 1.4053114114212804,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: global 'part_At_times_u' is not a numeric constant",
+        "region_reason": "as a region: name 'part_At_times_u' used as a value at line 2 of 'eval_AtA_times_u'"
+      }
+    },
+    {
+      "function": "eval_A",
+      "qualname": "eval_A",
+      "line": 21,
+      "calls": 13520000,
+      "self_s": 0.738493506971281,
+      "cumulative_s": 0.738493506971281,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.05x Python",
+        "net_s_first_run": -33.235675885420505,
+        "net_s_cached": -31.96519958538397,
+        "first_pass_s": 1.2964421000215225,
+        "warm_start_s": 0.025965799984987825,
+        "python_us_per_call": 0.12073341705978904,
+        "compiled_cpu_us_per_call": 2.4831027798851575,
+        "speedup": 0.048621997461326553,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 2.4831027798851575,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": false,
+        "batch_size": 65536,
+        "batch_us_per_call": 0.10384368920313136,
+        "batch_speedup": 1.1626456839723716,
+        "batch_backends": {
+          "cpu": 1.1626456839723716,
+          "parallel": 1.0975095399914436
+        },
+        "best_backend": "cpu",
+        "backend_note": "the GPU path does not support lists or float // and %"
+      }
+    },
+    {
+      "function": "part_A_times_u",
+      "qualname": "part_A_times_u",
+      "line": 33,
+      "calls": 52000,
+      "self_s": 0.3272343390271999,
+      "cumulative_s": 0.6992888253880665,
+      "library_s": 0.0024766746209934354,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "saves 350 ms a run once the compiled code is cached",
+        "net_s_first_run": -1.2593033973941488,
+        "net_s_cached": 0.35018880262515495,
+        "first_pass_s": 1.6885899000335485,
+        "warm_start_s": 0.07909770001424477,
+        "python_us_per_call": 13.235882301267017,
+        "compiled_cpu_us_per_call": 4.980372635124716,
+        "speedup": 2.6576088319013045,
+        "list_reuse": 0.9923076923076923,
+        "compiled_fresh_us_per_call": 8.394480561958504,
+        "compiled_reused_us_per_call": 4.953906682203524,
+        "changes_arguments": false,
+        "batch_size": 52000,
+        "batch_us_per_call": 5.131836538426936,
+        "batch_speedup": 2.579170673531277,
+        "batch_backends": {
+          "cpu": 2.579170673531277,
+          "parallel": 2.537797392585202,
+          "gpu": 2.5596302158639137
+        },
+        "best_backend": "cpu",
+        "backend_note": null
+      }
+    },
+    {
+      "function": "part_At_times_u",
+      "qualname": "part_At_times_u",
+      "line": 41,
+      "calls": 52000,
+      "self_s": 0.32022224430693313,
+      "cumulative_s": 0.6915130152483471,
+      "library_s": 0.002375075710006058,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "saves 303 ms a run once the compiled code is cached",
+        "net_s_first_run": -0.8427943672613576,
+        "net_s_cached": 0.30273853274049617,
+        "first_pass_s": 1.1984246999491006,
+        "warm_start_s": 0.05289179994724691,
+        "python_us_per_call": 11.614602843569331,
+        "compiled_cpu_us_per_call": 4.775557984189656,
+        "speedup": 2.432093355796655,
+        "list_reuse": 0.9923076923076923,
+        "compiled_fresh_us_per_call": 7.770277766717805,
+        "compiled_reused_us_per_call": 4.752343102154555,
+        "changes_arguments": false,
+        "batch_size": 52000,
+        "batch_us_per_call": 5.6727019221468185,
+        "batch_speedup": 2.047455163865514,
+        "batch_backends": {
+          "cpu": 2.047455163865514,
+          "parallel": 2.1879643999186444,
+          "gpu": 2.3208086328003112
+        },
+        "best_backend": "gpu",
+        "backend_note": null
+      }
+    }
+  ],
+  "candidate_ranking": {
+    "priority": "cumulative_s",
+    "target_fraction": 0.99,
+    "hard_limit": 40,
+    "eligible_candidates": 48,
+    "attempted_candidates": 5,
+    "observed_positive_self_s": 1.403382414369844,
+    "replayable_positive_self_s": 1.3869718969799578,
+    "selected_positive_self_s": 1.3866776045761071,
+    "uncaptured_positive_self_s": 0.01641051738988608,
+    "unselected_replayable_positive_self_s": 0.00029429240385070443,
+    "replayable_coverage": 0.9997878166064564,
+    "all_observed_coverage": 0.9880967513753279,
+    "stop_reason": "target_reached"
+  },
+  "uncaptured_hotspots": [
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 1.0413175914436579e-05,
+      "cumulative_s": 1.5262073804042302,
+      "library_s": 0.0005977130495011806,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "bench_time_func",
+      "qualname": "Runner.bench_time_func",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\shim\\pyperf.py",
+      "line": 33,
+      "calls": 1,
+      "self_s": 3.487919457256794e-06,
+      "cumulative_s": 1.4059379503014497,
+      "library_s": 0.0,
+      "capture_reason": "takes *args"
+    },
+    {
+      "function": "eval_times_u",
+      "qualname": "eval_times_u",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+      "line": 25,
+      "calls": 800,
+      "self_s": 0.013290706963744015,
+      "cumulative_s": 1.4051910550915636,
+      "library_s": 0.0010985074914060533,
+      "capture_reason": "snapshot rule: class not proven pure Python (extension or dynamic type)"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\shim\\pyperf.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 1.9387865904718637e-05,
+      "cumulative_s": 0.11936891119694337,
+      "library_s": 0.000678613199852407,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\asyncio\\__init__.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 5.799101199954748e-05,
+      "cumulative_s": 0.11866412119707093,
+      "library_s": 0.023851308156736195,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\asyncio\\base_events.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 3.814382944256067e-05,
+      "cumulative_s": 0.07507548888679594,
+      "library_s": 0.026992777595296502,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\concurrent\\futures\\__init__.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 6.450572982430458e-06,
+      "cumulative_s": 0.022547251952346414,
+      "library_s": 0.003232800867408514,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\concurrent\\futures\\_base.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 1.406471710652113e-05,
+      "cumulative_s": 0.01930468634236604,
+      "library_s": 0.007145328389015049,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\asyncio\\windows_events.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 3.1079864129424095e-05,
+      "cumulative_s": 0.0183332025189884,
+      "library_s": 0.014323247654829174,
+      "capture_reason": "not a module-level function or a method"
+    },
+    {
+      "function": "<module>",
+      "qualname": "<module>",
+      "file": "C:\\Python314\\Lib\\logging\\__init__.py",
+      "line": 1,
+      "calls": 1,
+      "self_s": 4.14170790463686e-05,
+      "cumulative_s": 0.012043759576044977,
+      "library_s": 0.009834170690737665,
+      "capture_reason": "not a module-level function or a method"
+    }
+  ],
+  "plan": {
+    "startup_s": 0.6275157000054605,
+    "saving_s": 0.6529273353656511,
+    "worth_running": true,
+    "aot": {
+      "module": "rcaot_7e3f21d4da6e7935bb199fe9",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\cache\\spectral_norm\\rp",
+      "functions": [
+        {
+          "function": "part_A_times_u",
+          "line": 33,
+          "qualname": "part_A_times_u",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+            "sha256": "a3390ec6d75606fec30c4b59ad5f77d5292cd8e36f445197232a34560a880b18",
+            "module": "__main__",
+            "code_sha256": "b18d2b06cfd3d63cb1909b2e287ad2dd366644e9d19f07e089e342cfb3fe4347",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "b7d9b7c79852cf5cc52914a11a1892f834619fd80e573d06697d0e5378fb1ac3",
+          "exports": {
+            "('T', ('T', 'i', ('A', 'f')))": "f0",
+            "('T', ('T', 'i', ('A', 'i')))": "f1"
+          },
+          "promote": {
+            "part_A_times_u": [
+              "partial_sum"
+            ]
+          }
+        },
+        {
+          "function": "part_At_times_u",
+          "line": 41,
+          "qualname": "part_At_times_u",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\range-s49-s50-long-v1\\inputs\\spectral_norm\\run_benchmark.py",
+            "sha256": "a3390ec6d75606fec30c4b59ad5f77d5292cd8e36f445197232a34560a880b18",
+            "module": "__main__",
+            "code_sha256": "39a1dd02f5bac30dadb8fb4939cfa9a878d40629427c95bb3efd2750b19bd54d",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "1fa4693d21d8f6115672133768154a39ded55ff58139e25fbf578c9e06878e5b",
+          "exports": {
+            "('T', ('T', 'i', ('A', 'f')))": "f2"
+          },
+          "promote": {
+            "part_At_times_u": [
+              "partial_sum"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

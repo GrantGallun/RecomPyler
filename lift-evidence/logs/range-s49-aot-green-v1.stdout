@@ -1,0 +1,200 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+___________ test_range_values_verified_build_and_fresh_prepared_aot ___________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave18-lift/lift-evidence/temp/range-s49-aot-green-v1/test_range_values_verified_bui0')
+
+    def test_range_values_verified_build_and_fresh_prepared_aot(tmp_path):
+        recipes = [(range_consume, (range(3),)), (range_repeated, (range(3),)),
+                   (range_argument, (6,)), (range_internal, (6,))]
+        entries = []
+        for fn, args in recipes:
+            with CallMonitor([SOURCE], 2, profiler.snapshot, backend='python', bias=0, yield_bias=0) as monitor:
+                fn(*args)
+            key = (str(SOURCE), fn.__qualname__, fn.__code__.co_firstlineno)
+            candidate = profiler.test_candidate(fn, monitor.samplers[key].samples, 1, extra=())
+            assert candidate['status'] == 'verified', candidate
+            assert candidate['engine'] == 'region', candidate
+            region = candidate['_region']
+            assert region.compiled_calls > 0
+            entries.append(((fn.__qualname__, fn.__code__.co_firstlineno), fn, region))
+        section = heap.build_regions(entries, tmp_path)
+        assert section and len(section['functions']) == 4 and section.get('prepared')
+        child = '''import importlib.util,json,sys
+    from pathlib import Path
+    from recompyler import heap, _prepared as pc
+    source=Path(sys.argv[1]);spec=importlib.util.spec_from_file_location('range_aot_functions',source)
+    functions=importlib.util.module_from_spec(spec);sys.modules[spec.name]=functions;spec.loader.exec_module(functions)
+    section=json.loads(sys.argv[2]);snapshot={'mode':'standalone','functions':[],'plan':{'aot_regions':section}}
+    assert 'numba' not in sys.modules
+    for entry in section['functions']:
+     fn=getattr(functions,entry['qualname'])
+     index=pc.open_index(section,entry,plan_snapshot=snapshot)
+     assert index is not None,pc.last_miss()
+     wrapped=heap.lift_region(fn,index.exports,prepared=index)
+     args=(range(9,1,-2),) if entry['qualname'] in {'range_consume','range_repeated'} else (9,)
+     got=wrapped(*args);want=fn(*args)
+     assert type(got) is type(want) and got==want
+     assert wrapped.prepared_hits>=1 and wrapped.aot_calls==wrapped.compiled_calls==1 and wrapped.jit_calls==0, (wrapped.problem,wrapped.prepared_reasons)
+     if entry['qualname'] in {'range_consume','range_repeated'}:
+      assert wrapped(range(2**100,0))=={0:0}
+      assert wrapped.fallback_calls==1
+    assert 'numba' not in sys.modules
+    print('heap range fresh prepared AOT verified')
+    '''
+>       done = subprocess.run([sys.executable, '-c', child, str(SOURCE), json.dumps(section)],
+                              capture_output=True, text=True, env=os.environ.copy(), timeout=180)
+
+tests\test_range_values_aot.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\subprocess.py:555: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\subprocess.py:1039: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Popen: returncode: None args: ['C:\\Python314\\python.exe', '-c', "import i...>
+args = 'C:\\Python314\\python.exe -c "import importlib.util,json,sys\nfrom pathlib import Path\nfrom recompyler import heap, ....pyd\\", \\"length\\": 73728, \\"sha256\\": \\"783ea472fc6a8ba915cf5ced800ec0a950e7d1ffd1955d5377e6767cb96ca55f\\"}}}"'
+executable = None, preexec_fn = None, close_fds = False, pass_fds = ()
+cwd = None
+env = {'3DVPATH': 'C:\\AMD\\Chipset_Software\\Binaries\\3D_V-Cache_Performance_Optimizer_Driver\\', 'AI_AGENT': 'claude-code_2-1-325_agent', 'ALLUSERSPROFILE': 'C:\\ProgramData', 'AMDRMPATH': 'C:\\Program Files\\AMD\\RyzenMaster\\', ...}
+startupinfo = <subprocess.STARTUPINFO object at 0x0000027A1DBF3D90>
+creationflags = 0, shell = False, p2cread = Handle(896), p2cwrite = -1
+c2pread = 11, c2pwrite = Handle(1012), errread = 12, errwrite = Handle(940)
+unused_restore_signals = True, unused_gid = None, unused_gids = None
+unused_uid = None, unused_umask = -1, unused_start_new_session = False
+unused_process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       unused_restore_signals,
+                       unused_gid, unused_gids, unused_uid,
+                       unused_umask,
+                       unused_start_new_session, unused_process_group):
+        """Execute program (MS Windows version)"""
+    
+        assert not pass_fds, "pass_fds not supported on Windows."
+    
+        if isinstance(args, str):
+            pass
+        elif isinstance(args, bytes):
+            if shell:
+                raise TypeError('bytes args is not allowed on Windows')
+            args = list2cmdline([args])
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = list2cmdline([args])
+        else:
+            args = list2cmdline(args)
+    
+        if executable is not None:
+            executable = os.fsdecode(executable)
+    
+        # Process startup details
+        if startupinfo is None:
+            startupinfo = STARTUPINFO()
+        else:
+            # bpo-34044: Copy STARTUPINFO since it is modified above,
+            # so the caller can reuse it multiple times.
+            startupinfo = startupinfo.copy()
+    
+        use_std_handles = -1 not in (p2cread, c2pwrite, errwrite)
+        if use_std_handles:
+            startupinfo.dwFlags |= _winapi.STARTF_USESTDHANDLES
+            startupinfo.hStdInput = p2cread
+            startupinfo.hStdOutput = c2pwrite
+            startupinfo.hStdError = errwrite
+    
+        attribute_list = startupinfo.lpAttributeList
+        have_handle_list = bool(attribute_list and
+                                "handle_list" in attribute_list and
+                                attribute_list["handle_list"])
+    
+        # If we were given an handle_list or need to create one
+        if have_handle_list or (use_std_handles and close_fds):
+            if attribute_list is None:
+                attribute_list = startupinfo.lpAttributeList = {}
+            handle_list = attribute_list["handle_list"] = \
+                list(attribute_list.get("handle_list", []))
+    
+            if use_std_handles:
+                handle_list += [int(p2cread), int(c2pwrite), int(errwrite)]
+    
+            handle_list[:] = self._filter_handle_list(handle_list)
+    
+            if handle_list:
+                if not close_fds:
+                    warnings.warn("startupinfo.lpAttributeList['handle_list'] "
+                                  "overriding close_fds", RuntimeWarning)
+    
+                # When using the handle_list we always request to inherit
+                # handles but the only handles that will be inherited are
+                # the ones in the handle_list
+                close_fds = False
+    
+        if shell:
+            startupinfo.dwFlags |= _winapi.STARTF_USESHOWWINDOW
+            startupinfo.wShowWindow = _winapi.SW_HIDE
+            if not executable:
+                # gh-101283: without a fully-qualified path, before Windows
+                # checks the system directories, it first looks in the
+                # application directory, and also the current directory if
+                # NeedCurrentDirectoryForExePathW(ExeName) is true, so try
+                # to avoid executing unqualified "cmd.exe".
+                comspec = os.environ.get('ComSpec')
+                if not comspec:
+                    system_root = os.environ.get('SystemRoot', '')
+                    comspec = os.path.join(system_root, 'System32', 'cmd.exe')
+                    if not os.path.isabs(comspec):
+                        raise FileNotFoundError('shell not found: neither %ComSpec% nor %SystemRoot% is set')
+                if os.path.isabs(comspec):
+                    executable = comspec
+            else:
+                comspec = executable
+    
+            args = '{} /c "{}"'.format (comspec, args)
+    
+        if cwd is not None:
+            cwd = os.fsdecode(cwd)
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        # Start the process
+        try:
+>           hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                                     # no special security
+                                     None, None,
+                                     int(not close_fds),
+                                     creationflags,
+                                     env,
+                                     cwd,
+                                     startupinfo)
+E                                    FileNotFoundError: [WinError 206] The filename or extension is too long
+
+C:\Python314\Lib\subprocess.py:1553: FileNotFoundError
+---------------------------- Captured stdout call -----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave18-lift\lift-evidence\temp\pycc-build-rcaotr_3673b4aed0d167ef2fbf6889-8oty8qcl\rcaotr_3673b4aed0d167ef2fbf6889.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave18-lift\lift-evidence\temp\pycc-build-rcaotr_3673b4aed0d167ef2fbf6889-8oty8qcl\rcaotr_3673b4aed0d167ef2fbf6889.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED tests/test_range_values_aot.py::test_range_values_verified_build_and_fresh_prepared_aot
+1 failed in 25.57s

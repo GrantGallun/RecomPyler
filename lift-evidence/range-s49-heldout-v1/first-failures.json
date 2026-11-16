@@ -1,0 +1,1072 @@
+{
+  "whole_function_native": 60,
+  "denominator": 375,
+  "before": {
+    "own_defined": 365,
+    "captured": 194,
+    "verified": 59,
+    "whole_function_native": 59,
+    "deployed": 0,
+    "whole_function_share_of375": 0.15733333333333333
+  },
+  "after": {
+    "own_defined": 365,
+    "captured": 194,
+    "verified": 60,
+    "whole_function_native": 60,
+    "deployed": 0,
+    "whole_function_share_of375": 0.16
+  },
+  "first_failures": [
+    {
+      "reason_group": "as a region: a '<name>' object with attributes its __init__ does not set",
+      "functions": 26,
+      "programs": 8,
+      "rows": [
+        {
+          "program": "async_generators",
+          "function": "__init__",
+          "line": 16,
+          "reason": "as a region: a 'Tree' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "chaos",
+          "function": "__init__",
+          "line": 21,
+          "reason": "as a region: a 'GVector' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "chaos",
+          "function": "__init__",
+          "line": 66,
+          "reason": "as a region: a 'Spline' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "chaos",
+          "function": "__init__",
+          "line": 147,
+          "reason": "as a region: a 'Chaosgame' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "gc_collect",
+          "function": "__init__",
+          "line": 9,
+          "reason": "as a region: a 'Node' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "generators",
+          "function": "__init__",
+          "line": 16,
+          "reason": "as a region: a 'Tree' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 22,
+          "reason": "as a region: a 'Dir' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 182,
+          "reason": "as a region: a 'Hex' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 172,
+          "reason": "as a region: a 'Node' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 47,
+          "reason": "as a region: a 'Done' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 226,
+          "reason": "as a region: a 'Pos' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 165,
+          "reason": "as a region: a 'TaskWorkArea' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 102,
+          "reason": "as a region: a 'TaskState' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 72,
+          "reason": "as a region: a 'IdleTaskRec' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 315,
+          "reason": "as a region: a 'IdleTask' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 179,
+          "reason": "as a region: a 'DeviceTask' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 37,
+          "reason": "as a region: a 'Packet' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 94,
+          "reason": "as a region: a 'WorkerTaskRec' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 341,
+          "reason": "as a region: a 'WorkTask' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 79,
+          "reason": "as a region: a 'HandlerTaskRec' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 281,
+          "reason": "as a region: a 'HandlerTask' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 66,
+          "reason": "as a region: a 'DeviceTaskRec' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 258,
+          "reason": "as a region: a 'DeviceTask' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "sqlite_synth",
+          "function": "__init__",
+          "line": 17,
+          "reason": "as a region: a 'AvgLength' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "typing_runtime_protocols",
+          "function": "__init__",
+          "line": 114,
+          "reason": "as a region: a 'InstanceVarX' object with attributes its __init__ does not set"
+        },
+        {
+          "program": "typing_runtime_protocols",
+          "function": "__init__",
+          "line": 125,
+          "reason": "as a region: a 'InstanceVarXWithInt' object with attributes its __init__ does not set"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a call of '<name>' at line N of '<name>'",
+      "functions": 21,
+      "programs": 11,
+      "rows": [
+        {
+          "program": "base64",
+          "function": "bench_b64_small",
+          "line": 68,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_b64_small'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b64_large",
+          "line": 86,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_b64_large'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_urlsafe_b64_small",
+          "line": 100,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_urlsafe_b64_small'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b32_small",
+          "line": 120,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_b32_small'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b32_large",
+          "line": 138,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_b32_large'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b16_small",
+          "line": 152,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_b16_small'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b16_large",
+          "line": 170,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_b16_large'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_a85_small",
+          "line": 184,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_a85_small'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_a85_large",
+          "line": 210,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_a85_large'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b85_small",
+          "line": 228,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_b85_small'"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b85_large",
+          "line": 246,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'bench_b85_large'"
+        },
+        {
+          "program": "comprehensions",
+          "function": "bench_comprehensions",
+          "line": 82,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 4 of 'bench_comprehensions'"
+        },
+        {
+          "program": "decimal_factorial",
+          "function": "bench_decimal_factorial",
+          "line": 34,
+          "reason": "as a region: a call of 'decimal.getcontext' at line 2 of 'bench_decimal_factorial'"
+        },
+        {
+          "program": "decimal_pi",
+          "function": "bench_decimal_pi",
+          "line": 38,
+          "reason": "as a region: a call of 'decimal.getcontext' at line 3 of 'bench_decimal_pi'"
+        },
+        {
+          "program": "gc_collect",
+          "function": "benchamark_collection",
+          "line": 44,
+          "reason": "as a region: a call of 'gc.collect' at line 4 of 'benchamark_collection'"
+        },
+        {
+          "program": "gc_traversal",
+          "function": "benchamark_collection",
+          "line": 19,
+          "reason": "as a region: a call of 'gc.collect' at line 5 of 'benchamark_collection'"
+        },
+        {
+          "program": "mdp",
+          "function": "bench_mdp",
+          "line": 247,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 6 of 'bench_mdp'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "bench_regex_v8",
+          "line": 1768,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 2 of 'bench_regex_v8'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "bench_regex_v8",
+          "line": 1768,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 2 of 'bench_regex_v8'"
+        },
+        {
+          "program": "sqlite_synth",
+          "function": "bench_sqlite",
+          "line": 30,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 2 of 'bench_sqlite'"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "do_unpacking",
+          "line": 6,
+          "reason": "as a region: a call of 'pyperf.perf_counter' at line 3 of 'do_unpacking'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: '<name>' is not a plain method at line N of '<name>'",
+      "functions": 18,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block0",
+          "line": 275,
+          "reason": "as a region: 'Pattern.search' is not a plain method at line 3 of 'block0'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block1",
+          "line": 354,
+          "reason": "as a region: 'Pattern.search' is not a plain method at line 3 of 'block1'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block2",
+          "line": 427,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block2'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block5",
+          "line": 675,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block5'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block7",
+          "line": 828,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block7'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block8",
+          "line": 896,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 4 of 'block8'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block9",
+          "line": 980,
+          "reason": "as a region: 'Pattern.split' is not a plain method at line 3 of 'block9'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block10",
+          "line": 1162,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block10'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block11",
+          "line": 1316,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block11'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block0",
+          "line": 275,
+          "reason": "as a region: 'Pattern.search' is not a plain method at line 3 of 'block0'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block1",
+          "line": 354,
+          "reason": "as a region: 'Pattern.search' is not a plain method at line 3 of 'block1'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block2",
+          "line": 427,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block2'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block5",
+          "line": 675,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block5'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block7",
+          "line": 828,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block7'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block8",
+          "line": 896,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 4 of 'block8'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block9",
+          "line": 980,
+          "reason": "as a region: 'Pattern.split' is not a plain method at line 3 of 'block9'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block10",
+          "line": 1162,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block10'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block11",
+          "line": 1316,
+          "reason": "as a region: 'Pattern.sub' is not a plain method at line 3 of 'block11'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: '<name>' declares globals or defines functions inside itself",
+      "functions": 7,
+      "programs": 5,
+      "rows": [
+        {
+          "program": "deepcopy",
+          "function": "benchmark_reduce",
+          "line": 21,
+          "reason": "as a region: 'benchmark_reduce' declares globals or defines functions inside itself"
+        },
+        {
+          "program": "deltablue",
+          "function": "delta_blue",
+          "line": 626,
+          "reason": "as a region: 'chain_test' declares globals or defines functions inside itself"
+        },
+        {
+          "program": "deltablue",
+          "function": "chain_test",
+          "line": 513,
+          "reason": "as a region: 'chain_test' declares globals or defines functions inside itself"
+        },
+        {
+          "program": "deltablue",
+          "function": "projection_test",
+          "line": 561,
+          "reason": "as a region: 'projection_test' declares globals or defines functions inside itself"
+        },
+        {
+          "program": "pidigits",
+          "function": "gen_pi_digits",
+          "line": 39,
+          "reason": "as a region: 'gen_x' declares globals or defines functions inside itself"
+        },
+        {
+          "program": "regex_compile",
+          "function": "gen_string_table",
+          "line": 59,
+          "reason": "as a region: 'gen_string_table' declares globals or defines functions inside itself"
+        },
+        {
+          "program": "regex_effbot",
+          "function": "gen_string_table",
+          "line": 59,
+          "reason": "as a region: 'gen_string_table' declares globals or defines functions inside itself"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: '<name>' uses the new object before setting all its attributes",
+      "functions": 6,
+      "programs": 3,
+      "rows": [
+        {
+          "program": "comprehensions",
+          "function": "_any_knobby",
+          "line": 35,
+          "reason": "as a region: 'WidgetTray.__init__' uses the new object before setting all its attributes"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 39,
+          "reason": "as a region: 'Strength.__init__' uses the new object before setting all its attributes"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 382,
+          "reason": "as a region: 'Planner.__init__' uses the new object before setting all its attributes"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 92,
+          "reason": "as a region: 'Strength.__init__' uses the new object before setting all its attributes"
+        },
+        {
+          "program": "deltablue",
+          "function": "next_weaker",
+          "line": 66,
+          "reason": "as a region: 'Strength.__init__' uses the new object before setting all its attributes"
+        },
+        {
+          "program": "sqlalchemy_declarative",
+          "function": "bench_sqlalchemy",
+          "line": 58,
+          "reason": "as a region: 'Session.__init__' uses the new object before setting all its attributes"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a call of '<name>' that relies on a default that is _ZeroSentinel at line N of '<name>'",
+      "functions": 6,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block3",
+          "line": 490,
+          "reason": "as a region: a call of 'sub' that relies on a default that is _ZeroSentinel at line 3 of 'block3'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block4",
+          "line": 603,
+          "reason": "as a region: a call of 'sub' that relies on a default that is _ZeroSentinel at line 3 of 'block4'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block6",
+          "line": 736,
+          "reason": "as a region: a call of 'sub' that relies on a default that is _ZeroSentinel at line 3 of 'block6'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block3",
+          "line": 490,
+          "reason": "as a region: a call of 'sub' that relies on a default that is _ZeroSentinel at line 3 of 'block3'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block4",
+          "line": 603,
+          "reason": "as a region: a call of 'sub' that relies on a default that is _ZeroSentinel at line 3 of 'block4'"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block6",
+          "line": 736,
+          "reason": "as a region: a call of 'sub' that relies on a default that is _ZeroSentinel at line 3 of 'block6'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: '<name>' takes **kwargs",
+      "functions": 5,
+      "programs": 3,
+      "rows": [
+        {
+          "program": "json_loads",
+          "function": "bench_json_loads",
+          "line": 72,
+          "reason": "as a region: 'loads' takes **kwargs"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "main",
+          "line": 212,
+          "reason": "as a region: 'Runner.__init__' takes **kwargs"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_expand",
+          "line": 7,
+          "reason": "as a region: 'symbols' takes **kwargs"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_sum",
+          "line": 18,
+          "reason": "as a region: 'symbols' takes **kwargs"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_str",
+          "line": 23,
+          "reason": "as a region: 'symbols' takes **kwargs"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: name '<name>' used as a value at line N of '<name>'",
+      "functions": 4,
+      "programs": 4,
+      "rows": [
+        {
+          "program": "json_dumps",
+          "function": "main",
+          "line": 30,
+          "reason": "as a region: name 'add_cmdline_args' used as a value at line 2 of 'main'"
+        },
+        {
+          "program": "regex_compile",
+          "function": "bench_regex_effbot",
+          "line": 128,
+          "reason": "as a region: name 'bench_regex_effbot' used as a value at line 2 of 'bench_regex_effbot'"
+        },
+        {
+          "program": "regex_effbot",
+          "function": "bench_regex_effbot",
+          "line": 128,
+          "reason": "as a region: name 'bench_regex_effbot' used as a value at line 2 of 'bench_regex_effbot'"
+        },
+        {
+          "program": "typing_runtime_protocols",
+          "function": "bench_protocols",
+          "line": 151,
+          "reason": "as a region: name 'HasX' used as a value at line 3 of 'bench_protocols'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a list holds both ints and floats, or floats and None",
+      "functions": 3,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "meteor_contest",
+          "function": "rotate",
+          "line": 88,
+          "reason": "as a region: a list holds both ints and floats, or floats and None"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "flip",
+          "line": 92,
+          "reason": "as a region: a list holds both ints and floats, or floats and None"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "convert",
+          "line": 107,
+          "reason": "as a region: a list holds both ints and floats, or floats and None"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: tuple() on range at line N of '<name>'",
+      "functions": 3,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "nqueens",
+          "function": "permutations",
+          "line": 9,
+          "reason": "as a region: tuple() on range at line 3 of 'permutations'"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_all",
+          "line": 427,
+          "reason": "as a region: tuple() on range at line 2 of 'bench_tuple_unpacking'"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_tuple_unpacking",
+          "line": 416,
+          "reason": "as a region: tuple() on range at line 2 of 'bench_tuple_unpacking'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: '<name>' customises allocation",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "pathlib",
+          "function": "bench_pathlib",
+          "line": 38,
+          "reason": "as a region: 'Path' customises allocation"
+        },
+        {
+          "program": "pidigits",
+          "function": "calc_ndigits",
+          "line": 51,
+          "reason": "as a region: 'islice' customises allocation"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: With at line N of '<name>'",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "concurrent_imap",
+          "function": "bench_mp_pool",
+          "line": 13,
+          "reason": "as a region: With at line 2 of 'bench_mp_pool'"
+        },
+        {
+          "program": "concurrent_imap",
+          "function": "bench_thread_pool",
+          "line": 19,
+          "reason": "as a region: With at line 2 of 'bench_thread_pool'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a loop with else in a generator at line N",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "nqueens",
+          "function": "bench_n_queens",
+          "line": 53,
+          "reason": "as a region: a loop with else in a generator at line 11"
+        },
+        {
+          "program": "nqueens",
+          "function": "n_queens",
+          "line": 34,
+          "reason": "as a region: a loop with else in a generator at line 11"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a range slice at line N of '<name>'",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "async_generators",
+          "function": "tree",
+          "line": 31,
+          "reason": "as a region: a range slice at line 6 of 'tree'"
+        },
+        {
+          "program": "generators",
+          "function": "tree",
+          "line": 29,
+          "reason": "as a region: a range slice at line 6 of 'tree'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: an argument of type bytes",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_dna",
+          "function": "bench_regex_dna",
+          "line": 187,
+          "reason": "as a region: an argument of type bytes"
+        },
+        {
+          "program": "regex_dna",
+          "function": "run_benchmarks",
+          "line": 171,
+          "reason": "as a region: an argument of type bytes"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: an int argument too large for 64 bits",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "pidigits",
+          "function": "extract",
+          "line": 34,
+          "reason": "as a region: an int argument too large for 64 bits"
+        },
+        {
+          "program": "pidigits",
+          "function": "compose",
+          "line": 25,
+          "reason": "as a region: an int argument too large for 64 bits"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: list() on range at line N of '<name>'",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "generators",
+          "function": "bench_generators",
+          "line": 36,
+          "reason": "as a region: list() on range at line 2 of 'bench_generators'"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_list_unpacking",
+          "line": 421,
+          "reason": "as a region: list() on range at line 2 of 'bench_list_unpacking'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: no source for '<name>'",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "pathlib",
+          "function": "setup",
+          "line": 29,
+          "reason": "as a region: no source for 'join'"
+        },
+        {
+          "program": "pathlib",
+          "function": "generate_filenames",
+          "line": 20,
+          "reason": "as a region: no source for 'join'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: one value can be None or list[list[int]]",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "clone",
+          "line": 231,
+          "reason": "as a region: one value can be None or list[list[int]]"
+        },
+        {
+          "program": "hexiom",
+          "function": "clone",
+          "line": 52,
+          "reason": "as a region: one value can be None or list[list[int]]"
+        }
+      ]
+    },
+    {
+      "reason_group": "result differs from a captured call",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "richards_super",
+          "function": "fn",
+          "line": 344,
+          "reason": "result differs from a captured call"
+        },
+        {
+          "program": "richards_super",
+          "function": "release",
+          "line": 231,
+          "reason": "result differs from a captured call"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region, only 8 of 10 captured calls ran compiled",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "richards_super",
+          "function": "fn",
+          "line": 196,
+          "reason": "as a region, only 8 of 10 captured calls ran compiled"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: '<name>' has a finalizer",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "main",
+          "line": 621,
+          "reason": "as a region: 'StringIO' has a finalizer"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: '<name>', which holds type at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "yaml",
+          "function": "bench_yaml",
+          "line": 77,
+          "reason": "as a region: 'yaml.Loader', which holds type at line 3 of 'bench_yaml'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a list comprehension inside another in '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "meteor_contest",
+          "function": "get_puzzle",
+          "line": 135,
+          "reason": "as a region: a list comprehension inside another in 'get_puzzle'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a list that holds both ints and floats, or numbers and None at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "meteor_contest",
+          "function": "get_senh",
+          "line": 126,
+          "reason": "as a region: a list that holds both ints and floats, or numbers and None at line 4 of 'get_senh'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a range in an aggregate or global",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "json_dumps",
+          "function": "bench_json_dumps",
+          "line": 19,
+          "reason": "as a region: a range in an aggregate or global"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: a repeated list of list[int] at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "deepcopy",
+          "function": "benchmark_memo",
+          "line": 42,
+          "reason": "as a region: a repeated list of list[int] at line 4 of 'benchmark_memo'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: arithmetic on list[nothing] at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_dna",
+          "function": "make_cumulative",
+          "line": 45,
+          "reason": "as a region: arithmetic on list[nothing] at line 7 of 'make_cumulative'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: async for over something other than an async generator at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "async_generators",
+          "function": "bench_async_generators",
+          "line": 38,
+          "reason": "as a region: async for over something other than an async generator at line 2 of 'bench_async_generators'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: bytearray() on nothing at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_dna",
+          "function": "init_benchmarks",
+          "line": 134,
+          "reason": "as a region: bytearray() on nothing at line 2 of 'init_benchmarks'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: one value can be list[int] or (int, int, int)",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "deepcopy",
+          "function": "benchmark",
+          "line": 54,
+          "reason": "as a region: one value can be list[int] or (int, int, int)"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: one value can be range or list[None]",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "constraint_pass",
+          "line": 237,
+          "reason": "as a region: one value can be range or list[None]"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: reversed() on list[nothing] at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "find_moves",
+          "line": 322,
+          "reason": "as a region: reversed() on list[nothing] at line 11 of 'find_moves'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: setattr() on ManyInstanceVars, str, int at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "typing_runtime_protocols",
+          "function": "__init__",
+          "line": 119,
+          "reason": "as a region: setattr() on ManyInstanceVars, str, int at line 3 of 'ManyInstanceVars.__init__'"
+        }
+      ]
+    },
+    {
+      "reason_group": "as a region: str method '<name>' at line N of '<name>'",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "read_file",
+          "line": 471,
+          "reason": "as a region: str method 'splitlines' at line 2 of 'read_file'"
+        }
+      ]
+    }
+  ],
+  "source_summary_sha256": "7676502af92128f620b06c32e618bee6033061fba74194ffc7a95df9300ea29f"
+}

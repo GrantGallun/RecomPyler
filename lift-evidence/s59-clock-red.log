@@ -1,0 +1,104 @@
+FFFF..FF                                                                 [100%]
+================================== FAILURES ===================================
+__ test_clock_is_native_float_between_surrounding_python_reads[direct_clock] __
+
+fn = <function direct_clock at 0x000001A55EA37CC0>
+
+    @pytest.mark.parametrize('fn', [direct_clock, imported_clock, reexported_clock])
+    def test_clock_is_native_float_between_surrounding_python_reads(fn):
+        compiled = heap.lift_region(fn)
+        for _ in range(2):
+            before = time.perf_counter()
+            got = compiled()
+            after = time.perf_counter()
+            assert type(got) is float and before <= got <= after
+>       assert compiled.compiled_calls == 2, compiled.problem
+E       AssertionError: a call of 'time.perf_counter' at line 2 of 'direct_clock'
+E       assert 0 == 2
+E        +  where 0 = <recompyler.heap.Region object at 0x000001A55EBC3B60>.compiled_calls
+
+tests\test_scalar_clock_calls.py:52: AssertionError
+_ test_clock_is_native_float_between_surrounding_python_reads[imported_clock] _
+
+fn = <function imported_clock at 0x000001A55EC68040>
+
+    @pytest.mark.parametrize('fn', [direct_clock, imported_clock, reexported_clock])
+    def test_clock_is_native_float_between_surrounding_python_reads(fn):
+        compiled = heap.lift_region(fn)
+        for _ in range(2):
+            before = time.perf_counter()
+            got = compiled()
+            after = time.perf_counter()
+            assert type(got) is float and before <= got <= after
+>       assert compiled.compiled_calls == 2, compiled.problem
+E       AssertionError: a call of 'clock_alias' at line 2 of 'imported_clock'
+E       assert 0 == 2
+E        +  where 0 = <recompyler.heap.Region object at 0x000001A55FEC8410>.compiled_calls
+
+tests\test_scalar_clock_calls.py:52: AssertionError
+_ test_clock_is_native_float_between_surrounding_python_reads[reexported_clock] _
+
+fn = <function reexported_clock at 0x000001A55FF51BC0>
+
+    @pytest.mark.parametrize('fn', [direct_clock, imported_clock, reexported_clock])
+    def test_clock_is_native_float_between_surrounding_python_reads(fn):
+        compiled = heap.lift_region(fn)
+        for _ in range(2):
+            before = time.perf_counter()
+            got = compiled()
+            after = time.perf_counter()
+            assert type(got) is float and before <= got <= after
+>       assert compiled.compiled_calls == 2, compiled.problem
+E       AssertionError: a call of 'clock_module.perf_counter' at line 2 of 'reexported_clock'
+E       assert 0 == 2
+E        +  where 0 = <recompyler.heap.Region object at 0x000001A55EAB3D90>.compiled_calls
+
+tests\test_scalar_clock_calls.py:52: AssertionError
+_______________ test_clock_call_can_surround_converted_mutation _______________
+
+    def test_clock_call_can_surround_converted_mutation():
+        compiled = heap.lift_region(clock_surrounds_work)
+        values = [1]
+        assert compiled(values, 5) is True
+        assert values == [11]
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a call of 'time.perf_counter' at line 2 of 'clock_surrounds_work'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000001A55FEEC3E0>.compiled_calls
+
+tests\test_scalar_clock_calls.py:60: AssertionError
+_____________ test_reexport_rebinding_uses_current_callable_once ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001A55FEECD60>
+
+    def test_reexport_rebinding_uses_current_callable_once(monkeypatch):
+        compiled = heap.lift_region(reexported_clock)
+        assert type(compiled()) is float
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: a call of 'clock_module.perf_counter' at line 2 of 'reexported_clock'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000001A55FEC0050>.compiled_calls
+
+tests\test_scalar_clock_calls.py:79: AssertionError
+_____________ test_clock_builds_and_reloads_as_fresh_prepared_aot _____________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave18-lift/lift-evidence/temp/s59-clock-red/test_clock_builds_and_reloads_0')
+
+    def test_clock_builds_and_reloads_as_fresh_prepared_aot(tmp_path):
+        fn = direct_clock
+        region = heap.lift_region(fn)
+        assert type(region()) is float
+>       assert region.compiled_calls == 1, region.problem
+E       AssertionError: a call of 'time.perf_counter' at line 2 of 'direct_clock'
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x000001A55FEC05A0>.compiled_calls
+
+tests\test_scalar_clock_calls.py:94: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_scalar_clock_calls.py::test_clock_is_native_float_between_surrounding_python_reads[direct_clock]
+FAILED tests/test_scalar_clock_calls.py::test_clock_is_native_float_between_surrounding_python_reads[imported_clock]
+FAILED tests/test_scalar_clock_calls.py::test_clock_is_native_float_between_surrounding_python_reads[reexported_clock]
+FAILED tests/test_scalar_clock_calls.py::test_clock_call_can_surround_converted_mutation
+FAILED tests/test_scalar_clock_calls.py::test_reexport_rebinding_uses_current_callable_once
+FAILED tests/test_scalar_clock_calls.py::test_clock_builds_and_reloads_as_fresh_prepared_aot
+6 failed, 2 passed in 1.02s

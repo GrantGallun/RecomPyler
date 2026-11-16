@@ -1,0 +1,44 @@
+{
+  "seed": 1729,
+  "commit": "1dcc9968f5fd4f4d9fa4c08478f4a5ed98eb845f",
+  "product_commit": "working-tree",
+  "product_source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\lift-evidence\\generator-development-src",
+  "inventory": {
+    "corpus": 3
+  },
+  "selected_subjects": 3,
+  "executed_subjects": 3,
+  "counts": {
+    "native": 55,
+    "declined": 220,
+    "resource-filtered": 109
+  },
+  "layer_a_findings": 0,
+  "mutated_findings": 0,
+  "findings_by_engine": {},
+  "seconds": 18.41,
+  "command": [
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave18-lift\\tools\\difffuzz\\__main__.py",
+    "--minutes",
+    "10",
+    "--workers",
+    "1",
+    "--sources",
+    "corpus",
+    "--file",
+    "lift-evidence/test_generator_loop_else_pending.py",
+    "--match",
+    "collect_",
+    "--engine",
+    "heap",
+    "--trials",
+    "128",
+    "--product-source",
+    "lift-evidence/generator-development-src",
+    "--run",
+    "wave18-lift",
+    "--publish",
+    "--output",
+    "lift-evidence/s59-generator-fuzz"
+  ]
+}

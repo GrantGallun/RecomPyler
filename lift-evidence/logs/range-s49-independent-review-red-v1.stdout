@@ -1,0 +1,179 @@
+FFFFFFF                                                                  [100%]
+================================== FAILURES ===================================
+_ test_repeated_range_container_is_refused_and_alias_exact[repeated_range_literal] _
+
+fn = <function repeated_range_literal at 0x0000022AAA9DBE20>
+
+    @pytest.mark.parametrize('fn',[repeated_range_literal,repeated_range_local])
+    def test_repeated_range_container_is_refused_and_alias_exact(fn):
+        wrapped=lift_region(fn)
+>       got=wrapped(3)
+            ^^^^^^^^^^
+
+lift-evidence\range-s49-review-tests.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7457: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7424: in attempt
+    value = _primitive_result(kind, codes) if simple else unloader.result(kind, codes)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6861: in result
+    return None if handle < 0 else self.reference(kind, handle)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6755: in reference
+    made.extend(self.items(kind, handle))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6834: in items
+    return [self.value(elem, data + position) for position in range(count)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6731: in value
+    return self.reference(kind, raw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6755: in reference
+    made.extend(self.items(kind, handle))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <recompyler.heap._Unloader object at 0x0000022AADB60D70>
+kind = <recompyler.heap.RangeT object at 0x0000022AAAB4FCB0>, handle = 0
+
+    def items(self, kind, handle):
+        count, data = self.I.item(handle), self.I.item(handle + 2)
+>       elem = kind.elem
+               ^^^^^^^^^
+E       AttributeError: 'RangeT' object has no attribute 'elem'
+
+src\recompyler\heap.py:6829: AttributeError
+_ test_repeated_range_container_is_refused_and_alias_exact[repeated_range_local] _
+
+fn = <function repeated_range_local at 0x0000022AAA9F8040>
+
+    @pytest.mark.parametrize('fn',[repeated_range_literal,repeated_range_local])
+    def test_repeated_range_container_is_refused_and_alias_exact(fn):
+        wrapped=lift_region(fn)
+>       got=wrapped(3)
+            ^^^^^^^^^^
+
+lift-evidence\range-s49-review-tests.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7457: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7424: in attempt
+    value = _primitive_result(kind, codes) if simple else unloader.result(kind, codes)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6861: in result
+    return None if handle < 0 else self.reference(kind, handle)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6755: in reference
+    made.extend(self.items(kind, handle))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6834: in items
+    return [self.value(elem, data + position) for position in range(count)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6731: in value
+    return self.reference(kind, raw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6755: in reference
+    made.extend(self.items(kind, handle))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <recompyler.heap._Unloader object at 0x0000022AADB66990>
+kind = <recompyler.heap.RangeT object at 0x0000022AADBEEAD0>, handle = 0
+
+    def items(self, kind, handle):
+        count, data = self.I.item(handle), self.I.item(handle + 2)
+>       elem = kind.elem
+               ^^^^^^^^^
+E       AttributeError: 'RangeT' object has no attribute 'elem'
+
+src\recompyler\heap.py:6829: AttributeError
+________ test_temporary_range_does_not_skip_whole_region_owner_refusal ________
+
+    def test_temporary_range_does_not_skip_whole_region_owner_refusal():
+        owner=(int('10000'),)
+        wrapped=lift_region(temporary_range_tuple_owner)
+>       assert wrapped(3,owner) is owner
+E       assert (10000,) is (10000,)
+E        +  where (10000,) = <recompyler.heap.Region object at 0x0000022AABF38F50>(3, (10000,))
+
+lift-evidence\range-s49-review-tests.py:51: AssertionError
+_ test_new_range_region_preserves_extreme_direct_loop[args0-range_then_direct_extreme] _
+
+fn = <function range_then_direct_extreme at 0x0000022AAAA81590>
+args = (-9223372036854775808, 9223372036854775807, 1)
+
+    @pytest.mark.parametrize('fn',[range_then_direct_extreme,direct_extreme_then_range])
+    @pytest.mark.parametrize('args',[( -(2**63),2**63-1,1),(2**63-1,-(2**63),-1)])
+    def test_new_range_region_preserves_extreme_direct_loop(fn,args):
+        wrapped=lift_region(fn)
+        got=wrapped(*args)
+        expected=fn(*args)
+>       assert type(got) is type(expected) and got==expected
+E       AssertionError: assert (<class 'int'> is <class 'int'> and 99 == -9223372036854775808)
+E        +  where <class 'int'> = type(99)
+E        +  and   <class 'int'> = type(-9223372036854775808)
+
+lift-evidence\range-s49-review-tests.py:61: AssertionError
+_ test_new_range_region_preserves_extreme_direct_loop[args0-direct_extreme_then_range] _
+
+fn = <function direct_extreme_then_range at 0x0000022AAAA81640>
+args = (-9223372036854775808, 9223372036854775807, 1)
+
+    @pytest.mark.parametrize('fn',[range_then_direct_extreme,direct_extreme_then_range])
+    @pytest.mark.parametrize('args',[( -(2**63),2**63-1,1),(2**63-1,-(2**63),-1)])
+    def test_new_range_region_preserves_extreme_direct_loop(fn,args):
+        wrapped=lift_region(fn)
+        got=wrapped(*args)
+        expected=fn(*args)
+>       assert type(got) is type(expected) and got==expected
+E       AssertionError: assert (<class 'int'> is <class 'int'> and 99 == -9223372036854775808)
+E        +  where <class 'int'> = type(99)
+E        +  and   <class 'int'> = type(-9223372036854775808)
+
+lift-evidence\range-s49-review-tests.py:61: AssertionError
+_ test_new_range_region_preserves_extreme_direct_loop[args1-range_then_direct_extreme] _
+
+fn = <function range_then_direct_extreme at 0x0000022AAAA81590>
+args = (9223372036854775807, -9223372036854775808, -1)
+
+    @pytest.mark.parametrize('fn',[range_then_direct_extreme,direct_extreme_then_range])
+    @pytest.mark.parametrize('args',[( -(2**63),2**63-1,1),(2**63-1,-(2**63),-1)])
+    def test_new_range_region_preserves_extreme_direct_loop(fn,args):
+        wrapped=lift_region(fn)
+        got=wrapped(*args)
+        expected=fn(*args)
+>       assert type(got) is type(expected) and got==expected
+E       AssertionError: assert (<class 'int'> is <class 'int'> and 99 == 9223372036854775807)
+E        +  where <class 'int'> = type(99)
+E        +  and   <class 'int'> = type(9223372036854775807)
+
+lift-evidence\range-s49-review-tests.py:61: AssertionError
+_ test_new_range_region_preserves_extreme_direct_loop[args1-direct_extreme_then_range] _
+
+fn = <function direct_extreme_then_range at 0x0000022AAAA81640>
+args = (9223372036854775807, -9223372036854775808, -1)
+
+    @pytest.mark.parametrize('fn',[range_then_direct_extreme,direct_extreme_then_range])
+    @pytest.mark.parametrize('args',[( -(2**63),2**63-1,1),(2**63-1,-(2**63),-1)])
+    def test_new_range_region_preserves_extreme_direct_loop(fn,args):
+        wrapped=lift_region(fn)
+        got=wrapped(*args)
+        expected=fn(*args)
+>       assert type(got) is type(expected) and got==expected
+E       AssertionError: assert (<class 'int'> is <class 'int'> and 99 == 9223372036854775807)
+E        +  where <class 'int'> = type(99)
+E        +  and   <class 'int'> = type(9223372036854775807)
+
+lift-evidence\range-s49-review-tests.py:61: AssertionError
+=========================== short test summary info ===========================
+FAILED lift-evidence/range-s49-review-tests.py::test_repeated_range_container_is_refused_and_alias_exact[repeated_range_literal]
+FAILED lift-evidence/range-s49-review-tests.py::test_repeated_range_container_is_refused_and_alias_exact[repeated_range_local]
+FAILED lift-evidence/range-s49-review-tests.py::test_temporary_range_does_not_skip_whole_region_owner_refusal
+FAILED lift-evidence/range-s49-review-tests.py::test_new_range_region_preserves_extreme_direct_loop[args0-range_then_direct_extreme]
+FAILED lift-evidence/range-s49-review-tests.py::test_new_range_region_preserves_extreme_direct_loop[args0-direct_extreme_then_range]
+FAILED lift-evidence/range-s49-review-tests.py::test_new_range_region_preserves_extreme_direct_loop[args1-range_then_direct_extreme]
+FAILED lift-evidence/range-s49-review-tests.py::test_new_range_region_preserves_extreme_direct_loop[args1-direct_extreme_then_range]
+7 failed in 4.31s
