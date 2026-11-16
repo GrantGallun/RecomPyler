@@ -1,0 +1,11 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '-m', 'not slow', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\.cache\\s90-c2a-providers-batch6', 'tests/test_boundary.py', 'tests/test_fixed_costs_aot.py', 'tests/test_heap_compact_abi.py', 'tests/test_heap_zero_facts.py', 'tests/test_ir_async_lowering.py', 'tests/test_ir_calls_globals.py', 'tests/test_ir_collections.py', 'tests/test_ir_delegation_graph.py', 'tests/test_ir_match_namespace.py', 'tests/test_ir_native_prefix.py', 'tests/test_ir_readonly_attribute_plans.py', 'tests/test_ir_readonly_loops.py', 'tests/test_ir_self_host.py', 'tests/test_ir_source_boundary.py', 'tests/test_managed_callee_owners.py', 'tests/test_managed_frame_layout.py', 'tests/test_native_unicode_aot.py', 'tests/test_prepared_cache_api.py', 'tests/test_prepared_native_dependencies.py', 'tests/test_scalar_fresh.py', 'tests/test_structure_builtin_identity.py']
+............................................................... [ 36%]
+................................................................... [ 76%]
+.........................................                                [100%]
+============================== warnings summary ===============================
+tests/test_ir_native_prefix.py::test_code_change_while_lowering_prefix_never_publishes_stale_body
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\tests\test_ir_native_prefix.py:58: DeprecationWarning: Assigning a code object of non-matching type is deprecated (e.g., from a generator to a plain function)
+    result=lower(*args,**kwargs);fn.__code__=ordinary.__code__;return result
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+171 passed, 23 deselected, 1 warning, 14 subtests passed in 38.25s

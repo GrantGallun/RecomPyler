@@ -1,0 +1,165 @@
+diff --git a/src/recompyler/_source_frames_native.c b/src/recompyler/_source_frames_native.c
+--- a/src/recompyler/_source_frames_native.c
++++ b/src/recompyler/_source_frames_native.c
+@@ -663,8 +663,10 @@
+     retire_call(frame,base,nargs+2);
+     return result;
+ }
+-static PyObject *call_owned(_PyInterpreterFrame *frame, _PyStackRef *base,
+-        Py_ssize_t nargs, int keywords, int *check_pending) {
++typedef PyObject *(*LibraryBorrowedCall)(PyObject *,PyObject *const *,size_t,PyObject *,void *);
++static PyObject *call_owned_dispatch(_PyInterpreterFrame *frame, _PyStackRef *base,
++        Py_ssize_t nargs, int keywords, int *check_pending,
++        LibraryBorrowedCall dispatch, void *context) {
+     PyThreadState *thread=PyThreadState_Get();
+     *check_pending=0;
+     Py_ssize_t count=nargs+2+keywords;
+@@ -721,12 +723,22 @@
+     PyObject *result=NULL;
+     if (objects) {
+         Py_ssize_t positional=total-(names ? PyTuple_GET_SIZE(names) : 0);
+-        result=PyObject_Vectorcall(callable,objects,
+-            (size_t)positional|PY_VECTORCALL_ARGUMENTS_OFFSET,names);
++        size_t nargsf=(size_t)positional|PY_VECTORCALL_ARGUMENTS_OFFSET;
++        result=dispatch ? dispatch(callable,objects,nargsf,names,context) :
++                          PyObject_Vectorcall(callable,objects,nargsf,names);
+         _PyObjectArray_Free(objects-1,scratch);
+     }
+     retire_call(frame,base,count);
+     return result;
++}
++static PyObject *call_owned(_PyInterpreterFrame *frame, _PyStackRef *base,
++        Py_ssize_t nargs, int keywords, int *check_pending) {
++    return call_owned_dispatch(frame,base,nargs,keywords,check_pending,NULL,NULL);
++}
++static PyObject *call_library_owned(_PyInterpreterFrame *frame, _PyStackRef *base,
++        Py_ssize_t nargs, int keywords, int *check_pending,void *dispatch,void *context) {
++    return call_owned_dispatch(frame,base,nargs,keywords,check_pending,
++                               (LibraryBorrowedCall)dispatch,context);
+ }
+ /* Ordinary unprotected children use CPython's binder and real frame. The body
+  * returns an original PC; CPython executes that continuation, including RETURN.
+@@ -968,6 +980,9 @@
+     {PyObject *address=PyLong_FromVoidPtr((void *)(uintptr_t)call_owned);
+      if (!address || PyDict_SetItemString(result,"call_owned",address)<0) {Py_XDECREF(address);Py_DECREF(result);return NULL;}
+      Py_DECREF(address);}
++    {PyObject *address=PyLong_FromVoidPtr((void *)(uintptr_t)call_library_owned);
++     if (!address || PyDict_SetItemString(result,"call_library_owned",address)<0) {Py_XDECREF(address);Py_DECREF(result);return NULL;}
++     Py_DECREF(address);}
+     {PyObject *address=PyLong_FromVoidPtr((void *)(uintptr_t)cell_load);
+      if (!address || PyDict_SetItemString(result,"cell_load",address)<0) {Py_XDECREF(address);Py_DECREF(result);return NULL;}
+      Py_DECREF(address);}
+diff --git a/src/recompyler/ir/lower_llvm.py b/src/recompyler/ir/lower_llvm.py
+--- a/src/recompyler/ir/lower_llvm.py
++++ b/src/recompyler/ir/lower_llvm.py
+@@ -72,7 +72,7 @@
+                               self.abi,self.entry_offset)
+ 
+ 
+-def lower(graph,*,structure_calls=None,readonly_loops=False,frame_entry=False,entry_offset=None,owned_readonly_loops=False,inline_returns=False,inline_counter_address=0,refcounts=True,builtin_calls=False,constant_words=True,native_calls=None):
++def lower(graph,*,structure_calls=None,readonly_loops=False,frame_entry=False,entry_offset=None,owned_readonly_loops=False,inline_returns=False,inline_counter_address=0,refcounts=True,builtin_calls=False,constant_words=True,native_calls=None,library_calls=None):
+     """Generate code; callers separately establish semantic entry admission."""
+     verify(graph)
+     code=graph.code
+@@ -82,6 +82,15 @@
+         valid_sites={op.offset for block in graph.blocks.values() for op in block.operations if op.name in ('call','call_kw')}
+         if any(type(candidate) is not NativeCandidate or offset not in valid_sites for offset,candidate in native_calls.items()):
+             raise UnsupportedBytecode('native children require original call sites and prepared candidates')
++    library_calls=dict(library_calls or {})
++    if library_calls:
++        from ..libraries.c_calls import CFunctionCall
++        valid_sites={op.offset for block in graph.blocks.values() for op in block.operations if op.name in ('call','call_kw')}
++        if any(type(offset) is not int or type(candidate) is not CFunctionCall or offset not in valid_sites
++               for offset,candidate in library_calls.items()):
++            raise UnsupportedBytecode('library calls require guarded original call sites')
++        if library_calls.keys() & native_calls.keys():
++            raise UnsupportedBytecode('a call site cannot select two call providers')
+     instructions=list(dis.get_instructions(code))
+     next_instruction={left.offset:right.offset for left,right in zip(instructions,instructions[1:])}
+     async_scope=bool(code.co_flags & (inspect.CO_COROUTINE|inspect.CO_ASYNC_GENERATOR))
+@@ -551,7 +560,12 @@
+                 def generic_call():
+                     candidate=native_calls.get(pc)
+                     arguments=[frame,call_base,integer(arg),ir.Constant(i32,int(name=='call_kw')),call_pending]
+-                    if candidate is None:return helper('call_owned',p,arguments)
++                    if candidate is None:
++                        library=library_calls.get(pc)
++                        if library is None:return helper('call_owned',p,arguments)
++                        return helper('call_library_owned',p,arguments+[
++                            integer(library.dispatcher_address).inttoptr(p),
++                            integer(library.context_address).inttoptr(p)])
+                     return helper('call_native_owned',p,arguments+[pointer(candidate.code),integer(candidate.body_address).inttoptr(p),integer(candidate.entry_offset),pointer(candidate)])
+                 def canonical_call():
+                     if pc not in builtin_type_sites:return generic_call()
+@@ -960,6 +974,9 @@
+         for argument,param in zip(edge.arguments,graph.blocks[edge.target].parameters):
+             values[param.id].add_incoming(values[argument.id],source)
+     lowered=_finish(graph,module,structure_calls,symbols,frame_entry=frame_entry,entry_offset=start,reference_plan=reference_plan,refcount_stats=reference_stats)
++    if library_calls:
++        candidates=tuple(library_calls.values())
++        lowered.providers+=candidates;lowered.execution_providers+=candidates
+     if native_calls:
+         candidates=tuple(native_calls.values())
+         lowered.providers+=candidates;lowered.execution_providers+=candidates
+diff --git a/src/recompyler/ir/compiler.py b/src/recompyler/ir/compiler.py
+--- a/src/recompyler/ir/compiler.py
++++ b/src/recompyler/ir/compiler.py
+@@ -62,7 +62,7 @@
+     return _entry_native.compilation_info(function)
+ 
+ 
+-def compile_function(function, *, strict=False):
++def compile_function(function, *, strict=False, structure_calls_factory=None, library_calls=None):
+     """Compile without executing the target; leave unsupported functions in Python.
+ 
+     Native compilation and measured deployment are distinct. A prepared body is
+@@ -73,6 +73,9 @@
+         return function
+     info=compilation_info(function)
+     if info is not None:
++        if structure_calls_factory is not None or library_calls:
++            if strict:raise UnsupportedBytecode('existing prepared body has different model options')
++            return function
+         _install_if_measured(function,info)
+         return function
+     _measurements.pop(function,None)
+@@ -82,7 +85,8 @@
+         from .structure_lowerings import StructureCalls,select_structure_calls,specialize_structure_calls
+         graph=specialize_structure_calls(build(function),immediate_offsets=True)
+         graph=select_structure_calls(graph,{'load_attr','store_attr','getitem','setitem','contains'})
+-        calls=StructureCalls(CPythonSymbols(),_structure_ops_native)
++        factory=StructureCalls if structure_calls_factory is None else structure_calls_factory
++        calls=factory(CPythonSymbols(),_structure_ops_native)
+         # S80: suspended functions compile their first real RESUME prefix;
+         # YIELD/SEND hand the untouched real frame to canonical Tier 1.
+         entry_offset=None
+@@ -92,7 +96,7 @@
+                     entry_offset=instruction.offset;break
+             if entry_offset is None:raise UnsupportedBytecode('suspended function has no original RESUME')
+         lowered=lower(graph,frame_entry=True,entry_offset=entry_offset,
+-                      structure_calls=calls,owned_readonly_loops=True)
++                      structure_calls=calls,owned_readonly_loops=True,library_calls=library_calls)
+     except (UnsupportedBytecode,NotImplementedError):
+         if strict:raise
+         return function
+diff --git a/src/recompyler/libraries/c_calls.py b/src/recompyler/libraries/c_calls.py
+new file mode 100644
+--- /dev/null
++++ b/src/recompyler/libraries/c_calls.py
+@@ -0,0 +1,16 @@
++"""Weak guarded C-call candidates for the canonical owned CALL boundary."""
++from dataclasses import dataclass
++
++
++@dataclass(frozen=True)
++class CFunctionCall:
++    dispatcher_address:int
++    context_address:int
++    guard:object
++    provider:object
++
++    @classmethod
++    def capture(cls,function):
++        from . import _boundary_native
++        guard=_boundary_native.new_guard(function)
++        return cls(_boundary_native.dispatcher_address(),_boundary_native.address(guard),guard,_boundary_native)

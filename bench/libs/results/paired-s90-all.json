@@ -1,0 +1,4349 @@
+[
+  {
+    "name": "networkx_shortest_paths",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 224,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 6,
+        "compiled": 9,
+        "attempted": 9,
+        "not_attempted": 1
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 7.088806152921734e-05,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 6.561154785345025e-05,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.00021315463868631923,
+        "warmup": 32,
+        "relative_to_cpython": 3.1700741325347974,
+        "relative_to_cpython_jit": 3.414051258713441
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'networkx'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 7.448088379646833e-05,
+          "batch_seconds": 0.3050737000303343,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 7.179260254019937e-05,
+          "batch_seconds": 0.2940625000046566,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 0.00018970122070527395,
+          "batch_seconds": 0.38850810000440106,
+          "calls": 2048,
+          "ordinary_entries_before": 6,
+          "ordinary_entries_after": 6
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 0.00016520849609946708,
+          "batch_seconds": 0.3383470000117086,
+          "calls": 2048,
+          "ordinary_entries_before": 6,
+          "ordinary_entries_after": 6
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 6.037678222980958e-05,
+          "batch_seconds": 0.24730330001330003,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 5.2076416011459514e-05,
+          "batch_seconds": 0.21330499998293817,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 4.682209471695842e-05,
+          "batch_seconds": 0.19178329996066168,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 7.09462158141605e-05,
+          "batch_seconds": 0.2905956999748014,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 0.00022288125001068693,
+          "batch_seconds": 0.4564608000218868,
+          "calls": 2048,
+          "ordinary_entries_before": 6,
+          "ordinary_entries_after": 6
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 7.686894531389044e-05,
+          "batch_seconds": 0.3148552000056952,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 6.975344237503123e-05,
+          "batch_seconds": 0.2857100999681279,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 0.00021315463868631923,
+          "batch_seconds": 0.4365407000295818,
+          "calls": 2048,
+          "ordinary_entries_before": 6,
+          "ordinary_entries_after": 6
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 0.000224720410159307,
+          "batch_seconds": 0.4602274000062607,
+          "calls": 2048,
+          "ordinary_entries_before": 6,
+          "ordinary_entries_after": 6
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 6.561154785345025e-05,
+          "batch_seconds": 0.2687449000077322,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 7.088806152921734e-05,
+          "batch_seconds": 0.2903575000236742,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 5.5778369130621286e-05,
+          "batch_seconds": 0.2284681999590248,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 5.5588183599297736e-05,
+          "batch_seconds": 0.22768920002272353,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "44781bd6d8b951bac1274339890ad26eee6150c56afb2204e7ca23239457bc70",
+          "seconds": 0.0001897809081867763,
+          "batch_seconds": 0.38867129996651784,
+          "calls": 2048,
+          "ordinary_entries_before": 6,
+          "ordinary_entries_after": 6
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 22568,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 53200,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 44036,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23484,
+        "ParentProcessId": 53200,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 52808,
+        "ParentProcessId": 44036,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 22568,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 53200,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 44036,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23484,
+        "ParentProcessId": 53200,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 52808,
+        "ParentProcessId": 44036,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:23:46.159430+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "networkx_pagerank",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 16640,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 26,
+        "compiled": 51,
+        "attempted": 51,
+        "not_attempted": 307
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 0.0011254226562869007,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 0.001188793164146773,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.001283527343730384,
+        "warmup": 32,
+        "relative_to_cpython": 1.1296467163914117,
+        "relative_to_cpython_jit": 1.0246751804218572
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'networkx'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0010518585936551972,
+          "batch_seconds": 0.2692757999757305,
+          "calls": 256,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.001081877148408239,
+          "batch_seconds": 0.5539210999850184,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0015017660155081103,
+          "batch_seconds": 0.38445209997007623,
+          "calls": 256,
+          "ordinary_entries_before": 26,
+          "ordinary_entries_after": 26
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0013261035155665013,
+          "batch_seconds": 0.33948249998502433,
+          "calls": 256,
+          "ordinary_entries_before": 26,
+          "ordinary_entries_after": 26
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0009736896485037505,
+          "batch_seconds": 0.49852910003392026,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0010494730468053604,
+          "batch_seconds": 0.26866509998217225,
+          "calls": 256,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0010661378905751917,
+          "batch_seconds": 0.2729312999872491,
+          "calls": 256,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.001082948242128623,
+          "batch_seconds": 0.554469499969855,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0014103042967690271,
+          "batch_seconds": 0.36103789997287095,
+          "calls": 256,
+          "ordinary_entries_before": 26,
+          "ordinary_entries_after": 26
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0011254226562869007,
+          "batch_seconds": 0.2881082000094466,
+          "calls": 256,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0012526187500725428,
+          "batch_seconds": 0.6413408000371419,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.001283527343730384,
+          "batch_seconds": 0.3285829999949783,
+          "calls": 256,
+          "ordinary_entries_before": 26,
+          "ordinary_entries_after": 26
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.00131256757799747,
+          "batch_seconds": 0.3360172999673523,
+          "calls": 256,
+          "ordinary_entries_before": 26,
+          "ordinary_entries_after": 26
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.000993931835978401,
+          "batch_seconds": 0.5088931000209413,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0013482417969044036,
+          "batch_seconds": 0.3451499000075273,
+          "calls": 256,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0009660929688379838,
+          "batch_seconds": 0.24731980002252385,
+          "calls": 256,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.001188793164146773,
+          "batch_seconds": 0.6086621000431478,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "742d9f5fa1c5eb7f2d3afc0f83e6c684d3ae4d44dadeebf3dfa5049abfa20772",
+          "seconds": 0.0010913437499766587,
+          "batch_seconds": 0.27938399999402463,
+          "calls": 256,
+          "ordinary_entries_before": 26,
+          "ordinary_entries_after": 26
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 22568,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 53200,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 44036,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23484,
+        "ParentProcessId": 53200,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 52808,
+        "ParentProcessId": 44036,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 22568,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 53200,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 44036,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23484,
+        "ParentProcessId": 53200,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 52808,
+        "ParentProcessId": 44036,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:24:12.277451+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "sympy_expand_simplify",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 89760,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 31,
+        "compiled": 125,
+        "attempted": 125,
+        "not_attempted": 533
+      },
+      "pypy": {
+        "status": "ready",
+        "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+        "mode": "pypy",
+        "warmup": 1000,
+        "python": "3.11.17",
+        "jit": false
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 0.005894500000067637,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 0.006555490625032689,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.00900383750013134,
+        "warmup": 32,
+        "relative_to_cpython": 1.3749899118899584,
+        "relative_to_cpython_jit": 1.331053578509337
+      },
+      "pypy": {
+        "seconds": 0.0035236999992775964,
+        "warmup": 1000,
+        "relative_to_cpython": 0.5977945541160681
+      }
+    },
+    "unavailable": {},
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.009364825000375276,
+          "batch_seconds": 0.29967440001200885,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.006581154687410162,
+          "batch_seconds": 0.4211938999942504,
+          "calls": 64,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.009933240624377504,
+          "batch_seconds": 0.3178636999800801,
+          "calls": 32,
+          "ordinary_entries_before": 31,
+          "ordinary_entries_after": 31
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.007002546873991378,
+          "batch_seconds": 0.22408149996772408,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "pypy": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.0035046468747168547,
+          "batch_seconds": 0.11214869999093935,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.008532899999408983,
+          "batch_seconds": 0.27305279998108745,
+          "calls": 32,
+          "ordinary_entries_before": 31,
+          "ordinary_entries_after": 31
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.005782709375125705,
+          "batch_seconds": 0.37009340000804514,
+          "calls": 64,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.006150487501145108,
+          "batch_seconds": 0.19681560003664345,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.005341584374036756,
+          "batch_seconds": 0.1709306999691762,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.005609156250102387,
+          "batch_seconds": 0.3589860000065528,
+          "calls": 64,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.008055828124270192,
+          "batch_seconds": 0.25778649997664616,
+          "calls": 32,
+          "ordinary_entries_before": 31,
+          "ordinary_entries_after": 31
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.0033934125003725057,
+          "batch_seconds": 0.10858920001192018,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.005744171874539461,
+          "batch_seconds": 0.18381349998526275,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.006376346874276351,
+          "batch_seconds": 0.40808619995368645,
+          "calls": 64,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.007368693750322564,
+          "batch_seconds": 0.23579820001032203,
+          "calls": 32,
+          "ordinary_entries_before": 31,
+          "ordinary_entries_after": 31
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.003753534374482115,
+          "batch_seconds": 0.12011309998342767,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "pypy": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.0035236999992775964,
+          "batch_seconds": 0.11275839997688308,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.00900383750013134,
+          "batch_seconds": 0.2881228000042029,
+          "calls": 32,
+          "ordinary_entries_before": 31,
+          "ordinary_entries_after": 31
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.006555490625032689,
+          "batch_seconds": 0.4195514000020921,
+          "calls": 64,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.005894500000067637,
+          "batch_seconds": 0.1886240000021644,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.006814824999310076,
+          "batch_seconds": 0.21807439997792244,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.007039773437099939,
+          "batch_seconds": 0.4505454999743961,
+          "calls": 64,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.009370315625346848,
+          "batch_seconds": 0.29985010001109913,
+          "calls": 32,
+          "ordinary_entries_before": 31,
+          "ordinary_entries_after": 31
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "3b061e6a48564e5daae8523b8aa310cf9b01599164db1a7b96eb118054ac103a",
+          "seconds": 0.0033758062509150477,
+          "batch_seconds": 0.10802580002928153,
+          "calls": 32,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 22568,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 17176,
+        "ParentProcessId": 22544,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 22568,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 17176,
+        "ParentProcessId": 22544,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:25:39.857880+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "jinja2_render",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 160,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 5,
+        "compiled": 8,
+        "attempted": 8,
+        "not_attempted": 0
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 7.170122070476737e-05,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 7.165588378654775e-05,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 7.434797363714551e-05,
+        "warmup": 32,
+        "relative_to_cpython": 1.0391236647841544,
+        "relative_to_cpython_jit": 1.0554444675614858
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'jinja2'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.350781250181626e-05,
+          "batch_seconds": 0.3010880000074394,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.49101562433907e-05,
+          "batch_seconds": 0.3068319999729283,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 8.026486815992939e-05,
+          "batch_seconds": 0.3287648999830708,
+          "calls": 4096,
+          "ordinary_entries_before": 5,
+          "ordinary_entries_after": 5
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.733652344654729e-05,
+          "batch_seconds": 0.3167704000370577,
+          "calls": 4096,
+          "ordinary_entries_before": 5,
+          "ordinary_entries_after": 5
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 6.890473633802685e-05,
+          "batch_seconds": 0.282233800040558,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.417302246892632e-05,
+          "batch_seconds": 0.3038127000327222,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.506806640833474e-05,
+          "batch_seconds": 0.3074788000085391,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.130966797319616e-05,
+          "batch_seconds": 0.29208440001821145,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.997602538978299e-05,
+          "batch_seconds": 0.3275817999965511,
+          "calls": 4096,
+          "ordinary_entries_before": 5,
+          "ordinary_entries_after": 5
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.252502442156583e-05,
+          "batch_seconds": 0.29706250003073364,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.333298339062821e-05,
+          "batch_seconds": 0.30037189996801317,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.434797363714551e-05,
+          "batch_seconds": 0.30452930001774803,
+          "calls": 4096,
+          "ordinary_entries_before": 5,
+          "ordinary_entries_after": 5
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.347893067333189e-05,
+          "batch_seconds": 0.3009697000379674,
+          "calls": 4096,
+          "ordinary_entries_before": 5,
+          "ordinary_entries_after": 5
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 6.961894531798407e-05,
+          "batch_seconds": 0.28515920002246276,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.071240234779452e-05,
+          "batch_seconds": 0.28963800001656637,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.170122070476737e-05,
+          "batch_seconds": 0.29368820000672713,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.165588378654775e-05,
+          "batch_seconds": 0.2935024999896996,
+          "calls": 4096,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "757bd8dc5dfc92e6934115c32bb5f6fbb7eabb726d0b6bcc994243ce9027d341",
+          "seconds": 7.791918945088128e-05,
+          "batch_seconds": 0.3191569999908097,
+          "calls": 4096,
+          "ordinary_entries_before": 5,
+          "ordinary_entries_after": 5
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 22568,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 22568,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:25:50.829036+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "markdown_convert",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 11008,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 48,
+        "compiled": 109,
+        "attempted": 109,
+        "not_attempted": 13
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 0.0003815149414094776,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 0.0003997397460580032,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.0007513787110156045,
+        "warmup": 32,
+        "relative_to_cpython": 1.9094184805567336,
+        "relative_to_cpython_jit": 1.8229629971671166
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'markdown'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0003909832031467886,
+          "batch_seconds": 0.4003668000223115,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.00036234199222917596,
+          "batch_seconds": 0.3710382000426762,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0007298347655932957,
+          "batch_seconds": 0.3736753999837674,
+          "calls": 512,
+          "ordinary_entries_before": 48,
+          "ordinary_entries_after": 48
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0007603498046364621,
+          "batch_seconds": 0.3892990999738686,
+          "calls": 512,
+          "ordinary_entries_before": 48,
+          "ordinary_entries_after": 48
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0003806842773315111,
+          "batch_seconds": 0.3898206999874674,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0003884332031134363,
+          "batch_seconds": 0.3977555999881588,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0003956999023557728,
+          "batch_seconds": 0.40519670001231134,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0004125274414263913,
+          "batch_seconds": 0.4224281000206247,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0007542890625700238,
+          "batch_seconds": 0.3861960000358522,
+          "calls": 512,
+          "ordinary_entries_before": 48,
+          "ordinary_entries_after": 48
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.00037117500005479087,
+          "batch_seconds": 0.38008320005610585,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0003997397460580032,
+          "batch_seconds": 0.4093334999633953,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0007808511718394584,
+          "batch_seconds": 0.3997957999818027,
+          "calls": 512,
+          "ordinary_entries_before": 48,
+          "ordinary_entries_after": 48
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0007513787110156045,
+          "batch_seconds": 0.3847059000399895,
+          "calls": 512,
+          "ordinary_entries_before": 48,
+          "ordinary_entries_after": 48
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0004201372070724574,
+          "batch_seconds": 0.43022050004219636,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.000403814843764394,
+          "batch_seconds": 0.4135064000147395,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0003815149414094776,
+          "batch_seconds": 0.3906713000033051,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.0003996085937387761,
+          "batch_seconds": 0.40919919998850673,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "e16c1f0934a3569862ca26aeff0f57301f675ebf3044462edd98d991f87bf58d",
+          "seconds": 0.000728471679735776,
+          "batch_seconds": 0.3729775000247173,
+          "calls": 512,
+          "ordinary_entries_before": 48,
+          "ordinary_entries_after": 48
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:26:18.619509+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "pygments_highlight",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 1120,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 11,
+        "compiled": 14,
+        "attempted": 14,
+        "not_attempted": 1
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 0.002176839843741618,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 0.0018411609376016713,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.001875160156032507,
+        "warmup": 32,
+        "relative_to_cpython": 0.8614139259824577,
+        "relative_to_cpython_jit": 1.0651780002567568
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'pygments'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0021322148436411226,
+          "batch_seconds": 0.2729234999860637,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0023177257812676544,
+          "batch_seconds": 0.29666890000225976,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0017541414058541704,
+          "batch_seconds": 0.22453009994933382,
+          "calls": 128,
+          "ordinary_entries_before": 11,
+          "ordinary_entries_after": 11
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0018084023436131247,
+          "batch_seconds": 0.23147549998247996,
+          "calls": 128,
+          "ordinary_entries_before": 11,
+          "ordinary_entries_after": 11
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.002130652343566908,
+          "batch_seconds": 0.2727234999765642,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0020878132813777484,
+          "batch_seconds": 0.2672401000163518,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0021423273437903845,
+          "batch_seconds": 0.2742179000051692,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0021539578124247782,
+          "batch_seconds": 0.2757065999903716,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0022712750001119275,
+          "batch_seconds": 0.2907232000143267,
+          "calls": 128,
+          "ordinary_entries_before": 11,
+          "ordinary_entries_after": 11
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.002258459374843369,
+          "batch_seconds": 0.28908279997995123,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0018411609376016713,
+          "batch_seconds": 0.23566860001301393,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.00161500000012893,
+          "batch_seconds": 0.20672000001650304,
+          "calls": 128,
+          "ordinary_entries_before": 11,
+          "ordinary_entries_after": 11
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.001875160156032507,
+          "batch_seconds": 0.2400204999721609,
+          "calls": 128,
+          "ordinary_entries_before": 11,
+          "ordinary_entries_after": 11
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0017604195313651871,
+          "batch_seconds": 0.22533370001474395,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.002176839843741618,
+          "batch_seconds": 0.2786354999989271,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0021215921874500054,
+          "batch_seconds": 0.2715637999936007,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.002024842968694429,
+          "batch_seconds": 0.25917989999288693,
+          "calls": 128,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "0887301e3ce244dad6f5b911a3f13d39e81961629b0f4ebd91777d6d87cc6f96",
+          "seconds": 0.0021809015624967287,
+          "batch_seconds": 0.2791553999995813,
+          "calls": 128,
+          "ordinary_entries_before": 11,
+          "ordinary_entries_after": 11
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:26:30.216575+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "pyparsing_parse",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 48384,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 20,
+        "compiled": 45,
+        "attempted": 45,
+        "not_attempted": 2
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 0.0007340328124882944,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 0.000724934960999235,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.0015590816406074737,
+        "warmup": 32,
+        "relative_to_cpython": 2.1495047692826446,
+        "relative_to_cpython_jit": 2.1320399870998297
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'pyparsing'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0006736955077712992,
+          "batch_seconds": 0.34493209997890517,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0006628300781130747,
+          "batch_seconds": 0.33936899999389425,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.001339828515483532,
+          "batch_seconds": 0.3429960999637842,
+          "calls": 256,
+          "ordinary_entries_before": 20,
+          "ordinary_entries_after": 20
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0015929238281842117,
+          "batch_seconds": 0.4077885000151582,
+          "calls": 256,
+          "ordinary_entries_before": 20,
+          "ordinary_entries_after": 20
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0007256171875269501,
+          "batch_seconds": 0.3715160000137985,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0006933578124517226,
+          "batch_seconds": 0.35499919997528195,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0006809125000017957,
+          "batch_seconds": 0.3486272000009194,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.000676160937473469,
+          "batch_seconds": 0.3461943999864161,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0016129585937960655,
+          "batch_seconds": 0.4129174000117928,
+          "calls": 256,
+          "ordinary_entries_before": 20,
+          "ordinary_entries_after": 20
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.000786349609370518,
+          "batch_seconds": 0.4026109999977052,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0007083345702767474,
+          "batch_seconds": 0.36266729998169467,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0012457687500955217,
+          "batch_seconds": 0.31891680002445355,
+          "calls": 256,
+          "ordinary_entries_before": 20,
+          "ordinary_entries_after": 20
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0015590816406074737,
+          "batch_seconds": 0.39912489999551326,
+          "calls": 256,
+          "ordinary_entries_before": 20,
+          "ordinary_entries_after": 20
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.000724934960999235,
+          "batch_seconds": 0.37116670003160834,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0007031476562815442,
+          "batch_seconds": 0.3600116000161506,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0007340328124882944,
+          "batch_seconds": 0.37582479999400675,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.0007400457030826146,
+          "batch_seconds": 0.3789033999782987,
+          "calls": 512,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "d6f7ff6588c33457ba47fdd6bfcf510e82ab3029ba3bce0469c373d84ff90086",
+          "seconds": 0.001577807031253542,
+          "batch_seconds": 0.40391860000090674,
+          "calls": 256,
+          "ordinary_entries_before": 20,
+          "ordinary_entries_after": 20
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7640,
+        "ParentProcessId": 15144,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 42976,
+        "ParentProcessId": 7640,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 23388,
+        "ParentProcessId": 42976,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 12880,
+        "ParentProcessId": 23388,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:26:46.162460+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "dateutil_parse",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 3808,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 21,
+        "compiled": 37,
+        "attempted": 37,
+        "not_attempted": 5
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 0.00010179492187489814,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 0.00010545605468337271,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.00024062294920668137,
+        "warmup": 32,
+        "relative_to_cpython": 2.3856832610365646,
+        "relative_to_cpython_jit": 2.2899316035512514
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'dateutil'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00010695864258991605,
+          "batch_seconds": 0.21905130002414808,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00010843310548125373,
+          "batch_seconds": 0.22207100002560765,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.0002518889648399636,
+          "batch_seconds": 0.2579342999961227,
+          "calls": 1024,
+          "ordinary_entries_before": 21,
+          "ordinary_entries_after": 21
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.0002541245117413382,
+          "batch_seconds": 0.2602235000231303,
+          "calls": 1024,
+          "ordinary_entries_before": 21,
+          "ordinary_entries_after": 21
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00010180327149100776,
+          "batch_seconds": 0.2084931000135839,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 7.898969727193617e-05,
+          "batch_seconds": 0.16177090001292527,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 7.058486326627644e-05,
+          "batch_seconds": 0.14455779996933416,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 7.826611326322563e-05,
+          "batch_seconds": 0.1602889999630861,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00022065917971758608,
+          "batch_seconds": 0.22595500003080815,
+          "calls": 1024,
+          "ordinary_entries_before": 21,
+          "ordinary_entries_after": 21
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.0001029483886725302,
+          "batch_seconds": 0.21083830000134185,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00010545605468337271,
+          "batch_seconds": 0.21597399999154732,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00023327539059891933,
+          "batch_seconds": 0.2388739999732934,
+          "calls": 1024,
+          "ordinary_entries_before": 21,
+          "ordinary_entries_after": 21
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00024062294920668137,
+          "batch_seconds": 0.24639789998764172,
+          "calls": 1024,
+          "ordinary_entries_before": 21,
+          "ordinary_entries_after": 21
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00010507866210218708,
+          "batch_seconds": 0.21520109998527914,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00010086123046448847,
+          "batch_seconds": 0.2065637999912724,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00010179492187489814,
+          "batch_seconds": 0.20847599999979138,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.0001060403808708088,
+          "batch_seconds": 0.21717070002341643,
+          "calls": 2048,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "e76243d7ca2e925418a2f9ca5458204f53968a2b212d3d8394b90aca339f9fca",
+          "seconds": 0.00026678466798557565,
+          "batch_seconds": 0.27318750001722947,
+          "calls": 1024,
+          "ordinary_entries_before": 21,
+          "ordinary_entries_after": 21
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:27:01.830282+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "yaml_load",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 31872,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 50,
+        "compiled": 90,
+        "attempted": 90,
+        "not_attempted": 0
+      },
+      "pypy": {
+        "status": "ready",
+        "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+        "mode": "pypy",
+        "warmup": 1000,
+        "python": "3.11.17",
+        "jit": false
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 0.0002900179687799209,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 0.00030073232426275354,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.0007824148436839096,
+        "warmup": 32,
+        "relative_to_cpython": 2.6712579457937053,
+        "relative_to_cpython_jit": 2.601698522438526
+      },
+      "pypy": {
+        "seconds": 3.6913952634165526e-05,
+        "warmup": 1000,
+        "relative_to_cpython": 0.12602865357255874
+      }
+    },
+    "unavailable": {},
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0002704225586285247,
+          "batch_seconds": 0.2769127000356093,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0003056890625430242,
+          "batch_seconds": 0.3130256000440568,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0007919812500176704,
+          "batch_seconds": 0.40549440000904724,
+          "calls": 512,
+          "ordinary_entries_before": 50,
+          "ordinary_entries_after": 50
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 3.237506103914711e-05,
+          "batch_seconds": 0.26521650003269315,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "pypy": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 3.178734130671046e-05,
+          "batch_seconds": 0.2604018999845721,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0010383880859308192,
+          "batch_seconds": 0.5316546999965794,
+          "calls": 512,
+          "ordinary_entries_before": 50,
+          "ordinary_entries_after": 50
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0003258291991983242,
+          "batch_seconds": 0.333649099979084,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.00032420556641454823,
+          "batch_seconds": 0.3319865000084974,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.00029805917966996276,
+          "batch_seconds": 0.30521259998204187,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.00029072363281557045,
+          "batch_seconds": 0.29770100000314415,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0007840949218689275,
+          "batch_seconds": 0.4014565999968909,
+          "calls": 512,
+          "ordinary_entries_before": 50,
+          "ordinary_entries_after": 50
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 3.171409912283707e-05,
+          "batch_seconds": 0.2598019000142813,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.00021766943359580182,
+          "batch_seconds": 0.22289350000210106,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.00021789853519749158,
+          "batch_seconds": 0.22312810004223138,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0008178775390206283,
+          "batch_seconds": 0.4187532999785617,
+          "calls": 512,
+          "ordinary_entries_before": 50,
+          "ordinary_entries_after": 50
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 3.722585449139615e-05,
+          "batch_seconds": 0.30495419999351725,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "pypy": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 3.086104736382822e-05,
+          "batch_seconds": 0.2528137000044808,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0007639091797955189,
+          "batch_seconds": 0.39112150005530566,
+          "calls": 512,
+          "ordinary_entries_before": 50,
+          "ordinary_entries_after": 50
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.00040130849606612173,
+          "batch_seconds": 0.41093989997170866,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0002900179687799209,
+          "batch_seconds": 0.296978400030639,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0002929012695744859,
+          "batch_seconds": 0.2999309000442736,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.00030073232426275354,
+          "batch_seconds": 0.3079499000450596,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 0.0007824148436839096,
+          "batch_seconds": 0.4005963999661617,
+          "calls": 512,
+          "ordinary_entries_before": 50,
+          "ordinary_entries_after": 50
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "4df11af68ef8adf9c2a9e6ba4812d718f95ef17421597b41b02234c1a44afac7",
+          "seconds": 3.6913952634165526e-05,
+          "batch_seconds": 0.302399099979084,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:27:26.778468+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "jsonschema_validate",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 14336,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 15,
+        "compiled": 22,
+        "attempted": 22,
+        "not_attempted": 79
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 0.0003383983398634882,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 0.00034226992187313954,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 0.000721878320405267,
+        "warmup": 32,
+        "relative_to_cpython": 2.1332206319229483,
+        "relative_to_cpython_jit": 2.1599116172215855
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'jsonschema'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.00035223955080709857,
+          "batch_seconds": 0.36069330002646893,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.0003667776367137776,
+          "batch_seconds": 0.3755802999949083,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.000665726367174102,
+          "batch_seconds": 0.34085189999314025,
+          "calls": 512,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.0006899039062773227,
+          "batch_seconds": 0.3532308000139892,
+          "calls": 512,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.00033946533204698426,
+          "batch_seconds": 0.3476125000161119,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.00031897900390731593,
+          "batch_seconds": 0.3266345000010915,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.00033330761721117597,
+          "batch_seconds": 0.3413070000242442,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.00034344306641287403,
+          "batch_seconds": 0.351685700006783,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.000666335156211062,
+          "batch_seconds": 0.34116359998006374,
+          "calls": 512,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.0003427687499879539,
+          "batch_seconds": 0.3509951999876648,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.0003467719726586438,
+          "batch_seconds": 0.35509450000245124,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.0006950541015839917,
+          "batch_seconds": 0.35586770001100376,
+          "calls": 512,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.000721878320405267,
+          "batch_seconds": 0.3696017000474967,
+          "calls": 512,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.00033421660157273436,
+          "batch_seconds": 0.34223780001048,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.0003383983398634882,
+          "batch_seconds": 0.34651990002021194,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.0003363045898368,
+          "batch_seconds": 0.3443758999928832,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.00034226992187313954,
+          "batch_seconds": 0.3504843999980949,
+          "calls": 1024,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "7b3101175a2320e591368f2d43a7ef67524a91a038fa3bc32a7173acbdeb5b97",
+          "seconds": 0.0007783054687706681,
+          "batch_seconds": 0.39849240001058206,
+          "calls": 512,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:27:41.596479+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "json_encode",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 32,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 1,
+        "compiled": 5,
+        "attempted": 5,
+        "not_attempted": 0
+      },
+      "pypy": {
+        "status": "ready",
+        "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+        "mode": "pypy",
+        "warmup": 1000,
+        "python": "3.11.17",
+        "jit": false
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 9.31146545468664e-06,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 8.11011352652713e-06,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 1.0429718017235245e-05,
+        "warmup": 32,
+        "relative_to_cpython": 1.1992073666099967,
+        "relative_to_cpython_jit": 1.137357658773537
+      },
+      "pypy": {
+        "seconds": 3.365204620298101e-06,
+        "warmup": 1000,
+        "relative_to_cpython": 0.3614044037079393
+      }
+    },
+    "unavailable": {},
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 7.430621337789489e-06,
+          "batch_seconds": 0.24348659999668598,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 6.907940672817858e-06,
+          "batch_seconds": 0.22635939996689558,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 8.606015015288904e-06,
+          "batch_seconds": 0.2820019000209868,
+          "calls": 32768,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 5.461953735519387e-06,
+          "batch_seconds": 0.7159092000219971,
+          "calls": 131072,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "pypy": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 6.1005386351453694e-06,
+          "batch_seconds": 0.7996097999857739,
+          "calls": 131072,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 9.998791504983728e-06,
+          "batch_seconds": 0.3276404000353068,
+          "calls": 32768,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 9.178942871557183e-06,
+          "batch_seconds": 0.3007756000151858,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 1.2857226563411928e-05,
+          "batch_seconds": 0.42130560002988204,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 6.747277831564702e-06,
+          "batch_seconds": 0.22109479998471215,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 7.5156982415336415e-06,
+          "batch_seconds": 0.24627439997857437,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 9.186447144315935e-06,
+          "batch_seconds": 0.30102150002494454,
+          "calls": 32768,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 2.5609748841581848e-06,
+          "batch_seconds": 0.3356721000163816,
+          "calls": 131072,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 9.40620727440944e-06,
+          "batch_seconds": 0.3082225999678485,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 9.220010374733079e-06,
+          "batch_seconds": 0.3021212999592535,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 1.0429718017235245e-05,
+          "batch_seconds": 0.3417609999887645,
+          "calls": 32768,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 2.6080657957727738e-06,
+          "batch_seconds": 0.341844399983529,
+          "calls": 131072,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "pypy": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 3.365204620298101e-06,
+          "batch_seconds": 0.4410840999917127,
+          "calls": 131072,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 1.2118469237876184e-05,
+          "batch_seconds": 0.3970979999867268,
+          "calls": 32768,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 7.87053222595091e-06,
+          "batch_seconds": 0.25790159997995943,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 9.31146545468664e-06,
+          "batch_seconds": 0.30511810001917183,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 7.691830445466508e-06,
+          "batch_seconds": 0.2520459000370465,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 8.11011352652713e-06,
+          "batch_seconds": 0.265752200037241,
+          "calls": 32768,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 9.22409973291849e-06,
+          "batch_seconds": 0.30225530004827306,
+          "calls": 32768,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "4cba3d98eb9a8a73f5db837882b54b961cd214f593ce419a31ca1abbb45cffdc",
+          "seconds": 5.2402778627502755e-06,
+          "batch_seconds": 0.6868537000264041,
+          "calls": 131072,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:27:59.215208+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "difflib_diff",
+    "status": "error",
+    "reason": "OSError: [Errno 22] Invalid argument"
+  },
+  {
+    "name": "email_parse",
+    "status": "error",
+    "reason": "OSError: [Errno 22] Invalid argument"
+  },
+  {
+    "name": "tomllib_load",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 2976,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 15,
+        "compiled": 22,
+        "attempted": 22,
+        "not_attempted": 4
+      },
+      "pypy": {
+        "status": "ready",
+        "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+        "mode": "pypy",
+        "warmup": 1000,
+        "python": "3.11.17",
+        "jit": false
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 1.879241332858328e-05,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 1.8429895021654374e-05,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 6.007478026504032e-05,
+        "warmup": 32,
+        "relative_to_cpython": 3.1414136127476433,
+        "relative_to_cpython_jit": 3.1794941696342494
+      },
+      "pypy": {
+        "seconds": 3.696511840622918e-06,
+        "warmup": 1000,
+        "relative_to_cpython": 0.19899617476197162
+      }
+    },
+    "unavailable": {},
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 2.004890747286936e-05,
+          "batch_seconds": 0.3284813000354916,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.9019360351535397e-05,
+          "batch_seconds": 0.31161319999955595,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 5.4323535152889235e-05,
+          "batch_seconds": 0.2225091999862343,
+          "calls": 4096,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 3.7545654301140985e-06,
+          "batch_seconds": 0.24605920002795756,
+          "calls": 65536,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "pypy": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 3.7229751592704474e-06,
+          "batch_seconds": 0.24398890003794804,
+          "calls": 65536,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 5.65329345789678e-05,
+          "batch_seconds": 0.2315589000354521,
+          "calls": 4096,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 2.0400982666757272e-05,
+          "batch_seconds": 0.33424970001215115,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.9326806640407312e-05,
+          "batch_seconds": 0.3166503999964334,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.853919067329457e-05,
+          "batch_seconds": 0.30374609999125823,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.9052093502835987e-05,
+          "batch_seconds": 0.3121494999504648,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 5.315954589946159e-05,
+          "batch_seconds": 0.21774150000419468,
+          "calls": 4096,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 3.4653244025406593e-06,
+          "batch_seconds": 0.22710350004490465,
+          "calls": 65536,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.879241332858328e-05,
+          "batch_seconds": 0.30789489997550845,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.8147216795938448e-05,
+          "batch_seconds": 0.29732399998465553,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 5.224963379646397e-05,
+          "batch_seconds": 0.2140145000303164,
+          "calls": 4096,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 3.561326598955361e-06,
+          "batch_seconds": 0.23339509998913854,
+          "calls": 65536,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "pypy": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 3.696511840622918e-06,
+          "batch_seconds": 0.24225459998706356,
+          "calls": 65536,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 6.757465820328434e-05,
+          "batch_seconds": 0.27678580000065267,
+          "calls": 4096,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.8429895021654374e-05,
+          "batch_seconds": 0.30195540003478527,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.8575793454544964e-05,
+          "batch_seconds": 0.3043457999592647,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.912348632515659e-05,
+          "batch_seconds": 0.3133191999513656,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 1.8894445801720394e-05,
+          "batch_seconds": 0.30956660001538694,
+          "calls": 16384,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 6.007478026504032e-05,
+          "batch_seconds": 0.24606629996560514,
+          "calls": 4096,
+          "ordinary_entries_before": 15,
+          "ordinary_entries_after": 15
+        },
+        "pypy": {
+          "status": "ok",
+          "digest": "ed620f979dd7e35c73ebacba225652c77b5fa20861ce78a346a0a0ab4ab04829",
+          "seconds": 3.90660858151648e-06,
+          "batch_seconds": 0.256023499998264,
+          "calls": 65536,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:28:22.707567+00:00",
+    "default_installation": false
+  },
+  {
+    "name": "numpy_loop",
+    "status": "measured",
+    "class_": "development",
+    "prepared": {
+      "cpython": {
+        "status": "ready",
+        "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+        "mode": "stock",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": false
+      },
+      "cpython_jit": {
+        "status": "ready",
+        "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+        "mode": "jit",
+        "warmup": 32,
+        "python": "3.14.4",
+        "jit": true
+      },
+      "native": {
+        "status": "ready",
+        "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+        "mode": "native",
+        "jit": true,
+        "python": "3.14.4",
+        "native_entries": 32,
+        "warmup": 32,
+        "counted_wrappers_installed": 0,
+        "ordinary_entries_live": 1,
+        "compiled": 1,
+        "attempted": 1,
+        "not_attempted": 0
+      }
+    },
+    "summary": {
+      "cpython": {
+        "seconds": 4.713769531150547e-05,
+        "warmup": 32
+      },
+      "cpython_jit": {
+        "seconds": 4.466549071935333e-05,
+        "warmup": 32
+      },
+      "native": {
+        "seconds": 4.493427732654709e-05,
+        "warmup": 32,
+        "relative_to_cpython": 0.9422413973696299,
+        "relative_to_cpython_jit": 1.0465053674586469
+      }
+    },
+    "unavailable": {
+      "pypy": {
+        "status": "unavailable",
+        "reason": "No module named 'numpy'"
+      }
+    },
+    "first": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 3.99761108411667e-05,
+          "batch_seconds": 0.3274843000108376,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 3.760288085885577e-05,
+          "batch_seconds": 0.30804279999574646,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 0.00010820961912827443,
+          "batch_seconds": 0.22161329997470602,
+          "calls": 2048,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 0.00010310927734735742,
+          "batch_seconds": 0.211167800007388,
+          "calls": 2048,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 3.8512060548612226e-05,
+          "batch_seconds": 0.31549080001423135,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 3.934604492172866e-05,
+          "batch_seconds": 0.3223227999988012,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.441281738110092e-05,
+          "batch_seconds": 0.36382979998597875,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.1666186525901594e-05,
+          "batch_seconds": 0.34132940002018586,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 0.00011271376953914114,
+          "batch_seconds": 0.23083780001616105,
+          "calls": 2048,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        }
+      }
+    ],
+    "repeat": [
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.1272460940433575e-05,
+          "batch_seconds": 0.33810400002403185,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.466549071935333e-05,
+          "batch_seconds": 0.36589969997294247,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.674267577797764e-05,
+          "batch_seconds": 0.0957289999932982,
+          "calls": 2048,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        }
+      },
+      {
+        "native": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.441508789909676e-05,
+          "batch_seconds": 0.09096210001735017,
+          "calls": 2048,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 3.929752197251446e-05,
+          "batch_seconds": 0.32192529999883845,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.713769531150547e-05,
+          "batch_seconds": 0.3861519999918528,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        }
+      },
+      {
+        "cpython": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.8513562006746724e-05,
+          "batch_seconds": 0.39742309995926917,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "cpython_jit": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.519958496018717e-05,
+          "batch_seconds": 0.37027499999385327,
+          "calls": 8192,
+          "ordinary_entries_before": null,
+          "ordinary_entries_after": null
+        },
+        "native": {
+          "status": "ok",
+          "digest": "8b4b44dadd1f921957cf483a6f9c1c08e17f0ca7fa8f63a77e1ca9b99e05c609",
+          "seconds": 4.493427732654709e-05,
+          "batch_seconds": 0.09202539996476844,
+          "calls": 2048,
+          "ordinary_entries_before": 1,
+          "ordinary_entries_after": 1
+        }
+      }
+    ],
+    "concurrent_test_processes_before": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "concurrent_test_processes_after": [
+      {
+        "ProcessId": 16632,
+        "ParentProcessId": 38732,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 7352,
+        "ParentProcessId": 16632,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 46648,
+        "ParentProcessId": 26668,
+        "Name": "python.exe"
+      },
+      {
+        "ProcessId": 45376,
+        "ParentProcessId": 46648,
+        "Name": "python.exe"
+      }
+    ],
+    "recorded_utc": "2026-11-16T04:28:31.316115+00:00",
+    "default_installation": false
+  }
+]

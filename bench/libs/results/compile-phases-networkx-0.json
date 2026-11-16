@@ -1,0 +1,167 @@
+{
+  "name": "networkx_pagerank",
+  "attempted": 24,
+  "compiled": 24,
+  "not_attempted": 334,
+  "seconds": 2.000109300017357,
+  "functions_per_second": 11.999344235733382,
+  "phase_seconds_exclusive": {
+    "IR build": 0.029080600012093782,
+    "structure selection": 0.0019776002736762166,
+    "structure feedback": 0.008645199879538268,
+    "provider setup": 0.003181199950631708,
+    "IR verification": 0.013411199965048581,
+    "symbol resolution": 0.0018923993920907378,
+    "LLVM serialization": 0.2398867001174949,
+    "LLVM parse": 0.11749039991991594,
+    "MCJIT setup": 0.11302150000119582,
+    "LLVM codegen/link": 1.2745828001061454,
+    "LLVM finish other": 0.01228359987726435,
+    "LLVM IR construction": 0.17907780065434054,
+    "prepare entry": 0.00021460012067109346,
+    "compiler other": 0.005109899793751538
+  },
+  "phase_calls": {
+    "IR build": 24,
+    "structure selection": 48,
+    "structure feedback": 24,
+    "provider setup": 24,
+    "IR verification": 24,
+    "symbol resolution": 387,
+    "LLVM serialization": 24,
+    "LLVM parse": 48,
+    "MCJIT setup": 24,
+    "LLVM codegen/link": 24,
+    "LLVM finish other": 24,
+    "LLVM IR construction": 24,
+    "prepare entry": 24,
+    "compiler other": 24
+  },
+  "rows": [
+    {
+      "function": "networkx.classes.coreviews.AtlasView.__getitem__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.coreviews.AtlasView.__init__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.coreviews.AtlasView.__iter__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.reportviews.DiDegreeView.__init__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.reportviews.DiDegreeView.__call__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.reportviews.OutDegreeView.__iter__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.reportviews.OutEdgeView.__call__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.reportviews.OutEdgeDataView.__init__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.reportviews.OutEdgeDataView.__iter__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.coreviews.AdjacencyView.__getitem__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.reportviews.NodeView.__getitem__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.reportviews.OutDegreeView.__getitem__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.graph.Graph.nbunch_iter",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.graph.Graph.__contains__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.utils.misc._clear_cache",
+      "compiled": true
+    },
+    {
+      "function": "networkx.utils.backends._dispatchable._call_if_no_backends_installed",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.digraph.DiGraph.add_nodes_from",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.digraph.DiGraph.is_multigraph",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.graph.Graph.__iter__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.utils.decorators.argmap___new___1",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.digraph.DiGraph.__new__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.digraph.DiGraph.__init__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.graph._CachedPropertyResetterNode.__set__",
+      "compiled": true
+    },
+    {
+      "function": "networkx.classes.digraph._CachedPropertyResetterAdjAndSucc.__set__",
+      "compiled": true
+    }
+  ],
+  "instrumentation_included": true,
+  "concurrent_test_processes": [
+    {
+      "ProcessId": 16632,
+      "ParentProcessId": 38732,
+      "Name": "python.exe"
+    },
+    {
+      "ProcessId": 22568,
+      "ParentProcessId": 16632,
+      "Name": "python.exe"
+    },
+    {
+      "ProcessId": 7352,
+      "ParentProcessId": 16632,
+      "Name": "python.exe"
+    },
+    {
+      "ProcessId": 46648,
+      "ParentProcessId": 26668,
+      "Name": "python.exe"
+    },
+    {
+      "ProcessId": 45376,
+      "ParentProcessId": 46648,
+      "Name": "python.exe"
+    }
+  ],
+  "disturbed_repeat": false
+}

@@ -156,3 +156,20 @@ class BackendTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def multiply_add(a, b, c):
+    return a * b + c
+
+
+def test_gpu_keeps_separate_rounding_for_adversarial_multiply_add():
+    if not lifting._gpu_ready():
+        import pytest
+        pytest.skip('CUDA is unavailable')
+    calls = [(1.0 + 2.0**-27, 1.0 - 2.0**-27, -1.0),
+             (2.0**-1022, 0.5, 0.0), (-0.0, 1.0, -0.0)]
+    compiled = lift(multiply_add)
+    expected = [multiply_add(*args).hex() for args in calls]
+    actual = compiled.map(calls, 'gpu')
+    assert [x.hex() for x in actual] == expected
+    assert compiled.gpu_note is None

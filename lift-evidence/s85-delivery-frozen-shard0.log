@@ -1,0 +1,130 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\lift-evidence\\temp\\s85-delivery-frozen-0', '-m', 'not slow', 'tests\\test_analysis_cells.py', 'tests\\test_analysis_passes.py', 'tests\\test_aot.py', 'tests\\test_aot_wrapped_identity.py', 'tests\\test_array_fallback.py', 'tests\\test_backends.py', 'tests\\test_batch.py', 'tests\\test_call_entry.py', 'tests\\test_call_preparation.py', 'tests\\test_candidate_ranking.py', 'tests\\test_containers.py', 'tests\\test_development_cycle.py', 'tests\\test_difffuzz.py', 'tests\\test_direct_adapter.py', 'tests\\test_fixed_costs.py', 'tests\\test_fixed_variants.py', 'tests\\test_flat_protocol.py', 'tests\\test_flow.py', 'tests\\test_function_default_order.py', 'tests\\test_generator_loop_else.py', 'tests\\test_heap_augassign.py', 'tests\\test_heap_callable_objects.py', 'tests\\test_heap_compact_abi.py', 'tests\\test_heap_print_exit.py', 'tests\\test_heap_zero_facts.py', 'tests\\test_ir_borrowed_structures.py', 'tests\\test_ir_census.py', 'tests\\test_ir_collections.py', 'tests\\test_ir_compile.py', 'tests\\test_ir_container_builds.py', 'tests\\test_ir_core.py', 'tests\\test_ir_deopt_frames.py', 'tests\\test_ir_deopt_lazy.py', 'tests\\test_ir_entry.py', 'tests\\test_ir_entry_weakref.py', 'tests\\test_ir_execution_owner.py', 'tests\\test_ir_existing_frame.py', 'tests\\test_ir_generator_entry.py', 'tests\\test_ir_generator_graph.py', 'tests\\test_ir_generator_resume.py', 'tests\\test_ir_generic_protocols.py', 'tests\\test_ir_inline_returns.py', 'tests\\test_ir_inlining.py', 'tests\\test_ir_legacy_attributes.py', 'tests\\test_ir_lowering.py', 'tests\\test_ir_methods_unpack.py', 'tests\\test_ir_namespace.py', 'tests\\test_ir_owned_call.py', 'tests\\test_ir_owned_integration.py', 'tests\\test_ir_owned_readonly.py', 'tests\\test_ir_preload.py', 'tests\\test_ir_refcount.py', 'tests\\test_ir_refcount_lowering.py', 'tests\\test_ir_scope_observers.py', 'tests\\test_ir_simplify.py', 'tests\\test_ir_slices.py', 'tests\\test_ir_source_boundary.py', 'tests\\test_ir_structure_lowerings.py', 'tests\\test_ir_super_format.py', 'tests\\test_ir_symbols.py', 'tests\\test_ir_type_lattice.py', 'tests\\test_keyword_entries.py', 'tests\\test_library_artifacts.py', 'tests\\test_library_import_protocols.py', 'tests\\test_library_runner.py', 'tests\\test_library_workloads.py', 'tests\\test_lift.py', 'tests\\test_managed_ast.py', 'tests\\test_managed_calls.py', 'tests\\test_managed_cell_errors.py', 'tests\\test_managed_finally.py', 'tests\\test_managed_frame_cleanup.py', 'tests\\test_managed_frame_layout.py', 'tests\\test_managed_frame_owners.py', 'tests\\test_managed_from_imports.py', 'tests\\test_managed_imports.py', 'tests\\test_managed_pool_borrow.py', 'tests\\test_managed_slices.py', 'tests\\test_managed_structures.py', 'tests\\test_managed_vector_discard.py', 'tests\\test_managed_visitors.py', 'tests\\test_matrix_soundness.py', 'tests\\test_monitor.py', 'tests\\test_native_guard_audit.py', 'tests\\test_native_guard_shapes.py', 'tests\\test_native_sets.py', 'tests\\test_numeric_values.py', 'tests\\test_numeric_versions.py', 'tests\\test_original_context_binding.py', 'tests\\test_owner_liveness.py', 'tests\\test_prepared_builtin_anchor.py', 'tests\\test_prepared_cache.py', 'tests\\test_prepared_cache_api.py', 'tests\\test_prepared_cache_more.py', 'tests\\test_prepared_descriptor_keys.py', 'tests\\test_prepared_globals.py', 'tests\\test_prepared_lazy_validation.py', 'tests\\test_prepared_order.py', 'tests\\test_prepared_review_regressions.py', 'tests\\test_prepared_slot_cache.py', 'tests\\test_prepared_snapshot_window.py', 'tests\\test_program_structures.py', 'tests\\test_provenance_corpus.py', 'tests\\test_range_product.py', 'tests\\test_range_review.py', 'tests\\test_range_values.py', 'tests\\test_range_values_aot.py', 'tests\\test_range_values_review.py', 'tests\\test_region_reuse.py', 'tests\\test_runner_prepared_integration.py', 'tests\\test_scalar_clock_calls.py', 'tests\\test_scalar_fields.py', 'tests\\test_scalar_fresh.py', 'tests\\test_stdlib_self_host.py', 'tests\\test_structure_builtin_identity.py', 'tests\\test_structure_cache.py', 'tests\\test_structure_uncounted.py', 'tests\\test_test_cycle.py', 'tests\\test_test_workflow.py', 'tests\\test_visitor_effect_guards.py', 'tests\\test_visitor_family.py']
+........................................................................ [  4%]
+........................................................ [  8%]
+........................................................................ [ 13%]
+.................................................... [ 16%]
+........................................................................ [ 21%]
+.......................................................... [ 25%]
+........................................................................ [ 29%]
+........................................................................ [ 34%]
+........................................................................ [ 39%]
+........................................................................ [ 43%]
+........................................................................ [ 48%]
+........................................................................ [ 53%]
+....................................................................x... [ 58%]
+........................................................................ [ 62%]
+........................................................................ [ 67%]
+......................................xx................................ [ 72%]
+........................................................................ [ 77%]
+........................................................................ [ 81%]
+........................................................................ [ 86%]
+........................................................................ [ 91%]
+........................................................................ [ 95%]
+.............................................................            [100%]
+============================== warnings summary ===============================
+tests\test_managed_finally.py:21: 1 warning
+tests/test_managed_finally.py: 13 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\tests\test_managed_finally.py:21: SyntaxWarning: 'return' in a 'finally' block
+    return cleanup()
+
+tests\test_managed_finally.py:228: 1 warning
+tests/test_managed_finally.py: 13 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\tests\test_managed_finally.py:228: SyntaxWarning: 'return' in a 'finally' block
+    return sys.exception()
+
+tests/test_backends.py::BackendTests::test_arrays_in_arrays_out
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba_cuda\numba\cuda\dispatcher.py:748: NumbaPerformanceWarning: [1mGrid size 4 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_auto_measures_once_per_size_and_matches
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba_cuda\numba\cuda\dispatcher.py:748: NumbaPerformanceWarning: [1mGrid size 5 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::test_gpu_keeps_separate_rounding_for_adversarial_multiply_add
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba_cuda\numba\cuda\dispatcher.py:748: NumbaPerformanceWarning: [1mGrid size 1 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba_cuda\numba\cuda\dispatcher.py:748: NumbaPerformanceWarning: [1mGrid size 6 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_gpu_runs_exactly_or_explains_why_not
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba_cuda\numba\cuda\dispatcher.py:748: NumbaPerformanceWarning: [1mGrid size 3 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_batch.py::GpuTrustTests::test_gpu_stays_in_use_after_first_batch
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba_cuda\numba\cuda\dispatcher.py:748: NumbaPerformanceWarning: [1mGrid size 16 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_native_sets.py::test_set_iteration_keeps_python_order
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_b394d8cee7e7add0b71cb380c3434a2b.py:5: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 3093:[0m
+  [1m
+  [1m    def not_float(st, a):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    while not _rc_st[0] and _rcv1_k < _rc_len(_rc_st, a):
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_9c3a36bd9b87020e319cf4dfca3deae4.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_9c3a36bd9b87020e319cf4dfca3deae4.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_9c3a36bd9b87020e319cf4dfca3deae4.py:4: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'set_lt.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1687:[0m
+  [1m@overload(operator.gt)
+  [1mdef set_gt(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_9c3a36bd9b87020e319cf4dfca3deae4.py:4: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'set_lt.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1687:[0m
+  [1m@overload(operator.gt)
+  [1mdef set_gt(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_provenance_corpus.py: 83 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\provenance-cases\wave17-matrix-review.py:131: SyntaxWarning: 'return' in a 'finally' block
+    return y
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1520 passed, 118 deselected, 3 xfailed, 127 warnings, 50 subtests passed in 544.37s (0:09:04)

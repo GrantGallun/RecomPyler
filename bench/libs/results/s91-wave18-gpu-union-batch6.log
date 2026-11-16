@@ -1,0 +1,73 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '-m', 'not slow', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\.cache\\s91-wave18-gpu-union-batch6', 'tests/test_analysis_cells.py', 'tests/test_aot_wrapped_identity.py', 'tests/test_boundary.py', 'tests/test_direct_adapter.py', 'tests/test_heap_compact_abi.py', 'tests/test_heldout_regressions.py', 'tests/test_ir_compile.py', 'tests/test_ir_frame_install.py', 'tests/test_ir_generator_graph.py', 'tests/test_ir_refcount.py', 'tests/test_library_artifact_policy.py', 'tests/test_managed_generators.py', 'tests/test_managed_names.py', 'tests/test_managed_vector.py', 'tests/test_native_sets.py', 'tests/test_optimize.py', 'tests/test_original_context_binding.py', 'tests/test_prepared_runner_method.py', 'tests/test_provenance.py', 'tests/test_scalar_identity.py', 'tests/test_structure_uncounted.py']
+........................................................................ [ 30%]
+......................................................................xx [ 60%]
+........................................................................ [ 91%]
+.....................                                                    [100%]
+============================== warnings summary ===============================
+tests/test_native_sets.py::test_set_iteration_keeps_python_order
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_b394d8cee7e7add0b71cb380c3434a2b.py:5: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 3093:[0m
+  [1m
+  [1m    def not_float(st, a):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    while not _rc_st[0] and _rcv1_k < _rc_len(_rc_st, a):
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_9c3a36bd9b87020e319cf4dfca3deae4.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_9c3a36bd9b87020e319cf4dfca3deae4.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_9c3a36bd9b87020e319cf4dfca3deae4.py:4: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'set_lt.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1687:[0m
+  [1m@overload(operator.gt)
+  [1mdef set_gt(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_9c3a36bd9b87020e319cf4dfca3deae4.py:4: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'set_lt.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1687:[0m
+  [1m@overload(operator.gt)
+  [1mdef set_gt(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_provenance.py: 44 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\provenance-cases\wave17-matrix-review.py:131: SyntaxWarning: 'return' in a 'finally' block
+    return y
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+235 passed, 22 deselected, 2 xfailed, 49 warnings in 42.51s

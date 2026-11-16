@@ -1,0 +1,2432 @@
+{
+  "name": "pyparsing_parse",
+  "compiled": 450,
+  "attempted": 450,
+  "not_attempted": 0,
+  "installed": 289,
+  "native_entries": 9664,
+  "counts": {
+    "pyparsing.core.ParseElementEnhance.parseImpl": 3488,
+    "pyparsing.core.And.parseImpl": 1216,
+    "pyparsing.results.ParseResults.as_list": 1184,
+    "pyparsing.common.pyparsing_common.convert_to_integer": 1152,
+    "pyparsing.core.Regex.parseImpl": 1152,
+    "pyparsing.core.Group.postParse": 1152,
+    "pyparsing.core.ParserElement.__eq__": 64,
+    "pyparsing.core.ParserElement.__add__": 32,
+    "pyparsing.core.ParserElement.set_debug": 32,
+    "pyparsing.core.ParserElement.set_name": 32,
+    "pyparsing.core.StringEnd.parseImpl": 32,
+    "pyparsing.core.ParseExpression.__init__": 32,
+    "pyparsing.core.And.__init__": 32,
+    "pyparsing.core._MultipleMatch.parseImpl": 32,
+    "pyparsing.exceptions.ParseBaseException.__init__": 32
+  },
+  "before": [
+    {
+      "calls": 366,
+      "name": "pyparsing.util.deprecate_argument",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\util.py",
+      "line": 500,
+      "origin": "package",
+      "function_id": 1579175702800,
+      "code_id": 1579174785456,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579194122240,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 364,
+      "name": "pyparsing.results.ParseResults.__new__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 182,
+      "origin": "package",
+      "function_id": 1579176250176,
+      "code_id": 1579142355264,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579194384384,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 364,
+      "name": "pyparsing.results.ParseResults.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 205,
+      "origin": "package",
+      "function_id": 1579176250704,
+      "code_id": 1579171711376,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579217977344,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 295,
+      "name": "pyparsing.core.ParserElement._parseNoCache",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 916,
+      "origin": "package",
+      "function_id": 1579176939184,
+      "code_id": 1579170439360,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579246092288,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 184,
+      "name": "pyparsing.core.ParserElement.postParse",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 912,
+      "origin": "package",
+      "function_id": 1579176938832,
+      "code_id": 1579175651888,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579246354432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 149,
+      "name": "pyparsing.core.ParserElement.preParse",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 897,
+      "origin": "package",
+      "function_id": 1579176938304,
+      "code_id": 1579174241616,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579247665152,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 144,
+      "name": "pyparsing.results.ParseResults.__iadd__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 533,
+      "origin": "package",
+      "function_id": 1579176255808,
+      "code_id": 1579170811616,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579269488640,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 144,
+      "name": "pyparsing.results.ParseResults.__bool__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 312,
+      "origin": "package",
+      "function_id": 1579176252288,
+      "code_id": 1579175080944,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579247992832,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 109,
+      "name": "pyparsing.core.ParseElementEnhance.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 5146,
+      "origin": "package",
+      "function_id": 1579177052288,
+      "code_id": 1579170449232,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579270930432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 72,
+      "name": "pyparsing.core._SingleCharLiteral.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2776,
+      "origin": "package",
+      "function_id": 1579176986400,
+      "code_id": 1579175251792,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579271323648,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 72,
+      "name": "pyparsing.core.Suppress.postParse",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 6683,
+      "origin": "package",
+      "function_id": 1579177091216,
+      "code_id": 1579176562000,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579271585792,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 38,
+      "name": "pyparsing.core.And.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4605,
+      "origin": "package",
+      "function_id": 1579177028672,
+      "code_id": 1579170087616,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579275255808,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 37,
+      "name": "pyparsing.core.Word.parseImpl_regex",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 3369,
+      "origin": "package",
+      "function_id": 1579176992560,
+      "code_id": 1579175244784,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579275583488,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 37,
+      "name": "pyparsing.results.ParseResults.as_list",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 589,
+      "origin": "package",
+      "function_id": 1579176257392,
+      "code_id": 1579175725056,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579277942784,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.core.Regex.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 3547,
+      "origin": "package",
+      "function_id": 1579176995376,
+      "code_id": 1579142591024,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579280760832,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.core._trim_arity.<locals>.wrapper",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 284,
+      "origin": "package",
+      "function_id": 1579178859104,
+      "code_id": 1579170464736,
+      "state": {
+        "prepared": false,
+        "installed": false,
+        "active": false,
+        "body_address": null,
+        "kind": null,
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.common.pyparsing_common.convert_to_integer",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\common.py",
+      "line": 190,
+      "origin": "package",
+      "function_id": 1579178858224,
+      "code_id": 1579176268048,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579278204928,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.results.ParseResults.__iter__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 315,
+      "origin": "package",
+      "function_id": 1579176252640,
+      "code_id": 1579175810096,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579297865728,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.core.Group.postParse",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 6525,
+      "origin": "package",
+      "function_id": 1579177089456,
+      "code_id": 1579175729056,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579281022976,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 3,
+      "name": "pyparsing.core.ParserElement.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 491,
+      "origin": "package",
+      "function_id": 1579176933360,
+      "code_id": 1579170463456,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298193408,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 2,
+      "name": "pyparsing.core.Token.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2673,
+      "origin": "package",
+      "function_id": 1579176965776,
+      "code_id": 1579175820848,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579299897344,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 2,
+      "name": "pyparsing.core.ParserElement.name",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2174,
+      "origin": "package",
+      "function_id": 1579176955040,
+      "code_id": 1579176266608,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298979840,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 2,
+      "name": "pyparsing.core.ParserElement.__eq__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2250,
+      "origin": "package",
+      "function_id": 1579176957856,
+      "code_id": 1579175733056,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579299635200,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 2,
+      "name": "pyparsing.core.ParserElement.mayReturnEmpty",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 520,
+      "origin": "package",
+      "function_id": 1579176933712,
+      "code_id": 1579175767104,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298455552,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.parse_string",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1274,
+      "origin": "package",
+      "function_id": 1579176944112,
+      "code_id": 1579170448336,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579317133312,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.reset_cache",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1133,
+      "origin": "package",
+      "function_id": 1579176942704,
+      "code_id": 1579170129456,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579316805632,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.NullCache.clear",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1073,
+      "origin": "package",
+      "function_id": 1579176942176,
+      "code_id": 1579175654128,
+      "state": {
+        "prepared": false,
+        "installed": false,
+        "active": false,
+        "body_address": null,
+        "kind": null,
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core._MultipleMatch.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 5663,
+      "origin": "package",
+      "function_id": 1579177061616,
+      "code_id": 1579142368368,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579279908864,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.exceptions.ParseBaseException.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\exceptions.py",
+      "line": 52,
+      "origin": "package",
+      "function_id": 1579175703856,
+      "code_id": 1579174869296,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579280171008,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Literal.__new__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2717,
+      "origin": "package",
+      "function_id": 1579176967184,
+      "code_id": 1579174941552,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579335680000,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Empty.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2763,
+      "origin": "package",
+      "function_id": 1579176985344,
+      "code_id": 1579176267472,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336204288,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Literal.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2735,
+      "origin": "package",
+      "function_id": 1579176967712,
+      "code_id": 1579174942000,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579335942144,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.default_name",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2127,
+      "origin": "package",
+      "function_id": 1579176953984,
+      "code_id": 1579175778592,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579318247424,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Empty._generateDefaultName",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2768,
+      "origin": "package",
+      "function_id": 1579176985696,
+      "code_id": 1579175655696,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336466432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.StringEnd.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4166,
+      "origin": "package",
+      "function_id": 1579177020048,
+      "code_id": 1579176273520,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579337252864,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.PositionToken.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4027,
+      "origin": "package",
+      "function_id": 1579176999600,
+      "code_id": 1579176008928,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336990720,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.set_name",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2139,
+      "origin": "package",
+      "function_id": 1579176954688,
+      "code_id": 1579175251440,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579318509568,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.__str__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2185,
+      "origin": "package",
+      "function_id": 1579176955744,
+      "code_id": 1579176157680,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579318771712,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.set_debug",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2057,
+      "origin": "package",
+      "function_id": 1579176953632,
+      "code_id": 1579174750000,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579317985280,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.__add__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1610,
+      "origin": "package",
+      "function_id": 1579176945872,
+      "code_id": 1579174749168,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579317460992,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.And.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4495,
+      "origin": "package",
+      "function_id": 1579177028144,
+      "code_id": 1579173799440,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579279581184,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParseExpression.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4286,
+      "origin": "package",
+      "function_id": 1579177023216,
+      "code_id": 1579170958608,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579354357760,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.set_whitespace_chars",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1965,
+      "origin": "package",
+      "function_id": 1579176952224,
+      "code_id": 1579176005120,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579317723136,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Empty.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2771,
+      "origin": "package",
+      "function_id": 1579176986048,
+      "code_id": 1579175655920,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336728576,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.StringEnd.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4170,
+      "origin": "package",
+      "function_id": 1579177020400,
+      "code_id": 1579174245936,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579354095616,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    }
+  ],
+  "after": [
+    {
+      "calls": 366,
+      "name": "pyparsing.util.deprecate_argument",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\util.py",
+      "line": 500,
+      "origin": "package",
+      "function_id": 1579175702800,
+      "code_id": 1579174785456,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579194122240,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 364,
+      "name": "pyparsing.results.ParseResults.__new__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 182,
+      "origin": "package",
+      "function_id": 1579176250176,
+      "code_id": 1579142355264,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579194384384,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 364,
+      "name": "pyparsing.results.ParseResults.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 205,
+      "origin": "package",
+      "function_id": 1579176250704,
+      "code_id": 1579171711376,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579217977344,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 295,
+      "name": "pyparsing.core.ParserElement._parseNoCache",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 916,
+      "origin": "package",
+      "function_id": 1579176939184,
+      "code_id": 1579170439360,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579246092288,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 184,
+      "name": "pyparsing.core.ParserElement.postParse",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 912,
+      "origin": "package",
+      "function_id": 1579176938832,
+      "code_id": 1579175651888,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579246354432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 149,
+      "name": "pyparsing.core.ParserElement.preParse",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 897,
+      "origin": "package",
+      "function_id": 1579176938304,
+      "code_id": 1579174241616,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579247665152,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 144,
+      "name": "pyparsing.results.ParseResults.__iadd__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 533,
+      "origin": "package",
+      "function_id": 1579176255808,
+      "code_id": 1579170811616,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579269488640,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 144,
+      "name": "pyparsing.results.ParseResults.__bool__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 312,
+      "origin": "package",
+      "function_id": 1579176252288,
+      "code_id": 1579175080944,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579247992832,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 109,
+      "name": "pyparsing.core.ParseElementEnhance.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 5146,
+      "origin": "package",
+      "function_id": 1579177052288,
+      "code_id": 1579170449232,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579270930432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 72,
+      "name": "pyparsing.core._SingleCharLiteral.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2776,
+      "origin": "package",
+      "function_id": 1579176986400,
+      "code_id": 1579175251792,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579271323648,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 72,
+      "name": "pyparsing.core.Suppress.postParse",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 6683,
+      "origin": "package",
+      "function_id": 1579177091216,
+      "code_id": 1579176562000,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579271585792,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 38,
+      "name": "pyparsing.core.And.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4605,
+      "origin": "package",
+      "function_id": 1579177028672,
+      "code_id": 1579170087616,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579275255808,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 37,
+      "name": "pyparsing.core.Word.parseImpl_regex",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 3369,
+      "origin": "package",
+      "function_id": 1579176992560,
+      "code_id": 1579175244784,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579275583488,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 37,
+      "name": "pyparsing.results.ParseResults.as_list",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 589,
+      "origin": "package",
+      "function_id": 1579176257392,
+      "code_id": 1579175725056,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579277942784,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.core.Regex.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 3547,
+      "origin": "package",
+      "function_id": 1579176995376,
+      "code_id": 1579142591024,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579280760832,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.core._trim_arity.<locals>.wrapper",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 284,
+      "origin": "package",
+      "function_id": 1579178859104,
+      "code_id": 1579170464736,
+      "state": {
+        "prepared": false,
+        "installed": false,
+        "active": false,
+        "body_address": null,
+        "kind": null,
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.common.pyparsing_common.convert_to_integer",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\common.py",
+      "line": 190,
+      "origin": "package",
+      "function_id": 1579178858224,
+      "code_id": 1579176268048,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579278204928,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.results.ParseResults.__iter__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\results.py",
+      "line": 315,
+      "origin": "package",
+      "function_id": 1579176252640,
+      "code_id": 1579175810096,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579297865728,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 36,
+      "name": "pyparsing.core.Group.postParse",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 6525,
+      "origin": "package",
+      "function_id": 1579177089456,
+      "code_id": 1579175729056,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579281022976,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 3,
+      "name": "pyparsing.core.ParserElement.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 491,
+      "origin": "package",
+      "function_id": 1579176933360,
+      "code_id": 1579170463456,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298193408,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 2,
+      "name": "pyparsing.core.Token.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2673,
+      "origin": "package",
+      "function_id": 1579176965776,
+      "code_id": 1579175820848,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579299897344,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 2,
+      "name": "pyparsing.core.ParserElement.name",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2174,
+      "origin": "package",
+      "function_id": 1579176955040,
+      "code_id": 1579176266608,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298979840,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 2,
+      "name": "pyparsing.core.ParserElement.__eq__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2250,
+      "origin": "package",
+      "function_id": 1579176957856,
+      "code_id": 1579175733056,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579299635200,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 2,
+      "name": "pyparsing.core.ParserElement.mayReturnEmpty",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 520,
+      "origin": "package",
+      "function_id": 1579176933712,
+      "code_id": 1579175767104,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298455552,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.parse_string",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1274,
+      "origin": "package",
+      "function_id": 1579176944112,
+      "code_id": 1579170448336,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579317133312,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.reset_cache",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1133,
+      "origin": "package",
+      "function_id": 1579176942704,
+      "code_id": 1579170129456,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579316805632,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.NullCache.clear",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1073,
+      "origin": "package",
+      "function_id": 1579176942176,
+      "code_id": 1579175654128,
+      "state": {
+        "prepared": false,
+        "installed": false,
+        "active": false,
+        "body_address": null,
+        "kind": null,
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core._MultipleMatch.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 5663,
+      "origin": "package",
+      "function_id": 1579177061616,
+      "code_id": 1579142368368,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579279908864,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.exceptions.ParseBaseException.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\exceptions.py",
+      "line": 52,
+      "origin": "package",
+      "function_id": 1579175703856,
+      "code_id": 1579174869296,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579280171008,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Literal.__new__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2717,
+      "origin": "package",
+      "function_id": 1579176967184,
+      "code_id": 1579174941552,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579335680000,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Empty.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2763,
+      "origin": "package",
+      "function_id": 1579176985344,
+      "code_id": 1579176267472,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336204288,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Literal.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2735,
+      "origin": "package",
+      "function_id": 1579176967712,
+      "code_id": 1579174942000,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579335942144,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.default_name",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2127,
+      "origin": "package",
+      "function_id": 1579176953984,
+      "code_id": 1579175778592,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579318247424,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Empty._generateDefaultName",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2768,
+      "origin": "package",
+      "function_id": 1579176985696,
+      "code_id": 1579175655696,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336466432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.StringEnd.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4166,
+      "origin": "package",
+      "function_id": 1579177020048,
+      "code_id": 1579176273520,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579337252864,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.PositionToken.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4027,
+      "origin": "package",
+      "function_id": 1579176999600,
+      "code_id": 1579176008928,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336990720,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.set_name",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2139,
+      "origin": "package",
+      "function_id": 1579176954688,
+      "code_id": 1579175251440,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579318509568,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.__str__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2185,
+      "origin": "package",
+      "function_id": 1579176955744,
+      "code_id": 1579176157680,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579318771712,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.set_debug",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2057,
+      "origin": "package",
+      "function_id": 1579176953632,
+      "code_id": 1579174750000,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579317985280,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.__add__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1610,
+      "origin": "package",
+      "function_id": 1579176945872,
+      "code_id": 1579174749168,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579317460992,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.And.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4495,
+      "origin": "package",
+      "function_id": 1579177028144,
+      "code_id": 1579173799440,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579279581184,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParseExpression.__init__",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4286,
+      "origin": "package",
+      "function_id": 1579177023216,
+      "code_id": 1579170958608,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579354357760,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.ParserElement.set_whitespace_chars",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 1965,
+      "origin": "package",
+      "function_id": 1579176952224,
+      "code_id": 1579176005120,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579317723136,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.Empty.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 2771,
+      "origin": "package",
+      "function_id": 1579176986048,
+      "code_id": 1579175655920,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336728576,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "calls": 1,
+      "name": "pyparsing.core.StringEnd.parseImpl",
+      "filename": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\pyparsing\\core.py",
+      "line": 4170,
+      "origin": "package",
+      "function_id": 1579177020400,
+      "code_id": 1579174245936,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579354095616,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    }
+  ],
+  "changes": [
+    {
+      "function": "pyparsing.util.deprecate_argument",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579194122240,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.__new__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579194384384,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579217977344,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement._parseNoCache",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579246092288,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.postParse",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579246354432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.preParse",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579247665152,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.__iadd__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579269488640,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.__bool__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579247992832,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParseElementEnhance.parseImpl",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579270930432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core._SingleCharLiteral.parseImpl",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579271323648,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Suppress.postParse",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579271585792,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.And.parseImpl",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579275255808,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Word.parseImpl_regex",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579275583488,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.as_list",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579277942784,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Regex.parseImpl",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579280760832,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core._trim_arity.<locals>.wrapper",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": false,
+        "installed": false,
+        "active": false,
+        "body_address": null,
+        "kind": null,
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.common.pyparsing_common.convert_to_integer",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579278204928,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.__iter__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579297865728,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Group.postParse",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579281022976,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298193408,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Token.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579299897344,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.name",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298979840,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.__eq__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579299635200,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.mayReturnEmpty",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579298455552,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.parse_string",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579317133312,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.reset_cache",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579316805632,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.NullCache.clear",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": false,
+        "installed": false,
+        "active": false,
+        "body_address": null,
+        "kind": null,
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core._MultipleMatch.parseImpl",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579279908864,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.exceptions.ParseBaseException.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579280171008,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Literal.__new__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579335680000,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Empty.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336204288,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Literal.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579335942144,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.default_name",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579318247424,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Empty._generateDefaultName",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336466432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.StringEnd.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579337252864,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.PositionToken.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336990720,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.set_name",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579318509568,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.__str__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579318771712,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.set_debug",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579317985280,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.__add__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579317460992,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.And.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579279581184,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParseExpression.__init__",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579354357760,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.set_whitespace_chars",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579317723136,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Empty.parseImpl",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579336728576,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.StringEnd.parseImpl",
+      "after_install": "deprecate_argument",
+      "ordinal": 1,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579354095616,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.__init__",
+      "after_install": "ParseResults.__init__",
+      "ordinal": 3,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579217977344,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement._parseNoCache",
+      "after_install": "ParserElement._parseNoCache",
+      "ordinal": 4,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579246092288,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.preParse",
+      "after_install": "ParserElement.preParse",
+      "ordinal": 6,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579247665152,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParseElementEnhance.parseImpl",
+      "after_install": "ParseElementEnhance.parseImpl",
+      "ordinal": 9,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579270930432,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.And.parseImpl",
+      "after_install": "And.parseImpl",
+      "ordinal": 12,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579275255808,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.as_list",
+      "after_install": "ParseResults.as_list",
+      "ordinal": 14,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579277942784,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.common.pyparsing_common.convert_to_integer",
+      "after_install": "pyparsing_common.convert_to_integer",
+      "ordinal": 15,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579278204928,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Regex.parseImpl",
+      "after_install": "Regex.parseImpl",
+      "ordinal": 16,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579280760832,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.Group.postParse",
+      "after_install": "Group.postParse",
+      "ordinal": 17,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579281022976,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.__eq__",
+      "after_install": "ParserElement.__eq__",
+      "ordinal": 24,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579299635200,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.__add__",
+      "after_install": "ParserElement.__add__",
+      "ordinal": 28,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579317460992,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.set_debug",
+      "after_install": "ParserElement.set_debug",
+      "ordinal": 30,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579317985280,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.set_name",
+      "after_install": "ParserElement.set_name",
+      "ordinal": 32,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579318509568,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.StringEnd.parseImpl",
+      "after_install": "StringEnd.parseImpl",
+      "ordinal": 41,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579354095616,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParseExpression.__init__",
+      "after_install": "ParseExpression.__init__",
+      "ordinal": 42,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579354357760,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.And.__init__",
+      "after_install": "And.__init__",
+      "ordinal": 43,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579279581184,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core._MultipleMatch.parseImpl",
+      "after_install": "_MultipleMatch.parseImpl",
+      "ordinal": 44,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579279908864,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.exceptions.ParseBaseException.__init__",
+      "after_install": "ParseBaseException.__init__",
+      "ordinal": 45,
+      "state": {
+        "prepared": true,
+        "installed": true,
+        "active": true,
+        "body_address": 1579280171008,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.util.deprecate_argument",
+      "after_install": "ParseElementEnhance.__init__",
+      "ordinal": 268,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579194122240,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.results.ParseResults.__init__",
+      "after_install": "ParseElementEnhance.__init__",
+      "ordinal": 268,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579217977344,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement._parseNoCache",
+      "after_install": "ParseElementEnhance.__init__",
+      "ordinal": 268,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579246092288,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    },
+    {
+      "function": "pyparsing.core.ParserElement.preParse",
+      "after_install": "ParseElementEnhance.__init__",
+      "ordinal": 268,
+      "state": {
+        "prepared": true,
+        "installed": false,
+        "active": false,
+        "body_address": 1579247665152,
+        "kind": "native-body",
+        "native_prefix": false
+      }
+    }
+  ]
+}

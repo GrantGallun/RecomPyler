@@ -1,0 +1,53 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '-m', 'not slow', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\.cache\\s90-c2a-providers-batch10', 'tests/test_flat_protocol.py', 'tests/test_flow.py', 'tests/test_heap_callable_objects.py', 'tests/test_heap_mixed_indices.py', 'tests/test_ir_attribute_plans.py', 'tests/test_ir_borrowed.py', 'tests/test_ir_entry_weakref.py', 'tests/test_ir_refcount.py', 'tests/test_language_matrix.py', 'tests/test_library_hook.py', 'tests/test_managed_call_kinds.py', 'tests/test_managed_calls.py', 'tests/test_managed_child_frames.py', 'tests/test_managed_native_calls.py', 'tests/test_managed_vector.py', 'tests/test_monitor.py', 'tests/test_native_guard_shapes.py', 'tests/test_numeric_versions.py', 'tests/test_optimize.py', 'tests/test_source_frame_runtime.py', 'tests/test_unicode_source_callbacks.py']
+.................................................... [  4%]
+........................................................................ [  9%]
+........................................................................ [ 15%]
+........................................................................ [ 20%]
+........................................................................ [ 26%]
+........................................................................ [ 32%]
+........................................................................ [ 37%]
+........................................................................ [ 43%]
+........................................................................ [ 49%]
+........................................................................ [ 54%]
+........................................................................ [ 60%]
+........................................................................ [ 65%]
+........................................................................ [ 71%]
+........................................................................ [ 77%]
+........................................................................ [ 82%]
+........................................................................ [ 88%]
+........................................................................ [ 93%]
+........................................................................ [ 99%]
+.....                                                                    [100%]
+============================== warnings summary ===============================
+tests/test_language_matrix.py: 4167 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\matrix\temp\8f3287226f675c.py:3: DeprecationWarning: Bitwise inversion '~' on bool is deprecated and will be removed in Python 3.16. This returns the bitwise inversion of the underlying int object and is usually not what you expect from negating a bool. Use the 'not' operator for boolean negation or ~int(x) if you really want the bitwise inversion of the underlying int.
+    return ~a
+
+tests/test_language_matrix.py::test_construct_verdict[operator.set.binary0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_e858246fbb2e031370e76ee91e8e8267.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2854:[0m
+  [1m             else (lambda st, value, low, high: False), inline='always')
+  [1m    def even_extent(st, value):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    if _rc_int_domain(_rc_st, a, -16777216, 16777216) and _rc_int_domain(_rc_st, b, -16777216, 16777216):
+
+tests/test_language_matrix.py::test_construct_verdict[operator.set.unary1]
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\.cache\rc\rc_601e3be160a8219391f04d5fe5c2ab41.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2854:[0m
+  [1m             else (lambda st, value, low, high: False), inline='always')
+  [1m    def even_extent(st, value):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    if _rc_int_domain(_rc_st, a, -16777216, 16777216):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1281 passed, 6 deselected, 4169 warnings, 20 subtests passed in 110.49s (0:01:50)

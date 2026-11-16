@@ -1,0 +1,11 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '-m', 'not slow', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\.cache\\s91-wave18-gpu-union-batch11', 'tests/test_depmap.py', 'tests/test_flat_members.py', 'tests/test_function_default_order.py', 'tests/test_function_defaults_order.py', 'tests/test_generator_loop_else.py', 'tests/test_heap_inline_context.py', 'tests/test_ir_core.py', 'tests/test_ir_deopt_lazy.py', 'tests/test_ir_existing_frame.py', 'tests/test_ir_imports.py', 'tests/test_ir_static_closes.py', 'tests/test_library_policy.py', 'tests/test_managed_child_frames.py', 'tests/test_managed_imports.py', 'tests/test_managed_native_calls.py', 'tests/test_native_guard_audit.py', 'tests/test_prepared_cache_adversarial.py', 'tests/test_prepared_lazy_validation.py', 'tests/test_prepared_priority.py', 'tests/test_scalar_clock_calls.py', 'tests/test_structure_chains.py']
+........................................................................ [ 40%]
+........................................................................ [ 80%]
+....................................                                     [100%]
+============================== warnings summary ===============================
+tests\test_ir_static_closes.py:36
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\tests\test_ir_static_closes.py:36: SyntaxWarning: "is" with 'str' literal. Did you mean "=="?
+    def subject(value):return 'mortal_close_marker' is value
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+180 passed, 20 deselected, 1 warning in 113.60s (0:01:53)

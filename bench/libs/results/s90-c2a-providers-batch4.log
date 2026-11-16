@@ -1,0 +1,11 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '-m', 'not slow', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\.cache\\s90-c2a-providers-batch4', 'tests/test_call_entry.py', 'tests/test_capture_origins.py', 'tests/test_cli.py', 'tests/test_direct_adapter.py', 'tests/test_function_default_order.py', 'tests/test_ir_core.py', 'tests/test_ir_entry.py', 'tests/test_ir_frame_install.py', 'tests/test_ir_generator_resume.py', 'tests/test_ir_generic_protocols.py', 'tests/test_ir_preload.py', 'tests/test_ir_slices.py', 'tests/test_ir_static_closes.py', 'tests/test_ir_super_format.py', 'tests/test_ir_symbols.py', 'tests/test_owner_liveness.py', 'tests/test_prepared_native_lifetime.py', 'tests/test_prepared_transient_lifetime.py', 'tests/test_runner_budget.py', 'tests/test_stdlib_self_host.py']
+........................................................................ [ 41%]
+........................................................................ [ 83%]
+.............................                                            [100%]
+============================== warnings summary ===============================
+tests\test_ir_static_closes.py:36
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\tests\test_ir_static_closes.py:36: SyntaxWarning: "is" with 'str' literal. Did you mean "=="?
+    def subject(value):return 'mortal_close_marker' is value
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+173 passed, 48 deselected, 1 warning in 20.75s

@@ -1,0 +1,18 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '-m', 'not slow', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\.cache\\s91-wave18-gpu-union-batch10', 'tests/test_escape_facts.py', 'tests/test_flat_protocol.py', 'tests/test_flow.py', 'tests/test_ir_async_graph.py', 'tests/test_ir_generator_resume.py', 'tests/test_ir_generic_protocols.py', 'tests/test_ir_invalidation.py', 'tests/test_ir_keyword_seed.py', 'tests/test_ir_observer_protocols.py', 'tests/test_ir_symbols.py', 'tests/test_library_c_calls.py', 'tests/test_lift_product_flags.py', 'tests/test_managed_borrow_root.py', 'tests/test_managed_call_kinds.py', 'tests/test_managed_calls.py', 'tests/test_managed_finally.py', 'tests/test_managed_frame_cleanup.py', 'tests/test_program_structures.py', 'tests/test_source_frame_runtime.py', 'tests/test_structure_native_ops.py', 'tests/test_test_workflow.py', 'tests/test_text_owners_compat.py']
+.................................................... [ 20%]
+........................................................................ [ 48%]
+........................................................................ [ 76%]
+.............................................................            [100%]
+============================== warnings summary ===============================
+tests\test_managed_finally.py:21: 1 warning
+tests/test_managed_finally.py: 13 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\tests\test_managed_finally.py:21: SyntaxWarning: 'return' in a 'finally' block
+    return cleanup()
+
+tests\test_managed_finally.py:228: 1 warning
+tests/test_managed_finally.py: 13 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave21-libs\tests\test_managed_finally.py:228: SyntaxWarning: 'return' in a 'finally' block
+    return sys.exception()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+257 passed, 22 deselected, 28 warnings, 20 subtests passed in 145.72s (0:02:25)

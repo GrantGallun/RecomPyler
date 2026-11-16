@@ -1,0 +1,16 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '-m', 'not slow', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\.cache\\s90-c2a-providers-batch7', 'tests/test_aot_wrapped_identity.py', 'tests/test_function_defaults_order.py', 'tests/test_heap_augassign.py', 'tests/test_heap_header_indices.py', 'tests/test_heap_iteration_unsigned.py', 'tests/test_ir_async_entry.py', 'tests/test_ir_builtin_calls.py', 'tests/test_ir_observer_protocols.py', 'tests/test_ir_simplify.py', 'tests/test_keyword_entries.py', 'tests/test_library_numpy.py', 'tests/test_managed_visitors.py', 'tests/test_native_sets_aot.py', 'tests/test_native_unicode.py', 'tests/test_numeric_values.py', 'tests/test_owner_facts.py', 'tests/test_prepared_cache_more.py', 'tests/test_provenance_corpus.py', 'tests/test_range_review.py', 'tests/test_scalar_fields.py', 'tests/test_self_host.py', 'tests/test_structure_uncounted.py']
+........................................................................ [ 14%]
+........................................................................ [ 28%]
+........................................................................ [ 42%]
+........................................................................ [ 56%]
+........................................................................ [ 70%]
+.............xx......................................................... [ 84%]
+........................................................................ [ 99%]
+.....                                                                    [100%]
+============================== warnings summary ===============================
+tests/test_provenance_corpus.py: 83 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\provenance-cases\wave17-matrix-review.py:131: SyntaxWarning: 'return' in a 'finally' block
+    return y
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+507 passed, 9 deselected, 2 xfailed, 83 warnings in 34.62s

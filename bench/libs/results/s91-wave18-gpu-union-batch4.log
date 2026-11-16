@@ -1,0 +1,15 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '-m', 'not slow', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave21-libs\\.cache\\s91-wave18-gpu-union-batch4', 'tests/test_batch.py', 'tests/test_capture_origins.py', 'tests/test_cli.py', 'tests/test_direct_module.py', 'tests/test_ir_async_lowering.py', 'tests/test_ir_delegation_graph.py', 'tests/test_ir_deopt_runtime.py', 'tests/test_ir_factory_scopes.py', 'tests/test_ir_inline_returns.py', 'tests/test_ir_native_calls.py', 'tests/test_ir_scope_observers.py', 'tests/test_managed_callee_owners.py', 'tests/test_managed_from_imports.py', 'tests/test_managed_locals_order.py', 'tests/test_managed_visitors.py', 'tests/test_prepared_cache_more.py', 'tests/test_prepared_slot_cache.py', 'tests/test_provenance_corpus.py', 'tests/test_region_counts.py', 'tests/test_runner_prepared_artifact.py', 'tests/test_structure_cache.py']
+........................................................................ [ 42%]
+........................................................................ [ 85%]
+.........................                                                [100%]
+============================== warnings summary ===============================
+tests/test_batch.py::GpuTrustTests::test_gpu_stays_in_use_after_first_batch
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba_cuda\numba\cuda\dispatcher.py:748: NumbaPerformanceWarning: [1mGrid size 16 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(errors.NumbaPerformanceWarning(msg))
+
+tests/test_provenance_corpus.py: 83 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\provenance-cases\wave17-matrix-review.py:131: SyntaxWarning: 'return' in a 'finally' block
+    return y
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+169 passed, 32 deselected, 84 warnings in 58.42s
