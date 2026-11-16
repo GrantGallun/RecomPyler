@@ -1,0 +1,137 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave20-cinder\\lift-evidence\\temp\\s80-m2-0', '-m', 'not slow', 'tests\\test_analysis_comprehensions.py', 'tests\\test_analysis_passes.py', 'tests\\test_aot.py', 'tests\\test_aot_wrapped_identity.py', 'tests\\test_candidate_ranking.py', 'tests\\test_containers.py', 'tests\\test_depmap.py', 'tests\\test_difffuzz.py', 'tests\\test_direct_adapter.py', 'tests\\test_direct_program.py', 'tests\\test_direct_proofs.py', 'tests\\test_direct_safety.py', 'tests\\test_escape_facts.py', 'tests\\test_fixed_costs.py', 'tests\\test_flat_protocol.py', 'tests\\test_flow.py', 'tests\\test_function_creation.py', 'tests\\test_generator_loop_else.py', 'tests\\test_heap_callable_objects.py', 'tests\\test_heap_compact_abi.py', 'tests\\test_heap_print_exit.py', 'tests\\test_heap_zero_facts.py', 'tests\\test_integrated_features.py', 'tests\\test_ir_async_entry.py', 'tests\\test_ir_borrowed_structures.py', 'tests\\test_ir_cells_functions.py', 'tests\\test_ir_census.py', 'tests\\test_ir_collections.py', 'tests\\test_ir_compile.py', 'tests\\test_ir_comprehensions.py', 'tests\\test_ir_container_builds.py', 'tests\\test_ir_core.py', 'tests\\test_ir_entry.py', 'tests\\test_ir_entry_weakref.py', 'tests\\test_ir_execution_owner.py', 'tests\\test_ir_factory_scopes.py', 'tests\\test_ir_generator_graph.py', 'tests\\test_ir_generic_protocols.py', 'tests\\test_ir_invalidation.py', 'tests\\test_ir_observer_protocols.py', 'tests\\test_ir_owned_call.py', 'tests\\test_ir_protected_paths.py', 'tests\\test_ir_refcount.py', 'tests\\test_ir_scope_observers.py', 'tests\\test_ir_simplify.py', 'tests\\test_ir_source_boundary.py', 'tests\\test_ir_structure_lowerings.py', 'tests\\test_ir_super_format.py', 'tests\\test_ir_type_lattice.py', 'tests\\test_ir_watchers_deopt.py', 'tests\\test_keyword_entries.py', 'tests\\test_language_matrix.py', 'tests\\test_lift.py', 'tests\\test_lift_wave13_review.py', 'tests\\test_managed_active_function_owner.py', 'tests\\test_managed_ast.py', 'tests\\test_managed_callee_owners.py', 'tests\\test_managed_calls.py', 'tests\\test_managed_cell_errors.py', 'tests\\test_managed_entry_borrow.py', 'tests\\test_managed_finally.py', 'tests\\test_managed_frame_cleanup.py', 'tests\\test_managed_from_imports.py', 'tests\\test_managed_generators.py', 'tests\\test_managed_imports.py', 'tests\\test_managed_names.py', 'tests\\test_managed_pool_borrow.py', 'tests\\test_managed_visitors.py', 'tests\\test_monitor.py', 'tests\\test_native_constructor_decline.py', 'tests\\test_native_guard_audit.py', 'tests\\test_native_guard_shapes.py', 'tests\\test_native_sets.py', 'tests\\test_numeric_values.py', 'tests\\test_optimize.py', 'tests\\test_owner_facts.py', 'tests\\test_prepared_builtin_anchor.py', 'tests\\test_prepared_cache.py', 'tests\\test_prepared_cache_api.py', 'tests\\test_prepared_cache_more.py', 'tests\\test_prepared_descriptor_keys.py', 'tests\\test_prepared_native_dependencies.py', 'tests\\test_prepared_priority.py', 'tests\\test_prepared_review_regressions.py', 'tests\\test_prepared_snapshot_window.py', 'tests\\test_prepared_transient_lifetime.py', 'tests\\test_profiler_prepared_assembly.py', 'tests\\test_program_structures.py', 'tests\\test_provenance_positive.py', 'tests\\test_pycc_platform.py', 'tests\\test_range_review.py', 'tests\\test_range_values.py', 'tests\\test_range_values_review.py', 'tests\\test_region_callables_arrays.py', 'tests\\test_region_counts.py', 'tests\\test_region_reuse.py', 'tests\\test_runner_budget.py', 'tests\\test_runner_prepared_artifact.py', 'tests\\test_scalar_fresh.py', 'tests\\test_self_host.py', 'tests\\test_source_frame_runtime.py', 'tests\\test_structure_builtin_identity.py', 'tests\\test_structure_cache.py', 'tests\\test_structure_child_pool.py', 'tests\\test_structure_uncounted.py', 'tests\\test_structure_unpack_lifetime.py', 'tests\\test_test_cycle.py', 'tests\\test_test_workflow.py', 'tests\\test_text_owners_compat.py', 'tests\\test_unicode_source_callbacks.py', 'tests\\test_visitor_family.py']
+................................................................................................................................ [  5%]
+........................................................................ [  8%]
+.................................................... [ 10%]
+.................................................................................................................................. [ 16%]
+........................................................................ [ 19%]
+........................................................................ [ 22%]
+........................................................................ [ 25%]
+........................................................................ [ 28%]
+........................................................................ [ 31%]
+........................................................................ [ 34%]
+........................................................................ [ 37%]
+........................................................................ [ 40%]
+........................................................................ [ 43%]
+........................................................................ [ 46%]
+........................................................................ [ 49%]
+........................................................................ [ 52%]
+........................................................................ [ 55%]
+........................................................................ [ 58%]
+........................................................................ [ 61%]
+........................................................................ [ 64%]
+........................................................................ [ 67%]
+........................................................................ [ 70%]
+................................................................................................................. [ 75%]
+........................................................................ [ 78%]
+........................................................................ [ 81%]
+.............xx......................................................... [ 84%]
+........................................................................ [ 87%]
+........................................................................ [ 90%]
+........................................................................ [ 93%]
+........................................................................ [ 96%]
+........................................................................ [ 99%]
+..................                                                       [100%]
+============================== warnings summary ===============================
+tests\test_managed_finally.py:21: 1 warning
+tests/test_managed_finally.py: 13 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\tests\test_managed_finally.py:21: SyntaxWarning: 'return' in a 'finally' block
+    return cleanup()
+
+tests\test_managed_finally.py:228: 1 warning
+tests/test_managed_finally.py: 13 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\tests\test_managed_finally.py:228: SyntaxWarning: 'return' in a 'finally' block
+    return sys.exception()
+
+tests/test_language_matrix.py: 3261 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\matrix\temp\8f3287226f675c.py:3: DeprecationWarning: Bitwise inversion '~' on bool is deprecated and will be removed in Python 3.16. This returns the bitwise inversion of the underlying int object and is usually not what you expect from negating a bool. Use the 'not' operator for boolean negation or ~int(x) if you really want the bitwise inversion of the underlying int.
+    return ~a
+
+tests/test_language_matrix.py::test_construct_verdict[operator.set.binary0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_f17a5c853c26ea68223474a7c4a457c9.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2854:[0m
+  [1m             else (lambda st, value, low, high: False), inline='always')
+  [1m    def even_extent(st, value):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    if _rc_int_domain(_rc_st, a, -16777216, 16777216) and _rc_int_domain(_rc_st, b, -16777216, 16777216):
+
+tests/test_language_matrix.py::test_construct_verdict[operator.set.unary1]
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_45eaed357300f10727dd56b0cceb196c.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2854:[0m
+  [1m             else (lambda st, value, low, high: False), inline='always')
+  [1m    def even_extent(st, value):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    if _rc_int_domain(_rc_st, a, -16777216, 16777216):
+
+tests/test_native_sets.py::test_set_iteration_keeps_python_order
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_b8f2ecdd3c89441558e2e4556998f338.py:5: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 3093:[0m
+  [1m
+  [1m    def not_float(st, a):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    while not _rc_st[0] and _rcv1_k < _rc_len(_rc_st, a):
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_e3617f57280a775b5453f06708ca54a4.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'impl'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_e3617f57280a775b5453f06708ca54a4.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'impl'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_e3617f57280a775b5453f06708ca54a4.py:4: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'set_lt.<locals>.<lambda>'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1687:[0m
+  [1m@overload(operator.gt)
+  [1mdef set_gt(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_e3617f57280a775b5453f06708ca54a4.py:4: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'set_lt.<locals>.<lambda>'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1687:[0m
+  [1m@overload(operator.gt)
+  [1mdef set_gt(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2383 passed, 125 deselected, 2 xfailed, 3296 warnings, 81 subtests passed in 565.71s (0:09:25)

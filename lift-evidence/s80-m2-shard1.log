@@ -1,0 +1,67 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave20-cinder\\lift-evidence\\temp\\s80-m2-1', '-m', 'not slow', 'tests\\test_analysis_cells.py', 'tests\\test_array_fallback.py', 'tests\\test_backends.py', 'tests\\test_batch.py', 'tests\\test_boundary.py', 'tests\\test_call_entry.py', 'tests\\test_call_preparation.py', 'tests\\test_capture_origins.py', 'tests\\test_cli.py', 'tests\\test_dev_inspect.py', 'tests\\test_development_cycle.py', 'tests\\test_direct_module.py', 'tests\\test_escape_cache.py', 'tests\\test_experimental_numeric.py', 'tests\\test_fixed_costs_aot.py', 'tests\\test_fixed_variants.py', 'tests\\test_flat_members.py', 'tests\\test_flat_shape.py', 'tests\\test_function_default_order.py', 'tests\\test_function_defaults_order.py', 'tests\\test_heap.py', 'tests\\test_heap_alias_contracts.py', 'tests\\test_heap_augassign.py', 'tests\\test_heap_header_indices.py', 'tests\\test_heap_indices.py', 'tests\\test_heap_inline_context.py', 'tests\\test_heap_iteration_unsigned.py', 'tests\\test_heap_list_indices.py', 'tests\\test_heap_mixed_indices.py', 'tests\\test_heap_text_ownership.py', 'tests\\test_heldout_regressions.py', 'tests\\test_ir_attribute_plans.py', 'tests\\test_ir_borrowed.py', 'tests\\test_ir_calls_globals.py', 'tests\\test_ir_deopt.py', 'tests\\test_ir_deopt_frames.py', 'tests\\test_ir_deopt_lazy.py', 'tests\\test_ir_deopt_runtime.py', 'tests\\test_ir_existing_frame.py', 'tests\\test_ir_frame_install.py', 'tests\\test_ir_generator_entry.py', 'tests\\test_ir_imports.py', 'tests\\test_ir_inlining.py', 'tests\\test_ir_iterators.py', 'tests\\test_ir_legacy_attributes.py', 'tests\\test_ir_lowering.py', 'tests\\test_ir_methods_unpack.py', 'tests\\test_ir_namespace.py', 'tests\\test_ir_observer_breadth.py', 'tests\\test_ir_owned_entry.py', 'tests\\test_ir_owned_integration.py', 'tests\\test_ir_owned_readonly.py', 'tests\\test_ir_preload.py', 'tests\\test_ir_readonly_attribute_plans.py', 'tests\\test_ir_readonly_loops.py', 'tests\\test_ir_scope_boundaries.py', 'tests\\test_ir_slices.py', 'tests\\test_ir_stores.py', 'tests\\test_ir_symbols.py', 'tests\\test_ir_watchers.py', 'tests\\test_lift_product_flags.py', 'tests\\test_managed_active_function.py', 'tests\\test_managed_borrow_root.py', 'tests\\test_managed_call_kinds.py', 'tests\\test_managed_child_frames.py', 'tests\\test_managed_frame_layout.py', 'tests\\test_managed_frame_owners.py', 'tests\\test_managed_function_preparation_owners.py', 'tests\\test_managed_locals_order.py', 'tests\\test_managed_native_calls.py', 'tests\\test_managed_slices.py', 'tests\\test_managed_structures.py', 'tests\\test_managed_vector.py', 'tests\\test_managed_vector_discard.py', 'tests\\test_matrix_harness.py', 'tests\\test_matrix_soundness.py', 'tests\\test_native_guards.py', 'tests\\test_native_sets_aot.py', 'tests\\test_native_unicode.py', 'tests\\test_native_unicode_aot.py', 'tests\\test_numeric_observers.py', 'tests\\test_numeric_versions.py', 'tests\\test_original_context_binding.py', 'tests\\test_owner_liveness.py', 'tests\\test_prepared_cache_adversarial.py', 'tests\\test_prepared_globals.py', 'tests\\test_prepared_lazy_validation.py', 'tests\\test_prepared_native_lifetime.py', 'tests\\test_prepared_order.py', 'tests\\test_prepared_runner_method.py', 'tests\\test_prepared_slot_cache.py', 'tests\\test_program_layout.py', 'tests\\test_provenance.py', 'tests\\test_provenance_corpus.py', 'tests\\test_provenance_slices.py', 'tests\\test_range_facts.py', 'tests\\test_range_product.py', 'tests\\test_range_values_aot.py', 'tests\\test_runner_modes.py', 'tests\\test_runner_prepared_integration.py', 'tests\\test_runner_startup.py', 'tests\\test_scalar_clock_calls.py', 'tests\\test_scalar_fields.py', 'tests\\test_scalar_identity.py', 'tests\\test_self_census.py', 'tests\\test_snapshot_safety.py', 'tests\\test_structural_comparison.py', 'tests\\test_structure_chains.py', 'tests\\test_structure_method_flags.py', 'tests\\test_structure_native_ops.py', 'tests\\test_visitor_effect_guards.py']
+........................................................................ [  4%]
+.......................................................... [  8%]
+.............................................................................................................. [ 15%]
+........................................................................ [ 20%]
+........................................................................ [ 24%]
+........................................................................ [ 29%]
+........................................................................ [ 34%]
+........................................................................ [ 38%]
+........................................................................ [ 43%]
+........................................................................ [ 47%]
+........x............................................................... [ 52%]
+........................................................................ [ 57%]
+........................................................................ [ 61%]
+........................................................................ [ 66%]
+........................................................................ [ 71%]
+.......................xx............................................... [ 75%]
+........................................................................ [ 80%]
+........................................................................ [ 85%]
+........................................................................ [ 89%]
+........................................................................ [ 94%]
+........................................................................ [ 99%]
+...............                                                          [100%]
+============================== warnings summary ===============================
+tests\test_numeric_observers.py:121
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\tests\test_numeric_observers.py:121: SyntaxWarning: "is" with 'int' literal. Did you mean "=="?
+    return 0 is container is mark_container(events,container)
+
+tests\test_numeric_observers.py:124
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\tests\test_numeric_observers.py:124: SyntaxWarning: "is not" with 'int' literal. Did you mean "!="?
+    return 0 is not container is mark_container(events,container)
+
+tests/test_backends.py::BackendTests::test_arrays_in_arrays_out
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 4 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_auto_measures_once_per_size_and_matches
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 5 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 1 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 6 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_gpu_runs_exactly_or_explains_why_not
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 3 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_batch.py::GpuTrustTests::test_gpu_stays_in_use_after_first_batch
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 16 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_provenance.py: 44 warnings
+tests/test_provenance_corpus.py: 83 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\provenance-cases\wave17-matrix-review.py:131: SyntaxWarning: 'return' in a 'finally' block
+    return y
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1548 passed, 93 deselected, 3 xfailed, 139 warnings, 48 subtests passed in 293.99s (0:04:53)

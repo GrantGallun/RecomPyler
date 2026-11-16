@@ -1,0 +1,76 @@
+Command: ['C:\\Python314\\python.exe', '-m', 'pytest', '-q', '--basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave20-cinder\\lift-evidence\\temp\\s80-cinder-union-2', '-m', 'not slow', 'tests\\test_analysis_passes.py', 'tests\\test_aot_wrapped_identity.py', 'tests\\test_boundary.py', 'tests\\test_call_preparation.py', 'tests\\test_development_cycle.py', 'tests\\test_direct_module.py', 'tests\\test_direct_program.py', 'tests\\test_direct_safety.py', 'tests\\test_escape_facts.py', 'tests\\test_flat_members.py', 'tests\\test_flow.py', 'tests\\test_heap.py', 'tests\\test_heap_alias_contracts.py', 'tests\\test_heap_compact_abi.py', 'tests\\test_heap_header_indices.py', 'tests\\test_heap_iteration_unsigned.py', 'tests\\test_heap_print_exit.py', 'tests\\test_heldout_regressions.py', 'tests\\test_ir_async_entry.py', 'tests\\test_ir_calls_globals.py', 'tests\\test_ir_cells_functions.py', 'tests\\test_ir_census.py', 'tests\\test_ir_compile.py', 'tests\\test_ir_deopt_runtime.py', 'tests\\test_ir_entry.py', 'tests\\test_ir_entry_weakref.py', 'tests\\test_ir_imports.py', 'tests\\test_ir_invalidation.py', 'tests\\test_ir_methods_unpack.py', 'tests\\test_ir_observer_protocols.py', 'tests\\test_ir_owned_entry.py', 'tests\\test_ir_preload.py', 'tests\\test_ir_refcount.py', 'tests\\test_ir_simplify.py', 'tests\\test_ir_stores.py', 'tests\\test_ir_structure_lowerings.py', 'tests\\test_ir_type_lattice.py', 'tests\\test_ir_watchers.py', 'tests\\test_ir_watchers_deopt.py', 'tests\\test_language_matrix.py', 'tests\\test_lift_wave13_review.py', 'tests\\test_managed_cell_errors.py', 'tests\\test_managed_finally.py', 'tests\\test_managed_function_preparation_owners.py', 'tests\\test_managed_pool_borrow.py', 'tests\\test_managed_slices.py', 'tests\\test_managed_vector.py', 'tests\\test_matrix_harness.py', 'tests\\test_matrix_soundness.py', 'tests\\test_native_guard_audit.py', 'tests\\test_native_guard_shapes.py', 'tests\\test_optimize.py', 'tests\\test_original_context_binding.py', 'tests\\test_owner_facts.py', 'tests\\test_owner_liveness.py', 'tests\\test_prepared_cache_more.py', 'tests\\test_prepared_globals.py', 'tests\\test_prepared_priority.py', 'tests\\test_prepared_review_regressions.py', 'tests\\test_prepared_transient_lifetime.py', 'tests\\test_program_layout.py', 'tests\\test_provenance.py', 'tests\\test_provenance_corpus.py', 'tests\\test_provenance_positive.py', 'tests\\test_range_product.py', 'tests\\test_range_values_review.py', 'tests\\test_region_reuse.py', 'tests\\test_runner_prepared_artifact.py', 'tests\\test_scalar_clock_calls.py', 'tests\\test_self_census.py', 'tests\\test_snapshot_safety.py', 'tests\\test_structural_comparison.py', 'tests\\test_structure_builtin_identity.py', 'tests\\test_structure_child_pool.py', 'tests\\test_text_owners_compat.py', 'tests\\test_visitor_family.py']
+........................................................................ [  3%]
+.................................................... [  6%]
+........................................................................ [ 10%]
+........................................................................ [ 14%]
+........................................................................ [ 18%]
+........................................................................ [ 22%]
+........................................................................ [ 26%]
+........................................................................ [ 30%]
+........................................................................ [ 33%]
+........................................................................ [ 37%]
+........................................................................ [ 41%]
+........................................................................ [ 45%]
+........................................................................ [ 49%]
+........................................................................ [ 53%]
+........................................................................ [ 57%]
+........................................................................ [ 61%]
+........................................................................ [ 64%]
+........................................................................ [ 68%]
+........................................................................ [ 72%]
+........................................................................ [ 76%]
+........................................................................ [ 80%]
+......................................... [ 82%]
+........................................................................ [ 86%]
+........................................................................ [ 90%]
+........................................................................ [ 94%]
+........................................................................ [ 98%]
+................................                                         [100%]
+============================== warnings summary ===============================
+tests\test_managed_finally.py:21: 1 warning
+tests/test_managed_finally.py: 13 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\tests\test_managed_finally.py:21: SyntaxWarning: 'return' in a 'finally' block
+    return cleanup()
+
+tests\test_managed_finally.py:228: 1 warning
+tests/test_managed_finally.py: 13 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\tests\test_managed_finally.py:228: SyntaxWarning: 'return' in a 'finally' block
+    return sys.exception()
+
+tests/test_language_matrix.py: 4350 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\matrix\temp\8f3287226f675c.py:3: DeprecationWarning: Bitwise inversion '~' on bool is deprecated and will be removed in Python 3.16. This returns the bitwise inversion of the underlying int object and is usually not what you expect from negating a bool. Use the 'not' operator for boolean negation or ~int(x) if you really want the bitwise inversion of the underlying int.
+    return ~a
+
+tests/test_language_matrix.py::test_construct_verdict[operator.set.binary0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_f17a5c853c26ea68223474a7c4a457c9.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2854:[0m
+  [1m             else (lambda st, value, low, high: False), inline='always')
+  [1m    def even_extent(st, value):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    if _rc_int_domain(_rc_st, a, -16777216, 16777216) and _rc_int_domain(_rc_st, b, -16777216, 16777216):
+
+tests/test_language_matrix.py::test_construct_verdict[operator.set.unary1]
+  D:\Code\Datathon\recompyler-codex-20261111\wave20-cinder\.cache\rc\rc_45eaed357300f10727dd56b0cceb196c.py:4: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2854:[0m
+  [1m             else (lambda st, value, low, high: False), inline='always')
+  [1m    def even_extent(st, value):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    if _rc_int_domain(_rc_st, a, -16777216, 16777216):
+
+tests/test_provenance.py: 44 warnings
+tests/test_provenance_corpus.py: 83 warnings
+  D:\Code\Datathon\recompyler-codex-20261111\provenance-cases\wave17-matrix-review.py:131: SyntaxWarning: 'return' in a 'finally' block
+    return y
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1853 passed, 100 deselected, 4507 warnings, 51 subtests passed in 342.23s (0:05:42)

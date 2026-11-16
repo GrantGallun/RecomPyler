@@ -1,0 +1,118 @@
+{
+  "compiler": "clang version 19.1.7",
+  "digest": "10670a2ab5c8838cb397c41908fa624c1d3a21570d396d31b8523f83df3941c6",
+  "platform": "win32",
+  "pointer_bits": 64,
+  "runtime": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "schema": 1,
+  "source_sha256": "4f45c4ba6231543ffb263cce7450518f6d8ac1f1133cacc14e18c5e9088d266e",
+  "stencils": {
+    "arg": {
+      "code": "4d89c8488b05000000004c8b0cc2",
+      "data": "00000000000000000000000000000000",
+      "holes": [
+        {
+          "addend": 8,
+          "kind": "rel32",
+          "offset": 6,
+          "section": "code",
+          "source": "$data"
+        },
+        {
+          "addend": 0,
+          "kind": "abs64",
+          "offset": 8,
+          "section": "data",
+          "source": "operand0"
+        }
+      ]
+    },
+    "const": {
+      "code": "4d89c8488b4130488b40184c8b0d000000004e8b4cc820",
+      "data": "00000000000000000000000000000000",
+      "holes": [
+        {
+          "addend": 8,
+          "kind": "rel32",
+          "offset": 14,
+          "section": "code",
+          "source": "$data"
+        },
+        {
+          "addend": 0,
+          "kind": "abs64",
+          "offset": 8,
+          "section": "data",
+          "source": "operand0"
+        }
+      ]
+    },
+    "entry": {
+      "code": "41565657534883ec2848b8ffffffffffffff7f4c21c0483305000000004c09c875384889d64c89cb4c89c74989ceff15000000004c89f14989f84989d94889f285c074164531c04531c94883c4285b5f5e415e48ff25000000004883c4285b5f5e415e48ff2500000000",
+      "data": "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "holes": [
+        {
+          "addend": 8,
+          "kind": "rel32",
+          "offset": 25,
+          "section": "code",
+          "source": "$data"
+        },
+        {
+          "addend": 16,
+          "kind": "rel32",
+          "offset": 48,
+          "section": "code",
+          "source": "$data"
+        },
+        {
+          "addend": 24,
+          "kind": "rel32",
+          "offset": 86,
+          "section": "code",
+          "source": "$data"
+        },
+        {
+          "addend": 32,
+          "kind": "rel32",
+          "offset": 102,
+          "section": "code",
+          "source": "$data"
+        },
+        {
+          "addend": 0,
+          "kind": "abs64",
+          "offset": 8,
+          "section": "data",
+          "source": "operand0"
+        },
+        {
+          "addend": 0,
+          "kind": "abs64",
+          "offset": 16,
+          "section": "data",
+          "source": "external:rc_ir_callback_free_guard"
+        },
+        {
+          "addend": 0,
+          "kind": "abs64",
+          "offset": 24,
+          "section": "data",
+          "source": "$next"
+        },
+        {
+          "addend": 0,
+          "kind": "abs64",
+          "offset": 32,
+          "section": "data",
+          "source": "external:rc_ir_saved_vectorcall"
+        }
+      ]
+    },
+    "return": {
+      "code": "4c89c8418b0981f9ffffffbf7704ffc18908c3",
+      "data": "00000000",
+      "holes": []
+    }
+  }
+}
