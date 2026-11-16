@@ -1,0 +1,19 @@
+{
+  "unchanged_upstream_import": {
+    "type": "ModuleNotFoundError",
+    "message": "No module named 'llvmlite.llvmpy'"
+  },
+  "nopython_signatures": [
+    "(wave17.ManagedPyObject,) -> wave17.ManagedPyObject"
+  ],
+  "error": {
+    "type": "AssertionError",
+    "message": "('operand unwind', ['del-y', 'del-x'], ['del-x', 'del-y'])",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\extension\\run.py\", line 59, in main\n    report['jit']=gates(entry)\n                  ~~~~~^^^^^^^\n  File \"D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\extension\\run.py\", line 46, in gates\n    assert reference[1]==actual[1] and reference_events==actual_events,('operand unwind',reference_events,actual_events)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('operand unwind', ['del-y', 'del-x'], ['del-x', 'del-y'])\n"
+  },
+  "source_hashes": {
+    "matrix\\extension\\managed.py": "8c8f32f3d2a1ff14d3288407ef03f72386e4f58aa7c14ac664be67bfccb277db",
+    "matrix\\extension\\run.py": "2d6e80e6b6d022e14dee64f69194e4bd0f0875ea3ff1afd3ee0e3aa2b609e22e",
+    "matrix\\extension\\vendor\\numba_passthru\\numba_passthru.py": "780639afc4a712756e8232798a9ac9a9a4bdcd0a83c996f75f8121aa54af3944"
+  }
+}

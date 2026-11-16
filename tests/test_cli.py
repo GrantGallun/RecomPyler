@@ -22,6 +22,51 @@ def cli(*args, cwd=ROOT):
 
 
 class CliTests(unittest.TestCase):
+    def test_run_rejected_batch_plan_keeps_plain_code_and_globals(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            script = root / "work.py"
+            script.write_text(
+                "def twice(n):\n    return n * 2\n"
+                "for _ in range(3):\n    print([twice(i) for i in range(4)])\n"
+                "print(sorted(name for name in globals() if name.startswith('__recompyler_')))\n",
+                encoding="utf-8")
+            plan = root / "plan.json"
+            plan.write_text(json.dumps({
+                "plan": {"worth_running": False, "startup_s": 9.0},
+                "functions": [{"function": "twice", "line": 1, "calls": 12,
+                               "candidate": {"status": "verified", "batch_backends": {"cpu": 2.0},
+                                             "python_us_per_call": 1.0}}]}), encoding="utf-8")
+            run = cli("run", "--plan", plan, script, cwd=root)
+            self.assertEqual(run.returncode, 0, run.stderr)
+            self.assertEqual(run.stdout, "[0, 2, 4, 6]\n" * 3 + "[]\n")
+            self.assertIn("ran in plain Python", run.stderr)
+
+    def test_run_batch_plan_without_paying_sites_keeps_plain_globals(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            script = root / "work.py"
+            script.write_text(
+                "def twice(n):\n    return n * 2\n"
+                "def unused(n):\n    return n * 3\n"
+                "print([twice(i) for i in range(4)])\n"
+                "print(sorted(name for name in globals() if name.startswith('__recompyler_')))\n",
+                encoding="utf-8")
+            plan = root / "plan.json"
+            for calls in (0, 10_000_000):
+                with self.subTest(unused_calls=calls):
+                    plan.write_text(json.dumps({
+                        "plan": {"worth_running": False, "startup_s": 1.0},
+                        "functions": [
+                            {"function": name, "line": line, "calls": count,
+                             "candidate": {"status": "verified", "batch_backends": {"cpu": 2.0},
+                                           "python_us_per_call": 1.0}}
+                            for name, line, count in (("twice", 1, 4), ("unused", 3, calls))]}),
+                        encoding="utf-8")
+                    run = cli("run", "--plan", plan, script, cwd=root)
+                    self.assertEqual(run.returncode, 0, run.stderr)
+                    self.assertEqual(run.stdout, "[0, 2, 4, 6]\n[]\n")
+
     def test_compact_profile_is_one_versioned_json_line(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -138,7 +183,8 @@ class CliTests(unittest.TestCase):
             self.assertEqual(rows["grow"]["status"], "skipped")
             self.assertIn("fell back to Python", rows["grow"]["reason"])
             self.assertGreater(rows["grow"]["compiled_samples"], 0)
-            self.assertIn("outside the supported subset", rows["label"]["reason"])
+            self.assertEqual(rows["label"]["status"], "skipped", rows["label"])
+            self.assertIn("str/bytes result ownership", rows["label"]["region_reason"])
             self.assertEqual(rows["half"]["status"], "verified", rows["half"])
             self.assertIn("cpu", rows["score"]["batch_backends"])
 
@@ -276,7 +322,7 @@ class CliTests(unittest.TestCase):
             plan.write_text(json.dumps(report))
             forced = cli("run", "--force", "--plan", plan, script, cwd=root)
             self.assertEqual((forced.returncode, forced.stdout), (0, plain.stdout), forced.stderr)
-            self.assertIn("build: compiled as one region, 40 compiled calls, 0 handed back", forced.stderr)
+            self.assertRegex(forced.stderr, r"build: compiled as one region( ahead of time)?, 40 compiled calls, 0 handed back")
 
     @unittest.skipUnless(importlib.util.find_spec("numba"), "optional compiler unavailable")
     def test_profile_checks_functions_that_change_their_arguments(self):

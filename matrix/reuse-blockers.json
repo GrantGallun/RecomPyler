@@ -1,0 +1,3638 @@
+{
+  "groups": {
+    "builtin, tuple, runtime-error and precision recognizers": [
+      {
+        "id": "statement.assert_error",
+        "decline": "Assert at line 2; runtime guard at ('construct', 10)"
+      },
+      {
+        "id": "statement.raise",
+        "decline": "runtime guard at ('construct', 10)"
+      },
+      {
+        "id": "operator.bool.binary3",
+        "decline": "runtime guard at ('construct', 3)"
+      },
+      {
+        "id": "operator.bool.augmented3",
+        "decline": "one value can be bool or float"
+      },
+      {
+        "id": "operator.tuple.chain",
+        "decline": "as a region: arithmetic on (int, int) at line 2 of 'construct'"
+      },
+      {
+        "id": "literal.int64",
+        "decline": "as a region: a power other than ** 2 at line 2 of 'construct'"
+      },
+      {
+        "id": "literal.inf",
+        "decline": "as a region: float() on str at line 2 of 'construct'"
+      },
+      {
+        "id": "literal.nan",
+        "decline": "as a region: float() on str at line 2 of 'construct'"
+      },
+      {
+        "id": "literal.complex",
+        "decline": "as a region: constant 3j at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.bool",
+        "decline": "as a region: bool() on int at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.divmod",
+        "decline": "as a region: divmod() on int, int at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.hash",
+        "decline": "as a region: hash() on (int, int) at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.isinstance",
+        "decline": "as a region: isinstance() with something other than one class at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.map",
+        "decline": "as a region: name 'abs' used as a value at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.pow",
+        "decline": "as a region: pow() on int, int at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.print",
+        "decline": "as a region: print() on str at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.round",
+        "decline": "as a region: round() on float, int at line 2 of 'construct'"
+      },
+      {
+        "id": "method.tuple.index",
+        "decline": "as a region: method 'index' of (int, int, int) at line 3 of 'construct'"
+      },
+      {
+        "id": "method.dict.items",
+        "decline": "as a region: dict method 'items' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.dict.keys",
+        "decline": "as a region: dict method 'keys' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.dict.values",
+        "decline": "as a region: dict method 'values' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.int.conjugate",
+        "decline": "as a region: method 'conjugate' of int at line 3 of 'construct'"
+      },
+      {
+        "id": "method.float.conjugate",
+        "decline": "as a region: method 'conjugate' of float at line 3 of 'construct'"
+      },
+      {
+        "id": "stdlib.math.frexp",
+        "decline": "as a region: math.frexp at line 2 of 'construct'"
+      },
+      {
+        "id": "stdlib.math.gcd",
+        "decline": "as a region: math.gcd at line 2 of 'construct'"
+      },
+      {
+        "id": "statement.bare_except",
+        "decline": "as a region: a check at construct line 4 sent it back to Python"
+      },
+      {
+        "id": "boundary.divide_zero",
+        "decline": "runtime guard at ('construct', 3)"
+      },
+      {
+        "id": "review.mixed1.gt",
+        "decline": "as a region: a check at construct line 3 sent it back to Python"
+      },
+      {
+        "id": "review.mixed1.le",
+        "decline": "as a region: a check at construct line 3 sent it back to Python"
+      }
+    ],
+    "set representation, operations and ownership": [
+      {
+        "id": "operator.set.binary1",
+        "decline": "as a region: operator Sub on set[int] and set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.augmented1",
+        "decline": "as a region: operator Sub on set[int] and set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.binary9",
+        "decline": "as a region: operator BitAnd on set[int] and set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.augmented9",
+        "decline": "as a region: operator BitAnd on set[int] and set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.binary10",
+        "decline": "as a region: operator BitOr on set[int] and set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.augmented10",
+        "decline": "as a region: operator BitOr on set[int] and set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.binary11",
+        "decline": "as a region: operator BitXor on set[int] and set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.augmented11",
+        "decline": "as a region: operator BitXor on set[int] and set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.compare0",
+        "decline": "as a region: comparing set[int] with set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.compare1",
+        "decline": "as a region: comparing set[int] with set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.compare2",
+        "decline": "as a region: comparing set[int] with set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.compare3",
+        "decline": "as a region: comparing set[int] with set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.compare4",
+        "decline": "as a region: comparing set[int] with set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.compare5",
+        "decline": "as a region: comparing set[int] with set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.chain",
+        "decline": "as a region: comparing set[int] with set[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "method.set.copy",
+        "decline": "as a region: set method 'copy' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.difference",
+        "decline": "as a region: set method 'difference' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.difference_update",
+        "decline": "as a region: set method 'difference_update' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.intersection",
+        "decline": "as a region: set method 'intersection' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.intersection_update",
+        "decline": "as a region: set method 'intersection_update' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.isdisjoint",
+        "decline": "as a region: set method 'isdisjoint' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.issubset",
+        "decline": "as a region: set method 'issubset' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.pop",
+        "decline": "as a region: set method 'pop' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.symmetric_difference",
+        "decline": "as a region: set method 'symmetric_difference' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.symmetric_difference_update",
+        "decline": "as a region: set method 'symmetric_difference_update' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.union",
+        "decline": "as a region: set method 'union' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.set.update",
+        "decline": "as a region: set method 'update' at line 3 of 'construct'"
+      }
+    ],
+    "unicode method recognizers": [
+      {
+        "id": "method.str.capitalize",
+        "decline": "as a region: str method 'capitalize' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.casefold",
+        "decline": "as a region: str method 'casefold' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.center",
+        "decline": "as a region: str method 'center' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.expandtabs",
+        "decline": "as a region: str method 'expandtabs' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.index",
+        "decline": "as a region: str method 'index' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.isidentifier",
+        "decline": "as a region: str method 'isidentifier' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.islower",
+        "decline": "as a region: str method 'islower' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.isnumeric",
+        "decline": "as a region: str method 'isnumeric' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.isprintable",
+        "decline": "as a region: str method 'isprintable' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.isspace",
+        "decline": "as a region: str method 'isspace' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.istitle",
+        "decline": "as a region: str method 'istitle' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.isupper",
+        "decline": "as a region: str method 'isupper' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.ljust",
+        "decline": "as a region: str method 'ljust' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.partition",
+        "decline": "as a region: str method 'partition' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.rfind",
+        "decline": "as a region: str method 'rfind' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.rindex",
+        "decline": "as a region: str method 'rindex' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.rjust",
+        "decline": "as a region: str method 'rjust' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.rpartition",
+        "decline": "as a region: str method 'rpartition' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.rsplit",
+        "decline": "as a region: str method 'rsplit' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.splitlines",
+        "decline": "as a region: str method 'splitlines' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.swapcase",
+        "decline": "as a region: str method 'swapcase' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.title",
+        "decline": "as a region: str method 'title' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.str.zfill",
+        "decline": "as a region: str method 'zfill' at line 3 of 'construct'"
+      }
+    ],
+    "native-complex representation and checked overloads": [
+      {
+        "id": "operator.complex.binary0",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.augmented0",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.binary1",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.augmented1",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.binary2",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.augmented2",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.binary3",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.augmented3",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.binary6",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.augmented6",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.compare0",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.compare1",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.compare6",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.compare7",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.unary0",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.unary1",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.unary3",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.chain",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.and",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "operator.complex.or",
+        "decline": "as a region: an argument of type complex"
+      },
+      {
+        "id": "builtin.complex",
+        "decline": "as a region: complex() on int, int at line 2 of 'construct'"
+      }
+    ],
+    "selected-value and identity provenance": [
+      {
+        "id": "operator.int.compare6",
+        "decline": "as a region: this comparison at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.int.compare7",
+        "decline": "as a region: this comparison at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.int.and",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.int.or",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.float.compare6",
+        "decline": "as a region: this comparison at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.float.compare7",
+        "decline": "as a region: this comparison at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.float.and",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.float.or",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.bool.compare6",
+        "decline": "as a region: this comparison at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.bool.compare7",
+        "decline": "as a region: this comparison at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.str.compare6",
+        "decline": "as a region: 'is' between strings at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.str.compare7",
+        "decline": "as a region: 'is' between strings at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.str.and",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.str.or",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.and",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.or",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.tuple.compare6",
+        "decline": "as a region: this comparison at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.tuple.compare7",
+        "decline": "as a region: this comparison at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.and",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.set.or",
+        "decline": "as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'"
+      }
+    ],
+    "native-bytes representation and operations": [
+      {
+        "id": "operator.bytes.compare6",
+        "decline": "as a region: an argument of type bytes"
+      },
+      {
+        "id": "operator.bytes.compare7",
+        "decline": "as a region: an argument of type bytes"
+      },
+      {
+        "id": "operator.bytes.compare8",
+        "decline": "as a region: an argument of type bytes"
+      },
+      {
+        "id": "operator.bytes.compare9",
+        "decline": "as a region: an argument of type bytes"
+      },
+      {
+        "id": "operator.bytes.unary3",
+        "decline": "as a region: an argument of type bytes"
+      },
+      {
+        "id": "literal.bytes",
+        "decline": "as a region: constant b'matrix\\x00' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.center",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.endswith",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.isascii",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.join",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.ljust",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.lstrip",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.rjust",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.rstrip",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.split",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.startswith",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.strip",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      },
+      {
+        "id": "method.bytes.zfill",
+        "decline": "as a region: constant b'Abc abc 12' at line 2 of 'construct'"
+      }
+    ],
+    "represented-list operations and identity": [
+      {
+        "id": "statement.del_item",
+        "decline": "as a region: del of an item of list[int] at line 3 of 'construct'"
+      },
+      {
+        "id": "operator.list.binary0",
+        "decline": "as a region: arithmetic on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.augmented0",
+        "decline": "as a region: arithmetic on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.compare0",
+        "decline": "as a region: comparing lists at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.compare1",
+        "decline": "as a region: comparing lists at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.compare2",
+        "decline": "as a region: arithmetic on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.compare3",
+        "decline": "as a region: arithmetic on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.compare4",
+        "decline": "as a region: arithmetic on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.compare5",
+        "decline": "as a region: arithmetic on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "operator.list.chain",
+        "decline": "as a region: comparing lists at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.filter",
+        "decline": "as a region: filter() on None, list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.iter",
+        "decline": "as a region: iter() on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.next",
+        "decline": "as a region: iter() on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.sorted",
+        "decline": "as a region: sorted() on list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "builtin.zip",
+        "decline": "as a region: zip() on list[int], list[int] at line 2 of 'construct'"
+      },
+      {
+        "id": "method.list.copy",
+        "decline": "as a region: list method 'copy' at line 3 of 'construct'"
+      },
+      {
+        "id": "method.list.sort",
+        "decline": "as a region: list method 'sort' at line 3 of 'construct'"
+      }
+    ],
+    "statement and call syntax": [
+      {
+        "id": "statement.nonlocal",
+        "decline": "as a region: 'construct' declares globals or defines functions inside itself"
+      },
+      {
+        "id": "statement.function_def",
+        "decline": "as a region: 'construct' declares globals or defines functions inside itself"
+      },
+      {
+        "id": "statement.annotated_assign",
+        "decline": "as a region: AnnAssign at line 2 of 'construct'"
+      },
+      {
+        "id": "statement.annotation_only",
+        "decline": "as a region: AnnAssign at line 2 of 'construct'"
+      },
+      {
+        "id": "statement.lambda",
+        "decline": "as a region: 'construct' declares globals or defines functions inside itself"
+      },
+      {
+        "id": "pattern.value",
+        "decline": "as a region: Match at line 2 of 'construct'"
+      },
+      {
+        "id": "pattern.singleton",
+        "decline": "as a region: Match at line 2 of 'construct'"
+      },
+      {
+        "id": "pattern.or",
+        "decline": "as a region: Match at line 2 of 'construct'"
+      },
+      {
+        "id": "pattern.wildcard",
+        "decline": "as a region: Match at line 2 of 'construct'"
+      },
+      {
+        "id": "pattern.guard",
+        "decline": "as a region: Match at line 2 of 'construct'"
+      },
+      {
+        "id": "literal.list_star",
+        "decline": "as a region: Starred at line 2 of 'construct'"
+      },
+      {
+        "id": "literal.tuple_star",
+        "decline": "as a region: Starred at line 2 of 'construct'"
+      },
+      {
+        "id": "literal.set_star",
+        "decline": "as a region: Starred at line 2 of 'construct'"
+      },
+      {
+        "id": "call.varargs",
+        "decline": "'construct' has a closure, keyword-only arguments, *args or is a generator; sum() on (int, int, int) at line 2 of 'construct'"
+      },
+      {
+        "id": "call.closure",
+        "decline": "as a region: 'construct' declares globals or defines functions inside itself"
+      }
+    ]
+  },
+  "differences": [
+    {
+      "id": "statement.del_slice",
+      "reference": {
+        "result": [
+          "list",
+          [
+            [
+              "int",
+              4
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "NotImplementedError",
+          "unsupported del list[start:stop:step] with step != 1",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "operator.bool.binary4",
+      "reference": {
+        "exception": [
+          "builtins",
+          "ZeroDivisionError",
+          "division by zero",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "bool",
+              false
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "ZeroDivisionError",
+          "integer division by zero",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "bool",
+              false
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "operator.bool.augmented4",
+      "reference": {
+        "exception": [
+          "builtins",
+          "ZeroDivisionError",
+          "division by zero",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "bool",
+              false
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "ZeroDivisionError",
+          "integer division by zero",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "bool",
+              false
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "operator.bool.binary5",
+      "reference": {
+        "exception": [
+          "builtins",
+          "ZeroDivisionError",
+          "division by zero",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "bool",
+              false
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "ZeroDivisionError",
+          "integer modulo by zero",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "bool",
+              false
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "operator.bool.augmented5",
+      "reference": {
+        "exception": [
+          "builtins",
+          "ZeroDivisionError",
+          "division by zero",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "bool",
+              false
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "ZeroDivisionError",
+          "integer modulo by zero",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "bool",
+              false
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "operator.tuple.and",
+      "reference": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              2
+            ],
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "tuple",
+              [
+                [
+                  "int",
+                  1
+                ],
+                [
+                  "int",
+                  2
+                ]
+              ]
+            ],
+            [
+              "ref",
+              0
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              2
+            ],
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "tuple",
+              [
+                [
+                  "int",
+                  1
+                ],
+                [
+                  "int",
+                  2
+                ]
+              ]
+            ],
+            [
+              "tuple",
+              [
+                [
+                  "int",
+                  2
+                ],
+                [
+                  "int",
+                  3
+                ]
+              ]
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "operator.tuple.or",
+      "reference": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              1
+            ],
+            [
+              "int",
+              2
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "ref",
+              0
+            ],
+            [
+              "tuple",
+              [
+                [
+                  "int",
+                  2
+                ],
+                [
+                  "int",
+                  3
+                ]
+              ]
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              1
+            ],
+            [
+              "int",
+              2
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "tuple",
+              [
+                [
+                  "int",
+                  1
+                ],
+                [
+                  "int",
+                  2
+                ]
+              ]
+            ],
+            [
+              "tuple",
+              [
+                [
+                  "int",
+                  2
+                ],
+                [
+                  "int",
+                  3
+                ]
+              ]
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "literal.bigint",
+      "reference": {
+        "result": [
+          "int",
+          1267650600228229401496703205383
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "int",
+          7
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "literal.negative_bigint",
+      "reference": {
+        "result": [
+          "int",
+          -1267650600228229401496703205383
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "int",
+          -7
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "literal.dict_unpack",
+      "reference": {
+        "result": [
+          "dict",
+          [
+            [
+              [
+                "int",
+                0
+              ],
+              [
+                "int",
+                1
+              ]
+            ],
+            [
+              [
+                "int",
+                3
+              ],
+              [
+                "int",
+                4
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "numba.typed.Dict",
+          [
+            [
+              [
+                "int",
+                0
+              ],
+              [
+                "int",
+                1
+              ]
+            ],
+            [
+              [
+                "int",
+                3
+              ],
+              [
+                "int",
+                4
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "comprehension.dict",
+      "reference": {
+        "result": [
+          "dict",
+          [
+            [
+              [
+                "int",
+                0
+              ],
+              [
+                "int",
+                0
+              ]
+            ],
+            [
+              [
+                "int",
+                1
+              ],
+              [
+                "int",
+                1
+              ]
+            ],
+            [
+              [
+                "int",
+                2
+              ],
+              [
+                "int",
+                4
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "numba.typed.Dict",
+          [
+            [
+              [
+                "int",
+                0
+              ],
+              [
+                "int",
+                0
+              ]
+            ],
+            [
+              [
+                "int",
+                1
+              ],
+              [
+                "int",
+                1
+              ]
+            ],
+            [
+              [
+                "int",
+                2
+              ],
+              [
+                "int",
+                4
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "comprehension.dict_nested",
+      "reference": {
+        "result": [
+          "dict",
+          [
+            [
+              [
+                "tuple",
+                [
+                  [
+                    "int",
+                    1
+                  ],
+                  [
+                    "int",
+                    0
+                  ]
+                ]
+              ],
+              [
+                "int",
+                1
+              ]
+            ],
+            [
+              [
+                "tuple",
+                [
+                  [
+                    "int",
+                    2
+                  ],
+                  [
+                    "int",
+                    0
+                  ]
+                ]
+              ],
+              [
+                "int",
+                2
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "numba.typed.Dict",
+          [
+            [
+              [
+                "tuple",
+                [
+                  [
+                    "int",
+                    1
+                  ],
+                  [
+                    "int",
+                    0
+                  ]
+                ]
+              ],
+              [
+                "int",
+                1
+              ]
+            ],
+            [
+              [
+                "tuple",
+                [
+                  [
+                    "int",
+                    2
+                  ],
+                  [
+                    "int",
+                    0
+                  ]
+                ]
+              ],
+              [
+                "int",
+                2
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "builtin.dict",
+      "reference": {
+        "result": [
+          "dict",
+          [
+            [
+              [
+                "int",
+                1
+              ],
+              [
+                "int",
+                2
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": "",
+        "box": [
+          "dict",
+          [
+            [
+              [
+                "str",
+                "value"
+              ],
+              [
+                "int",
+                3
+              ]
+            ]
+          ]
+        ]
+      },
+      "compiled": {
+        "result": [
+          "numba.typed.Dict",
+          [
+            [
+              [
+                "int",
+                1
+              ],
+              [
+                "int",
+                2
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": "",
+        "box": [
+          "dict",
+          [
+            [
+              [
+                "str",
+                "value"
+              ],
+              [
+                "int",
+                3
+              ]
+            ]
+          ]
+        ]
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "builtin.repr",
+      "reference": {
+        "result": [
+          "str",
+          "[1, 2]"
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": "",
+        "box": [
+          "dict",
+          [
+            [
+              [
+                "str",
+                "value"
+              ],
+              [
+                "int",
+                3
+              ]
+            ]
+          ]
+        ]
+      },
+      "compiled": {
+        "result": [
+          "str",
+          "<object type:list(int64)<iv=None>>"
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": "",
+        "box": [
+          "dict",
+          [
+            [
+              [
+                "str",
+                "value"
+              ],
+              [
+                "int",
+                3
+              ]
+            ]
+          ]
+        ]
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "builtin.slice",
+      "reference": {
+        "result": [
+          "slice",
+          [
+            "int",
+            1
+          ],
+          [
+            "int",
+            5
+          ],
+          [
+            "int",
+            2
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": "",
+        "box": [
+          "dict",
+          [
+            [
+              [
+                "str",
+                "value"
+              ],
+              [
+                "int",
+                3
+              ]
+            ]
+          ]
+        ]
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "TypeError",
+          "cannot convert native slice<a:b:c> to Python object",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": "",
+        "box": [
+          "dict",
+          [
+            [
+              [
+                "str",
+                "value"
+              ],
+              [
+                "int",
+                3
+              ]
+            ]
+          ]
+        ]
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "builtin.type",
+      "reference": {
+        "result": [
+          "type",
+          "builtins",
+          "int"
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": "",
+        "box": [
+          "dict",
+          [
+            [
+              [
+                "str",
+                "value"
+              ],
+              [
+                "int",
+                3
+              ]
+            ]
+          ]
+        ]
+      },
+      "compiled": {
+        "result": [
+          "numpy.dtype",
+          "int64"
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": "",
+        "box": [
+          "dict",
+          [
+            [
+              [
+                "str",
+                "value"
+              ],
+              [
+                "int",
+                3
+              ]
+            ]
+          ]
+        ]
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "method.str.isalnum",
+      "reference": {
+        "result": [
+          "tuple",
+          [
+            [
+              "bool",
+              false
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              0
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "method.str.isalpha",
+      "reference": {
+        "result": [
+          "tuple",
+          [
+            [
+              "bool",
+              false
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              0
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "method.str.isascii",
+      "reference": {
+        "result": [
+          "tuple",
+          [
+            [
+              "bool",
+              true
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              1
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "method.str.isdecimal",
+      "reference": {
+        "result": [
+          "tuple",
+          [
+            [
+              "bool",
+              false
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              0
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "method.str.isdigit",
+      "reference": {
+        "result": [
+          "tuple",
+          [
+            [
+              "bool",
+              false
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "tuple",
+          [
+            [
+              "int",
+              0
+            ],
+            [
+              "str",
+              "Abc abc 12"
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "method.dict.popitem",
+      "reference": {
+        "result": [
+          "tuple",
+          [
+            [
+              "tuple",
+              [
+                [
+                  "int",
+                  3
+                ],
+                [
+                  "int",
+                  4
+                ]
+              ]
+            ],
+            [
+              "dict",
+              [
+                [
+                  [
+                    "int",
+                    1
+                  ],
+                  [
+                    "int",
+                    2
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "tuple",
+          [
+            [
+              "tuple",
+              [
+                [
+                  "int",
+                  3
+                ],
+                [
+                  "int",
+                  4
+                ]
+              ]
+            ],
+            [
+              "numba.typed.Dict",
+              [
+                [
+                  [
+                    "int",
+                    1
+                  ],
+                  [
+                    "int",
+                    2
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "statement.generator_return",
+      "reference": {
+        "result": [
+          "yielded",
+          [
+            "list",
+            [
+              [
+                "int",
+                3
+              ]
+            ]
+          ],
+          true,
+          false,
+          [
+            "int",
+            4
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "yielded",
+          [
+            "list",
+            [
+              [
+                "int",
+                3
+              ]
+            ]
+          ],
+          true,
+          false,
+          [
+            "NoneType",
+            null
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "boundary.int_overflow",
+      "reference": {
+        "result": [
+          "int",
+          9223372036854775808
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9223372036854775807
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "int",
+          -9223372036854775808
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9223372036854775807
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "boundary.negative_shift",
+      "reference": {
+        "exception": [
+          "builtins",
+          "ValueError",
+          "negative shift count",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "int",
+          0
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "boundary.index",
+      "reference": {
+        "exception": [
+          "builtins",
+          "IndexError",
+          "list index out of range",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "IndexError",
+          "getitem out of range",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.mixed0.eq",
+      "reference": {
+        "result": [
+          "bool",
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9007199254740993
+            ],
+            [
+              "float",
+              "4340000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "bool",
+          true
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9007199254740993
+            ],
+            [
+              "float",
+              "4340000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.mixed0.gt",
+      "reference": {
+        "result": [
+          "bool",
+          true
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9007199254740993
+            ],
+            [
+              "float",
+              "4340000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "bool",
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9007199254740993
+            ],
+            [
+              "float",
+              "4340000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.mixed0.le",
+      "reference": {
+        "result": [
+          "bool",
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9007199254740993
+            ],
+            [
+              "float",
+              "4340000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "bool",
+          true
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9007199254740993
+            ],
+            [
+              "float",
+              "4340000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.mixed1.eq",
+      "reference": {
+        "result": [
+          "bool",
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9223372036854775807
+            ],
+            [
+              "float",
+              "43e0000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "bool",
+          true
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              9223372036854775807
+            ],
+            [
+              "float",
+              "43e0000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.tuple_nan_shared",
+      "reference": {
+        "result": [
+          "bool",
+          true
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "tuple",
+              [
+                [
+                  "float",
+                  "nan"
+                ]
+              ]
+            ],
+            [
+              "tuple",
+              [
+                [
+                  "float",
+                  "nan"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "bool",
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "tuple",
+              [
+                [
+                  "float",
+                  "nan"
+                ]
+              ]
+            ],
+            [
+              "tuple",
+              [
+                [
+                  "float",
+                  "nan"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.literal_index_high",
+      "reference": {
+        "exception": [
+          "builtins",
+          "IndexError",
+          "list index out of range",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "IndexError",
+          "getitem out of range",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.literal_index_low",
+      "reference": {
+        "exception": [
+          "builtins",
+          "IndexError",
+          "list index out of range",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "exception": [
+          "builtins",
+          "IndexError",
+          "getitem out of range",
+          [
+            "suppress_context",
+            false
+          ]
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              3
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.identity.float_or",
+      "reference": {
+        "result": [
+          "float",
+          "3ff4000000000000"
+        ],
+        "result_argument_identity": [
+          true,
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "float",
+              "3ff4000000000000"
+            ],
+            [
+              "float",
+              "0000000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "float",
+          "3ff4000000000000"
+        ],
+        "result_argument_identity": [
+          false,
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "float",
+              "3ff4000000000000"
+            ],
+            [
+              "float",
+              "0000000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.identity.negative_zero_and",
+      "reference": {
+        "result": [
+          "float",
+          "8000000000000000"
+        ],
+        "result_argument_identity": [
+          true,
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "float",
+              "8000000000000000"
+            ],
+            [
+              "float",
+              "3ff0000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "float",
+          "8000000000000000"
+        ],
+        "result_argument_identity": [
+          false,
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "float",
+              "8000000000000000"
+            ],
+            [
+              "float",
+              "3ff0000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.identity.int_or",
+      "reference": {
+        "result": [
+          "int",
+          1000
+        ],
+        "result_argument_identity": [
+          true,
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              1000
+            ],
+            [
+              "int",
+              0
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "int",
+          1000
+        ],
+        "result_argument_identity": [
+          false,
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "int",
+              1000
+            ],
+            [
+              "int",
+              0
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    },
+    {
+      "id": "review.identity.float_right",
+      "reference": {
+        "result": [
+          "float",
+          "3ff4000000000000"
+        ],
+        "result_argument_identity": [
+          false,
+          true
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "float",
+              "0000000000000000"
+            ],
+            [
+              "float",
+              "3ff4000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "compiled": {
+        "result": [
+          "float",
+          "3ff4000000000000"
+        ],
+        "result_argument_identity": [
+          false,
+          false
+        ],
+        "arguments": [
+          "tuple",
+          [
+            [
+              "float",
+              "0000000000000000"
+            ],
+            [
+              "float",
+              "3ff4000000000000"
+            ]
+          ]
+        ],
+        "keywords": [
+          "dict",
+          []
+        ],
+        "events": [
+          "list",
+          []
+        ],
+        "counter": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "policy": "kept declined until its exact difference is guarded"
+    }
+  ]
+}

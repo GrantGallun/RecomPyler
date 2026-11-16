@@ -1,0 +1,22 @@
+[
+  {
+    "program": "chaos",
+    "function": "__add__",
+    "line": 34,
+    "candidate": {
+      "status": "skipped",
+      "reason": "outside the supported subset: global 'GVector' is not a numeric constant",
+      "region_reason": "as a region: heap str/bytes ownership is not proved; use the immutable lifter"
+    }
+  },
+  {
+    "program": "sqlite_synth",
+    "function": "step",
+    "line": 21,
+    "candidate": {
+      "status": "skipped",
+      "reason": "outside the supported subset: comparison at line 2",
+      "region_reason": "as a region: heap str/bytes identity observation is not proved"
+    }
+  }
+]

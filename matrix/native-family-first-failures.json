@@ -1,0 +1,1766 @@
+{
+  "commit": "9419f8ec545f00af684114cb3aeae5160ab92839",
+  "captured": 196,
+  "whole_function_native": 60,
+  "all_defined": 375,
+  "captured_not_native": 136,
+  "top10": [
+    {
+      "first_failure": "the compiled version did not apply to the captured calls",
+      "functions": 18,
+      "programs": 9,
+      "rows": [
+        {
+          "program": "async_generators",
+          "function": "__init__",
+          "line": 16,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "chaos",
+          "function": "__init__",
+          "line": 21,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "chaos",
+          "function": "__init__",
+          "line": 66,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "generators",
+          "function": "__init__",
+          "line": 16,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 22,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 172,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "rotate",
+          "line": 88,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "flip",
+          "line": 92,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "pidigits",
+          "function": "extract",
+          "line": 34,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "pidigits",
+          "function": "compose",
+          "line": 25,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 102,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 72,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 37,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 94,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "fn",
+          "line": 196,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "sqlite_synth",
+          "function": "__init__",
+          "line": 17,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "typing_runtime_protocols",
+          "function": "__init__",
+          "line": 114,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "typing_runtime_protocols",
+          "function": "__init__",
+          "line": 125,
+          "reason": "the compiled version did not apply to the captured calls"
+        }
+      ]
+    },
+    {
+      "first_failure": "local functions/closure or unsupported signature",
+      "functions": 17,
+      "programs": 7,
+      "rows": [
+        {
+          "program": "async_generators",
+          "function": "bench_async_generators",
+          "line": 38,
+          "reason": "outside the supported subset: 'bench_async_generators' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 39,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 382,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 92,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "nqueens",
+          "function": "bench_n_queens",
+          "line": 53,
+          "reason": "outside the supported subset: 'n_queens' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "nqueens",
+          "function": "n_queens",
+          "line": 34,
+          "reason": "outside the supported subset: 'n_queens' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "nqueens",
+          "function": "permutations",
+          "line": 9,
+          "reason": "outside the supported subset: 'permutations' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "pathlib",
+          "function": "generate_filenames",
+          "line": 20,
+          "reason": "outside the supported subset: 'generate_filenames' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "pidigits",
+          "function": "calc_ndigits",
+          "line": 51,
+          "reason": "outside the supported subset: 'gen_pi_digits' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "pidigits",
+          "function": "gen_pi_digits",
+          "line": 39,
+          "reason": "outside the supported subset: 'gen_pi_digits' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 315,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 341,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 281,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 258,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_expand",
+          "line": 7,
+          "reason": "outside the supported subset: 'symbols' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_sum",
+          "line": 18,
+          "reason": "outside the supported subset: 'symbols' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_str",
+          "line": 23,
+          "reason": "outside the supported subset: 'symbols' has a closure, keyword-only arguments, *args or is a generator"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'pyperf' is not a numeric constant",
+      "functions": 17,
+      "programs": 6,
+      "rows": [
+        {
+          "program": "base64",
+          "function": "bench_b64_small",
+          "line": 68,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b64_large",
+          "line": 86,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_urlsafe_b64_small",
+          "line": 100,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b32_small",
+          "line": 120,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b32_large",
+          "line": 138,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b16_small",
+          "line": 152,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b16_large",
+          "line": 170,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_a85_small",
+          "line": 184,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_a85_large",
+          "line": 210,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b85_small",
+          "line": 228,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b85_large",
+          "line": 246,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "main",
+          "line": 212,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "bench_regex_v8",
+          "line": 1768,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "bench_regex_v8",
+          "line": 1768,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "sqlite_synth",
+          "function": "bench_sqlite",
+          "line": 30,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "do_unpacking",
+          "line": 6,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_list_unpacking",
+          "line": 421,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: keyword or starred argument at line 3",
+      "functions": 9,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_v8",
+          "function": "block2",
+          "line": 427,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block3",
+          "line": 490,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block4",
+          "line": 603,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block5",
+          "line": 675,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block6",
+          "line": 736,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block7",
+          "line": 828,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block10",
+          "line": 1162,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block11",
+          "line": 1316,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "yaml",
+          "function": "bench_yaml",
+          "line": 77,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'strings' is not a numeric constant",
+      "functions": 5,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block6",
+          "line": 736,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block8",
+          "line": 896,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block9",
+          "line": 980,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block8",
+          "line": 896,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block9",
+          "line": 980,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'subcount' is not a numeric constant",
+      "functions": 5,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block2",
+          "line": 427,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block5",
+          "line": 675,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block7",
+          "line": 828,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block10",
+          "line": 1162,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block11",
+          "line": 1316,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: constant None at line 2",
+      "functions": 4,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "gc_collect",
+          "function": "__init__",
+          "line": 9,
+          "reason": "outside the supported subset: constant None at line 2"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 165,
+          "reason": "outside the supported subset: constant None at line 2"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 79,
+          "reason": "outside the supported subset: constant None at line 2"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 66,
+          "reason": "outside the supported subset: constant None at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'regexs' is not a numeric constant",
+      "functions": 4,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block0",
+          "line": 275,
+          "reason": "outside the supported subset: global 'regexs' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block1",
+          "line": 354,
+          "reason": "outside the supported subset: global 'regexs' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block0",
+          "line": 275,
+          "reason": "outside the supported subset: global 'regexs' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block1",
+          "line": 354,
+          "reason": "outside the supported subset: global 'regexs' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: call at line 2",
+      "functions": 3,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_dna",
+          "function": "init_benchmarks",
+          "line": 134,
+          "reason": "outside the supported subset: call at line 2"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_all",
+          "line": 427,
+          "reason": "outside the supported subset: call at line 2"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_tuple_unpacking",
+          "line": 416,
+          "reason": "outside the supported subset: call at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "comparison rule: snapshot rule: class not proven pure Python (extension or dynamic type)",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "meteor_contest",
+          "function": "permute",
+          "line": 96,
+          "reason": "comparison rule: snapshot rule: class not proven pure Python (extension or dynamic type)"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_sympy",
+          "line": 28,
+          "reason": "comparison rule: snapshot rule: class not proven pure Python (extension or dynamic type)"
+        }
+      ]
+    }
+  ],
+  "all_first_failures": [
+    {
+      "first_failure": "the compiled version did not apply to the captured calls",
+      "functions": 18,
+      "programs": 9,
+      "rows": [
+        {
+          "program": "async_generators",
+          "function": "__init__",
+          "line": 16,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "chaos",
+          "function": "__init__",
+          "line": 21,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "chaos",
+          "function": "__init__",
+          "line": 66,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "generators",
+          "function": "__init__",
+          "line": 16,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 22,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 172,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "rotate",
+          "line": 88,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "flip",
+          "line": 92,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "pidigits",
+          "function": "extract",
+          "line": 34,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "pidigits",
+          "function": "compose",
+          "line": 25,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 102,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 72,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 37,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 94,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "richards_super",
+          "function": "fn",
+          "line": 196,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "sqlite_synth",
+          "function": "__init__",
+          "line": 17,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "typing_runtime_protocols",
+          "function": "__init__",
+          "line": 114,
+          "reason": "the compiled version did not apply to the captured calls"
+        },
+        {
+          "program": "typing_runtime_protocols",
+          "function": "__init__",
+          "line": 125,
+          "reason": "the compiled version did not apply to the captured calls"
+        }
+      ]
+    },
+    {
+      "first_failure": "local functions/closure or unsupported signature",
+      "functions": 17,
+      "programs": 7,
+      "rows": [
+        {
+          "program": "async_generators",
+          "function": "bench_async_generators",
+          "line": 38,
+          "reason": "outside the supported subset: 'bench_async_generators' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 39,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 382,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "deltablue",
+          "function": "__init__",
+          "line": 92,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "nqueens",
+          "function": "bench_n_queens",
+          "line": 53,
+          "reason": "outside the supported subset: 'n_queens' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "nqueens",
+          "function": "n_queens",
+          "line": 34,
+          "reason": "outside the supported subset: 'n_queens' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "nqueens",
+          "function": "permutations",
+          "line": 9,
+          "reason": "outside the supported subset: 'permutations' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "pathlib",
+          "function": "generate_filenames",
+          "line": 20,
+          "reason": "outside the supported subset: 'generate_filenames' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "pidigits",
+          "function": "calc_ndigits",
+          "line": 51,
+          "reason": "outside the supported subset: 'gen_pi_digits' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "pidigits",
+          "function": "gen_pi_digits",
+          "line": 39,
+          "reason": "outside the supported subset: 'gen_pi_digits' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 315,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 341,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 281,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 258,
+          "reason": "outside the supported subset: '__init__' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_expand",
+          "line": 7,
+          "reason": "outside the supported subset: 'symbols' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_sum",
+          "line": 18,
+          "reason": "outside the supported subset: 'symbols' has a closure, keyword-only arguments, *args or is a generator"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_str",
+          "line": 23,
+          "reason": "outside the supported subset: 'symbols' has a closure, keyword-only arguments, *args or is a generator"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'pyperf' is not a numeric constant",
+      "functions": 17,
+      "programs": 6,
+      "rows": [
+        {
+          "program": "base64",
+          "function": "bench_b64_small",
+          "line": 68,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b64_large",
+          "line": 86,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_urlsafe_b64_small",
+          "line": 100,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b32_small",
+          "line": 120,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b32_large",
+          "line": 138,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b16_small",
+          "line": 152,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b16_large",
+          "line": 170,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_a85_small",
+          "line": 184,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_a85_large",
+          "line": 210,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b85_small",
+          "line": 228,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "base64",
+          "function": "bench_b85_large",
+          "line": 246,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "meteor_contest",
+          "function": "main",
+          "line": 212,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "bench_regex_v8",
+          "line": 1768,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "bench_regex_v8",
+          "line": 1768,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "sqlite_synth",
+          "function": "bench_sqlite",
+          "line": 30,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "do_unpacking",
+          "line": 6,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_list_unpacking",
+          "line": 421,
+          "reason": "outside the supported subset: global 'pyperf' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: keyword or starred argument at line 3",
+      "functions": 9,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_v8",
+          "function": "block2",
+          "line": 427,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block3",
+          "line": 490,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block4",
+          "line": 603,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block5",
+          "line": 675,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block6",
+          "line": 736,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block7",
+          "line": 828,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block10",
+          "line": 1162,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block11",
+          "line": 1316,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        },
+        {
+          "program": "yaml",
+          "function": "bench_yaml",
+          "line": 77,
+          "reason": "outside the supported subset: keyword or starred argument at line 3"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'strings' is not a numeric constant",
+      "functions": 5,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block6",
+          "line": 736,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block8",
+          "line": 896,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block9",
+          "line": 980,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block8",
+          "line": 896,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block9",
+          "line": 980,
+          "reason": "outside the supported subset: global 'strings' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'subcount' is not a numeric constant",
+      "functions": 5,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block2",
+          "line": 427,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block5",
+          "line": 675,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block7",
+          "line": 828,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block10",
+          "line": 1162,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block11",
+          "line": 1316,
+          "reason": "outside the supported subset: global 'subcount' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: constant None at line 2",
+      "functions": 4,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "gc_collect",
+          "function": "__init__",
+          "line": 9,
+          "reason": "outside the supported subset: constant None at line 2"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 165,
+          "reason": "outside the supported subset: constant None at line 2"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 79,
+          "reason": "outside the supported subset: constant None at line 2"
+        },
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 66,
+          "reason": "outside the supported subset: constant None at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'regexs' is not a numeric constant",
+      "functions": 4,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block0",
+          "line": 275,
+          "reason": "outside the supported subset: global 'regexs' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block1",
+          "line": 354,
+          "reason": "outside the supported subset: global 'regexs' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block0",
+          "line": 275,
+          "reason": "outside the supported subset: global 'regexs' is not a numeric constant"
+        },
+        {
+          "program": "regex_v8",
+          "function": "block1",
+          "line": 354,
+          "reason": "outside the supported subset: global 'regexs' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: call at line 2",
+      "functions": 3,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_dna",
+          "function": "init_benchmarks",
+          "line": 134,
+          "reason": "outside the supported subset: call at line 2"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_all",
+          "line": 427,
+          "reason": "outside the supported subset: call at line 2"
+        },
+        {
+          "program": "unpack_sequence",
+          "function": "bench_tuple_unpacking",
+          "line": 416,
+          "reason": "outside the supported subset: call at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "comparison rule: snapshot rule: class not proven pure Python (extension or dynamic type)",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "meteor_contest",
+          "function": "permute",
+          "line": 96,
+          "reason": "comparison rule: snapshot rule: class not proven pure Python (extension or dynamic type)"
+        },
+        {
+          "program": "sympy",
+          "function": "bench_sympy",
+          "line": 28,
+          "reason": "comparison rule: snapshot rule: class not proven pure Python (extension or dynamic type)"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: 'tree' returns a value on some paths and None on others",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "async_generators",
+          "function": "tree",
+          "line": 31,
+          "reason": "outside the supported subset: 'tree' returns a value on some paths and None on others"
+        },
+        {
+          "program": "generators",
+          "function": "tree",
+          "line": 29,
+          "reason": "outside the supported subset: 'tree' returns a value on some paths and None on others"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: FunctionDef at line 9",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "gen_string_table",
+          "line": 59,
+          "reason": "outside the supported subset: FunctionDef at line 9"
+        },
+        {
+          "program": "regex_effbot",
+          "function": "gen_string_table",
+          "line": 59,
+          "reason": "outside the supported subset: FunctionDef at line 9"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: Global at line 15",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "deltablue",
+          "function": "delta_blue",
+          "line": 626,
+          "reason": "outside the supported subset: Global at line 15"
+        },
+        {
+          "program": "deltablue",
+          "function": "chain_test",
+          "line": 513,
+          "reason": "outside the supported subset: Global at line 15"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: With at line 2",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "concurrent_imap",
+          "function": "bench_mp_pool",
+          "line": 13,
+          "reason": "outside the supported subset: With at line 2"
+        },
+        {
+          "program": "concurrent_imap",
+          "function": "bench_thread_pool",
+          "line": 19,
+          "reason": "outside the supported subset: With at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: comparison at line 2",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "bench_regex_effbot",
+          "line": 128,
+          "reason": "outside the supported subset: comparison at line 2"
+        },
+        {
+          "program": "regex_effbot",
+          "function": "bench_regex_effbot",
+          "line": 128,
+          "reason": "outside the supported subset: comparison at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: comparison at line 4",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 226,
+          "reason": "outside the supported subset: comparison at line 4"
+        },
+        {
+          "program": "hexiom",
+          "function": "clone",
+          "line": 231,
+          "reason": "outside the supported subset: comparison at line 4"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: constant None at line 3",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 47,
+          "reason": "outside the supported subset: constant None at line 3"
+        },
+        {
+          "program": "hexiom",
+          "function": "clone",
+          "line": 52,
+          "reason": "outside the supported subset: constant None at line 3"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'json' is not a numeric constant",
+      "functions": 2,
+      "programs": 2,
+      "rows": [
+        {
+          "program": "json_dumps",
+          "function": "bench_json_dumps",
+          "line": 19,
+          "reason": "outside the supported subset: global 'json' is not a numeric constant"
+        },
+        {
+          "program": "json_loads",
+          "function": "bench_json_loads",
+          "line": 72,
+          "reason": "outside the supported subset: global 'json' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 're' is not a numeric constant",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_compile",
+          "function": "block3",
+          "line": 490,
+          "reason": "outside the supported subset: global 're' is not a numeric constant"
+        },
+        {
+          "program": "regex_compile",
+          "function": "block4",
+          "line": 603,
+          "reason": "outside the supported subset: global 're' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "result differs from a captured call",
+      "functions": 2,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "richards_super",
+          "function": "fn",
+          "line": 344,
+          "reason": "result differs from a captured call"
+        },
+        {
+          "program": "richards_super",
+          "function": "release",
+          "line": 231,
+          "reason": "result differs from a captured call"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: 'Hex.__init__' does more than set attributes from its arguments",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "read_file",
+          "line": 471,
+          "reason": "outside the supported subset: 'Hex.__init__' does more than set attributes from its arguments"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: 'dst' may be read before assignment at line 25",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "deltablue",
+          "function": "projection_test",
+          "line": 561,
+          "reason": "outside the supported subset: 'dst' may be read before assignment at line 25"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: 'output' may be read before assignment at line 21",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "main",
+          "line": 621,
+          "reason": "outside the supported subset: 'output' may be read before assignment at line 21"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: 'res' may be read before assignment at line 9",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_dna",
+          "function": "bench_regex_dna",
+          "line": 187,
+          "reason": "outside the supported subset: 'res' may be read before assignment at line 9"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: 'result' may be read before assignment at line 11",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "mdp",
+          "function": "bench_mdp",
+          "line": 247,
+          "reason": "outside the supported subset: 'result' may be read before assignment at line 11"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: Assert at line 2",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "generators",
+          "function": "bench_generators",
+          "line": 36,
+          "reason": "outside the supported subset: Assert at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: ClassDef at line 3",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "deepcopy",
+          "function": "benchmark_reduce",
+          "line": 21,
+          "reason": "outside the supported subset: ClassDef at line 3"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: Dict at line 2",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "deltablue",
+          "function": "next_weaker",
+          "line": 66,
+          "reason": "outside the supported subset: Dict at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: Dict at line 3",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "deepcopy",
+          "function": "benchmark",
+          "line": 54,
+          "reason": "outside the supported subset: Dict at line 3"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: Dict at line 4",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "deepcopy",
+          "function": "benchmark_memo",
+          "line": 42,
+          "reason": "outside the supported subset: Dict at line 4"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: GeneratorExp at line 2",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "comprehensions",
+          "function": "_any_knobby",
+          "line": 35,
+          "reason": "outside the supported subset: GeneratorExp at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: assignment to an attribute of a call result at line 3",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "decimal_pi",
+          "function": "bench_decimal_pi",
+          "line": 38,
+          "reason": "outside the supported subset: assignment to an attribute of a call result at line 3"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: call at line 11",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "find_moves",
+          "line": 322,
+          "reason": "outside the supported subset: call at line 11"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: call at line 3",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "typing_runtime_protocols",
+          "function": "__init__",
+          "line": 119,
+          "reason": "outside the supported subset: call at line 3"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: call at line 6",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "meteor_contest",
+          "function": "convert",
+          "line": 107,
+          "reason": "outside the supported subset: call at line 6"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: call at line 8",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_dna",
+          "function": "make_cumulative",
+          "line": 45,
+          "reason": "outside the supported subset: call at line 8"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: comparison at line 6",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "meteor_contest",
+          "function": "get_senh",
+          "line": 126,
+          "reason": "outside the supported subset: comparison at line 6"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: comparison at line 7",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "constraint_pass",
+          "line": 237,
+          "reason": "outside the supported subset: comparison at line 7"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: comprehension at line 2",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "meteor_contest",
+          "function": "get_puzzle",
+          "line": 135,
+          "reason": "outside the supported subset: comprehension at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: comprehension at line 4",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "chaos",
+          "function": "__init__",
+          "line": 147,
+          "reason": "outside the supported subset: comprehension at line 4"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: constant None at line 4",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "hexiom",
+          "function": "__init__",
+          "line": 182,
+          "reason": "outside the supported subset: constant None at line 4"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: constant None at line 5",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "gc_traversal",
+          "function": "benchamark_collection",
+          "line": 19,
+          "reason": "outside the supported subset: constant None at line 5"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: constant b'>.*\\n|\\n' at line 4",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "regex_dna",
+          "function": "run_benchmarks",
+          "line": 171,
+          "reason": "outside the supported subset: constant b'>.*\\n|\\n' at line 4"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'HasX' is not a numeric constant",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "typing_runtime_protocols",
+          "function": "bench_protocols",
+          "line": 151,
+          "reason": "outside the supported subset: global 'HasX' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'WidgetKind' is not a numeric constant",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "comprehensions",
+          "function": "bench_comprehensions",
+          "line": 82,
+          "reason": "outside the supported subset: global 'WidgetKind' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'decimal' is not a numeric constant",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "decimal_factorial",
+          "function": "bench_decimal_factorial",
+          "line": 34,
+          "reason": "outside the supported subset: global 'decimal' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'gc' is not a numeric constant",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "gc_collect",
+          "function": "benchamark_collection",
+          "line": 44,
+          "reason": "outside the supported subset: global 'gc' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'pathlib' is not a numeric constant",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "pathlib",
+          "function": "bench_pathlib",
+          "line": 38,
+          "reason": "outside the supported subset: global 'pathlib' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'taskWorkArea' is not a numeric constant",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "richards_super",
+          "function": "__init__",
+          "line": 179,
+          "reason": "outside the supported subset: global 'taskWorkArea' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: global 'tempfile' is not a numeric constant",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "pathlib",
+          "function": "setup",
+          "line": 29,
+          "reason": "outside the supported subset: global 'tempfile' is not a numeric constant"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: keyword or starred argument at line 2",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "json_dumps",
+          "function": "main",
+          "line": 30,
+          "reason": "outside the supported subset: keyword or starred argument at line 2"
+        }
+      ]
+    },
+    {
+      "first_failure": "outside the supported subset: keyword or starred argument at line 6",
+      "functions": 1,
+      "programs": 1,
+      "rows": [
+        {
+          "program": "sqlalchemy_declarative",
+          "function": "bench_sqlalchemy",
+          "line": 58,
+          "reason": "outside the supported subset: keyword or starred argument at line 6"
+        }
+      ]
+    }
+  ],
+  "note": "Derived from fresh complete postcommit cohort; uncaptured definitions are not ranked as compiler failures, remain non-native in denominator."
+}

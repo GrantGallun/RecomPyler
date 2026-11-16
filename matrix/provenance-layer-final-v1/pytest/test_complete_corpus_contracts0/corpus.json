@@ -1,0 +1,888 @@
+[
+  {
+    "file": "wave16-inplace-callable.py",
+    "function": "warm_no_python_entry",
+    "sha256": "d0043559f53d3c0592462c723c75314a6c81784f174f6700164ebfad0f7d3728",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-callable.py",
+    "function": "checked_integer_overflow",
+    "sha256": "d0043559f53d3c0592462c723c75314a6c81784f174f6700164ebfad0f7d3728",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "field_aliases",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "field_phi",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "field_loop",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "shared_fresh_producer",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "distinct_equal_producers",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "dynamic_producer",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "returned_before_finally",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "first_equal_minimum",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-direct.py",
+    "function": "surviving_store_alias",
+    "sha256": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-numeric-observers.py",
+    "function": "numeric_dict_identity",
+    "sha256": "cfe60af463f26b8870c2521c3ac6796cd295dd447002717ab4e86096d519d004",
+    "verdict": "declined",
+    "reason": "result origin/aggregate requires tagged or typed materialization"
+  },
+  {
+    "file": "wave16-inplace-numeric-observers.py",
+    "function": "numeric_set_identity",
+    "sha256": "cfe60af463f26b8870c2521c3ac6796cd295dd447002717ab4e86096d519d004",
+    "verdict": "declined",
+    "reason": "result origin/aggregate requires tagged or typed materialization"
+  },
+  {
+    "file": "wave16-inplace-numeric-observers.py",
+    "function": "numeric_identity",
+    "sha256": "cfe60af463f26b8870c2521c3ac6796cd295dd447002717ab4e86096d519d004",
+    "verdict": "declined",
+    "reason": "result origin/aggregate requires tagged or typed materialization"
+  },
+  {
+    "file": "wave16-inplace-numeric-observers.py",
+    "function": "mixed_numeric_identity",
+    "sha256": "cfe60af463f26b8870c2521c3ac6796cd295dd447002717ab4e86096d519d004",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-numeric-observers.py",
+    "function": "indexed_numeric_identity",
+    "sha256": "cfe60af463f26b8870c2521c3ac6796cd295dd447002717ab4e86096d519d004",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-numeric-observers.py",
+    "function": "chained_numeric_identity",
+    "sha256": "cfe60af463f26b8870c2521c3ac6796cd295dd447002717ab4e86096d519d004",
+    "verdict": "declined",
+    "reason": "result origin/aggregate requires tagged or typed materialization"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "forward_integer",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "forward_float",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "unary_positive_integer",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "unary_positive_float",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "exact_float_conversion",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "positive_integer_absolute",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "code_integer_constant",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "code_float_constant",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "folded_integer_constant",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "existing_fresh_selection",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "forwarded_negative_zero",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave16-inplace-numeric.py",
+    "function": "forwarded_nan",
+    "sha256": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "numeric_identity": "S49-exempt",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-followups.py",
+    "function": "discarded_format",
+    "sha256": "49d8c1e212e3a7f5ca10de56bf7fe9307b223b9582d69d4a02e96c6431a1588c",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-followups.py",
+    "function": "keyword_expansion",
+    "sha256": "49d8c1e212e3a7f5ca10de56bf7fe9307b223b9582d69d4a02e96c6431a1588c",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-followups.py",
+    "function": "starred_unpack",
+    "sha256": "49d8c1e212e3a7f5ca10de56bf7fe9307b223b9582d69d4a02e96c6431a1588c",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "shared_allocation",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "distinct_allocations",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "dynamic_allocation_site",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "dynamic_last_two",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "branch_alias",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "return_aggregate_escape",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "store_aggregate_escape",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "call_aggregate_escape",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "sibling_call_invalidation",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "aliased_external_store",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "dynamic_attribute",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "overloaded_add_selects_left",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "singleton_comparison",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "result origin/aggregate requires tagged or typed materialization"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "possible_numeric_observation",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "result origin/aggregate requires tagged or typed materialization"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "indirect_numeric_observation",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "numeric_bool_type",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "break_skips_else",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "for_target_store",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "finally_overrides_return",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "walrus_store",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "nested_function_scope",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "folded_original_constant",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "joined_aggregate_escape",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "mutable_children_after_call",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "annotation_without_value",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "repeated_while_observation",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "mutable_children_after_store",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "selected_structural_child_escape",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "raised_argument_escape",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "varargs_origin",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "variadic parameters require an explicit provenance binding"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "kwargs_origin",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "variadic parameters require an explicit provenance binding"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "subscript_key_observation",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "augmented_operator_escape",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "implicit_truth_callback",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "dictionary_hash_callback",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "set_hash_callback",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "starred_iteration_callback",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "raised_class_callback",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "set_unpack_order",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "dict_unpack_members",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "mapping_expansion_order",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "starred_unpack_positions",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-review.py",
+    "function": "mixed_numeric_text_result",
+    "sha256": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "for_target_store",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "for_else_owner",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "while_else_owner",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "global_owner_rebinding",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "declined",
+    "reason": "result origin/aggregate requires tagged or typed materialization"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "helper_import_callback",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "active_observer_events",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "store_before_break",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "nested_tuple_alias",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "original_code_tuple",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "independent_characters",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave17-matrix-unicode.py",
+    "function": "shared_character",
+    "sha256": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "code_constant_float",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "code_constant_integer",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "discarded_helper_selected_input",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "early_selected_input",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "constant_alias",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "input_alias",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "record_add_selection",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "record_neg_selection",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "nested_record_selection",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "discarded_record_effect",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "remainder_selected_input",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "borrowed_list_surviving_owner",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "nonlocal_fresh_update",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "nonlocal_old_alias",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "nonlocal_late_shared_read",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "nonlocal_rebind_and_snapshot",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "nonlocal_unbound_cell",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "nonlocal_subclass_iadd",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "fresh_alias",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "literal_actual_runtime",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-owners.py",
+    "function": "numeric_identity",
+    "sha256": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "verdict": "declined",
+    "reason": "control flow or closure requires an explicit provenance transfer"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "public_range_identity",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "nested_range_return",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "verdict": "proved",
+    "contract": "CPython original owner and aggregate alias graph; S49 exact type/value"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "borrowed_range_store",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "field_range_store",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "range_identity_query",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "verdict": "declined",
+    "reason": "result origin/aggregate requires tagged or typed materialization"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "generator_range_escape",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "verdict": "declined",
+    "reason": "instruction positions differ from original source"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "ignored_range_selected_input",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "repeated_iteration_numeric_alias",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "longrange_first_owner",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-range-escapes.py",
+    "function": "constructed_longrange_first_owner",
+    "sha256": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-s49-review.py",
+    "function": "repeated_range_literal",
+    "sha256": "48913b33310d30c289bc8262ac7c59af9883010037673c6e764a90e39e05982d",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-s49-review.py",
+    "function": "repeated_range_local",
+    "sha256": "48913b33310d30c289bc8262ac7c59af9883010037673c6e764a90e39e05982d",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-s49-review.py",
+    "function": "temporary_range_tuple_owner",
+    "sha256": "48913b33310d30c289bc8262ac7c59af9883010037673c6e764a90e39e05982d",
+    "numeric_identity": "S49-exempt",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-s49-review.py",
+    "function": "selected_tuple",
+    "sha256": "48913b33310d30c289bc8262ac7c59af9883010037673c6e764a90e39e05982d",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  },
+  {
+    "file": "wave18-lift-s49-review.py",
+    "function": "tuple_in_mutated_list",
+    "sha256": "48913b33310d30c289bc8262ac7c59af9883010037673c6e764a90e39e05982d",
+    "verdict": "declined",
+    "reason": "unresolved callback/effect requires exact guarded consumer proof"
+  }
+]

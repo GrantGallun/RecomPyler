@@ -1,0 +1,58 @@
+"""S32 existing-nopython/AOT boundary around hand-translated C helpers.
+This is a bridge-to-hand-C diagnostic, not an automatic source/buffer lowering.
+"""
+from pathlib import Path
+import sys
+R=Path(__file__).resolve().parents[2]
+sys.path[:0]=[str(R/'matrix/extension'),str(R/'matrix/temp/ceilings')]
+from llvmlite import ir
+from numba import njit,types
+from numba.core import cgutils
+from numba.extending import intrinsic
+from managed import managed,opaque,propagate_active
+import wave17_ceiling_bytes as ext
+
+def make_bridge(name,arity):
+    target=getattr(ext,name)
+    def define_intrinsic(typing_context,*argtypes):
+        if any(t!=managed for t in argtypes):return
+        result_type=types.Tuple((managed,types.boolean));sig=result_type(*argtypes)
+        def codegen(context,builder,signature,args):
+            py=context.get_python_api(builder);null=ir.Constant(py.pyobj,None)
+            slots=[cgutils.alloca_once_value(builder,null) for _ in range(3)]
+            out=cgutils.create_struct_proxy(managed)(context,builder);out.meminfo=ir.Constant(context.get_value_type(types.MemInfoPointer(opaque)),None)
+            output=cgutils.alloca_once_value(builder,out._getvalue());ok=cgutils.alloca_once_value(builder,ir.Constant(ir.IntType(1),0));cleanup=builder.append_basic_block('bridge.cleanup')
+            def checked(obj,slot):
+                builder.store(obj,slot)
+                with builder.if_then(cgutils.is_null(builder,obj),likely=False):builder.branch(cleanup)
+                return obj
+            fn=checked(py.unserialize(py.serialize_object(target)),slots[0])
+            objects=[context.nrt.meminfo_data(builder,cgutils.create_struct_proxy(managed)(context,builder,value=value).meminfo) for value in args]
+            packed=checked(py.tuple_pack(objects),slots[1])
+            result=checked(py.call(fn,packed,null),slots[2])
+            owner=py.nrt_meminfo_new_from_pyobject(result,result)
+            with builder.if_else(cgutils.is_null(builder,owner),likely=False) as (bad,good):
+                with bad:py.decref(result);py.err_set_string('PyExc_MemoryError','managed bridge allocation failed')
+                with good:out.meminfo=owner;builder.store(out._getvalue(),output);builder.store(ir.Constant(ir.IntType(1),1),ok)
+            builder.branch(cleanup);builder.position_at_end(cleanup)
+            for slot in reversed(slots):py.decref(builder.load(slot))
+            return context.make_tuple(builder,result_type,[builder.load(output),builder.load(ok)])
+        return sig,codegen
+    params=','.join('a'+str(i) for i in range(arity))
+    intrinsic_namespace={'_define':define_intrinsic}
+    exec('def invoke(typing_context,'+params+'):\n    return _define(typing_context,'+params+')\n',intrinsic_namespace)
+    invoke=intrinsic(intrinsic_namespace['invoke'])
+    namespace={'__name__':__name__,'__file__':__file__,'_invoke':invoke,'_propagate':propagate_active}
+    exec('def '+name+'('+params+'):\n    result,ok=_invoke('+params+')\n    if ok:return result\n    _propagate()\n    return result\n',namespace)
+    return namespace[name],managed(*([managed]*arity))
+
+SPECS=[('a85_boxed',1),('a85_borrowed',1),('b32_boxed',2),('b32_borrowed',2),('encode_boxed',6),('encode_borrowed',6)]
+def compile_bridges():
+    from recompyler._pycc import CC
+    folder=R/'matrix/temp/bytes_bridge';folder.mkdir(exist_ok=True)
+    cc=CC('wave17_bytes_bridge');cc.output_dir=str(folder);entries={};dispatchers={}
+    for name,arity in SPECS:
+        fn,sig=make_bridge(name,arity);dispatcher=njit(sig)(fn);dispatchers[name]=dispatcher;entries[name]=next(iter(dispatcher.overloads.values())).entry_point
+        cc.export(name,sig)(fn)
+    cc.compile();sys.path.insert(0,str(folder));import wave17_bytes_bridge as aot
+    return entries,dispatchers,aot

@@ -1,0 +1,2033 @@
+START statement.if_else
+1 1016 statement.if_else native 
+START statement.for_else
+2 1016 statement.for_else native 
+START statement.for_break
+3 1016 statement.for_break native 
+START statement.while_else
+4 1016 statement.while_else native 
+START statement.while_break
+5 1016 statement.while_break native 
+START statement.continue
+6 1016 statement.continue native 
+START statement.pass
+7 1016 statement.pass native 
+START statement.assert
+8 1016 statement.assert native 
+START statement.assert_error
+9 1016 statement.assert_error declined Assert at line 2; runtime guard at ('construct', 10)
+START statement.raise
+10 1016 statement.raise declined runtime guard at ('construct', 10)
+START statement.raise_from
+11 1016 statement.raise_from declined runtime guard at ('construct', 10)
+START statement.raise_reraise
+12 1016 statement.raise_reraise declined Try at line 2; runtime guard at ('construct', 11)
+START statement.try_except
+13 1016 statement.try_except declined as a region: it handed every captured call back to Python
+START statement.try_else
+14 1016 statement.try_else native 
+START statement.try_finally
+15 1016 statement.try_finally native 
+START statement.try_all
+16 1016 statement.try_all native 
+START statement.except_star
+17 1016 statement.except_star declined as a region: TryStar at line 3 of 'construct'
+START statement.with_single
+18 1016 statement.with_single declined as a region: With at line 2 of 'construct'
+START statement.with_multiple
+19 1016 statement.with_multiple declined as a region: With at line 2 of 'construct'
+START statement.global
+20 1016 statement.global declined as a region: 'construct' declares globals or defines functions inside itself
+START statement.nonlocal
+21 1016 statement.nonlocal declined as a region: 'construct' declares globals or defines functions inside itself
+START statement.del_name
+22 1016 statement.del_name declined as a region: this del at line 3 of 'construct'
+START statement.del_item
+23 1016 statement.del_item declined as a region: del of an item of list[int] at line 3 of 'construct'
+START statement.del_slice
+24 1016 statement.del_slice declined as a region: this del at line 3 of 'construct'
+START statement.del_attr
+25 1016 statement.del_attr declined as a region: this del at line 3 of 'construct'
+START statement.import
+26 1016 statement.import declined as a region: Import at line 2 of 'construct'
+START statement.import_alias
+27 1016 statement.import_alias declined as a region: Import at line 2 of 'construct'
+START statement.import_from
+28 1016 statement.import_from declined as a region: ImportFrom at line 2 of 'construct'
+START statement.import_from_alias
+29 1016 statement.import_from_alias declined as a region: ImportFrom at line 2 of 'construct'
+START statement.class
+30 1016 statement.class declined as a region: 'construct' declares globals or defines functions inside itself
+START statement.function_def
+31 1016 statement.function_def declined as a region: 'construct' declares globals or defines functions inside itself
+START statement.annotated_assign
+32 1016 statement.annotated_assign declined as a region: AnnAssign at line 2 of 'construct'
+START statement.annotation_only
+33 1016 statement.annotation_only declined as a region: AnnAssign at line 2 of 'construct'
+START statement.yield
+34 1016 statement.yield native 
+START statement.yield_from
+35 1016 statement.yield_from native 
+START statement.lambda
+36 1016 statement.lambda declined as a region: 'construct' declares globals or defines functions inside itself
+START statement.boolean_roles
+37 1016 statement.boolean_roles native 
+START statement.none
+38 1016 statement.none native 
+START statement.return
+39 1016 statement.return native 
+START statement.elif
+40 1016 statement.elif native 
+START statement.not
+41 1016 statement.not native 
+START statement.type_alias
+42 1016 statement.type_alias declined as a region: TypeAlias at line 2 of 'construct'
+START statement.type_parameters
+43 1016 statement.type_parameters declined as a region: TypeAlias at line 2 of 'construct'
+START statement.type_var_tuple
+44 1016 statement.type_var_tuple declined as a region: TypeAlias at line 2 of 'construct'
+START statement.param_spec
+45 1016 statement.param_spec declined as a region: TypeAlias at line 2 of 'construct'
+START statement.walrus
+46 1016 statement.walrus declined as a region: NamedExpr at line 2 of 'construct'
+START statement.conditional
+47 1016 statement.conditional native 
+START statement.unpack_assign
+48 1016 statement.unpack_assign native 
+START statement.star_assign
+49 1016 statement.star_assign declined as a region: unpacking list[int] into 2 names at line 2 of 'construct'
+START pattern.value
+50 1016 pattern.value declined as a region: Match at line 2 of 'construct'
+START pattern.singleton
+51 1016 pattern.singleton declined as a region: Match at line 2 of 'construct'
+START pattern.sequence
+52 1016 pattern.sequence declined as a region: Match at line 2 of 'construct'
+START pattern.mapping
+53 1016 pattern.mapping declined as a region: Match at line 2 of 'construct'
+START pattern.class
+54 1016 pattern.class declined as a region: Match at line 2 of 'construct'
+START pattern.star
+55 1016 pattern.star declined as a region: Match at line 2 of 'construct'
+START pattern.as
+56 1016 pattern.as declined as a region: Match at line 2 of 'construct'
+START pattern.or
+57 1016 pattern.or declined as a region: Match at line 2 of 'construct'
+START pattern.wildcard
+58 1016 pattern.wildcard declined as a region: Match at line 2 of 'construct'
+START pattern.guard
+59 1016 pattern.guard declined as a region: Match at line 2 of 'construct'
+START async.async_def
+60 1016 async.async_def native 
+START async.await
+61 1016 async.await native 
+START async.async_for
+62 1016 async.async_for declined as a region: async for over something other than an async generator at line 3 of 'construct'
+START async.async_with
+63 1016 async.async_with declined as a region: 'construct' uses async with, or yield outside a generator
+START async.async_comprehension
+64 1016 async.async_comprehension declined as a region: an async comprehension in 'construct'
+START async.async_generator
+65 1016 async.async_generator native 
+START operator.int.binary0
+66 1016 operator.int.binary0 native 
+START operator.int.augmented0
+67 1016 operator.int.augmented0 native 
+START operator.int.binary1
+68 1016 operator.int.binary1 native 
+START operator.int.augmented1
+69 1016 operator.int.augmented1 native 
+START operator.int.binary2
+70 1016 operator.int.binary2 native 
+START operator.int.augmented2
+71 1016 operator.int.augmented2 native 
+START operator.int.binary3
+72 1016 operator.int.binary3 native 
+START operator.int.augmented3
+73 1016 operator.int.augmented3 native 
+START operator.int.binary4
+74 1016 operator.int.binary4 native 
+START operator.int.augmented4
+75 1016 operator.int.augmented4 native 
+START operator.int.binary5
+76 1016 operator.int.binary5 native 
+START operator.int.augmented5
+77 1016 operator.int.augmented5 native 
+START operator.int.binary6
+78 1016 operator.int.binary6 native 
+START operator.int.augmented6
+79 1016 operator.int.augmented6 native 
+START operator.int.binary7
+80 1016 operator.int.binary7 native 
+START operator.int.augmented7
+81 1016 operator.int.augmented7 native 
+START operator.int.binary8
+82 1016 operator.int.binary8 native 
+START operator.int.augmented8
+83 1016 operator.int.augmented8 native 
+START operator.int.binary9
+84 1016 operator.int.binary9 native 
+START operator.int.augmented9
+85 1016 operator.int.augmented9 native 
+START operator.int.binary10
+86 1016 operator.int.binary10 native 
+START operator.int.augmented10
+87 1016 operator.int.augmented10 native 
+START operator.int.binary11
+88 1016 operator.int.binary11 native 
+START operator.int.augmented11
+89 1016 operator.int.augmented11 native 
+START operator.int.binary12
+90 1016 operator.int.binary12 declined operator MatMult at line 2; operator MatMult on int and int at line 2 of 'construct'
+START operator.int.augmented12
+91 1016 operator.int.augmented12 declined operator MatMult at line 2; operator MatMult on int and int at line 2 of 'construct'
+START operator.int.compare0
+92 1016 operator.int.compare0 native 
+START operator.int.compare1
+93 1016 operator.int.compare1 native 
+START operator.int.compare2
+94 1016 operator.int.compare2 native 
+START operator.int.compare3
+95 1016 operator.int.compare3 native 
+START operator.int.compare4
+96 1016 operator.int.compare4 native 
+START operator.int.compare5
+97 1016 operator.int.compare5 native 
+START operator.int.compare6
+98 1016 operator.int.compare6 declined as a region: this comparison at line 2 of 'construct'
+START operator.int.compare7
+99 1016 operator.int.compare7 declined as a region: this comparison at line 2 of 'construct'
+START operator.int.compare8
+100 1016 operator.int.compare8 declined comparison at line 2; 'in' on int at line 2 of 'construct'
+START operator.int.compare9
+101 1016 operator.int.compare9 declined comparison at line 2; 'in' on int at line 2 of 'construct'
+START operator.int.unary0
+102 1016 operator.int.unary0 native 
+START operator.int.unary1
+103 1016 operator.int.unary1 native 
+START operator.int.unary2
+104 1016 operator.int.unary2 native 
+START operator.int.unary3
+105 1016 operator.int.unary3 native 
+START operator.int.chain
+106 1016 operator.int.chain native 
+START operator.int.and
+107 1016 operator.int.and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.int.or
+108 1016 operator.int.or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.float.binary0
+109 1016 operator.float.binary0 native 
+START operator.float.augmented0
+110 1016 operator.float.augmented0 native 
+START operator.float.binary1
+111 1016 operator.float.binary1 native 
+START operator.float.augmented1
+112 1016 operator.float.augmented1 native 
+START operator.float.binary2
+113 1016 operator.float.binary2 native 
+START operator.float.augmented2
+114 1016 operator.float.augmented2 native 
+START operator.float.binary3
+115 1016 operator.float.binary3 native 
+START operator.float.augmented3
+116 1016 operator.float.augmented3 native 
+START operator.float.binary4
+117 1016 operator.float.binary4 native 
+START operator.float.augmented4
+118 1016 operator.float.augmented4 native 
+START operator.float.binary5
+119 1016 operator.float.binary5 native 
+START operator.float.augmented5
+120 1016 operator.float.augmented5 native 
+START operator.float.binary6
+121 1016 operator.float.binary6 native 
+START operator.float.augmented6
+122 1016 operator.float.augmented6 native 
+START operator.float.binary7
+123 1016 operator.float.binary7 declined operator LShift on float and float at line 2 of 'construct'
+START operator.float.augmented7
+124 1016 operator.float.augmented7 declined operator LShift on float and float at line 2 of 'construct'
+START operator.float.binary8
+125 1016 operator.float.binary8 declined operator RShift on float and float at line 2 of 'construct'
+START operator.float.augmented8
+126 1016 operator.float.augmented8 declined operator RShift on float and float at line 2 of 'construct'
+START operator.float.binary9
+127 1016 operator.float.binary9 declined operator BitAnd on float and float at line 2 of 'construct'
+START operator.float.augmented9
+128 1016 operator.float.augmented9 declined operator BitAnd on float and float at line 2 of 'construct'
+START operator.float.binary10
+129 1016 operator.float.binary10 declined operator BitOr on float and float at line 2 of 'construct'
+START operator.float.augmented10
+130 1016 operator.float.augmented10 declined operator BitOr on float and float at line 2 of 'construct'
+START operator.float.binary11
+131 1016 operator.float.binary11 declined operator BitXor on float and float at line 2 of 'construct'
+START operator.float.augmented11
+132 1016 operator.float.augmented11 declined operator BitXor on float and float at line 2 of 'construct'
+START operator.float.binary12
+133 1016 operator.float.binary12 declined operator MatMult at line 2; operator MatMult on float and float at line 2 of 'construct'
+START operator.float.augmented12
+134 1016 operator.float.augmented12 declined operator MatMult at line 2; operator MatMult on float and float at line 2 of 'construct'
+START operator.float.compare0
+135 1016 operator.float.compare0 native 
+START operator.float.compare1
+136 1016 operator.float.compare1 native 
+START operator.float.compare2
+137 1016 operator.float.compare2 native 
+START operator.float.compare3
+138 1016 operator.float.compare3 native 
+START operator.float.compare4
+139 1016 operator.float.compare4 native 
+START operator.float.compare5
+140 1016 operator.float.compare5 native 
+START operator.float.compare6
+141 1016 operator.float.compare6 declined as a region: this comparison at line 2 of 'construct'
+START operator.float.compare7
+142 1016 operator.float.compare7 declined as a region: this comparison at line 2 of 'construct'
+START operator.float.compare8
+143 1016 operator.float.compare8 declined comparison at line 2; 'in' on float at line 2 of 'construct'
+START operator.float.compare9
+144 1016 operator.float.compare9 declined comparison at line 2; 'in' on float at line 2 of 'construct'
+START operator.float.unary0
+145 1016 operator.float.unary0 native 
+START operator.float.unary1
+146 1016 operator.float.unary1 native 
+START operator.float.unary2
+147 1016 operator.float.unary2 declined this unary operator at line 2 of 'construct'
+START operator.float.unary3
+148 1016 operator.float.unary3 native 
+START operator.float.chain
+149 1016 operator.float.chain native 
+START operator.float.and
+150 1016 operator.float.and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.float.or
+151 1016 operator.float.or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.bool.binary0
+152 1016 operator.bool.binary0 native 
+START operator.bool.augmented0
+153 1016 operator.bool.augmented0 native 
+START operator.bool.binary1
+154 1016 operator.bool.binary1 native 
+START operator.bool.augmented1
+155 1016 operator.bool.augmented1 native 
+START operator.bool.binary2
+156 1016 operator.bool.binary2 native 
+START operator.bool.augmented2
+157 1016 operator.bool.augmented2 native 
+START operator.bool.binary3
+158 1016 operator.bool.binary3 declined runtime guard at ('construct', 3)
+START operator.bool.augmented3
+159 1016 operator.bool.augmented3 declined one value can be bool or float
+START operator.bool.binary4
+160 1016 operator.bool.binary4 declined capture snapshot or runtime type guard declined
+START operator.bool.augmented4
+161 1016 operator.bool.augmented4 declined one value can be bool or int
+START operator.bool.binary5
+162 1016 operator.bool.binary5 declined capture snapshot or runtime type guard declined
+START operator.bool.augmented5
+163 1016 operator.bool.augmented5 declined one value can be bool or int
+START operator.bool.binary6
+164 1016 operator.bool.binary6 native 
+START operator.bool.augmented6
+165 1016 operator.bool.augmented6 native 
+START operator.bool.binary7
+166 1016 operator.bool.binary7 native 
+START operator.bool.augmented7
+167 1016 operator.bool.augmented7 native 
+START operator.bool.binary8
+168 1016 operator.bool.binary8 native 
+START operator.bool.augmented8
+169 1016 operator.bool.augmented8 native 
+START operator.bool.binary9
+170 1016 operator.bool.binary9 native 
+START operator.bool.augmented9
+171 1016 operator.bool.augmented9 native 
+START operator.bool.binary10
+172 1016 operator.bool.binary10 native 
+START operator.bool.augmented10
+173 1016 operator.bool.augmented10 native 
+START operator.bool.binary11
+174 1016 operator.bool.binary11 native 
+START operator.bool.augmented11
+175 1016 operator.bool.augmented11 native 
+START operator.bool.binary12
+176 1016 operator.bool.binary12 declined operator MatMult at line 2; operator MatMult on bool and bool at line 2 of 'construct'
+START operator.bool.augmented12
+177 1016 operator.bool.augmented12 declined operator MatMult at line 2; operator MatMult on bool and bool at line 2 of 'construct'
+START operator.bool.compare0
+178 1016 operator.bool.compare0 native 
+START operator.bool.compare1
+179 1016 operator.bool.compare1 native 
+START operator.bool.compare2
+180 1016 operator.bool.compare2 native 
+START operator.bool.compare3
+181 1016 operator.bool.compare3 native 
+START operator.bool.compare4
+182 1016 operator.bool.compare4 native 
+START operator.bool.compare5
+183 1016 operator.bool.compare5 native 
+START operator.bool.compare6
+184 1016 operator.bool.compare6 declined as a region: this comparison at line 2 of 'construct'
+START operator.bool.compare7
+185 1016 operator.bool.compare7 declined as a region: this comparison at line 2 of 'construct'
+START operator.bool.compare8
+186 1016 operator.bool.compare8 declined comparison at line 2; 'in' on bool at line 2 of 'construct'
+START operator.bool.compare9
+187 1016 operator.bool.compare9 declined comparison at line 2; 'in' on bool at line 2 of 'construct'
+START operator.bool.unary0
+188 1016 operator.bool.unary0 native 
+START operator.bool.unary1
+189 1016 operator.bool.unary1 native 
+START operator.bool.unary2
+190 1016 operator.bool.unary2 native 
+START operator.bool.unary3
+191 1016 operator.bool.unary3 native 
+START operator.bool.chain
+192 1016 operator.bool.chain native 
+START operator.bool.and
+193 1016 operator.bool.and native 
+START operator.bool.or
+194 1016 operator.bool.or native 
+START operator.complex.binary0
+195 1016 operator.complex.binary0 declined as a region: an argument of type complex
+START operator.complex.augmented0
+196 1016 operator.complex.augmented0 declined as a region: an argument of type complex
+START operator.complex.binary1
+197 1016 operator.complex.binary1 declined as a region: an argument of type complex
+START operator.complex.augmented1
+198 1016 operator.complex.augmented1 declined as a region: an argument of type complex
+START operator.complex.binary2
+199 1016 operator.complex.binary2 declined as a region: an argument of type complex
+START operator.complex.augmented2
+200 1016 operator.complex.augmented2 declined as a region: an argument of type complex
+START operator.complex.binary3
+201 1016 operator.complex.binary3 declined as a region: an argument of type complex
+START operator.complex.augmented3
+202 1016 operator.complex.augmented3 declined as a region: an argument of type complex
+START operator.complex.binary4
+203 1016 operator.complex.binary4 declined an argument of type complex
+START operator.complex.augmented4
+204 1016 operator.complex.augmented4 declined an argument of type complex
+START operator.complex.binary5
+205 1016 operator.complex.binary5 declined an argument of type complex
+START operator.complex.augmented5
+206 1016 operator.complex.augmented5 declined an argument of type complex
+START operator.complex.binary6
+207 1016 operator.complex.binary6 declined as a region: an argument of type complex
+START operator.complex.augmented6
+208 1016 operator.complex.augmented6 declined as a region: an argument of type complex
+START operator.complex.binary7
+209 1016 operator.complex.binary7 declined an argument of type complex
+START operator.complex.augmented7
+210 1016 operator.complex.augmented7 declined an argument of type complex
+START operator.complex.binary8
+211 1016 operator.complex.binary8 declined an argument of type complex
+START operator.complex.augmented8
+212 1016 operator.complex.augmented8 declined an argument of type complex
+START operator.complex.binary9
+213 1016 operator.complex.binary9 declined an argument of type complex
+START operator.complex.augmented9
+214 1016 operator.complex.augmented9 declined an argument of type complex
+START operator.complex.binary10
+215 1016 operator.complex.binary10 declined an argument of type complex
+START operator.complex.augmented10
+216 1016 operator.complex.augmented10 declined an argument of type complex
+START operator.complex.binary11
+217 1016 operator.complex.binary11 declined an argument of type complex
+START operator.complex.augmented11
+218 1016 operator.complex.augmented11 declined an argument of type complex
+START operator.complex.binary12
+219 1016 operator.complex.binary12 declined operator MatMult at line 2; an argument of type complex
+START operator.complex.augmented12
+220 1016 operator.complex.augmented12 declined operator MatMult at line 2; an argument of type complex
+START operator.complex.compare0
+221 1016 operator.complex.compare0 declined as a region: an argument of type complex
+START operator.complex.compare1
+222 1016 operator.complex.compare1 declined as a region: an argument of type complex
+START operator.complex.compare2
+223 1016 operator.complex.compare2 declined an argument of type complex
+START operator.complex.compare3
+224 1016 operator.complex.compare3 declined an argument of type complex
+START operator.complex.compare4
+225 1016 operator.complex.compare4 declined an argument of type complex
+START operator.complex.compare5
+226 1016 operator.complex.compare5 declined an argument of type complex
+START operator.complex.compare6
+227 1016 operator.complex.compare6 declined as a region: an argument of type complex
+START operator.complex.compare7
+228 1016 operator.complex.compare7 declined as a region: an argument of type complex
+START operator.complex.compare8
+229 1016 operator.complex.compare8 declined comparison at line 2; an argument of type complex
+START operator.complex.compare9
+230 1016 operator.complex.compare9 declined comparison at line 2; an argument of type complex
+START operator.complex.unary0
+231 1016 operator.complex.unary0 declined as a region: an argument of type complex
+START operator.complex.unary1
+232 1016 operator.complex.unary1 declined as a region: an argument of type complex
+START operator.complex.unary2
+233 1016 operator.complex.unary2 declined an argument of type complex
+START operator.complex.unary3
+234 1016 operator.complex.unary3 declined as a region: an argument of type complex
+START operator.complex.chain
+235 1016 operator.complex.chain declined as a region: an argument of type complex
+START operator.complex.and
+236 1016 operator.complex.and declined as a region: an argument of type complex
+START operator.complex.or
+237 1016 operator.complex.or declined as a region: an argument of type complex
+START operator.str.binary0
+238 1016 operator.str.binary0 native 
+START operator.str.augmented0
+239 1016 operator.str.augmented0 native 
+START operator.str.binary1
+240 1016 operator.str.binary1 declined operator Sub on str and str at line 2 of 'construct'
+START operator.str.augmented1
+241 1016 operator.str.augmented1 declined operator Sub on str and str at line 2 of 'construct'
+START operator.str.binary2
+242 1016 operator.str.binary2 declined operator Mult on str and str at line 2 of 'construct'
+START operator.str.augmented2
+243 1016 operator.str.augmented2 declined operator Mult on str and str at line 2 of 'construct'
+START operator.str.binary3
+244 1016 operator.str.binary3 declined operator Div on str and str at line 2 of 'construct'
+START operator.str.augmented3
+245 1016 operator.str.augmented3 declined operator Div on str and str at line 2 of 'construct'
+START operator.str.binary4
+246 1016 operator.str.binary4 declined operator FloorDiv on str and str at line 2 of 'construct'
+START operator.str.augmented4
+247 1016 operator.str.augmented4 declined operator FloorDiv on str and str at line 2 of 'construct'
+START operator.str.binary5
+248 1016 operator.str.binary5 declined operator Mod on str and str at line 2 of 'construct'
+START operator.str.augmented5
+249 1016 operator.str.augmented5 declined operator Mod on str and str at line 2 of 'construct'
+START operator.str.binary6
+250 1016 operator.str.binary6 declined a power other than ** 2 at line 2 of 'construct'
+START operator.str.augmented6
+251 1016 operator.str.augmented6 declined operator Pow on str and str at line 2 of 'construct'
+START operator.str.binary7
+252 1016 operator.str.binary7 declined operator LShift on str and str at line 2 of 'construct'
+START operator.str.augmented7
+253 1016 operator.str.augmented7 declined operator LShift on str and str at line 2 of 'construct'
+START operator.str.binary8
+254 1016 operator.str.binary8 declined operator RShift on str and str at line 2 of 'construct'
+START operator.str.augmented8
+255 1016 operator.str.augmented8 declined operator RShift on str and str at line 2 of 'construct'
+START operator.str.binary9
+256 1016 operator.str.binary9 declined operator BitAnd on str and str at line 2 of 'construct'
+START operator.str.augmented9
+257 1016 operator.str.augmented9 declined operator BitAnd on str and str at line 2 of 'construct'
+START operator.str.binary10
+258 1016 operator.str.binary10 declined operator BitOr on str and str at line 2 of 'construct'
+START operator.str.augmented10
+259 1016 operator.str.augmented10 declined operator BitOr on str and str at line 2 of 'construct'
+START operator.str.binary11
+260 1016 operator.str.binary11 declined operator BitXor on str and str at line 2 of 'construct'
+START operator.str.augmented11
+261 1016 operator.str.augmented11 declined operator BitXor on str and str at line 2 of 'construct'
+START operator.str.binary12
+262 1016 operator.str.binary12 declined operator MatMult at line 2; operator MatMult on str and str at line 2 of 'construct'
+START operator.str.augmented12
+263 1016 operator.str.augmented12 declined operator MatMult at line 2; operator MatMult on str and str at line 2 of 'construct'
+START operator.str.compare0
+264 1016 operator.str.compare0 native 
+START operator.str.compare1
+265 1016 operator.str.compare1 native 
+START operator.str.compare2
+266 1016 operator.str.compare2 native 
+START operator.str.compare3
+267 1016 operator.str.compare3 native 
+START operator.str.compare4
+268 1016 operator.str.compare4 native 
+START operator.str.compare5
+269 1016 operator.str.compare5 native 
+START operator.str.compare6
+270 1016 operator.str.compare6 declined as a region: 'is' between strings at line 2 of 'construct'
+START operator.str.compare7
+271 1016 operator.str.compare7 declined as a region: 'is' between strings at line 2 of 'construct'
+START operator.str.compare8
+272 1016 operator.str.compare8 native 
+START operator.str.compare9
+273 1016 operator.str.compare9 native 
+START operator.str.unary0
+274 1016 operator.str.unary0 declined arithmetic on str at line 2 of 'construct'
+START operator.str.unary1
+275 1016 operator.str.unary1 declined arithmetic on str at line 2 of 'construct'
+START operator.str.unary2
+276 1016 operator.str.unary2 declined arithmetic on str at line 2 of 'construct'
+START operator.str.unary3
+277 1016 operator.str.unary3 native 
+START operator.str.chain
+278 1016 operator.str.chain native 
+START operator.str.and
+279 1016 operator.str.and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.str.or
+280 1016 operator.str.or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.bytes.binary0
+281 1016 operator.bytes.binary0 declined as a region: an argument of type bytes
+START operator.bytes.augmented0
+282 1016 operator.bytes.augmented0 declined as a region: an argument of type bytes
+START operator.bytes.binary1
+283 1016 operator.bytes.binary1 declined an argument of type bytes
+START operator.bytes.augmented1
+284 1016 operator.bytes.augmented1 declined an argument of type bytes
+START operator.bytes.binary2
+285 1016 operator.bytes.binary2 declined an argument of type bytes
+START operator.bytes.augmented2
+286 1016 operator.bytes.augmented2 declined an argument of type bytes
+START operator.bytes.binary3
+287 1016 operator.bytes.binary3 declined an argument of type bytes
+START operator.bytes.augmented3
+288 1016 operator.bytes.augmented3 declined an argument of type bytes
+START operator.bytes.binary4
+289 1016 operator.bytes.binary4 declined an argument of type bytes
+START operator.bytes.augmented4
+290 1016 operator.bytes.augmented4 declined an argument of type bytes
+START operator.bytes.binary5
+291 1016 operator.bytes.binary5 declined an argument of type bytes
+START operator.bytes.augmented5
+292 1016 operator.bytes.augmented5 declined an argument of type bytes
+START operator.bytes.binary6
+293 1016 operator.bytes.binary6 declined an argument of type bytes
+START operator.bytes.augmented6
+294 1016 operator.bytes.augmented6 declined an argument of type bytes
+START operator.bytes.binary7
+295 1016 operator.bytes.binary7 declined an argument of type bytes
+START operator.bytes.augmented7
+296 1016 operator.bytes.augmented7 declined an argument of type bytes
+START operator.bytes.binary8
+297 1016 operator.bytes.binary8 declined an argument of type bytes
+START operator.bytes.augmented8
+298 1016 operator.bytes.augmented8 declined an argument of type bytes
+START operator.bytes.binary9
+299 1016 operator.bytes.binary9 declined an argument of type bytes
+START operator.bytes.augmented9
+300 1016 operator.bytes.augmented9 declined an argument of type bytes
+START operator.bytes.binary10
+301 1016 operator.bytes.binary10 declined an argument of type bytes
+START operator.bytes.augmented10
+302 1016 operator.bytes.augmented10 declined an argument of type bytes
+START operator.bytes.binary11
+303 1016 operator.bytes.binary11 declined an argument of type bytes
+START operator.bytes.augmented11
+304 1016 operator.bytes.augmented11 declined an argument of type bytes
+START operator.bytes.binary12
+305 1016 operator.bytes.binary12 declined operator MatMult at line 2; an argument of type bytes
+START operator.bytes.augmented12
+306 1016 operator.bytes.augmented12 declined operator MatMult at line 2; an argument of type bytes
+START operator.bytes.compare0
+307 1016 operator.bytes.compare0 declined as a region: an argument of type bytes
+START operator.bytes.compare1
+308 1016 operator.bytes.compare1 declined as a region: an argument of type bytes
+START operator.bytes.compare2
+309 1016 operator.bytes.compare2 declined as a region: an argument of type bytes
+START operator.bytes.compare3
+310 1016 operator.bytes.compare3 declined as a region: an argument of type bytes
+START operator.bytes.compare4
+311 1016 operator.bytes.compare4 declined as a region: an argument of type bytes
+START operator.bytes.compare5
+312 1016 operator.bytes.compare5 declined as a region: an argument of type bytes
+START operator.bytes.compare6
+313 1016 operator.bytes.compare6 declined as a region: an argument of type bytes
+START operator.bytes.compare7
+314 1016 operator.bytes.compare7 declined as a region: an argument of type bytes
+START operator.bytes.compare8
+315 1016 operator.bytes.compare8 declined as a region: an argument of type bytes
+START operator.bytes.compare9
+316 1016 operator.bytes.compare9 declined as a region: an argument of type bytes
+START operator.bytes.unary0
+317 1016 operator.bytes.unary0 declined an argument of type bytes
+START operator.bytes.unary1
+318 1016 operator.bytes.unary1 declined an argument of type bytes
+START operator.bytes.unary2
+319 1016 operator.bytes.unary2 declined an argument of type bytes
+START operator.bytes.unary3
+320 1016 operator.bytes.unary3 declined as a region: an argument of type bytes
+START operator.bytes.chain
+321 1016 operator.bytes.chain declined as a region: an argument of type bytes
+START operator.bytes.and
+322 1016 operator.bytes.and declined as a region: an argument of type bytes
+START operator.bytes.or
+323 1016 operator.bytes.or declined as a region: an argument of type bytes
+START operator.list.binary0
+324 1016 operator.list.binary0 declined as a region: arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented0
+325 1016 operator.list.augmented0 declined as a region: arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary1
+326 1016 operator.list.binary1 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented1
+327 1016 operator.list.augmented1 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary2
+328 1016 operator.list.binary2 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented2
+329 1016 operator.list.augmented2 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary3
+330 1016 operator.list.binary3 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented3
+331 1016 operator.list.augmented3 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary4
+332 1016 operator.list.binary4 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented4
+333 1016 operator.list.augmented4 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary5
+334 1016 operator.list.binary5 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented5
+335 1016 operator.list.augmented5 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary6
+336 1016 operator.list.binary6 declined a power other than ** 2 at line 2 of 'construct'
+START operator.list.augmented6
+337 1016 operator.list.augmented6 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary7
+338 1016 operator.list.binary7 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented7
+339 1016 operator.list.augmented7 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary8
+340 1016 operator.list.binary8 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented8
+341 1016 operator.list.augmented8 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary9
+342 1016 operator.list.binary9 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented9
+343 1016 operator.list.augmented9 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary10
+344 1016 operator.list.binary10 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented10
+345 1016 operator.list.augmented10 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary11
+346 1016 operator.list.binary11 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented11
+347 1016 operator.list.augmented11 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.binary12
+348 1016 operator.list.binary12 declined operator MatMult at line 2; arithmetic on list[int] at line 2 of 'construct'
+START operator.list.augmented12
+349 1016 operator.list.augmented12 declined operator MatMult at line 2; arithmetic on list[int] at line 2 of 'construct'
+START operator.list.compare0
+350 1016 operator.list.compare0 declined as a region: comparing lists at line 2 of 'construct'
+START operator.list.compare1
+351 1016 operator.list.compare1 declined as a region: comparing lists at line 2 of 'construct'
+START operator.list.compare2
+352 1016 operator.list.compare2 declined as a region: arithmetic on list[int] at line 2 of 'construct'
+START operator.list.compare3
+353 1016 operator.list.compare3 declined as a region: arithmetic on list[int] at line 2 of 'construct'
+START operator.list.compare4
+354 1016 operator.list.compare4 declined as a region: arithmetic on list[int] at line 2 of 'construct'
+START operator.list.compare5
+355 1016 operator.list.compare5 declined as a region: arithmetic on list[int] at line 2 of 'construct'
+START operator.list.compare6
+356 1016 operator.list.compare6 native 
+START operator.list.compare7
+357 1016 operator.list.compare7 native 
+START operator.list.compare8
+358 1016 operator.list.compare8 declined as a region: arithmetic on list[int] at line 2 of 'construct'
+START operator.list.compare9
+359 1016 operator.list.compare9 declined as a region: arithmetic on list[int] at line 2 of 'construct'
+START operator.list.unary0
+360 1016 operator.list.unary0 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.unary1
+361 1016 operator.list.unary1 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.unary2
+362 1016 operator.list.unary2 declined arithmetic on list[int] at line 2 of 'construct'
+START operator.list.unary3
+363 1016 operator.list.unary3 native 
+START operator.list.chain
+364 1016 operator.list.chain declined as a region: comparing lists at line 2 of 'construct'
+START operator.list.and
+365 1016 operator.list.and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.list.or
+366 1016 operator.list.or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.tuple.binary0
+367 1016 operator.tuple.binary0 native 
+START operator.tuple.augmented0
+368 1016 operator.tuple.augmented0 declined as a region: arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary1
+369 1016 operator.tuple.binary1 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented1
+370 1016 operator.tuple.augmented1 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary2
+371 1016 operator.tuple.binary2 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented2
+372 1016 operator.tuple.augmented2 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary3
+373 1016 operator.tuple.binary3 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented3
+374 1016 operator.tuple.augmented3 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary4
+375 1016 operator.tuple.binary4 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented4
+376 1016 operator.tuple.augmented4 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary5
+377 1016 operator.tuple.binary5 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented5
+378 1016 operator.tuple.augmented5 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary6
+379 1016 operator.tuple.binary6 declined a power other than ** 2 at line 2 of 'construct'
+START operator.tuple.augmented6
+380 1016 operator.tuple.augmented6 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary7
+381 1016 operator.tuple.binary7 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented7
+382 1016 operator.tuple.augmented7 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary8
+383 1016 operator.tuple.binary8 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented8
+384 1016 operator.tuple.augmented8 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary9
+385 1016 operator.tuple.binary9 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented9
+386 1016 operator.tuple.augmented9 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary10
+387 1016 operator.tuple.binary10 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented10
+388 1016 operator.tuple.augmented10 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary11
+389 1016 operator.tuple.binary11 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented11
+390 1016 operator.tuple.augmented11 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.binary12
+391 1016 operator.tuple.binary12 declined operator MatMult at line 2; arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.augmented12
+392 1016 operator.tuple.augmented12 declined operator MatMult at line 2; arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.compare0
+393 1016 operator.tuple.compare0 native 
+START operator.tuple.compare1
+394 1016 operator.tuple.compare1 native 
+START operator.tuple.compare2
+395 1016 operator.tuple.compare2 native 
+START operator.tuple.compare3
+396 1016 operator.tuple.compare3 native 
+START operator.tuple.compare4
+397 1016 operator.tuple.compare4 native 
+START operator.tuple.compare5
+398 1016 operator.tuple.compare5 native 
+START operator.tuple.compare6
+399 1016 operator.tuple.compare6 declined as a region: this comparison at line 2 of 'construct'
+START operator.tuple.compare7
+400 1016 operator.tuple.compare7 declined as a region: this comparison at line 2 of 'construct'
+START operator.tuple.compare8
+401 1016 operator.tuple.compare8 declined as a region: 'in' on (int, int) at line 2 of 'construct'
+START operator.tuple.compare9
+402 1016 operator.tuple.compare9 declined as a region: 'in' on (int, int) at line 2 of 'construct'
+START operator.tuple.unary0
+403 1016 operator.tuple.unary0 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.unary1
+404 1016 operator.tuple.unary1 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.unary2
+405 1016 operator.tuple.unary2 declined arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.unary3
+406 1016 operator.tuple.unary3 native 
+START operator.tuple.chain
+407 1016 operator.tuple.chain declined as a region: arithmetic on (int, int) at line 2 of 'construct'
+START operator.tuple.and
+408 1016 operator.tuple.and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.tuple.or
+409 1016 operator.tuple.or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.dict.binary0
+410 1016 operator.dict.binary0 declined operator Add on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented0
+411 1016 operator.dict.augmented0 declined operator Add on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary1
+412 1016 operator.dict.binary1 declined operator Sub on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented1
+413 1016 operator.dict.augmented1 declined operator Sub on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary2
+414 1016 operator.dict.binary2 declined operator Mult on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented2
+415 1016 operator.dict.augmented2 declined operator Mult on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary3
+416 1016 operator.dict.binary3 declined operator Div on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented3
+417 1016 operator.dict.augmented3 declined operator Div on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary4
+418 1016 operator.dict.binary4 declined operator FloorDiv on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented4
+419 1016 operator.dict.augmented4 declined operator FloorDiv on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary5
+420 1016 operator.dict.binary5 declined operator Mod on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented5
+421 1016 operator.dict.augmented5 declined operator Mod on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary6
+422 1016 operator.dict.binary6 declined a power other than ** 2 at line 2 of 'construct'
+START operator.dict.augmented6
+423 1016 operator.dict.augmented6 declined operator Pow on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary7
+424 1016 operator.dict.binary7 declined operator LShift on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented7
+425 1016 operator.dict.augmented7 declined operator LShift on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary8
+426 1016 operator.dict.binary8 declined operator RShift on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented8
+427 1016 operator.dict.augmented8 declined operator RShift on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary9
+428 1016 operator.dict.binary9 declined operator BitAnd on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented9
+429 1016 operator.dict.augmented9 declined operator BitAnd on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary10
+430 1016 operator.dict.binary10 declined as a region: operator BitOr on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented10
+431 1016 operator.dict.augmented10 declined as a region: operator BitOr on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary11
+432 1016 operator.dict.binary11 declined operator BitXor on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented11
+433 1016 operator.dict.augmented11 declined operator BitXor on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.binary12
+434 1016 operator.dict.binary12 declined operator MatMult at line 2; operator MatMult on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.augmented12
+435 1016 operator.dict.augmented12 declined operator MatMult at line 2; operator MatMult on dict[int, int] and dict[int, int] at line 2 of 'construct'
+START operator.dict.compare0
+436 1016 operator.dict.compare0 declined as a region: comparing dict[int, int] with dict[int, int] at line 2 of 'construct'
+START operator.dict.compare1
+437 1016 operator.dict.compare1 declined as a region: comparing dict[int, int] with dict[int, int] at line 2 of 'construct'
+START operator.dict.compare2
+438 1016 operator.dict.compare2 declined comparing dict[int, int] with dict[int, int] at line 2 of 'construct'
+START operator.dict.compare3
+439 1016 operator.dict.compare3 declined comparing dict[int, int] with dict[int, int] at line 2 of 'construct'
+START operator.dict.compare4
+440 1016 operator.dict.compare4 declined comparing dict[int, int] with dict[int, int] at line 2 of 'construct'
+START operator.dict.compare5
+441 1016 operator.dict.compare5 declined comparing dict[int, int] with dict[int, int] at line 2 of 'construct'
+START operator.dict.compare6
+442 1016 operator.dict.compare6 native 
+START operator.dict.compare7
+443 1016 operator.dict.compare7 native 
+START operator.dict.compare8
+444 1016 operator.dict.compare8 declined comparison at line 2; one value can be int or dict[int, int]
+START operator.dict.compare9
+445 1016 operator.dict.compare9 declined comparison at line 2; one value can be int or dict[int, int]
+START operator.dict.unary0
+446 1016 operator.dict.unary0 declined arithmetic on dict[int, int] at line 2 of 'construct'
+START operator.dict.unary1
+447 1016 operator.dict.unary1 declined arithmetic on dict[int, int] at line 2 of 'construct'
+START operator.dict.unary2
+448 1016 operator.dict.unary2 declined arithmetic on dict[int, int] at line 2 of 'construct'
+START operator.dict.unary3
+449 1016 operator.dict.unary3 native 
+START operator.dict.chain
+450 1016 operator.dict.chain declined as a region: comparing dict[int, int] with dict[int, int] at line 2 of 'construct'
+START operator.dict.and
+451 1016 operator.dict.and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.dict.or
+452 1016 operator.dict.or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.set.binary0
+453 1016 operator.set.binary0 declined operator Add on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented0
+454 1016 operator.set.augmented0 declined operator Add on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary1
+455 1016 operator.set.binary1 declined as a region: operator Sub on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented1
+456 1016 operator.set.augmented1 declined as a region: operator Sub on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary2
+457 1016 operator.set.binary2 declined operator Mult on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented2
+458 1016 operator.set.augmented2 declined operator Mult on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary3
+459 1016 operator.set.binary3 declined operator Div on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented3
+460 1016 operator.set.augmented3 declined operator Div on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary4
+461 1016 operator.set.binary4 declined operator FloorDiv on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented4
+462 1016 operator.set.augmented4 declined operator FloorDiv on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary5
+463 1016 operator.set.binary5 declined operator Mod on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented5
+464 1016 operator.set.augmented5 declined operator Mod on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary6
+465 1016 operator.set.binary6 declined a power other than ** 2 at line 2 of 'construct'
+START operator.set.augmented6
+466 1016 operator.set.augmented6 declined operator Pow on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary7
+467 1016 operator.set.binary7 declined operator LShift on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented7
+468 1016 operator.set.augmented7 declined operator LShift on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary8
+469 1016 operator.set.binary8 declined operator RShift on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented8
+470 1016 operator.set.augmented8 declined operator RShift on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary9
+471 1016 operator.set.binary9 declined as a region: operator BitAnd on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented9
+472 1016 operator.set.augmented9 declined as a region: operator BitAnd on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary10
+473 1016 operator.set.binary10 declined as a region: operator BitOr on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented10
+474 1016 operator.set.augmented10 declined as a region: operator BitOr on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary11
+475 1016 operator.set.binary11 declined as a region: operator BitXor on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented11
+476 1016 operator.set.augmented11 declined as a region: operator BitXor on set[int] and set[int] at line 2 of 'construct'
+START operator.set.binary12
+477 1016 operator.set.binary12 declined operator MatMult at line 2; operator MatMult on set[int] and set[int] at line 2 of 'construct'
+START operator.set.augmented12
+478 1016 operator.set.augmented12 declined operator MatMult at line 2; operator MatMult on set[int] and set[int] at line 2 of 'construct'
+START operator.set.compare0
+479 1016 operator.set.compare0 declined as a region: comparing set[int] with set[int] at line 2 of 'construct'
+START operator.set.compare1
+480 1016 operator.set.compare1 declined as a region: comparing set[int] with set[int] at line 2 of 'construct'
+START operator.set.compare2
+481 1016 operator.set.compare2 declined as a region: comparing set[int] with set[int] at line 2 of 'construct'
+START operator.set.compare3
+482 1016 operator.set.compare3 declined as a region: comparing set[int] with set[int] at line 2 of 'construct'
+START operator.set.compare4
+483 1016 operator.set.compare4 declined as a region: comparing set[int] with set[int] at line 2 of 'construct'
+START operator.set.compare5
+484 1016 operator.set.compare5 declined as a region: comparing set[int] with set[int] at line 2 of 'construct'
+START operator.set.compare6
+485 1016 operator.set.compare6 native 
+START operator.set.compare7
+486 1016 operator.set.compare7 native 
+START operator.set.compare8
+487 1016 operator.set.compare8 declined as a region: one value can be int or set[int]
+START operator.set.compare9
+488 1016 operator.set.compare9 declined as a region: one value can be int or set[int]
+START operator.set.unary0
+489 1016 operator.set.unary0 declined arithmetic on set[int] at line 2 of 'construct'
+START operator.set.unary1
+490 1016 operator.set.unary1 declined arithmetic on set[int] at line 2 of 'construct'
+START operator.set.unary2
+491 1016 operator.set.unary2 declined arithmetic on set[int] at line 2 of 'construct'
+START operator.set.unary3
+492 1016 operator.set.unary3 native 
+START operator.set.chain
+493 1016 operator.set.chain declined as a region: comparing set[int] with set[int] at line 2 of 'construct'
+START operator.set.and
+494 1016 operator.set.and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.set.or
+495 1016 operator.set.or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START operator.none.binary0
+496 1016 operator.none.binary0 declined runtime guard at ('construct', 3)
+START operator.none.augmented0
+497 1016 operator.none.augmented0 declined runtime guard at ('construct', 3)
+START operator.none.binary1
+498 1016 operator.none.binary1 declined runtime guard at ('construct', 3)
+START operator.none.augmented1
+499 1016 operator.none.augmented1 declined runtime guard at ('construct', 3)
+START operator.none.binary2
+500 1016 operator.none.binary2 declined runtime guard at ('construct', 3)
+START operator.none.augmented2
+501 1016 operator.none.augmented2 declined runtime guard at ('construct', 3)
+START operator.none.binary3
+502 1016 operator.none.binary3 declined runtime guard at ('construct', 3)
+START operator.none.augmented3
+503 1016 operator.none.augmented3 declined runtime guard at ('construct', 3)
+START operator.none.binary4
+504 1016 operator.none.binary4 declined runtime guard at ('construct', 3)
+START operator.none.augmented4
+505 1016 operator.none.augmented4 declined runtime guard at ('construct', 3)
+START operator.none.binary5
+506 1016 operator.none.binary5 declined runtime guard at ('construct', 3)
+START operator.none.augmented5
+507 1016 operator.none.augmented5 declined runtime guard at ('construct', 3)
+START operator.none.binary6
+508 1016 operator.none.binary6 declined a power other than ** 2 at line 2 of 'construct'
+START operator.none.augmented6
+509 1016 operator.none.augmented6 declined runtime guard at ('construct', 3)
+START operator.none.binary7
+510 1016 operator.none.binary7 declined runtime guard at ('construct', 3)
+START operator.none.augmented7
+511 1016 operator.none.augmented7 declined runtime guard at ('construct', 3)
+START operator.none.binary8
+512 1016 operator.none.binary8 declined runtime guard at ('construct', 3)
+START operator.none.augmented8
+513 1016 operator.none.augmented8 declined runtime guard at ('construct', 3)
+START operator.none.binary9
+514 1016 operator.none.binary9 declined runtime guard at ('construct', 3)
+START operator.none.augmented9
+515 1016 operator.none.augmented9 declined runtime guard at ('construct', 3)
+START operator.none.binary10
+516 1016 operator.none.binary10 declined runtime guard at ('construct', 3)
+START operator.none.augmented10
+517 1016 operator.none.augmented10 declined runtime guard at ('construct', 3)
+START operator.none.binary11
+518 1016 operator.none.binary11 declined runtime guard at ('construct', 3)
+START operator.none.augmented11
+519 1016 operator.none.augmented11 declined runtime guard at ('construct', 3)
+START operator.none.binary12
+520 1016 operator.none.binary12 declined operator MatMult at line 2; runtime guard at ('construct', 3)
+START operator.none.augmented12
+521 1016 operator.none.augmented12 declined operator MatMult at line 2; runtime guard at ('construct', 3)
+START operator.none.compare0
+522 1016 operator.none.compare0 native 
+START operator.none.compare1
+523 1016 operator.none.compare1 native 
+START operator.none.compare2
+524 1016 operator.none.compare2 declined runtime guard at ('construct', 3)
+START operator.none.compare3
+525 1016 operator.none.compare3 declined runtime guard at ('construct', 3)
+START operator.none.compare4
+526 1016 operator.none.compare4 declined runtime guard at ('construct', 3)
+START operator.none.compare5
+527 1016 operator.none.compare5 declined runtime guard at ('construct', 3)
+START operator.none.compare6
+528 1016 operator.none.compare6 native 
+START operator.none.compare7
+529 1016 operator.none.compare7 native 
+START operator.none.compare8
+530 1016 operator.none.compare8 declined comparison at line 2; 'in' on None at line 2 of 'construct'
+START operator.none.compare9
+531 1016 operator.none.compare9 declined comparison at line 2; 'in' on None at line 2 of 'construct'
+START operator.none.unary0
+532 1016 operator.none.unary0 declined runtime guard at ('construct', 3)
+START operator.none.unary1
+533 1016 operator.none.unary1 declined runtime guard at ('construct', 3)
+START operator.none.unary2
+534 1016 operator.none.unary2 declined runtime guard at ('construct', 3)
+START operator.none.unary3
+535 1016 operator.none.unary3 native 
+START operator.none.chain
+536 1016 operator.none.chain native 
+START operator.none.and
+537 1016 operator.none.and native 
+START operator.none.or
+538 1016 operator.none.or native 
+START literal.int64
+539 1016 literal.int64 declined as a region: a power other than ** 2 at line 2 of 'construct'
+START literal.bigint
+540 1016 literal.bigint declined as a region: a power other than ** 2 at line 2 of 'construct'
+START literal.negative_bigint
+541 1016 literal.negative_bigint declined as a region: a power other than ** 2 at line 2 of 'construct'
+START literal.float
+542 1016 literal.float native 
+START literal.inf
+543 1016 literal.inf declined as a region: float() on str at line 2 of 'construct'
+START literal.nan
+544 1016 literal.nan declined as a region: float() on str at line 2 of 'construct'
+START literal.negative_zero
+545 1016 literal.negative_zero native 
+START literal.complex
+546 1016 literal.complex declined as a region: constant 3j at line 2 of 'construct'
+START literal.str
+547 1016 literal.str native 
+START literal.bytes
+548 1016 literal.bytes declined as a region: constant b'matrix\x00' at line 2 of 'construct'
+START literal.list
+549 1016 literal.list native 
+START literal.tuple
+550 1016 literal.tuple native 
+START literal.dict
+551 1016 literal.dict native 
+START literal.set
+552 1016 literal.set native 
+START literal.list_star
+553 1016 literal.list_star declined as a region: Starred at line 2 of 'construct'
+START literal.tuple_star
+554 1016 literal.tuple_star declined as a region: Starred at line 2 of 'construct'
+START literal.set_star
+555 1016 literal.set_star declined as a region: Starred at line 2 of 'construct'
+START literal.dict_unpack
+556 1016 literal.dict_unpack declined as a region: ** in a dict display at line 2 of 'construct'
+START literal.slice_step
+557 1016 literal.slice_step native 
+START literal.slice_negative
+558 1016 literal.slice_negative native 
+START literal.slice_store
+559 1016 literal.slice_store native 
+START literal.fstring
+560 1016 literal.fstring native 
+START literal.fstring_s
+561 1016 literal.fstring_s native 
+START literal.fstring_r
+562 1016 literal.fstring_r declined as a region: an f-string field with a format or conversion at line 2 of 'construct'
+START literal.fstring_a
+563 1016 literal.fstring_a declined as a region: an f-string field with a format or conversion at line 2 of 'construct'
+START literal.fstring_spec
+564 1016 literal.fstring_spec declined as a region: an f-string field with a format or conversion at line 2 of 'construct'
+START literal.fstring_nested
+565 1016 literal.fstring_nested declined as a region: an f-string field with a format or conversion at line 2 of 'construct'
+START literal.fstring_debug
+566 1016 literal.fstring_debug declined as a region: an f-string field with a format or conversion at line 2 of 'construct'
+START literal.template
+567 1016 literal.template declined TemplateStr at line 2; TemplateStr at line 2 of 'construct'
+START statement.slice_store
+568 1016 statement.slice_store native 
+START operator.matmul_valid
+569 1016 operator.matmul_valid declined as a region: arithmetic on Matrix at line 2 of 'construct'
+START comprehension.list
+570 1016 comprehension.list native 
+START comprehension.set
+571 1016 comprehension.set declined as a region: SetComp at line 2 of 'construct'
+START comprehension.dict
+572 1016 comprehension.dict declined as a region: DictComp at line 2 of 'construct'
+START comprehension.generator
+573 1016 comprehension.generator native 
+START comprehension.list_nested
+574 1016 comprehension.list_nested native 
+START comprehension.set_nested
+575 1016 comprehension.set_nested declined as a region: SetComp at line 2 of 'construct'
+START comprehension.dict_nested
+576 1016 comprehension.dict_nested declined as a region: DictComp at line 2 of 'construct'
+START comprehension.generator_nested
+577 1016 comprehension.generator_nested native 
+START call.positional
+578 1016 call.positional native 
+START call.keyword
+579 1016 call.keyword native 
+START call.defaults
+580 1016 call.defaults native 
+START call.varargs
+581 1016 call.varargs declined 'construct' has a closure, keyword-only arguments, *args or is a generator; sum() on (int, int, int) at line 2 of 'construct'
+START call.varkw
+582 1016 call.varkw declined 'construct' has a closure, keyword-only arguments, *args or is a generator
+START call.kwonly
+583 1016 call.kwonly native 
+START call.posonly
+584 1016 call.posonly native 
+START call.star
+585 1016 call.star declined as a region: *list[int] as arguments at line 2 of 'construct'
+START call.double_star
+586 1016 call.double_star declined as a region: ** in a call at line 2 of 'construct'
+START call.method
+587 1016 call.method native 
+START call.bound_value
+588 1016 call.bound_value declined as a region: 'Box.read', which __init__ does not set at line 2 of 'construct'
+START call.function_value
+589 1016 call.function_value declined as a region: name 'helper' used as a value at line 2 of 'construct'
+START call.closure
+590 1016 call.closure declined as a region: 'construct' declares globals or defines functions inside itself
+START call.recursion
+591 1016 call.recursion native 
+START call.decorator
+592 1016 call.decorator declined as a region: 'construct' declares globals or defines functions inside itself
+START builtin.ArithmeticError
+593 1016 builtin.ArithmeticError declined constant 'matrix' at line 2; ArithmeticError() on str at line 2 of 'construct'
+START builtin.AssertionError
+594 1016 builtin.AssertionError declined constant 'matrix' at line 2; AssertionError() on str at line 2 of 'construct'
+START builtin.AttributeError
+595 1016 builtin.AttributeError declined constant 'matrix' at line 2; AttributeError() on str at line 2 of 'construct'
+START builtin.BaseException
+596 1016 builtin.BaseException declined constant 'matrix' at line 2; BaseException() on str at line 2 of 'construct'
+START builtin.BaseExceptionGroup
+597 1016 builtin.BaseExceptionGroup declined constant 'matrix' at line 2; ValueError() on str at line 2 of 'construct'
+START builtin.BlockingIOError
+598 1016 builtin.BlockingIOError declined constant 'matrix' at line 2; BlockingIOError() on str at line 2 of 'construct'
+START builtin.BrokenPipeError
+599 1016 builtin.BrokenPipeError declined constant 'matrix' at line 2; BrokenPipeError() on str at line 2 of 'construct'
+START builtin.BufferError
+600 1016 builtin.BufferError declined constant 'matrix' at line 2; BufferError() on str at line 2 of 'construct'
+START builtin.BytesWarning
+601 1016 builtin.BytesWarning declined constant 'matrix' at line 2; BytesWarning() on str at line 2 of 'construct'
+START builtin.ChildProcessError
+602 1016 builtin.ChildProcessError declined constant 'matrix' at line 2; ChildProcessError() on str at line 2 of 'construct'
+START builtin.ConnectionAbortedError
+603 1016 builtin.ConnectionAbortedError declined constant 'matrix' at line 2; ConnectionAbortedError() on str at line 2 of 'construct'
+START builtin.ConnectionError
+604 1016 builtin.ConnectionError declined constant 'matrix' at line 2; ConnectionError() on str at line 2 of 'construct'
+START builtin.ConnectionRefusedError
+605 1016 builtin.ConnectionRefusedError declined constant 'matrix' at line 2; ConnectionRefusedError() on str at line 2 of 'construct'
+START builtin.ConnectionResetError
+606 1016 builtin.ConnectionResetError declined constant 'matrix' at line 2; ConnectionResetError() on str at line 2 of 'construct'
+START builtin.DeprecationWarning
+607 1016 builtin.DeprecationWarning declined constant 'matrix' at line 2; DeprecationWarning() on str at line 2 of 'construct'
+START builtin.EOFError
+608 1016 builtin.EOFError declined constant 'matrix' at line 2; EOFError() on str at line 2 of 'construct'
+START builtin.EncodingWarning
+609 1016 builtin.EncodingWarning declined constant 'matrix' at line 2; EncodingWarning() on str at line 2 of 'construct'
+START builtin.EnvironmentError
+610 1016 builtin.EnvironmentError declined constant 'matrix' at line 2; EnvironmentError() on str at line 2 of 'construct'
+START builtin.Exception
+611 1016 builtin.Exception declined constant 'matrix' at line 2; Exception() on str at line 2 of 'construct'
+START builtin.ExceptionGroup
+612 1016 builtin.ExceptionGroup declined constant 'matrix' at line 2; ValueError() on str at line 2 of 'construct'
+START builtin.FileExistsError
+613 1016 builtin.FileExistsError declined constant 'matrix' at line 2; FileExistsError() on str at line 2 of 'construct'
+START builtin.FileNotFoundError
+614 1016 builtin.FileNotFoundError declined constant 'matrix' at line 2; FileNotFoundError() on str at line 2 of 'construct'
+START builtin.FloatingPointError
+615 1016 builtin.FloatingPointError declined constant 'matrix' at line 2; FloatingPointError() on str at line 2 of 'construct'
+START builtin.FutureWarning
+616 1016 builtin.FutureWarning declined constant 'matrix' at line 2; FutureWarning() on str at line 2 of 'construct'
+START builtin.GeneratorExit
+617 1016 builtin.GeneratorExit declined constant 'matrix' at line 2; GeneratorExit() on str at line 2 of 'construct'
+START builtin.IOError
+618 1016 builtin.IOError declined constant 'matrix' at line 2; IOError() on str at line 2 of 'construct'
+START builtin.ImportError
+619 1016 builtin.ImportError declined constant 'matrix' at line 2; ImportError() on str at line 2 of 'construct'
+START builtin.ImportWarning
+620 1016 builtin.ImportWarning declined constant 'matrix' at line 2; ImportWarning() on str at line 2 of 'construct'
+START builtin.IndentationError
+621 1016 builtin.IndentationError declined constant 'matrix' at line 2; IndentationError() on str at line 2 of 'construct'
+START builtin.IndexError
+622 1016 builtin.IndexError declined constant 'matrix' at line 2; IndexError() on str at line 2 of 'construct'
+START builtin.InterruptedError
+623 1016 builtin.InterruptedError declined constant 'matrix' at line 2; InterruptedError() on str at line 2 of 'construct'
+START builtin.IsADirectoryError
+624 1016 builtin.IsADirectoryError declined constant 'matrix' at line 2; IsADirectoryError() on str at line 2 of 'construct'
+START builtin.KeyError
+625 1016 builtin.KeyError declined constant 'matrix' at line 2; KeyError() on str at line 2 of 'construct'
+START builtin.KeyboardInterrupt
+626 1016 builtin.KeyboardInterrupt declined constant 'matrix' at line 2; KeyboardInterrupt() on str at line 2 of 'construct'
+START builtin.LookupError
+627 1016 builtin.LookupError declined constant 'matrix' at line 2; LookupError() on str at line 2 of 'construct'
+START builtin.MemoryError
+628 1016 builtin.MemoryError declined constant 'matrix' at line 2; MemoryError() on str at line 2 of 'construct'
+START builtin.ModuleNotFoundError
+629 1016 builtin.ModuleNotFoundError declined constant 'matrix' at line 2; ModuleNotFoundError() on str at line 2 of 'construct'
+START builtin.NameError
+630 1016 builtin.NameError declined constant 'matrix' at line 2; NameError() on str at line 2 of 'construct'
+START builtin.NotADirectoryError
+631 1016 builtin.NotADirectoryError declined constant 'matrix' at line 2; NotADirectoryError() on str at line 2 of 'construct'
+START builtin.NotImplementedError
+632 1016 builtin.NotImplementedError declined constant 'matrix' at line 2; NotImplementedError() on str at line 2 of 'construct'
+START builtin.OSError
+633 1016 builtin.OSError declined constant 'matrix' at line 2; OSError() on str at line 2 of 'construct'
+START builtin.OverflowError
+634 1016 builtin.OverflowError declined constant 'matrix' at line 2; OverflowError() on str at line 2 of 'construct'
+START builtin.PendingDeprecationWarning
+635 1016 builtin.PendingDeprecationWarning declined constant 'matrix' at line 2; PendingDeprecationWarning() on str at line 2 of 'construct'
+START builtin.PermissionError
+636 1016 builtin.PermissionError declined constant 'matrix' at line 2; PermissionError() on str at line 2 of 'construct'
+START builtin.ProcessLookupError
+637 1016 builtin.ProcessLookupError declined constant 'matrix' at line 2; ProcessLookupError() on str at line 2 of 'construct'
+START builtin.PythonFinalizationError
+638 1016 builtin.PythonFinalizationError declined constant 'matrix' at line 2; PythonFinalizationError() on str at line 2 of 'construct'
+START builtin.RecursionError
+639 1016 builtin.RecursionError declined constant 'matrix' at line 2; RecursionError() on str at line 2 of 'construct'
+START builtin.ReferenceError
+640 1016 builtin.ReferenceError declined constant 'matrix' at line 2; ReferenceError() on str at line 2 of 'construct'
+START builtin.ResourceWarning
+641 1016 builtin.ResourceWarning declined constant 'matrix' at line 2; ResourceWarning() on str at line 2 of 'construct'
+START builtin.RuntimeError
+642 1016 builtin.RuntimeError declined constant 'matrix' at line 2; RuntimeError() on str at line 2 of 'construct'
+START builtin.RuntimeWarning
+643 1016 builtin.RuntimeWarning declined constant 'matrix' at line 2; RuntimeWarning() on str at line 2 of 'construct'
+START builtin.StopAsyncIteration
+644 1016 builtin.StopAsyncIteration declined constant 'matrix' at line 2; StopAsyncIteration() on str at line 2 of 'construct'
+START builtin.StopIteration
+645 1016 builtin.StopIteration declined constant 'matrix' at line 2; StopIteration() on str at line 2 of 'construct'
+START builtin.SyntaxError
+646 1016 builtin.SyntaxError declined constant 'matrix' at line 2; SyntaxError() on str at line 2 of 'construct'
+START builtin.SyntaxWarning
+647 1016 builtin.SyntaxWarning declined constant 'matrix' at line 2; SyntaxWarning() on str at line 2 of 'construct'
+START builtin.SystemError
+648 1016 builtin.SystemError declined constant 'matrix' at line 2; SystemError() on str at line 2 of 'construct'
+START builtin.SystemExit
+649 1016 builtin.SystemExit declined constant 'matrix' at line 2; SystemExit() on str at line 2 of 'construct'
+START builtin.TabError
+650 1016 builtin.TabError declined constant 'matrix' at line 2; TabError() on str at line 2 of 'construct'
+START builtin.TimeoutError
+651 1016 builtin.TimeoutError declined constant 'matrix' at line 2; TimeoutError() on str at line 2 of 'construct'
+START builtin.TypeError
+652 1016 builtin.TypeError declined constant 'matrix' at line 2; TypeError() on str at line 2 of 'construct'
+START builtin.UnboundLocalError
+653 1016 builtin.UnboundLocalError declined constant 'matrix' at line 2; UnboundLocalError() on str at line 2 of 'construct'
+START builtin.UnicodeDecodeError
+654 1016 builtin.UnicodeDecodeError declined constant 'utf-8' at line 2; constant b'x' at line 2 of 'construct'
+START builtin.UnicodeEncodeError
+655 1016 builtin.UnicodeEncodeError declined constant 'ascii' at line 2; UnicodeEncodeError() on str, str, int, int, str at line 2 of 'construct'
+START builtin.UnicodeError
+656 1016 builtin.UnicodeError declined constant 'matrix' at line 2; UnicodeError() on str at line 2 of 'construct'
+START builtin.UnicodeTranslateError
+657 1016 builtin.UnicodeTranslateError declined constant '?' at line 2; UnicodeTranslateError() on str, int, int, str at line 2 of 'construct'
+START builtin.UnicodeWarning
+658 1016 builtin.UnicodeWarning declined constant 'matrix' at line 2; UnicodeWarning() on str at line 2 of 'construct'
+START builtin.UserWarning
+659 1016 builtin.UserWarning declined constant 'matrix' at line 2; UserWarning() on str at line 2 of 'construct'
+START builtin.ValueError
+660 1016 builtin.ValueError declined constant 'matrix' at line 2; ValueError() on str at line 2 of 'construct'
+START builtin.Warning
+661 1016 builtin.Warning declined constant 'matrix' at line 2; Warning() on str at line 2 of 'construct'
+START builtin.WindowsError
+662 1016 builtin.WindowsError declined constant 'matrix' at line 2; WindowsError() on str at line 2 of 'construct'
+START builtin.ZeroDivisionError
+663 1016 builtin.ZeroDivisionError declined constant 'matrix' at line 2; ZeroDivisionError() on str at line 2 of 'construct'
+START builtin.abs
+664 1016 builtin.abs native 
+START builtin.aiter
+665 1016 builtin.aiter declined as a region: aiter() on AsyncRange at line 2 of 'construct'
+START builtin.all
+666 1016 builtin.all native 
+START builtin.anext
+667 1016 builtin.anext declined call at line 2; anext() on AsyncRange at line 2 of 'construct'
+START builtin.any
+668 1016 builtin.any native 
+START builtin.ascii
+669 1016 builtin.ascii declined as a region: ascii() on str at line 2 of 'construct'
+START builtin.bin
+670 1016 builtin.bin declined as a region: bin() on int at line 2 of 'construct'
+START builtin.bool
+671 1016 builtin.bool declined as a region: bool() on int at line 2 of 'construct'
+START builtin.breakpoint
+672 1016 builtin.breakpoint declined as a region: breakpoint() on nothing at line 2 of 'construct'
+START builtin.bytearray
+673 1016 builtin.bytearray declined constant b'abc' at line 2; constant b'abc' at line 2 of 'construct'
+START builtin.bytes
+674 1016 builtin.bytes declined as a region: bytes() on list[int] at line 2 of 'construct'
+START builtin.callable
+675 1016 builtin.callable declined as a region: name 'helper' used as a value at line 2 of 'construct'
+START builtin.chr
+676 1016 builtin.chr native 
+START builtin.classmethod
+677 1016 builtin.classmethod declined as a region: 'construct' declares globals or defines functions inside itself
+START builtin.compile
+678 1016 builtin.compile declined as a region: compile() on str, str, str at line 2 of 'construct'
+START builtin.complex
+679 1016 builtin.complex declined as a region: complex() on int, int at line 2 of 'construct'
+START builtin.copyright
+680 1016 builtin.copyright declined as a region: copyright() on nothing at line 2 of 'construct'
+START builtin.credits
+681 1016 builtin.credits declined as a region: credits() on nothing at line 2 of 'construct'
+START builtin.delattr
+682 1016 builtin.delattr declined as a region: a 'Box' object with attributes its __init__ does not set
+START builtin.dict
+683 1016 builtin.dict declined as a region: dict() on list[(int, int)] at line 2 of 'construct'
+START builtin.dir
+684 1016 builtin.dir declined as a region: dir() on int at line 2 of 'construct'
+START builtin.divmod
+685 1016 builtin.divmod declined as a region: divmod() on int, int at line 2 of 'construct'
+START builtin.enumerate
+686 1016 builtin.enumerate native 
+START builtin.eval
+687 1016 builtin.eval declined as a region: eval() on str, dict[nothing, nothing] at line 2 of 'construct'
+START builtin.exec
+688 1016 builtin.exec declined as a region: exec() on str, dict[nothing, nothing] at line 2 of 'construct'
+START builtin.exit
+689 1016 builtin.exit declined call at line 2; exit() on int at line 2 of 'construct'
+START builtin.filter
+690 1016 builtin.filter declined as a region: filter() on None, list[int] at line 2 of 'construct'
+START builtin.float
+691 1016 builtin.float native 
+START builtin.format
+692 1016 builtin.format declined as a region: format() on int, str at line 2 of 'construct'
+START builtin.frozenset
+693 1016 builtin.frozenset declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START builtin.getattr
+694 1016 builtin.getattr declined as a region: getattr() on Box, str at line 2 of 'construct'
+START builtin.globals
+695 1016 builtin.globals declined as a region: globals() on nothing at line 2 of 'construct'
+START builtin.hasattr
+696 1016 builtin.hasattr declined as a region: hasattr() on Box, str at line 2 of 'construct'
+START builtin.hash
+697 1016 builtin.hash declined as a region: hash() on (int, int) at line 2 of 'construct'
+START builtin.help
+698 1016 builtin.help declined as a region: name 'abs' used as a value at line 2 of 'construct'
+START builtin.hex
+699 1016 builtin.hex declined as a region: hex() on int at line 2 of 'construct'
+START builtin.id
+700 1016 builtin.id declined as a region: id() on Box at line 2 of 'construct'
+START builtin.input
+701 1016 builtin.input declined as a region: input() on str at line 2 of 'construct'
+START builtin.int
+702 1016 builtin.int declined as a region: int() on str at line 2 of 'construct'
+START builtin.isinstance
+703 1016 builtin.isinstance declined as a region: isinstance() with something other than one class at line 2 of 'construct'
+START builtin.issubclass
+704 1016 builtin.issubclass declined as a region: name 'bool' used as a value at line 2 of 'construct'
+START builtin.iter
+705 1016 builtin.iter declined as a region: iter() on list[int] at line 2 of 'construct'
+START builtin.len
+706 1016 builtin.len native 
+START builtin.license
+707 1016 builtin.license declined as a region: license() on nothing at line 2 of 'construct'
+START builtin.list
+708 1016 builtin.list native 
+START builtin.locals
+709 1016 builtin.locals declined as a region: locals() on nothing at line 2 of 'construct'
+START builtin.map
+710 1016 builtin.map declined as a region: name 'abs' used as a value at line 2 of 'construct'
+START builtin.max
+711 1016 builtin.max native 
+START builtin.memoryview
+712 1016 builtin.memoryview declined constant b'abc' at line 2; constant b'abc' at line 2 of 'construct'
+START builtin.min
+713 1016 builtin.min native 
+START builtin.next
+714 1016 builtin.next declined as a region: iter() on list[int] at line 2 of 'construct'
+START builtin.object
+715 1016 builtin.object declined as a region: object() on nothing at line 2 of 'construct'
+START builtin.oct
+716 1016 builtin.oct declined as a region: oct() on int at line 2 of 'construct'
+START builtin.open
+717 1016 builtin.open declined as a region: With at line 2 of 'construct'
+START builtin.ord
+718 1016 builtin.ord native 
+START builtin.pow
+719 1016 builtin.pow declined as a region: pow() on int, int at line 2 of 'construct'
+START builtin.print
+720 1016 builtin.print declined as a region: print() on str at line 2 of 'construct'
+START builtin.property
+721 1016 builtin.property declined as a region: 'construct' declares globals or defines functions inside itself
+START builtin.quit
+722 1016 builtin.quit declined call at line 2; quit() on int at line 2 of 'construct'
+START builtin.range
+723 1016 builtin.range native 
+START builtin.repr
+724 1016 builtin.repr declined as a region: repr() on list[int] at line 2 of 'construct'
+START builtin.reversed
+725 1016 builtin.reversed declined as a region: reversed() on list[int] at line 2 of 'construct'
+START builtin.round
+726 1016 builtin.round declined as a region: round() on float, int at line 2 of 'construct'
+START builtin.set
+727 1016 builtin.set native 
+START builtin.setattr
+728 1016 builtin.setattr declined as a region: setattr() on Box, str, int at line 2 of 'construct'
+START builtin.slice
+729 1016 builtin.slice declined call at line 2; slice() on int, int, int at line 2 of 'construct'
+START builtin.sorted
+730 1016 builtin.sorted declined as a region: sorted() on list[int] at line 2 of 'construct'
+START builtin.staticmethod
+731 1016 builtin.staticmethod declined as a region: 'construct' declares globals or defines functions inside itself
+START builtin.str
+732 1016 builtin.str native 
+START builtin.sum
+733 1016 builtin.sum native 
+START builtin.super
+734 1016 builtin.super declined as a region: 'construct' declares globals or defines functions inside itself
+START builtin.tuple
+735 1016 builtin.tuple declined as a region: tuple() on list[int] at line 2 of 'construct'
+START builtin.type
+736 1016 builtin.type declined call at line 2; type() on int at line 2 of 'construct'
+START builtin.vars
+737 1016 builtin.vars declined as a region: vars() on Box at line 2 of 'construct'
+START builtin.zip
+738 1016 builtin.zip declined as a region: zip() on list[int], list[int] at line 2 of 'construct'
+START method.str.capitalize
+739 1016 method.str.capitalize declined as a region: str method 'capitalize' at line 3 of 'construct'
+START method.str.casefold
+740 1016 method.str.casefold declined as a region: str method 'casefold' at line 3 of 'construct'
+START method.str.center
+741 1016 method.str.center declined as a region: str method 'center' at line 3 of 'construct'
+START method.str.count
+742 1016 method.str.count native 
+START method.str.encode
+743 1016 method.str.encode declined as a region: str method 'encode' at line 3 of 'construct'
+START method.str.endswith
+744 1016 method.str.endswith native 
+START method.str.expandtabs
+745 1016 method.str.expandtabs declined as a region: str method 'expandtabs' at line 3 of 'construct'
+START method.str.find
+746 1016 method.str.find native 
+START method.str.format
+747 1016 method.str.format declined as a region: str method 'format' at line 3 of 'construct'
+START method.str.format_map
+748 1016 method.str.format_map declined as a region: str method 'format_map' at line 3 of 'construct'
+START method.str.index
+749 1016 method.str.index declined as a region: str method 'index' at line 3 of 'construct'
+START method.str.isalnum
+750 1016 method.str.isalnum declined as a region: str method 'isalnum' at line 3 of 'construct'
+START method.str.isalpha
+751 1016 method.str.isalpha declined as a region: str method 'isalpha' at line 3 of 'construct'
+START method.str.isascii
+752 1016 method.str.isascii declined as a region: str method 'isascii' at line 3 of 'construct'
+START method.str.isdecimal
+753 1016 method.str.isdecimal declined as a region: str method 'isdecimal' at line 3 of 'construct'
+START method.str.isdigit
+754 1016 method.str.isdigit declined as a region: str method 'isdigit' at line 3 of 'construct'
+START method.str.isidentifier
+755 1016 method.str.isidentifier declined as a region: str method 'isidentifier' at line 3 of 'construct'
+START method.str.islower
+756 1016 method.str.islower declined as a region: str method 'islower' at line 3 of 'construct'
+START method.str.isnumeric
+757 1016 method.str.isnumeric declined as a region: str method 'isnumeric' at line 3 of 'construct'
+START method.str.isprintable
+758 1016 method.str.isprintable declined as a region: str method 'isprintable' at line 3 of 'construct'
+START method.str.isspace
+759 1016 method.str.isspace declined as a region: str method 'isspace' at line 3 of 'construct'
+START method.str.istitle
+760 1016 method.str.istitle declined as a region: str method 'istitle' at line 3 of 'construct'
+START method.str.isupper
+761 1016 method.str.isupper declined as a region: str method 'isupper' at line 3 of 'construct'
+START method.str.join
+762 1016 method.str.join native 
+START method.str.ljust
+763 1016 method.str.ljust declined as a region: str method 'ljust' at line 3 of 'construct'
+START method.str.lower
+764 1016 method.str.lower native 
+START method.str.lstrip
+765 1016 method.str.lstrip native 
+START method.str.maketrans
+766 1016 method.str.maketrans declined as a region: str method 'maketrans' at line 3 of 'construct'
+START method.str.partition
+767 1016 method.str.partition declined as a region: str method 'partition' at line 3 of 'construct'
+START method.str.removeprefix
+768 1016 method.str.removeprefix declined as a region: str method 'removeprefix' at line 3 of 'construct'
+START method.str.removesuffix
+769 1016 method.str.removesuffix declined as a region: str method 'removesuffix' at line 3 of 'construct'
+START method.str.replace
+770 1016 method.str.replace native 
+START method.str.rfind
+771 1016 method.str.rfind declined as a region: str method 'rfind' at line 3 of 'construct'
+START method.str.rindex
+772 1016 method.str.rindex declined as a region: str method 'rindex' at line 3 of 'construct'
+START method.str.rjust
+773 1016 method.str.rjust declined as a region: str method 'rjust' at line 3 of 'construct'
+START method.str.rpartition
+774 1016 method.str.rpartition declined as a region: str method 'rpartition' at line 3 of 'construct'
+START method.str.rsplit
+775 1016 method.str.rsplit declined as a region: str method 'rsplit' at line 3 of 'construct'
+START method.str.rstrip
+776 1016 method.str.rstrip native 
+START method.str.split
+777 1016 method.str.split native 
+START method.str.splitlines
+778 1016 method.str.splitlines declined as a region: str method 'splitlines' at line 3 of 'construct'
+START method.str.startswith
+779 1016 method.str.startswith native 
+START method.str.strip
+780 1016 method.str.strip native 
+START method.str.swapcase
+781 1016 method.str.swapcase declined as a region: str method 'swapcase' at line 3 of 'construct'
+START method.str.title
+782 1016 method.str.title declined as a region: str method 'title' at line 3 of 'construct'
+START method.str.translate
+783 1016 method.str.translate declined as a region: str method 'translate' at line 3 of 'construct'
+START method.str.upper
+784 1016 method.str.upper native 
+START method.str.zfill
+785 1016 method.str.zfill declined as a region: str method 'zfill' at line 3 of 'construct'
+START method.bytes.capitalize
+786 1016 method.bytes.capitalize declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.center
+787 1016 method.bytes.center declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.count
+788 1016 method.bytes.count declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.decode
+789 1016 method.bytes.decode declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.endswith
+790 1016 method.bytes.endswith declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.expandtabs
+791 1016 method.bytes.expandtabs declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.find
+792 1016 method.bytes.find declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.fromhex
+793 1016 method.bytes.fromhex declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.hex
+794 1016 method.bytes.hex declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.index
+795 1016 method.bytes.index declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.isalnum
+796 1016 method.bytes.isalnum declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.isalpha
+797 1016 method.bytes.isalpha declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.isascii
+798 1016 method.bytes.isascii declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.isdigit
+799 1016 method.bytes.isdigit declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.islower
+800 1016 method.bytes.islower declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.isspace
+801 1016 method.bytes.isspace declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.istitle
+802 1016 method.bytes.istitle declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.isupper
+803 1016 method.bytes.isupper declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.join
+804 1016 method.bytes.join declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.ljust
+805 1016 method.bytes.ljust declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.lower
+806 1016 method.bytes.lower declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.lstrip
+807 1016 method.bytes.lstrip declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.maketrans
+808 1016 method.bytes.maketrans declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.partition
+809 1016 method.bytes.partition declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.removeprefix
+810 1016 method.bytes.removeprefix declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.removesuffix
+811 1016 method.bytes.removesuffix declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.replace
+812 1016 method.bytes.replace declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.rfind
+813 1016 method.bytes.rfind declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.rindex
+814 1016 method.bytes.rindex declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.rjust
+815 1016 method.bytes.rjust declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.rpartition
+816 1016 method.bytes.rpartition declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.rsplit
+817 1016 method.bytes.rsplit declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.rstrip
+818 1016 method.bytes.rstrip declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.split
+819 1016 method.bytes.split declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.splitlines
+820 1016 method.bytes.splitlines declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.startswith
+821 1016 method.bytes.startswith declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.strip
+822 1016 method.bytes.strip declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.swapcase
+823 1016 method.bytes.swapcase declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.title
+824 1016 method.bytes.title declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.translate
+825 1016 method.bytes.translate declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.upper
+826 1016 method.bytes.upper declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytes.zfill
+827 1016 method.bytes.zfill declined as a region: constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.append
+828 1016 method.bytearray.append declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.capitalize
+829 1016 method.bytearray.capitalize declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.center
+830 1016 method.bytearray.center declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.clear
+831 1016 method.bytearray.clear declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.copy
+832 1016 method.bytearray.copy declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.count
+833 1016 method.bytearray.count declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.decode
+834 1016 method.bytearray.decode declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.endswith
+835 1016 method.bytearray.endswith declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.expandtabs
+836 1016 method.bytearray.expandtabs declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.extend
+837 1016 method.bytearray.extend declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.find
+838 1016 method.bytearray.find declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.fromhex
+839 1016 method.bytearray.fromhex declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.hex
+840 1016 method.bytearray.hex declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.index
+841 1016 method.bytearray.index declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.insert
+842 1016 method.bytearray.insert declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.isalnum
+843 1016 method.bytearray.isalnum declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.isalpha
+844 1016 method.bytearray.isalpha declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.isascii
+845 1016 method.bytearray.isascii declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.isdigit
+846 1016 method.bytearray.isdigit declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.islower
+847 1016 method.bytearray.islower declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.isspace
+848 1016 method.bytearray.isspace declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.istitle
+849 1016 method.bytearray.istitle declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.isupper
+850 1016 method.bytearray.isupper declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.join
+851 1016 method.bytearray.join declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.ljust
+852 1016 method.bytearray.ljust declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.lower
+853 1016 method.bytearray.lower declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.lstrip
+854 1016 method.bytearray.lstrip declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.maketrans
+855 1016 method.bytearray.maketrans declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.partition
+856 1016 method.bytearray.partition declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.pop
+857 1016 method.bytearray.pop declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.remove
+858 1016 method.bytearray.remove declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.removeprefix
+859 1016 method.bytearray.removeprefix declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.removesuffix
+860 1016 method.bytearray.removesuffix declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.replace
+861 1016 method.bytearray.replace declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.resize
+862 1016 method.bytearray.resize declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.reverse
+863 1016 method.bytearray.reverse declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.rfind
+864 1016 method.bytearray.rfind declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.rindex
+865 1016 method.bytearray.rindex declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.rjust
+866 1016 method.bytearray.rjust declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.rpartition
+867 1016 method.bytearray.rpartition declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.rsplit
+868 1016 method.bytearray.rsplit declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.rstrip
+869 1016 method.bytearray.rstrip declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.split
+870 1016 method.bytearray.split declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.splitlines
+871 1016 method.bytearray.splitlines declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.startswith
+872 1016 method.bytearray.startswith declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.strip
+873 1016 method.bytearray.strip declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.swapcase
+874 1016 method.bytearray.swapcase declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.title
+875 1016 method.bytearray.title declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.translate
+876 1016 method.bytearray.translate declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.upper
+877 1016 method.bytearray.upper declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.bytearray.zfill
+878 1016 method.bytearray.zfill declined constant b'Abc abc 12' at line 2; constant b'Abc abc 12' at line 2 of 'construct'
+START method.list.append
+879 1016 method.list.append native 
+START method.list.clear
+880 1016 method.list.clear native 
+START method.list.copy
+881 1016 method.list.copy declined as a region: list method 'copy' at line 3 of 'construct'
+START method.list.count
+882 1016 method.list.count native 
+START method.list.extend
+883 1016 method.list.extend native 
+START method.list.index
+884 1016 method.list.index native 
+START method.list.insert
+885 1016 method.list.insert native 
+START method.list.pop
+886 1016 method.list.pop native 
+START method.list.remove
+887 1016 method.list.remove native 
+START method.list.reverse
+888 1016 method.list.reverse native 
+START method.list.sort
+889 1016 method.list.sort declined as a region: list method 'sort' at line 3 of 'construct'
+START method.tuple.count
+890 1016 method.tuple.count declined as a region: method 'count' of (int, int, int) at line 3 of 'construct'
+START method.tuple.index
+891 1016 method.tuple.index declined as a region: method 'index' of (int, int, int) at line 3 of 'construct'
+START method.dict.clear
+892 1016 method.dict.clear native 
+START method.dict.copy
+893 1016 method.dict.copy native 
+START method.dict.fromkeys
+894 1016 method.dict.fromkeys declined as a region: dict method 'fromkeys' at line 3 of 'construct'
+START method.dict.get
+895 1016 method.dict.get native 
+START method.dict.items
+896 1016 method.dict.items declined as a region: dict method 'items' at line 3 of 'construct'
+START method.dict.keys
+897 1016 method.dict.keys declined as a region: dict method 'keys' at line 3 of 'construct'
+START method.dict.pop
+898 1016 method.dict.pop native 
+START method.dict.popitem
+899 1016 method.dict.popitem declined as a region: dict method 'popitem' at line 3 of 'construct'
+START method.dict.setdefault
+900 1016 method.dict.setdefault native 
+START method.dict.update
+901 1016 method.dict.update native 
+START method.dict.values
+902 1016 method.dict.values declined as a region: dict method 'values' at line 3 of 'construct'
+START method.set.add
+903 1016 method.set.add native 
+START method.set.clear
+904 1016 method.set.clear native 
+START method.set.copy
+905 1016 method.set.copy declined as a region: set method 'copy' at line 3 of 'construct'
+START method.set.difference
+906 1016 method.set.difference declined as a region: set method 'difference' at line 3 of 'construct'
+START method.set.difference_update
+907 1016 method.set.difference_update declined as a region: set method 'difference_update' at line 3 of 'construct'
+START method.set.discard
+908 1016 method.set.discard native 
+START method.set.intersection
+909 1016 method.set.intersection declined as a region: set method 'intersection' at line 3 of 'construct'
+START method.set.intersection_update
+910 1016 method.set.intersection_update declined as a region: set method 'intersection_update' at line 3 of 'construct'
+START method.set.isdisjoint
+911 1016 method.set.isdisjoint declined as a region: set method 'isdisjoint' at line 3 of 'construct'
+START method.set.issubset
+912 1016 method.set.issubset declined as a region: set method 'issubset' at line 3 of 'construct'
+START method.set.issuperset
+913 1016 method.set.issuperset declined as a region: set method 'issuperset' at line 3 of 'construct'
+START method.set.pop
+914 1016 method.set.pop declined as a region: set method 'pop' at line 3 of 'construct'
+START method.set.remove
+915 1016 method.set.remove native 
+START method.set.symmetric_difference
+916 1016 method.set.symmetric_difference declined as a region: set method 'symmetric_difference' at line 3 of 'construct'
+START method.set.symmetric_difference_update
+917 1016 method.set.symmetric_difference_update declined as a region: set method 'symmetric_difference_update' at line 3 of 'construct'
+START method.set.union
+918 1016 method.set.union declined as a region: set method 'union' at line 3 of 'construct'
+START method.set.update
+919 1016 method.set.update declined as a region: set method 'update' at line 3 of 'construct'
+START method.frozenset.copy
+920 1016 method.frozenset.copy declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START method.frozenset.difference
+921 1016 method.frozenset.difference declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START method.frozenset.intersection
+922 1016 method.frozenset.intersection declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START method.frozenset.isdisjoint
+923 1016 method.frozenset.isdisjoint declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START method.frozenset.issubset
+924 1016 method.frozenset.issubset declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START method.frozenset.issuperset
+925 1016 method.frozenset.issuperset declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START method.frozenset.symmetric_difference
+926 1016 method.frozenset.symmetric_difference declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START method.frozenset.union
+927 1016 method.frozenset.union declined as a region: frozenset() on list[int] at line 2 of 'construct'
+START method.int.as_integer_ratio
+928 1016 method.int.as_integer_ratio declined as a region: method 'as_integer_ratio' of int at line 3 of 'construct'
+START method.int.bit_count
+929 1016 method.int.bit_count native 
+START method.int.bit_length
+930 1016 method.int.bit_length declined as a region: method 'bit_length' of int at line 3 of 'construct'
+START method.int.conjugate
+931 1016 method.int.conjugate declined as a region: method 'conjugate' of int at line 3 of 'construct'
+START method.int.from_bytes
+932 1016 method.int.from_bytes declined as a region: method 'from_bytes' of int at line 3 of 'construct'
+START method.int.is_integer
+933 1016 method.int.is_integer declined as a region: method 'is_integer' of int at line 3 of 'construct'
+START method.int.to_bytes
+934 1016 method.int.to_bytes declined as a region: method 'to_bytes' of int at line 3 of 'construct'
+START method.float.as_integer_ratio
+935 1016 method.float.as_integer_ratio declined as a region: method 'as_integer_ratio' of float at line 3 of 'construct'
+START method.float.conjugate
+936 1016 method.float.conjugate declined as a region: method 'conjugate' of float at line 3 of 'construct'
+START method.float.from_number
+937 1016 method.float.from_number declined as a region: method 'from_number' of float at line 3 of 'construct'
+START method.float.fromhex
+938 1016 method.float.fromhex declined as a region: method 'fromhex' of float at line 3 of 'construct'
+START method.float.hex
+939 1016 method.float.hex declined as a region: method 'hex' of float at line 3 of 'construct'
+START method.float.is_integer
+940 1016 method.float.is_integer declined as a region: method 'is_integer' of float at line 3 of 'construct'
+START stdlib.math.sqrt
+941 1016 stdlib.math.sqrt native 
+START stdlib.math.frexp
+942 1016 stdlib.math.frexp declined as a region: math.frexp at line 2 of 'construct'
+START stdlib.math.gcd
+943 1016 stdlib.math.gcd declined as a region: math.gcd at line 2 of 'construct'
+START stdlib.math.sin
+944 1016 stdlib.math.sin native 
+START stdlib.itertools.chain
+945 1016 stdlib.itertools.chain declined as a region: 'chain' customises allocation
+START stdlib.itertools.repeat
+946 1016 stdlib.itertools.repeat declined as a region: 'repeat' customises allocation
+START stdlib.itertools.product
+947 1016 stdlib.itertools.product declined as a region: 'product' customises allocation
+START stdlib.functools.reduce
+948 1016 stdlib.functools.reduce declined as a region: a call of 'functools.reduce' at line 2 of 'construct'
+START stdlib.functools.partial
+949 1016 stdlib.functools.partial declined as a region: 'partial' customises allocation
+START stdlib.collections.Counter
+950 1016 stdlib.collections.Counter declined as a region: 'Counter' customises allocation
+START stdlib.collections.deque
+951 1016 stdlib.collections.deque declined as a region: 'deque' customises allocation
+START stdlib.collections.defaultdict
+952 1016 stdlib.collections.defaultdict declined as a region: 'defaultdict' customises allocation
+START stdlib.operator.add
+953 1016 stdlib.operator.add native 
+START stdlib.operator.itemgetter
+954 1016 stdlib.operator.itemgetter declined as a region: 'itemgetter' customises allocation
+START stdlib.re.match
+955 1016 stdlib.re.match declined as a region: an argument of type type
+START stdlib.re.sub
+956 1016 stdlib.re.sub declined as a region: a call of 'sub' that relies on a default that is _ZeroSentinel at line 2 of 'construct'
+START stdlib.struct.pack
+957 1016 stdlib.struct.pack declined as a region: a call of 'struct.pack' at line 2 of 'construct'
+START stdlib.struct.unpack
+958 1016 stdlib.struct.unpack declined as a region: a call of 'struct.unpack' at line 2 of 'construct'
+START statement.bare_except
+959 1016 statement.bare_except declined as a region: a check at construct line 4 sent it back to Python
+START statement.except_as
+960 1016 statement.except_as declined as a region: a check at construct line 4 sent it back to Python
+START statement.raise_suppressed
+961 1016 statement.raise_suppressed declined Try at line 2; runtime guard at ('construct', 4)
+START statement.raise_context
+962 1016 statement.raise_context declined Try at line 2; runtime guard at ('construct', 4)
+START statement.generator_return
+963 1016 statement.generator_return declined as a region: generator 'construct' returns a value at line 3
+START async.with_multiple
+964 1016 async.with_multiple declined as a region: 'construct' uses async with, or yield outside a generator
+START async.for_else
+965 1016 async.for_else declined as a region: async for ... else, or a loop target that is not names at line 3 of 'construct'
+START builtin.anext_default
+966 1016 builtin.anext_default declined call at line 2; anext() on AsyncRange, int at line 2 of 'construct'
+START builtin.anext_exhausted
+967 1016 builtin.anext_exhausted declined call at line 2; anext() on AsyncRange at line 2 of 'construct'
+START literal.format
+968 1016 literal.format declined as a region: str method 'format' at line 2 of 'construct'
+START literal.format_map
+969 1016 literal.format_map declined as a region: str method 'format_map' at line 2 of 'construct'
+START comparison.chain_true
+970 1016 comparison.chain_true native 
+START boundary.int_overflow
+971 1016 boundary.int_overflow declined as a region: it handed every captured call back to Python
+START boundary.int_large
+972 1016 boundary.int_large declined as a region: an int argument too large for 64 bits
+START boundary.divide_zero
+973 1016 boundary.divide_zero declined runtime guard at ('construct', 3)
+START boundary.negative_shift
+974 1016 boundary.negative_shift declined operator LShift on int and int at line 2 of 'construct'
+START boundary.index
+975 1016 boundary.index declined runtime guard at ('construct', 3)
+START alias.return_argument
+976 1016 alias.return_argument native 
+START alias.mutation
+977 1016 alias.mutation native 
+START order.arguments
+978 1016 order.arguments native 
+START order.and
+979 1016 order.and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START order.or
+980 1016 order.or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START order.conditional
+981 1016 order.conditional native 
+START order.chain
+982 1016 order.chain native 
+START order.chain_short
+983 1016 order.chain_short native 
+START order.dict
+984 1016 order.dict native 
+START order.unpack
+985 1016 order.unpack declined as a region: *list[nothing] as arguments at line 2 of 'construct'
+START stdlib.re.compile
+986 1016 stdlib.re.compile declined as a region: an argument of type type
+START stdlib.re.escape
+987 1016 stdlib.re.escape declined as a region: isinstance() with something other than one class at line 5 of 'escape'
+START stdlib.re.findall
+988 1016 stdlib.re.findall declined as a region: an argument of type type
+START stdlib.re.finditer
+989 1016 stdlib.re.finditer declined as a region: an argument of type type
+START stdlib.re.purge
+990 1016 stdlib.re.purge declined as a region: name '_compile_template' used as a value at line 5 of 'purge'
+START stdlib.re.search
+991 1016 stdlib.re.search declined as a region: an argument of type type
+START stdlib.re.split
+992 1016 stdlib.re.split declined as a region: a call of 'split' that relies on a default that is _ZeroSentinel at line 2 of 'construct'
+START stdlib.collections.namedtuple
+993 1016 stdlib.collections.namedtuple declined as a region: 'namedtuple' declares globals or defines functions inside itself
+START stdlib.functools.cache
+994 1016 stdlib.functools.cache declined as a region: name 'helper' used as a value at line 2 of 'construct'
+START stdlib.functools.lru_cache
+995 1016 stdlib.functools.lru_cache declined as a region: 'lru_cache' declares globals or defines functions inside itself
+START stdlib.functools.wraps
+996 1016 stdlib.functools.wraps declined as a region: 'construct' declares globals or defines functions inside itself
+START stdlib.functools.update_wrapper
+997 1016 stdlib.functools.update_wrapper declined as a region: 'construct' declares globals or defines functions inside itself
+START stdlib.functools.singledispatch
+998 1016 stdlib.functools.singledispatch declined as a region: 'singledispatch' declares globals or defines functions inside itself
+START stdlib.functools.cached_property
+999 1016 stdlib.functools.cached_property declined as a region: 'construct' declares globals or defines functions inside itself
+START stdlib.functools.total_ordering
+1000 1016 stdlib.functools.total_ordering declined as a region: 'construct' declares globals or defines functions inside itself
+START review.mixed0.eq
+1001 1016 review.mixed0.eq declined as a region: a check at construct line 3 sent it back to Python
+START review.mixed0.gt
+1002 1016 review.mixed0.gt declined as a region: a check at construct line 3 sent it back to Python
+START review.mixed0.le
+1003 1016 review.mixed0.le declined as a region: a check at construct line 3 sent it back to Python
+START review.mixed1.eq
+1004 1016 review.mixed1.eq declined as a region: a check at construct line 3 sent it back to Python
+START review.mixed1.gt
+1005 1016 review.mixed1.gt declined as a region: a check at construct line 3 sent it back to Python
+START review.mixed1.le
+1006 1016 review.mixed1.le declined as a region: a check at construct line 3 sent it back to Python
+START review.tuple_nan_shared
+1007 1016 review.tuple_nan_shared declined as a region: arithmetic on (float) at line 2 of 'construct'
+START review.literal_index_high
+1008 1016 review.literal_index_high declined runtime guard at ('construct', 3)
+START review.literal_index_low
+1009 1016 review.literal_index_low declined runtime guard at ('construct', 3)
+START review.chain_call.0
+1010 1016 review.chain_call.0 native 
+START review.chain_call.1
+1011 1016 review.chain_call.1 native 
+START review.chain_call.2
+1012 1016 review.chain_call.2 native 
+START review.identity.float_or
+1013 1016 review.identity.float_or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START review.identity.negative_zero_and
+1014 1016 review.identity.negative_zero_and declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START review.identity.int_or
+1015 1016 review.identity.int_or declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+START review.identity.float_right
+1016 1016 review.identity.float_right declined as a region: and/or whose result is used as a value, on values that are not bool at line 2 of 'construct'
+{"counts": {"native": 235, "declined": 781}, "complete": true, "rows": 1016}

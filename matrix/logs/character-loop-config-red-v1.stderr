@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\setuptools\_distutils\spawn.py", line 71, in spawn
+    subprocess.check_call(cmd, env=_inject_macos_ver(env))
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 420, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX86\\x64\\link.exe', '/nologo', '/INCREMENTAL:NO', '/LTCG', '/DLL', '/MANIFEST:EMBED,ID=2', '/MANIFESTUAC:NO', '/LIBPATH:C:\\Python314\\libs', '/LIBPATH:C:\\Python314', '/LIBPATH:C:\\Python314\\PCbuild\\amd64', '/LIBPATH:C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\lib\\x64', '/LIBPATH:C:\\Program Files (x86)\\Windows Kits\\10\\lib\\10.0.26100.0\\ucrt\\x64', '/LIBPATH:C:\\Program Files (x86)\\Windows Kits\\10\\\\lib\\10.0.26100.0\\\\um\\x64', 'python314.lib', 'msvcrt.lib', '/EXPORT:PyInit_wave17_charloop', 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\temp\\character-config-red-v1\\obj\\_pycc_df44f79849db58f827cc1ac60272ecb35f5d9b0018b763ebeed99a77494351b0.obj', '/OUT:D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\temp\\character-config-red-v1\\wave17_charloop.cp314-win_amd64.pyd', '/IMPLIB:D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\temp\\character-config-red-v1\\obj\\wave17_charloop.cp314-win_amd64.lib']' returned non-zero exit status 1120.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\setuptools\_distutils\_msvccompiler.py", line 508, in link
+    self.spawn([self.linker] + ld_args)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\setuptools\_distutils\_msvccompiler.py", line 517, in spawn
+    return super().spawn(cmd, env=env)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\setuptools\_distutils\ccompiler.py", line 1044, in spawn
+    spawn(cmd, dry_run=self.dry_run, **kwargs)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\setuptools\_distutils\spawn.py", line 77, in spawn
+    raise DistutilsExecError(
+        f"command {_debug(cmd)!r} failed with exit code {err.returncode}"
+    ) from err
+distutils.errors.DistutilsExecError: command 'C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX86\\x64\\link.exe' failed with exit code 1120
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\character_loop\config_red.py", line 24, in <module>
+    t.link_shared(str(artifact), objects, libraries=t.get_python_libraries(), library_dirs=t.get_python_library_dirs(), export_symbols=['PyInit_wave17_charloop'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\src\recompyler\_pycc\platform.py", line 187, in link_shared
+    self._compiler.link(CCompiler.SHARED_OBJECT, objects,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        output_filename, output_dir,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        libraries, library_dirs,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+                        export_symbols=export_symbols,
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        extra_preargs=extra_ldflags)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\setuptools\_distutils\_msvccompiler.py", line 510, in link
+    raise LinkError(msg)
+distutils.errors.LinkError: command 'C:\\Program Files (x86)\\Microsoft Visual Studio\\18\\BuildTools\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX86\\x64\\link.exe' failed with exit code 1120

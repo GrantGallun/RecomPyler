@@ -1,0 +1,3508 @@
+{
+  "label": "ESTIMATE, NOT EXECUTED NATIVE VERDICTS",
+  "baseline_declines": 655,
+  "candidate_count": 548,
+  "production_rows_newly_native": 0,
+  "interpretation": "Syntactic estimate for a future whole-body boxed object emitter/integrated object-mode backend. Generic CPython calls can express these bodies, but this prototype has no automatic capture/guards/emitter/AOT/deployment integration. AOT feasibility and speed remain separate. Each included row must be executed before any future native claim; exclusions are scope limits of this estimate, not Python impossibility.",
+  "rows": [
+    {
+      "id": "statement.assert_error",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "statement.raise",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "statement.raise_from",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "statement.raise_reraise",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Try"
+      ]
+    },
+    {
+      "id": "statement.try_except",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Try"
+      ]
+    },
+    {
+      "id": "statement.except_star",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "TryStar"
+      ]
+    },
+    {
+      "id": "statement.with_single",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "With"
+      ]
+    },
+    {
+      "id": "statement.with_multiple",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "With"
+      ]
+    },
+    {
+      "id": "statement.global",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Global"
+      ]
+    },
+    {
+      "id": "statement.nonlocal",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Nonlocal",
+        "nested body"
+      ]
+    },
+    {
+      "id": "statement.del_name",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Delete"
+      ]
+    },
+    {
+      "id": "statement.del_item",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Delete"
+      ]
+    },
+    {
+      "id": "statement.del_slice",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Delete"
+      ]
+    },
+    {
+      "id": "statement.del_attr",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Delete"
+      ]
+    },
+    {
+      "id": "statement.import",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Import"
+      ]
+    },
+    {
+      "id": "statement.import_alias",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Import"
+      ]
+    },
+    {
+      "id": "statement.import_from",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ImportFrom"
+      ]
+    },
+    {
+      "id": "statement.import_from_alias",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ImportFrom"
+      ]
+    },
+    {
+      "id": "statement.class",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ClassDef",
+        "nested body"
+      ]
+    },
+    {
+      "id": "statement.function_def",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "nested body"
+      ]
+    },
+    {
+      "id": "statement.annotated_assign",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "statement.annotation_only",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "statement.lambda",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Lambda"
+      ]
+    },
+    {
+      "id": "statement.type_alias",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "TypeAlias"
+      ]
+    },
+    {
+      "id": "statement.type_parameters",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "TypeAlias"
+      ]
+    },
+    {
+      "id": "statement.type_var_tuple",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "TypeAlias"
+      ]
+    },
+    {
+      "id": "statement.param_spec",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "TypeAlias"
+      ]
+    },
+    {
+      "id": "statement.walrus",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "NamedExpr"
+      ]
+    },
+    {
+      "id": "statement.star_assign",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "pattern.value",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.singleton",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.sequence",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.mapping",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.class",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.star",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.as",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.or",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.wildcard",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "pattern.guard",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Match"
+      ]
+    },
+    {
+      "id": "async.async_for",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "AsyncFor"
+      ]
+    },
+    {
+      "id": "async.async_with",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "AsyncWith"
+      ]
+    },
+    {
+      "id": "async.async_comprehension",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ListComp"
+      ]
+    },
+    {
+      "id": "operator.int.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.int.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.int.compare6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.int.compare7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.int.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.int.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.float.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.float.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.float.compare6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.float.compare7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.float.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.float.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.binary3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.augmented3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.binary4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.augmented4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.binary5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.augmented5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.bool.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.bool.compare6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.compare7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bool.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.augmented11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.complex.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.complex.compare0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.unary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.unary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.unary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.unary3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.chain",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.and",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.complex.or",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.augmented11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.str.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.str.compare6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.compare7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.unary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.unary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.unary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.and",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.str.or",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.augmented11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.bytes.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.bytes.compare0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.unary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.unary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.unary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.unary3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.chain",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.and",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.bytes.or",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.binary9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.augmented9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.binary10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.augmented10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.binary11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.augmented11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.list.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.list.compare0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.compare1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.compare2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.compare3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.compare4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.compare5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.list.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.tuple.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.tuple.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.tuple.compare6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.tuple.compare7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.tuple.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.tuple.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.augmented11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.dict.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.dict.compare0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.compare1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.compare2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.compare3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.compare4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.compare5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.unary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.unary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.unary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.chain",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.and",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.dict.or",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented6",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented7",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented10",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.augmented11",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.set.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.set.compare0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.compare1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.compare2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.compare3",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.compare4",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.compare5",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.unary0",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.unary1",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.unary2",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.chain",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.and",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.set.or",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.none.binary12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.none.augmented12",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "operator.none.compare8",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "operator.none.compare9",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.int64",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.bigint",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.negative_bigint",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.inf",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.nan",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.complex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.bytes",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.list_star",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.tuple_star",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.set_star",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.dict_unpack",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.fstring_r",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "JoinedStr"
+      ]
+    },
+    {
+      "id": "literal.fstring_a",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "JoinedStr"
+      ]
+    },
+    {
+      "id": "literal.fstring_spec",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "JoinedStr"
+      ]
+    },
+    {
+      "id": "literal.fstring_nested",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "JoinedStr"
+      ]
+    },
+    {
+      "id": "literal.fstring_debug",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "JoinedStr"
+      ]
+    },
+    {
+      "id": "literal.template",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "TemplateStr"
+      ]
+    },
+    {
+      "id": "operator.matmul_valid",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "MatMult"
+      ]
+    },
+    {
+      "id": "comprehension.set",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "SetComp"
+      ]
+    },
+    {
+      "id": "comprehension.dict",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "DictComp"
+      ]
+    },
+    {
+      "id": "comprehension.set_nested",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "SetComp"
+      ]
+    },
+    {
+      "id": "comprehension.dict_nested",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "DictComp"
+      ]
+    },
+    {
+      "id": "call.varargs",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "signature integration not provided"
+      ]
+    },
+    {
+      "id": "call.varkw",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "signature integration not provided"
+      ]
+    },
+    {
+      "id": "call.star",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "call unpack integration untested"
+      ]
+    },
+    {
+      "id": "call.double_star",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "keyword unpack integration untested"
+      ]
+    },
+    {
+      "id": "call.bound_value",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "call.function_value",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "call.closure",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "nested body"
+      ]
+    },
+    {
+      "id": "call.decorator",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "nested body"
+      ]
+    },
+    {
+      "id": "builtin.ArithmeticError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.AssertionError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.AttributeError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.BaseException",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.BaseExceptionGroup",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.BlockingIOError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.BrokenPipeError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.BufferError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.BytesWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ChildProcessError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ConnectionAbortedError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ConnectionError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ConnectionRefusedError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ConnectionResetError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.DeprecationWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.EOFError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.EncodingWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.EnvironmentError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.Exception",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ExceptionGroup",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.FileExistsError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.FileNotFoundError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.FloatingPointError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.FutureWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.GeneratorExit",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.IOError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ImportError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ImportWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.IndentationError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.IndexError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.InterruptedError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.IsADirectoryError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.KeyError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.KeyboardInterrupt",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.LookupError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.MemoryError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ModuleNotFoundError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.NameError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.NotADirectoryError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.NotImplementedError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.OSError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.OverflowError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.PendingDeprecationWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.PermissionError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ProcessLookupError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.PythonFinalizationError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.RecursionError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ReferenceError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ResourceWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.RuntimeError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.RuntimeWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.StopAsyncIteration",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.StopIteration",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.SyntaxError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.SyntaxWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.SystemError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.SystemExit",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.TabError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.TimeoutError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.TypeError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.UnboundLocalError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.UnicodeDecodeError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.UnicodeEncodeError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.UnicodeError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.UnicodeTranslateError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.UnicodeWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.UserWarning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ValueError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.Warning",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.WindowsError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ZeroDivisionError",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.aiter",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.anext",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.ascii",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.bin",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.bool",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.breakpoint",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin breakpoint"
+      ]
+    },
+    {
+      "id": "builtin.bytearray",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.bytes",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.callable",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.classmethod",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ClassDef",
+        "nested body"
+      ]
+    },
+    {
+      "id": "builtin.compile",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin eval"
+      ]
+    },
+    {
+      "id": "builtin.complex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.copyright",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin copyright"
+      ]
+    },
+    {
+      "id": "builtin.credits",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin credits"
+      ]
+    },
+    {
+      "id": "builtin.delattr",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.dict",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.dir",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin dir"
+      ]
+    },
+    {
+      "id": "builtin.divmod",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.eval",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin eval"
+      ]
+    },
+    {
+      "id": "builtin.exec",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin exec"
+      ]
+    },
+    {
+      "id": "builtin.exit",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin exit"
+      ]
+    },
+    {
+      "id": "builtin.filter",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.format",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.frozenset",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.getattr",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.globals",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin globals"
+      ]
+    },
+    {
+      "id": "builtin.hasattr",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.hash",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.help",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin help"
+      ]
+    },
+    {
+      "id": "builtin.hex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.id",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.input",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.int",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.isinstance",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.issubclass",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.iter",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.license",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin license"
+      ]
+    },
+    {
+      "id": "builtin.locals",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin locals"
+      ]
+    },
+    {
+      "id": "builtin.map",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.memoryview",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.next",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.object",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.oct",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.open",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "With"
+      ]
+    },
+    {
+      "id": "builtin.pow",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.print",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.property",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ClassDef",
+        "nested body"
+      ]
+    },
+    {
+      "id": "builtin.quit",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin quit"
+      ]
+    },
+    {
+      "id": "builtin.repr",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.reversed",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.round",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.setattr",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.slice",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.sorted",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.staticmethod",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ClassDef",
+        "nested body"
+      ]
+    },
+    {
+      "id": "builtin.super",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ClassDef",
+        "frame/context-sensitive or untested builtin super",
+        "nested body"
+      ]
+    },
+    {
+      "id": "builtin.tuple",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.type",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.vars",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "frame/context-sensitive or untested builtin vars"
+      ]
+    },
+    {
+      "id": "builtin.zip",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.capitalize",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.casefold",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.center",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.encode",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.expandtabs",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.format",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.format_map",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.index",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isalnum",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isalpha",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isascii",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isdecimal",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isdigit",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isidentifier",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.islower",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isnumeric",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isprintable",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isspace",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.istitle",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.isupper",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.ljust",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.maketrans",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.partition",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.removeprefix",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.removesuffix",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.rfind",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.rindex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.rjust",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.rpartition",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.rsplit",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.splitlines",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.swapcase",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.title",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.translate",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.str.zfill",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.capitalize",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.center",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.count",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.decode",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.endswith",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.expandtabs",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.find",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.fromhex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.hex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.index",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.isalnum",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.isalpha",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.isascii",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.isdigit",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.islower",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.isspace",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.istitle",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.isupper",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.join",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.ljust",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.lower",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.lstrip",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.maketrans",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.partition",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.removeprefix",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.removesuffix",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.replace",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.rfind",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.rindex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.rjust",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.rpartition",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.rsplit",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.rstrip",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.split",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.splitlines",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.startswith",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.strip",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.swapcase",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.title",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.translate",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.upper",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytes.zfill",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.append",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.capitalize",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.center",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.clear",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.copy",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.count",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.decode",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.endswith",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.expandtabs",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.extend",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.find",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.fromhex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.hex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.index",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.insert",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.isalnum",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.isalpha",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.isascii",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.isdigit",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.islower",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.isspace",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.istitle",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.isupper",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.join",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.ljust",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.lower",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.lstrip",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.maketrans",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.partition",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.pop",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.remove",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.removeprefix",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.removesuffix",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.replace",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.resize",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.reverse",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.rfind",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.rindex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.rjust",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.rpartition",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.rsplit",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.rstrip",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.split",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.splitlines",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.startswith",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.strip",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.swapcase",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.title",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.translate",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.upper",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.bytearray.zfill",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.dict.fromkeys",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.dict.items",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.dict.keys",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.dict.popitem",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.dict.values",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.copy",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.difference",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.difference_update",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.intersection",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.intersection_update",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.isdisjoint",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.issubset",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.issuperset",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.pop",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.symmetric_difference",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.symmetric_difference_update",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.union",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.set.update",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.frozenset.copy",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.frozenset.difference",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.frozenset.intersection",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.frozenset.isdisjoint",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.frozenset.issubset",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.frozenset.issuperset",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.frozenset.symmetric_difference",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.frozenset.union",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.int.from_bytes",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.int.to_bytes",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "method.float.fromhex",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.math.frexp",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.math.gcd",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.itertools.chain",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.itertools.repeat",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.itertools.product",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.functools.reduce",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.functools.partial",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.collections.Counter",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.collections.deque",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.collections.defaultdict",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.operator.itemgetter",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.re.match",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.re.sub",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.struct.pack",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.struct.unpack",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "statement.bare_except",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Try"
+      ]
+    },
+    {
+      "id": "statement.except_as",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Try"
+      ]
+    },
+    {
+      "id": "statement.raise_suppressed",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Try"
+      ]
+    },
+    {
+      "id": "statement.raise_context",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Try"
+      ]
+    },
+    {
+      "id": "statement.generator_return",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "Yield"
+      ]
+    },
+    {
+      "id": "async.with_multiple",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "AsyncWith"
+      ]
+    },
+    {
+      "id": "async.for_else",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "AsyncFor"
+      ]
+    },
+    {
+      "id": "builtin.anext_default",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "builtin.anext_exhausted",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.format",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "literal.format_map",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "boundary.int_overflow",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "boundary.int_large",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "boundary.divide_zero",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "boundary.negative_shift",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "order.and",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "order.or",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "order.unpack",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "call unpack integration untested",
+        "keyword unpack integration untested"
+      ]
+    },
+    {
+      "id": "stdlib.re.compile",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.re.escape",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.re.findall",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.re.finditer",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ListComp"
+      ]
+    },
+    {
+      "id": "stdlib.re.purge",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.re.search",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.re.split",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.collections.namedtuple",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.functools.cache",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.functools.lru_cache",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.functools.wraps",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "nested body"
+      ]
+    },
+    {
+      "id": "stdlib.functools.update_wrapper",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "nested body"
+      ]
+    },
+    {
+      "id": "stdlib.functools.singledispatch",
+      "estimated_expression_mechanism_candidate": true,
+      "excluded_reasons": []
+    },
+    {
+      "id": "stdlib.functools.cached_property",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ClassDef",
+        "nested body"
+      ]
+    },
+    {
+      "id": "stdlib.functools.total_ordering",
+      "estimated_expression_mechanism_candidate": false,
+      "excluded_reasons": [
+        "ClassDef",
+        "nested body"
+      ]
+    }
+  ]
+}

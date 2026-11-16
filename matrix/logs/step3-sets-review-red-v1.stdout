@@ -1,0 +1,130 @@
+F...............FF.                                                      [100%]
+================================== FAILURES ===================================
+________ test_pure_set_operation_runs_natively[difference-args0-want0] ________
+
+fn = <function difference at 0x000002A3BA9F5B10>, args = ({1, 2}, {2, 3})
+want = {1}
+
+    @pytest.mark.parametrize('fn,args,want', [
+        (difference, ({1, 2}, {2, 3}), {1}),
+        (subset, ({1, 2}, {1, 2, 3}), True),
+        (chain, ({1, 2}, {2, 1}), True),
+        (local_copy, (3,), {1, 2, 3}),
+        (local_union, (4,), {1, 2, 3, 4}),
+        (disjoint, ({1, 2}, {3, 4}), True),
+    ])
+    def test_pure_set_operation_runs_natively(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: None
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x000002A3BA9DB620>.compiled_calls
+
+tests\test_native_sets.py:58: AssertionError
+________ test_iteration_consumers_preserve_original_traversal[listed] _________
+
+fn = <function listed at 0x000002A3BAB2AC40>
+
+    @pytest.mark.parametrize('fn', [listed, comprehension, enumerated])
+    def test_iteration_consumers_preserve_original_traversal(fn):
+        a = {-5, -4, -3, -2, -1, 0, 1, 2, 32, 64, 96, 128, 160, 192, 224, 256}
+        a.remove(32)
+        a.add(32)
+        compiled = lift(fn)
+        for _ in range(2):
+>           assert compiled(a) == fn(a)
+E           assert [0, 1, 2, 64, -1, 32, ...] == [0, 1, 2, 64, 128, 192, ...]
+E             
+E             At index 4 diff: -1 != 128
+E             Use -v to get more diff
+
+tests\test_native_sets.py:133: AssertionError
+_____ test_iteration_consumers_preserve_original_traversal[comprehension] _____
+
+fn = <function comprehension at 0x000002A3BAB2ACF0>
+
+    @pytest.mark.parametrize('fn', [listed, comprehension, enumerated])
+    def test_iteration_consumers_preserve_original_traversal(fn):
+        a = {-5, -4, -3, -2, -1, 0, 1, 2, 32, 64, 96, 128, 160, 192, 224, 256}
+        a.remove(32)
+        a.add(32)
+        compiled = lift(fn)
+        for _ in range(2):
+>           assert compiled(a) == fn(a)
+E           assert [0, 1, 2, 64, -1, 32, ...] == [0, 1, 2, 64, 128, 192, ...]
+E             
+E             At index 4 diff: -1 != 128
+E             Use -v to get more diff
+
+tests\test_native_sets.py:133: AssertionError
+============================== warnings summary ===============================
+tests/test_native_sets.py::test_set_iteration_keeps_python_order
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_87f3fd0833053621dde36c4ad742105d.py:3: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2991:[0m
+  [1m
+  [1m    def not_float(st, a):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    while not _rc_st[0] and _rcv1_k < _rc_len(_rc_st, a):
+
+tests/test_native_sets.py::test_iteration_consumers_preserve_original_traversal[listed]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function '_rcv1_listed'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_e4d8c441650f38d60443a5759e2b7be1.py", line 1:[0m
+  [1m[1mdef _rcv1_listed(_rc_st, a):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_iteration_consumers_preserve_original_traversal[listed]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'iterable' of function 'list_constructor_iterable.<locals>.list_impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\listobj.py", line 468:[0m
+  [1m
+  [1m    def list_impl(iterable):
+  [0m    [1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_iteration_consumers_preserve_original_traversal[listed]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'iterable' of function 'list_extend.<locals>.list_extend'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\listobj.py", line 933:[0m
+  [1m
+  [1m    def list_extend(lst, iterable):
+  [0m    [1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_iteration_consumers_preserve_original_traversal[comprehension]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function '_rcv2_comprehension'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_ff50d997578ead366baafddf27813595.py", line 1:[0m
+  [1m[1mdef _rcv2_comprehension(_rc_st, a):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+FAILED tests/test_native_sets.py::test_iteration_consumers_preserve_original_traversal[listed]
+FAILED tests/test_native_sets.py::test_iteration_consumers_preserve_original_traversal[comprehension]
+3 failed, 16 passed, 5 warnings in 1.50s

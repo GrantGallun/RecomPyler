@@ -1,0 +1,25 @@
+{
+  "label": "smoke-v2",
+  "command": [
+    "python",
+    "-B",
+    "matrix/run_matrix.py",
+    "--output",
+    "matrix/smoke-v2.jsonl",
+    "--ids",
+    "statement.for_else",
+    "literal.bytes",
+    "statement.assert_error",
+    "statement.yield",
+    "statement.generator_return",
+    "async.async_generator",
+    "builtin.aiter",
+    "builtin.anext",
+    "call.varkw",
+    "call.kwonly",
+    "alias.return_argument"
+  ],
+  "exit_code": 0,
+  "wall_s": 6.405511999997543,
+  "end": "2026-11-14T05:04:24.498122+00:00"
+}

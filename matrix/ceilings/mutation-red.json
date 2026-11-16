@@ -1,0 +1,79 @@
+[
+  {
+    "case": "converter-a85",
+    "reference": [
+      "bytes",
+      "b'\\x00\\x00\\x00\\x00'"
+    ],
+    "compiled": [
+      "builtins",
+      "SystemError",
+      "<built-in method join of bytes object at 0x00007FFB7CAAA478> returned a result with an exception set",
+      [
+        "cause",
+        [
+          "builtins",
+          "TypeError",
+          "expected bytes, bytearray found",
+          [
+            "suppress_context",
+            false
+          ]
+        ]
+      ],
+      [
+        "suppress_context",
+        true
+      ]
+    ],
+    "reference_events": [
+      "convert"
+    ],
+    "compiled_events": [
+      "convert"
+    ],
+    "identical": false
+  },
+  {
+    "case": "converter-b32",
+    "reference": [
+      "bytes",
+      "b'f'"
+    ],
+    "compiled": [
+      "binascii",
+      "Error",
+      "Incorrect padding",
+      [
+        "suppress_context",
+        false
+      ]
+    ],
+    "reference_events": [
+      "convert"
+    ],
+    "compiled_events": [
+      "convert"
+    ],
+    "identical": false
+  },
+  {
+    "case": "cache-subclass",
+    "reference": [
+      "bytes",
+      "b'f'"
+    ],
+    "compiled": [
+      "bytes",
+      "b'f'"
+    ],
+    "reference_events": [
+      "contains",
+      "getitem"
+    ],
+    "compiled_events": [
+      "getitem"
+    ],
+    "identical": false
+  }
+]

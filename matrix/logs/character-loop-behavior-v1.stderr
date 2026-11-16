@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\character-behavior-v1\behavior.py", line 91, in <module>
+    assert all(row['identical'] for row in report['guard_misses'])
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\character_loop\build.py", line 16, in <module>
+    subprocess.run([sys.executable,str(out/'behavior.py'),str(out)],cwd=R,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\Python314\\python.exe', 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\temp\\character-behavior-v1\\behavior.py', 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\temp\\character-behavior-v1']' returned non-zero exit status 1.

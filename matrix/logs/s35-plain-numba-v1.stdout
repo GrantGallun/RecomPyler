@@ -1,0 +1,1563 @@
+START statement.assert_error
+statement.assert_error matches {'matches': 1}
+START statement.raise
+statement.raise matches {'matches': 2}
+START statement.raise_from
+statement.raise_from does_not_compile {'matches': 2, 'does_not_compile': 1}
+START statement.raise_reraise
+statement.raise_reraise does_not_compile {'matches': 2, 'does_not_compile': 2}
+START statement.try_except
+statement.try_except does_not_compile {'matches': 2, 'does_not_compile': 3}
+START statement.except_star
+statement.except_star does_not_compile {'matches': 2, 'does_not_compile': 4}
+START statement.with_single
+statement.with_single does_not_compile {'matches': 2, 'does_not_compile': 5}
+START statement.with_multiple
+statement.with_multiple does_not_compile {'matches': 2, 'does_not_compile': 6}
+START statement.global
+statement.global does_not_compile {'matches': 2, 'does_not_compile': 7}
+START statement.nonlocal
+statement.nonlocal matches {'matches': 3, 'does_not_compile': 7}
+START statement.del_name
+statement.del_name does_not_compile {'matches': 3, 'does_not_compile': 8}
+START statement.del_item
+statement.del_item matches {'matches': 4, 'does_not_compile': 8}
+START statement.del_slice
+statement.del_slice differs {'matches': 4, 'does_not_compile': 8, 'differs': 1}
+START statement.del_attr
+statement.del_attr does_not_compile {'matches': 4, 'does_not_compile': 9, 'differs': 1}
+START statement.import
+statement.import does_not_compile {'matches': 4, 'does_not_compile': 10, 'differs': 1}
+START statement.import_alias
+statement.import_alias does_not_compile {'matches': 4, 'does_not_compile': 11, 'differs': 1}
+START statement.import_from
+statement.import_from does_not_compile {'matches': 4, 'does_not_compile': 12, 'differs': 1}
+START statement.import_from_alias
+statement.import_from_alias does_not_compile {'matches': 4, 'does_not_compile': 13, 'differs': 1}
+START statement.class
+statement.class does_not_compile {'matches': 4, 'does_not_compile': 14, 'differs': 1}
+START statement.function_def
+statement.function_def matches {'matches': 5, 'does_not_compile': 14, 'differs': 1}
+START statement.annotated_assign
+statement.annotated_assign matches {'matches': 6, 'does_not_compile': 14, 'differs': 1}
+START statement.annotation_only
+statement.annotation_only matches {'matches': 7, 'does_not_compile': 14, 'differs': 1}
+START statement.lambda
+statement.lambda matches {'matches': 8, 'does_not_compile': 14, 'differs': 1}
+START statement.type_alias
+statement.type_alias does_not_compile {'matches': 8, 'does_not_compile': 15, 'differs': 1}
+START statement.type_parameters
+statement.type_parameters does_not_compile {'matches': 8, 'does_not_compile': 16, 'differs': 1}
+START statement.type_var_tuple
+statement.type_var_tuple does_not_compile {'matches': 8, 'does_not_compile': 17, 'differs': 1}
+START statement.param_spec
+statement.param_spec does_not_compile {'matches': 8, 'does_not_compile': 18, 'differs': 1}
+START statement.walrus
+statement.walrus does_not_compile {'matches': 8, 'does_not_compile': 19, 'differs': 1}
+START statement.star_assign
+statement.star_assign does_not_compile {'matches': 8, 'does_not_compile': 20, 'differs': 1}
+START pattern.value
+pattern.value matches {'matches': 9, 'does_not_compile': 20, 'differs': 1}
+START pattern.singleton
+pattern.singleton matches {'matches': 10, 'does_not_compile': 20, 'differs': 1}
+START pattern.sequence
+pattern.sequence does_not_compile {'matches': 10, 'does_not_compile': 21, 'differs': 1}
+START pattern.mapping
+pattern.mapping does_not_compile {'matches': 10, 'does_not_compile': 22, 'differs': 1}
+START pattern.class
+pattern.class does_not_compile {'matches': 10, 'does_not_compile': 23, 'differs': 1}
+START pattern.star
+pattern.star does_not_compile {'matches': 10, 'does_not_compile': 24, 'differs': 1}
+START pattern.as
+pattern.as does_not_compile {'matches': 10, 'does_not_compile': 25, 'differs': 1}
+START pattern.or
+pattern.or matches {'matches': 11, 'does_not_compile': 25, 'differs': 1}
+START pattern.wildcard
+pattern.wildcard matches {'matches': 12, 'does_not_compile': 25, 'differs': 1}
+START pattern.guard
+pattern.guard matches {'matches': 13, 'does_not_compile': 25, 'differs': 1}
+START async.async_for
+async.async_for does_not_compile {'matches': 13, 'does_not_compile': 26, 'differs': 1}
+START async.async_with
+async.async_with does_not_compile {'matches': 13, 'does_not_compile': 27, 'differs': 1}
+START async.async_comprehension
+async.async_comprehension does_not_compile {'matches': 13, 'does_not_compile': 28, 'differs': 1}
+START operator.int.binary12
+operator.int.binary12 does_not_compile {'matches': 13, 'does_not_compile': 29, 'differs': 1}
+START operator.int.augmented12
+operator.int.augmented12 does_not_compile {'matches': 13, 'does_not_compile': 30, 'differs': 1}
+START operator.int.compare6
+operator.int.compare6 matches {'matches': 14, 'does_not_compile': 30, 'differs': 1}
+START operator.int.compare7
+operator.int.compare7 matches {'matches': 15, 'does_not_compile': 30, 'differs': 1}
+START operator.int.compare8
+operator.int.compare8 does_not_compile {'matches': 15, 'does_not_compile': 31, 'differs': 1}
+START operator.int.compare9
+operator.int.compare9 does_not_compile {'matches': 15, 'does_not_compile': 32, 'differs': 1}
+START operator.int.and
+operator.int.and matches {'matches': 16, 'does_not_compile': 32, 'differs': 1}
+START operator.int.or
+operator.int.or matches {'matches': 17, 'does_not_compile': 32, 'differs': 1}
+START operator.float.binary7
+operator.float.binary7 does_not_compile {'matches': 17, 'does_not_compile': 33, 'differs': 1}
+START operator.float.augmented7
+operator.float.augmented7 does_not_compile {'matches': 17, 'does_not_compile': 34, 'differs': 1}
+START operator.float.binary8
+operator.float.binary8 does_not_compile {'matches': 17, 'does_not_compile': 35, 'differs': 1}
+START operator.float.augmented8
+operator.float.augmented8 does_not_compile {'matches': 17, 'does_not_compile': 36, 'differs': 1}
+START operator.float.binary9
+operator.float.binary9 does_not_compile {'matches': 17, 'does_not_compile': 37, 'differs': 1}
+START operator.float.augmented9
+operator.float.augmented9 does_not_compile {'matches': 17, 'does_not_compile': 38, 'differs': 1}
+START operator.float.binary10
+operator.float.binary10 does_not_compile {'matches': 17, 'does_not_compile': 39, 'differs': 1}
+START operator.float.augmented10
+operator.float.augmented10 does_not_compile {'matches': 17, 'does_not_compile': 40, 'differs': 1}
+START operator.float.binary11
+operator.float.binary11 does_not_compile {'matches': 17, 'does_not_compile': 41, 'differs': 1}
+START operator.float.augmented11
+operator.float.augmented11 does_not_compile {'matches': 17, 'does_not_compile': 42, 'differs': 1}
+START operator.float.binary12
+operator.float.binary12 does_not_compile {'matches': 17, 'does_not_compile': 43, 'differs': 1}
+START operator.float.augmented12
+operator.float.augmented12 does_not_compile {'matches': 17, 'does_not_compile': 44, 'differs': 1}
+START operator.float.compare6
+operator.float.compare6 matches {'matches': 18, 'does_not_compile': 44, 'differs': 1}
+START operator.float.compare7
+operator.float.compare7 matches {'matches': 19, 'does_not_compile': 44, 'differs': 1}
+START operator.float.compare8
+operator.float.compare8 does_not_compile {'matches': 19, 'does_not_compile': 45, 'differs': 1}
+START operator.float.compare9
+operator.float.compare9 does_not_compile {'matches': 19, 'does_not_compile': 46, 'differs': 1}
+START operator.float.unary2
+operator.float.unary2 does_not_compile {'matches': 19, 'does_not_compile': 47, 'differs': 1}
+START operator.float.and
+operator.float.and matches {'matches': 20, 'does_not_compile': 47, 'differs': 1}
+START operator.float.or
+operator.float.or matches {'matches': 21, 'does_not_compile': 47, 'differs': 1}
+START operator.bool.binary3
+operator.bool.binary3 matches {'matches': 22, 'does_not_compile': 47, 'differs': 1}
+START operator.bool.augmented3
+operator.bool.augmented3 matches {'matches': 23, 'does_not_compile': 47, 'differs': 1}
+START operator.bool.binary4
+operator.bool.binary4 differs {'matches': 23, 'does_not_compile': 47, 'differs': 2}
+START operator.bool.augmented4
+operator.bool.augmented4 differs {'matches': 23, 'does_not_compile': 47, 'differs': 3}
+START operator.bool.binary5
+operator.bool.binary5 differs {'matches': 23, 'does_not_compile': 47, 'differs': 4}
+START operator.bool.augmented5
+operator.bool.augmented5 differs {'matches': 23, 'does_not_compile': 47, 'differs': 5}
+START operator.bool.binary12
+operator.bool.binary12 does_not_compile {'matches': 23, 'does_not_compile': 48, 'differs': 5}
+START operator.bool.augmented12
+operator.bool.augmented12 does_not_compile {'matches': 23, 'does_not_compile': 49, 'differs': 5}
+START operator.bool.compare6
+operator.bool.compare6 matches {'matches': 24, 'does_not_compile': 49, 'differs': 5}
+START operator.bool.compare7
+operator.bool.compare7 matches {'matches': 25, 'does_not_compile': 49, 'differs': 5}
+START operator.bool.compare8
+operator.bool.compare8 does_not_compile {'matches': 25, 'does_not_compile': 50, 'differs': 5}
+START operator.bool.compare9
+operator.bool.compare9 does_not_compile {'matches': 25, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.binary0
+operator.complex.binary0 matches {'matches': 26, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.augmented0
+operator.complex.augmented0 matches {'matches': 27, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.binary1
+operator.complex.binary1 matches {'matches': 28, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.augmented1
+operator.complex.augmented1 matches {'matches': 29, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.binary2
+operator.complex.binary2 matches {'matches': 30, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.augmented2
+operator.complex.augmented2 matches {'matches': 31, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.binary3
+operator.complex.binary3 matches {'matches': 32, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.augmented3
+operator.complex.augmented3 matches {'matches': 33, 'does_not_compile': 51, 'differs': 5}
+START operator.complex.binary4
+operator.complex.binary4 does_not_compile {'matches': 33, 'does_not_compile': 52, 'differs': 5}
+START operator.complex.augmented4
+operator.complex.augmented4 does_not_compile {'matches': 33, 'does_not_compile': 53, 'differs': 5}
+START operator.complex.binary5
+operator.complex.binary5 does_not_compile {'matches': 33, 'does_not_compile': 54, 'differs': 5}
+START operator.complex.augmented5
+operator.complex.augmented5 does_not_compile {'matches': 33, 'does_not_compile': 55, 'differs': 5}
+START operator.complex.binary6
+operator.complex.binary6 matches {'matches': 34, 'does_not_compile': 55, 'differs': 5}
+START operator.complex.augmented6
+operator.complex.augmented6 matches {'matches': 35, 'does_not_compile': 55, 'differs': 5}
+START operator.complex.binary7
+operator.complex.binary7 does_not_compile {'matches': 35, 'does_not_compile': 56, 'differs': 5}
+START operator.complex.augmented7
+operator.complex.augmented7 does_not_compile {'matches': 35, 'does_not_compile': 57, 'differs': 5}
+START operator.complex.binary8
+operator.complex.binary8 does_not_compile {'matches': 35, 'does_not_compile': 58, 'differs': 5}
+START operator.complex.augmented8
+operator.complex.augmented8 does_not_compile {'matches': 35, 'does_not_compile': 59, 'differs': 5}
+START operator.complex.binary9
+operator.complex.binary9 does_not_compile {'matches': 35, 'does_not_compile': 60, 'differs': 5}
+START operator.complex.augmented9
+operator.complex.augmented9 does_not_compile {'matches': 35, 'does_not_compile': 61, 'differs': 5}
+START operator.complex.binary10
+operator.complex.binary10 does_not_compile {'matches': 35, 'does_not_compile': 62, 'differs': 5}
+START operator.complex.augmented10
+operator.complex.augmented10 does_not_compile {'matches': 35, 'does_not_compile': 63, 'differs': 5}
+START operator.complex.binary11
+operator.complex.binary11 does_not_compile {'matches': 35, 'does_not_compile': 64, 'differs': 5}
+START operator.complex.augmented11
+operator.complex.augmented11 does_not_compile {'matches': 35, 'does_not_compile': 65, 'differs': 5}
+START operator.complex.binary12
+operator.complex.binary12 does_not_compile {'matches': 35, 'does_not_compile': 66, 'differs': 5}
+START operator.complex.augmented12
+operator.complex.augmented12 does_not_compile {'matches': 35, 'does_not_compile': 67, 'differs': 5}
+START operator.complex.compare0
+operator.complex.compare0 matches {'matches': 36, 'does_not_compile': 67, 'differs': 5}
+START operator.complex.compare1
+operator.complex.compare1 matches {'matches': 37, 'does_not_compile': 67, 'differs': 5}
+START operator.complex.compare2
+operator.complex.compare2 does_not_compile {'matches': 37, 'does_not_compile': 68, 'differs': 5}
+START operator.complex.compare3
+operator.complex.compare3 does_not_compile {'matches': 37, 'does_not_compile': 69, 'differs': 5}
+START operator.complex.compare4
+operator.complex.compare4 does_not_compile {'matches': 37, 'does_not_compile': 70, 'differs': 5}
+START operator.complex.compare5
+operator.complex.compare5 does_not_compile {'matches': 37, 'does_not_compile': 71, 'differs': 5}
+START operator.complex.compare6
+operator.complex.compare6 matches {'matches': 38, 'does_not_compile': 71, 'differs': 5}
+START operator.complex.compare7
+operator.complex.compare7 matches {'matches': 39, 'does_not_compile': 71, 'differs': 5}
+START operator.complex.compare8
+operator.complex.compare8 does_not_compile {'matches': 39, 'does_not_compile': 72, 'differs': 5}
+START operator.complex.compare9
+operator.complex.compare9 does_not_compile {'matches': 39, 'does_not_compile': 73, 'differs': 5}
+START operator.complex.unary0
+operator.complex.unary0 matches {'matches': 40, 'does_not_compile': 73, 'differs': 5}
+START operator.complex.unary1
+operator.complex.unary1 matches {'matches': 41, 'does_not_compile': 73, 'differs': 5}
+START operator.complex.unary2
+operator.complex.unary2 does_not_compile {'matches': 41, 'does_not_compile': 74, 'differs': 5}
+START operator.complex.unary3
+operator.complex.unary3 matches {'matches': 42, 'does_not_compile': 74, 'differs': 5}
+START operator.complex.chain
+operator.complex.chain matches {'matches': 43, 'does_not_compile': 74, 'differs': 5}
+START operator.complex.and
+operator.complex.and matches {'matches': 44, 'does_not_compile': 74, 'differs': 5}
+START operator.complex.or
+operator.complex.or matches {'matches': 45, 'does_not_compile': 74, 'differs': 5}
+START operator.str.binary1
+operator.str.binary1 does_not_compile {'matches': 45, 'does_not_compile': 75, 'differs': 5}
+START operator.str.augmented1
+operator.str.augmented1 does_not_compile {'matches': 45, 'does_not_compile': 76, 'differs': 5}
+START operator.str.binary2
+operator.str.binary2 does_not_compile {'matches': 45, 'does_not_compile': 77, 'differs': 5}
+START operator.str.augmented2
+operator.str.augmented2 does_not_compile {'matches': 45, 'does_not_compile': 78, 'differs': 5}
+START operator.str.binary3
+operator.str.binary3 does_not_compile {'matches': 45, 'does_not_compile': 79, 'differs': 5}
+START operator.str.augmented3
+operator.str.augmented3 does_not_compile {'matches': 45, 'does_not_compile': 80, 'differs': 5}
+START operator.str.binary4
+operator.str.binary4 does_not_compile {'matches': 45, 'does_not_compile': 81, 'differs': 5}
+START operator.str.augmented4
+operator.str.augmented4 does_not_compile {'matches': 45, 'does_not_compile': 82, 'differs': 5}
+START operator.str.binary5
+operator.str.binary5 does_not_compile {'matches': 45, 'does_not_compile': 83, 'differs': 5}
+START operator.str.augmented5
+operator.str.augmented5 does_not_compile {'matches': 45, 'does_not_compile': 84, 'differs': 5}
+START operator.str.binary6
+operator.str.binary6 does_not_compile {'matches': 45, 'does_not_compile': 85, 'differs': 5}
+START operator.str.augmented6
+operator.str.augmented6 does_not_compile {'matches': 45, 'does_not_compile': 86, 'differs': 5}
+START operator.str.binary7
+operator.str.binary7 does_not_compile {'matches': 45, 'does_not_compile': 87, 'differs': 5}
+START operator.str.augmented7
+operator.str.augmented7 does_not_compile {'matches': 45, 'does_not_compile': 88, 'differs': 5}
+START operator.str.binary8
+operator.str.binary8 does_not_compile {'matches': 45, 'does_not_compile': 89, 'differs': 5}
+START operator.str.augmented8
+operator.str.augmented8 does_not_compile {'matches': 45, 'does_not_compile': 90, 'differs': 5}
+START operator.str.binary9
+operator.str.binary9 does_not_compile {'matches': 45, 'does_not_compile': 91, 'differs': 5}
+START operator.str.augmented9
+operator.str.augmented9 does_not_compile {'matches': 45, 'does_not_compile': 92, 'differs': 5}
+START operator.str.binary10
+operator.str.binary10 does_not_compile {'matches': 45, 'does_not_compile': 93, 'differs': 5}
+START operator.str.augmented10
+operator.str.augmented10 does_not_compile {'matches': 45, 'does_not_compile': 94, 'differs': 5}
+START operator.str.binary11
+operator.str.binary11 does_not_compile {'matches': 45, 'does_not_compile': 95, 'differs': 5}
+START operator.str.augmented11
+operator.str.augmented11 does_not_compile {'matches': 45, 'does_not_compile': 96, 'differs': 5}
+START operator.str.binary12
+operator.str.binary12 does_not_compile {'matches': 45, 'does_not_compile': 97, 'differs': 5}
+START operator.str.augmented12
+operator.str.augmented12 does_not_compile {'matches': 45, 'does_not_compile': 98, 'differs': 5}
+START operator.str.compare6
+operator.str.compare6 matches {'matches': 46, 'does_not_compile': 98, 'differs': 5}
+START operator.str.compare7
+operator.str.compare7 matches {'matches': 47, 'does_not_compile': 98, 'differs': 5}
+START operator.str.unary0
+operator.str.unary0 does_not_compile {'matches': 47, 'does_not_compile': 99, 'differs': 5}
+START operator.str.unary1
+operator.str.unary1 does_not_compile {'matches': 47, 'does_not_compile': 100, 'differs': 5}
+START operator.str.unary2
+operator.str.unary2 does_not_compile {'matches': 47, 'does_not_compile': 101, 'differs': 5}
+START operator.str.and
+operator.str.and matches {'matches': 48, 'does_not_compile': 101, 'differs': 5}
+START operator.str.or
+operator.str.or matches {'matches': 49, 'does_not_compile': 101, 'differs': 5}
+START operator.bytes.binary0
+operator.bytes.binary0 does_not_compile {'matches': 49, 'does_not_compile': 102, 'differs': 5}
+START operator.bytes.augmented0
+operator.bytes.augmented0 does_not_compile {'matches': 49, 'does_not_compile': 103, 'differs': 5}
+START operator.bytes.binary1
+operator.bytes.binary1 does_not_compile {'matches': 49, 'does_not_compile': 104, 'differs': 5}
+START operator.bytes.augmented1
+operator.bytes.augmented1 does_not_compile {'matches': 49, 'does_not_compile': 105, 'differs': 5}
+START operator.bytes.binary2
+operator.bytes.binary2 does_not_compile {'matches': 49, 'does_not_compile': 106, 'differs': 5}
+START operator.bytes.augmented2
+operator.bytes.augmented2 does_not_compile {'matches': 49, 'does_not_compile': 107, 'differs': 5}
+START operator.bytes.binary3
+operator.bytes.binary3 does_not_compile {'matches': 49, 'does_not_compile': 108, 'differs': 5}
+START operator.bytes.augmented3
+operator.bytes.augmented3 does_not_compile {'matches': 49, 'does_not_compile': 109, 'differs': 5}
+START operator.bytes.binary4
+operator.bytes.binary4 does_not_compile {'matches': 49, 'does_not_compile': 110, 'differs': 5}
+START operator.bytes.augmented4
+operator.bytes.augmented4 does_not_compile {'matches': 49, 'does_not_compile': 111, 'differs': 5}
+START operator.bytes.binary5
+operator.bytes.binary5 does_not_compile {'matches': 49, 'does_not_compile': 112, 'differs': 5}
+START operator.bytes.augmented5
+operator.bytes.augmented5 does_not_compile {'matches': 49, 'does_not_compile': 113, 'differs': 5}
+START operator.bytes.binary6
+operator.bytes.binary6 does_not_compile {'matches': 49, 'does_not_compile': 114, 'differs': 5}
+START operator.bytes.augmented6
+operator.bytes.augmented6 does_not_compile {'matches': 49, 'does_not_compile': 115, 'differs': 5}
+START operator.bytes.binary7
+operator.bytes.binary7 does_not_compile {'matches': 49, 'does_not_compile': 116, 'differs': 5}
+START operator.bytes.augmented7
+operator.bytes.augmented7 does_not_compile {'matches': 49, 'does_not_compile': 117, 'differs': 5}
+START operator.bytes.binary8
+operator.bytes.binary8 does_not_compile {'matches': 49, 'does_not_compile': 118, 'differs': 5}
+START operator.bytes.augmented8
+operator.bytes.augmented8 does_not_compile {'matches': 49, 'does_not_compile': 119, 'differs': 5}
+START operator.bytes.binary9
+operator.bytes.binary9 does_not_compile {'matches': 49, 'does_not_compile': 120, 'differs': 5}
+START operator.bytes.augmented9
+operator.bytes.augmented9 does_not_compile {'matches': 49, 'does_not_compile': 121, 'differs': 5}
+START operator.bytes.binary10
+operator.bytes.binary10 does_not_compile {'matches': 49, 'does_not_compile': 122, 'differs': 5}
+START operator.bytes.augmented10
+operator.bytes.augmented10 does_not_compile {'matches': 49, 'does_not_compile': 123, 'differs': 5}
+START operator.bytes.binary11
+operator.bytes.binary11 does_not_compile {'matches': 49, 'does_not_compile': 124, 'differs': 5}
+START operator.bytes.augmented11
+operator.bytes.augmented11 does_not_compile {'matches': 49, 'does_not_compile': 125, 'differs': 5}
+START operator.bytes.binary12
+operator.bytes.binary12 does_not_compile {'matches': 49, 'does_not_compile': 126, 'differs': 5}
+START operator.bytes.augmented12
+operator.bytes.augmented12 does_not_compile {'matches': 49, 'does_not_compile': 127, 'differs': 5}
+START operator.bytes.compare0
+operator.bytes.compare0 does_not_compile {'matches': 49, 'does_not_compile': 128, 'differs': 5}
+START operator.bytes.compare1
+operator.bytes.compare1 does_not_compile {'matches': 49, 'does_not_compile': 129, 'differs': 5}
+START operator.bytes.compare2
+operator.bytes.compare2 does_not_compile {'matches': 49, 'does_not_compile': 130, 'differs': 5}
+START operator.bytes.compare3
+operator.bytes.compare3 does_not_compile {'matches': 49, 'does_not_compile': 131, 'differs': 5}
+START operator.bytes.compare4
+operator.bytes.compare4 does_not_compile {'matches': 49, 'does_not_compile': 132, 'differs': 5}
+START operator.bytes.compare5
+operator.bytes.compare5 does_not_compile {'matches': 49, 'does_not_compile': 133, 'differs': 5}
+START operator.bytes.compare6
+operator.bytes.compare6 matches {'matches': 50, 'does_not_compile': 133, 'differs': 5}
+START operator.bytes.compare7
+operator.bytes.compare7 matches {'matches': 51, 'does_not_compile': 133, 'differs': 5}
+START operator.bytes.compare8
+operator.bytes.compare8 matches {'matches': 52, 'does_not_compile': 133, 'differs': 5}
+START operator.bytes.compare9
+operator.bytes.compare9 matches {'matches': 53, 'does_not_compile': 133, 'differs': 5}
+START operator.bytes.unary0
+operator.bytes.unary0 does_not_compile {'matches': 53, 'does_not_compile': 134, 'differs': 5}
+START operator.bytes.unary1
+operator.bytes.unary1 does_not_compile {'matches': 53, 'does_not_compile': 135, 'differs': 5}
+START operator.bytes.unary2
+operator.bytes.unary2 does_not_compile {'matches': 53, 'does_not_compile': 136, 'differs': 5}
+START operator.bytes.unary3
+operator.bytes.unary3 matches {'matches': 54, 'does_not_compile': 136, 'differs': 5}
+START operator.bytes.chain
+operator.bytes.chain does_not_compile {'matches': 54, 'does_not_compile': 137, 'differs': 5}
+START operator.bytes.and
+operator.bytes.and does_not_compile {'matches': 54, 'does_not_compile': 138, 'differs': 5}
+START operator.bytes.or
+operator.bytes.or does_not_compile {'matches': 54, 'does_not_compile': 139, 'differs': 5}
+START operator.list.binary0
+operator.list.binary0 matches {'matches': 55, 'does_not_compile': 139, 'differs': 5}
+START operator.list.augmented0
+operator.list.augmented0 matches {'matches': 56, 'does_not_compile': 139, 'differs': 5}
+START operator.list.binary1
+operator.list.binary1 does_not_compile {'matches': 56, 'does_not_compile': 140, 'differs': 5}
+START operator.list.augmented1
+operator.list.augmented1 does_not_compile {'matches': 56, 'does_not_compile': 141, 'differs': 5}
+START operator.list.binary2
+operator.list.binary2 does_not_compile {'matches': 56, 'does_not_compile': 142, 'differs': 5}
+START operator.list.augmented2
+operator.list.augmented2 does_not_compile {'matches': 56, 'does_not_compile': 143, 'differs': 5}
+START operator.list.binary3
+operator.list.binary3 does_not_compile {'matches': 56, 'does_not_compile': 144, 'differs': 5}
+START operator.list.augmented3
+operator.list.augmented3 does_not_compile {'matches': 56, 'does_not_compile': 145, 'differs': 5}
+START operator.list.binary4
+operator.list.binary4 does_not_compile {'matches': 56, 'does_not_compile': 146, 'differs': 5}
+START operator.list.augmented4
+operator.list.augmented4 does_not_compile {'matches': 56, 'does_not_compile': 147, 'differs': 5}
+START operator.list.binary5
+operator.list.binary5 does_not_compile {'matches': 56, 'does_not_compile': 148, 'differs': 5}
+START operator.list.augmented5
+operator.list.augmented5 does_not_compile {'matches': 56, 'does_not_compile': 149, 'differs': 5}
+START operator.list.binary6
+operator.list.binary6 does_not_compile {'matches': 56, 'does_not_compile': 150, 'differs': 5}
+START operator.list.augmented6
+operator.list.augmented6 does_not_compile {'matches': 56, 'does_not_compile': 151, 'differs': 5}
+START operator.list.binary7
+operator.list.binary7 does_not_compile {'matches': 56, 'does_not_compile': 152, 'differs': 5}
+START operator.list.augmented7
+operator.list.augmented7 does_not_compile {'matches': 56, 'does_not_compile': 153, 'differs': 5}
+START operator.list.binary8
+operator.list.binary8 does_not_compile {'matches': 56, 'does_not_compile': 154, 'differs': 5}
+START operator.list.augmented8
+operator.list.augmented8 does_not_compile {'matches': 56, 'does_not_compile': 155, 'differs': 5}
+START operator.list.binary9
+operator.list.binary9 does_not_compile {'matches': 56, 'does_not_compile': 156, 'differs': 5}
+START operator.list.augmented9
+operator.list.augmented9 does_not_compile {'matches': 56, 'does_not_compile': 157, 'differs': 5}
+START operator.list.binary10
+operator.list.binary10 does_not_compile {'matches': 56, 'does_not_compile': 158, 'differs': 5}
+START operator.list.augmented10
+operator.list.augmented10 does_not_compile {'matches': 56, 'does_not_compile': 159, 'differs': 5}
+START operator.list.binary11
+operator.list.binary11 does_not_compile {'matches': 56, 'does_not_compile': 160, 'differs': 5}
+START operator.list.augmented11
+operator.list.augmented11 does_not_compile {'matches': 56, 'does_not_compile': 161, 'differs': 5}
+START operator.list.binary12
+operator.list.binary12 does_not_compile {'matches': 56, 'does_not_compile': 162, 'differs': 5}
+START operator.list.augmented12
+operator.list.augmented12 does_not_compile {'matches': 56, 'does_not_compile': 163, 'differs': 5}
+START operator.list.compare0
+operator.list.compare0 matches {'matches': 57, 'does_not_compile': 163, 'differs': 5}
+START operator.list.compare1
+operator.list.compare1 matches {'matches': 58, 'does_not_compile': 163, 'differs': 5}
+START operator.list.compare2
+operator.list.compare2 matches {'matches': 59, 'does_not_compile': 163, 'differs': 5}
+START operator.list.compare3
+operator.list.compare3 matches {'matches': 60, 'does_not_compile': 163, 'differs': 5}
+START operator.list.compare4
+operator.list.compare4 matches {'matches': 61, 'does_not_compile': 163, 'differs': 5}
+START operator.list.compare5
+operator.list.compare5 matches {'matches': 62, 'does_not_compile': 163, 'differs': 5}
+START operator.list.compare8
+operator.list.compare8 does_not_compile {'matches': 62, 'does_not_compile': 164, 'differs': 5}
+START operator.list.compare9
+operator.list.compare9 does_not_compile {'matches': 62, 'does_not_compile': 165, 'differs': 5}
+START operator.list.unary0
+operator.list.unary0 does_not_compile {'matches': 62, 'does_not_compile': 166, 'differs': 5}
+START operator.list.unary1
+operator.list.unary1 does_not_compile {'matches': 62, 'does_not_compile': 167, 'differs': 5}
+START operator.list.unary2
+operator.list.unary2 does_not_compile {'matches': 62, 'does_not_compile': 168, 'differs': 5}
+START operator.list.chain
+operator.list.chain matches {'matches': 63, 'does_not_compile': 168, 'differs': 5}
+START operator.list.and
+operator.list.and matches {'matches': 64, 'does_not_compile': 168, 'differs': 5}
+START operator.list.or
+operator.list.or matches {'matches': 65, 'does_not_compile': 168, 'differs': 5}
+START operator.tuple.augmented0
+operator.tuple.augmented0 does_not_compile {'matches': 65, 'does_not_compile': 169, 'differs': 5}
+START operator.tuple.binary1
+operator.tuple.binary1 does_not_compile {'matches': 65, 'does_not_compile': 170, 'differs': 5}
+START operator.tuple.augmented1
+operator.tuple.augmented1 does_not_compile {'matches': 65, 'does_not_compile': 171, 'differs': 5}
+START operator.tuple.binary2
+operator.tuple.binary2 does_not_compile {'matches': 65, 'does_not_compile': 172, 'differs': 5}
+START operator.tuple.augmented2
+operator.tuple.augmented2 does_not_compile {'matches': 65, 'does_not_compile': 173, 'differs': 5}
+START operator.tuple.binary3
+operator.tuple.binary3 does_not_compile {'matches': 65, 'does_not_compile': 174, 'differs': 5}
+START operator.tuple.augmented3
+operator.tuple.augmented3 does_not_compile {'matches': 65, 'does_not_compile': 175, 'differs': 5}
+START operator.tuple.binary4
+operator.tuple.binary4 does_not_compile {'matches': 65, 'does_not_compile': 176, 'differs': 5}
+START operator.tuple.augmented4
+operator.tuple.augmented4 does_not_compile {'matches': 65, 'does_not_compile': 177, 'differs': 5}
+START operator.tuple.binary5
+operator.tuple.binary5 does_not_compile {'matches': 65, 'does_not_compile': 178, 'differs': 5}
+START operator.tuple.augmented5
+operator.tuple.augmented5 does_not_compile {'matches': 65, 'does_not_compile': 179, 'differs': 5}
+START operator.tuple.binary6
+operator.tuple.binary6 does_not_compile {'matches': 65, 'does_not_compile': 180, 'differs': 5}
+START operator.tuple.augmented6
+operator.tuple.augmented6 does_not_compile {'matches': 65, 'does_not_compile': 181, 'differs': 5}
+START operator.tuple.binary7
+operator.tuple.binary7 does_not_compile {'matches': 65, 'does_not_compile': 182, 'differs': 5}
+START operator.tuple.augmented7
+operator.tuple.augmented7 does_not_compile {'matches': 65, 'does_not_compile': 183, 'differs': 5}
+START operator.tuple.binary8
+operator.tuple.binary8 does_not_compile {'matches': 65, 'does_not_compile': 184, 'differs': 5}
+START operator.tuple.augmented8
+operator.tuple.augmented8 does_not_compile {'matches': 65, 'does_not_compile': 185, 'differs': 5}
+START operator.tuple.binary9
+operator.tuple.binary9 does_not_compile {'matches': 65, 'does_not_compile': 186, 'differs': 5}
+START operator.tuple.augmented9
+operator.tuple.augmented9 does_not_compile {'matches': 65, 'does_not_compile': 187, 'differs': 5}
+START operator.tuple.binary10
+operator.tuple.binary10 does_not_compile {'matches': 65, 'does_not_compile': 188, 'differs': 5}
+START operator.tuple.augmented10
+operator.tuple.augmented10 does_not_compile {'matches': 65, 'does_not_compile': 189, 'differs': 5}
+START operator.tuple.binary11
+operator.tuple.binary11 does_not_compile {'matches': 65, 'does_not_compile': 190, 'differs': 5}
+START operator.tuple.augmented11
+operator.tuple.augmented11 does_not_compile {'matches': 65, 'does_not_compile': 191, 'differs': 5}
+START operator.tuple.binary12
+operator.tuple.binary12 does_not_compile {'matches': 65, 'does_not_compile': 192, 'differs': 5}
+START operator.tuple.augmented12
+operator.tuple.augmented12 does_not_compile {'matches': 65, 'does_not_compile': 193, 'differs': 5}
+START operator.tuple.compare6
+operator.tuple.compare6 matches {'matches': 66, 'does_not_compile': 193, 'differs': 5}
+START operator.tuple.compare7
+operator.tuple.compare7 matches {'matches': 67, 'does_not_compile': 193, 'differs': 5}
+START operator.tuple.compare8
+operator.tuple.compare8 does_not_compile {'matches': 67, 'does_not_compile': 194, 'differs': 5}
+START operator.tuple.compare9
+operator.tuple.compare9 does_not_compile {'matches': 67, 'does_not_compile': 195, 'differs': 5}
+START operator.tuple.unary0
+operator.tuple.unary0 does_not_compile {'matches': 67, 'does_not_compile': 196, 'differs': 5}
+START operator.tuple.unary1
+operator.tuple.unary1 does_not_compile {'matches': 67, 'does_not_compile': 197, 'differs': 5}
+START operator.tuple.unary2
+operator.tuple.unary2 does_not_compile {'matches': 67, 'does_not_compile': 198, 'differs': 5}
+START operator.tuple.chain
+operator.tuple.chain matches {'matches': 68, 'does_not_compile': 198, 'differs': 5}
+START operator.tuple.and
+operator.tuple.and differs {'matches': 68, 'does_not_compile': 198, 'differs': 6}
+START operator.tuple.or
+operator.tuple.or differs {'matches': 68, 'does_not_compile': 198, 'differs': 7}
+START operator.dict.binary0
+operator.dict.binary0 does_not_compile {'matches': 68, 'does_not_compile': 199, 'differs': 7}
+START operator.dict.augmented0
+operator.dict.augmented0 does_not_compile {'matches': 68, 'does_not_compile': 200, 'differs': 7}
+START operator.dict.binary1
+operator.dict.binary1 does_not_compile {'matches': 68, 'does_not_compile': 201, 'differs': 7}
+START operator.dict.augmented1
+operator.dict.augmented1 does_not_compile {'matches': 68, 'does_not_compile': 202, 'differs': 7}
+START operator.dict.binary2
+operator.dict.binary2 does_not_compile {'matches': 68, 'does_not_compile': 203, 'differs': 7}
+START operator.dict.augmented2
+operator.dict.augmented2 does_not_compile {'matches': 68, 'does_not_compile': 204, 'differs': 7}
+START operator.dict.binary3
+operator.dict.binary3 does_not_compile {'matches': 68, 'does_not_compile': 205, 'differs': 7}
+START operator.dict.augmented3
+operator.dict.augmented3 does_not_compile {'matches': 68, 'does_not_compile': 206, 'differs': 7}
+START operator.dict.binary4
+operator.dict.binary4 does_not_compile {'matches': 68, 'does_not_compile': 207, 'differs': 7}
+START operator.dict.augmented4
+operator.dict.augmented4 does_not_compile {'matches': 68, 'does_not_compile': 208, 'differs': 7}
+START operator.dict.binary5
+operator.dict.binary5 does_not_compile {'matches': 68, 'does_not_compile': 209, 'differs': 7}
+START operator.dict.augmented5
+operator.dict.augmented5 does_not_compile {'matches': 68, 'does_not_compile': 210, 'differs': 7}
+START operator.dict.binary6
+operator.dict.binary6 does_not_compile {'matches': 68, 'does_not_compile': 211, 'differs': 7}
+START operator.dict.augmented6
+operator.dict.augmented6 does_not_compile {'matches': 68, 'does_not_compile': 212, 'differs': 7}
+START operator.dict.binary7
+operator.dict.binary7 does_not_compile {'matches': 68, 'does_not_compile': 213, 'differs': 7}
+START operator.dict.augmented7
+operator.dict.augmented7 does_not_compile {'matches': 68, 'does_not_compile': 214, 'differs': 7}
+START operator.dict.binary8
+operator.dict.binary8 does_not_compile {'matches': 68, 'does_not_compile': 215, 'differs': 7}
+START operator.dict.augmented8
+operator.dict.augmented8 does_not_compile {'matches': 68, 'does_not_compile': 216, 'differs': 7}
+START operator.dict.binary9
+operator.dict.binary9 does_not_compile {'matches': 68, 'does_not_compile': 217, 'differs': 7}
+START operator.dict.augmented9
+operator.dict.augmented9 does_not_compile {'matches': 68, 'does_not_compile': 218, 'differs': 7}
+START operator.dict.binary10
+operator.dict.binary10 does_not_compile {'matches': 68, 'does_not_compile': 219, 'differs': 7}
+START operator.dict.augmented10
+operator.dict.augmented10 does_not_compile {'matches': 68, 'does_not_compile': 220, 'differs': 7}
+START operator.dict.binary11
+operator.dict.binary11 does_not_compile {'matches': 68, 'does_not_compile': 221, 'differs': 7}
+START operator.dict.augmented11
+operator.dict.augmented11 does_not_compile {'matches': 68, 'does_not_compile': 222, 'differs': 7}
+START operator.dict.binary12
+operator.dict.binary12 does_not_compile {'matches': 68, 'does_not_compile': 223, 'differs': 7}
+START operator.dict.augmented12
+operator.dict.augmented12 does_not_compile {'matches': 68, 'does_not_compile': 224, 'differs': 7}
+START operator.dict.compare0
+operator.dict.compare0 does_not_compile {'matches': 68, 'does_not_compile': 225, 'differs': 7}
+START operator.dict.compare1
+operator.dict.compare1 does_not_compile {'matches': 68, 'does_not_compile': 226, 'differs': 7}
+START operator.dict.compare2
+operator.dict.compare2 does_not_compile {'matches': 68, 'does_not_compile': 227, 'differs': 7}
+START operator.dict.compare3
+operator.dict.compare3 does_not_compile {'matches': 68, 'does_not_compile': 228, 'differs': 7}
+START operator.dict.compare4
+operator.dict.compare4 does_not_compile {'matches': 68, 'does_not_compile': 229, 'differs': 7}
+START operator.dict.compare5
+operator.dict.compare5 does_not_compile {'matches': 68, 'does_not_compile': 230, 'differs': 7}
+START operator.dict.compare8
+operator.dict.compare8 does_not_compile {'matches': 68, 'does_not_compile': 231, 'differs': 7}
+START operator.dict.compare9
+operator.dict.compare9 does_not_compile {'matches': 68, 'does_not_compile': 232, 'differs': 7}
+START operator.dict.unary0
+operator.dict.unary0 does_not_compile {'matches': 68, 'does_not_compile': 233, 'differs': 7}
+START operator.dict.unary1
+operator.dict.unary1 does_not_compile {'matches': 68, 'does_not_compile': 234, 'differs': 7}
+START operator.dict.unary2
+operator.dict.unary2 does_not_compile {'matches': 68, 'does_not_compile': 235, 'differs': 7}
+START operator.dict.chain
+operator.dict.chain does_not_compile {'matches': 68, 'does_not_compile': 236, 'differs': 7}
+START operator.dict.and
+operator.dict.and does_not_compile {'matches': 68, 'does_not_compile': 237, 'differs': 7}
+START operator.dict.or
+operator.dict.or does_not_compile {'matches': 68, 'does_not_compile': 238, 'differs': 7}
+START operator.set.binary0
+operator.set.binary0 does_not_compile {'matches': 68, 'does_not_compile': 239, 'differs': 7}
+START operator.set.augmented0
+operator.set.augmented0 does_not_compile {'matches': 68, 'does_not_compile': 240, 'differs': 7}
+START operator.set.binary1
+operator.set.binary1 matches {'matches': 69, 'does_not_compile': 240, 'differs': 7}
+START operator.set.augmented1
+operator.set.augmented1 matches {'matches': 70, 'does_not_compile': 240, 'differs': 7}
+START operator.set.binary2
+operator.set.binary2 does_not_compile {'matches': 70, 'does_not_compile': 241, 'differs': 7}
+START operator.set.augmented2
+operator.set.augmented2 does_not_compile {'matches': 70, 'does_not_compile': 242, 'differs': 7}
+START operator.set.binary3
+operator.set.binary3 does_not_compile {'matches': 70, 'does_not_compile': 243, 'differs': 7}
+START operator.set.augmented3
+operator.set.augmented3 does_not_compile {'matches': 70, 'does_not_compile': 244, 'differs': 7}
+START operator.set.binary4
+operator.set.binary4 does_not_compile {'matches': 70, 'does_not_compile': 245, 'differs': 7}
+START operator.set.augmented4
+operator.set.augmented4 does_not_compile {'matches': 70, 'does_not_compile': 246, 'differs': 7}
+START operator.set.binary5
+operator.set.binary5 does_not_compile {'matches': 70, 'does_not_compile': 247, 'differs': 7}
+START operator.set.augmented5
+operator.set.augmented5 does_not_compile {'matches': 70, 'does_not_compile': 248, 'differs': 7}
+START operator.set.binary6
+operator.set.binary6 does_not_compile {'matches': 70, 'does_not_compile': 249, 'differs': 7}
+START operator.set.augmented6
+operator.set.augmented6 does_not_compile {'matches': 70, 'does_not_compile': 250, 'differs': 7}
+START operator.set.binary7
+operator.set.binary7 does_not_compile {'matches': 70, 'does_not_compile': 251, 'differs': 7}
+START operator.set.augmented7
+operator.set.augmented7 does_not_compile {'matches': 70, 'does_not_compile': 252, 'differs': 7}
+START operator.set.binary8
+operator.set.binary8 does_not_compile {'matches': 70, 'does_not_compile': 253, 'differs': 7}
+START operator.set.augmented8
+operator.set.augmented8 does_not_compile {'matches': 70, 'does_not_compile': 254, 'differs': 7}
+START operator.set.binary9
+operator.set.binary9 matches {'matches': 71, 'does_not_compile': 254, 'differs': 7}
+START operator.set.augmented9
+operator.set.augmented9 matches {'matches': 72, 'does_not_compile': 254, 'differs': 7}
+START operator.set.binary10
+operator.set.binary10 matches {'matches': 73, 'does_not_compile': 254, 'differs': 7}
+START operator.set.augmented10
+operator.set.augmented10 matches {'matches': 74, 'does_not_compile': 254, 'differs': 7}
+START operator.set.binary11
+operator.set.binary11 matches {'matches': 75, 'does_not_compile': 254, 'differs': 7}
+START operator.set.augmented11
+operator.set.augmented11 matches {'matches': 76, 'does_not_compile': 254, 'differs': 7}
+START operator.set.binary12
+operator.set.binary12 does_not_compile {'matches': 76, 'does_not_compile': 255, 'differs': 7}
+START operator.set.augmented12
+operator.set.augmented12 does_not_compile {'matches': 76, 'does_not_compile': 256, 'differs': 7}
+START operator.set.compare0
+operator.set.compare0 matches {'matches': 77, 'does_not_compile': 256, 'differs': 7}
+START operator.set.compare1
+operator.set.compare1 matches {'matches': 78, 'does_not_compile': 256, 'differs': 7}
+START operator.set.compare2
+operator.set.compare2 matches {'matches': 79, 'does_not_compile': 256, 'differs': 7}
+START operator.set.compare3
+operator.set.compare3 matches {'matches': 80, 'does_not_compile': 256, 'differs': 7}
+START operator.set.compare4
+operator.set.compare4 matches {'matches': 81, 'does_not_compile': 256, 'differs': 7}
+START operator.set.compare5
+operator.set.compare5 matches {'matches': 82, 'does_not_compile': 256, 'differs': 7}
+START operator.set.compare8
+operator.set.compare8 does_not_compile {'matches': 82, 'does_not_compile': 257, 'differs': 7}
+START operator.set.compare9
+operator.set.compare9 does_not_compile {'matches': 82, 'does_not_compile': 258, 'differs': 7}
+START operator.set.unary0
+operator.set.unary0 does_not_compile {'matches': 82, 'does_not_compile': 259, 'differs': 7}
+START operator.set.unary1
+operator.set.unary1 does_not_compile {'matches': 82, 'does_not_compile': 260, 'differs': 7}
+START operator.set.unary2
+operator.set.unary2 does_not_compile {'matches': 82, 'does_not_compile': 261, 'differs': 7}
+START operator.set.chain
+operator.set.chain matches {'matches': 83, 'does_not_compile': 261, 'differs': 7}
+START operator.set.and
+operator.set.and matches {'matches': 84, 'does_not_compile': 261, 'differs': 7}
+START operator.set.or
+operator.set.or matches {'matches': 85, 'does_not_compile': 261, 'differs': 7}
+START operator.none.binary0
+operator.none.binary0 does_not_compile {'matches': 85, 'does_not_compile': 262, 'differs': 7}
+START operator.none.augmented0
+operator.none.augmented0 does_not_compile {'matches': 85, 'does_not_compile': 263, 'differs': 7}
+START operator.none.binary1
+operator.none.binary1 does_not_compile {'matches': 85, 'does_not_compile': 264, 'differs': 7}
+START operator.none.augmented1
+operator.none.augmented1 does_not_compile {'matches': 85, 'does_not_compile': 265, 'differs': 7}
+START operator.none.binary2
+operator.none.binary2 does_not_compile {'matches': 85, 'does_not_compile': 266, 'differs': 7}
+START operator.none.augmented2
+operator.none.augmented2 does_not_compile {'matches': 85, 'does_not_compile': 267, 'differs': 7}
+START operator.none.binary3
+operator.none.binary3 does_not_compile {'matches': 85, 'does_not_compile': 268, 'differs': 7}
+START operator.none.augmented3
+operator.none.augmented3 does_not_compile {'matches': 85, 'does_not_compile': 269, 'differs': 7}
+START operator.none.binary4
+operator.none.binary4 does_not_compile {'matches': 85, 'does_not_compile': 270, 'differs': 7}
+START operator.none.augmented4
+operator.none.augmented4 does_not_compile {'matches': 85, 'does_not_compile': 271, 'differs': 7}
+START operator.none.binary5
+operator.none.binary5 does_not_compile {'matches': 85, 'does_not_compile': 272, 'differs': 7}
+START operator.none.augmented5
+operator.none.augmented5 does_not_compile {'matches': 85, 'does_not_compile': 273, 'differs': 7}
+START operator.none.binary6
+operator.none.binary6 does_not_compile {'matches': 85, 'does_not_compile': 274, 'differs': 7}
+START operator.none.augmented6
+operator.none.augmented6 does_not_compile {'matches': 85, 'does_not_compile': 275, 'differs': 7}
+START operator.none.binary7
+operator.none.binary7 does_not_compile {'matches': 85, 'does_not_compile': 276, 'differs': 7}
+START operator.none.augmented7
+operator.none.augmented7 does_not_compile {'matches': 85, 'does_not_compile': 277, 'differs': 7}
+START operator.none.binary8
+operator.none.binary8 does_not_compile {'matches': 85, 'does_not_compile': 278, 'differs': 7}
+START operator.none.augmented8
+operator.none.augmented8 does_not_compile {'matches': 85, 'does_not_compile': 279, 'differs': 7}
+START operator.none.binary9
+operator.none.binary9 does_not_compile {'matches': 85, 'does_not_compile': 280, 'differs': 7}
+START operator.none.augmented9
+operator.none.augmented9 does_not_compile {'matches': 85, 'does_not_compile': 281, 'differs': 7}
+START operator.none.binary10
+operator.none.binary10 does_not_compile {'matches': 85, 'does_not_compile': 282, 'differs': 7}
+START operator.none.augmented10
+operator.none.augmented10 does_not_compile {'matches': 85, 'does_not_compile': 283, 'differs': 7}
+START operator.none.binary11
+operator.none.binary11 does_not_compile {'matches': 85, 'does_not_compile': 284, 'differs': 7}
+START operator.none.augmented11
+operator.none.augmented11 does_not_compile {'matches': 85, 'does_not_compile': 285, 'differs': 7}
+START operator.none.binary12
+operator.none.binary12 does_not_compile {'matches': 85, 'does_not_compile': 286, 'differs': 7}
+START operator.none.augmented12
+operator.none.augmented12 does_not_compile {'matches': 85, 'does_not_compile': 287, 'differs': 7}
+START operator.none.compare2
+operator.none.compare2 does_not_compile {'matches': 85, 'does_not_compile': 288, 'differs': 7}
+START operator.none.compare3
+operator.none.compare3 does_not_compile {'matches': 85, 'does_not_compile': 289, 'differs': 7}
+START operator.none.compare4
+operator.none.compare4 does_not_compile {'matches': 85, 'does_not_compile': 290, 'differs': 7}
+START operator.none.compare5
+operator.none.compare5 does_not_compile {'matches': 85, 'does_not_compile': 291, 'differs': 7}
+START operator.none.compare8
+operator.none.compare8 does_not_compile {'matches': 85, 'does_not_compile': 292, 'differs': 7}
+START operator.none.compare9
+operator.none.compare9 does_not_compile {'matches': 85, 'does_not_compile': 293, 'differs': 7}
+START operator.none.unary0
+operator.none.unary0 does_not_compile {'matches': 85, 'does_not_compile': 294, 'differs': 7}
+START operator.none.unary1
+operator.none.unary1 does_not_compile {'matches': 85, 'does_not_compile': 295, 'differs': 7}
+START operator.none.unary2
+operator.none.unary2 does_not_compile {'matches': 85, 'does_not_compile': 296, 'differs': 7}
+START literal.int64
+literal.int64 matches {'matches': 86, 'does_not_compile': 296, 'differs': 7}
+START literal.bigint
+literal.bigint differs {'matches': 86, 'does_not_compile': 296, 'differs': 8}
+START literal.negative_bigint
+literal.negative_bigint differs {'matches': 86, 'does_not_compile': 296, 'differs': 9}
+START literal.inf
+literal.inf matches {'matches': 87, 'does_not_compile': 296, 'differs': 9}
+START literal.nan
+literal.nan matches {'matches': 88, 'does_not_compile': 296, 'differs': 9}
+START literal.complex
+literal.complex matches {'matches': 89, 'does_not_compile': 296, 'differs': 9}
+START literal.bytes
+literal.bytes matches {'matches': 90, 'does_not_compile': 296, 'differs': 9}
+START literal.list_star
+literal.list_star matches {'matches': 91, 'does_not_compile': 296, 'differs': 9}
+START literal.tuple_star
+literal.tuple_star matches {'matches': 92, 'does_not_compile': 296, 'differs': 9}
+START literal.set_star
+literal.set_star matches {'matches': 93, 'does_not_compile': 296, 'differs': 9}
+START literal.dict_unpack
+literal.dict_unpack harness_error {'matches': 93, 'does_not_compile': 296, 'differs': 9, 'harness_error': 1}
+START literal.fstring_r
+literal.fstring_r does_not_compile {'matches': 93, 'does_not_compile': 297, 'differs': 9, 'harness_error': 1}
+START literal.fstring_a
+literal.fstring_a does_not_compile {'matches': 93, 'does_not_compile': 298, 'differs': 9, 'harness_error': 1}
+START literal.fstring_spec
+literal.fstring_spec does_not_compile {'matches': 93, 'does_not_compile': 299, 'differs': 9, 'harness_error': 1}
+START literal.fstring_nested
+literal.fstring_nested does_not_compile {'matches': 93, 'does_not_compile': 300, 'differs': 9, 'harness_error': 1}
+START literal.fstring_debug
+literal.fstring_debug does_not_compile {'matches': 93, 'does_not_compile': 301, 'differs': 9, 'harness_error': 1}
+START literal.template
+literal.template does_not_compile {'matches': 93, 'does_not_compile': 302, 'differs': 9, 'harness_error': 1}
+START operator.matmul_valid
+operator.matmul_valid does_not_compile {'matches': 93, 'does_not_compile': 303, 'differs': 9, 'harness_error': 1}
+START comprehension.set
+comprehension.set does_not_compile {'matches': 93, 'does_not_compile': 304, 'differs': 9, 'harness_error': 1}
+START comprehension.dict
+comprehension.dict harness_error {'matches': 93, 'does_not_compile': 304, 'differs': 9, 'harness_error': 2}
+START comprehension.set_nested
+comprehension.set_nested does_not_compile {'matches': 93, 'does_not_compile': 305, 'differs': 9, 'harness_error': 2}
+START comprehension.dict_nested
+comprehension.dict_nested harness_error {'matches': 93, 'does_not_compile': 305, 'differs': 9, 'harness_error': 3}
+START call.varargs
+call.varargs matches {'matches': 94, 'does_not_compile': 305, 'differs': 9, 'harness_error': 3}
+START call.varkw
+call.varkw does_not_compile {'matches': 94, 'does_not_compile': 306, 'differs': 9, 'harness_error': 3}
+START call.star
+call.star does_not_compile {'matches': 94, 'does_not_compile': 307, 'differs': 9, 'harness_error': 3}
+START call.double_star
+call.double_star does_not_compile {'matches': 94, 'does_not_compile': 308, 'differs': 9, 'harness_error': 3}
+START call.bound_value
+call.bound_value does_not_compile {'matches': 94, 'does_not_compile': 309, 'differs': 9, 'harness_error': 3}
+START call.function_value
+call.function_value does_not_compile {'matches': 94, 'does_not_compile': 310, 'differs': 9, 'harness_error': 3}
+START call.closure
+call.closure matches {'matches': 95, 'does_not_compile': 310, 'differs': 9, 'harness_error': 3}
+START call.decorator
+call.decorator does_not_compile {'matches': 95, 'does_not_compile': 311, 'differs': 9, 'harness_error': 3}
+START builtin.ArithmeticError
+builtin.ArithmeticError does_not_compile {'matches': 95, 'does_not_compile': 312, 'differs': 9, 'harness_error': 3}
+START builtin.AssertionError
+builtin.AssertionError does_not_compile {'matches': 95, 'does_not_compile': 313, 'differs': 9, 'harness_error': 3}
+START builtin.AttributeError
+builtin.AttributeError does_not_compile {'matches': 95, 'does_not_compile': 314, 'differs': 9, 'harness_error': 3}
+START builtin.BaseException
+builtin.BaseException does_not_compile {'matches': 95, 'does_not_compile': 315, 'differs': 9, 'harness_error': 3}
+START builtin.BaseExceptionGroup
+builtin.BaseExceptionGroup does_not_compile {'matches': 95, 'does_not_compile': 316, 'differs': 9, 'harness_error': 3}
+START builtin.BlockingIOError
+builtin.BlockingIOError does_not_compile {'matches': 95, 'does_not_compile': 317, 'differs': 9, 'harness_error': 3}
+START builtin.BrokenPipeError
+builtin.BrokenPipeError does_not_compile {'matches': 95, 'does_not_compile': 318, 'differs': 9, 'harness_error': 3}
+START builtin.BufferError
+builtin.BufferError does_not_compile {'matches': 95, 'does_not_compile': 319, 'differs': 9, 'harness_error': 3}
+START builtin.BytesWarning
+builtin.BytesWarning does_not_compile {'matches': 95, 'does_not_compile': 320, 'differs': 9, 'harness_error': 3}
+START builtin.ChildProcessError
+builtin.ChildProcessError does_not_compile {'matches': 95, 'does_not_compile': 321, 'differs': 9, 'harness_error': 3}
+START builtin.ConnectionAbortedError
+builtin.ConnectionAbortedError does_not_compile {'matches': 95, 'does_not_compile': 322, 'differs': 9, 'harness_error': 3}
+START builtin.ConnectionError
+builtin.ConnectionError does_not_compile {'matches': 95, 'does_not_compile': 323, 'differs': 9, 'harness_error': 3}
+START builtin.ConnectionRefusedError
+builtin.ConnectionRefusedError does_not_compile {'matches': 95, 'does_not_compile': 324, 'differs': 9, 'harness_error': 3}
+START builtin.ConnectionResetError
+builtin.ConnectionResetError does_not_compile {'matches': 95, 'does_not_compile': 325, 'differs': 9, 'harness_error': 3}
+START builtin.DeprecationWarning
+builtin.DeprecationWarning does_not_compile {'matches': 95, 'does_not_compile': 326, 'differs': 9, 'harness_error': 3}
+START builtin.EOFError
+builtin.EOFError does_not_compile {'matches': 95, 'does_not_compile': 327, 'differs': 9, 'harness_error': 3}
+START builtin.EncodingWarning
+builtin.EncodingWarning does_not_compile {'matches': 95, 'does_not_compile': 328, 'differs': 9, 'harness_error': 3}
+START builtin.EnvironmentError
+builtin.EnvironmentError does_not_compile {'matches': 95, 'does_not_compile': 329, 'differs': 9, 'harness_error': 3}
+START builtin.Exception
+builtin.Exception does_not_compile {'matches': 95, 'does_not_compile': 330, 'differs': 9, 'harness_error': 3}
+START builtin.ExceptionGroup
+builtin.ExceptionGroup does_not_compile {'matches': 95, 'does_not_compile': 331, 'differs': 9, 'harness_error': 3}
+START builtin.FileExistsError
+builtin.FileExistsError does_not_compile {'matches': 95, 'does_not_compile': 332, 'differs': 9, 'harness_error': 3}
+START builtin.FileNotFoundError
+builtin.FileNotFoundError does_not_compile {'matches': 95, 'does_not_compile': 333, 'differs': 9, 'harness_error': 3}
+START builtin.FloatingPointError
+builtin.FloatingPointError does_not_compile {'matches': 95, 'does_not_compile': 334, 'differs': 9, 'harness_error': 3}
+START builtin.FutureWarning
+builtin.FutureWarning does_not_compile {'matches': 95, 'does_not_compile': 335, 'differs': 9, 'harness_error': 3}
+START builtin.GeneratorExit
+builtin.GeneratorExit does_not_compile {'matches': 95, 'does_not_compile': 336, 'differs': 9, 'harness_error': 3}
+START builtin.IOError
+builtin.IOError does_not_compile {'matches': 95, 'does_not_compile': 337, 'differs': 9, 'harness_error': 3}
+START builtin.ImportError
+builtin.ImportError does_not_compile {'matches': 95, 'does_not_compile': 338, 'differs': 9, 'harness_error': 3}
+START builtin.ImportWarning
+builtin.ImportWarning does_not_compile {'matches': 95, 'does_not_compile': 339, 'differs': 9, 'harness_error': 3}
+START builtin.IndentationError
+builtin.IndentationError does_not_compile {'matches': 95, 'does_not_compile': 340, 'differs': 9, 'harness_error': 3}
+START builtin.IndexError
+builtin.IndexError does_not_compile {'matches': 95, 'does_not_compile': 341, 'differs': 9, 'harness_error': 3}
+START builtin.InterruptedError
+builtin.InterruptedError does_not_compile {'matches': 95, 'does_not_compile': 342, 'differs': 9, 'harness_error': 3}
+START builtin.IsADirectoryError
+builtin.IsADirectoryError does_not_compile {'matches': 95, 'does_not_compile': 343, 'differs': 9, 'harness_error': 3}
+START builtin.KeyError
+builtin.KeyError does_not_compile {'matches': 95, 'does_not_compile': 344, 'differs': 9, 'harness_error': 3}
+START builtin.KeyboardInterrupt
+builtin.KeyboardInterrupt does_not_compile {'matches': 95, 'does_not_compile': 345, 'differs': 9, 'harness_error': 3}
+START builtin.LookupError
+builtin.LookupError does_not_compile {'matches': 95, 'does_not_compile': 346, 'differs': 9, 'harness_error': 3}
+START builtin.MemoryError
+builtin.MemoryError does_not_compile {'matches': 95, 'does_not_compile': 347, 'differs': 9, 'harness_error': 3}
+START builtin.ModuleNotFoundError
+builtin.ModuleNotFoundError does_not_compile {'matches': 95, 'does_not_compile': 348, 'differs': 9, 'harness_error': 3}
+START builtin.NameError
+builtin.NameError does_not_compile {'matches': 95, 'does_not_compile': 349, 'differs': 9, 'harness_error': 3}
+START builtin.NotADirectoryError
+builtin.NotADirectoryError does_not_compile {'matches': 95, 'does_not_compile': 350, 'differs': 9, 'harness_error': 3}
+START builtin.NotImplementedError
+builtin.NotImplementedError does_not_compile {'matches': 95, 'does_not_compile': 351, 'differs': 9, 'harness_error': 3}
+START builtin.OSError
+builtin.OSError does_not_compile {'matches': 95, 'does_not_compile': 352, 'differs': 9, 'harness_error': 3}
+START builtin.OverflowError
+builtin.OverflowError does_not_compile {'matches': 95, 'does_not_compile': 353, 'differs': 9, 'harness_error': 3}
+START builtin.PendingDeprecationWarning
+builtin.PendingDeprecationWarning does_not_compile {'matches': 95, 'does_not_compile': 354, 'differs': 9, 'harness_error': 3}
+START builtin.PermissionError
+builtin.PermissionError does_not_compile {'matches': 95, 'does_not_compile': 355, 'differs': 9, 'harness_error': 3}
+START builtin.ProcessLookupError
+builtin.ProcessLookupError does_not_compile {'matches': 95, 'does_not_compile': 356, 'differs': 9, 'harness_error': 3}
+START builtin.PythonFinalizationError
+builtin.PythonFinalizationError does_not_compile {'matches': 95, 'does_not_compile': 357, 'differs': 9, 'harness_error': 3}
+START builtin.RecursionError
+builtin.RecursionError does_not_compile {'matches': 95, 'does_not_compile': 358, 'differs': 9, 'harness_error': 3}
+START builtin.ReferenceError
+builtin.ReferenceError does_not_compile {'matches': 95, 'does_not_compile': 359, 'differs': 9, 'harness_error': 3}
+START builtin.ResourceWarning
+builtin.ResourceWarning does_not_compile {'matches': 95, 'does_not_compile': 360, 'differs': 9, 'harness_error': 3}
+START builtin.RuntimeError
+builtin.RuntimeError does_not_compile {'matches': 95, 'does_not_compile': 361, 'differs': 9, 'harness_error': 3}
+START builtin.RuntimeWarning
+builtin.RuntimeWarning does_not_compile {'matches': 95, 'does_not_compile': 362, 'differs': 9, 'harness_error': 3}
+START builtin.StopAsyncIteration
+builtin.StopAsyncIteration does_not_compile {'matches': 95, 'does_not_compile': 363, 'differs': 9, 'harness_error': 3}
+START builtin.StopIteration
+builtin.StopIteration does_not_compile {'matches': 95, 'does_not_compile': 364, 'differs': 9, 'harness_error': 3}
+START builtin.SyntaxError
+builtin.SyntaxError does_not_compile {'matches': 95, 'does_not_compile': 365, 'differs': 9, 'harness_error': 3}
+START builtin.SyntaxWarning
+builtin.SyntaxWarning does_not_compile {'matches': 95, 'does_not_compile': 366, 'differs': 9, 'harness_error': 3}
+START builtin.SystemError
+builtin.SystemError does_not_compile {'matches': 95, 'does_not_compile': 367, 'differs': 9, 'harness_error': 3}
+START builtin.SystemExit
+builtin.SystemExit does_not_compile {'matches': 95, 'does_not_compile': 368, 'differs': 9, 'harness_error': 3}
+START builtin.TabError
+builtin.TabError does_not_compile {'matches': 95, 'does_not_compile': 369, 'differs': 9, 'harness_error': 3}
+START builtin.TimeoutError
+builtin.TimeoutError does_not_compile {'matches': 95, 'does_not_compile': 370, 'differs': 9, 'harness_error': 3}
+START builtin.TypeError
+builtin.TypeError does_not_compile {'matches': 95, 'does_not_compile': 371, 'differs': 9, 'harness_error': 3}
+START builtin.UnboundLocalError
+builtin.UnboundLocalError does_not_compile {'matches': 95, 'does_not_compile': 372, 'differs': 9, 'harness_error': 3}
+START builtin.UnicodeDecodeError
+builtin.UnicodeDecodeError does_not_compile {'matches': 95, 'does_not_compile': 373, 'differs': 9, 'harness_error': 3}
+START builtin.UnicodeEncodeError
+builtin.UnicodeEncodeError does_not_compile {'matches': 95, 'does_not_compile': 374, 'differs': 9, 'harness_error': 3}
+START builtin.UnicodeError
+builtin.UnicodeError does_not_compile {'matches': 95, 'does_not_compile': 375, 'differs': 9, 'harness_error': 3}
+START builtin.UnicodeTranslateError
+builtin.UnicodeTranslateError does_not_compile {'matches': 95, 'does_not_compile': 376, 'differs': 9, 'harness_error': 3}
+START builtin.UnicodeWarning
+builtin.UnicodeWarning does_not_compile {'matches': 95, 'does_not_compile': 377, 'differs': 9, 'harness_error': 3}
+START builtin.UserWarning
+builtin.UserWarning does_not_compile {'matches': 95, 'does_not_compile': 378, 'differs': 9, 'harness_error': 3}
+START builtin.ValueError
+builtin.ValueError does_not_compile {'matches': 95, 'does_not_compile': 379, 'differs': 9, 'harness_error': 3}
+START builtin.Warning
+builtin.Warning does_not_compile {'matches': 95, 'does_not_compile': 380, 'differs': 9, 'harness_error': 3}
+START builtin.WindowsError
+builtin.WindowsError does_not_compile {'matches': 95, 'does_not_compile': 381, 'differs': 9, 'harness_error': 3}
+START builtin.ZeroDivisionError
+builtin.ZeroDivisionError does_not_compile {'matches': 95, 'does_not_compile': 382, 'differs': 9, 'harness_error': 3}
+START builtin.aiter
+builtin.aiter does_not_compile {'matches': 95, 'does_not_compile': 383, 'differs': 9, 'harness_error': 3}
+START builtin.anext
+builtin.anext does_not_compile {'matches': 95, 'does_not_compile': 384, 'differs': 9, 'harness_error': 3}
+START builtin.ascii
+builtin.ascii does_not_compile {'matches': 95, 'does_not_compile': 385, 'differs': 9, 'harness_error': 3}
+START builtin.bin
+builtin.bin does_not_compile {'matches': 95, 'does_not_compile': 386, 'differs': 9, 'harness_error': 3}
+START builtin.bool
+builtin.bool matches {'matches': 96, 'does_not_compile': 386, 'differs': 9, 'harness_error': 3}
+START builtin.breakpoint
+builtin.breakpoint does_not_compile {'matches': 96, 'does_not_compile': 387, 'differs': 9, 'harness_error': 3}
+START builtin.bytearray
+builtin.bytearray does_not_compile {'matches': 96, 'does_not_compile': 388, 'differs': 9, 'harness_error': 3}
+START builtin.bytes
+builtin.bytes does_not_compile {'matches': 96, 'does_not_compile': 389, 'differs': 9, 'harness_error': 3}
+START builtin.callable
+builtin.callable does_not_compile {'matches': 96, 'does_not_compile': 390, 'differs': 9, 'harness_error': 3}
+START builtin.classmethod
+builtin.classmethod does_not_compile {'matches': 96, 'does_not_compile': 391, 'differs': 9, 'harness_error': 3}
+START builtin.compile
+builtin.compile does_not_compile {'matches': 96, 'does_not_compile': 392, 'differs': 9, 'harness_error': 3}
+START builtin.complex
+builtin.complex matches {'matches': 97, 'does_not_compile': 392, 'differs': 9, 'harness_error': 3}
+START builtin.copyright
+builtin.copyright does_not_compile {'matches': 97, 'does_not_compile': 393, 'differs': 9, 'harness_error': 3}
+START builtin.credits
+builtin.credits does_not_compile {'matches': 97, 'does_not_compile': 394, 'differs': 9, 'harness_error': 3}
+START builtin.delattr
+builtin.delattr does_not_compile {'matches': 97, 'does_not_compile': 395, 'differs': 9, 'harness_error': 3}
+START builtin.dict
+builtin.dict harness_error {'matches': 97, 'does_not_compile': 395, 'differs': 9, 'harness_error': 4}
+START builtin.dir
+builtin.dir does_not_compile {'matches': 97, 'does_not_compile': 396, 'differs': 9, 'harness_error': 4}
+START builtin.divmod
+builtin.divmod matches {'matches': 98, 'does_not_compile': 396, 'differs': 9, 'harness_error': 4}
+START builtin.eval
+builtin.eval does_not_compile {'matches': 98, 'does_not_compile': 397, 'differs': 9, 'harness_error': 4}
+START builtin.exec
+builtin.exec does_not_compile {'matches': 98, 'does_not_compile': 398, 'differs': 9, 'harness_error': 4}
+START builtin.exit
+builtin.exit does_not_compile {'matches': 98, 'does_not_compile': 399, 'differs': 9, 'harness_error': 4}
+START builtin.filter
+builtin.filter matches {'matches': 99, 'does_not_compile': 399, 'differs': 9, 'harness_error': 4}
+START builtin.format
+builtin.format does_not_compile {'matches': 99, 'does_not_compile': 400, 'differs': 9, 'harness_error': 4}
+START builtin.frozenset
+builtin.frozenset does_not_compile {'matches': 99, 'does_not_compile': 401, 'differs': 9, 'harness_error': 4}
+START builtin.getattr
+builtin.getattr does_not_compile {'matches': 99, 'does_not_compile': 402, 'differs': 9, 'harness_error': 4}
+START builtin.globals
+builtin.globals does_not_compile {'matches': 99, 'does_not_compile': 403, 'differs': 9, 'harness_error': 4}
+START builtin.hasattr
+builtin.hasattr does_not_compile {'matches': 99, 'does_not_compile': 404, 'differs': 9, 'harness_error': 4}
+START builtin.hash
+builtin.hash matches {'matches': 100, 'does_not_compile': 404, 'differs': 9, 'harness_error': 4}
+START builtin.help
+builtin.help does_not_compile {'matches': 100, 'does_not_compile': 405, 'differs': 9, 'harness_error': 4}
+START builtin.hex
+builtin.hex does_not_compile {'matches': 100, 'does_not_compile': 406, 'differs': 9, 'harness_error': 4}
+START builtin.id
+builtin.id does_not_compile {'matches': 100, 'does_not_compile': 407, 'differs': 9, 'harness_error': 4}
+START builtin.input
+builtin.input does_not_compile {'matches': 100, 'does_not_compile': 408, 'differs': 9, 'harness_error': 4}
+START builtin.int
+builtin.int does_not_compile {'matches': 100, 'does_not_compile': 409, 'differs': 9, 'harness_error': 4}
+START builtin.isinstance
+builtin.isinstance matches {'matches': 101, 'does_not_compile': 409, 'differs': 9, 'harness_error': 4}
+START builtin.issubclass
+builtin.issubclass does_not_compile {'matches': 101, 'does_not_compile': 410, 'differs': 9, 'harness_error': 4}
+START builtin.iter
+builtin.iter matches {'matches': 102, 'does_not_compile': 410, 'differs': 9, 'harness_error': 4}
+START builtin.license
+builtin.license does_not_compile {'matches': 102, 'does_not_compile': 411, 'differs': 9, 'harness_error': 4}
+START builtin.locals
+builtin.locals does_not_compile {'matches': 102, 'does_not_compile': 412, 'differs': 9, 'harness_error': 4}
+START builtin.map
+builtin.map matches {'matches': 103, 'does_not_compile': 412, 'differs': 9, 'harness_error': 4}
+START builtin.memoryview
+builtin.memoryview does_not_compile {'matches': 103, 'does_not_compile': 413, 'differs': 9, 'harness_error': 4}
+START builtin.next
+builtin.next matches {'matches': 104, 'does_not_compile': 413, 'differs': 9, 'harness_error': 4}
+START builtin.object
+builtin.object does_not_compile {'matches': 104, 'does_not_compile': 414, 'differs': 9, 'harness_error': 4}
+START builtin.oct
+builtin.oct does_not_compile {'matches': 104, 'does_not_compile': 415, 'differs': 9, 'harness_error': 4}
+START builtin.open
+builtin.open does_not_compile {'matches': 104, 'does_not_compile': 416, 'differs': 9, 'harness_error': 4}
+START builtin.pow
+builtin.pow matches {'matches': 105, 'does_not_compile': 416, 'differs': 9, 'harness_error': 4}
+START builtin.print
+builtin.print matches {'matches': 106, 'does_not_compile': 416, 'differs': 9, 'harness_error': 4}
+START builtin.property
+builtin.property does_not_compile {'matches': 106, 'does_not_compile': 417, 'differs': 9, 'harness_error': 4}
+START builtin.quit
+builtin.quit does_not_compile {'matches': 106, 'does_not_compile': 418, 'differs': 9, 'harness_error': 4}
+START builtin.repr
+builtin.repr differs {'matches': 106, 'does_not_compile': 418, 'differs': 10, 'harness_error': 4}
+START builtin.reversed
+builtin.reversed does_not_compile {'matches': 106, 'does_not_compile': 419, 'differs': 10, 'harness_error': 4}
+START builtin.round
+builtin.round matches {'matches': 107, 'does_not_compile': 419, 'differs': 10, 'harness_error': 4}
+START builtin.setattr
+builtin.setattr does_not_compile {'matches': 107, 'does_not_compile': 420, 'differs': 10, 'harness_error': 4}
+START builtin.slice
+builtin.slice differs {'matches': 107, 'does_not_compile': 420, 'differs': 11, 'harness_error': 4}
+START builtin.sorted
+builtin.sorted matches {'matches': 108, 'does_not_compile': 420, 'differs': 11, 'harness_error': 4}
+START builtin.staticmethod
+builtin.staticmethod does_not_compile {'matches': 108, 'does_not_compile': 421, 'differs': 11, 'harness_error': 4}
+START builtin.super
+builtin.super does_not_compile {'matches': 108, 'does_not_compile': 422, 'differs': 11, 'harness_error': 4}
+START builtin.tuple
+builtin.tuple does_not_compile {'matches': 108, 'does_not_compile': 423, 'differs': 11, 'harness_error': 4}
+START builtin.type
+builtin.type harness_error {'matches': 108, 'does_not_compile': 423, 'differs': 11, 'harness_error': 5}
+START builtin.vars
+builtin.vars does_not_compile {'matches': 108, 'does_not_compile': 424, 'differs': 11, 'harness_error': 5}
+START builtin.zip
+builtin.zip matches {'matches': 109, 'does_not_compile': 424, 'differs': 11, 'harness_error': 5}
+START method.str.capitalize
+method.str.capitalize matches {'matches': 110, 'does_not_compile': 424, 'differs': 11, 'harness_error': 5}
+START method.str.casefold
+method.str.casefold matches {'matches': 111, 'does_not_compile': 424, 'differs': 11, 'harness_error': 5}
+START method.str.center
+method.str.center matches {'matches': 112, 'does_not_compile': 424, 'differs': 11, 'harness_error': 5}
+START method.str.encode
+method.str.encode does_not_compile {'matches': 112, 'does_not_compile': 425, 'differs': 11, 'harness_error': 5}
+START method.str.expandtabs
+method.str.expandtabs matches {'matches': 113, 'does_not_compile': 425, 'differs': 11, 'harness_error': 5}
+START method.str.format
+method.str.format does_not_compile {'matches': 113, 'does_not_compile': 426, 'differs': 11, 'harness_error': 5}
+START method.str.format_map
+method.str.format_map does_not_compile {'matches': 113, 'does_not_compile': 427, 'differs': 11, 'harness_error': 5}
+START method.str.index
+method.str.index matches {'matches': 114, 'does_not_compile': 427, 'differs': 11, 'harness_error': 5}
+START method.str.isalnum
+method.str.isalnum differs {'matches': 114, 'does_not_compile': 427, 'differs': 12, 'harness_error': 5}
+START method.str.isalpha
+method.str.isalpha differs {'matches': 114, 'does_not_compile': 427, 'differs': 13, 'harness_error': 5}
+START method.str.isascii
+method.str.isascii differs {'matches': 114, 'does_not_compile': 427, 'differs': 14, 'harness_error': 5}
+START method.str.isdecimal
+method.str.isdecimal differs {'matches': 114, 'does_not_compile': 427, 'differs': 15, 'harness_error': 5}
+START method.str.isdigit
+method.str.isdigit differs {'matches': 114, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.isidentifier
+method.str.isidentifier matches {'matches': 115, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.islower
+method.str.islower matches {'matches': 116, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.isnumeric
+method.str.isnumeric matches {'matches': 117, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.isprintable
+method.str.isprintable matches {'matches': 118, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.isspace
+method.str.isspace matches {'matches': 119, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.istitle
+method.str.istitle matches {'matches': 120, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.isupper
+method.str.isupper matches {'matches': 121, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.ljust
+method.str.ljust matches {'matches': 122, 'does_not_compile': 427, 'differs': 16, 'harness_error': 5}
+START method.str.maketrans
+method.str.maketrans does_not_compile {'matches': 122, 'does_not_compile': 428, 'differs': 16, 'harness_error': 5}
+START method.str.partition
+method.str.partition matches {'matches': 123, 'does_not_compile': 428, 'differs': 16, 'harness_error': 5}
+START method.str.removeprefix
+method.str.removeprefix does_not_compile {'matches': 123, 'does_not_compile': 429, 'differs': 16, 'harness_error': 5}
+START method.str.removesuffix
+method.str.removesuffix does_not_compile {'matches': 123, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.rfind
+method.str.rfind matches {'matches': 124, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.rindex
+method.str.rindex matches {'matches': 125, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.rjust
+method.str.rjust matches {'matches': 126, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.rpartition
+method.str.rpartition matches {'matches': 127, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.rsplit
+method.str.rsplit matches {'matches': 128, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.splitlines
+method.str.splitlines matches {'matches': 129, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.swapcase
+method.str.swapcase matches {'matches': 130, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.title
+method.str.title matches {'matches': 131, 'does_not_compile': 430, 'differs': 16, 'harness_error': 5}
+START method.str.translate
+method.str.translate does_not_compile {'matches': 131, 'does_not_compile': 431, 'differs': 16, 'harness_error': 5}
+START method.str.zfill
+method.str.zfill matches {'matches': 132, 'does_not_compile': 431, 'differs': 16, 'harness_error': 5}
+START method.bytes.capitalize
+method.bytes.capitalize does_not_compile {'matches': 132, 'does_not_compile': 432, 'differs': 16, 'harness_error': 5}
+START method.bytes.center
+method.bytes.center matches {'matches': 133, 'does_not_compile': 432, 'differs': 16, 'harness_error': 5}
+START method.bytes.count
+method.bytes.count does_not_compile {'matches': 133, 'does_not_compile': 433, 'differs': 16, 'harness_error': 5}
+START method.bytes.decode
+method.bytes.decode does_not_compile {'matches': 133, 'does_not_compile': 434, 'differs': 16, 'harness_error': 5}
+START method.bytes.endswith
+method.bytes.endswith matches {'matches': 134, 'does_not_compile': 434, 'differs': 16, 'harness_error': 5}
+START method.bytes.expandtabs
+method.bytes.expandtabs does_not_compile {'matches': 134, 'does_not_compile': 435, 'differs': 16, 'harness_error': 5}
+START method.bytes.find
+method.bytes.find does_not_compile {'matches': 134, 'does_not_compile': 436, 'differs': 16, 'harness_error': 5}
+START method.bytes.fromhex
+method.bytes.fromhex does_not_compile {'matches': 134, 'does_not_compile': 437, 'differs': 16, 'harness_error': 5}
+START method.bytes.hex
+method.bytes.hex does_not_compile {'matches': 134, 'does_not_compile': 438, 'differs': 16, 'harness_error': 5}
+START method.bytes.index
+method.bytes.index does_not_compile {'matches': 134, 'does_not_compile': 439, 'differs': 16, 'harness_error': 5}
+START method.bytes.isalnum
+method.bytes.isalnum does_not_compile {'matches': 134, 'does_not_compile': 440, 'differs': 16, 'harness_error': 5}
+START method.bytes.isalpha
+method.bytes.isalpha does_not_compile {'matches': 134, 'does_not_compile': 441, 'differs': 16, 'harness_error': 5}
+START method.bytes.isascii
+method.bytes.isascii matches {'matches': 135, 'does_not_compile': 441, 'differs': 16, 'harness_error': 5}
+START method.bytes.isdigit
+method.bytes.isdigit does_not_compile {'matches': 135, 'does_not_compile': 442, 'differs': 16, 'harness_error': 5}
+START method.bytes.islower
+method.bytes.islower does_not_compile {'matches': 135, 'does_not_compile': 443, 'differs': 16, 'harness_error': 5}
+START method.bytes.isspace
+method.bytes.isspace does_not_compile {'matches': 135, 'does_not_compile': 444, 'differs': 16, 'harness_error': 5}
+START method.bytes.istitle
+method.bytes.istitle does_not_compile {'matches': 135, 'does_not_compile': 445, 'differs': 16, 'harness_error': 5}
+START method.bytes.isupper
+method.bytes.isupper does_not_compile {'matches': 135, 'does_not_compile': 446, 'differs': 16, 'harness_error': 5}
+START method.bytes.join
+method.bytes.join matches {'matches': 136, 'does_not_compile': 446, 'differs': 16, 'harness_error': 5}
+START method.bytes.ljust
+method.bytes.ljust matches {'matches': 137, 'does_not_compile': 446, 'differs': 16, 'harness_error': 5}
+START method.bytes.lower
+method.bytes.lower does_not_compile {'matches': 137, 'does_not_compile': 447, 'differs': 16, 'harness_error': 5}
+START method.bytes.lstrip
+method.bytes.lstrip matches {'matches': 138, 'does_not_compile': 447, 'differs': 16, 'harness_error': 5}
+START method.bytes.maketrans
+method.bytes.maketrans does_not_compile {'matches': 138, 'does_not_compile': 448, 'differs': 16, 'harness_error': 5}
+START method.bytes.partition
+method.bytes.partition does_not_compile {'matches': 138, 'does_not_compile': 449, 'differs': 16, 'harness_error': 5}
+START method.bytes.removeprefix
+method.bytes.removeprefix does_not_compile {'matches': 138, 'does_not_compile': 450, 'differs': 16, 'harness_error': 5}
+START method.bytes.removesuffix
+method.bytes.removesuffix does_not_compile {'matches': 138, 'does_not_compile': 451, 'differs': 16, 'harness_error': 5}
+START method.bytes.replace
+method.bytes.replace does_not_compile {'matches': 138, 'does_not_compile': 452, 'differs': 16, 'harness_error': 5}
+START method.bytes.rfind
+method.bytes.rfind does_not_compile {'matches': 138, 'does_not_compile': 453, 'differs': 16, 'harness_error': 5}
+START method.bytes.rindex
+method.bytes.rindex does_not_compile {'matches': 138, 'does_not_compile': 454, 'differs': 16, 'harness_error': 5}
+START method.bytes.rjust
+method.bytes.rjust matches {'matches': 139, 'does_not_compile': 454, 'differs': 16, 'harness_error': 5}
+START method.bytes.rpartition
+method.bytes.rpartition does_not_compile {'matches': 139, 'does_not_compile': 455, 'differs': 16, 'harness_error': 5}
+START method.bytes.rsplit
+method.bytes.rsplit does_not_compile {'matches': 139, 'does_not_compile': 456, 'differs': 16, 'harness_error': 5}
+START method.bytes.rstrip
+method.bytes.rstrip matches {'matches': 140, 'does_not_compile': 456, 'differs': 16, 'harness_error': 5}
+START method.bytes.split
+method.bytes.split matches {'matches': 141, 'does_not_compile': 456, 'differs': 16, 'harness_error': 5}
+START method.bytes.splitlines
+method.bytes.splitlines does_not_compile {'matches': 141, 'does_not_compile': 457, 'differs': 16, 'harness_error': 5}
+START method.bytes.startswith
+method.bytes.startswith matches {'matches': 142, 'does_not_compile': 457, 'differs': 16, 'harness_error': 5}
+START method.bytes.strip
+method.bytes.strip matches {'matches': 143, 'does_not_compile': 457, 'differs': 16, 'harness_error': 5}
+START method.bytes.swapcase
+method.bytes.swapcase does_not_compile {'matches': 143, 'does_not_compile': 458, 'differs': 16, 'harness_error': 5}
+START method.bytes.title
+method.bytes.title does_not_compile {'matches': 143, 'does_not_compile': 459, 'differs': 16, 'harness_error': 5}
+START method.bytes.translate
+method.bytes.translate does_not_compile {'matches': 143, 'does_not_compile': 460, 'differs': 16, 'harness_error': 5}
+START method.bytes.upper
+method.bytes.upper does_not_compile {'matches': 143, 'does_not_compile': 461, 'differs': 16, 'harness_error': 5}
+START method.bytes.zfill
+method.bytes.zfill matches {'matches': 144, 'does_not_compile': 461, 'differs': 16, 'harness_error': 5}
+START method.bytearray.append
+method.bytearray.append does_not_compile {'matches': 144, 'does_not_compile': 462, 'differs': 16, 'harness_error': 5}
+START method.bytearray.capitalize
+method.bytearray.capitalize does_not_compile {'matches': 144, 'does_not_compile': 463, 'differs': 16, 'harness_error': 5}
+START method.bytearray.center
+method.bytearray.center does_not_compile {'matches': 144, 'does_not_compile': 464, 'differs': 16, 'harness_error': 5}
+START method.bytearray.clear
+method.bytearray.clear does_not_compile {'matches': 144, 'does_not_compile': 465, 'differs': 16, 'harness_error': 5}
+START method.bytearray.copy
+method.bytearray.copy does_not_compile {'matches': 144, 'does_not_compile': 466, 'differs': 16, 'harness_error': 5}
+START method.bytearray.count
+method.bytearray.count does_not_compile {'matches': 144, 'does_not_compile': 467, 'differs': 16, 'harness_error': 5}
+START method.bytearray.decode
+method.bytearray.decode does_not_compile {'matches': 144, 'does_not_compile': 468, 'differs': 16, 'harness_error': 5}
+START method.bytearray.endswith
+method.bytearray.endswith does_not_compile {'matches': 144, 'does_not_compile': 469, 'differs': 16, 'harness_error': 5}
+START method.bytearray.expandtabs
+method.bytearray.expandtabs does_not_compile {'matches': 144, 'does_not_compile': 470, 'differs': 16, 'harness_error': 5}
+START method.bytearray.extend
+method.bytearray.extend does_not_compile {'matches': 144, 'does_not_compile': 471, 'differs': 16, 'harness_error': 5}
+START method.bytearray.find
+method.bytearray.find does_not_compile {'matches': 144, 'does_not_compile': 472, 'differs': 16, 'harness_error': 5}
+START method.bytearray.fromhex
+method.bytearray.fromhex does_not_compile {'matches': 144, 'does_not_compile': 473, 'differs': 16, 'harness_error': 5}
+START method.bytearray.hex
+method.bytearray.hex does_not_compile {'matches': 144, 'does_not_compile': 474, 'differs': 16, 'harness_error': 5}
+START method.bytearray.index
+method.bytearray.index does_not_compile {'matches': 144, 'does_not_compile': 475, 'differs': 16, 'harness_error': 5}
+START method.bytearray.insert
+method.bytearray.insert does_not_compile {'matches': 144, 'does_not_compile': 476, 'differs': 16, 'harness_error': 5}
+START method.bytearray.isalnum
+method.bytearray.isalnum does_not_compile {'matches': 144, 'does_not_compile': 477, 'differs': 16, 'harness_error': 5}
+START method.bytearray.isalpha
+method.bytearray.isalpha does_not_compile {'matches': 144, 'does_not_compile': 478, 'differs': 16, 'harness_error': 5}
+START method.bytearray.isascii
+method.bytearray.isascii does_not_compile {'matches': 144, 'does_not_compile': 479, 'differs': 16, 'harness_error': 5}
+START method.bytearray.isdigit
+method.bytearray.isdigit does_not_compile {'matches': 144, 'does_not_compile': 480, 'differs': 16, 'harness_error': 5}
+START method.bytearray.islower
+method.bytearray.islower does_not_compile {'matches': 144, 'does_not_compile': 481, 'differs': 16, 'harness_error': 5}
+START method.bytearray.isspace
+method.bytearray.isspace does_not_compile {'matches': 144, 'does_not_compile': 482, 'differs': 16, 'harness_error': 5}
+START method.bytearray.istitle
+method.bytearray.istitle does_not_compile {'matches': 144, 'does_not_compile': 483, 'differs': 16, 'harness_error': 5}
+START method.bytearray.isupper
+method.bytearray.isupper does_not_compile {'matches': 144, 'does_not_compile': 484, 'differs': 16, 'harness_error': 5}
+START method.bytearray.join
+method.bytearray.join does_not_compile {'matches': 144, 'does_not_compile': 485, 'differs': 16, 'harness_error': 5}
+START method.bytearray.ljust
+method.bytearray.ljust does_not_compile {'matches': 144, 'does_not_compile': 486, 'differs': 16, 'harness_error': 5}
+START method.bytearray.lower
+method.bytearray.lower does_not_compile {'matches': 144, 'does_not_compile': 487, 'differs': 16, 'harness_error': 5}
+START method.bytearray.lstrip
+method.bytearray.lstrip does_not_compile {'matches': 144, 'does_not_compile': 488, 'differs': 16, 'harness_error': 5}
+START method.bytearray.maketrans
+method.bytearray.maketrans does_not_compile {'matches': 144, 'does_not_compile': 489, 'differs': 16, 'harness_error': 5}
+START method.bytearray.partition
+method.bytearray.partition does_not_compile {'matches': 144, 'does_not_compile': 490, 'differs': 16, 'harness_error': 5}
+START method.bytearray.pop
+method.bytearray.pop does_not_compile {'matches': 144, 'does_not_compile': 491, 'differs': 16, 'harness_error': 5}
+START method.bytearray.remove
+method.bytearray.remove does_not_compile {'matches': 144, 'does_not_compile': 492, 'differs': 16, 'harness_error': 5}
+START method.bytearray.removeprefix
+method.bytearray.removeprefix does_not_compile {'matches': 144, 'does_not_compile': 493, 'differs': 16, 'harness_error': 5}
+START method.bytearray.removesuffix
+method.bytearray.removesuffix does_not_compile {'matches': 144, 'does_not_compile': 494, 'differs': 16, 'harness_error': 5}
+START method.bytearray.replace
+method.bytearray.replace does_not_compile {'matches': 144, 'does_not_compile': 495, 'differs': 16, 'harness_error': 5}
+START method.bytearray.resize
+method.bytearray.resize does_not_compile {'matches': 144, 'does_not_compile': 496, 'differs': 16, 'harness_error': 5}
+START method.bytearray.reverse
+method.bytearray.reverse does_not_compile {'matches': 144, 'does_not_compile': 497, 'differs': 16, 'harness_error': 5}
+START method.bytearray.rfind
+method.bytearray.rfind does_not_compile {'matches': 144, 'does_not_compile': 498, 'differs': 16, 'harness_error': 5}
+START method.bytearray.rindex
+method.bytearray.rindex does_not_compile {'matches': 144, 'does_not_compile': 499, 'differs': 16, 'harness_error': 5}
+START method.bytearray.rjust
+method.bytearray.rjust does_not_compile {'matches': 144, 'does_not_compile': 500, 'differs': 16, 'harness_error': 5}
+START method.bytearray.rpartition
+method.bytearray.rpartition does_not_compile {'matches': 144, 'does_not_compile': 501, 'differs': 16, 'harness_error': 5}
+START method.bytearray.rsplit
+method.bytearray.rsplit does_not_compile {'matches': 144, 'does_not_compile': 502, 'differs': 16, 'harness_error': 5}
+START method.bytearray.rstrip
+method.bytearray.rstrip does_not_compile {'matches': 144, 'does_not_compile': 503, 'differs': 16, 'harness_error': 5}
+START method.bytearray.split
+method.bytearray.split does_not_compile {'matches': 144, 'does_not_compile': 504, 'differs': 16, 'harness_error': 5}
+START method.bytearray.splitlines
+method.bytearray.splitlines does_not_compile {'matches': 144, 'does_not_compile': 505, 'differs': 16, 'harness_error': 5}
+START method.bytearray.startswith
+method.bytearray.startswith does_not_compile {'matches': 144, 'does_not_compile': 506, 'differs': 16, 'harness_error': 5}
+START method.bytearray.strip
+method.bytearray.strip does_not_compile {'matches': 144, 'does_not_compile': 507, 'differs': 16, 'harness_error': 5}
+START method.bytearray.swapcase
+method.bytearray.swapcase does_not_compile {'matches': 144, 'does_not_compile': 508, 'differs': 16, 'harness_error': 5}
+START method.bytearray.title
+method.bytearray.title does_not_compile {'matches': 144, 'does_not_compile': 509, 'differs': 16, 'harness_error': 5}
+START method.bytearray.translate
+method.bytearray.translate does_not_compile {'matches': 144, 'does_not_compile': 510, 'differs': 16, 'harness_error': 5}
+START method.bytearray.upper
+method.bytearray.upper does_not_compile {'matches': 144, 'does_not_compile': 511, 'differs': 16, 'harness_error': 5}
+START method.bytearray.zfill
+method.bytearray.zfill does_not_compile {'matches': 144, 'does_not_compile': 512, 'differs': 16, 'harness_error': 5}
+START method.list.copy
+method.list.copy matches {'matches': 145, 'does_not_compile': 512, 'differs': 16, 'harness_error': 5}
+START method.list.sort
+method.list.sort matches {'matches': 146, 'does_not_compile': 512, 'differs': 16, 'harness_error': 5}
+START method.tuple.count
+method.tuple.count does_not_compile {'matches': 146, 'does_not_compile': 513, 'differs': 16, 'harness_error': 5}
+START method.tuple.index
+method.tuple.index matches {'matches': 147, 'does_not_compile': 513, 'differs': 16, 'harness_error': 5}
+START method.dict.fromkeys
+method.dict.fromkeys does_not_compile {'matches': 147, 'does_not_compile': 514, 'differs': 16, 'harness_error': 5}
+START method.dict.items
+method.dict.items matches {'matches': 148, 'does_not_compile': 514, 'differs': 16, 'harness_error': 5}
+START method.dict.keys
+method.dict.keys matches {'matches': 149, 'does_not_compile': 514, 'differs': 16, 'harness_error': 5}
+START method.dict.popitem
+method.dict.popitem harness_error {'matches': 149, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.dict.values
+method.dict.values matches {'matches': 150, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.set.copy
+method.set.copy matches {'matches': 151, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.set.difference
+method.set.difference matches {'matches': 152, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.set.difference_update
+method.set.difference_update matches {'matches': 153, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.set.intersection
+method.set.intersection matches {'matches': 154, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.set.intersection_update
+method.set.intersection_update matches {'matches': 155, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.set.isdisjoint
+method.set.isdisjoint matches {'matches': 156, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.set.issubset
+method.set.issubset matches {'matches': 157, 'does_not_compile': 514, 'differs': 16, 'harness_error': 6}
+START method.set.issuperset
+method.set.issuperset does_not_compile {'matches': 157, 'does_not_compile': 515, 'differs': 16, 'harness_error': 6}
+START method.set.pop
+method.set.pop matches {'matches': 158, 'does_not_compile': 515, 'differs': 16, 'harness_error': 6}
+START method.set.symmetric_difference
+method.set.symmetric_difference matches {'matches': 159, 'does_not_compile': 515, 'differs': 16, 'harness_error': 6}
+START method.set.symmetric_difference_update
+method.set.symmetric_difference_update matches {'matches': 160, 'does_not_compile': 515, 'differs': 16, 'harness_error': 6}
+START method.set.union
+method.set.union matches {'matches': 161, 'does_not_compile': 515, 'differs': 16, 'harness_error': 6}
+START method.set.update
+method.set.update matches {'matches': 162, 'does_not_compile': 515, 'differs': 16, 'harness_error': 6}
+START method.frozenset.copy
+method.frozenset.copy does_not_compile {'matches': 162, 'does_not_compile': 516, 'differs': 16, 'harness_error': 6}
+START method.frozenset.difference
+method.frozenset.difference does_not_compile {'matches': 162, 'does_not_compile': 517, 'differs': 16, 'harness_error': 6}
+START method.frozenset.intersection
+method.frozenset.intersection does_not_compile {'matches': 162, 'does_not_compile': 518, 'differs': 16, 'harness_error': 6}
+START method.frozenset.isdisjoint
+method.frozenset.isdisjoint does_not_compile {'matches': 162, 'does_not_compile': 519, 'differs': 16, 'harness_error': 6}
+START method.frozenset.issubset
+method.frozenset.issubset does_not_compile {'matches': 162, 'does_not_compile': 520, 'differs': 16, 'harness_error': 6}
+START method.frozenset.issuperset
+method.frozenset.issuperset does_not_compile {'matches': 162, 'does_not_compile': 521, 'differs': 16, 'harness_error': 6}
+START method.frozenset.symmetric_difference
+method.frozenset.symmetric_difference does_not_compile {'matches': 162, 'does_not_compile': 522, 'differs': 16, 'harness_error': 6}
+START method.frozenset.union
+method.frozenset.union does_not_compile {'matches': 162, 'does_not_compile': 523, 'differs': 16, 'harness_error': 6}
+START method.int.as_integer_ratio
+method.int.as_integer_ratio does_not_compile {'matches': 162, 'does_not_compile': 524, 'differs': 16, 'harness_error': 6}
+START method.int.bit_length
+method.int.bit_length does_not_compile {'matches': 162, 'does_not_compile': 525, 'differs': 16, 'harness_error': 6}
+START method.int.conjugate
+method.int.conjugate matches {'matches': 163, 'does_not_compile': 525, 'differs': 16, 'harness_error': 6}
+START method.int.from_bytes
+method.int.from_bytes does_not_compile {'matches': 163, 'does_not_compile': 526, 'differs': 16, 'harness_error': 6}
+START method.int.is_integer
+method.int.is_integer does_not_compile {'matches': 163, 'does_not_compile': 527, 'differs': 16, 'harness_error': 6}
+START method.int.to_bytes
+method.int.to_bytes does_not_compile {'matches': 163, 'does_not_compile': 528, 'differs': 16, 'harness_error': 6}
+START method.float.as_integer_ratio
+method.float.as_integer_ratio does_not_compile {'matches': 163, 'does_not_compile': 529, 'differs': 16, 'harness_error': 6}
+START method.float.conjugate
+method.float.conjugate matches {'matches': 164, 'does_not_compile': 529, 'differs': 16, 'harness_error': 6}
+START method.float.from_number
+method.float.from_number does_not_compile {'matches': 164, 'does_not_compile': 530, 'differs': 16, 'harness_error': 6}
+START method.float.fromhex
+method.float.fromhex does_not_compile {'matches': 164, 'does_not_compile': 531, 'differs': 16, 'harness_error': 6}
+START method.float.hex
+method.float.hex does_not_compile {'matches': 164, 'does_not_compile': 532, 'differs': 16, 'harness_error': 6}
+START method.float.is_integer
+method.float.is_integer does_not_compile {'matches': 164, 'does_not_compile': 533, 'differs': 16, 'harness_error': 6}
+START stdlib.math.frexp
+stdlib.math.frexp matches {'matches': 165, 'does_not_compile': 533, 'differs': 16, 'harness_error': 6}
+START stdlib.math.gcd
+stdlib.math.gcd matches {'matches': 166, 'does_not_compile': 533, 'differs': 16, 'harness_error': 6}
+START stdlib.itertools.chain
+stdlib.itertools.chain does_not_compile {'matches': 166, 'does_not_compile': 534, 'differs': 16, 'harness_error': 6}
+START stdlib.itertools.repeat
+stdlib.itertools.repeat does_not_compile {'matches': 166, 'does_not_compile': 535, 'differs': 16, 'harness_error': 6}
+START stdlib.itertools.product
+stdlib.itertools.product does_not_compile {'matches': 166, 'does_not_compile': 536, 'differs': 16, 'harness_error': 6}
+START stdlib.functools.reduce
+stdlib.functools.reduce does_not_compile {'matches': 166, 'does_not_compile': 537, 'differs': 16, 'harness_error': 6}
+START stdlib.functools.partial
+stdlib.functools.partial does_not_compile {'matches': 166, 'does_not_compile': 538, 'differs': 16, 'harness_error': 6}
+START stdlib.collections.Counter
+stdlib.collections.Counter does_not_compile {'matches': 166, 'does_not_compile': 539, 'differs': 16, 'harness_error': 6}
+START stdlib.collections.deque
+stdlib.collections.deque does_not_compile {'matches': 166, 'does_not_compile': 540, 'differs': 16, 'harness_error': 6}
+START stdlib.collections.defaultdict
+stdlib.collections.defaultdict does_not_compile {'matches': 166, 'does_not_compile': 541, 'differs': 16, 'harness_error': 6}
+START stdlib.operator.itemgetter
+stdlib.operator.itemgetter does_not_compile {'matches': 166, 'does_not_compile': 542, 'differs': 16, 'harness_error': 6}
+START stdlib.re.match
+stdlib.re.match does_not_compile {'matches': 166, 'does_not_compile': 543, 'differs': 16, 'harness_error': 6}
+START stdlib.re.sub
+stdlib.re.sub does_not_compile {'matches': 166, 'does_not_compile': 544, 'differs': 16, 'harness_error': 6}
+START stdlib.struct.pack
+stdlib.struct.pack does_not_compile {'matches': 166, 'does_not_compile': 545, 'differs': 16, 'harness_error': 6}
+START stdlib.struct.unpack
+stdlib.struct.unpack does_not_compile {'matches': 166, 'does_not_compile': 546, 'differs': 16, 'harness_error': 6}
+START statement.bare_except
+statement.bare_except matches {'matches': 167, 'does_not_compile': 546, 'differs': 16, 'harness_error': 6}
+START statement.except_as
+statement.except_as does_not_compile {'matches': 167, 'does_not_compile': 547, 'differs': 16, 'harness_error': 6}
+START statement.raise_suppressed
+statement.raise_suppressed does_not_compile {'matches': 167, 'does_not_compile': 548, 'differs': 16, 'harness_error': 6}
+START statement.raise_context
+statement.raise_context does_not_compile {'matches': 167, 'does_not_compile': 549, 'differs': 16, 'harness_error': 6}
+START statement.generator_return
+statement.generator_return harness_error {'matches': 167, 'does_not_compile': 549, 'differs': 16, 'harness_error': 7}
+START async.with_multiple
+async.with_multiple does_not_compile {'matches': 167, 'does_not_compile': 550, 'differs': 16, 'harness_error': 7}
+START async.for_else
+async.for_else does_not_compile {'matches': 167, 'does_not_compile': 551, 'differs': 16, 'harness_error': 7}
+START builtin.anext_default
+builtin.anext_default does_not_compile {'matches': 167, 'does_not_compile': 552, 'differs': 16, 'harness_error': 7}
+START builtin.anext_exhausted
+builtin.anext_exhausted does_not_compile {'matches': 167, 'does_not_compile': 553, 'differs': 16, 'harness_error': 7}
+START literal.format
+literal.format does_not_compile {'matches': 167, 'does_not_compile': 554, 'differs': 16, 'harness_error': 7}
+START literal.format_map
+literal.format_map does_not_compile {'matches': 167, 'does_not_compile': 555, 'differs': 16, 'harness_error': 7}
+START boundary.int_overflow
+boundary.int_overflow differs {'matches': 167, 'does_not_compile': 555, 'differs': 17, 'harness_error': 7}
+START boundary.int_large
+boundary.int_large does_not_compile {'matches': 167, 'does_not_compile': 556, 'differs': 17, 'harness_error': 7}
+START boundary.divide_zero
+boundary.divide_zero matches {'matches': 168, 'does_not_compile': 556, 'differs': 17, 'harness_error': 7}
+START boundary.negative_shift
+boundary.negative_shift differs {'matches': 168, 'does_not_compile': 556, 'differs': 18, 'harness_error': 7}
+START boundary.index
+boundary.index differs {'matches': 168, 'does_not_compile': 556, 'differs': 19, 'harness_error': 7}
+START order.and
+order.and does_not_compile {'matches': 168, 'does_not_compile': 557, 'differs': 19, 'harness_error': 7}
+START order.or
+order.or does_not_compile {'matches': 168, 'does_not_compile': 558, 'differs': 19, 'harness_error': 7}
+START order.unpack
+order.unpack does_not_compile {'matches': 168, 'does_not_compile': 559, 'differs': 19, 'harness_error': 7}
+START stdlib.re.compile
+stdlib.re.compile does_not_compile {'matches': 168, 'does_not_compile': 560, 'differs': 19, 'harness_error': 7}
+START stdlib.re.escape
+stdlib.re.escape does_not_compile {'matches': 168, 'does_not_compile': 561, 'differs': 19, 'harness_error': 7}
+START stdlib.re.findall
+stdlib.re.findall does_not_compile {'matches': 168, 'does_not_compile': 562, 'differs': 19, 'harness_error': 7}
+START stdlib.re.finditer
+stdlib.re.finditer does_not_compile {'matches': 168, 'does_not_compile': 563, 'differs': 19, 'harness_error': 7}
+START stdlib.re.purge
+stdlib.re.purge does_not_compile {'matches': 168, 'does_not_compile': 564, 'differs': 19, 'harness_error': 7}
+START stdlib.re.search
+stdlib.re.search does_not_compile {'matches': 168, 'does_not_compile': 565, 'differs': 19, 'harness_error': 7}
+START stdlib.re.split
+stdlib.re.split does_not_compile {'matches': 168, 'does_not_compile': 566, 'differs': 19, 'harness_error': 7}
+START stdlib.collections.namedtuple
+stdlib.collections.namedtuple does_not_compile {'matches': 168, 'does_not_compile': 567, 'differs': 19, 'harness_error': 7}
+START stdlib.functools.cache
+stdlib.functools.cache does_not_compile {'matches': 168, 'does_not_compile': 568, 'differs': 19, 'harness_error': 7}
+START stdlib.functools.lru_cache
+stdlib.functools.lru_cache does_not_compile {'matches': 168, 'does_not_compile': 569, 'differs': 19, 'harness_error': 7}
+START stdlib.functools.wraps
+stdlib.functools.wraps does_not_compile {'matches': 168, 'does_not_compile': 570, 'differs': 19, 'harness_error': 7}
+START stdlib.functools.update_wrapper
+stdlib.functools.update_wrapper does_not_compile {'matches': 168, 'does_not_compile': 571, 'differs': 19, 'harness_error': 7}
+START stdlib.functools.singledispatch
+stdlib.functools.singledispatch does_not_compile {'matches': 168, 'does_not_compile': 572, 'differs': 19, 'harness_error': 7}
+START stdlib.functools.cached_property
+stdlib.functools.cached_property does_not_compile {'matches': 168, 'does_not_compile': 573, 'differs': 19, 'harness_error': 7}
+START stdlib.functools.total_ordering
+stdlib.functools.total_ordering does_not_compile {'matches': 168, 'does_not_compile': 574, 'differs': 19, 'harness_error': 7}
+START review.mixed0.eq
+review.mixed0.eq differs {'matches': 168, 'does_not_compile': 574, 'differs': 20, 'harness_error': 7}
+START review.mixed0.gt
+review.mixed0.gt differs {'matches': 168, 'does_not_compile': 574, 'differs': 21, 'harness_error': 7}
+START review.mixed0.le
+review.mixed0.le differs {'matches': 168, 'does_not_compile': 574, 'differs': 22, 'harness_error': 7}
+START review.mixed1.eq
+review.mixed1.eq differs {'matches': 168, 'does_not_compile': 574, 'differs': 23, 'harness_error': 7}
+START review.mixed1.gt
+review.mixed1.gt matches {'matches': 169, 'does_not_compile': 574, 'differs': 23, 'harness_error': 7}
+START review.mixed1.le
+review.mixed1.le matches {'matches': 170, 'does_not_compile': 574, 'differs': 23, 'harness_error': 7}
+START review.tuple_nan_shared
+review.tuple_nan_shared differs {'matches': 170, 'does_not_compile': 574, 'differs': 24, 'harness_error': 7}
+START review.literal_index_high
+review.literal_index_high differs {'matches': 170, 'does_not_compile': 574, 'differs': 25, 'harness_error': 7}
+START review.literal_index_low
+review.literal_index_low differs {'matches': 170, 'does_not_compile': 574, 'differs': 26, 'harness_error': 7}
+START review.identity.float_or
+review.identity.float_or differs {'matches': 170, 'does_not_compile': 574, 'differs': 27, 'harness_error': 7}
+START review.identity.negative_zero_and
+review.identity.negative_zero_and differs {'matches': 170, 'does_not_compile': 574, 'differs': 28, 'harness_error': 7}
+START review.identity.int_or
+review.identity.int_or differs {'matches': 170, 'does_not_compile': 574, 'differs': 29, 'harness_error': 7}
+START review.identity.float_right
+review.identity.float_right differs {'matches': 170, 'does_not_compile': 574, 'differs': 30, 'harness_error': 7}
+{"complete": true, "rows": 781, "counts": {"matches": 170, "does_not_compile": 574, "differs": 30, "harness_error": 7}}

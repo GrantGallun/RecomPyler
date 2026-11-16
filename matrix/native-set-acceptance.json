@@ -1,0 +1,76 @@
+{
+  "capability": "non-escaping exact-int64 native working sets with set-free results",
+  "base": "edbd8bd936ef36f8f34841f0a82c9d3455dec970",
+  "matrix_before": {
+    "native": 235,
+    "declined": 781,
+    "wrong": 0,
+    "crash": 0
+  },
+  "matrix_after": {
+    "native": 243,
+    "declined": 773
+  },
+  "converted_set_rows": 7,
+  "converted_other_rows": [
+    "operator.tuple.chain"
+  ],
+  "heldout": {
+    "before": {
+      "own_defined": 365,
+      "captured": 194,
+      "verified": 59,
+      "whole_function_native": 59,
+      "deployed": 0,
+      "whole_function_share_of375": 0.15733333333333333
+    },
+    "after": {
+      "own_defined": 365,
+      "captured": 194,
+      "verified": 59,
+      "whole_function_native": 59,
+      "deployed": 0,
+      "whole_function_share_of375": 0.15733333333333333
+    }
+  },
+  "whole_function_status_changes": [],
+  "deployment_performed": false,
+  "focused": "42 passed,2 xfailed",
+  "union": "2064 passed,2 xfailed,131 subtests passed",
+  "speed_claim": null,
+  "sha256": {
+    "src/recompyler/lift.py": "dad30f73c624b9ccf0db785a5b3cded562a7efb057bfebc54aff1974f0f946ab",
+    "tests/test_native_sets.py": "0e2d71d5c0337deeb4924cbb747bca6938f491b74cf69f49aded7f6cf45789f1",
+    "tests/test_native_sets_aot.py": "7c0d756c4839b9d3114581c24dae2b9a22db7ef847d3dd41510af2d391cfdfe6",
+    "matrix/SET-DESIGN.md": "94f3d41479da535f51db706aac828fe6ffee12c9456346136e6ee5035efb1476",
+    "matrix/review-native-sets.md": "f99a1860fb9af3bf2a51d4d270e93f8ba4f57569d32d04074e8ba6807e6c2fd0",
+    "matrix/heldout_native.py": "4ae6386a260f6f03837a9b42438d519e91ea36f85f31b36ade79d9955589eae8",
+    "matrix/heldout_compare.py": "1d4619db2dc2076672ae48d0a9d49afc5b3f99c5a77736b31086cc068e30b4a8",
+    "matrix/step3-sets-v3.jsonl": "8b5be24546f8d4dd616808ce81daa46206c2c43f5d3d1854b453462e8968b051",
+    "matrix/set-matrix-changes.json": "0e907eea1e1b964012d3fea63b16e96c1bc8500ea1b245c49788084d308d6c3c",
+    "matrix/sets-heldout-v1/summary.json": "74144f1e7aca09725cb41094a5b9f4dfe4172d89f116c008b46e1869cba6e5b4",
+    "matrix/sets-heldout-v1/complete.json": "371242ae11b358406cc2c23e7b15a205a15b631a410cd0b8a9ae974d85cb07a8",
+    "matrix/SET-REACH.md": "445d14315de87d8565f39bc2559742532bb8718f300ef8cbc1c8946a95499fc9"
+  },
+  "receipts": [
+    "step3-sets-final-aot-v2",
+    "step3-sets-matrix-v3",
+    "step3-sets-union-v1",
+    "step3-sets-heldout-smoke-v2",
+    "step3-sets-heldout-v1"
+  ],
+  "complete": true,
+  "artifacts_sha256": {
+    "src/recompyler/_heap.cp314-win_amd64.pyd": "a67a0f50d37fdeaba5ff2774a26701327f03a030f7a0285815bbbba3a054480a",
+    "src/recompyler/_monitor.cp314-win_amd64.pyd": "8eb28f5478a5301f14a9c459ec8691a8ec9434c1f6417892f8d989ad84fd12a2",
+    "matrix/temp/pytest-step3-sets-final-aot-v2/test_verified_set_scalar_resul0/rcaot_f76e22970a87ff5eb626a951.cp314-win_amd64.pyd": "fc771a933412707cfba09032fa113ac4f2346c4fde69252929980603e1ac4a16"
+  },
+  "final_gates": {
+    "focused_exit": 0,
+    "matrix_exit": 0,
+    "union_exit": 0,
+    "heldout_smoke_exit": 0,
+    "heldout_cohort_exit": 0,
+    "independent_review_followthrough": "Typed helper and named decline inspected by reviewer; final focused/AOT, matrix, union and held-out gates passed on unchanged product source."
+  }
+}

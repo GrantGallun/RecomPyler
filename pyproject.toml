@@ -20,5 +20,11 @@ recompyler = "recompyler.__main__:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
+"recompyler" = ["stencils/*.json"]
 # The vendored ahead-of-time compiler needs its C source and Numba's licence.
 "recompyler._pycc" = ["modulemixin.c", "LICENSE.numba"]
+
+"recompyler.ir" = ["*.c", "*.h"]
+
+[tool.pytest.ini_options]
+markers = ["slow: integration-only AOT, subprocess and long fuzz checks"]

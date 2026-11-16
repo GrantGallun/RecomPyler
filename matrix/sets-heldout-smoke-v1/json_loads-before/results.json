@@ -1,0 +1,46 @@
+{
+  "program": "json_loads",
+  "on_off_behavior_identical": true,
+  "own_defined": 2,
+  "fixed_all_program_defined": 375,
+  "rows": [
+    {
+      "function": "mutate_dict",
+      "line": 59,
+      "captured": false,
+      "verified": false,
+      "whole_function_native": false,
+      "recommended": false,
+      "deployed": false,
+      "candidate": {
+        "status": "uncaptured",
+        "reason": null
+      }
+    },
+    {
+      "function": "bench_json_loads",
+      "line": 72,
+      "captured": true,
+      "verified": false,
+      "whole_function_native": false,
+      "recommended": false,
+      "deployed": false,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: global 'json' is not a numeric constant",
+        "region_reason": "as a region: 'loads' takes **kwargs"
+      }
+    }
+  ],
+  "captured": 1,
+  "verified": 0,
+  "whole_function_native": 0,
+  "deployed": 0,
+  "deployment_note": "replay/capture count only; no runner deployment performed",
+  "stdout": "",
+  "stderr": "",
+  "source_sha256": {
+    "run_benchmark.py": "16c41ff06bf3173d30158c767340d389c459a656e997e306719891d50f09646f"
+  },
+  "whole_function_native_share_of_all_defined": 0.0
+}

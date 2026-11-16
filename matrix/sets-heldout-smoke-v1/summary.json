@@ -1,0 +1,430 @@
+{
+  "programs": {
+    "json_loads": {
+      "before": {
+        "program": "json_loads",
+        "on_off_behavior_identical": true,
+        "own_defined": 2,
+        "fixed_all_program_defined": 375,
+        "rows": [
+          {
+            "function": "mutate_dict",
+            "line": 59,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          },
+          {
+            "function": "bench_json_loads",
+            "line": 72,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: global 'json' is not a numeric constant",
+              "region_reason": "as a region: 'loads' takes **kwargs"
+            }
+          }
+        ],
+        "captured": 1,
+        "verified": 0,
+        "whole_function_native": 0,
+        "deployed": 0,
+        "deployment_note": "replay/capture count only; no runner deployment performed",
+        "stdout": "",
+        "stderr": "",
+        "source_sha256": {
+          "run_benchmark.py": "16c41ff06bf3173d30158c767340d389c459a656e997e306719891d50f09646f"
+        },
+        "whole_function_native_share_of_all_defined": 0.0
+      },
+      "after": {
+        "program": "json_loads",
+        "on_off_behavior_identical": true,
+        "own_defined": 2,
+        "fixed_all_program_defined": 375,
+        "rows": [
+          {
+            "function": "mutate_dict",
+            "line": 59,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          },
+          {
+            "function": "bench_json_loads",
+            "line": 72,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: global 'json' is not a numeric constant",
+              "region_reason": "as a region: 'loads' takes **kwargs"
+            }
+          }
+        ],
+        "captured": 1,
+        "verified": 0,
+        "whole_function_native": 0,
+        "deployed": 0,
+        "deployment_note": "replay/capture count only; no runner deployment performed",
+        "stdout": "",
+        "stderr": "",
+        "source_sha256": {
+          "run_benchmark.py": "16c41ff06bf3173d30158c767340d389c459a656e997e306719891d50f09646f"
+        },
+        "whole_function_native_share_of_all_defined": 0.0
+      }
+    },
+    "meteor_contest": {
+      "before": {
+        "program": "meteor_contest",
+        "on_off_behavior_identical": true,
+        "own_defined": 10,
+        "fixed_all_program_defined": 375,
+        "rows": [
+          {
+            "function": "main",
+            "line": 212,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: global 'pyperf' is not a numeric constant",
+              "region_reason": "as a region: 'Runner.__init__' takes **kwargs"
+            }
+          },
+          {
+            "function": "get_puzzle",
+            "line": 135,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: comprehension at line 2",
+              "region_reason": "as a region: a list comprehension inside another in 'get_puzzle'"
+            }
+          },
+          {
+            "function": "permute",
+            "line": 96,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          },
+          {
+            "function": "rotate",
+            "line": 88,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "the compiled version did not apply to the captured calls",
+              "region_reason": "as a region: a list holds both ints and floats, or floats and None"
+            }
+          },
+          {
+            "function": "flip",
+            "line": 92,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "the compiled version did not apply to the captured calls",
+              "region_reason": "as a region: a list holds both ints and floats, or floats and None"
+            }
+          },
+          {
+            "function": "convert",
+            "line": 107,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: call at line 6",
+              "region_reason": "as a region: a list holds both ints and floats, or floats and None"
+            }
+          },
+          {
+            "function": "get_footprints",
+            "line": 115,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          },
+          {
+            "function": "get_senh",
+            "line": 126,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: comparison at line 6",
+              "region_reason": "as a region: a list that holds both ints and floats, or numbers and None at line 4 of 'get_senh'"
+            }
+          },
+          {
+            "function": "bench_meteor_contest",
+            "line": 192,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          },
+          {
+            "function": "solve",
+            "line": 159,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          }
+        ],
+        "captured": 6,
+        "verified": 0,
+        "whole_function_native": 0,
+        "deployed": 0,
+        "deployment_note": "replay/capture count only; no runner deployment performed",
+        "stdout": "",
+        "stderr": "",
+        "source_sha256": {
+          "run_benchmark.py": "b616f5f87e129a6b35650452951f40a7812cf22efff5a0777e51287da13c2f48"
+        },
+        "whole_function_native_share_of_all_defined": 0.0
+      },
+      "after": {
+        "program": "meteor_contest",
+        "on_off_behavior_identical": true,
+        "own_defined": 10,
+        "fixed_all_program_defined": 375,
+        "rows": [
+          {
+            "function": "main",
+            "line": 212,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: global 'pyperf' is not a numeric constant",
+              "region_reason": "as a region: 'Runner.__init__' takes **kwargs"
+            }
+          },
+          {
+            "function": "get_puzzle",
+            "line": 135,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: comprehension at line 2",
+              "region_reason": "as a region: a list comprehension inside another in 'get_puzzle'"
+            }
+          },
+          {
+            "function": "permute",
+            "line": 96,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          },
+          {
+            "function": "rotate",
+            "line": 88,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "the compiled version did not apply to the captured calls",
+              "region_reason": "as a region: a list holds both ints and floats, or floats and None"
+            }
+          },
+          {
+            "function": "flip",
+            "line": 92,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "the compiled version did not apply to the captured calls",
+              "region_reason": "as a region: a list holds both ints and floats, or floats and None"
+            }
+          },
+          {
+            "function": "convert",
+            "line": 107,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: call at line 6",
+              "region_reason": "as a region: a list holds both ints and floats, or floats and None"
+            }
+          },
+          {
+            "function": "get_footprints",
+            "line": 115,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          },
+          {
+            "function": "get_senh",
+            "line": 126,
+            "captured": true,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "skipped",
+              "reason": "outside the supported subset: comparison at line 6",
+              "region_reason": "as a region: a list that holds both ints and floats, or numbers and None at line 4 of 'get_senh'"
+            }
+          },
+          {
+            "function": "bench_meteor_contest",
+            "line": 192,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          },
+          {
+            "function": "solve",
+            "line": 159,
+            "captured": false,
+            "verified": false,
+            "whole_function_native": false,
+            "recommended": false,
+            "deployed": false,
+            "candidate": {
+              "status": "uncaptured",
+              "reason": null
+            }
+          }
+        ],
+        "captured": 6,
+        "verified": 0,
+        "whole_function_native": 0,
+        "deployed": 0,
+        "deployment_note": "replay/capture count only; no runner deployment performed",
+        "stdout": "",
+        "stderr": "",
+        "source_sha256": {
+          "run_benchmark.py": "b616f5f87e129a6b35650452951f40a7812cf22efff5a0777e51287da13c2f48"
+        },
+        "whole_function_native_share_of_all_defined": 0.0
+      }
+    }
+  },
+  "fixed_all_program_defined": 375,
+  "note": "Observed native count/share; unobserved definitions are never inferred native. Network workloads excluded.",
+  "totals": {
+    "before": {
+      "own_defined": 12,
+      "captured": 7,
+      "verified": 0,
+      "whole_function_native": 0,
+      "deployed": 0,
+      "whole_function_share_of375": 0.0
+    },
+    "after": {
+      "own_defined": 12,
+      "captured": 7,
+      "verified": 0,
+      "whole_function_native": 0,
+      "deployed": 0,
+      "whole_function_share_of375": 0.0
+    }
+  }
+}

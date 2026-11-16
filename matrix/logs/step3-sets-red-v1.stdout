@@ -1,0 +1,249 @@
+FFFFFFF.........                                                         [100%]
+================================== FAILURES ===================================
+________ test_pure_set_operation_runs_natively[difference-args0-want0] ________
+
+fn = <function difference at 0x00000269A5415A60>, args = ({1, 2}, {2, 3})
+want = {1}
+
+    @pytest.mark.parametrize('fn,args,want', [
+        (difference, ({1, 2}, {2, 3}), {1}),
+        (subset, ({1, 2}, {1, 2, 3}), True),
+        (chain, ({1, 2}, {2, 1}), True),
+        (local_copy, (3,), {1, 2, 3}),
+        (local_union, (4,), {1, 2, 3, 4}),
+        (disjoint, ({1, 2}, {3, 4}), True),
+    ])
+    def test_pure_set_operation_runs_natively(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: None
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x00000269A53FB380>.compiled_calls
+
+tests\test_native_sets.py:58: AssertionError
+__________ test_pure_set_operation_runs_natively[subset-args1-True] ___________
+
+fn = <function subset at 0x00000269A5417AB0>, args = ({1, 2}, {1, 2, 3})
+want = True
+
+    @pytest.mark.parametrize('fn,args,want', [
+        (difference, ({1, 2}, {2, 3}), {1}),
+        (subset, ({1, 2}, {1, 2, 3}), True),
+        (chain, ({1, 2}, {2, 1}), True),
+        (local_copy, (3,), {1, 2, 3}),
+        (local_union, (4,), {1, 2, 3, 4}),
+        (disjoint, ({1, 2}, {3, 4}), True),
+    ])
+    def test_pure_set_operation_runs_natively(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: None
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x00000269A533FCB0>.compiled_calls
+
+tests\test_native_sets.py:58: AssertionError
+___________ test_pure_set_operation_runs_natively[chain-args2-True] ___________
+
+fn = <function chain at 0x00000269A54161F0>, args = ({1, 2}, {1, 2})
+want = True
+
+    @pytest.mark.parametrize('fn,args,want', [
+        (difference, ({1, 2}, {2, 3}), {1}),
+        (subset, ({1, 2}, {1, 2, 3}), True),
+        (chain, ({1, 2}, {2, 1}), True),
+        (local_copy, (3,), {1, 2, 3}),
+        (local_union, (4,), {1, 2, 3, 4}),
+        (disjoint, ({1, 2}, {3, 4}), True),
+    ])
+    def test_pure_set_operation_runs_natively(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: None
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x00000269A7E55940>.compiled_calls
+
+tests\test_native_sets.py:58: AssertionError
+________ test_pure_set_operation_runs_natively[local_copy-args3-want3] ________
+
+fn = <function local_copy at 0x00000269A5535E80>, args = (3,), want = {1, 2, 3}
+
+    @pytest.mark.parametrize('fn,args,want', [
+        (difference, ({1, 2}, {2, 3}), {1}),
+        (subset, ({1, 2}, {1, 2, 3}), True),
+        (chain, ({1, 2}, {2, 1}), True),
+        (local_copy, (3,), {1, 2, 3}),
+        (local_union, (4,), {1, 2, 3, 4}),
+        (disjoint, ({1, 2}, {3, 4}), True),
+    ])
+    def test_pure_set_operation_runs_natively(fn, args, want):
+>       compiled = lift(fn)
+                   ^^^^^^^^
+
+tests\test_native_sets.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\lift.py:3979: in lift
+    return Lifted(fn)
+           ^^^^^^^^^^
+src\recompyler\lift.py:3370: in __init__
+    self._build()
+src\recompyler\lift.py:3386: in _build
+    self._root = self._unit.function(self.original)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1850: in function
+    return self.define(fn, id(fn), node, params, fn.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1940: in define
+    body = checked.body(node.body) + list(tail)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1247: in body
+    result = self.visit(statement)
+             ^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1238: in visit
+    result = method(node)
+             ^^^^^^^^^^^^
+src\recompyler\lift.py:1391: in visit_Assign
+    value = self.visit(node.value)
+            ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <recompyler.lift._Rewriter object at 0x00000269A7C4D810>
+node = Set(elts=[Constant(value=1, kind=None), ..., Name(id='x', ctx=Load())])
+
+    def visit(self, node):
+        method = getattr(self, "visit_" + type(node).__name__, None)
+        if method is None:
+>           raise Unsupported(f"{type(node).__name__} at line {getattr(node, 'lineno', '?')}")
+E           recompyler.lift.Unsupported: Set at line 2
+
+src\recompyler\lift.py:1237: Unsupported
+_______ test_pure_set_operation_runs_natively[local_union-args4-want4] ________
+
+fn = <function local_union at 0x00000269A5535F30>, args = (4,)
+want = {1, 2, 3, 4}
+
+    @pytest.mark.parametrize('fn,args,want', [
+        (difference, ({1, 2}, {2, 3}), {1}),
+        (subset, ({1, 2}, {1, 2, 3}), True),
+        (chain, ({1, 2}, {2, 1}), True),
+        (local_copy, (3,), {1, 2, 3}),
+        (local_union, (4,), {1, 2, 3, 4}),
+        (disjoint, ({1, 2}, {3, 4}), True),
+    ])
+    def test_pure_set_operation_runs_natively(fn, args, want):
+>       compiled = lift(fn)
+                   ^^^^^^^^
+
+tests\test_native_sets.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\lift.py:3979: in lift
+    return Lifted(fn)
+           ^^^^^^^^^^
+src\recompyler\lift.py:3370: in __init__
+    self._build()
+src\recompyler\lift.py:3386: in _build
+    self._root = self._unit.function(self.original)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1850: in function
+    return self.define(fn, id(fn), node, params, fn.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1940: in define
+    body = checked.body(node.body) + list(tail)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1247: in body
+    result = self.visit(statement)
+             ^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1238: in visit
+    result = method(node)
+             ^^^^^^^^^^^^
+src\recompyler\lift.py:1391: in visit_Assign
+    value = self.visit(node.value)
+            ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <recompyler.lift._Rewriter object at 0x00000269A7E4DFD0>
+node = Set(elts=[Constant(value=1, kind=None), Constant(value=2, kind=None)])
+
+    def visit(self, node):
+        method = getattr(self, "visit_" + type(node).__name__, None)
+        if method is None:
+>           raise Unsupported(f"{type(node).__name__} at line {getattr(node, 'lineno', '?')}")
+E           recompyler.lift.Unsupported: Set at line 2
+
+src\recompyler\lift.py:1237: Unsupported
+_________ test_pure_set_operation_runs_natively[disjoint-args5-True] __________
+
+fn = <function disjoint at 0x00000269A5535FE0>, args = ({1, 2}, {3, 4})
+want = True
+
+    @pytest.mark.parametrize('fn,args,want', [
+        (difference, ({1, 2}, {2, 3}), {1}),
+        (subset, ({1, 2}, {1, 2, 3}), True),
+        (chain, ({1, 2}, {2, 1}), True),
+        (local_copy, (3,), {1, 2, 3}),
+        (local_union, (4,), {1, 2, 3, 4}),
+        (disjoint, ({1, 2}, {3, 4}), True),
+    ])
+    def test_pure_set_operation_runs_natively(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: None
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x00000269A53FB380>.compiled_calls
+
+tests\test_native_sets.py:58: AssertionError
+_________________ test_new_set_keeps_cached_element_identity __________________
+
+    def test_new_set_keeps_cached_element_identity():
+>       compiled = lift(local_copy)
+                   ^^^^^^^^^^^^^^^^
+
+tests\test_native_sets.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\lift.py:3979: in lift
+    return Lifted(fn)
+           ^^^^^^^^^^
+src\recompyler\lift.py:3370: in __init__
+    self._build()
+src\recompyler\lift.py:3386: in _build
+    self._root = self._unit.function(self.original)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1850: in function
+    return self.define(fn, id(fn), node, params, fn.__name__)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1940: in define
+    body = checked.body(node.body) + list(tail)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1247: in body
+    result = self.visit(statement)
+             ^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\lift.py:1238: in visit
+    result = method(node)
+             ^^^^^^^^^^^^
+src\recompyler\lift.py:1391: in visit_Assign
+    value = self.visit(node.value)
+            ^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <recompyler.lift._Rewriter object at 0x00000269A7B8AF10>
+node = Set(elts=[Constant(value=1, kind=None), ..., Name(id='x', ctx=Load())])
+
+    def visit(self, node):
+        method = getattr(self, "visit_" + type(node).__name__, None)
+        if method is None:
+>           raise Unsupported(f"{type(node).__name__} at line {getattr(node, 'lineno', '?')}")
+E           recompyler.lift.Unsupported: Set at line 2
+
+src\recompyler\lift.py:1237: Unsupported
+=========================== short test summary info ===========================
+FAILED tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+FAILED tests/test_native_sets.py::test_pure_set_operation_runs_natively[subset-args1-True]
+FAILED tests/test_native_sets.py::test_pure_set_operation_runs_natively[chain-args2-True]
+FAILED tests/test_native_sets.py::test_pure_set_operation_runs_natively[local_copy-args3-want3]
+FAILED tests/test_native_sets.py::test_pure_set_operation_runs_natively[local_union-args4-want4]
+FAILED tests/test_native_sets.py::test_pure_set_operation_runs_natively[disjoint-args5-True]
+FAILED tests/test_native_sets.py::test_new_set_keeps_cached_element_identity
+7 failed, 9 passed in 2.02s

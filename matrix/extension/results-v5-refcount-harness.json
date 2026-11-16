@@ -1,0 +1,19 @@
+{
+  "unchanged_upstream_import": {
+    "type": "ModuleNotFoundError",
+    "message": "No module named 'llvmlite.llvmpy'"
+  },
+  "nopython_signatures": [
+    "(wave17.ManagedPyObject,) -> wave17.ManagedPyObject"
+  ],
+  "error": {
+    "type": "AssertionError",
+    "message": "('output refs', 1, 1)",
+    "traceback": "Traceback (most recent call last):\n  File \"D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\extension\\run.py\", line 64, in main\n    report['jit']=gates(entry)\n                  ~~~~~^^^^^^^\n  File \"D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\extension\\run.py\", line 22, in gates\n    assert reference_output==compiled_output and reference_count==compiled_count==2,('output refs',reference_count,compiled_count)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('output refs', 1, 1)\n"
+  },
+  "source_hashes": {
+    "matrix\\extension\\managed.py": "d5f66973543daf32d6d98ac9ffe502d2985e57d9d62daf0434434af05559fcd6",
+    "matrix\\extension\\run.py": "f6749923b7e4a10379c8466e613114e83f185dc2fd54b7c679eec8090762292b",
+    "matrix\\extension\\vendor\\numba_passthru\\numba_passthru.py": "780639afc4a712756e8232798a9ac9a9a4bdcd0a83c996f75f8121aa54af3944"
+  }
+}

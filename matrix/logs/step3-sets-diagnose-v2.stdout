@@ -1,0 +1,66 @@
+result {1} native 0 problem None
+signature (Array(uint8, 1, 'C', False, aligned=True), Set(int64, True), Set(int64, True)) -> reflected set(int64)
+_rc_st = arg(0, name=_rc_st)
+TYPE array(uint8, 1d, C)
+a = arg(1, name=a)
+TYPE reflected set(int64)
+b = arg(2, name=b)
+TYPE reflected set(int64)
+_runtime__locals___lambda___locals___lambda__v22__vconst4_0_0.1 = const(bool, False)
+TYPE Literal[bool](False)
+_runtime__locals___lambda___locals___lambda__v22__v6return_value_1.1 = _runtime__locals___lambda___locals___lambda__v22__vconst4_0_0.1
+TYPE Literal[bool](False)
+del _runtime__locals___lambda___locals___lambda__v22__vconst4_0_0.1
+$20call.6 = _runtime__locals___lambda___locals___lambda__v22__v6return_value_1.1
+TYPE Literal[bool](False)
+del _runtime__locals___lambda___locals___lambda__v22__v6return_value_1.1
+$bool36 = global(bool: <class 'bool'>)
+TYPE Function(<class 'bool'>)
+$36pred = call $bool36($20call.6, func=$bool36, args=(Var($20call.6, <recompyler:difference>:1),), kws=(), vararg=None, varkwarg=None, target=None)
+TYPE bool
+KEY <class 'bool'> args [('$20call.6', 'Literal[bool](False)')]
+del $bool36
+del $20call.6
+branch $36pred, 40, 96
+del $36pred
+_runtime__locals___lambda___locals___lambda__v22__vconst4_0_0 = const(bool, False)
+TYPE Literal[bool](False)
+_runtime__locals___lambda___locals___lambda__v22__v6return_value_1 = _runtime__locals___lambda___locals___lambda__v22__vconst4_0_0
+TYPE Literal[bool](False)
+del _runtime__locals___lambda___locals___lambda__v22__vconst4_0_0
+$58call.6 = _runtime__locals___lambda___locals___lambda__v22__v6return_value_1
+TYPE Literal[bool](False)
+del _runtime__locals___lambda___locals___lambda__v22__v6return_value_1
+$bool74 = global(bool: <class 'bool'>)
+TYPE Function(<class 'bool'>)
+$74pred = call $bool74($58call.6, func=$bool74, args=(Var($58call.6, <recompyler:difference>:1),), kws=(), vararg=None, varkwarg=None, target=None)
+TYPE bool
+KEY <class 'bool'> args [('$58call.6', 'Literal[bool](False)')]
+del $bool74
+del $58call.6
+branch $74pred, 78, 96
+del _rc_st
+del $74pred
+$binop_sub82.2 = a - b
+TYPE reflected set(int64)
+del b
+del a
+$94return_value.3 = cast(value=$binop_sub82.2)
+TYPE reflected set(int64)
+del $binop_sub82.2
+return $94return_value.3
+del $74pred
+del $36pred
+$96load_global.0 = global(_rc_sub: <function _runtime.<locals>.register.<locals>.stub at 0x0000017806ACD010>)
+TYPE Function(<function _runtime.<locals>.register.<locals>.stub at 0x0000017806ACD010>)
+$110call.5 = call $96load_global.0(_rc_st, a, b, func=$96load_global.0, args=[Var(_rc_st, <recompyler:difference>:1), Var(a, <recompyler:difference>:1), Var(b, <recompyler:difference>:1)], kws=(), vararg=None, varkwarg=None, target=None)
+TYPE reflected set(int64)
+KEY <function _runtime.<locals>.register.<locals>.stub at 0x0000017806ACD010> args [('_rc_st', 'array(uint8, 1d, C)'), ('a', 'reflected set(int64)'), ('b', 'reflected set(int64)')]
+del b
+del a
+del _rc_st
+del $96load_global.0
+$118return_value.6 = cast(value=$110call.5)
+TYPE reflected set(int64)
+del $110call.5
+return $118return_value.6

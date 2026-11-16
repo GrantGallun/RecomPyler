@@ -1,0 +1,194 @@
+FFFFFFFFFF....                                                           [100%]
+================================== FAILURES ===================================
+___ test_observed_defect_is_native_or_named_decline[operator.float.binary7] ___
+
+identity = 'operator.float.binary7'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'operator.float.binary7', 'group': 'operators', 'source': '
+E         def construct(a,b):
+E             return a << b
+E         ', 'argument_expression': '(7.5,2.0)', ...}
+E       assert 'crash' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+___ test_observed_defect_is_native_or_named_decline[operator.float.binary9] ___
+
+identity = 'operator.float.binary9'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'operator.float.binary9', 'group': 'operators', 'source': '
+E         def construct(a,b):
+E             return a & b
+E         ', 'argument_expression': '(7.5,2.0)', ...}
+E       assert 'crash' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+_____ test_observed_defect_is_native_or_named_decline[operator.tuple.and] _____
+
+identity = 'operator.tuple.and'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'operator.tuple.and', 'group': 'boolean', 'source': '
+E         def construct(a,b):
+E             return a and b
+E         ', 'argument_expression': '((1,2),(2,3))', ...}
+E       assert 'wrong' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+___ test_observed_defect_is_native_or_named_decline[operator.none.compare0] ___
+
+identity = 'operator.none.compare0'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'operator.none.compare0', 'group': 'comparisons', 'source': '
+E         def construct(a,b):
+E             return a == b
+E         ', 'argument_expression': '(None,None)', ...}
+E       assert 'crash' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+____ test_observed_defect_is_native_or_named_decline[method.list.reverse] _____
+
+identity = 'method.list.reverse'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'method.list.reverse', 'group': 'methods', 'source': '
+E         def construct(x):
+E             y=[3,1,2]
+E             r=y.reverse()
+E             return r,y
+E         ', 'argument_expression': '(3,)', ...}
+E       assert 'wrong' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+______ test_observed_defect_is_native_or_named_decline[method.list.sort] ______
+
+identity = 'method.list.sort'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'method.list.sort', 'group': 'methods', 'source': '
+E         def construct(x):
+E             y=[3,1,2]
+E             r=y.sort()
+E             return r,y
+E         ', 'argument_expression': '(3,)', ...}
+E       assert 'wrong' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+___ test_observed_defect_is_native_or_named_decline[method.int.bit_length] ____
+
+identity = 'method.int.bit_length'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'method.int.bit_length', 'group': 'methods', 'source': '
+E         def construct(x):
+E             y=7
+E             r=y.bit_length()
+E             return r,y
+E         ', 'argument_expression': '(3,)', ...}
+E       assert 'crash' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+_______ test_observed_defect_is_native_or_named_decline[boundary.index] _______
+
+identity = 'boundary.index'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'boundary.index', 'group': 'boundaries', 'source': '
+E         def construct(x):
+E             return [1,2][x]
+E         ', 'argument_expression': '(3,)', ...}
+E       assert 'crash' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+_ test_tuple_boolean_returns_the_original_selected_argument[left0-right0-and] _
+
+op = 'and', left = (1, 2), right = (3, 4)
+
+    @pytest.mark.parametrize('op',['and','or'])
+    @pytest.mark.parametrize('left,right',[((1,2),(3,4)),((),(3,4)),((1,2),())])
+    def test_tuple_boolean_returns_the_original_selected_argument(op,left,right):
+        from run_matrix import fixture
+        case=Case('identity.'+op,'identity','return a '+op+' b','a,b')
+        module,_=fixture(case);native=lift(module.construct)
+        result=native(left,right)
+>       assert result is (left and right if op=='and' else left or right)
+E       assert (3, 4) is (3, 4)
+
+tests\test_matrix_soundness.py:26: AssertionError
+_ test_tuple_boolean_returns_the_original_selected_argument[left0-right0-or] __
+
+op = 'or', left = (1, 2), right = (3, 4)
+
+    @pytest.mark.parametrize('op',['and','or'])
+    @pytest.mark.parametrize('left,right',[((1,2),(3,4)),((),(3,4)),((1,2),())])
+    def test_tuple_boolean_returns_the_original_selected_argument(op,left,right):
+        from run_matrix import fixture
+        case=Case('identity.'+op,'identity','return a '+op+' b','a,b')
+        module,_=fixture(case);native=lift(module.construct)
+        result=native(left,right)
+>       assert result is (left and right if op=='and' else left or right)
+E       assert (1, 2) is (1, 2)
+
+tests\test_matrix_soundness.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[operator.float.binary7]
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[operator.float.binary9]
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[operator.tuple.and]
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[operator.none.compare0]
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[method.list.reverse]
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[method.list.sort]
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[method.int.bit_length]
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[boundary.index]
+FAILED tests/test_matrix_soundness.py::test_tuple_boolean_returns_the_original_selected_argument[left0-right0-and]
+FAILED tests/test_matrix_soundness.py::test_tuple_boolean_returns_the_original_selected_argument[left0-right0-or]
+10 failed, 4 passed in 1.59s

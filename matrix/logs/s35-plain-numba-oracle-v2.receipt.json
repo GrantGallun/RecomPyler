@@ -1,0 +1,21 @@
+{
+  "label": "s35-plain-numba-oracle-v2",
+  "command": [
+    "python",
+    "-B",
+    "matrix/plain_numba.py",
+    "--output",
+    "matrix/plain-numba-oracle-v2.jsonl",
+    "--ids",
+    "literal.dict_unpack",
+    "comprehension.dict",
+    "comprehension.dict_nested",
+    "builtin.dict",
+    "builtin.type",
+    "method.dict.popitem",
+    "statement.generator_return"
+  ],
+  "exit_code": 0,
+  "wall_s": 3.056141100008972,
+  "end": "2026-11-14T07:13:34.177666+00:00"
+}

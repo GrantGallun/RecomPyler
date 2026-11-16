@@ -1,0 +1,17 @@
+{
+  "label": "step2-targeted-v4",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_matrix_soundness.py",
+    "tests/test_lift.py::LiftTests::test_hand_scorer_over_every_holding",
+    "tests/test_lift.py::LiftTests::test_map_matches_a_python_loop",
+    "tests/test_lift.py::MadeObjectTests::test_object_code_is_loaded_from_the_disk_cache_by_a_later_process",
+    "tests/test_backends.py::BackendTests::test_gpu_runs_exactly_or_explains_why_not"
+  ],
+  "exit_code": 1,
+  "wall_s": 30.303331799979787,
+  "end": "2026-11-14T05:53:38.893407+00:00"
+}

@@ -1,0 +1,44 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_ test_escaped_set_future_mutation_keeps_python_table_behavior[copied-args0] __
+
+fn = <function copied at 0x000001A2FA8B8720>, args = ({0, 1, 2, 3, 4},)
+
+    @pytest.mark.parametrize('fn,args', [(copied, ({0, 1, 2, 3, 4},)), (local_removed_set, (1,))])
+    def test_escaped_set_future_mutation_keeps_python_table_behavior(fn, args):
+        compiled = lift(fn)
+        actual, expected = compiled(*args), fn(*args)
+        actual.add(16 if fn is copied else 8)
+        expected.add(16 if fn is copied else 8)
+        actual.add(5 if fn is copied else 1)
+        expected.add(5 if fn is copied else 1)
+>       assert list(actual) == list(expected)
+E       assert [0, 1, 2, 3, 4, 5, ...] == [0, 1, 2, 3, 4, 16, ...]
+E         
+E         At index 5 diff: 5 != 16
+E         Use -v to get more diff
+
+tests\test_native_sets.py:395: AssertionError
+_ test_escaped_set_future_mutation_keeps_python_table_behavior[local_removed_set-args1] _
+
+fn = <function local_removed_set at 0x000001A2FA8B90C0>, args = (1,)
+
+    @pytest.mark.parametrize('fn,args', [(copied, ({0, 1, 2, 3, 4},)), (local_removed_set, (1,))])
+    def test_escaped_set_future_mutation_keeps_python_table_behavior(fn, args):
+        compiled = lift(fn)
+        actual, expected = compiled(*args), fn(*args)
+        actual.add(16 if fn is copied else 8)
+        expected.add(16 if fn is copied else 8)
+        actual.add(5 if fn is copied else 1)
+        expected.add(5 if fn is copied else 1)
+>       assert list(actual) == list(expected)
+E       assert [0, 8, 1] == [0, 1, 8]
+E         
+E         At index 1 diff: 8 != 1
+E         Use -v to get more diff
+
+tests\test_native_sets.py:395: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_native_sets.py::test_escaped_set_future_mutation_keeps_python_table_behavior[copied-args0]
+FAILED tests/test_native_sets.py::test_escaped_set_future_mutation_keeps_python_table_behavior[local_removed_set-args1]
+2 failed, 44 deselected in 1.63s

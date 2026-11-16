@@ -1,0 +1,23 @@
+{
+  "complete": true,
+  "scope": "Neutral shared layer only; Unicode consumer acceptance remains pending.",
+  "source_sha256": "9e9f189919b2fddbc1244f5061646d49dfc0c7a121888ad4c3f7dad7b8c71b3e",
+  "review": "matrix/review-provenance.md",
+  "review_sha256": "cdd176554f6e750273d7fde693491b49669d6aa352f86c1f17b59e9d2441b499",
+  "receipt": "matrix\\provenance-layer-final-v1\\complete.json",
+  "receipt_sha256": "42dc111b75f0717442e2d6cd521defbeea820c7e19becdb4cb7370230edf1cb0",
+  "tests_passed": 51,
+  "corpus_cases": 122,
+  "corpus_proved": 17,
+  "corpus_declined": 105,
+  "corpus_sha256": "71eb052cf5ce6700758aab47c91dd8d12dd49d0948ea6174a1a57d546302ecbf",
+  "contract": "S49 exact numeric type/value; exact nonnumeric identity; unknown refuses.",
+  "limits": [
+    "Nested closures/nonlocal/generators/unsupported CFG refuse.",
+    "Typed pure_sites are explicit guarded-consumer assumptions, not source facts.",
+    "Formal substitution refuses callee allocations without dynamic call instance tags.",
+    "Physical runtime roots, journal topology/retirement, virtual-field transfers remain unknown.",
+    "Nonweak global/default dependencies need consumer live pins; weak-only guard refuses them.",
+    "No coverage, speed or deployment improvement claimed by this infrastructure commit."
+  ]
+}

@@ -1,0 +1,11 @@
+START operator.none.compare0
+1 5 operator.none.compare0 crash KeyError: 'N'
+START operator.none.compare1
+2 5 operator.none.compare1 crash KeyError: 'N'
+START operator.none.chain
+3 5 operator.none.chain crash KeyError: 'N'
+START operator.none.and
+4 5 operator.none.and crash KeyError: 'N'
+START operator.none.or
+5 5 operator.none.or crash KeyError: 'N'
+{"counts": {"crash": 5}, "complete": true, "rows": 5}

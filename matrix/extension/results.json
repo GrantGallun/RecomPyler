@@ -1,0 +1,105 @@
+{
+  "unchanged_upstream_import": {
+    "type": "ModuleNotFoundError",
+    "message": "No module named 'llvmlite.llvmpy'"
+  },
+  "nopython_signatures": [
+    "(wave17.ManagedPyObject,) -> wave17.ManagedPyObject"
+  ],
+  "jit": {
+    "operand_unwind_events": [
+      "del-y",
+      "del-x"
+    ],
+    "behavior": [
+      {
+        "identical": true,
+        "reference": "('<1.250000, -0.000000, 3.500000>', None, [{'x': 1.25, 'y': -0.0, 'z': 3.5}])",
+        "compiled": "('<1.250000, -0.000000, 3.500000>', None, [{'x': 1.25, 'y': -0.0, 'z': 3.5}])"
+      },
+      {
+        "identical": true,
+        "reference": "('<inf, nan, -0.000000>', None, [{'x': inf, 'y': nan, 'z': -0.0}])",
+        "compiled": "('<inf, nan, -0.000000>', None, [{'x': inf, 'y': nan, 'z': -0.0}])"
+      },
+      {
+        "identical": true,
+        "reference": "(None, ['builtins', 'AttributeError', \"'object' object has no attribute 'x'\"], [<object object at 0x0000028979864F80>])",
+        "compiled": "(None, ['builtins', 'AttributeError', \"'object' object has no attribute 'x'\"], [<object object at 0x0000028979866D10>])"
+      },
+      {
+        "identical": true,
+        "reference": "(None, ['builtins', 'TypeError', 'must be real number, not str'], [{'x': 'bad', 'y': 1, 'z': 2}])",
+        "compiled": "(None, ['builtins', 'TypeError', 'must be real number, not str'], [{'x': 'bad', 'y': 1, 'z': 2}])"
+      }
+    ],
+    "input_success_error_refcounts_stable": true,
+    "owned_child_and_exception_finalizers_identical": true
+  },
+  "aot": {
+    "operand_unwind_events": [
+      "del-y",
+      "del-x"
+    ],
+    "behavior": [
+      {
+        "identical": true,
+        "reference": "('<1.250000, -0.000000, 3.500000>', None, [{'x': 1.25, 'y': -0.0, 'z': 3.5}])",
+        "compiled": "('<1.250000, -0.000000, 3.500000>', None, [{'x': 1.25, 'y': -0.0, 'z': 3.5}])"
+      },
+      {
+        "identical": true,
+        "reference": "('<inf, nan, -0.000000>', None, [{'x': inf, 'y': nan, 'z': -0.0}])",
+        "compiled": "('<inf, nan, -0.000000>', None, [{'x': inf, 'y': nan, 'z': -0.0}])"
+      },
+      {
+        "identical": true,
+        "reference": "(None, ['builtins', 'AttributeError', \"'object' object has no attribute 'x'\"], [<object object at 0x0000028979866FB0>])",
+        "compiled": "(None, ['builtins', 'AttributeError', \"'object' object has no attribute 'x'\"], [<object object at 0x0000028979866FC0>])"
+      },
+      {
+        "identical": true,
+        "reference": "(None, ['builtins', 'TypeError', 'must be real number, not str'], [{'x': 'bad', 'y': 1, 'z': 2}])",
+        "compiled": "(None, ['builtins', 'TypeError', 'must be real number, not str'], [{'x': 'bad', 'y': 1, 'z': 2}])"
+      }
+    ],
+    "input_success_error_refcounts_stable": true,
+    "owned_child_and_exception_finalizers_identical": true
+  },
+  "artifact": {
+    "path": "matrix\\temp\\managed\\wave17_managed.cp314-win_amd64.pyd",
+    "sha256": "8597655af4842882e6af42cb85ab38303a470ecd161f27d2d1fc8412e9e2817b"
+  },
+  "fresh_aot_process": {
+    "exit_code": 0,
+    "stdout": "{\"artifact_imported_and_called_without_numba\": true, \"success_and_error_identical\": true}\n",
+    "stderr": ""
+  },
+  "complete_call_ns": {
+    "cpython": [
+      205.305,
+      205.22,
+      207.61
+    ],
+    "extension_jit_entry": [
+      341.14,
+      335.245,
+      333.565
+    ],
+    "extension_aot": [
+      324.72,
+      324.71,
+      324.375
+    ]
+  },
+  "median_ns": {
+    "cpython": 205.305,
+    "extension_jit_entry": 335.245,
+    "extension_aot": 324.71
+  },
+  "source_hashes": {
+    "matrix\\extension\\managed.py": "d5f66973543daf32d6d98ac9ffe502d2985e57d9d62daf0434434af05559fcd6",
+    "matrix\\extension\\run.py": "cc9de3ef5ec1cc850165e76b6c0d190f618486465f1a01b07b434c23b464002c",
+    "matrix\\extension\\vendor\\numba_passthru\\numba_passthru.py": "780639afc4a712756e8232798a9ac9a9a4bdcd0a83c996f75f8121aa54af3944"
+  }
+}

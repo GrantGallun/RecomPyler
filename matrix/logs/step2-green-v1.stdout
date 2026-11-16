@@ -1,0 +1,23 @@
+.......F.............                                                    [100%]
+================================== FAILURES ===================================
+_______ test_observed_defect_is_native_or_named_decline[boundary.index] _______
+
+identity = 'boundary.index'
+
+    @pytest.mark.parametrize('identity',['operator.float.binary7','operator.float.binary9','operator.tuple.and','operator.none.compare0','method.list.reverse','method.list.sort','method.int.bit_length','boundary.index'])
+    def test_observed_defect_is_native_or_named_decline(identity):
+        # Warm a method with identical generated source first: cache keys must retain
+        # the semantic method binding, not only the name _rc_method0.
+        if identity.startswith('method.list.'):run_case(ROWS['method.list.pop'])
+        row=run_case(ROWS[identity])
+>       assert row['verdict'] in ('native','declined'),row
+E       AssertionError: {'id': 'boundary.index', 'group': 'boundaries', 'source': '
+E         def construct(x):
+E             return [1,2][x]
+E         ', 'argument_expression': '(3,)', ...}
+E       assert 'crash' in ('native', 'declined')
+
+tests\test_matrix_soundness.py:17: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_matrix_soundness.py::test_observed_defect_is_native_or_named_decline[boundary.index]
+1 failed, 20 passed in 5.84s

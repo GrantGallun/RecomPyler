@@ -1,0 +1,2938 @@
+{
+  "sources": {
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\async_generators\\run_benchmark.py": "0441979a5ffc49c1e44539f5cb5a082bb70fcef5627619872feb4f3901351de5",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\asyncio_tcp\\run_benchmark.py": "fa993861ad75dcd724d282442e671095ad708a9dcb87e4314831d04006ad4a23",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\asyncio_websockets\\run_benchmark.py": "2643cb31af9bcb57aaa96176d13c861a79b0b5b43291410de7f09cde6065ac2d",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\base64\\run_benchmark.py": "e2f1e7d4dbfbb2c722833081496497344550e4367f85f67f373fb8aa22cd35ed",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\chaos\\run_benchmark.py": "5d20fd29c8ea89e0ebe4040ae4c05f26f1a620cd2a7fc654d9d7f8cb205651ac",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\comprehensions\\run_benchmark.py": "6047efc06287a24a646f00fc8a8d47429f7cdeab3e942230e13cf6d7cefa6343",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\concurrent_imap\\run_benchmark.py": "d5bfb854e7a1d754f3033132dca397704ea7ed2aabfd6d625396b61b82a9e316",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\decimal_factorial\\run_benchmark.py": "0b88119beb7a2151ef59f0d7d969e655850d9aeef143426efd0e0a656b2bbcc6",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\decimal_pi\\run_benchmark.py": "eb3974785e602143f16fcfbd07ffd8b742b326096d9fd914c59a79531175104c",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\deepcopy\\run_benchmark.py": "9e1550442cbccfaff8a4988936487c091ac18bcc9c8ebdc41c1cb747c14ea078",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\deltablue\\run_benchmark.py": "70da5e16cd5b14f2f398ccc066794b83a30d997c2d91150695b8f938f934dc30",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\fastapi\\run_benchmark.py": "4a1a55e3ecde3400ad07344c71cf033e1936d6d5b48574cca00313cfa882acf1",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\gc_collect\\run_benchmark.py": "7886042f07e517abb79c58643a4b488710f3079936c6990522624bfb9c2acb9b",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\gc_traversal\\run_benchmark.py": "0798ab87ca12687c68e101d14ae9ac0c50eaa9b4f14ecee3882f7e499191828f",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\generators\\run_benchmark.py": "46c59dc44cb63b2c0fed75e6d82875daa237a92d03c87861078513c7b10d4621",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\hexiom\\run_benchmark.py": "d7518220380d27449b8951bc9ca2e19593569d9bd9f5cb6d86867f354f22e115",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\json_dumps\\run_benchmark.py": "023c991ff827fdcbfcfb2b7e3cadf023352a61d1903643d8af0ef302a0db1bf7",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\json_loads\\run_benchmark.py": "16c41ff06bf3173d30158c767340d389c459a656e997e306719891d50f09646f",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\logging\\run_benchmark.py": "6ff62fdc4c6b520b01475407b526ed609299402ed8ad8d344038b559a120159a",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\mdp\\run_benchmark.py": "3db5bfb8c9e2602f181cee809c24b2bd61e7c088e89e8e22867b8d46c4d0fcf1",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\meteor_contest\\run_benchmark.py": "b616f5f87e129a6b35650452951f40a7812cf22efff5a0777e51287da13c2f48",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\nqueens\\run_benchmark.py": "f50ef0d82036790c99f5469b9cffc368e097de860231b328caa6652183af059e",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\pathlib\\run_benchmark.py": "113a1cbbec13165dfdb84db649d8114279460110733957a3749ffb9c9527612d",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\pidigits\\run_benchmark.py": "4bf89183acb8651623676ece6e10787b6c71eec549fe53ce17a62a812ef7447d",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\pprint\\run_benchmark.py": "07ef57201c7919aedf9e340c7fb1561a40dfee698818c9694930f3e427091d6d",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\python_startup\\run_benchmark.py": "4cc396c9fe32d633a5e902c8ca738391a4cfe80b6d7658a9d9048989fc796d0c",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\regex_compile\\bm_regex_effbot.py": "0823b6507f8babea2238847562d9c9af31000ea57cbb695e5d47053321ea68c7",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\regex_compile\\bm_regex_v8.py": "37133ec6c383183a95ee640deffce54b42cbad4dbfa24415e46ad656127c56aa",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\regex_compile\\run_benchmark.py": "cdbc509e515840e469209ed5fc77ca3fe352278203cc1a7dad874db4e863dc6c",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\regex_dna\\run_benchmark.py": "d820dbdf12262cd11a543ae3dc3fd85793a20220d5a15ef687d8ef57a75c97c6",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\regex_effbot\\run_benchmark.py": "0823b6507f8babea2238847562d9c9af31000ea57cbb695e5d47053321ea68c7",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\regex_v8\\run_benchmark.py": "c22f820cb9a031a892ec0341eecca81c758dc25ee5413613d18eddfdff54a491",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\richards_super\\run_benchmark.py": "665b3d5551171e147c127b6f8671edc9a7703c736d317cc4a991bb00f599dc36",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\sqlalchemy_declarative\\run_benchmark.py": "f478a5a5f9b2ca0576f6d0f2925a21d79dbffc8036d076b9df4aef170543c1e3",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\sqlite_synth\\run_benchmark.py": "dcba7a6889e66f08480f4332860208d624678fc42a03be5c8f3b6f1f894231fd",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\sympy\\run_benchmark.py": "d3f867f30df82e6fcaeffdc0a80cde0927e3d58e130740e849dc773a5deb3e51",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\typing_runtime_protocols\\run_benchmark.py": "dfc0cbd25f2968ee6982ff93adde92a1fa2a56ffbed6dde2d1f9cb853c340961",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\unpack_sequence\\run_benchmark.py": "0dafe97531abc4a5baf30fe011db7acb3bf1e64cd4e41acb0c7db2bb141a8382",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\xml_etree\\run_benchmark.py": "1d824c4d4dd92a7598e085dbdf7beed3809a75e4d6972c90377822c78f73477c",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\inputs\\yaml\\run_benchmark.py": "c5350e10fb568997319c4bfae05293141c839f8094e2f7e0e147d45caa804399"
+  },
+  "all_loop_sites": [
+    {
+      "program": "async_generators",
+      "function": "bench_async_generators",
+      "line": 39,
+      "target": "_",
+      "iter": "tree(range(100000))"
+    },
+    {
+      "program": "async_generators",
+      "function": "__aiter__",
+      "line": 23,
+      "target": "i",
+      "iter": "self.left"
+    },
+    {
+      "program": "async_generators",
+      "function": "__aiter__",
+      "line": 27,
+      "target": "i",
+      "iter": "self.right"
+    },
+    {
+      "program": "asyncio_tcp",
+      "function": "handle_echo",
+      "line": 23,
+      "target": "_",
+      "iter": "range(100)"
+    },
+    {
+      "program": "asyncio_websockets",
+      "function": "handler",
+      "line": 21,
+      "target": "_",
+      "iter": "range(100)"
+    },
+    {
+      "program": "asyncio_websockets",
+      "function": "main",
+      "line": 40,
+      "target": "_",
+      "iter": "range(100)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b64_small",
+      "line": 71,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b64_large",
+      "line": 89,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_urlsafe_b64_small",
+      "line": 103,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b32_small",
+      "line": 123,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b32_large",
+      "line": 141,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b16_small",
+      "line": 155,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b16_large",
+      "line": 173,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_a85_small",
+      "line": 187,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_a85_large",
+      "line": 213,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b85_small",
+      "line": 231,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b85_large",
+      "line": 249,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b64_small",
+      "line": 72,
+      "target": "_",
+      "iter": "range(450)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b64_small",
+      "line": 75,
+      "target": "_",
+      "iter": "range(71)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b64_small",
+      "line": 78,
+      "target": "_",
+      "iter": "range(3)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b64_large",
+      "line": 90,
+      "target": "_",
+      "iter": "range(10)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_urlsafe_b64_small",
+      "line": 104,
+      "target": "_",
+      "iter": "range(450)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_urlsafe_b64_small",
+      "line": 107,
+      "target": "_",
+      "iter": "range(71)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_urlsafe_b64_small",
+      "line": 110,
+      "target": "_",
+      "iter": "range(3)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b32_small",
+      "line": 124,
+      "target": "_",
+      "iter": "range(450)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b32_small",
+      "line": 127,
+      "target": "_",
+      "iter": "range(71)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b32_small",
+      "line": 130,
+      "target": "_",
+      "iter": "range(3)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b32_large",
+      "line": 142,
+      "target": "_",
+      "iter": "range(10)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b16_small",
+      "line": 156,
+      "target": "_",
+      "iter": "range(450)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b16_small",
+      "line": 159,
+      "target": "_",
+      "iter": "range(71)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b16_small",
+      "line": 162,
+      "target": "_",
+      "iter": "range(3)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b16_large",
+      "line": 174,
+      "target": "_",
+      "iter": "range(10)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_a85_small",
+      "line": 188,
+      "target": "_",
+      "iter": "range(450)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_a85_small",
+      "line": 193,
+      "target": "_",
+      "iter": "range(71)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_a85_small",
+      "line": 198,
+      "target": "_",
+      "iter": "range(3)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_a85_large",
+      "line": 214,
+      "target": "_",
+      "iter": "range(10)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b85_small",
+      "line": 232,
+      "target": "_",
+      "iter": "range(450)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b85_small",
+      "line": 235,
+      "target": "_",
+      "iter": "range(71)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b85_small",
+      "line": 238,
+      "target": "_",
+      "iter": "range(3)"
+    },
+    {
+      "program": "base64",
+      "function": "bench_b85_large",
+      "line": 250,
+      "target": "_",
+      "iter": "range(10)"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 76,
+      "target": "cur",
+      "iter": "knots[1:]"
+    },
+    {
+      "program": "chaos",
+      "function": "__call__",
+      "line": 102,
+      "target": "ik",
+      "iter": "range(1, self.degree + 1)"
+    },
+    {
+      "program": "chaos",
+      "function": "GetIndex",
+      "line": 114,
+      "target": "ii",
+      "iter": "range(self.degree - 1, len(self.knots) - self.degree)"
+    },
+    {
+      "program": "chaos",
+      "function": "write_ppm",
+      "line": 138,
+      "target": "j",
+      "iter": "range(h)"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 158,
+      "target": "spl",
+      "iter": "splines"
+    },
+    {
+      "program": "chaos",
+      "function": "get_random_trafo",
+      "line": 172,
+      "target": "i",
+      "iter": "range(len(self.num_trafos))"
+    },
+    {
+      "program": "chaos",
+      "function": "create_image_chaos",
+      "line": 222,
+      "target": "_",
+      "iter": "range(iterations)"
+    },
+    {
+      "program": "chaos",
+      "function": "__call__",
+      "line": 103,
+      "target": "ii",
+      "iter": "range(I - self.degree + ik + 1, I + 2)"
+    },
+    {
+      "program": "chaos",
+      "function": "write_ppm",
+      "line": 139,
+      "target": "i",
+      "iter": "range(w)"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 161,
+      "target": "i",
+      "iter": "range(1, 1000)"
+    },
+    {
+      "program": "chaos",
+      "function": "__call__",
+      "line": 100,
+      "target": "ii",
+      "iter": "range(self.degree + 1)"
+    },
+    {
+      "program": "chaos",
+      "function": "create_image_chaos",
+      "line": 219,
+      "target": "i",
+      "iter": "range(w)"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 150,
+      "target": "spl",
+      "iter": "splines"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 150,
+      "target": "p",
+      "iter": "spl.points"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 151,
+      "target": "spl",
+      "iter": "splines"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 151,
+      "target": "p",
+      "iter": "spl.points"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 152,
+      "target": "spl",
+      "iter": "splines"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 152,
+      "target": "p",
+      "iter": "spl.points"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 153,
+      "target": "spl",
+      "iter": "splines"
+    },
+    {
+      "program": "chaos",
+      "function": "__init__",
+      "line": 153,
+      "target": "p",
+      "iter": "spl.points"
+    },
+    {
+      "program": "comprehensions",
+      "function": "make_some_widgets",
+      "line": 67,
+      "target": "creator_id",
+      "iter": "range(3)"
+    },
+    {
+      "program": "comprehensions",
+      "function": "bench_comprehensions",
+      "line": 86,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "comprehensions",
+      "function": "make_some_widgets",
+      "line": 68,
+      "target": "kind",
+      "iter": "WidgetKind"
+    },
+    {
+      "program": "comprehensions",
+      "function": "make_some_widgets",
+      "line": 69,
+      "target": "has_knob",
+      "iter": "[True, False]"
+    },
+    {
+      "program": "comprehensions",
+      "function": "_add_widgets",
+      "line": 45,
+      "target": "w",
+      "iter": "widgets"
+    },
+    {
+      "program": "comprehensions",
+      "function": "_add_widgets",
+      "line": 46,
+      "target": "w",
+      "iter": "widgets"
+    },
+    {
+      "program": "comprehensions",
+      "function": "_add_widgets",
+      "line": 49,
+      "target": "w",
+      "iter": "widgets"
+    },
+    {
+      "program": "comprehensions",
+      "function": "_add_widgets",
+      "line": 58,
+      "target": "w",
+      "iter": "widgets"
+    },
+    {
+      "program": "comprehensions",
+      "function": "_add_widgets",
+      "line": 61,
+      "target": "sw",
+      "iter": "sortable_widgets"
+    },
+    {
+      "program": "comprehensions",
+      "function": "make_some_widgets",
+      "line": 70,
+      "target": "has_spinner",
+      "iter": "[True, False]"
+    },
+    {
+      "program": "comprehensions",
+      "function": "_any_knobby",
+      "line": 36,
+      "target": "w",
+      "iter": "widgets"
+    },
+    {
+      "program": "comprehensions",
+      "function": "_add_widgets",
+      "line": 48,
+      "target": "dwid",
+      "iter": "w.derived_widget_ids"
+    },
+    {
+      "program": "comprehensions",
+      "function": "make_some_widgets",
+      "line": 71,
+      "target": "w",
+      "iter": "widgets[::creator_id + 1]"
+    },
+    {
+      "program": "concurrent_imap",
+      "function": "bench_mp_pool",
+      "line": 15,
+      "target": "_",
+      "iter": "pool.imap(f, range(n), chunk)"
+    },
+    {
+      "program": "concurrent_imap",
+      "function": "bench_thread_pool",
+      "line": 21,
+      "target": "_",
+      "iter": "pool.imap(f, range(n), chunk)"
+    },
+    {
+      "program": "decimal_factorial",
+      "function": "bench_decimal_factorial",
+      "line": 40,
+      "target": "n",
+      "iter": "[10000, 100000]"
+    },
+    {
+      "program": "decimal_pi",
+      "function": "bench_decimal_pi",
+      "line": 39,
+      "target": "prec",
+      "iter": "[9, 19]"
+    },
+    {
+      "program": "decimal_pi",
+      "function": "bench_decimal_pi",
+      "line": 41,
+      "target": "_",
+      "iter": "range(10000)"
+    },
+    {
+      "program": "deepcopy",
+      "function": "benchmark_reduce",
+      "line": 36,
+      "target": "ii",
+      "iter": "range(n)"
+    },
+    {
+      "program": "deepcopy",
+      "function": "benchmark_memo",
+      "line": 48,
+      "target": "ii",
+      "iter": "range(n)"
+    },
+    {
+      "program": "deepcopy",
+      "function": "benchmark",
+      "line": 65,
+      "target": "ii",
+      "iter": "range(n)"
+    },
+    {
+      "program": "deepcopy",
+      "function": "benchmark",
+      "line": 66,
+      "target": "jj",
+      "iter": "range(30)"
+    },
+    {
+      "program": "deepcopy",
+      "function": "benchmark",
+      "line": 70,
+      "target": "s",
+      "iter": "['red', 'blue', 'green']"
+    },
+    {
+      "program": "deepcopy",
+      "function": "benchmark",
+      "line": 72,
+      "target": "kk",
+      "iter": "range(5)"
+    },
+    {
+      "program": "deepcopy",
+      "function": "benchmark",
+      "line": 74,
+      "target": "b",
+      "iter": "[True, False]"
+    },
+    {
+      "program": "deltablue",
+      "function": "chain_test",
+      "line": 532,
+      "target": "i",
+      "iter": "range(n + 1)"
+    },
+    {
+      "program": "deltablue",
+      "function": "chain_test",
+      "line": 553,
+      "target": "i",
+      "iter": "range(100)"
+    },
+    {
+      "program": "deltablue",
+      "function": "projection_test",
+      "line": 576,
+      "target": "i",
+      "iter": "range(n)"
+    },
+    {
+      "program": "deltablue",
+      "function": "projection_test",
+      "line": 595,
+      "target": "i",
+      "iter": "range(n - 1)"
+    },
+    {
+      "program": "deltablue",
+      "function": "projection_test",
+      "line": 601,
+      "target": "i",
+      "iter": "range(n - 1)"
+    },
+    {
+      "program": "deltablue",
+      "function": "change",
+      "line": 614,
+      "target": "i",
+      "iter": "range(10)"
+    },
+    {
+      "program": "deltablue",
+      "function": "extract_plan_from_constraints",
+      "line": 433,
+      "target": "c",
+      "iter": "constraints"
+    },
+    {
+      "program": "deltablue",
+      "function": "add_constraints_consuming_to",
+      "line": 483,
+      "target": "c",
+      "iter": "cc"
+    },
+    {
+      "program": "deltablue",
+      "function": "execute",
+      "line": 507,
+      "target": "c",
+      "iter": "self.v"
+    },
+    {
+      "program": "deltablue",
+      "function": "incremental_remove",
+      "line": 403,
+      "target": "u",
+      "iter": "unsatisfied"
+    },
+    {
+      "program": "deltablue",
+      "function": "remove_propagate_from",
+      "line": 466,
+      "target": "c",
+      "iter": "v.constraints"
+    },
+    {
+      "program": "deltablue",
+      "function": "remove_propagate_from",
+      "line": 472,
+      "target": "c",
+      "iter": "v.constraints"
+    },
+    {
+      "program": "fastapi",
+      "function": "run_benchmark",
+      "line": 69,
+      "target": "i",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "fastapi",
+      "function": "run_benchmark",
+      "line": 75,
+      "target": "response",
+      "iter": "responses"
+    },
+    {
+      "program": "fastapi",
+      "function": "run_benchmark",
+      "line": 72,
+      "target": "_",
+      "iter": "range(CONCURRENCY)"
+    },
+    {
+      "program": "gc_collect",
+      "function": "create_cycle",
+      "line": 25,
+      "target": "i",
+      "iter": "range(n_links)"
+    },
+    {
+      "program": "gc_collect",
+      "function": "create_gc_cycles",
+      "line": 37,
+      "target": "_",
+      "iter": "range(n_cycles)"
+    },
+    {
+      "program": "gc_collect",
+      "function": "benchamark_collection",
+      "line": 46,
+      "target": "_",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "gc_traversal",
+      "function": "create_recursive_containers",
+      "line": 10,
+      "target": "n",
+      "iter": "range(n_levels)"
+    },
+    {
+      "program": "gc_traversal",
+      "function": "benchamark_collection",
+      "line": 22,
+      "target": "_",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "gc_traversal",
+      "function": "create_recursive_containers",
+      "line": 12,
+      "target": "index",
+      "iter": "range(n)"
+    },
+    {
+      "program": "generators",
+      "function": "bench_generators",
+      "line": 41,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "generators",
+      "function": "bench_generators",
+      "line": 42,
+      "target": "_",
+      "iter": "iterable"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 245,
+      "target": "i",
+      "iter": "free_cells"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 264,
+      "target": "cell",
+      "iter": "done.cells"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 268,
+      "target": "v",
+      "iter": "range(8)"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 287,
+      "target": "i",
+      "iter": "filled_cells"
+    },
+    {
+      "program": "hexiom",
+      "function": "print_pos",
+      "line": 348,
+      "target": "y",
+      "iter": "range(size)"
+    },
+    {
+      "program": "hexiom",
+      "function": "print_pos",
+      "line": 359,
+      "target": "y",
+      "iter": "range(1, size)"
+    },
+    {
+      "program": "hexiom",
+      "function": "solved",
+      "line": 384,
+      "target": "i",
+      "iter": "range(hex.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "check_valid",
+      "line": 453,
+      "target": "i",
+      "iter": "range(8)"
+    },
+    {
+      "program": "hexiom",
+      "function": "read_file",
+      "line": 478,
+      "target": "y",
+      "iter": "range(size)"
+    },
+    {
+      "program": "hexiom",
+      "function": "read_file",
+      "line": 496,
+      "target": "y",
+      "iter": "range(1, size)"
+    },
+    {
+      "program": "hexiom",
+      "function": "main",
+      "line": 633,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "hexiom",
+      "function": "remove_all",
+      "line": 74,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "remove_unfixed",
+      "line": 79,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "filter_tiles",
+      "line": 86,
+      "target": "v",
+      "iter": "range(8)"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_min_choice",
+      "line": 93,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_max_choice",
+      "line": 102,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_highest_value",
+      "line": 111,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_first",
+      "line": 120,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_max_neighbors",
+      "line": 128,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_min_neighbors",
+      "line": 141,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "__init__",
+      "line": 188,
+      "target": "y",
+      "iter": "range(size)"
+    },
+    {
+      "program": "hexiom",
+      "function": "__init__",
+      "line": 195,
+      "target": "y",
+      "iter": "range(1, size)"
+    },
+    {
+      "program": "hexiom",
+      "function": "link_nodes",
+      "line": 205,
+      "target": "node",
+      "iter": "self.nodes_by_id"
+    },
+    {
+      "program": "hexiom",
+      "function": "print_pos",
+      "line": 350,
+      "target": "x",
+      "iter": "range(size + y)"
+    },
+    {
+      "program": "hexiom",
+      "function": "print_pos",
+      "line": 361,
+      "target": "x",
+      "iter": "range(y, size * 2 - 1)"
+    },
+    {
+      "program": "hexiom",
+      "function": "solve_step",
+      "line": 430,
+      "target": "move",
+      "iter": "moves"
+    },
+    {
+      "program": "hexiom",
+      "function": "read_file",
+      "line": 481,
+      "target": "x",
+      "iter": "range(size + y)"
+    },
+    {
+      "program": "hexiom",
+      "function": "read_file",
+      "line": 500,
+      "target": "x",
+      "iter": "range(y, size * 2 - 1)"
+    },
+    {
+      "program": "hexiom",
+      "function": "__init__",
+      "line": 189,
+      "target": "x",
+      "iter": "range(size + y)"
+    },
+    {
+      "program": "hexiom",
+      "function": "__init__",
+      "line": 196,
+      "target": "x",
+      "iter": "range(y, size * 2 - 1)"
+    },
+    {
+      "program": "hexiom",
+      "function": "link_nodes",
+      "line": 207,
+      "target": "dir",
+      "iter": "DIRS"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 250,
+      "target": "nid",
+      "iter": "cells_around"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 258,
+      "target": "num",
+      "iter": "range(7)"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 294,
+      "target": "nid",
+      "iter": "cells_around"
+    },
+    {
+      "program": "hexiom",
+      "function": "read_file",
+      "line": 472,
+      "target": "line",
+      "iter": "file.splitlines()"
+    },
+    {
+      "program": "hexiom",
+      "function": "clone",
+      "line": 54,
+      "target": "i",
+      "iter": "range(self.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 278,
+      "target": "i",
+      "iter": "range(done.count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "find_moves",
+      "line": 329,
+      "target": "v",
+      "iter": "done[cell_id]"
+    },
+    {
+      "program": "hexiom",
+      "function": "main",
+      "line": 641,
+      "target": "line",
+      "iter": "output.splitlines()"
+    },
+    {
+      "program": "hexiom",
+      "function": "__init__",
+      "line": 50,
+      "target": "i",
+      "iter": "range(count)"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 304,
+      "target": "u",
+      "iter": "unknown"
+    },
+    {
+      "program": "hexiom",
+      "function": "solved",
+      "line": 396,
+      "target": "nid",
+      "iter": "cells_around"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 274,
+      "target": "cell",
+      "iter": "done.cells"
+    },
+    {
+      "program": "hexiom",
+      "function": "constraint_pass",
+      "line": 311,
+      "target": "u",
+      "iter": "unknown"
+    },
+    {
+      "program": "hexiom",
+      "function": "find_moves",
+      "line": 333,
+      "target": "v",
+      "iter": "done[cell_id]"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_highest_value",
+      "line": 113,
+      "target": "k",
+      "iter": "self.cells[i]"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_max_neighbors",
+      "line": 132,
+      "target": "nid",
+      "iter": "cells_around"
+    },
+    {
+      "program": "hexiom",
+      "function": "next_cell_min_neighbors",
+      "line": 145,
+      "target": "nid",
+      "iter": "cells_around"
+    },
+    {
+      "program": "json_dumps",
+      "function": "bench_json_dumps",
+      "line": 20,
+      "target": "(obj, count_it)",
+      "iter": "data"
+    },
+    {
+      "program": "json_dumps",
+      "function": "main",
+      "line": 51,
+      "target": "case",
+      "iter": "cases"
+    },
+    {
+      "program": "json_dumps",
+      "function": "bench_json_dumps",
+      "line": 21,
+      "target": "_",
+      "iter": "count_it"
+    },
+    {
+      "program": "json_dumps",
+      "function": "main",
+      "line": 40,
+      "target": "case",
+      "iter": "args.cases.split(',')"
+    },
+    {
+      "program": "json_loads",
+      "function": "mutate_dict",
+      "line": 61,
+      "target": "(key, value)",
+      "iter": "new_dict.items()"
+    },
+    {
+      "program": "json_loads",
+      "function": "bench_json_loads",
+      "line": 73,
+      "target": "obj",
+      "iter": "objs"
+    },
+    {
+      "program": "json_loads",
+      "function": "<module>",
+      "line": 69,
+      "target": "_",
+      "iter": "range(3)"
+    },
+    {
+      "program": "logging",
+      "function": "bench_silent",
+      "line": 41,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "logging",
+      "function": "bench_simple_output",
+      "line": 70,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "logging",
+      "function": "bench_formatted_output",
+      "line": 101,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "logging",
+      "function": "<module>",
+      "line": 158,
+      "target": "bench",
+      "iter": "benchmarks"
+    },
+    {
+      "program": "mdp",
+      "function": "getCritDist",
+      "line": 50,
+      "target": "(mult, vals)",
+      "iter": "zip([1 - p, p], [norm, crit])"
+    },
+    {
+      "program": "mdp",
+      "function": "_applyActionSide1",
+      "line": 108,
+      "target": "(dmg, p)",
+      "iter": "dmg_dist.items()"
+    },
+    {
+      "program": "mdp",
+      "function": "bench_mdp",
+      "line": 253,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "mdp",
+      "function": "getCritDist",
+      "line": 52,
+      "target": "x",
+      "iter": "vals"
+    },
+    {
+      "program": "mdp",
+      "function": "_getSuccessorsA",
+      "line": 139,
+      "target": "action",
+      "iter": "['Dig', 'Super Potion']"
+    },
+    {
+      "program": "mdp",
+      "function": "_applyActionPair",
+      "line": 143,
+      "target": "(newstate, p)",
+      "iter": "_applyAction(state, side1, act1).items()"
+    },
+    {
+      "program": "mdp",
+      "function": "_getSuccessorsB",
+      "line": 155,
+      "target": "(eact, p)",
+      "iter": "[('Water Gun', Fraction(64, 130)), ('Bubblebeam', Fraction(66, 130))]"
+    },
+    {
+      "program": "mdp",
+      "function": "_getSuccessorsC",
+      "line": 174,
+      "target": "(newstate, p)",
+      "iter": "_applyAction(state, side, action).items()"
+    },
+    {
+      "program": "mdp",
+      "function": "topoSort",
+      "line": 19,
+      "target": "node",
+      "iter": "roots"
+    },
+    {
+      "program": "mdp",
+      "function": "getDamages",
+      "line": 41,
+      "target": "z",
+      "iter": "range(217, 256)"
+    },
+    {
+      "program": "mdp",
+      "function": "evaluate",
+      "line": 227,
+      "target": "sp",
+      "iter": "stateps"
+    },
+    {
+      "program": "mdp",
+      "function": "_applyAction",
+      "line": 120,
+      "target": "(k, v)",
+      "iter": "dist.items()"
+    },
+    {
+      "program": "mdp",
+      "function": "_getSuccessorsB",
+      "line": 169,
+      "target": "(k, p)",
+      "iter": "dist.items()"
+    },
+    {
+      "program": "mdp",
+      "function": "_getSuccessorsC",
+      "line": 182,
+      "target": "(k, p)",
+      "iter": "dist.items()"
+    },
+    {
+      "program": "mdp",
+      "function": "applyBadgeBoosts",
+      "line": 77,
+      "target": "(x, b)",
+      "iter": "zip(stats, badges)"
+    },
+    {
+      "program": "mdp",
+      "function": "topoSort",
+      "line": 27,
+      "target": "parent",
+      "iter": "getParents(current)"
+    },
+    {
+      "program": "mdp",
+      "function": "evaluate",
+      "line": 233,
+      "target": "sp2",
+      "iter": "self.getSuccessors(sp)"
+    },
+    {
+      "program": "mdp",
+      "function": "evaluate",
+      "line": 234,
+      "target": "sp2",
+      "iter": "self.getSuccessors(sp)"
+    },
+    {
+      "program": "mdp",
+      "function": "evaluate",
+      "line": 237,
+      "target": "(sp2, p)",
+      "iter": "self.getSuccessors(sp)"
+    },
+    {
+      "program": "mdp",
+      "function": "evaluate",
+      "line": 239,
+      "target": "(sp2, p)",
+      "iter": "self.getSuccessors(sp)"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "permute",
+      "line": 98,
+      "target": "r",
+      "iter": "range(DIR_NO - 1)"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "permute",
+      "line": 102,
+      "target": "pp",
+      "iter": "ps[:]"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "convert",
+      "line": 110,
+      "target": "o",
+      "iter": "ido"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_footprints",
+      "line": 117,
+      "target": "c",
+      "iter": "board"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_senh",
+      "line": 130,
+      "target": "c",
+      "iter": "board"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "solve",
+      "line": 164,
+      "target": "p",
+      "iter": "pieces_left"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "bench_meteor_contest",
+      "line": 196,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_footprints",
+      "line": 118,
+      "target": "(pi, p)",
+      "iter": "enumerate(pieces)"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "solve",
+      "line": 166,
+      "target": "fp",
+      "iter": "fp_cands"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "rotate",
+      "line": 89,
+      "target": "o",
+      "iter": "ido"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "flip",
+      "line": 93,
+      "target": "o",
+      "iter": "ido"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_footprints",
+      "line": 116,
+      "target": "ci",
+      "iter": "range(len(board))"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_footprints",
+      "line": 119,
+      "target": "pp",
+      "iter": "p"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_puzzle",
+      "line": 137,
+      "target": "y",
+      "iter": "range(height)"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_puzzle",
+      "line": 138,
+      "target": "x",
+      "iter": "range(width)"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_puzzle",
+      "line": 154,
+      "target": "p",
+      "iter": "idos"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_puzzle",
+      "line": 155,
+      "target": "p",
+      "iter": "perms"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_footprints",
+      "line": 116,
+      "target": "p",
+      "iter": "range(len(pieces))"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_puzzle",
+      "line": 139,
+      "target": "i",
+      "iter": "range(len(board))"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_puzzle",
+      "line": 155,
+      "target": "pp",
+      "iter": "p"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "solve",
+      "line": 169,
+      "target": "ci",
+      "iter": "fp"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_senh",
+      "line": 131,
+      "target": "o",
+      "iter": "nh"
+    },
+    {
+      "program": "meteor_contest",
+      "function": "get_footprints",
+      "line": 120,
+      "target": "o",
+      "iter": "pp"
+    },
+    {
+      "program": "nqueens",
+      "function": "n_queens",
+      "line": 47,
+      "target": "vec",
+      "iter": "permutations(cols)"
+    },
+    {
+      "program": "nqueens",
+      "function": "permutations",
+      "line": 19,
+      "target": "i",
+      "iter": "reversed(range(r))"
+    },
+    {
+      "program": "nqueens",
+      "function": "permutations",
+      "line": 17,
+      "target": "i",
+      "iter": "indices[:r]"
+    },
+    {
+      "program": "nqueens",
+      "function": "n_queens",
+      "line": 48,
+      "target": "i",
+      "iter": "cols"
+    },
+    {
+      "program": "nqueens",
+      "function": "n_queens",
+      "line": 49,
+      "target": "i",
+      "iter": "cols"
+    },
+    {
+      "program": "nqueens",
+      "function": "permutations",
+      "line": 27,
+      "target": "i",
+      "iter": "indices[:r]"
+    },
+    {
+      "program": "pathlib",
+      "function": "setup",
+      "line": 31,
+      "target": "fn",
+      "iter": "generate_filenames(tmp_path, num_files)"
+    },
+    {
+      "program": "pathlib",
+      "function": "bench_pathlib",
+      "line": 44,
+      "target": "p",
+      "iter": "path_objects"
+    },
+    {
+      "program": "pathlib",
+      "function": "bench_pathlib",
+      "line": 51,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "pathlib",
+      "function": "generate_filenames",
+      "line": 23,
+      "target": "ext",
+      "iter": "['.py', '.txt', '.tar.gz', '']"
+    },
+    {
+      "program": "pathlib",
+      "function": "bench_pathlib",
+      "line": 53,
+      "target": "p",
+      "iter": "base_path.iterdir()"
+    },
+    {
+      "program": "pathlib",
+      "function": "bench_pathlib",
+      "line": 55,
+      "target": "p",
+      "iter": "base_path.glob('*.py')"
+    },
+    {
+      "program": "pathlib",
+      "function": "bench_pathlib",
+      "line": 57,
+      "target": "p",
+      "iter": "base_path.iterdir()"
+    },
+    {
+      "program": "pathlib",
+      "function": "bench_pathlib",
+      "line": 59,
+      "target": "p",
+      "iter": "base_path.glob('*.py')"
+    },
+    {
+      "program": "regex_compile",
+      "function": "init_benchmarks",
+      "line": 120,
+      "target": "n",
+      "iter": "n_values"
+    },
+    {
+      "program": "regex_compile",
+      "function": "bench_regex_effbot",
+      "line": 137,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "regex_compile",
+      "function": "init_benchmarks",
+      "line": 121,
+      "target": "id",
+      "iter": "range(len(regexs))"
+    },
+    {
+      "program": "regex_compile",
+      "function": "bench_regex_effbot",
+      "line": 139,
+      "target": "(regex, string)",
+      "iter": "data"
+    },
+    {
+      "program": "regex_compile",
+      "function": "init_benchmarks",
+      "line": 116,
+      "target": "n",
+      "iter": "n_values"
+    },
+    {
+      "program": "regex_compile",
+      "function": "<module>",
+      "line": 158,
+      "target": "s",
+      "iter": "compiled_regex_strings"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 276,
+      "target": "i",
+      "iter": "range(6511)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 279,
+      "target": "i",
+      "iter": "range(1844)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 282,
+      "target": "i",
+      "iter": "range(739)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 285,
+      "target": "i",
+      "iter": "range(598)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 288,
+      "target": "i",
+      "iter": "range(454)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 291,
+      "target": "i",
+      "iter": "range(352)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 295,
+      "target": "i",
+      "iter": "range(312)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 298,
+      "target": "i",
+      "iter": "range(282)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 301,
+      "target": "i",
+      "iter": "range(177)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 304,
+      "target": "i",
+      "iter": "range(170)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 308,
+      "target": "i",
+      "iter": "range(156)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 312,
+      "target": "i",
+      "iter": "range(144)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 315,
+      "target": "i",
+      "iter": "range(139)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 324,
+      "target": "i",
+      "iter": "range(137)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 329,
+      "target": "i",
+      "iter": "range(117)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 332,
+      "target": "i",
+      "iter": "range(95)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 336,
+      "target": "i",
+      "iter": "range(93)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 340,
+      "target": "i",
+      "iter": "range(92)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block0",
+      "line": 343,
+      "target": "i",
+      "iter": "range(85)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 355,
+      "target": "i",
+      "iter": "range(81)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 358,
+      "target": "i",
+      "iter": "range(78)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 384,
+      "target": "i",
+      "iter": "range(77)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 389,
+      "target": "i",
+      "iter": "range(73)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 393,
+      "target": "i",
+      "iter": "range(72)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 396,
+      "target": "i",
+      "iter": "range(71)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 399,
+      "target": "i",
+      "iter": "range(70)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 410,
+      "target": "i",
+      "iter": "range(68)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 418,
+      "target": "i",
+      "iter": "range(49)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block1",
+      "line": 421,
+      "target": "i",
+      "iter": "range(44)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 428,
+      "target": "i",
+      "iter": "range(40)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 432,
+      "target": "i",
+      "iter": "range(39)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 442,
+      "target": "i",
+      "iter": "range(37)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 448,
+      "target": "i",
+      "iter": "range(35)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 454,
+      "target": "i",
+      "iter": "range(34)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 464,
+      "target": "i",
+      "iter": "range(32)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 467,
+      "target": "i",
+      "iter": "range(31)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 476,
+      "target": "i",
+      "iter": "range(30)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 481,
+      "target": "i",
+      "iter": "range(29)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block2",
+      "line": 484,
+      "target": "i",
+      "iter": "range(28)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block3",
+      "line": 491,
+      "target": "i",
+      "iter": "range(27)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block3",
+      "line": 494,
+      "target": "i",
+      "iter": "range(23)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block3",
+      "line": 498,
+      "target": "i",
+      "iter": "range(22)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block3",
+      "line": 509,
+      "target": "i",
+      "iter": "range(21)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block3",
+      "line": 513,
+      "target": "i",
+      "iter": "range(20)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block3",
+      "line": 520,
+      "target": "i",
+      "iter": "range(19)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block3",
+      "line": 523,
+      "target": "i",
+      "iter": "range(18)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block3",
+      "line": 542,
+      "target": "i",
+      "iter": "range(17)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block4",
+      "line": 604,
+      "target": "i",
+      "iter": "range(16)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block4",
+      "line": 612,
+      "target": "i",
+      "iter": "range(15)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block4",
+      "line": 645,
+      "target": "i",
+      "iter": "range(14)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block5",
+      "line": 676,
+      "target": "i",
+      "iter": "range(13)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block5",
+      "line": 702,
+      "target": "i",
+      "iter": "range(12)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block6",
+      "line": 737,
+      "target": "i",
+      "iter": "range(11)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block6",
+      "line": 786,
+      "target": "i",
+      "iter": "range(10)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block7",
+      "line": 829,
+      "target": "i",
+      "iter": "range(9)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block7",
+      "line": 845,
+      "target": "i",
+      "iter": "range(8)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block8",
+      "line": 897,
+      "target": "i",
+      "iter": "range(7)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block8",
+      "line": 945,
+      "target": "i",
+      "iter": "range(6)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block9",
+      "line": 981,
+      "target": "i",
+      "iter": "range(5)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block9",
+      "line": 1010,
+      "target": "i",
+      "iter": "range(4)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block10",
+      "line": 1163,
+      "target": "i",
+      "iter": "range(3)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "block11",
+      "line": 1317,
+      "target": "i",
+      "iter": "range(2)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "bench_regex_v8",
+      "line": 1770,
+      "target": "loops",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "regex_compile",
+      "function": "bench_regex_compile",
+      "line": 55,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "regex_compile",
+      "function": "bench_regex_compile",
+      "line": 56,
+      "target": "(regex, flags)",
+      "iter": "regexes"
+    },
+    {
+      "program": "regex_dna",
+      "function": "make_cumulative",
+      "line": 49,
+      "target": "(char, p)",
+      "iter": "table"
+    },
+    {
+      "program": "regex_dna",
+      "function": "run_benchmarks",
+      "line": 178,
+      "target": "f",
+      "iter": "VARIANTS"
+    },
+    {
+      "program": "regex_dna",
+      "function": "run_benchmarks",
+      "line": 181,
+      "target": "(f, r)",
+      "iter": "SUBST"
+    },
+    {
+      "program": "regex_dna",
+      "function": "bench_regex_dna",
+      "line": 191,
+      "target": "i",
+      "iter": "range_it"
+    },
+    {
+      "program": "regex_dna",
+      "function": "random_fasta",
+      "line": 112,
+      "target": "i",
+      "iter": "r"
+    },
+    {
+      "program": "regex_dna",
+      "function": "random_fasta",
+      "line": 125,
+      "target": "i",
+      "iter": "range(n % width)"
+    },
+    {
+      "program": "regex_effbot",
+      "function": "init_benchmarks",
+      "line": 120,
+      "target": "n",
+      "iter": "n_values"
+    },
+    {
+      "program": "regex_effbot",
+      "function": "bench_regex_effbot",
+      "line": 137,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "regex_effbot",
+      "function": "init_benchmarks",
+      "line": 121,
+      "target": "id",
+      "iter": "range(len(regexs))"
+    },
+    {
+      "program": "regex_effbot",
+      "function": "bench_regex_effbot",
+      "line": 139,
+      "target": "(regex, string)",
+      "iter": "data"
+    },
+    {
+      "program": "regex_effbot",
+      "function": "init_benchmarks",
+      "line": 116,
+      "target": "n",
+      "iter": "n_values"
+    },
+    {
+      "program": "regex_v8",
+      "function": "<module>",
+      "line": 158,
+      "target": "s",
+      "iter": "compiled_regex_strings"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 276,
+      "target": "i",
+      "iter": "range(6511)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 279,
+      "target": "i",
+      "iter": "range(1844)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 282,
+      "target": "i",
+      "iter": "range(739)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 285,
+      "target": "i",
+      "iter": "range(598)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 288,
+      "target": "i",
+      "iter": "range(454)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 291,
+      "target": "i",
+      "iter": "range(352)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 295,
+      "target": "i",
+      "iter": "range(312)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 298,
+      "target": "i",
+      "iter": "range(282)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 301,
+      "target": "i",
+      "iter": "range(177)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 304,
+      "target": "i",
+      "iter": "range(170)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 308,
+      "target": "i",
+      "iter": "range(156)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 312,
+      "target": "i",
+      "iter": "range(144)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 315,
+      "target": "i",
+      "iter": "range(139)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 324,
+      "target": "i",
+      "iter": "range(137)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 329,
+      "target": "i",
+      "iter": "range(117)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 332,
+      "target": "i",
+      "iter": "range(95)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 336,
+      "target": "i",
+      "iter": "range(93)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 340,
+      "target": "i",
+      "iter": "range(92)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block0",
+      "line": 343,
+      "target": "i",
+      "iter": "range(85)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 355,
+      "target": "i",
+      "iter": "range(81)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 358,
+      "target": "i",
+      "iter": "range(78)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 384,
+      "target": "i",
+      "iter": "range(77)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 389,
+      "target": "i",
+      "iter": "range(73)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 393,
+      "target": "i",
+      "iter": "range(72)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 396,
+      "target": "i",
+      "iter": "range(71)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 399,
+      "target": "i",
+      "iter": "range(70)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 410,
+      "target": "i",
+      "iter": "range(68)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 418,
+      "target": "i",
+      "iter": "range(49)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block1",
+      "line": 421,
+      "target": "i",
+      "iter": "range(44)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 428,
+      "target": "i",
+      "iter": "range(40)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 432,
+      "target": "i",
+      "iter": "range(39)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 442,
+      "target": "i",
+      "iter": "range(37)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 448,
+      "target": "i",
+      "iter": "range(35)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 454,
+      "target": "i",
+      "iter": "range(34)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 464,
+      "target": "i",
+      "iter": "range(32)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 467,
+      "target": "i",
+      "iter": "range(31)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 476,
+      "target": "i",
+      "iter": "range(30)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 481,
+      "target": "i",
+      "iter": "range(29)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block2",
+      "line": 484,
+      "target": "i",
+      "iter": "range(28)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block3",
+      "line": 491,
+      "target": "i",
+      "iter": "range(27)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block3",
+      "line": 494,
+      "target": "i",
+      "iter": "range(23)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block3",
+      "line": 498,
+      "target": "i",
+      "iter": "range(22)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block3",
+      "line": 509,
+      "target": "i",
+      "iter": "range(21)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block3",
+      "line": 513,
+      "target": "i",
+      "iter": "range(20)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block3",
+      "line": 520,
+      "target": "i",
+      "iter": "range(19)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block3",
+      "line": 523,
+      "target": "i",
+      "iter": "range(18)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block3",
+      "line": 542,
+      "target": "i",
+      "iter": "range(17)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block4",
+      "line": 604,
+      "target": "i",
+      "iter": "range(16)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block4",
+      "line": 612,
+      "target": "i",
+      "iter": "range(15)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block4",
+      "line": 645,
+      "target": "i",
+      "iter": "range(14)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block5",
+      "line": 676,
+      "target": "i",
+      "iter": "range(13)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block5",
+      "line": 702,
+      "target": "i",
+      "iter": "range(12)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block6",
+      "line": 737,
+      "target": "i",
+      "iter": "range(11)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block6",
+      "line": 786,
+      "target": "i",
+      "iter": "range(10)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block7",
+      "line": 829,
+      "target": "i",
+      "iter": "range(9)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block7",
+      "line": 845,
+      "target": "i",
+      "iter": "range(8)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block8",
+      "line": 897,
+      "target": "i",
+      "iter": "range(7)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block8",
+      "line": 945,
+      "target": "i",
+      "iter": "range(6)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block9",
+      "line": 981,
+      "target": "i",
+      "iter": "range(5)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block9",
+      "line": 1010,
+      "target": "i",
+      "iter": "range(4)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block10",
+      "line": 1163,
+      "target": "i",
+      "iter": "range(3)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "block11",
+      "line": 1317,
+      "target": "i",
+      "iter": "range(2)"
+    },
+    {
+      "program": "regex_v8",
+      "function": "bench_regex_v8",
+      "line": 1770,
+      "target": "loops",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "richards_super",
+      "function": "fn",
+      "line": 360,
+      "target": "i",
+      "iter": "BUFSIZE_RANGE"
+    },
+    {
+      "program": "richards_super",
+      "function": "run",
+      "line": 386,
+      "target": "i",
+      "iter": "range(iterations)"
+    },
+    {
+      "program": "sqlalchemy_declarative",
+      "function": "bench_sqlalchemy",
+      "line": 61,
+      "target": "loops",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "sqlalchemy_declarative",
+      "function": "bench_sqlalchemy",
+      "line": 69,
+      "target": "i",
+      "iter": "range(npeople)"
+    },
+    {
+      "program": "sqlalchemy_declarative",
+      "function": "bench_sqlalchemy",
+      "line": 81,
+      "target": "i",
+      "iter": "range(npeople)"
+    },
+    {
+      "program": "sqlite_synth",
+      "function": "bench_sqlite",
+      "line": 35,
+      "target": "i",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "sqlite_synth",
+      "function": "bench_sqlite",
+      "line": 41,
+      "target": "(x, cosx1, cosx2)",
+      "iter": "conn.execute('select x, cos(x), y from cos')"
+    },
+    {
+      "program": "sympy",
+      "function": "bench_sympy",
+      "line": 32,
+      "target": "_",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "sympy",
+      "function": "<module>",
+      "line": 66,
+      "target": "bench",
+      "iter": "benchmarks"
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "function": "bench_protocols",
+      "line": 166,
+      "target": "_",
+      "iter": "range(loops)"
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "function": "__init__",
+      "line": 120,
+      "target": "attr",
+      "iter": "'abcde'"
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "function": "bench_protocols",
+      "line": 167,
+      "target": "protocol",
+      "iter": "protocols"
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "function": "bench_protocols",
+      "line": 157,
+      "target": "cls",
+      "iter": "(Empty, PropertyX, HasIntMethod, HasManyMethods, PropertyXWithInt, ClassVarX, ClassVarXWithInt, InstanceVarX, ManyInstanceVars, InstanceVarXWithInt, NominalX, NominalSupportsInt, NominalXWithInt)"
+    },
+    {
+      "program": "typing_runtime_protocols",
+      "function": "bench_protocols",
+      "line": 168,
+      "target": "instance",
+      "iter": "instances"
+    },
+    {
+      "program": "unpack_sequence",
+      "function": "do_unpacking",
+      "line": 10,
+      "target": "_",
+      "iter": "range_it"
+    },
+    {
+      "program": "xml_etree",
+      "function": "build_xml_tree",
+      "line": 30,
+      "target": "c",
+      "iter": "range(50)"
+    },
+    {
+      "program": "xml_etree",
+      "function": "build_xml_tree",
+      "line": 38,
+      "target": "i",
+      "iter": "range(50)"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 78,
+      "target": "child",
+      "iter": "root"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 84,
+      "target": "child",
+      "iter": "root.iterfind('.//subchild')"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 98,
+      "target": "child",
+      "iter": "new_root"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 106,
+      "target": "child",
+      "iter": "root"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 113,
+      "target": "child",
+      "iter": "root"
+    },
+    {
+      "program": "xml_etree",
+      "function": "bench_iterparse",
+      "line": 134,
+      "target": "_",
+      "iter": "range(10)"
+    },
+    {
+      "program": "xml_etree",
+      "function": "bench_parse",
+      "line": 146,
+      "target": "_",
+      "iter": "range(30)"
+    },
+    {
+      "program": "xml_etree",
+      "function": "bench_generate",
+      "line": 164,
+      "target": "_",
+      "iter": "range(10)"
+    },
+    {
+      "program": "xml_etree",
+      "function": "bench_generate",
+      "line": 169,
+      "target": "xml",
+      "iter": "output"
+    },
+    {
+      "program": "xml_etree",
+      "function": "<module>",
+      "line": 286,
+      "target": "bench",
+      "iter": "benchmarks"
+    },
+    {
+      "program": "xml_etree",
+      "function": "build_xml_tree",
+      "line": 33,
+      "target": "i",
+      "iter": "range(100)"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 108,
+      "target": "sub",
+      "iter": "child.iter()"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 115,
+      "target": "sub",
+      "iter": "child.iter()"
+    },
+    {
+      "program": "xml_etree",
+      "function": "bench_etree",
+      "line": 189,
+      "target": "_",
+      "iter": "range(iterations)"
+    },
+    {
+      "program": "xml_etree",
+      "function": "build_xml_tree",
+      "line": 43,
+      "target": "elem",
+      "iter": "root.iter()"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 59,
+      "target": "child",
+      "iter": "root"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 64,
+      "target": "child",
+      "iter": "root"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 65,
+      "target": "el",
+      "iter": "child.iterfind('.//subchild')"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 71,
+      "target": "el",
+      "iter": "root.findall('.//deepchild/deepleaf')"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 111,
+      "target": "(n, ch)",
+      "iter": "d.items()"
+    },
+    {
+      "program": "xml_etree",
+      "function": "bench_iterparse",
+      "line": 136,
+      "target": "(event, elem)",
+      "iter": "it"
+    },
+    {
+      "program": "xml_etree",
+      "function": "bench_iterparse",
+      "line": 138,
+      "target": "(event, elem)",
+      "iter": "it"
+    },
+    {
+      "program": "xml_etree",
+      "function": "process",
+      "line": 89,
+      "target": "el",
+      "iter": "target.iterfind('subchild')"
+    },
+    {
+      "program": "yaml",
+      "function": "mutate_dict",
+      "line": 66,
+      "target": "(key, value)",
+      "iter": "new_dict.items()"
+    },
+    {
+      "program": "yaml",
+      "function": "bench_yaml",
+      "line": 78,
+      "target": "obj",
+      "iter": "objs"
+    },
+    {
+      "program": "yaml",
+      "function": "<module>",
+      "line": 74,
+      "target": "_",
+      "iter": "range(3)"
+    }
+  ],
+  "scope": "Source audit of retained40 owned files, without assuming types of dynamic receivers. Character/grid candidates checked against their bodies; no isolated long string scanner identified. A stdlib full first-token wrapper is the authorized fallback. This is not a claim that every dynamic workload lacks character traversal."
+}

@@ -1,0 +1,402 @@
+F...............                                                         [100%]
+================================== FAILURES ===================================
+________ test_pure_set_operation_runs_natively[difference-args0-want0] ________
+
+fn = <function difference at 0x000002587B7DE140>, args = ({1, 2}, {2, 3})
+want = {1}
+
+    @pytest.mark.parametrize('fn,args,want', [
+        (difference, ({1, 2}, {2, 3}), {1}),
+        (subset, ({1, 2}, {1, 2, 3}), True),
+        (chain, ({1, 2}, {2, 1}), True),
+        (local_copy, (3,), {1, 2, 3}),
+        (local_union, (4,), {1, 2, 3, 4}),
+        (disjoint, ({1, 2}, {3, 4}), True),
+    ])
+    def test_pure_set_operation_runs_natively(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1, compiled.problem
+E       AssertionError: None
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x000002587B58BB60>.compiled_calls
+
+tests\test_native_sets.py:58: AssertionError
+============================== warnings summary ===============================
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2770:[0m
+  [1m             else (lambda st, value, low, high: False), inline='always')
+  [1m    def even_extent(st, value):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    if _rc_int_domain(_rc_st, a, -16777216, 16777216) and _rc_int_domain(_rc_st, b, -16777216, 16777216):
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:3: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'impl_set_difference.<locals>.difference_impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1530:[0m
+  [1m
+  [1m    def difference_impl(a, b):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    return a - b
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:3: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'impl_set_difference.<locals>.difference_impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1530:[0m
+  [1m
+  [1m    def difference_impl(a, b):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    return a - b
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:3: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'set_difference_update_impl.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1430:[0m
+  [1m
+  [1mdef set_intersection_update(context, builder, sig, args):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return a - b
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:3: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'set_difference_update_impl.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1430:[0m
+  [1m
+  [1mdef set_intersection_update(context, builder, sig, args):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return a - b
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:3: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 's' of function 'ol_set_copy.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1409:[0m
+  [1m
+  [1mdef set_difference_update(context, builder, sig, args):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return a - b
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:5: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_sub(_rc_st, a, b)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:5: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_sub(_rc_st, a, b)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:5: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'impl_set_difference.<locals>.difference_impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1530:[0m
+  [1m
+  [1m    def difference_impl(a, b):
+  [0m    [1m^[0m[0m
+  [0m[0m[0m
+    return _rc_sub(_rc_st, a, b)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py:5: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'impl_set_difference.<locals>.difference_impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1530:[0m
+  [1m
+  [1m    def difference_impl(a, b):
+  [0m    [1m^[0m[0m
+  [0m[0m[0m
+    return _rc_sub(_rc_st, a, b)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function '_rcv1_difference'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py", line 1:[0m
+  [1m[1mdef _rcv1_difference(_rc_st, a, b):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function '_rcv1_difference'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_fb54e93d83d9c40bb1270e490ba43fee.py", line 1:[0m
+  [1m[1mdef _rcv1_difference(_rc_st, a, b):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[subset-args1-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fa6d05eaa6315dc8b8a4c27059992847.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_le(_rc_st, a, b)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[subset-args1-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fa6d05eaa6315dc8b8a4c27059992847.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_le(_rc_st, a, b)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[subset-args1-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fa6d05eaa6315dc8b8a4c27059992847.py:2: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'set_issubset.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1633:[0m
+  [1m@overload_method(types.Set, "issuperset")
+  [1mdef set_issuperset(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_le(_rc_st, a, b)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[subset-args1-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_fa6d05eaa6315dc8b8a4c27059992847.py:2: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'set_issubset.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1633:[0m
+  [1m@overload_method(types.Set, "issuperset")
+  [1mdef set_issuperset(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_le(_rc_st, a, b)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[subset-args1-True]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function '_rcv1_subset'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_fa6d05eaa6315dc8b8a4c27059992847.py", line 1:[0m
+  [1m[1mdef _rcv1_subset(_rc_st, a, b):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[subset-args1-True]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function '_rcv1_subset'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_fa6d05eaa6315dc8b8a4c27059992847.py", line 1:[0m
+  [1m[1mdef _rcv1_subset(_rc_st, a, b):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[chain-args2-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_02366e392ca5a964ff50a184e9ca1b2d.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2512:[0m
+  [1m    def chain_operand(st, a):
+          <source elided>
+      register("_rc_chain_operand", lambda st, a: chain_operand if integer(a) else
+  [1m             (lambda st, a: a) if kind(a) == "f" or isinstance(a, types.Set) else None)
+  [0m             [1m^[0m[0m
+  [0m[0m
+    return _rc_chain_operand(_rc_st, a) == _rc_chain_operand(_rc_st, b) == _rc_chain_operand(_rc_st, a)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[chain-args2-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_02366e392ca5a964ff50a184e9ca1b2d.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'set_eq.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1660:[0m
+  [1m@overload(operator.ne)
+  [1mdef set_ne(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m
+    return _rc_chain_operand(_rc_st, a) == _rc_chain_operand(_rc_st, b) == _rc_chain_operand(_rc_st, a)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[chain-args2-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_02366e392ca5a964ff50a184e9ca1b2d.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'set_eq.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1660:[0m
+  [1m@overload(operator.ne)
+  [1mdef set_ne(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m
+    return _rc_chain_operand(_rc_st, a) == _rc_chain_operand(_rc_st, b) == _rc_chain_operand(_rc_st, a)
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[chain-args2-True]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function '_rcv1_chain'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_02366e392ca5a964ff50a184e9ca1b2d.py", line 1:[0m
+  [1m[1mdef _rcv1_chain(_rc_st, a, b):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[chain-args2-True]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function '_rcv1_chain'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_02366e392ca5a964ff50a184e9ca1b2d.py", line 1:[0m
+  [1m[1mdef _rcv1_chain(_rc_st, a, b):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[disjoint-args5-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_9b638438c93579ce5064ddff16a2327d.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'obj' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_method0(_rc_st, a, (b,))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[disjoint-args5-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_9b638438c93579ce5064ddff16a2327d.py:2: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'set_isdisjoint.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1612:[0m
+  [1m@intrinsic
+  [1mdef _set_issubset(typingctx, a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_method0(_rc_st, a, (b,))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[disjoint-args5-True]
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_9b638438c93579ce5064ddff16a2327d.py:2: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'set_isdisjoint.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1612:[0m
+  [1m@intrinsic
+  [1mdef _set_issubset(typingctx, a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_method0(_rc_st, a, (b,))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[disjoint-args5-True]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function '_rcv1_disjoint'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_9b638438c93579ce5064ddff16a2327d.py", line 1:[0m
+  [1m[1mdef _rcv1_disjoint(_rc_st, a, b):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_pure_set_operation_runs_natively[disjoint-args5-True]
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function '_rcv1_disjoint'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_9b638438c93579ce5064ddff16a2327d.py", line 1:[0m
+  [1m[1mdef _rcv1_disjoint(_rc_st, a, b):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_selected_input_keeps_set_identity
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ir_utils.py:2089: NumbaPendingDeprecationWarning: [1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function '_rcv1_selected'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "matrix\temp\cache\rc_a8e65ee349175d65397345d0acbed62e.py", line 1:[0m
+  [1m[1mdef _rcv1_selected(_rc_st, a):
+  [0m[1m^[0m[0m
+  [0m
+    warnings.warn(NumbaPendingDeprecationWarning(msg, loc=loc))
+
+tests/test_native_sets.py::test_set_iteration_keeps_python_order
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_87f3fd0833053621dde36c4ad742105d.py:3: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2991:[0m
+  [1m
+  [1m    def not_float(st, a):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    while not _rc_st[0] and _rcv1_k < _rc_len(_rc_st, a):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_native_sets.py::test_pure_set_operation_runs_natively[difference-args0-want0]
+1 failed, 15 passed, 30 warnings in 4.22s

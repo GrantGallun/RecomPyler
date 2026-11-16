@@ -1,0 +1,63 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+_ test_order_independent_non_escaping_set_is_native[difference_size-args0-1] __
+
+fn = <function difference_size at 0x000001E7B4D0D2D0>, args = ({2, 10000}, {2})
+want = 1
+
+    @pytest.mark.parametrize('fn,args,want', [(difference_size, ({10000,2},{2}),1), (local_copy_size,(10000,),3), (local_union_size,(10000,),4), (local_update_size,(10000,),3)])
+    def test_order_independent_non_escaping_set_is_native(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x000001E7B4BFBA10>.compiled_calls
+
+tests\test_native_sets.py:427: AssertionError
+_ test_order_independent_non_escaping_set_is_native[local_copy_size-args1-3] __
+
+fn = <function local_copy_size at 0x000001E7B4D0D380>, args = (10000,), want = 3
+
+    @pytest.mark.parametrize('fn,args,want', [(difference_size, ({10000,2},{2}),1), (local_copy_size,(10000,),3), (local_union_size,(10000,),4), (local_update_size,(10000,),3)])
+    def test_order_independent_non_escaping_set_is_native(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x000001E7B4B3FCB0>.compiled_calls
+
+tests\test_native_sets.py:427: AssertionError
+_ test_order_independent_non_escaping_set_is_native[local_union_size-args2-4] _
+
+fn = <function local_union_size at 0x000001E7B4D0D430>, args = (10000,)
+want = 4
+
+    @pytest.mark.parametrize('fn,args,want', [(difference_size, ({10000,2},{2}),1), (local_copy_size,(10000,),3), (local_union_size,(10000,),4), (local_update_size,(10000,),3)])
+    def test_order_independent_non_escaping_set_is_native(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x000001E7B77996A0>.compiled_calls
+
+tests\test_native_sets.py:427: AssertionError
+_ test_order_independent_non_escaping_set_is_native[local_update_size-args3-3] _
+
+fn = <function local_update_size at 0x000001E7B4D0D4E0>, args = (10000,)
+want = 3
+
+    @pytest.mark.parametrize('fn,args,want', [(difference_size, ({10000,2},{2}),1), (local_copy_size,(10000,),3), (local_union_size,(10000,),4), (local_update_size,(10000,),3)])
+    def test_order_independent_non_escaping_set_is_native(fn, args, want):
+        compiled = lift(fn)
+        assert compiled(*args) == want
+>       assert compiled.compiled_calls == 1
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x000001E7B4BF8050>.compiled_calls
+
+tests\test_native_sets.py:427: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_native_sets.py::test_order_independent_non_escaping_set_is_native[difference_size-args0-1]
+FAILED tests/test_native_sets.py::test_order_independent_non_escaping_set_is_native[local_copy_size-args1-3]
+FAILED tests/test_native_sets.py::test_order_independent_non_escaping_set_is_native[local_union_size-args2-4]
+FAILED tests/test_native_sets.py::test_order_independent_non_escaping_set_is_native[local_update_size-args3-3]
+4 failed, 46 deselected in 2.95s

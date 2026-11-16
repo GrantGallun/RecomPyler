@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\ceilings\module_red.py", line 17, in <module>
+    Path(sys.argv[1]).write_text(json.dumps(rows,indent=2));print(json.dumps(rows));assert all(r['result']==rows[0]['result'] and r['events']==rows[0]['events'] for r in rows)
+                                                                                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

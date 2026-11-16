@@ -1,0 +1,36 @@
+{
+  "complete": true,
+  "scope": "S52 diagnostic and immutable corpus inputs only; no provenance product change",
+  "layer_commit": "0b8ffc2db8d0ad645fd344f551ec741d3e84729c",
+  "layer_sha256": "9e9f189919b2fddbc1244f5061646d49dfc0c7a121888ad4c3f7dad7b8c71b3e",
+  "should_prove": {
+    "proved": 2,
+    "total": 38
+  },
+  "defensive_corpus": {
+    "total": 134,
+    "proved": 17,
+    "refused": 117
+  },
+  "missing_facts_ranked": [
+    {
+      "missing_fact": "original source/bytecode binding",
+      "cases": 32
+    },
+    {
+      "missing_fact": "queried source owner absent or widened",
+      "cases": 4
+    }
+  ],
+  "gate": "matrix\\provenance-positive-v6\\complete.json",
+  "gate_sha256": "b575e845a81cdf7653e1c5c5062393a4b0de419facde81b7a18910afc9ad077c",
+  "review": "matrix/review-provenance.md",
+  "native_gain": 0,
+  "deployed": 0,
+  "timings_reported": false,
+  "excluded": [
+    "provenance-positive-v1 (review rejected contracts)",
+    "unicode-union-v2 (interrupted; shared inputs changed)",
+    "unicode-matrix-before-v2 (shared inputs changed)"
+  ]
+}

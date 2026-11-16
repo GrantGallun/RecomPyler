@@ -1,0 +1,46 @@
+..........................................FF..                           [100%]
+================================== FAILURES ===================================
+________________ LiftTests.test_hand_scorer_over_every_holding ________________
+
+self = <test_lift.LiftTests testMethod=test_hand_scorer_over_every_holding>
+
+    def test_hand_scorer_over_every_holding(self):
+        calls = [(cards,) for cards in itertools.combinations(range(20), 4)]
+        calls += [((0, 1, 2),), ((0, 1, 2, 40),), ([3, 7, 11, 15],), ((0.0, 1.0, 2.0, 3.0),)]
+>       lifted = self.check(score_hand, calls, expect_compiled=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_lift.py:490: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_lift.py:478: in check
+    self.assertEqual(lifted.compiled_calls > 0, expect_compiled, function.__name__)
+E   AssertionError: False != True : score_hand
+__________________ LiftTests.test_map_matches_a_python_loop ___________________
+
+self = <test_lift.LiftTests testMethod=test_map_matches_a_python_loop>
+
+    def test_map_matches_a_python_loop(self):
+        hands = [(cards,) for cards in itertools.combinations(range(20), 4)]
+        lifted = lift(score_hand)
+        self.assertTrue(same(lifted.map(hands), [score_hand(*args) for args in hands]))
+>       self.assertEqual((lifted.compiled_calls, lifted.fallback_calls), (len(hands), 0))
+E       AssertionError: Tuples differ: (0, 4845) != (4845, 0)
+E       
+E       First differing element 0:
+E       0
+E       4845
+E       
+E       - (0, 4845)
+E       + (4845, 0)
+
+tests\test_lift.py:715: AssertionError
+============================== warnings summary ===============================
+tests/test_backends.py::BackendTests::test_gpu_runs_exactly_or_explains_why_not
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 3 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_lift.py::LiftTests::test_hand_scorer_over_every_holding - A...
+FAILED tests/test_lift.py::LiftTests::test_map_matches_a_python_loop - Assert...
+2 failed, 44 passed, 1 warning in 28.24s

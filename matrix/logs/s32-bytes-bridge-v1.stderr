@@ -1,0 +1,91 @@
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\ceilings\run_bytes.py", line 92, in <module>
+    if __name__=='__main__':sys.exit(main())
+                                     ~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\ceilings\run_bytes.py", line 19, in main
+    entries,dispatchers,aot=compile_bridges()
+                            ~~~~~~~~~~~~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\ceilings\bridge.py", line 53, in compile_bridges
+    fn,sig=make_bridge(name,arity);dispatcher=njit(sig)(fn);dispatchers[name]=dispatcher;entries[name]=next(iter(dispatcher.overloads.values())).entry_point
+                                              ~~~~~~~~~^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\decorators.py", line 234, in wrapper
+    disp.compile(sig)
+    ~~~~~~~~~~~~^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\dispatcher.py", line 919, in compile
+    cres = self._compiler.compile(args, return_type)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\dispatcher.py", line 80, in compile
+    status, retval = self._compile_cached(args, return_type)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\dispatcher.py", line 94, in _compile_cached
+    retval = self._compile_core(args, return_type)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\dispatcher.py", line 107, in _compile_core
+    cres = compiler.compile_extra(self.targetdescr.typing_context,
+                                  self.targetdescr.target_context,
+    ...<2 lines>...
+                                  flags=flags, locals=self.locals,
+                                  pipeline_class=self.pipeline_class)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler.py", line 739, in compile_extra
+    return pipeline.compile_extra(func)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler.py", line 439, in compile_extra
+    return self._compile_bytecode()
+           ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler.py", line 505, in _compile_bytecode
+    return self._compile_core()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler.py", line 481, in _compile_core
+    raise e
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler.py", line 473, in _compile_core
+    pm.run(self.state)
+    ~~~~~~^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler_machinery.py", line 363, in run
+    raise e
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler_machinery.py", line 356, in run
+    self._runPass(idx, pass_inst, state)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler_lock.py", line 35, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler_machinery.py", line 311, in _runPass
+    mutated |= check(pss.run_pass, internal_state)
+               ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler_machinery.py", line 272, in check
+    mangled = func(compiler_state)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\typed_passes.py", line 472, in run_pass
+    lower.lower()
+    ~~~~~~~~~~~^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 193, in lower
+    self.lower_normal_function(self.fndesc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 226, in lower_normal_function
+    entry_block_tail = self.lower_function_body()
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 256, in lower_function_body
+    self.lower_block(block)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 270, in lower_block
+    self.lower_inst(inst)
+    ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 464, in lower_inst
+    val = self.lower_assign(ty, inst)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 676, in lower_assign
+    return self.lower_expr(ty, value)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 1270, in lower_expr
+    res = self.lower_call(resty, expr)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 941, in lower_call
+    res = self._lower_call_normal(fnty, expr, signature)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 1223, in _lower_call_normal
+    argvals = self.fold_call_args(
+        fnty, signature, expr.args, expr.vararg, expr.kws,
+    )
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 880, in fold_call_args
+    argvals = typing.fold_arguments(pysig,
+                                    pos_args, dict(kw_args),
+                                    normal_handler,
+                                    default_handler,
+                                    stararg_handler)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\typing\templates.py", line 245, in fold_arguments
+    out = stararg_handler(i, param, argval)
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\lowering.py", line 875, in stararg_handler
+    assert isinstance(stararg_ty, types.BaseTuple), stararg_ty
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: wave17.ManagedPyObject

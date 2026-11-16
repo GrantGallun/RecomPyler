@@ -1,0 +1,91 @@
+..........................xxFF.                                          [100%]
+================================== FAILURES ===================================
+___________ test_distinct_local_set_results_have_native_provenance ____________
+
+    def test_distinct_local_set_results_have_native_provenance():
+        compiled = lift(local_tuple)
+        result = compiled(3)
+        assert result == ({1, 2, 3}, {1, 2, 3})
+        assert result[0] is not result[1]
+>       assert compiled.compiled_calls == 1
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x000001F2F317DE80>.compiled_calls
+
+tests\test_native_sets.py:256: AssertionError
+__________ test_local_set_mutation_with_one_escaping_owner_is_native __________
+
+    def test_local_set_mutation_with_one_escaping_owner_is_native():
+        compiled = lift(local_update)
+        assert compiled(3) == (None, {1, 2, 3})
+>       assert compiled.compiled_calls == 1
+E       assert 0 == 1
+E        +  where 0 = <recompyler.lift.Lifted object at 0x000001F2F3750830>.compiled_calls
+
+tests\test_native_sets.py:262: AssertionError
+============================== warnings summary ===============================
+tests/test_native_sets.py::test_set_iteration_keeps_python_order
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_ecfb4ea69f1feee701dc1012ca81d8ee.py:3: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'value' of function '_runtime.<locals>.<lambda>.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "src\recompyler\lift.py", line 2998:[0m
+  [1m
+  [1m    def not_float(st, a):
+  [0m    [1m^[0m[0m
+  [0m[0m
+    while not _rc_st[0] and _rcv1_k < _rc_len(_rc_st, a):
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_13ee21f5706424c3e065c0cdee906987.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_13ee21f5706424c3e065c0cdee906987.py:2: NumbaPendingDeprecationWarning: [1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'impl'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "<string>", line 1:[0m
+  [1m<source missing, REPL/exec in use?>[0m
+  [0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_13ee21f5706424c3e065c0cdee906987.py:2: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'a' of function 'set_lt.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1687:[0m
+  [1m@overload(operator.gt)
+  [1mdef set_gt(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+tests/test_native_sets.py::test_mixed_set_chain_is_named_decline
+  D:\Code\Datathon\recompyler-codex-20261111\wave17-matrix\matrix\temp\cache\rc_13ee21f5706424c3e065c0cdee906987.py:2: NumbaPendingDeprecationWarning: [1m[1m[1m
+  Encountered the use of a type that is scheduled for deprecation: type 'reflected set' found for argument 'b' of function 'set_lt.<locals>.<lambda>'.
+  
+  For more information visit https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-reflection-for-list-and-set-types
+  [1m
+  File "C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cpython\setobj.py", line 1687:[0m
+  [1m@overload(operator.gt)
+  [1mdef set_gt(a, b):
+  [0m[1m^[0m[0m
+  [0m[0m[0m
+    return _rc_compare_lt(_rc_st, a, b) and _rc_compare_lt(_rc_st, b, 1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_native_sets.py::test_distinct_local_set_results_have_native_provenance
+FAILED tests/test_native_sets.py::test_local_set_mutation_with_one_escaping_owner_is_native
+2 failed, 27 passed, 2 xfailed, 5 warnings in 2.63s

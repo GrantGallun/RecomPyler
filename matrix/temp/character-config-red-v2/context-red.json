@@ -1,0 +1,147 @@
+{
+  "scaffolding": "temporary unused shlex.deque global bypasses only initial configure defect",
+  "identity": [
+    {
+      "text": "'a'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'a'",
+      "boxed": "'a'",
+      "borrowed": "'a'"
+    },
+    {
+      "text": "'\"a\"'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'a'",
+      "boxed": "'a'",
+      "borrowed": "'a'"
+    },
+    {
+      "text": "'\\\\a'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'a'",
+      "boxed": "'a'",
+      "borrowed": "'a'"
+    },
+    {
+      "text": "'\\xe9'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\xe9'",
+      "boxed": "'\\xe9'",
+      "borrowed": "'\\xe9'"
+    },
+    {
+      "text": "'\"\\xe9\"'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\xe9'",
+      "boxed": "'\\xe9'",
+      "borrowed": "'\\xe9'"
+    },
+    {
+      "text": "'\\\\\\xe9'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\xe9'",
+      "boxed": "'\\xe9'",
+      "borrowed": "'\\xe9'"
+    },
+    {
+      "text": "'\\u0100'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\u0100'",
+      "boxed": "'\\u0100'",
+      "borrowed": "'\\u0100'"
+    },
+    {
+      "text": "'\"\\u0100\"'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\u0100'",
+      "boxed": "'\\u0100'",
+      "borrowed": "'\\u0100'"
+    },
+    {
+      "text": "'\\\\\\u0100'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\u0100'",
+      "boxed": "'\\u0100'",
+      "borrowed": "'\\u0100'"
+    },
+    {
+      "text": "'\\u03bb'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\u03bb'",
+      "boxed": "'\\u03bb'",
+      "borrowed": "'\\u03bb'"
+    },
+    {
+      "text": "'\"\\u03bb\"'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\u03bb'",
+      "boxed": "'\\u03bb'",
+      "borrowed": "'\\u03bb'"
+    },
+    {
+      "text": "'\\\\\\u03bb'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\u03bb'",
+      "boxed": "'\\u03bb'",
+      "borrowed": "'\\u03bb'"
+    },
+    {
+      "text": "'\\U0001f600'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\U0001f600'",
+      "boxed": "'\\U0001f600'",
+      "borrowed": "'\\U0001f600'"
+    },
+    {
+      "text": "'\"\\U0001f600\"'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\U0001f600'",
+      "boxed": "'\\U0001f600'",
+      "borrowed": "'\\U0001f600'"
+    },
+    {
+      "text": "'\\\\\\U0001f600'",
+      "expected_alias": false,
+      "boxed_alias": false,
+      "borrowed_alias": false,
+      "expected": "'\\U0001f600'",
+      "boxed": "'\\U0001f600'",
+      "borrowed": "'\\U0001f600'"
+    }
+  ],
+  "import_context": {
+    "original_calls": [
+      "collections"
+    ],
+    "borrowed_calls": [],
+    "same_result": true
+  }
+}

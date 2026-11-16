@@ -1,0 +1,870 @@
+{
+  "cohort": "s35-combined-pairs-v2",
+  "rows": [
+    {
+      "function": "chaos.GVector.__str__",
+      "median_ns": {
+        "cpython": 228.19,
+        "boxed_direct_entry": 242.605,
+        "handwritten_c": 223.495,
+        "extension_aot": 371.82
+      },
+      "samples_ns": {
+        "cpython": [
+          228.19,
+          221.755,
+          232.605
+        ],
+        "boxed_direct_entry": [
+          241.145,
+          242.605,
+          259.06
+        ],
+        "handwritten_c": [
+          223.495,
+          242.385,
+          223.28
+        ],
+        "extension_aot": [
+          371.82,
+          352.22,
+          373.695
+        ]
+      },
+      "route_counters": [
+        {
+          "rep": 0,
+          "variant": "cpython",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 0,
+          "variant": "boxed_direct_entry",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 0,
+          "variant": "handwritten_c",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              20000,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 0,
+          "variant": "extension_aot",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "extension_aot",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "handwritten_c",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              20000,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "boxed_direct_entry",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "cpython",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "cpython",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "boxed_direct_entry",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "handwritten_c",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              20000,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "extension_aot",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "function": "json_loads.mutate_dict",
+      "median_ns": {
+        "cpython": 18936.6,
+        "boxed_direct_entry": 27542.6,
+        "handwritten_c": 13063.4
+      },
+      "samples_ns": {
+        "cpython": [
+          18936.6,
+          19002.4,
+          18885.8
+        ],
+        "boxed_direct_entry": [
+          27514.0,
+          27542.6,
+          27589.0
+        ],
+        "handwritten_c": [
+          13063.4,
+          12953.8,
+          13585.6
+        ]
+      },
+      "route_counters": [
+        {
+          "rep": 0,
+          "variant": "cpython",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 0,
+          "variant": "boxed_direct_entry",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 0,
+          "variant": "handwritten_c",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              500,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "handwritten_c",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              500,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "boxed_direct_entry",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "cpython",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "cpython",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "boxed_direct_entry",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "handwritten_c",
+          "calls": 500,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              500,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "function": "mdp.applyHPChange",
+      "median_ns": {
+        "cpython": 514.405,
+        "boxed_direct_entry": 751.975,
+        "handwritten_c": 207.32
+      },
+      "samples_ns": {
+        "cpython": [
+          480.44,
+          532.995,
+          514.405
+        ],
+        "boxed_direct_entry": [
+          751.975,
+          793.805,
+          732.97
+        ],
+        "handwritten_c": [
+          207.32,
+          216.47,
+          189.66
+        ]
+      },
+      "route_counters": [
+        {
+          "rep": 0,
+          "variant": "cpython",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 0,
+          "variant": "boxed_direct_entry",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 0,
+          "variant": "handwritten_c",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              20000,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "handwritten_c",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              20000,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "boxed_direct_entry",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 1,
+          "variant": "cpython",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "cpython",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "boxed_direct_entry",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "rep": 2,
+          "variant": "handwritten_c",
+          "calls": 20000,
+          "delta": {
+            "string": [
+              0,
+              0,
+              0
+            ],
+            "dict": [
+              0,
+              0,
+              0
+            ],
+            "mixed": [
+              20000,
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "plain_numba": {
+    "all_current_declines": {
+      "matches": 170,
+      "does_not_compile": 574,
+      "differs": 37
+    },
+    "original655": {
+      "matches": 153,
+      "does_not_compile": 479,
+      "differs": 23
+    },
+    "groups": {
+      "statements": {
+        "matches": 9,
+        "does_not_compile": 23,
+        "differs": 2
+      },
+      "patterns": {
+        "matches": 5,
+        "does_not_compile": 5
+      },
+      "async": {
+        "does_not_compile": 5
+      },
+      "operators": {
+        "does_not_compile": 101,
+        "matches": 11,
+        "differs": 2
+      },
+      "augmented": {
+        "does_not_compile": 101,
+        "matches": 11,
+        "differs": 2
+      },
+      "comparisons": {
+        "matches": 34,
+        "does_not_compile": 40
+      },
+      "boolean": {
+        "matches": 12,
+        "does_not_compile": 4,
+        "differs": 2
+      },
+      "unary": {
+        "does_not_compile": 23,
+        "matches": 4
+      },
+      "literals": {
+        "matches": 8,
+        "differs": 3,
+        "does_not_compile": 8
+      },
+      "comprehensions": {
+        "does_not_compile": 2,
+        "differs": 2
+      },
+      "calls": {
+        "matches": 2,
+        "does_not_compile": 6
+      },
+      "builtins": {
+        "does_not_compile": 115,
+        "matches": 14,
+        "differs": 4
+      },
+      "methods": {
+        "matches": 55,
+        "does_not_compile": 109,
+        "differs": 6
+      },
+      "stdlib": {
+        "matches": 2,
+        "does_not_compile": 28
+      },
+      "boundaries": {
+        "differs": 3,
+        "does_not_compile": 1,
+        "matches": 1
+      },
+      "evaluation_order": {
+        "does_not_compile": 3
+      },
+      "review": {
+        "differs": 7,
+        "matches": 2
+      },
+      "identity": {
+        "differs": 4
+      }
+    },
+    "source_artifacts": [
+      "plain-numba-v1.jsonl",
+      "plain-numba-oracle-v2.jsonl"
+    ],
+    "source_hashes": {
+      "plain-numba-v1.jsonl": "1590c4301b6fda742bfaba4c810a9dc1f58016b5b6e6520cebb9414ea4098f19",
+      "plain-numba-oracle-v2.jsonl": "aea78d34c940d0e51e644ef48f44c60cd3aed3b1ae5de558588726e5a29142b3",
+      "plain_numba.py": "7ec855586f2d9e09f3fa41be80e3cb52be8cbc79f9a4e5d397fd59edef018381",
+      "catalogue.py": "4cfb64ade7da7013cf3e213715c094d49a02b2b26185447627022035d01af23c",
+      "run_matrix.py": "69bfd05671db0b5ba92100cf1f5decaef521af01b05811d3bafaf1a55a499aeb",
+      "step2-v3.jsonl": "67c8f49f2150c538baeb8fa7dbf148696894f1905145b17277b6159df4d7b59a"
+    }
+  },
+  "extension_artifact": {
+    "path": "matrix\\temp\\managed\\wave17_managed.cp314-win_amd64.pyd",
+    "sha256": "8597655af4842882e6af42cb85ab38303a470ecd161f27d2d1fc8412e9e2817b"
+  },
+  "extension_fresh_process": {
+    "exit_code": 0,
+    "stdout": "{\"artifact_imported_and_called_without_numba\": true, \"success_and_error_identical\": true}\n",
+    "stderr": ""
+  },
+  "source_hashes": {
+    "matrix\\direct_calls\\guarded.c": "002f650db185cbc48b9db4fdcc394f3461071deb8989728329a26a5725de128c",
+    "matrix\\direct_calls\\run_c.py": "a8fe237ccd0fc1e3b8283c411c12c40ad0a5892349e69101ed13cbdb73cc1c08",
+    "matrix\\extension\\managed.py": "d5f66973543daf32d6d98ac9ffe502d2985e57d9d62daf0434434af05559fcd6",
+    "matrix\\extension\\run.py": "cc9de3ef5ec1cc850165e76b6c0d190f618486465f1a01b07b434c23b464002c"
+  }
+}

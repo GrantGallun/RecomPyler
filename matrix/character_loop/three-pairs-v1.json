@@ -1,0 +1,2300 @@
+{
+  "complete": true,
+  "behavior_seal_sha256": "685cccd2e63328f513e690ae55db1b9ba9fc4a956dd30a1cfc75f9321b6e659d",
+  "source_sha256": "d7dd4e6143154cd530f23f935b24c2fbba9d6925ec12546c7c166ed45ca65f11",
+  "fixtures": [
+    {
+      "kind": "1byte",
+      "input_characters": 20,
+      "token_characters": 20,
+      "complete_call_ns": {
+        "cpython": [
+          6849.0,
+          5362.7,
+          6542.2
+        ],
+        "boxed-C": [
+          8365.3,
+          6582.7,
+          7630.2
+        ],
+        "borrowed-C": [
+          3023.9,
+          2904.5,
+          3249.8
+        ],
+        "boxed-AOT": [
+          6822.9,
+          9138.7,
+          8729.1
+        ],
+        "borrowed-AOT": [
+          3714.7,
+          4316.8,
+          3919.0
+        ]
+      },
+      "median_ns": {
+        "cpython": 6542.2,
+        "boxed-C": 7630.2,
+        "borrowed-C": 3023.9,
+        "boxed-AOT": 8729.1,
+        "borrowed-AOT": 3919.0
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "2byte",
+      "input_characters": 22,
+      "token_characters": 20,
+      "complete_call_ns": {
+        "cpython": [
+          5247.2,
+          5107.5,
+          5193.5
+        ],
+        "boxed-C": [
+          6926.5,
+          7882.0,
+          7244.0
+        ],
+        "borrowed-C": [
+          3031.3,
+          3559.0,
+          2962.6
+        ],
+        "boxed-AOT": [
+          6981.9,
+          8252.3,
+          6717.4
+        ],
+        "borrowed-AOT": [
+          3602.5,
+          3392.2,
+          3427.9
+        ]
+      },
+      "median_ns": {
+        "cpython": 5193.5,
+        "boxed-C": 7244.0,
+        "borrowed-C": 3031.3,
+        "boxed-AOT": 6981.9,
+        "borrowed-AOT": 3427.9
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "4byte",
+      "input_characters": 22,
+      "token_characters": 20,
+      "complete_call_ns": {
+        "cpython": [
+          4963.8,
+          4424.8,
+          4379.7
+        ],
+        "boxed-C": [
+          7896.2,
+          6952.5,
+          6754.7
+        ],
+        "borrowed-C": [
+          2881.9,
+          2842.2,
+          2897.3
+        ],
+        "boxed-AOT": [
+          6804.9,
+          6893.1,
+          6828.5
+        ],
+        "borrowed-AOT": [
+          3043.7,
+          2966.4,
+          3192.9
+        ]
+      },
+      "median_ns": {
+        "cpython": 4424.8,
+        "boxed-C": 6952.5,
+        "borrowed-C": 2881.9,
+        "boxed-AOT": 6828.5,
+        "borrowed-AOT": 3043.7
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 1000,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 1000,
+          "delta": [
+            1000,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 1000,
+          "delta": [
+            0,
+            1000,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "1byte",
+      "input_characters": 127,
+      "token_characters": 127,
+      "complete_call_ns": {
+        "cpython": [
+          28026.8,
+          25022.2,
+          24289.8
+        ],
+        "boxed-C": [
+          18759.0,
+          15961.4,
+          15830.2
+        ],
+        "borrowed-C": [
+          3707.2,
+          3464.4,
+          3591.2
+        ],
+        "boxed-AOT": [
+          17495.2,
+          16029.4,
+          16229.8
+        ],
+        "borrowed-AOT": [
+          3166.6,
+          3143.6,
+          3460.4
+        ]
+      },
+      "median_ns": {
+        "cpython": 25022.2,
+        "boxed-C": 15961.4,
+        "borrowed-C": 3591.2,
+        "boxed-AOT": 16229.8,
+        "borrowed-AOT": 3166.6
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "2byte",
+      "input_characters": 129,
+      "token_characters": 127,
+      "complete_call_ns": {
+        "cpython": [
+          20085.2,
+          23466.4,
+          19274.0
+        ],
+        "boxed-C": [
+          18569.4,
+          21693.0,
+          18812.0
+        ],
+        "borrowed-C": [
+          3563.8,
+          5080.6,
+          3193.4
+        ],
+        "boxed-AOT": [
+          22205.6,
+          26702.6,
+          18925.2
+        ],
+        "borrowed-AOT": [
+          4256.8,
+          4123.2,
+          3367.2
+        ]
+      },
+      "median_ns": {
+        "cpython": 20085.2,
+        "boxed-C": 18812.0,
+        "borrowed-C": 3563.8,
+        "boxed-AOT": 22205.6,
+        "borrowed-AOT": 4123.2
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "4byte",
+      "input_characters": 129,
+      "token_characters": 127,
+      "complete_call_ns": {
+        "cpython": [
+          27785.0,
+          25516.4,
+          26830.0
+        ],
+        "boxed-C": [
+          26883.8,
+          25453.2,
+          19978.4
+        ],
+        "borrowed-C": [
+          4552.0,
+          5075.8,
+          3099.0
+        ],
+        "boxed-AOT": [
+          27800.8,
+          25802.2,
+          20842.6
+        ],
+        "borrowed-AOT": [
+          4596.6,
+          4996.8,
+          3265.2
+        ]
+      },
+      "median_ns": {
+        "cpython": 26830.0,
+        "boxed-C": 25453.2,
+        "borrowed-C": 4552.0,
+        "boxed-AOT": 25802.2,
+        "borrowed-AOT": 4596.6
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 500,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 500,
+          "delta": [
+            500,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 500,
+          "delta": [
+            0,
+            500,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "1byte",
+      "input_characters": 4096,
+      "token_characters": 4096,
+      "complete_call_ns": {
+        "cpython": [
+          1067420.0,
+          1142555.0,
+          923840.0
+        ],
+        "boxed-C": [
+          669885.0,
+          680810.0,
+          537795.0
+        ],
+        "borrowed-C": [
+          10105.0,
+          9820.0,
+          9850.0
+        ],
+        "boxed-AOT": [
+          659955.0,
+          670400.0,
+          540955.0
+        ],
+        "borrowed-AOT": [
+          10710.0,
+          10085.0,
+          10000.0
+        ]
+      },
+      "median_ns": {
+        "cpython": 1067420.0,
+        "boxed-C": 669885.0,
+        "borrowed-C": 9850.0,
+        "boxed-AOT": 659955.0,
+        "borrowed-AOT": 10085.0
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "2byte",
+      "input_characters": 4098,
+      "token_characters": 4096,
+      "complete_call_ns": {
+        "cpython": [
+          1126920.0,
+          978050.0,
+          1149890.0
+        ],
+        "boxed-C": [
+          928570.0,
+          812960.0,
+          910765.0
+        ],
+        "borrowed-C": [
+          10455.0,
+          14360.0,
+          12085.0
+        ],
+        "boxed-AOT": [
+          874580.0,
+          824865.0,
+          762895.0
+        ],
+        "borrowed-AOT": [
+          15220.0,
+          16015.0,
+          10790.0
+        ]
+      },
+      "median_ns": {
+        "cpython": 1126920.0,
+        "boxed-C": 910765.0,
+        "borrowed-C": 12085.0,
+        "boxed-AOT": 824865.0,
+        "borrowed-AOT": 15220.0
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "4byte",
+      "input_characters": 4098,
+      "token_characters": 4096,
+      "complete_call_ns": {
+        "cpython": [
+          1165390.0,
+          1104570.0,
+          1229815.0
+        ],
+        "boxed-C": [
+          928145.0,
+          912800.0,
+          1018055.0
+        ],
+        "borrowed-C": [
+          10610.0,
+          11870.0,
+          11550.0
+        ],
+        "boxed-AOT": [
+          927510.0,
+          940230.0,
+          1049625.0
+        ],
+        "borrowed-AOT": [
+          10750.0,
+          11290.0,
+          11040.0
+        ]
+      },
+      "median_ns": {
+        "cpython": 1165390.0,
+        "boxed-C": 928145.0,
+        "borrowed-C": 11550.0,
+        "boxed-AOT": 940230.0,
+        "borrowed-AOT": 11040.0
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 20,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 20,
+          "delta": [
+            20,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 20,
+          "delta": [
+            0,
+            20,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "1byte",
+      "input_characters": 65536,
+      "token_characters": 65536,
+      "complete_call_ns": {
+        "cpython": [
+          38009700.0,
+          39633750.0,
+          41485300.0
+        ],
+        "boxed-C": [
+          37097250.0,
+          29629750.0,
+          31068750.0
+        ],
+        "borrowed-C": [
+          188850.0,
+          126400.0,
+          144150.0
+        ],
+        "boxed-AOT": [
+          32365850.0,
+          30529200.0,
+          32076600.0
+        ],
+        "borrowed-AOT": [
+          161100.0,
+          109800.0,
+          116450.0
+        ]
+      },
+      "median_ns": {
+        "cpython": 39633750.0,
+        "boxed-C": 31068750.0,
+        "borrowed-C": 144150.0,
+        "boxed-AOT": 32076600.0,
+        "borrowed-AOT": 116450.0
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "2byte",
+      "input_characters": 65538,
+      "token_characters": 65536,
+      "complete_call_ns": {
+        "cpython": [
+          56891100.0,
+          57097950.0,
+          61028950.0
+        ],
+        "boxed-C": [
+          53702300.0,
+          52536450.0,
+          57576850.0
+        ],
+        "borrowed-C": [
+          192300.0,
+          122200.0,
+          311550.0
+        ],
+        "boxed-AOT": [
+          53062300.0,
+          54069300.0,
+          54963950.0
+        ],
+        "borrowed-AOT": [
+          156000.0,
+          115950.0,
+          295550.0
+        ]
+      },
+      "median_ns": {
+        "cpython": 57097950.0,
+        "boxed-C": 53702300.0,
+        "borrowed-C": 192300.0,
+        "boxed-AOT": 54069300.0,
+        "borrowed-AOT": 156000.0
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "4byte",
+      "input_characters": 65538,
+      "token_characters": 65536,
+      "complete_call_ns": {
+        "cpython": [
+          85959700.0,
+          87047100.0,
+          88631400.0
+        ],
+        "boxed-C": [
+          90609000.0,
+          83928350.0,
+          88183900.0
+        ],
+        "borrowed-C": [
+          131200.0,
+          125750.0,
+          134700.0
+        ],
+        "boxed-AOT": [
+          83928400.0,
+          85951250.0,
+          90512050.0
+        ],
+        "borrowed-AOT": [
+          125300.0,
+          119750.0,
+          127300.0
+        ]
+      },
+      "median_ns": {
+        "cpython": 87047100.0,
+        "boxed-C": 88183900.0,
+        "borrowed-C": 131200.0,
+        "boxed-AOT": 85951250.0,
+        "borrowed-AOT": 125300.0
+      },
+      "route_counters": [
+        {
+          "pair": 0,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 0,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 1,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "cpython",
+          "calls": 2,
+          "delta": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-C",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-C",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "boxed-AOT",
+          "calls": 2,
+          "delta": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "pair": 2,
+          "route": "borrowed-AOT",
+          "calls": 2,
+          "delta": [
+            0,
+            2,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "attribution": "Complete fresh default-POSIX first-token wrapper. Borrowed removes private lexer/StringIO, state writes and repeated token construction as well as Unicode reads; not a pure character-load bound."
+}

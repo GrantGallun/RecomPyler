@@ -1,0 +1,23 @@
+START statement.for_else
+1 11 statement.for_else native 
+START statement.assert_error
+2 11 statement.assert_error declined Assert at line 2; runtime guard at ('construct', 10)
+START statement.yield
+3 11 statement.yield native 
+START async.async_generator
+4 11 async.async_generator native 
+START literal.bytes
+5 11 literal.bytes declined as a region: constant b'matrix\x00' at line 2 of 'construct'
+START call.varkw
+6 11 call.varkw declined 'construct' has a closure, keyword-only arguments, *args or is a generator
+START call.kwonly
+7 11 call.kwonly native 
+START builtin.aiter
+8 11 builtin.aiter declined as a region: aiter() on AsyncRange at line 2 of 'construct'
+START builtin.anext
+9 11 builtin.anext declined call at line 2; anext() on AsyncRange at line 2 of 'construct'
+START statement.generator_return
+10 11 statement.generator_return declined as a region: generator 'construct' returns a value at line 3
+START alias.return_argument
+11 11 alias.return_argument native 
+{"counts": {"native": 5, "declined": 6}, "complete": true, "rows": 11}

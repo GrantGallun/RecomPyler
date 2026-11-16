@@ -557,9 +557,12 @@ class LiftTests(unittest.TestCase):
             del namespace["range"]
 
     def test_unsafe_functions_are_rejected(self):
-        for function in (maybe_unbound, no_return, value_or_none, uses_string, len, lambda x: x):
+        for function in (maybe_unbound, no_return, value_or_none, len, lambda x: x):
             with self.assertRaises(Unsupported):
                 lift(function)
+
+    def test_literal_string_length_is_supported(self):
+        self.check(uses_string, [(3,), (-2,), (1.5,)], expect_compiled=True)
 
     def test_lists_and_arrays_change_in_place(self):
         calls = [([1.5, -2.0, 0.25], 2.0), ([1, 2, 3], 3), ([1, 2], 2.5), (array.array("d", [1.0, 2.0]), 0.5),
@@ -683,15 +686,19 @@ class LiftTests(unittest.TestCase):
             lifted(*args)
             packed, shape, boundary = lifted._pack_call(lifted._complete(args))
             arrays = [item for item in boundary.copies.values()]
-            counts = [sys.getrefcount(copied) for _, copied, *_ in arrays]
+            import gc,weakref
+            references=[weakref.ref(copied) for _,copied,*_ in arrays]
             before = rtsys.get_allocation_stats()
             for _ in range(3000):
                 lifted._run(packed)
             after = rtsys.get_allocation_stats()
             self.assertEqual(after.alloc - after.free, before.alloc - before.free, function.__name__)
             self.assertEqual(after.mi_alloc - after.mi_free, before.mi_alloc - before.mi_free, function.__name__)
-            self.assertEqual([sys.getrefcount(copied) for _, copied, *_ in arrays], counts, function.__name__)
+            self.assertTrue(all(ref() is not None for ref in references),function.__name__)
             self.assertGreater(lifted.compiled_calls, 0, function.__name__)
+            del packed,shape,boundary,arrays,lifted
+            gc.collect()
+            self.assertTrue(all(ref() is None for ref in references),function.__name__)
             if function is flips:
                 # Its local lists are arrays made on every call: proof the counters count.
                 self.assertGreater(after.alloc, before.alloc)
@@ -1031,14 +1038,18 @@ class ObjectColumnTests(unittest.TestCase):
             packed, shape, boundary = lifted._pack_call(lifted._complete(args))
             columns = [array for value in packed if type(value).__name__.startswith("_rcc_") for array in value]
             self.assertTrue(columns, function.__name__)
-            counts = [sys.getrefcount(array) for array in columns]
+            import gc,weakref
+            references=[weakref.ref(array) for array in columns]
             before = rtsys.get_allocation_stats()
             for _ in range(3000):
                 lifted._run(packed)
             after = rtsys.get_allocation_stats()
             self.assertEqual(after.alloc - after.free, before.alloc - before.free, function.__name__)
             self.assertEqual(after.mi_alloc - after.mi_free, before.mi_alloc - before.mi_free, function.__name__)
-            self.assertEqual([sys.getrefcount(array) for array in columns], counts, function.__name__)
+            self.assertTrue(all(ref() is not None for ref in references),function.__name__)
+            del packed,shape,boundary,columns,lifted
+            gc.collect()
+            self.assertTrue(all(ref() is None for ref in references),function.__name__)
 
 
 
