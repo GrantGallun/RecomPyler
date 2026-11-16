@@ -1,0 +1,76 @@
+{
+  "complete": true,
+  "corpus_sha256": {
+    "wave16-inplace-callable.py": "d0043559f53d3c0592462c723c75314a6c81784f174f6700164ebfad0f7d3728",
+    "wave16-inplace-direct.py": "4af8a90a80f6e9daf73da1a723fd549bf83282cbe3c1272950fe6c6d957cea7f",
+    "wave16-inplace-numeric-observers.py": "cfe60af463f26b8870c2521c3ac6796cd295dd447002717ab4e86096d519d004",
+    "wave16-inplace-numeric.py": "2cf316cfa52d4ec8644863ff0250aa2414e0f8146079f48923d385f18524258f",
+    "wave17-matrix-followups.py": "49d8c1e212e3a7f5ca10de56bf7fe9307b223b9582d69d4a02e96c6431a1588c",
+    "wave17-matrix-review.py": "70739ade9ac7b6660c8f86a738d05a1d1987cfedda0b5f39a676bea541d0fe03",
+    "wave17-matrix-s49.json": "3d5e41004361baab50b295e222046c2038a59ded42f5b776c6a840fbd819ef1a",
+    "wave17-matrix-unicode.py": "4d72d2cc7707e9b6bebbb7b1307f4a585455bf0514ef6a27f7db77327fc05cc6",
+    "wave18-lift-owners.py": "af665685b34a7272db95cd80a83716bb007ff958de5bee8ae748ec375351aae3",
+    "wave18-lift-range-escapes.py": "712b0512a61971f8f9e6dfadc12b3fb18b004c80078724f73a93c0f76327114c",
+    "wave18-lift-s49-review.py": "48913b33310d30c289bc8262ac7c59af9883010037673c6e764a90e39e05982d"
+  },
+  "source_sha256": {
+    "tests\\test_provenance.py": "086e3d93205fa664b8e14815a7fc3c8d4b35662c2a0a51fdb6e6c48cb5f2b168",
+    "tests\\test_provenance_corpus.py": "345c3b4ec131e779f1f2b029973437d392c1555620b8bc3439784f5d3f72bc80",
+    "inplace\\s47_verify_pinned_corpus.py": "b6b41122fd287b59e6aa50a358a778a122322f165fd4cb37545502f10e84a9a4",
+    "inplace\\step0_union.py": "1726f38a312639b78ab37a107d4208ae56527b70221d318af7860fc244416d94"
+  },
+  "runs": [
+    {
+      "label": "snapshot",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_provenance.py",
+        "tests/test_provenance_corpus.py",
+        "-q",
+        "--basetemp",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s47-pinned-corpus-smoke-v1\\snapshot-pytest"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "corpus": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s47-pinned-corpus-smoke-v1\\corpus",
+      "stdout_sha256": "f446d998a739aa6bd0d10b51f8463b68f25d022daee2116abd1ef663cf844f86",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "missing-unit",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_provenance.py::test_corpus_all_facts_or_decline",
+        "-q",
+        "--basetemp",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s47-pinned-corpus-smoke-v1\\missing-unit-pytest"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "corpus": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s47-pinned-corpus-smoke-v1\\missing",
+      "stdout_sha256": "69239bc1ce214698da03ccdbee417c2daecc629f020678e155d9b8388560b9e6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "missing-corpus",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_provenance_corpus.py",
+        "-q",
+        "--basetemp",
+        "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s47-pinned-corpus-smoke-v1\\missing-corpus-pytest"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "corpus": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s47-pinned-corpus-smoke-v1\\missing",
+      "stdout_sha256": "4eaf35b269d630ea3d1f0746103345d6829a203c723cc9417ba53d02a53b6819",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+F.                                                                       [100%]
+================================== FAILURES ===================================
+___________ test_runner_wrapped_callee_keeps_generated_aot_identity ___________
+
+    def test_runner_wrapped_callee_keeps_generated_aot_identity():
+        original=helper
+        before,source=generated()
+        @functools.wraps(original)
+        def fast(*args,**kwargs):
+            return original(*args,**kwargs)
+        fast.__recompyler_original__=original
+        try:
+            globals()['helper']=fast
+            after,wrapped_source=generated()
+            assert source==wrapped_source
+>           assert aot._digest(before,source)==aot._digest(after,wrapped_source)
+E           AssertionError: assert '191f6b0b6ecd...c65759f43b9f0' == '445ca0a84130...f5877103b5a48'
+E             
+E             - 445ca0a8413015b4e5ae00106778a000440619bca7a0e4125dff5877103b5a48
+E             + 191f6b0b6ecd781b1b9c40ef3999febb387c4bb3c32fc9c0f04c65759f43b9f0
+
+tests\test_aot_wrapped_identity.py:32: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_aot_wrapped_identity.py::test_runner_wrapped_callee_keeps_generated_aot_identity
+1 failed, 1 passed in 0.24s

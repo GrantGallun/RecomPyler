@@ -1,0 +1,42 @@
+.F                                                                       [100%]
+================================== FAILURES ===================================
+____________ test_method_owner_must_match_sealed_hidden_rng_holder ____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...cb49c78e10827df666ebc43abbe8665a0655270e51b0018b6ae90b6763f': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026F68E8B230>
+
+    def test_method_owner_must_match_sealed_hidden_rng_holder(artifact,monkeypatch):
+        from types import MethodType
+        import random
+        from test_prepared_cache import row_for
+        pc,heap,module,source,section=artifact
+        module=load_source(source)
+        index=pc.open_index(section,row_for(section,'random_step'),plan_snapshot=standalone(section))
+        assert index is not None and index.bind(module.random_step),pc.last_miss()
+        replacement=random.Random(1)
+        monkeypatch.setattr(random,'randrange',MethodType(random.randrange.__func__,replacement))
+>       assert index.bind(module.random_step)==[],'different generator certified against old hidden holder'
+E       AssertionError: different generator certified against old hidden holder
+E       assert [<recompyler....026F663D41A0>] == []
+E         
+E         Left contains one more item: <recompyler._prepared._restore.<locals>.RuntimeProgram object at 0x0000026F663D41A0>
+E         Use -v to get more diff
+
+tests\test_prepared_native_lifetime.py:34: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_f0526dfc1861e02ac59c9dac-g925zzy4\rcaotr_f0526dfc1861e02ac59c9dac.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_f0526dfc1861e02ac59c9dac-g925zzy4\rcaotr_f0526dfc1861e02ac59c9dac.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_native_lifetime.py::test_method_owner_must_match_sealed_hidden_rng_holder
+1 failed, 1 passed in 8.15s

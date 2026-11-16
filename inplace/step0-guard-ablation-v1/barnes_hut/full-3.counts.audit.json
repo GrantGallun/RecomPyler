@@ -1,0 +1,94 @@
+{
+  "audit_accounting_complete": true,
+  "observer_lost": false,
+  "totals": {
+    "aot_calls": 500,
+    "jit_calls": 0,
+    "unknown_native_calls": 0,
+    "rejected_attempts": 0,
+    "fallback_calls": 0
+  },
+  "functions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+      "qualname": "advance_system",
+      "function": "advance_system",
+      "line": 314,
+      "kind": "region",
+      "aot_calls": 500,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "d8cea354be71e92a53aaaad3f1729cbe8ea07e8e4f45155caa6ef21ecc905492": {
+          "aot_calls": 500,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "direct_report": null,
+          "last_rule_deltas": {},
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-depth-prepared-v1\\barnes_hut\\inplace_c4fbbd9d49bfd9a0908f.cp314-win_amd64.pyd",
+              "module_sha256": "410962e443ada81c76c15a230c329cf0f9d905f2f137cf6e21cfaeb16f7ceda6",
+              "export": "r0",
+              "digest": "d8cea354be71e92a53aaaad3f1729cbe8ea07e8e4f45155caa6ef21ecc905492",
+              "generated_source_sha256": "4bad4ffeb890d3e1ec3c93f22ed035b4245e6f38ebd060b6bc1cb4bbcad5cee0",
+              "mode": "aot"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 500,
+      "unobserved_successes": 0
+    }
+  ],
+  "independent_functions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+      "qualname": "advance_system",
+      "function": "advance_system",
+      "line": 314,
+      "kind": "region",
+      "aot_calls": 500,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "d8cea354be71e92a53aaaad3f1729cbe8ea07e8e4f45155caa6ef21ecc905492": {
+          "aot_calls": 500,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "direct_report": null,
+          "last_rule_deltas": {},
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-depth-prepared-v1\\barnes_hut\\inplace_c4fbbd9d49bfd9a0908f.cp314-win_amd64.pyd",
+              "module_sha256": "410962e443ada81c76c15a230c329cf0f9d905f2f137cf6e21cfaeb16f7ceda6",
+              "export": "r0",
+              "digest": "d8cea354be71e92a53aaaad3f1729cbe8ea07e8e4f45155caa6ef21ecc905492",
+              "generated_source_sha256": "4bad4ffeb890d3e1ec3c93f22ed035b4245e6f38ebd060b6bc1cb4bbcad5cee0",
+              "mode": "aot"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 500,
+      "unobserved_successes": 0
+    }
+  ],
+  "native_counter_source": "Observed program.run entry plus successful Region.attempt result; ordinary _run result without Python fallback; no product compiled/aot/jit counter reads",
+  "fallback_counter_source": "Original Python code-entry observation within each wrapper call",
+  "independent_direct_abi_observer": "unimplemented; missing program.run entry fails closed"
+}

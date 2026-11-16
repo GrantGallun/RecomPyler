@@ -1,0 +1,32 @@
+
+C:/Python314/python314.dll:	file format coff-x86-64
+
+Disassembly of section .text:
+
+00000001802abd58 <_PyMem_GetCurrentAllocatorName>:
+1802abd58: 48 89 5c 24 10              	movq	%rbx, 0x10(%rsp)
+1802abd5d: 57                          	pushq	%rdi
+1802abd5e: 48 83 ec 20                 	subq	$0x20, %rsp
+1802abd62: bf 01 00 00 00              	movl	$0x1, %edi
+1802abd67: 33 c0                       	xorl	%eax, %eax
+1802abd69: f0                          	lock
+1802abd6a: 40 0f b0 3d f6 95 3e 00     	cmpxchgb	%dil, 0x3e95f6(%rip)    # 0x180695368 <_PyRuntime+0x368>
+1802abd72: 74 13                       	je	0x1802abd87 <_PyMem_GetCurrentAllocatorName+0x2f>
+1802abd74: 44 8b c7                    	movl	%edi, %r8d
+1802abd77: 48 8d 0d ea 95 3e 00        	leaq	0x3e95ea(%rip), %rcx    # 0x180695368 <_PyRuntime+0x368>
+1802abd7e: 48 83 ca ff                 	orq	$-0x1, %rdx
+1802abd82: e8 2d 80 dc ff              	callq	0x180073db4 <_PyMutex_LockTimed>
+1802abd87: e8 80 33 00 00              	callq	0x1802af10c <_PyObject_DebugMallocStats+0x2f84>
+1802abd8c: 48 8b d8                    	movq	%rax, %rbx
+1802abd8f: 33 d2                       	xorl	%edx, %edx
+1802abd91: 40 8a c7                    	movb	%dil, %al
+1802abd94: f0                          	lock
+1802abd95: 0f b0 15 cc 95 3e 00        	cmpxchgb	%dl, 0x3e95cc(%rip)     # 0x180695368 <_PyRuntime+0x368>
+1802abd9c: 74 0c                       	je	0x1802abdaa <_PyMem_GetCurrentAllocatorName+0x52>
+1802abd9e: 48 8d 0d c3 95 3e 00        	leaq	0x3e95c3(%rip), %rcx    # 0x180695368 <_PyRuntime+0x368>
+1802abda5: e8 4a 0b f1 ff              	callq	0x1801bc8f4 <PyMutex_Unlock>
+1802abdaa: 48 8b c3                    	movq	%rbx, %rax
+1802abdad: 48 8b 5c 24 38              	movq	0x38(%rsp), %rbx
+1802abdb2: 48 83 c4 20                 	addq	$0x20, %rsp
+1802abdb6: 5f                          	popq	%rdi
+1802abdb7: c3                          	retq

@@ -1,0 +1,21 @@
+{
+  "label": "s41-variants-green-v2",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_fixed_variants.py",
+    "tests/test_fixed_costs.py",
+    "tests/test_fixed_costs_aot.py",
+    "tests/test_prepared_priority.py",
+    "tests/test_prepared_order.py",
+    "tests/test_prepared_cache.py",
+    "tests/test_prepared_review_regressions.py",
+    "--basetemp",
+    "inplace/s41-variants-green-v2"
+  ],
+  "exit_code": 0,
+  "wall_s": 57.33273269998608,
+  "end": "2026-11-14T18:08:01.836999+00:00"
+}

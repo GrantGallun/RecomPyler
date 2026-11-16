@@ -1,3 +1,4 @@
+import array
 import copy
 import math
 import os
@@ -215,6 +216,115 @@ def many(n):
     return total
 
 
+def last_index(xs):
+    for i in range(len(xs)):
+        pass
+    return i
+
+
+def sign_of(a):
+    if a < 0:
+        s = -1
+    elif a > 0:
+        s = 1
+    return s
+
+
+def first_above(xs, k):
+    for x in xs:
+        if x > k:
+            found = x
+            break
+    else:
+        found = -1.0
+    return found
+
+
+def carried(n):
+    total = 0
+    i = 0
+    while i < n:
+        if i == 0:
+            prev = 0
+        else:
+            total += prev
+            prev = i
+        i += 1
+    else:
+        total += 1000
+    return total
+
+
+def largest_doubled(xs):
+    try:
+        best = xs[0]
+        for x in xs:
+            if x > best:
+                best = x
+    except IndexError:
+        best = -1.0
+    else:
+        best = best * 2.0
+    return best
+
+
+def bumped(flag, n):
+    if flag:
+        count = n
+    count += 1
+    return count
+
+
+registry = [None]
+
+
+class Shape:
+    def __init__(self, a):
+        self.a = a
+        self.b = a * 2
+        registry[0] = self
+        self.c = 0
+
+    def value(self):
+        return self.a + self.b + self.c
+
+
+class Square(Shape):
+    def __init__(self, a, d):
+        super().__init__(a)
+        self.d = d
+
+    def value(self):
+        return super().value() * 10 + self.d
+
+
+class Bare:
+    def __init__(self):
+        super().__init__()
+        self.x = 1.5
+
+
+def through_super(n):
+    total = 0
+    for i in range(n):
+        total += Square(i, 3).value() + Shape(i).value()
+    return total, Bare().x, registry[0].a
+
+
+def members(xs, ys, nodes, node):
+    n = 0
+    for y in ys:
+        if y in xs:
+            n += 1
+        if y not in xs:
+            n += 100
+    if node in nodes:
+        n += 10000
+    if None in nodes:
+        n += 100000
+    return n
+
+
 def scaled_limit(x):
     return x * LIMIT
 
@@ -237,6 +347,230 @@ def slices(values):
 
 def chained(a, b, c):
     return a < b <= c, (a if a > b else b)
+
+
+
+async def afib(n):
+    if n <= 1:
+        return n
+    return await afib(n - 1) + await afib(n - 2)
+
+
+def drive(coroutine):
+    try:
+        while True:
+            coroutine.send(None)
+    except StopIteration as stop:
+        return stop.value
+
+
+class Shape:
+    def __init__(self, size):
+        self.size = size
+
+    def area(self):
+        return self.size * self.size
+
+    def describe(self):
+        return self.area() + 0.5
+
+
+class Circle(Shape):
+    def __init__(self, size):
+        Shape.__init__(self, size)
+        self.turns = 1
+
+    def area(self):
+        return 3.0 * self.size * self.size
+
+
+class Square(Shape):
+    def __init__(self, size):
+        Shape.__init__(self, size)
+        self.corners = 4
+
+
+class Tally:
+    def __init__(self):
+        self.count = 0
+        self.last = None
+
+
+TALLY = Tally()
+VERBOSE = False
+FOUR = range(4)
+
+
+def shapes_total(shapes):
+    total = 0.0
+    for shape in shapes:
+        total += shape.describe()
+        if isinstance(shape, Circle):
+            TALLY.count += 1
+            TALLY.last = shape
+        if VERBOSE:
+            print("shape", shape)
+    return total
+
+
+def corners(shapes):
+    found = 0
+    for shape in shapes:
+        assert isinstance(shape, Square)
+        found += shape.corners
+    return found
+
+
+def make_shapes(n):
+    out = []
+    for i in range(n):
+        if i % 3 == 0:
+            out.append(Circle(i * 0.5))
+        elif i % 3 == 1:
+            out.append(Square(i * 0.5))
+        else:
+            out.append(Shape(i * 0.5))
+    return out
+
+
+def mixing(n):
+    acc = 0
+    for i in FOUR:
+        acc = (acc ^ (n * 31 + i)) & 0xffff | i
+    return acc, (n & 1) == 1
+
+
+
+class Arrow:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        if other.isSpot():
+            return Spot(self.x + other.x, self.y + other.y)
+        return Arrow(self.x + other.x, self.y + other.y)
+
+    def __sub__(self, other):
+        return Arrow(self.x - other.x, self.y - other.y)
+
+    def isSpot(self):
+        return False
+
+
+class Spot:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __sub__(self, other):
+        if other.isSpot():
+            return Arrow(self.x - other.x, self.y - other.y)
+        return Spot(self.x - other.x, self.y - other.y)
+
+    def isSpot(self):
+        return True
+
+
+Arrow.UNIT = Arrow(1, 0)
+
+
+class Board:
+    def __init__(self, width, colour):
+        self.cells = array.array("B", [0] * width)
+        for i in range(width):
+            self.cells[i] = 1
+        self.width = width
+        self.colour = colour
+        self.depth = 0
+        self.items = [(Spot(0, 0), 1.5), (Spot(2, 1), None)]
+
+    def paint(self, at, r, g, b):
+        self.cells[at] = max(0, min(255, int(r * 255) + int(g) + int(b)))
+
+
+def hit(t):
+    if t > 2:
+        return None
+    return t * 0.5
+
+
+def nearest(pairs):
+    best = None
+    for pair in pairs:
+        t = pair[1]
+        if t is not None and (best is None or t < best[1]):
+            best = pair
+    return best
+
+
+def guarded(board):
+    if board.depth > 2:
+        return (0, 0, 0)
+    try:
+        board.depth = board.depth + 1
+        found = nearest([(spot, hit(i)) for i, (spot, t) in enumerate_items(board.items) if t is None or t > 0])
+        if found is None:
+            return (0, 0, 0)
+        else:
+            (spot, t) = found
+            return (spot.x * t, 1, t)
+    finally:
+        board.depth = board.depth - 1
+
+
+def enumerate_items(items):
+    out = []
+    i = 0
+    for item in items:
+        out.append((i, item))
+        i += 1
+    return out
+
+
+def draw(board, base):
+    total = 0
+    moved = base + Arrow.UNIT - Spot(1, 1)
+    for at in range(board.width):
+        colour = guarded(board)
+        board.paint(at, *colour)
+        amount = 0
+        for spot, t in board.items:
+            if t is not None:
+                amount = amount + t
+        total = total + min(1, amount) + max(at, 0.25)
+    return total, moved.x, moved.y, board.colour
+
+
+
+class Pos:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+def pixel_sum(points, k):
+    # Int-or-float arithmetic whose int-ness never reaches Python: the result is an
+    # int made by int(), as raytrace's bytes are.
+    total = 0
+    for p in points:
+        v = p.x * k - p.y * k
+        w = v * -1
+        total += int(w * 0.5 + p.x * p.y)
+    return total
+
+
+def mixed_result(points):
+    acc = 0
+    for p in points:
+        acc = acc + p.x * p.y
+    return acc
+
+
+def mixed_written(points):
+    for p in points:
+        p.x = p.x * 2 + p.y
+    return len(points)
 
 
 @unittest.skipUnless(numba, "numba is not installed")
@@ -399,11 +733,195 @@ class RegionTests(unittest.TestCase):
             self.assertEqual(first[:4], second[:4])
             self.assertEqual(second[2:5], ["0", "True", "0"])
 
-    def test_functions_that_call_each_other_compile_without_the_cache(self):
-        # Numba's disk cache crashes when it reloads functions that call each other.
+    def test_recursion_reloads_from_the_disk_cache(self):
+        # Numba's disk cache crashes when it reloads functions that call each other,
+        # or a recursive function compiled for more than one set of types (as literal
+        # arguments cause). Groups that call each other are merged into one function,
+        # and recursive calls pass typed values; a second process must load it all.
         region = lift_region(count_even)
         self.assertEqual(region(10), 5)
-        self.assertFalse(region.latest.cached)
+        self.assertTrue(region.latest.cached)
+        self.assertEqual(len([name for name in vars(region.latest.module) if name.startswith("s0_")]), 1)
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            (folder / "calls.py").write_text(
+                "def is_even(n, flag):\n    if n == 0:\n        return True\n    return is_odd(n - 1, 0)\n\n"
+                "def is_odd(n, flag):\n    if n == 0:\n        return False\n    return is_even(n - 1, 1)\n\n"
+                "def depth(n, step):\n    if n <= 0:\n        return 0.5\n    return depth(n - 1, 2) + step\n\n"
+                "def both(n):\n    total = 0.0\n    for i in range(n):\n        if is_even(i, 0):\n"
+                "            total += depth(i, 1)\n    return total\n", encoding="utf-8")
+            code = ("import sys; sys.path[:0] = [sys.argv[1], sys.argv[2]]; import calls; "
+                    "from recompyler.heap import lift_region; region = lift_region(calls.both); "
+                    "print(region(40), region.fallback_calls, region.latest.cached, "
+                    "len(region.latest.run.stats.cache_misses))")
+            env = dict(os.environ, RECOMPYLER_CACHE=str(folder / "cache"), PYTHONWARNINGS="ignore")
+            src = str(Path(__file__).resolve().parents[1] / "src")
+            runs = [subprocess.run([sys.executable, "-c", code, tmp, src], capture_output=True, text=True, env=env,
+                                   timeout=300) for _ in range(2)]
+            for run in runs:
+                self.assertEqual(run.returncode, 0, run.stderr[-2000:])
+            first, second = (run.stdout.split() for run in runs)
+            self.assertEqual(first[0], second[0])
+            self.assertEqual(second[1:4], ["0", "True", "0"])
+
+    def test_regions_built_ahead_of_time_run_without_numba(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            (folder / "trees.py").write_text(
+                "class Node:\n    def __init__(self, key):\n        self.key = key\n        self.left = None\n"
+                "        self.right = None\n\n"
+                "    def insert(self, key):\n        if key < self.key:\n            if self.left is None:\n"
+                "                self.left = Node(key)\n            else:\n                self.left.insert(key)\n"
+                "        elif self.right is None:\n            self.right = Node(key)\n        else:\n"
+                "            self.right.insert(key)\n\n"
+                "def grow(root, keys):\n    for key in keys:\n        root.insert(key)\n    return root.key\n", encoding="utf-8")
+            src = str(Path(__file__).resolve().parents[1] / "src")
+            env = dict(os.environ, RECOMPYLER_CACHE=str(folder / "cache"), PYTHONWARNINGS="ignore")
+            build = ("import sys, json; sys.path[:0] = [sys.argv[1], sys.argv[2]]; import trees; "
+                     "from recompyler.heap import lift_region, build_regions; region = lift_region(trees.grow); "
+                     "region(trees.Node(5.0), [1.0, 7.5, 3.0]); "
+                     "print(json.dumps(build_regions([(('grow', 1), trees.grow, region)], sys.argv[1])))")
+            use = ("import sys, json; sys.path[:0] = [sys.argv[1], sys.argv[2]]; import trees; "
+                   "from recompyler.heap import lift_region; from recompyler.aot import load; "
+                   "section = json.load(open(sys.argv[3])); module = load(section); "
+                   "built = {d: getattr(module, e) for d, e in section['functions'][0]['exports'].items()}; "
+                   "region = lift_region(trees.grow, built); root = trees.Node(5.0); "
+                   "print(region(root, [2.0, 9.0, 1.0, 6.5]), root.left.key, root.right.left.key, "
+                   "region.fallback_calls, region.latest.ahead_of_time, 'numba' in sys.modules)")
+            made = subprocess.run([sys.executable, "-c", build, tmp, src], capture_output=True, text=True, env=env,
+                                  timeout=600)
+            self.assertEqual(made.returncode, 0, made.stderr[-2000:])
+            section = made.stdout.strip().splitlines()[-1]
+            self.assertIn("rcaotr_", section)
+            section_path = folder / "section.json"
+            section_path.write_text(section, encoding="utf-8")
+            run = subprocess.run([sys.executable, "-c", use, tmp, src, str(section_path)], capture_output=True, text=True,
+                                 env=env, timeout=300)
+            self.assertEqual(run.returncode, 0, run.stderr[-2000:])
+            self.assertEqual(run.stdout.split(), ["5.0", "2.0", "6.5", "0", "True", "False"])
+
+    def test_awaited_coroutines_run_as_calls(self):
+        region = lift_region(afib)
+        made = region(15)
+        self.assertEqual(drive(made), drive(afib(15)))
+        self.assertEqual(region.compiled_calls, 1, (region.problem, region.gave_up))
+        self.assertEqual(drive(region(0)), 0)
+
+    def test_subclasses_through_one_variable(self):
+        global VERBOSE
+        region = lift_region(shapes_total)
+        TALLY.count, TALLY.last = 0, None
+        shapes = make_shapes(9)
+        expected = shapes_total(copy.deepcopy(shapes))
+        TALLY.count, TALLY.last = 0, None
+        self.assertTrue(same(region(shapes), expected))
+        self.assertEqual(region.fallback_calls, 0, (region.problem, region.gave_up))
+        self.assertEqual(TALLY.count, 3)
+        self.assertIs(TALLY.last, shapes[6])
+        # A changed constant sends calls back to Python, which prints here.
+        VERBOSE = True
+        try:
+            import contextlib
+            import io
+            with contextlib.redirect_stdout(io.StringIO()) as out:
+                region(shapes)
+            self.assertIn("shape", out.getvalue())
+        finally:
+            VERBOSE = False
+
+    def test_isinstance_and_assert(self):
+        region = lift_region(corners)
+        squares = [Square(1.0), Square(2.0)]
+        self.assertEqual(region(squares), 8)
+        self.assertEqual(region.fallback_calls, 0, (region.problem, region.gave_up))
+        mixed = [Square(1.0), Circle(1.0)]
+        self.assertRaises(AssertionError, region, mixed)
+
+    def test_made_subclass_objects_come_back_as_their_classes(self):
+        region = lift_region(make_shapes)
+        got = region(7)
+        self.assertEqual(region.fallback_calls, 0, (region.problem, region.gave_up))
+        self.assertEqual([type(shape) for shape in got], [type(shape) for shape in make_shapes(7)])
+        self.assertTrue(same(got, make_shapes(7)))
+        self.assertEqual((got[0].turns, got[1].corners), (1, 4))
+        self.assertFalse(hasattr(got[2], "turns"))
+
+    def test_bitwise_and_a_global_range(self):
+        region = self.agree(mixing, 12345)
+        self.assertEqual(region(7), mixing(7))
+
+    def test_raytrace_shaped_code(self):
+        # Unrelated classes in one value, operators and class attributes on objects,
+        # numbers and tuples that may be None, tuples in attributes and lists,
+        # try/finally, a list comprehension, *args, array('B') and mixed min/max.
+        for base in (Arrow(2, 3), Arrow(0.5, 1)):
+            region = lift_region(draw)
+            board, expected_board = Board(6, (1, 0.5, 0)), Board(6, (1, 0.5, 0))
+            got, expected = region(board, base), draw(expected_board, copy.deepcopy(base))
+            self.assertTrue(same(got, expected), (got, expected, region.problem, region.gave_up))
+            self.assertEqual(region.fallback_calls, 0, (region.problem, region.gave_up))
+            self.assertEqual(board.cells, expected_board.cells)
+            self.assertTrue(same(board.items, expected_board.items))
+            self.assertEqual(board.depth, 0)
+            # Arrow.__add__ is compiled for an Arrow argument, where isSpot() is a
+            # constant False: Spot never meets Arrow in one value, so the two
+            # classes keep layouts of their own.
+            for members in region.latest.members.values():
+                self.assertFalse({Arrow, Spot} <= set(members), members)
+
+    def test_tuples_and_optional_numbers_round_trip(self):
+        region = self.agree(nearest, [(Spot(0, 0), 2.5), (Spot(1, 1), None), (Spot(2, 2), 0.5)])
+        self.assertIsNone(region([(Spot(0, 0), None)]))
+        self.agree(nearest, [])
+        self.agree(hit, 1)
+        self.agree(hit, 5)
+
+    def test_int_or_float_as_plain_floats_where_unseen(self):
+        points = [Pos(3, 4), Pos(2.5, -1), Pos(0, 7), Pos(-6, 0.25)]
+        region = self.agree(pixel_sum, points, 5)
+        self.assertTrue(region.latest.fast_mixed)
+        self.agree(pixel_sum, points, 0)
+        # An int product past 2**53 is exact in Python and not as a float: the call
+        # goes back to Python.
+        big = [Pos(2 ** 30 + 1, 3), Pos(1, 2)]
+        self.assertEqual(region(big, 2 ** 23 + 1), pixel_sum(big, 2 ** 23 + 1))
+        self.assertGreater(region.fallback_calls, 0)
+
+    def test_int_or_float_kept_exact_where_it_shows(self):
+        points = [Pos(3, 4), Pos(2.5, -1), Pos(0, -7)]
+        region = self.agree(mixed_result, points)
+        self.assertFalse(region.latest.fast_mixed)
+        self.assertIs(type(region([Pos(2, 3)])), int)
+        region = self.agree(mixed_written, [Pos(3, 4), Pos(2.5, -1), Pos(0, -7)])
+        self.assertFalse(region.latest.fast_mixed)
+
+    def test_locals_bound_on_some_paths(self):
+        for xs in ([1, 2, 3], []):
+            self.agree(last_index, xs, compiled=bool(xs))
+        for a in (3, -2):
+            self.agree(sign_of, a)
+        self.agree(sign_of, 0, compiled=False)
+        self.agree(first_above, [1.0, 5.0, 2.0], 3.0)
+        self.agree(first_above, [1.0], 3.0)
+        self.agree(carried, 5)
+        self.agree(carried, 0)
+        self.agree(largest_doubled, [1.0, 3.0, 2.0])
+        self.agree(largest_doubled, [], compiled=False)
+        self.agree(bumped, True, 4)
+        self.agree(bumped, False, 4, compiled=False)
+        region = lift_region(sign_of)
+        self.assertRaises(UnboundLocalError, region, 0)
+        self.assertEqual(region(5), 1)
+
+    def test_super_calls_and_an_object_stored_before_its_last_attribute(self):
+        self.agree(through_super, 4)
+
+    def test_membership_in_lists(self):
+        nodes = [Node(1), None, Node(2)]
+        self.agree(members, [1, 2, 3], [0, 2, 3, 7], nodes, nodes[2])
+        self.agree(members, [1.5, 2.0], [2, 3], [Node(1)], Node(1))
+        self.agree(members, [], [1, 2], [], Node(3))
+        self.agree(members, [1.0], [float("nan")], [], Node(3), compiled=False)
 
     def test_small_things(self):
         self.agree(swap, 1.5, 2)
@@ -425,6 +943,8 @@ class PythonLoaderTests(RegionTests):
         heap.NATIVE = True
 
     test_regions_load_from_the_disk_cache = None
+    test_recursion_reloads_from_the_disk_cache = None
+    test_regions_built_ahead_of_time_run_without_numba = None
 
 
 class NativeLoaderTests(unittest.TestCase):

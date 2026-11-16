@@ -1,0 +1,118 @@
+FFFFF                                                                    [100%]
+================================== FAILURES ===================================
+______ test_pure_numeric_field_uses_checked_types_and_reports_no_writes _______
+
+    def test_pure_numeric_field_uses_checked_types_and_reports_no_writes():
+>       a = analyze(compare, Cell(1.0, 2.0))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_program.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function compare at 0x000001C20F71F110>
+args = (<test_direct_program.Cell object at 0x000001C20F6F8AD0>,)
+
+    def analyze(fn, *args):
+        p = heap._Program(fn)
+        for name, value in zip(p.entry.params, args):
+            p.widen(p.entry.vars, name, heap._seed(p, value, {}))
+        p.compile(SourceOnly())
+>       return direct.from_program(p)
+               ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler.direct' has no attribute 'from_program'
+
+tests\test_direct_program.py:51: AttributeError
+_______________ test_pure_numeric_list_is_a_live_read_candidate _______________
+
+    def test_pure_numeric_list_is_a_live_read_candidate():
+>       a = analyze(total, [1.0, 2.0])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_program.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function total at 0x000001C20F8CD2D0>, args = ([1.0, 2.0],)
+
+    def analyze(fn, *args):
+        p = heap._Program(fn)
+        for name, value in zip(p.entry.params, args):
+            p.widen(p.entry.vars, name, heap._seed(p, value, {}))
+        p.compile(SourceOnly())
+>       return direct.from_program(p)
+               ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler.direct' has no attribute 'from_program'
+
+tests\test_direct_program.py:51: AttributeError
+_______________ test_actual_transitive_alias_write_blocks_field _______________
+
+    def test_actual_transitive_alias_write_blocks_field():
+        cell = Cell(1.0, 2.0)
+>       a = analyze(transitive, cell, cell)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_program.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function transitive at 0x000001C20F8CD430>
+args = (<test_direct_program.Cell object at 0x000001C20F83B890>, <test_direct_program.Cell object at 0x000001C20F83B890>)
+
+    def analyze(fn, *args):
+        p = heap._Program(fn)
+        for name, value in zip(p.entry.params, args):
+            p.widen(p.entry.vars, name, heap._seed(p, value, {}))
+        p.compile(SourceOnly())
+>       return direct.from_program(p)
+               ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler.direct' has no attribute 'from_program'
+
+tests\test_direct_program.py:51: AttributeError
+______________ test_actual_independent_field_remains_borrowable _______________
+
+    def test_actual_independent_field_remains_borrowable():
+>       a = analyze(independent, Cell(1.0, 2.0))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_program.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function independent at 0x000001C20F8CD4E0>
+args = (<test_direct_program.Cell object at 0x000001C20F958910>,)
+
+    def analyze(fn, *args):
+        p = heap._Program(fn)
+        for name, value in zip(p.entry.params, args):
+            p.widen(p.entry.vars, name, heap._seed(p, value, {}))
+        p.compile(SourceOnly())
+>       return direct.from_program(p)
+               ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler.direct' has no attribute 'from_program'
+
+tests\test_direct_program.py:51: AttributeError
+_________________ test_actual_list_growth_blocks_live_storage _________________
+
+    def test_actual_list_growth_blocks_live_storage():
+>       a = analyze(append, [1.0])
+            ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_program.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fn = <function append at 0x000001C20F8CD590>, args = ([1.0],)
+
+    def analyze(fn, *args):
+        p = heap._Program(fn)
+        for name, value in zip(p.entry.params, args):
+            p.widen(p.entry.vars, name, heap._seed(p, value, {}))
+        p.compile(SourceOnly())
+>       return direct.from_program(p)
+               ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler.direct' has no attribute 'from_program'
+
+tests\test_direct_program.py:51: AttributeError
+=========================== short test summary info ===========================
+FAILED tests/test_direct_program.py::test_pure_numeric_field_uses_checked_types_and_reports_no_writes
+FAILED tests/test_direct_program.py::test_pure_numeric_list_is_a_live_read_candidate
+FAILED tests/test_direct_program.py::test_actual_transitive_alias_write_blocks_field
+FAILED tests/test_direct_program.py::test_actual_independent_field_remains_borrowable
+FAILED tests/test_direct_program.py::test_actual_list_growth_blocks_live_storage
+5 failed in 0.24s

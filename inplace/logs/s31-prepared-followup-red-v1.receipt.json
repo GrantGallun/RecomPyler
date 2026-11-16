@@ -1,0 +1,17 @@
+{
+  "label": "s31-prepared-followup-red-v1",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "inplace/prepared-cache-preparation/test_prepared_review_regressions.py",
+    "-k",
+    "borrowed_unused or metaclass_equality or builtin_range",
+    "--basetemp",
+    "inplace/temp/s31-prepared-followup-red-v1"
+  ],
+  "exit_code": 1,
+  "wall_s": 8.762684899993474,
+  "end": "2026-11-14T06:43:58.809415+00:00"
+}

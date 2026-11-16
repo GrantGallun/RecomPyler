@@ -1,0 +1,106 @@
+FFFFFFFFF                                                                [100%]
+================================== FAILURES ===================================
+__________________ test_actual_runner_wrapper_is_registered ___________________
+
+wrapper = (<function work at 0x000001ED331931C0>, <function work at 0x000001ED33193060>)
+
+    def test_actual_runner_wrapper_is_registered(wrapper):
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:36: ImportError
+________ test_wrapper_mutation_breaks_equivalence_before_reuse[marker] ________
+
+wrapper = (<function work at 0x000001ED331CDB10>, <function work at 0x000001ED331CD9B0>)
+mutation = 'marker'
+
+    @pytest.mark.parametrize('mutation', ['marker', 'wrapped', 'code', 'fn-cell', 'prepare-code', 'state-cell', 'lifted'])
+    def test_wrapper_mutation_breaks_equivalence_before_reuse(wrapper, mutation):
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:45: ImportError
+_______ test_wrapper_mutation_breaks_equivalence_before_reuse[wrapped] ________
+
+wrapper = (<function work at 0x000001ED331CE8D0>, <function work at 0x000001ED331CE770>)
+mutation = 'wrapped'
+
+    @pytest.mark.parametrize('mutation', ['marker', 'wrapped', 'code', 'fn-cell', 'prepare-code', 'state-cell', 'lifted'])
+    def test_wrapper_mutation_breaks_equivalence_before_reuse(wrapper, mutation):
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:45: ImportError
+_________ test_wrapper_mutation_breaks_equivalence_before_reuse[code] _________
+
+wrapper = (<function work at 0x000001ED331CF8A0>, <function work at 0x000001ED331CF740>)
+mutation = 'code'
+
+    @pytest.mark.parametrize('mutation', ['marker', 'wrapped', 'code', 'fn-cell', 'prepare-code', 'state-cell', 'lifted'])
+    def test_wrapper_mutation_breaks_equivalence_before_reuse(wrapper, mutation):
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:45: ImportError
+_______ test_wrapper_mutation_breaks_equivalence_before_reuse[fn-cell] ________
+
+wrapper = (<function work at 0x000001ED33210670>, <function work at 0x000001ED33210510>)
+mutation = 'fn-cell'
+
+    @pytest.mark.parametrize('mutation', ['marker', 'wrapped', 'code', 'fn-cell', 'prepare-code', 'state-cell', 'lifted'])
+    def test_wrapper_mutation_breaks_equivalence_before_reuse(wrapper, mutation):
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:45: ImportError
+_____ test_wrapper_mutation_breaks_equivalence_before_reuse[prepare-code] _____
+
+wrapper = (<function work at 0x000001ED33211640>, <function work at 0x000001ED332114E0>)
+mutation = 'prepare-code'
+
+    @pytest.mark.parametrize('mutation', ['marker', 'wrapped', 'code', 'fn-cell', 'prepare-code', 'state-cell', 'lifted'])
+    def test_wrapper_mutation_breaks_equivalence_before_reuse(wrapper, mutation):
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:45: ImportError
+______ test_wrapper_mutation_breaks_equivalence_before_reuse[state-cell] ______
+
+wrapper = (<function work at 0x000001ED33212560>, <function work at 0x000001ED33212400>)
+mutation = 'state-cell'
+
+    @pytest.mark.parametrize('mutation', ['marker', 'wrapped', 'code', 'fn-cell', 'prepare-code', 'state-cell', 'lifted'])
+    def test_wrapper_mutation_breaks_equivalence_before_reuse(wrapper, mutation):
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:45: ImportError
+________ test_wrapper_mutation_breaks_equivalence_before_reuse[lifted] ________
+
+wrapper = (<function work at 0x000001ED332135E0>, <function work at 0x000001ED33213480>)
+mutation = 'lifted'
+
+    @pytest.mark.parametrize('mutation', ['marker', 'wrapped', 'code', 'fn-cell', 'prepare-code', 'state-cell', 'lifted'])
+    def test_wrapper_mutation_breaks_equivalence_before_reuse(wrapper, mutation):
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:45: ImportError
+_____________ test_forged_marker_does_not_make_a_trusted_wrapper ______________
+
+    def test_forged_marker_does_not_make_a_trusted_wrapper():
+>       from recompyler import _runner_wrapper as rw
+E       ImportError: cannot import name '_runner_wrapper' from 'recompyler' (D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\__init__.py)
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:62: ImportError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_actual_runner_wrapper_is_registered
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_wrapper_mutation_breaks_equivalence_before_reuse[marker]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_wrapper_mutation_breaks_equivalence_before_reuse[wrapped]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_wrapper_mutation_breaks_equivalence_before_reuse[code]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_wrapper_mutation_breaks_equivalence_before_reuse[fn-cell]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_wrapper_mutation_breaks_equivalence_before_reuse[prepare-code]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_wrapper_mutation_breaks_equivalence_before_reuse[state-cell]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_wrapper_mutation_breaks_equivalence_before_reuse[lifted]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_forged_marker_does_not_make_a_trusted_wrapper
+9 failed in 0.32s

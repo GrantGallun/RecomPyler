@@ -1,0 +1,100 @@
+test_invalid_rule_increment_marks_audit_invalid_without_masking_original (__main__.AttemptExceptions.test_invalid_rule_increment_marks_audit_invalid_without_masking_original) ... FAIL
+test_lost_profile_observer_preserves_original_and_invalidates_audit (__main__.AttemptExceptions.test_lost_profile_observer_preserves_original_and_invalidates_audit) ... FAIL
+test_native_entry_then_raise_records_rejection_and_zero_rule_delta (__main__.AttemptExceptions.test_native_entry_then_raise_records_rejection_and_zero_rule_delta) ... FAIL
+test_raise_before_entry_is_rejected_without_claiming_native (__main__.AttemptExceptions.test_raise_before_entry_is_rejected_without_claiming_native) ... FAIL
+test_success_still_requires_independently_observed_native_entry (__main__.AttemptExceptions.test_success_still_requires_independently_observed_native_entry) ... ok
+
+======================================================================
+FAIL: test_invalid_rule_increment_marks_audit_invalid_without_masking_original (__main__.AttemptExceptions.test_invalid_rule_increment_marks_audit_invalid_without_masking_original)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 94, in test_invalid_rule_increment_marks_audit_invalid_without_masking_original
+    self.assertEqual((row['native_entries'], row['rejected_attempts']), (1, 1))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, 0) != (1, 1)
+
+First differing element 0:
+0
+1
+
+- (0, 0)
++ (1, 1)
+
+======================================================================
+FAIL: test_lost_profile_observer_preserves_original_and_invalidates_audit (__main__.AttemptExceptions.test_lost_profile_observer_preserves_original_and_invalidates_audit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\capture_audit.py", line 184, in call
+    return original(region, *args, **kwargs)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 52, in __call__
+    return self.attempt(args)
+           ~~~~~~~~~~~~^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\capture_audit.py", line 135, in attempt
+    result = original(region, *args, **kwargs)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 50, in attempt
+    return True, self.latest.run()
+                 ~~~~~~~~~~~~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\capture_audit.py", line 122, in run
+    return native(*args, **kwargs)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 42, in native
+    raise failure
+Aborted: application sentinel
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 61, in assert_failure
+    region() if wrapped else region.attempt(())
+    ~~~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\capture_audit.py", line 186, in call
+    auditor.finish(region, 'region', context)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\capture_audit.py", line 78, in finish
+    assert sys.getprofile() is self.observer, 'Application replaced independent audit observer'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Application replaced independent audit observer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 102, in test_lost_profile_observer_preserves_original_and_invalidates_audit
+    self.assert_failure(region, failure, wrapped=True)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 63, in assert_failure
+    self.assertIs(actual, failure, 'Audit replaced the original application exception')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AssertionError('Application replaced independent audit observer') is not Aborted('application sentinel') : Audit replaced the original application exception
+
+======================================================================
+FAIL: test_native_entry_then_raise_records_rejection_and_zero_rule_delta (__main__.AttemptExceptions.test_native_entry_then_raise_records_rejection_and_zero_rule_delta)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 71, in test_native_entry_then_raise_records_rejection_and_zero_rule_delta
+    self.assertEqual(row['native_entries'], 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_raise_before_entry_is_rejected_without_claiming_native (__main__.AttemptExceptions.test_raise_before_entry_is_rejected_without_claiming_native)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\audit-exception-preparation\test_capture_audit_exceptions.py", line 86, in test_raise_before_entry_is_rejected_without_claiming_native
+    self.assertEqual((row['native_entries'], row['rejected_attempts']), (0, 1))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (0, 0) != (0, 1)
+
+First differing element 1:
+0
+1
+
+- (0, 0)
+?     ^
+
++ (0, 1)
+?     ^
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.003s
+
+FAILED (failures=4)

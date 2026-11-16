@@ -1,0 +1,169 @@
+FF.FFFFFF...........................................F...                 [100%]
+================================== FAILURES ===================================
+__________ test_actual_lift_default_and_math_guards_take_native_path __________
+
+    def test_actual_lift_default_and_math_guards_take_native_path():
+        unit=lift._Unit();unit.function(root)
+        assert unit.guards_hold() is True
+        attributes=[row[0] for row in unit.guards if type(row[0]) is not dict]
+>       assert attributes and all(type(space) is native.GuardAttribute for space in attributes)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_native_guard_shapes.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+.0 = <list_iterator object at 0x000002E1A0FCD8D0>
+
+>   assert attributes and all(type(space) is native.GuardAttribute for space in attributes)
+                                             ^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'recompyler._heap' has no attribute 'GuardAttribute'
+
+tests\test_native_guard_shapes.py:28: AttributeError
+___________ test_mro_guard_is_live_and_data_descriptor_wins_shadow ____________
+
+    def test_mro_guard_is_live_and_data_descriptor_wins_shadow():
+        class Base:pass
+        class Other:pass
+        class Record(Base):pass
+        saved=Record.__mro__;guards={0:('attr',Record,'__mro__',saved)}
+>       assert native.check_heap_guards(guards) is True
+E       AssertionError: assert None is True
+E        +  where None = <built-in function check_heap_guards>({0: ('attr', <class 'test_native_guard_shapes.test_mro_guard_is_live_and_data_descriptor_wins_shadow.<locals>.Record'>...s 'test_native_guard_shapes.test_mro_guard_is_live_and_data_descriptor_wins_shadow.<locals>.Base'>, <class 'object'>))})
+E        +    where <built-in function check_heap_guards> = native.check_heap_guards
+
+tests\test_native_guard_shapes.py:37: AssertionError
+___________ test_holder_owner_rebind_delete_none_and_uninitialized ____________
+
+    def test_holder_owner_rebind_delete_none_and_uninitialized():
+        a=types.ModuleType('a');b=types.ModuleType('b');a.value=1;b.value=2
+>       value=holder(a)
+              ^^^^^^^^^
+
+tests\test_native_guard_shapes.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+owner = <module 'a'>
+
+    def holder(owner):
+>       return native.GuardAttribute(owner)
+               ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler._heap' has no attribute 'GuardAttribute'
+
+tests\test_native_guard_shapes.py:19: AttributeError
+_____________ test_holder_type_is_immutable_and_not_subclassable ______________
+
+    def test_holder_type_is_immutable_and_not_subclassable():
+>       value=holder(math)
+              ^^^^^^^^^^^^
+
+tests\test_native_guard_shapes.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+owner = <module 'math' (built-in)>
+
+    def holder(owner):
+>       return native.GuardAttribute(owner)
+               ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler._heap' has no attribute 'GuardAttribute'
+
+tests\test_native_guard_shapes.py:19: AttributeError
+___________ test_holder_preserves_owner_gc_cycles_and_finalization ____________
+
+    def test_holder_preserves_owner_gc_cycles_and_finalization():
+        events=[]
+        class Owner:
+            def __del__(self):events.append('owner')
+>       owner=Owner();watch=weakref.ref(owner);value=holder(owner);owner.guard=value
+                                                     ^^^^^^^^^^^^^
+
+tests\test_native_guard_shapes.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+owner = <test_native_guard_shapes.test_holder_preserves_owner_gc_cycles_and_finalization.<locals>.Owner object at 0x000002E1A7599010>
+
+    def holder(owner):
+>       return native.GuardAttribute(owner)
+               ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler._heap' has no attribute 'GuardAttribute'
+
+tests\test_native_guard_shapes.py:19: AttributeError
+____ test_module_data_descriptor_shadow_is_not_a_raw_dict_value[__dict__] _____
+
+name = '__dict__'
+
+    @pytest.mark.parametrize('name',['__dict__','__class__'])
+    def test_module_data_descriptor_shadow_is_not_a_raw_dict_value(name):
+        module=types.ModuleType('spoof');sentinel=object();vars(module)[name]=sentinel
+>       value=holder(module)
+              ^^^^^^^^^^^^^^
+
+tests\test_native_guard_shapes.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+owner = <module 'spoof'>
+
+    def holder(owner):
+>       return native.GuardAttribute(owner)
+               ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler._heap' has no attribute 'GuardAttribute'
+
+tests\test_native_guard_shapes.py:19: AttributeError
+____ test_module_data_descriptor_shadow_is_not_a_raw_dict_value[__class__] ____
+
+name = '__class__'
+
+    @pytest.mark.parametrize('name',['__dict__','__class__'])
+    def test_module_data_descriptor_shadow_is_not_a_raw_dict_value(name):
+        module=types.ModuleType('spoof');sentinel=object();vars(module)[name]=sentinel
+>       value=holder(module)
+              ^^^^^^^^^^^^^^
+
+tests\test_native_guard_shapes.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+owner = <module 'spoof'>
+
+    def holder(owner):
+>       return native.GuardAttribute(owner)
+               ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler._heap' has no attribute 'GuardAttribute'
+
+tests\test_native_guard_shapes.py:19: AttributeError
+_______ test_missing_module_attribute_replays_late_hook_and_exceptions ________
+
+    def test_missing_module_attribute_replays_late_hook_and_exceptions():
+>       module=types.ModuleType('late');events=[];value=holder(module);sentinel=object()
+                                                        ^^^^^^^^^^^^^^
+
+tests\test_native_guard_shapes.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+owner = <module 'late'>
+
+    def holder(owner):
+>       return native.GuardAttribute(owner)
+               ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'recompyler._heap' has no attribute 'GuardAttribute'
+
+tests\test_native_guard_shapes.py:19: AttributeError
+__________ test_class_missing_attribute_and_metatype_data_descriptor __________
+
+    def test_class_missing_attribute_and_metatype_data_descriptor():
+        class Record:pass
+        assert heap_check(('attr',Record,'missing',None)) is True
+>       assert heap_check(('attr',Record,'__mro__',Record.__mro__)) is True
+E       AssertionError: assert None is True
+E        +  where None = heap_check(('attr', <class 'test_native_guards.test_class_missing_attribute_and_metatype_data_descriptor.<locals>.Record'>, '__mr...ass 'test_native_guards.test_class_missing_attribute_and_metatype_data_descriptor.<locals>.Record'>, <class 'object'>)))
+
+tests\test_native_guards.py:219: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_native_guard_shapes.py::test_actual_lift_default_and_math_guards_take_native_path
+FAILED tests/test_native_guard_shapes.py::test_mro_guard_is_live_and_data_descriptor_wins_shadow
+FAILED tests/test_native_guard_shapes.py::test_holder_owner_rebind_delete_none_and_uninitialized
+FAILED tests/test_native_guard_shapes.py::test_holder_type_is_immutable_and_not_subclassable
+FAILED tests/test_native_guard_shapes.py::test_holder_preserves_owner_gc_cycles_and_finalization
+FAILED tests/test_native_guard_shapes.py::test_module_data_descriptor_shadow_is_not_a_raw_dict_value[__dict__]
+FAILED tests/test_native_guard_shapes.py::test_module_data_descriptor_shadow_is_not_a_raw_dict_value[__class__]
+FAILED tests/test_native_guard_shapes.py::test_missing_module_attribute_replays_late_hook_and_exceptions
+FAILED tests/test_native_guards.py::test_class_missing_attribute_and_metatype_data_descriptor
+9 failed, 47 passed in 0.55s

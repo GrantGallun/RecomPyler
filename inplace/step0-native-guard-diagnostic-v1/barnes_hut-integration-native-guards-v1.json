@@ -1,0 +1,73 @@
+{
+  "report": {
+    "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+    "functions": [
+      {
+        "function": "advance_system",
+        "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+        "compiled_calls": 500,
+        "aot_calls": 500,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": true,
+        "ahead_of_time": true,
+        "aot_loaded": true,
+        "region": true
+      }
+    ],
+    "not_found": [],
+    "batches": {},
+    "batch_failures": {},
+    "exit_code": null
+  },
+  "hits": {
+    "heap:None": 500
+  },
+  "unsupported_single_guard_shapes": {
+    "('attr', ('type', 'str', 'tuple'))": 4
+  },
+  "profile": [
+    {
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\guard_rule_diagnostic.py",
+      "line": 27,
+      "name": "inspect_heap",
+      "calls": 500,
+      "self_s": 0.025033700000000002,
+      "cumulative_s": 0.059145300000000005
+    },
+    {
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-native-guards-v1\\src\\recompyler\\heap.py",
+      "line": 1166,
+      "name": "guards_hold",
+      "calls": 500,
+      "self_s": 0.008178600000000001,
+      "cumulative_s": 0.07585130000000001
+    },
+    {
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-native-guards-v1\\src\\recompyler\\lift.py",
+      "line": 187,
+      "name": "_has_finalizer",
+      "calls": 2010,
+      "self_s": 0.0015857,
+      "cumulative_s": 0.0026956000000000003
+    },
+    {
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-native-guards-v1\\src\\recompyler\\lift.py",
+      "line": 194,
+      "name": "_plain_allocation",
+      "calls": 2010,
+      "self_s": 0.0013968000000000001,
+      "cumulative_s": 0.0013968000000000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "name": "<built-in method recompyler._heap.check_heap_guards>",
+      "calls": 565,
+      "self_s": 0.0005847000000000001,
+      "cumulative_s": 0.0005847000000000001
+    }
+  ],
+  "diagnostic_only": true,
+  "profiler_overhead_retained": true
+}

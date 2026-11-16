@@ -1,0 +1,263 @@
+FFFFFFFFFFF                                                              [100%]
+================================== FAILURES ===================================
+__________ test_priority_is_stable_and_uses_paired_authenticated_ids __________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_priority_is_stable_and_uses_paired_authenticated_ids(artifact):
+     pc=artifact[0];index=opened(artifact)
+     priority={'wide-seed':0,'strict-seed':1,'legacy':2}
+     assert any(c['variant']=='wide-seed' for c in index.cores)
+>    assert [priority[c['variant']] for c in index.cores]==sorted(priority[c['variant']] for c in index.cores)
+E    assert [2, 1, 0] == [0, 1, 2]
+E      
+E      At index 0 diff: 2 != 0
+E      Use -v to get more diff
+
+tests\test_prepared_priority.py:21: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_450cb7248745bc16cb277d6e-1rcw39ob\rcaotr_450cb7248745bc16cb277d6e.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_450cb7248745bc16cb277d6e-1rcw39ob\rcaotr_450cb7248745bc16cb277d6e.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_______ test_priority_retry_keeps_full_checks_and_native_behavior[key] ________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FDF9D542B0>
+failure = 'key'
+
+    @pytest.mark.parametrize('failure',['key','loader','no-wide','tamper-wide','all'])
+    def test_priority_retry_keeps_full_checks_and_native_behavior(artifact,monkeypatch,failure):
+     pc,heap,module,source,section=artifact;index=opened(artifact)
+>    assert index.cores[0]['variant']=='wide-seed'
+E    AssertionError: assert 'legacy' == 'wide-seed'
+E      
+E      - wide-seed
+E      + legacy
+
+tests\test_prepared_priority.py:29: AssertionError
+______ test_priority_retry_keeps_full_checks_and_native_behavior[loader] ______
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FDF7B0E650>
+failure = 'loader'
+
+    @pytest.mark.parametrize('failure',['key','loader','no-wide','tamper-wide','all'])
+    def test_priority_retry_keeps_full_checks_and_native_behavior(artifact,monkeypatch,failure):
+     pc,heap,module,source,section=artifact;index=opened(artifact)
+>    assert index.cores[0]['variant']=='wide-seed'
+E    AssertionError: assert 'legacy' == 'wide-seed'
+E      
+E      - wide-seed
+E      + legacy
+
+tests\test_prepared_priority.py:29: AssertionError
+_____ test_priority_retry_keeps_full_checks_and_native_behavior[no-wide] ______
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FDFC934A70>
+failure = 'no-wide'
+
+    @pytest.mark.parametrize('failure',['key','loader','no-wide','tamper-wide','all'])
+    def test_priority_retry_keeps_full_checks_and_native_behavior(artifact,monkeypatch,failure):
+     pc,heap,module,source,section=artifact;index=opened(artifact)
+>    assert index.cores[0]['variant']=='wide-seed'
+E    AssertionError: assert 'legacy' == 'wide-seed'
+E      
+E      - wide-seed
+E      + legacy
+
+tests\test_prepared_priority.py:29: AssertionError
+___ test_priority_retry_keeps_full_checks_and_native_behavior[tamper-wide] ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FDFC8C2AD0>
+failure = 'tamper-wide'
+
+    @pytest.mark.parametrize('failure',['key','loader','no-wide','tamper-wide','all'])
+    def test_priority_retry_keeps_full_checks_and_native_behavior(artifact,monkeypatch,failure):
+     pc,heap,module,source,section=artifact;index=opened(artifact)
+>    assert index.cores[0]['variant']=='wide-seed'
+E    AssertionError: assert 'legacy' == 'wide-seed'
+E      
+E      - wide-seed
+E      + legacy
+
+tests\test_prepared_priority.py:29: AssertionError
+_______ test_priority_retry_keeps_full_checks_and_native_behavior[all] ________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FDFC8C3790>
+failure = 'all'
+
+    @pytest.mark.parametrize('failure',['key','loader','no-wide','tamper-wide','all'])
+    def test_priority_retry_keeps_full_checks_and_native_behavior(artifact,monkeypatch,failure):
+     pc,heap,module,source,section=artifact;index=opened(artifact)
+>    assert index.cores[0]['variant']=='wide-seed'
+E    AssertionError: assert 'legacy' == 'wide-seed'
+E      
+E      - wide-seed
+E      + legacy
+
+tests\test_prepared_priority.py:29: AssertionError
+___________ test_open_hashes_each_native_authenticated_record_once ____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FDFC8DB050>
+
+    def test_open_hashes_each_native_authenticated_record_once(artifact,monkeypatch):
+     pc,heap,module,source,section=artifact;calls=[];original=pc.core_id
+     def record(core):calls.append(core);return original(core)
+     monkeypatch.setattr(pc,'core_id',record)
+     index=opened(artifact)
+>    assert len(calls)==len(section['prepared']['cores'])
+E    AssertionError: assert 13 == 10
+E     +  where 13 = len([{'backend': 'heap', 'build_key': {'compiler': {'cflags': [], 'ldflags': [], 'llvmlite_build': {'metadata_sha256': '8f...ace\\temp\\s31-prepared-priority-red-v1\\prepared-real-aot0\\workload.py', 'line': 20, 'qualname': 'alias'}, ...}, ...])
+E     +  and   10 = len([{'backend': 'heap', 'build_key': {'compiler': {'cflags': [], 'ldflags': [], 'llvmlite_build': {'metadata_sha256': '8f...ace\\temp\\s31-prepared-priority-red-v1\\prepared-real-aot0\\workload.py', 'line': 20, 'qualname': 'alias'}, ...}, ...])
+
+tests\test_prepared_priority.py:67: AssertionError
+______________ test_misaligned_authority_ids_fail_closed[length] ______________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+case = 'length'
+
+    @pytest.mark.parametrize('case',['length','order'])
+    def test_misaligned_authority_ids_fail_closed(artifact,case):
+     pc,heap,module,source,section=artifact;old=opened(artifact)
+     ids=old._core_ids[:-1] if case=='length' else tuple(reversed(old._core_ids))
+     if case=='length':
+>     with pytest.raises(pc.PreparedMiss):pc.PreparedIndex(old.module,old.exports,old.cores,old.snapshot_key,old.build_key,_authority=pc._AUTHORITY,_sealed_ids=ids)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E     TypeError: PreparedIndex.__init__() got an unexpected keyword argument '_sealed_ids'
+
+tests\test_prepared_priority.py:75: TypeError
+______________ test_misaligned_authority_ids_fail_closed[order] _______________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+case = 'order'
+
+    @pytest.mark.parametrize('case',['length','order'])
+    def test_misaligned_authority_ids_fail_closed(artifact,case):
+     pc,heap,module,source,section=artifact;old=opened(artifact)
+     ids=old._core_ids[:-1] if case=='length' else tuple(reversed(old._core_ids))
+     if case=='length':
+      with pytest.raises(pc.PreparedMiss):pc.PreparedIndex(old.module,old.exports,old.cores,old.snapshot_key,old.build_key,_authority=pc._AUTHORITY,_sealed_ids=ids)
+     else:
+>     index=pc.PreparedIndex(old.module,old.exports,old.cores,old.snapshot_key,old.build_key,_authority=pc._AUTHORITY,_sealed_ids=ids)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E     TypeError: PreparedIndex.__init__() got an unexpected keyword argument '_sealed_ids'
+
+tests\test_prepared_priority.py:77: TypeError
+______ test_primitive_grammar_has_no_generator_membership_or_user_hooks _______
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FDFCC60850>
+
+    def test_primitive_grammar_has_no_generator_membership_or_user_hooks(artifact,monkeypatch):
+     pc=artifact[0];core=deepcopy(artifact[4]['prepared']['cores'][0])
+     def forbidden(*a):raise AssertionError('primitive grammar called generator membership')
+     with monkeypatch.context() as m:
+>     m.setattr(pc,'_is_type',forbidden);pc.validate_core(core)
+                                         ^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_priority.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\_prepared.py:549: in validate_core
+    primitive(core)
+src\recompyler\_prepared.py:544: in primitive
+    for k,x in v.items(): require(type(k) is str); primitive(x, depth+1)
+                                                   ^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:548: in primitive
+    else: require(_is_type(type(v), (type(None), str, bool, int, float)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (<class 'str'>, (<class 'NoneType'>, <class 'str'>, <class 'bool'>, <class 'int'>, <class 'float'>))
+
+>   def forbidden(*a):raise AssertionError('primitive grammar called generator membership')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: primitive grammar called generator membership
+
+tests\test_prepared_priority.py:83: AssertionError
+__ test_fresh_wide_native_export_preserves_overlapping_and_nullable_aliases ___
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...877969b1c05b1e8e3f942b815895f23ecb5017a37362cb64b584a64e1f3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-priority-red-v1/test_fresh_wide_native_export_0')
+
+    def test_fresh_wide_native_export_preserves_overlapping_and_nullable_aliases(artifact,tmp_path):
+     pc,heap,module,source,section=artifact
+     code=r'''
+    import importlib.util,json,sys
+    from pathlib import Path
+    from recompyler import heap,_prepared as pc
+    source=Path(sys.argv[1]);section=json.loads((source.parent/'section.json').read_text())
+    name='_prepared_cache_fixture_'+source.parent.name.replace('-','_')
+    spec=importlib.util.spec_from_file_location(name,source);module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module)
+    row=next(r for r in section['functions'] if r['function']=='alias')
+    index=pc.open_index(section,row,plan_snapshot={'mode':'standalone','functions':[],'plan':{'aot_regions':section}});assert index is not None,pc.last_miss()
+    wide=next(c for c in index.cores if c['variant']=='wide-seed');native=index.exports[wide['generated']['digest']]
+    events=[]
+    def observe(frame,event,arg):
+     if event=='c_call' and arg is native:events.append('native')
+    def forbidden(*a,**kw):raise AssertionError('analysis on prepared hit')
+    heap._Program.__init__=forbidden
+    for value in (module.Box(10),None):
+     region=heap.Region(module.alias,index.exports,prepared=index);shared=[]
+     sys.setprofile(observe)
+     try:result=region(value,shared,shared)
+     finally:sys.setprofile(None)
+     assert result[0] is result[1] is shared and result[2] is value and shared[0] is value
+     assert region.aot_calls==region.prepared_hits==1 and region.jit_calls==region.fallback_calls==0
+     assert region.latest.digest==wide['generated']['digest']
+    assert events==['native','native'],events
+    print('two actual wide AOT entries; exact overlapping/nullable aliases')
+    '''
+     child=tmp_path/'fresh.py';child.write_text(code)
+     completed=subprocess.run([sys.executable,str(child),str(source)],capture_output=True,text=True,env=os.environ.copy())
+>    assert completed.returncode==0,completed.stdout+completed.stderr
+E    AssertionError: Traceback (most recent call last):
+E        File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\s31-prepared-priority-red-v1\test_fresh_wide_native_export_0\fresh.py", line 19, in <module>
+E          try:result=region(value,shared,shared)
+E                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+E        File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\heap.py", line 7153, in __call__
+E          ok, value = self.attempt(args, kwargs)
+E                      ~~~~~~~~~~~~^^^^^^^^^^^^^^
+E        File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\heap.py", line 7050, in attempt
+E          program = self.program_for(args)
+E        File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\heap.py", line 6898, in program_for
+E          candidate = self._make_program()
+E        File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\heap.py", line 6953, in _make_program
+E          return _Program(self.original)
+E        File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\s31-prepared-priority-red-v1\test_fresh_wide_native_export_0\fresh.py", line 14, in forbidden
+E          def forbidden(*a,**kw):raise AssertionError('analysis on prepared hit')
+E                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E      AssertionError: analysis on prepared hit
+E      
+E    assert 1 == 0
+E     +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\in...                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: analysis on prepared hit\n').returncode
+
+tests\test_prepared_priority.py:126: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_priority.py::test_priority_is_stable_and_uses_paired_authenticated_ids
+FAILED tests/test_prepared_priority.py::test_priority_retry_keeps_full_checks_and_native_behavior[key]
+FAILED tests/test_prepared_priority.py::test_priority_retry_keeps_full_checks_and_native_behavior[loader]
+FAILED tests/test_prepared_priority.py::test_priority_retry_keeps_full_checks_and_native_behavior[no-wide]
+FAILED tests/test_prepared_priority.py::test_priority_retry_keeps_full_checks_and_native_behavior[tamper-wide]
+FAILED tests/test_prepared_priority.py::test_priority_retry_keeps_full_checks_and_native_behavior[all]
+FAILED tests/test_prepared_priority.py::test_open_hashes_each_native_authenticated_record_once
+FAILED tests/test_prepared_priority.py::test_misaligned_authority_ids_fail_closed[length]
+FAILED tests/test_prepared_priority.py::test_misaligned_authority_ids_fail_closed[order]
+FAILED tests/test_prepared_priority.py::test_primitive_grammar_has_no_generator_membership_or_user_hooks
+FAILED tests/test_prepared_priority.py::test_fresh_wide_native_export_preserves_overlapping_and_nullable_aliases
+11 failed in 6.52s

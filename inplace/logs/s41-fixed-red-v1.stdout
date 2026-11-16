@@ -1,0 +1,86 @@
+FF....F......                                                            [100%]
+================================== FAILURES ===================================
+________________ test_acyclic_call_does_not_walk_python_frames ________________
+
+    def test_acyclic_call_does_not_walk_python_frames():
+     region=warmed(compare,Record(1.0))
+     with patch.object(sys,'_getframe',forbidden):
+>     assert region(Record(2.0)) is True
+             ^^^^^^^^^^^^^^^^^^^
+
+tests\test_fixed_costs.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7195: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7123: in attempt
+    frame, depth = sys._getframe(), 0
+                   ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (), kwargs = {}
+
+>   def forbidden(*args,**kwargs):raise AssertionError('unneeded boundary operation executed')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: unneeded boundary operation executed
+
+tests\test_fixed_costs.py:21: AssertionError
+________________ test_readonly_scalar_result_needs_no_unloader ________________
+
+    def test_readonly_scalar_result_needs_no_unloader():
+     region=warmed(compare,Record(1.0))
+     with patch.object(heap,'_Unloader',forbidden):
+>     assert region(Record(-2.0)) is False
+             ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fixed_costs.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7195: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7159: in attempt
+    unloader = _Unloader(program, loader, F, I)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap._Program object at 0x0000026F9A05DA90>, <recompyler.heap._Loader object at 0x0000026F9A096FD0>, arra...              0,
+       ...,                    0,                    0,
+                          0], shape=(65536,)))
+kwargs = {}
+
+>   def forbidden(*args,**kwargs):raise AssertionError('unneeded boundary operation executed')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: unneeded boundary operation executed
+
+tests\test_fixed_costs.py:21: AssertionError
+______________ test_scalar_only_warm_entry_needs_no_graph_loader ______________
+
+    def test_scalar_only_warm_entry_needs_no_graph_loader():
+     region=warmed(scalar,2)
+     with patch.object(region,'load',forbidden),patch.object(heap,'_Unloader',forbidden),patch.object(sys,'_getframe',forbidden):
+>     assert region(4)==9
+             ^^^^^^^^^
+
+tests\test_fixed_costs.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7195: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7088: in attempt
+    loaded = self.load(program, args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap._Program object at 0x0000026F9A0FDBE0>, (4,))
+kwargs = {}
+
+>   def forbidden(*args,**kwargs):raise AssertionError('unneeded boundary operation executed')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: unneeded boundary operation executed
+
+tests\test_fixed_costs.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_fixed_costs.py::test_acyclic_call_does_not_walk_python_frames
+FAILED tests/test_fixed_costs.py::test_readonly_scalar_result_needs_no_unloader
+FAILED tests/test_fixed_costs.py::test_scalar_only_warm_entry_needs_no_graph_loader
+3 failed, 10 passed in 3.25s

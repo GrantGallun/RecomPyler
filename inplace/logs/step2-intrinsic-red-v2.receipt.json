@@ -1,0 +1,15 @@
+{
+  "label": "step2-intrinsic-red-v2",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_direct_safety.py::test_unproved_llvm_intrinsic_is_not_automatically_callback_free",
+    "--basetemp",
+    "inplace/step2-intrinsic-red-v2"
+  ],
+  "exit_code": 1,
+  "wall_s": 2.384430499980226,
+  "end": "2026-11-14T16:35:57.484785+00:00"
+}

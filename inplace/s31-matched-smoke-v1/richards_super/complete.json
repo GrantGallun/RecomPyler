@@ -1,0 +1,76 @@
+{
+  "name": "richards_super",
+  "complete": true,
+  "shared_script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+  "arguments": [],
+  "triples": [
+    {
+      "order": [
+        "plain",
+        "coverage",
+        "integrated"
+      ],
+      "wall_s": {
+        "plain": 0.6870820000185631,
+        "coverage": 0.4651169999851845,
+        "integrated": 0.5985495999921113
+      }
+    },
+    {
+      "order": [
+        "coverage",
+        "integrated",
+        "plain"
+      ],
+      "wall_s": {
+        "coverage": 0.4633882000052836,
+        "integrated": 0.6349536000052467,
+        "plain": 0.6975173999962863
+      }
+    },
+    {
+      "order": [
+        "integrated",
+        "plain",
+        "coverage"
+      ],
+      "wall_s": {
+        "integrated": 0.5875295999867376,
+        "plain": 0.692608699988341,
+        "coverage": 0.47985969998990186
+      }
+    }
+  ],
+  "medians_s": {
+    "plain": 0.692608699988341,
+    "coverage": 0.4651169999851845,
+    "integrated": 0.5985495999921113
+  },
+  "plain_over_coverage": 1.4891063969074507,
+  "plain_over_integrated": 1.1571450386024305,
+  "integrated_over_coverage": 1.2868796453605804,
+  "exact_behavior": true,
+  "exact_aot_calls": 20,
+  "jit_calls": 0,
+  "fallback_calls": 0,
+  "plan_key_counts": {
+    "coverage": {
+      "aot_regions": {
+        "module": "rcaotr_a2013bb8fceeb89bae7f47c2",
+        "functions": 1,
+        "export_keys": 3,
+        "seed_keys": 2
+      }
+    },
+    "integrated": {
+      "aot_regions": {
+        "module": "rcaotr_067af1df2206f5113e32a126",
+        "functions": 1,
+        "export_keys": 3,
+        "seed_keys": 2
+      }
+    }
+  },
+  "persisted_source_preparation_cache_key_count": null,
+  "cache_key_note": "Current sources expose no persisted prepared-source cache key/hit counter; none is inferred from a timing model."
+}

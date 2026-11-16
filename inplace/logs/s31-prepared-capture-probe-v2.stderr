@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\prepared-cache-preparation\probe_runtime_capture.py", line 23, in <module>
+    core=pc.capture(p,seed=seed,export='probe',plan_key={},build_key={})
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\_prepared.py", line 375, in capture
+    definitions = _definitions(refs, program)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\_prepared.py", line 363, in _definitions
+    values.append(dict(binding=recipe,key=_binding_key(value)))
+                                          ~~~~~~~~~~~~^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\src\recompyler\_prepared.py", line 310, in _binding_key
+    raise PreparedMiss('unsupported binding')
+recompyler._prepared_keys.PreparedMiss: unsupported binding

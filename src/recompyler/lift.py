@@ -10,8 +10,8 @@ The supported subset is numeric code: numbers, tuples, lists and array.array val
 branches, slices, top-level helper functions and numeric module constants. List and
 array.array arguments travel as NumPy copies and are written back after a successful call.
 
-Known limits: comparing an int above 2**53 with a float follows machine rules, and
-transcendental ``math`` functions are used only if a self-test shows they match here.
+Mixed int/float comparisons outside the exact binary64 integer domain fall back.
+Transcendental ``math`` functions are used only if a self-test shows they match here.
 """
 
 import array
@@ -31,11 +31,22 @@ import operator
 import os
 from pathlib import Path
 import platform
+import random
 import struct
 import sys
 import textwrap
 from time import perf_counter
 from types import FunctionType
+
+from . import facts as _facts
+from . import _text_owners
+
+try:
+    from . import _heap as _guard_native
+except ImportError:
+    _guard_native = None
+_NATIVE_GUARDS = (_guard_native.check_lift_guards
+                  if _guard_native is not None and getattr(_guard_native, "GUARD_CHECKS_VERSION", 0) == 1 else None)
 
 INT_MIN, INT_MAX = -(2**63), 2**63 - 1
 MAX_SEQUENCE = 32
@@ -56,10 +67,12 @@ DIFF_MINIMUM = 512
 # array.array type codes that hold floats or signed integers, and the scalar they read as.
 ARRAY_CODES = {"d": "f", "q": "i", "l": "i", "i": "i", "h": "i", "b": "i"}
 BINARY = {ast.Add: "_rc_add", ast.Sub: "_rc_sub", ast.Mult: "_rc_mul", ast.Div: "_rc_div",
-          ast.FloorDiv: "_rc_floordiv", ast.Mod: "_rc_mod", ast.LShift: "_rc_lshift", ast.RShift: "_rc_rshift"}
+          ast.FloorDiv: "_rc_floordiv", ast.Mod: "_rc_mod", ast.LShift: "_rc_lshift", ast.RShift: "_rc_rshift",
+          ast.BitAnd: "_rc_and", ast.BitOr: "_rc_or", ast.BitXor: "_rc_xor"}
 # In-place operators rebind a name. For a list that would differ from Python's in-place
 # update, so these variants accept numbers only.
-IN_PLACE = {**BINARY, ast.Add: "_rc_nadd", ast.Mult: "_rc_nmul"}
+IN_PLACE = {**BINARY, ast.Add: "_rc_nadd", ast.Mult: "_rc_nmul",
+            ast.Sub: "_rc_nsub", ast.BitAnd: "_rc_nand", ast.BitOr: "_rc_nor", ast.BitXor: "_rc_nxor"}
 BITWISE = (ast.BitAnd, ast.BitOr, ast.BitXor)
 UNARY = {ast.USub: "_rc_neg", ast.UAdd: "_rc_pos", ast.Invert: "_rc_inv"}
 COMPARE = (ast.Eq, ast.NotEq, ast.Lt, ast.LtE, ast.Gt, ast.GtE)
@@ -106,6 +119,8 @@ def _runtime_key():
     import numpy
 
     digest = hashlib.sha256(Path(__file__).read_bytes())
+    digest.update(Path(_facts.__file__).read_bytes())
+    digest.update(_text_semantics().encode())
     digest.update(f"{numba.__version__}|{numpy.__version__}|{sys.version}|{platform.machine()}".encode())
     return digest.hexdigest()
 
@@ -140,28 +155,26 @@ class _Fallback(Exception):
     """Raised by compiled code in place of the function's own exception."""
 
 
-def same(a, b):
-    """Exact equality: same types all the way down and bit-identical floats."""
-    if type(a) is not type(b):
-        return False
-    if type(a) is float:
-        return struct.pack("d", a) == struct.pack("d", b)
-    if type(a) in (tuple, list):
-        return len(a) == len(b) and all(map(same, a, b))
-    if type(a) is array.array:
-        return a.typecode == b.typecode and a.tobytes() == b.tobytes()
-    if type(a).__module__ != "builtins":
-        fields_a, fields_b = _object_fields(a), _object_fields(b)
-        if fields_a is not None and fields_b is not None:
-            return fields_a.keys() == fields_b.keys() and all(same(fields_a[k], fields_b[k]) for k in fields_a)
-    return a == b
+from ._comparison import ComparisonUnsupported, same
+
+
+def _text_semantics():
+    """Bind text typing and owner proofs into generated source and AOT digests."""
+    digest = hashlib.sha256()
+    for name in ("_text_owners.py", "_unicode_native.py", "provenance.py"):
+        digest.update(Path(__file__).with_name(name).read_bytes())
+    return digest.hexdigest()
+
+
+def _contains_text(value):
+    return type(value) is str or type(value) is tuple and any(map(_contains_text, value))
 
 
 def _constant_ok(value):
     kind = type(value)
     if kind is tuple:
         return bool(value) and all(map(_constant_ok, value))
-    return kind in (bool, float) or (kind is int and INT_MIN <= value <= INT_MAX)
+    return kind in (str, bool, float) or (kind is int and INT_MIN <= value <= INT_MAX)
 
 
 # Record type (a generated namedtuple class) -> _RecordInfo, read by the overloads.
@@ -187,6 +200,26 @@ class _NeedClass(Exception):
         self.cls = cls
 
 
+def _has_finalizer(cls):
+    # Builtin descriptors bypass hostile metaclass attribute access.
+    mro = type.__dict__["__mro__"].__get__(cls)
+    dictionaries = type.__dict__["__dict__"]
+    return any("__del__" in dictionaries.__get__(base) for base in mro)
+
+
+def _plain_allocation(cls):
+    mro = type.__dict__["__mro__"].__get__(cls)
+    dictionaries = type.__dict__["__dict__"]
+    for base in mro:
+        namespace = dictionaries.__get__(base)
+        if "__new__" in namespace:
+            allocator = namespace["__new__"]
+            if type(allocator) is staticmethod:
+                allocator = allocator.__func__
+            return allocator is object.__new__
+    return False
+
+
 def _record_problem(cls):
     """Why instances of ``cls`` cannot travel as records, or None."""
     # Only classes written in Python (heap types); C types such as re.Pattern may not
@@ -194,6 +227,10 @@ def _record_problem(cls):
     if (not isinstance(cls, type) or type(cls) is not type or cls.__module__ == "builtins"
             or not cls.__flags__ & (1 << 9)):
         return f"'{getattr(cls, '__name__', cls)}' is not a plain class"
+    if _has_finalizer(cls):
+        return f"'{cls.__name__}' has a finalizer"
+    if not _plain_allocation(cls):
+        return f"'{cls.__name__}' customises allocation"
     for klass in cls.__mro__[:-1]:
         if klass.__module__ == "builtins":
             return f"'{cls.__name__}' subclasses a built-in type"
@@ -205,10 +242,20 @@ def _record_problem(cls):
     return None
 
 
+def _python_constructor(cls):
+    """Only Python initializers have a source body and Python call metadata."""
+    init = getattr(cls, "__init__")
+    if type(init) is not FunctionType:
+        raise Unsupported(f"'{cls.__name__}.__init__': native constructor has no Python body")
+    return init
+
+
 def _init_fields(init):
     """Attributes ``__init__`` assigns on its first parameter, or None without source."""
+    if type(init) is not FunctionType:
+        return None
     try:
-        node = ast.parse(textwrap.dedent(inspect.getsource(init))).body[0]
+        node = ast.parse(textwrap.dedent(inspect.getsource(init.__code__))).body[0]
     except (OSError, TypeError, SyntaxError):
         return None
     if not isinstance(node, ast.FunctionDef) or not node.args.args:
@@ -709,6 +756,41 @@ class _Boundary:
 _NO_COPIES = _Boundary()
 
 
+# Native sets are working values only. Their table layout and element objects
+# must never cross the boundary; exact signed integers have callback-free keys.
+def _set_integer(value):
+    return type(value) is int and INT_MIN <= value <= INT_MAX
+
+
+def _set_source_safe(value):
+    pending, seen = [value], set()
+    budget = 4096
+    while pending:
+        budget -= 1
+        if budget < 0:
+            return False
+        item = pending.pop()
+        kind = type(item)
+        if kind is int:
+            if not _set_integer(item):
+                return False
+        elif kind in (bool, float, type(None)):
+            continue
+        elif kind in (tuple, list):
+            if id(item) in seen:
+                return False
+            seen.add(id(item))
+            if len(item) > budget:
+                return False
+            pending.extend(item)
+        elif kind is set:
+            if len(item) > budget or not all(map(_set_integer, item)):
+                return False
+        else:
+            return False
+    return True
+
+
 def _pack(value, boundary=None):
     kind = type(value)
     if value is None:
@@ -720,6 +802,13 @@ def _pack(value, boundary=None):
     if kind is int:
         if INT_MIN <= value <= INT_MAX:
             return value, "i"
+        raise _Reject
+    if kind is str:
+        return value, ("U",)
+    if kind is set:
+        if value and all(map(_set_integer, value)):
+            # Never execute a preparation probe on the application's mutable set.
+            return value.copy(), ("S",)
         raise _Reject
     if boundary is not None and (kind is list or kind is array.array):
         copied = boundary.copy(value)
@@ -759,6 +848,10 @@ def _holds_array(value):
 def _columns(values, shape, out):
     """Split rows that all have ``shape`` into one flat column per scalar, or reject."""
     if type(shape) is str:
+        if shape == "N":
+            if any(value is not None for value in values):
+                raise _Reject
+            return
         if set(map(type, values)) != {SCALARS[shape]}:
             raise _Reject
         out.append((shape, values))
@@ -870,9 +963,6 @@ def _check_flow(node, params, local_names):
                     read(test, inner)
             read(expr.elt, inner)
             return
-        if isinstance(expr, ast.Name) and isinstance(expr.ctx, ast.Load):
-            if expr.id in local_names and expr.id not in defined:
-                raise Unsupported(f"'{expr.id}' may be read before assignment at line {expr.lineno}")
         for child in ast.iter_child_nodes(expr):
             read(child, defined)
 
@@ -933,6 +1023,13 @@ def _check_flow(node, params, local_names):
                 if after is None:
                     return None, breaks
                 defined = after
+            elif isinstance(statement, ast.Try) and not statement.handlers and not statement.orelse:
+                after, inner_breaks = block(statement.body, set(defined))
+                final, final_breaks = block(statement.finalbody, set(defined))
+                breaks += inner_breaks + final_breaks
+                if after is None or final is None:
+                    return None, breaks
+                defined = after | final
             else:
                 read(statement, defined)
         return defined, breaks
@@ -943,7 +1040,11 @@ def _check_flow(node, params, local_names):
         raise Unsupported(f"'{node.name}' can finish without a return")
     if gives_value and any(map(_returns_none, returns)):
         raise Unsupported(f"'{node.name}' returns a value on some paths and None on others")
-    block(node.body, set(params))
+    from .flow import analyse, function_locals
+
+    unbound = analyse(node, params, set(local_names) & function_locals(node)).nodes
+    if unbound:
+        raise Unsupported(f"'{unbound[0].id}' may be read before assignment at line {unbound[0].lineno}")
 
 
 def _full_slice(node):
@@ -991,6 +1092,11 @@ def _fixed_lists(node, params, builtin):
     candidates = {name for name, values in creations.items()
                   if name not in params and len(values) == stores.get(name)
                   and all(_list_creation(value, builtin) for value in values)}
+
+    # A captured bound method retains its original owner across rebinding.
+    # Alias lowering below names the current array, so admit only bases that
+    # are initialized once; other cases keep ordinary method/rebind checks.
+    candidates.difference_update(base for base, _ in aliases.values() if stores.get(base) != 1)
 
     def method(func):
         if isinstance(func, ast.Attribute) and isinstance(func.value, ast.Name):
@@ -1119,7 +1225,8 @@ def _object_fills(node, params):
 class _Rewriter:
     """Copy one function body into the checked subset, raising on anything else."""
 
-    def __init__(self, unit, function, local_names, node, params):
+    def __init__(self, unit, function, local_names, node, params, proof=None, facts=None):
+        self.proof, self.facts = proof, facts or _facts.Facts()
         self.unit, self.namespace, self.locals = unit, function.__globals__, local_names
         self.builtins = function.__builtins__
         self.renames = []
@@ -1136,7 +1243,24 @@ class _Rewriter:
         def builtin(name):
             return name not in local_names and name not in self.namespace and self.builtins.get(name) is BUILTINS[name]
 
-        self.arrays, self.array_aliases = _fixed_lists(node, params, builtin) if unit.local_arrays else (set(), {})
+        self.arrays, self.array_aliases = self.facts.query('F2', 'fixed-lists',
+            lambda: _facts.Fact.proven(_fixed_lists(node, params, builtin) if unit.local_arrays else (set(), {}))).value
+        self.builtin = builtin
+        # Only an unconditional earlier initialization can supply a reusable
+        # buffer. _fixed_lists already proves that its identity never escapes.
+        self.array_initializations = {}
+        # A for-iterator can retain the old allocation after the name is rebound.
+        # Its hidden reference is live even though the list never escapes.
+        iterated = {loop.iter.id for loop in ast.walk(node)
+                    if isinstance(loop, ast.For) and isinstance(loop.iter, ast.Name)}
+        for statement in node.body:
+            if (isinstance(statement, ast.Assign) and len(statement.targets) == 1
+                    and isinstance(statement.targets[0], ast.Name)
+                    and statement.targets[0].id in self.arrays
+                    and statement.targets[0].id not in iterated):
+                self.array_initializations.setdefault(statement.targets[0].id, statement.lineno)
+        self.array_initializations = self.facts.query('F3', 'dead-before-rebind',
+            lambda: _facts.Fact.proven(self.array_initializations)).value
         # Lists made as ``[None] * n`` and filled with new objects of one class.
         self.fills, self.fill_class = _object_fills(node, self.params), {}
         for name in ("list", "range", "len"):
@@ -1246,15 +1370,23 @@ class _Rewriter:
 
     def create_array(self, name, value):
         """The NumPy form of a fixed-length local list's creation."""
+        initialized = self.array_initializations.get(name)
+        reuse = initialized is not None and value.lineno > initialized
+        buffer = ast.Name(id=self.local(name), ctx=ast.Load())
         if isinstance(value, ast.Call):
             bounds = [self.visit(item) for item in value.args[0].args]
             start, stop, step = ([ast.Constant(value=0), *bounds, ast.Constant(value=1)] if len(bounds) == 1
                                  else [*bounds, ast.Constant(value=1)] if len(bounds) == 2 else bounds)
-            return _call("_rc_arange", start, stop, step)
+            return (_call("_rc_arange_reuse", buffer, start, stop, step) if reuse
+                    else _call("_rc_arange", start, stop, step))
         if isinstance(value, ast.BinOp):
             repeated, count = ((value.left, value.right) if isinstance(value.left, ast.List)
                                else (value.right, value.left))
-            return _call("_rc_full", self.visit(count), ast.Constant(value=repeated.elts[0].value))
+            args = (self.visit(count), ast.Constant(value=repeated.elts[0].value))
+            return _call("_rc_full_reuse", buffer, *args) if reuse else _call("_rc_full", *args)
+        if reuse:
+            return _call("_rc_copy_reuse", ast.Name(id=self.local(name), ctx=ast.Load()),
+                         self.visit(value.value))
         return _call("_rc_copy", self.visit(value.value))
 
     def fill_info(self, name):
@@ -1294,9 +1426,8 @@ class _Rewriter:
             if call.keywords or any(isinstance(arg, ast.Starred) for arg in call.args):
                 raise Unsupported(f"keyword or starred argument at line {node.lineno}")
             args = [self.visit(arg) for arg in call.args]
-            init = getattr(info.cls, "__init__")
-            if init is not object.__init__:
-                args += self.defaults(init, len(args) + 1, call)
+            init = _python_constructor(info.cls)
+            args += self.defaults(init, len(args) + 1, call)
             values = _call(self.unit.constructor(info.cls, fields_only=True), *args)
             return ast.Expr(value=_call(self.unit.named("fill", self.fill_key(info)),
                                         self.visit(node.targets[0].value), self.visit(node.targets[0].slice), values))
@@ -1304,8 +1435,18 @@ class _Rewriter:
                 and node.targets[0].id in self.array_aliases):
             return ast.Pass()
         if len(node.targets) == 1 and isinstance(node.targets[0], ast.Name) and node.targets[0].id in self.arrays:
-            return ast.Assign(targets=[self.store(node.targets[0])],
-                              value=self.create_array(node.targets[0].id, node.value))
+            value = self.create_array(node.targets[0].id, node.value)
+            if isinstance(value, ast.Call) and value.func.id == "_rc_copy_reuse":
+                target, source = value.args[1:]
+                if self.proof is not None and id(node) in self.proof.copy_sites:
+                    return ast.Expr(value=_call("_rc_copy_into", target, source))
+                # Keep the existing owner bound on the borrowing fast path.
+                # Only a fresh-copy slow path needs NRT ownership replacement.
+                return ast.If(test=_call("_rc_copy_fits", target, source),
+                              body=[ast.Expr(value=_call("_rc_copy_into", target, source))],
+                              orelse=[ast.Assign(targets=[self.store(node.targets[0])],
+                                                 value=_call("_rc_copy", source))])
+            return ast.Assign(targets=[self.store(node.targets[0])], value=value)
         if self.method_alias(node):
             return ast.Pass()
         if len(node.targets) == 1 and isinstance(node.targets[0], ast.Name) and node.targets[0].id in self.promoted:
@@ -1330,13 +1471,16 @@ class _Rewriter:
                     # ``a[i:j] = a[k:l:-1]`` within one list, done without building
                     # the intermediate list when it is a reversal in place. The source
                     # bounds come first, as Python evaluates them first.
+                    if self.proof is not None and id(node) in self.proof.slice_sites:
+                        return ast.Expr(value=_call("_rc_proven_flip", self.visit(target.value), self.visit(source.slice.lower)))
                     parts = [ast.Constant(value=None) if part is None else self.visit(part)
                              for item in (source.slice, target.slice) for part in (item.lower, item.upper, item.step)]
                     return ast.Expr(value=_call("_rc_moveslice", self.visit(target.value), *parts))
                 # Numba would convert the elements of a list of another type.
                 store = ast.Subscript(value=self.visit(target.value), slice=self.visit(target.slice), ctx=ast.Store())
                 return ast.Assign(targets=[store], value=_call("_rc_samelist", self.visit(target.value), value))
-            return ast.Expr(value=_call("_rc_setitem", self.visit(target.value), self.visit(target.slice), value))
+            helper = "_rc_proven_setitem" if self.proof is not None and id(target) in self.proof.index_sites else "_rc_setitem"
+            return ast.Expr(value=_call(helper, self.visit(target.value), self.visit(target.slice), value))
         if len(node.targets) == 1:
             return self.unpack(node.targets[0], value)
         return ast.Assign(targets=[self.store(target) for target in node.targets], value=value)
@@ -1362,7 +1506,8 @@ class _Rewriter:
         value = self.operation(node, type(node.op), IN_PLACE, current, node.value)
         if isinstance(target, ast.Subscript):
             self.unit.writes = True
-            return ast.Expr(value=_call("_rc_setitem", self.visit(target.value), self.visit(target.slice), value))
+            helper = "_rc_proven_setitem" if self.proof is not None and id(target) in self.proof.index_sites else "_rc_setitem"
+            return ast.Expr(value=_call(helper, self.visit(target.value), self.visit(target.slice), value))
         return ast.Assign(targets=[self.store(target)], value=value)
 
     def plain_base(self, target):
@@ -1381,18 +1526,19 @@ class _Rewriter:
                 inner = call.args[1]
                 where = self.visit(inner.args[0]) if inner.args else ast.Constant(value=-1)
                 self.unit.writes = True
-                return ast.Expr(value=_call("_rc_rotate", ast.Name(id=self.local(base), ctx=ast.Load()),
+                helper = "_rc_proven_rotate" if self.proof is not None and id(call) in self.proof.rotate_sites else "_rc_rotate"
+                return ast.Expr(value=_call(helper, ast.Name(id=self.local(base), ctx=ast.Load()),
                                             self.visit(call.args[0]), where))
         if isinstance(call, ast.Call):
             return ast.Expr(value=self.visit(call))
         raise Unsupported(f"expression statement at line {node.lineno}")
 
     def visit_If(self, node):
-        return ast.If(test=self.visit(node.test), body=self.body(node.body), orelse=self.body(node.orelse))
+        return ast.If(test=self.condition(node.test), body=self.body(node.body), orelse=self.body(node.orelse))
 
     def visit_While(self, node):
         # Once a check has failed the result is discarded, so stop looping.
-        test = ast.BoolOp(op=ast.And(), values=[ast.UnaryOp(op=ast.Not(), operand=_flagged()), self.visit(node.test)])
+        test = ast.BoolOp(op=ast.And(), values=[ast.UnaryOp(op=ast.Not(), operand=_flagged()), self.condition(node.test)])
         return ast.While(test=test, body=self.body(node.body), orelse=self.body(node.orelse))
 
     def visit_For(self, node):
@@ -1487,8 +1633,10 @@ class _Rewriter:
         return ast.Name(id=name, ctx=ast.Load())
 
     def visit_Constant(self, node):
-        if type(node.value) is str or not _constant_ok(node.value):
+        if not _constant_ok(node.value):
             raise Unsupported(f"constant {node.value!r} at line {node.lineno}")
+        if _contains_text(node.value):
+            self.unit.native_unicode = True
         return ast.Constant(value=node.value)
 
     def visit_Attribute(self, node):
@@ -1503,14 +1651,14 @@ class _Rewriter:
         return _call(self.unit.named("getattr", node.attr), self.visit(base))
 
     def operation(self, node, op, table, left, right_node):
+        if self.proof is not None and id(node) in self.proof.operation_sites:
+            return ast.BinOp(left=left, op=op(), right=self.visit(right_node))
         if op is ast.Pow:
             if isinstance(right_node, ast.Constant) and type(right_node.value) is int and right_node.value == 2:
                 return _call("_rc_sq", left)
             self.unit.uses_pow = True
             return _call("_rc_pow", left, self.visit(right_node))
         right = self.visit(right_node)
-        if op in BITWISE:
-            return ast.BinOp(left=left, op=op(), right=right)
         if op not in table:
             raise Unsupported(f"operator {op.__name__} at line {node.lineno}")
         return _call(table[op], left, right)
@@ -1518,25 +1666,52 @@ class _Rewriter:
     def visit_BinOp(self, node):
         return self.operation(node, type(node.op), BINARY, self.visit(node.left), node.right)
 
+    def condition(self, node):
+        # Conditions observe truth only, never the identity of a selected value.
+        if isinstance(node, ast.BoolOp):
+            return ast.BoolOp(op=node.op, values=[self.condition(value) for value in node.values])
+        if isinstance(node, ast.UnaryOp) and isinstance(node.op, ast.Not):
+            return ast.UnaryOp(op=ast.Not(), operand=self.condition(node.operand))
+        return _call("_rc_truth", self.visit(node))
+
     def visit_UnaryOp(self, node):
-        operand = self.visit(node.operand)
         if isinstance(node.op, ast.Not):
-            return ast.UnaryOp(op=ast.Not(), operand=operand)
+            return ast.UnaryOp(op=ast.Not(), operand=self.condition(node.operand))
+        operand = self.visit(node.operand)
+        if self.proof is not None and id(node) in self.proof.operation_sites:
+            return ast.UnaryOp(op=node.op, operand=operand)
+        if isinstance(node.op, ast.Not):
+            return ast.UnaryOp(op=ast.Not(), operand=_call("_rc_truth", operand))
         if isinstance(node.op, ast.USub) and isinstance(operand, ast.Constant) and type(operand.value) is not bool:
             return ast.Constant(value=-operand.value)
         return _call(UNARY[type(node.op)], operand)
 
     def visit_BoolOp(self, node):
-        return ast.BoolOp(op=node.op, values=[self.visit(value) for value in node.values])
+        return ast.BoolOp(op=node.op, values=[_call("_rc_bool_value", self.visit(value)) for value in node.values])
 
     def visit_Compare(self, node):
         if not all(isinstance(op, COMPARE) for op in node.ops):
             raise Unsupported(f"comparison at line {node.lineno}")
-        return ast.Compare(left=self.visit(node.left), ops=node.ops,
-                           comparators=[self.visit(item) for item in node.comparators])
+        if len(node.ops) > 1 and all(isinstance(value, (ast.Name, ast.Constant)) for value in [node.left, *node.comparators]):
+            # Inert operands need no introduced temporary. Checked pairs retain
+            # short-circuiting and reject mixed native container comparisons by name.
+            names = {ast.Eq: "eq", ast.NotEq: "ne", ast.Lt: "lt", ast.LtE: "le", ast.Gt: "gt", ast.GtE: "ge"}
+            operands = [node.left, *node.comparators]
+            return ast.BoolOp(op=ast.And(), values=[_call("_rc_compare_" + names[type(op)], self.visit(left), self.visit(right))
+                              for op, left, right in zip(node.ops, operands, operands[1:])])
+        if len(node.ops) > 1:
+            # Keep the backend's own short-circuit chain bytecode. Introducing a
+            # walrus inside an overload argument breaks its call-result inference.
+            # Each numeric operand is checked in evaluation order; restricting all
+            # integer operands to the exact float domain also covers mixed joins.
+            return ast.Compare(left=_call("_rc_chain_operand", self.visit(node.left)),
+                               ops=node.ops, comparators=[_call("_rc_chain_operand", self.visit(value))
+                                                        for value in node.comparators])
+        names = {ast.Eq: "eq", ast.NotEq: "ne", ast.Lt: "lt", ast.LtE: "le", ast.Gt: "gt", ast.GtE: "ge"}
+        return _call("_rc_compare_" + names[type(node.ops[0])], self.visit(node.left), self.visit(node.comparators[0]))
 
     def visit_IfExp(self, node):
-        return ast.IfExp(test=self.visit(node.test), body=self.visit(node.body), orelse=self.visit(node.orelse))
+        return ast.IfExp(test=self.condition(node.test), body=self.visit(node.body), orelse=self.visit(node.orelse))
 
     def visit_Slice(self, node):
         parts = [None if part is None else self.visit(part) for part in (node.lower, node.upper, node.step)]
@@ -1544,6 +1719,8 @@ class _Rewriter:
 
     def visit_Subscript(self, node):
         value, index = self.visit(node.value), self.visit(node.slice)
+        if self.proof is not None and id(node) in self.proof.index_sites:
+            return _call("_rc_proven_getitem", value, index)
         # A slice of a list is a new list. Slices of array arguments, which would be
         # views, are rejected after type inference.
         if isinstance(index, ast.Slice):
@@ -1557,6 +1734,10 @@ class _Rewriter:
         if isinstance(index, ast.Constant) and type(index.value) is int:
             return _call("_rc_index", value, index)
         return _call("_rc_getitem", value, index)
+
+    def visit_Set(self, node):
+        self.unit.native_sets = True
+        return _call("_rc_set", ast.Tuple(elts=[self.visit(item) for item in node.elts], ctx=ast.Load()))
 
     def visit_List(self, node):
         return ast.List(elts=[self.visit(item) for item in node.elts], ctx=ast.Load())
@@ -1573,7 +1754,7 @@ class _Rewriter:
         self.renames.append({name: self.unit.fresh(name) for name in _target_names(generator.target)})
         try:
             inner = ast.comprehension(target=self.store(generator.target), iter=iterable,
-                                      ifs=[self.visit(test) for test in generator.ifs], is_async=0)
+                                      ifs=[self.condition(test) for test in generator.ifs], is_async=0)
             return ast.ListComp(elt=self.visit(node.elt), generators=[inner])
         finally:
             self.renames.pop()
@@ -1582,6 +1763,10 @@ class _Rewriter:
         if node.keywords or any(isinstance(arg, ast.Starred) for arg in node.args):
             raise Unsupported(f"keyword or starred argument at line {node.lineno}")
         func, args = node.func, [self.visit(arg) for arg in node.args]
+        if self.proof is not None and id(node) in self.proof.operation_sites and isinstance(func, ast.Attribute) and func.attr == "sin" and self.local(func.value.id) is None:
+            self.unit.guard(self.namespace, func.value.id)
+            self.unit.math_guards.add("sin")
+            return _call("_rc_proven_sin", *args)
         if isinstance(func, ast.Name) and func.id in self.methods:
             base, method = self.methods[func.id]
             return self.list_method(node, ast.Name(id=self.local(base), ctx=ast.Load()), method, args)
@@ -1611,9 +1796,8 @@ class _Rewriter:
                     return _call("_rc_" + known, *args)
                 if isinstance(value, type) and _record_problem(value) is None:
                     self.unit.guard(self.namespace, name)
-                    init = getattr(value, "__init__")
-                    if init is not object.__init__:
-                        args += self.defaults(init, len(args) + 1, node)
+                    init = _python_constructor(value)
+                    args += self.defaults(init, len(args) + 1, node)
                     return _call(self.unit.constructor(value), *args)
                 if isinstance(self.namespace[name], FunctionType):
                     # ``recompyler run`` swaps in wrappers; compile what they wrap.
@@ -1669,6 +1853,12 @@ class _Attribute:
         return getattr(self.owner, name, None)
 
 
+# Native holders preserve ordinary .get behavior while giving the optional
+# checker an immutable, header-defined owner representation.
+if _guard_native is not None and getattr(_guard_native, "GUARD_ATTRIBUTES_VERSION", 0) == 1:
+    _Attribute = _guard_native.GuardAttribute
+
+
 class _Unit:
     """The root function plus every helper and constant it reaches."""
 
@@ -1692,6 +1882,35 @@ class _Unit:
         self.uses_pow = False
         # Whether fixed-length local lists become NumPy arrays.
         self.local_arrays = True
+        self.rule_reports = []
+        self.native_sets = False
+        self.native_unicode = False
+        self.owner_sources, self.owner_infos = {}, {}
+        # This literal is metadata, not a native operation. Saved AOT wrappers
+        # regenerate it without importing Numba, invalidating stale text proofs.
+        self.definitions.append(ast.Assign(targets=[ast.Name(id="_rc_text_semantics", ctx=ast.Store())],
+                                           value=ast.Constant(_text_semantics())))
+
+    def owner_info(self, name):
+        if name not in self.owner_infos:
+            self.owner_infos[name] = _text_owners.analyze(*self.owner_sources[name])
+        return self.owner_infos[name]
+
+    def text_ready(self):
+        for name in self.owner_sources:
+            certificate = self.owner_info(name)
+            if not certificate.valid:
+                return False
+            if any(type(key) is not str for namespace in (certificate.globals, certificate.builtins) for key in namespace):
+                return False
+        # Equality does not preserve selected global/default/code owners.
+        return all(namespace.get(name) is value and (code is None or value.__code__ is code)
+                   for namespace, name, value, code in self.guards)
+
+    def text_entry(self, args):
+        return (_text_owners.inert_arguments(args)
+                and _text_owners.observers_clear(tuple(fn for fn, node in self.owner_sources.values()))
+                and self.text_ready())
 
     def named(self, family, name):
         """The module-level name for the overload of one attribute, method or class."""
@@ -1712,6 +1931,7 @@ class _Unit:
         value = namespace[name]
         if not _constant_ok(value):
             raise Unsupported(f"global '{name}' is not a numeric constant")
+        self.native_unicode |= _contains_text(value)
         key = id(namespace), name
         if key not in self.constants:
             self.constants[key] = self.fresh(name), value
@@ -1719,6 +1939,7 @@ class _Unit:
         return self.constants[key][0]
 
     def default(self, fn, index):
+        self.native_unicode |= _contains_text(fn.__defaults__[index])
         key = id(fn), "__defaults__", index
         if key not in self.constants:
             self.constants[key] = self.fresh(f"{fn.__name__}_default{index}"), fn.__defaults__[index]
@@ -1749,7 +1970,7 @@ class _Unit:
             raise Unsupported(f"'{fn.__name__}' has a closure, keyword-only arguments, *args or is a generator")
         self.guards.append(({"": fn}, "", fn, code))
         try:
-            tree = ast.parse(textwrap.dedent(inspect.getsource(fn)))
+            tree = ast.parse(textwrap.dedent(inspect.getsource(fn.__code__)))
         except (OSError, TypeError, SyntaxError) as exc:
             raise Unsupported(f"no source for '{fn.__name__}'") from exc
         node = tree.body[0]
@@ -1768,13 +1989,8 @@ class _Unit:
         if key in self.functions:
             return self.functions[key]
         info = self.records.register(cls)
-        init = getattr(cls, "__init__")
-        if init is object.__init__:
-            node = ast.FunctionDef(name="__init__", args=ast.arguments(
-                posonlyargs=[], args=[ast.arg(arg="self")], kwonlyargs=[], kw_defaults=[], defaults=[]),
-                body=[], decorator_list=[], lineno=1, col_offset=0)
-        else:
-            node = self.source(init)
+        init = _python_constructor(cls)
+        node = self.source(init)
         if node.args.posonlyargs or not node.args.args:
             raise Unsupported(f"'{cls.__name__}.__init__' has an unusual signature")
         me, params = node.args.args[0].arg, [arg.arg for arg in node.args.args[1:]]
@@ -1832,10 +2048,37 @@ class _Unit:
         _check_flow(node, params, local_names)
         if keep is not None:
             node.body = node.body[:keep]
+        original_node = copy.deepcopy(node)
         self.building.add(key)
-        body = _Rewriter(self, fn, local_names, node, params).body(node.body) + list(tail)
+        checked = _Rewriter(self, fn, local_names, node, params)
+        proof = _facts.FunctionFacts(node, params, checked.builtin, checked.arrays,
+                                     checked.array_aliases, fn.__globals__,
+                                     owner_initializations=checked.array_initializations)
+        body = checked.body(node.body) + list(tail)
+        self.rule_reports.append(proof.report())
+        if proof.index_sites or proof.operation_sites or proof.slice_sites or proof.rotate_sites or proof.copy_sites:
+            fast = _Rewriter(self, fn, local_names, node, params, proof, checked.facts).body(node.body) + list(tail)
+            guards = []
+            for guard_key, guard in sorted(proof.guards.items()):
+                mode, name, *parts = guard
+                value = ast.Name(id=name, ctx=ast.Load())
+                if mode == 'int':
+                    guards.append(_call('_rc_int_domain', value, *[ast.Constant(x) for x in parts]))
+                elif mode == 'even':
+                    guards.append(_call('_rc_even_extent', value))
+                elif mode == 'power':
+                    guards.append(_call('_rc_power_extent', value, ast.Constant(parts[0])))
+                elif mode in ('extent', 'array'):
+                    count = parts[0]
+                    bound = (_call('_rc_len', value) if count is None or count.startswith('len:')
+                             else ast.Name(id=count, ctx=ast.Load()))
+                    guards.append(_call('_rc_array_extent', value, bound))
+            test = ast.BoolOp(op=ast.And(), values=guards) if len(guards)>1 else guards[0] if guards else ast.Constant(True)
+            body = [ast.If(test=test, body=fast, orelse=body)]
         self.building.discard(key)
         mangled = self.functions[key] = self.fresh(label)
+        self.owner_sources[mangled] = fn, original_node
+        self.owner_info(mangled)
         arguments = ast.arguments(posonlyargs=[], args=[ast.arg(arg=name) for name in (STATUS, *params)],
                                   kwonlyargs=[], kw_defaults=[], defaults=[])
         self.definitions.append(ast.FunctionDef(name=mangled, args=arguments, body=body, decorator_list=[],
@@ -1857,6 +2100,12 @@ class _Unit:
                 [(namespace, name, lookup, BUILTINS[name])
                  for (_, _, name), (namespace, lookup) in self.builtin_guards.items()],
                 [(name, MATH[name]) for name in self.math_guards])
+        if self.records.infos and any(_has_finalizer(info.cls) or not _plain_allocation(info.cls) for info in self.records.infos.values()):
+            return False
+        if _NATIVE_GUARDS is not None:
+            answer = _NATIVE_GUARDS(checks, math.__dict__)
+            if answer is not None:
+                return answer
         plain, builtin, maths = checks
         for namespace, name, value, code in plain:
             current = namespace.get(name)
@@ -1874,8 +2123,13 @@ class _Unit:
     def _guards_hold_fully(self):
         for namespace, name, value, code in self.guards:
             current = namespace.get(name)
-            if current is not value and not (type(value) is not tuple and same(current, value)):
-                return False
+            if current is not value:
+                try:
+                    equivalent = type(value) is not tuple and same(current, value)
+                except ComparisonUnsupported:
+                    return False
+                if not equivalent:
+                    return False
             if code is not None and current.__code__ is not code:
                 return False
         return (all(namespace.get(name, lookup.get(name)) is BUILTINS[name]
@@ -2028,6 +2282,14 @@ def _install_column_rows():
     _COLUMN_ROWS_INSTALLED = True
 
 
+def _flat_list_type(value):
+    # The private prototype's opaque iterable is admitted only to scalar checked
+    # list helpers. It is never an Array and cannot inherit raw ndarray reads.
+    module = sys.modules.get("recompyler._flat")
+    cls = getattr(module, "FlatListType", None) if module is not None else None
+    return cls is not None and type(value) in (cls, getattr(module, "FlatBufferType", None))
+
+
 def _runtime():
     """Checked operations, compiled into the lifted code in place of raw operators."""
     import numpy as np
@@ -2037,6 +2299,7 @@ def _runtime():
     from numba.core import ir
     from numba.core.errors import NumbaError
     from numba.extending import overload
+    from . import _unicode_native
 
     limit, exact = 2.0**62, 2**53
 
@@ -2099,11 +2362,21 @@ def _runtime():
         stub.__name__ = name
         # Inlined at Numba's level: a record or array passed into a call that LLVM does
         # not inline costs reference-count updates on every call.
-        overload(stub, prefer_literal=prefer_literal, inline=inline or holds_record)(pick)
+        @functools.wraps(pick)
+        def checked(*args, **kwargs):
+            implementation = pick(*args, **kwargs)
+            if implementation is None:
+                # This is a type-domain decision, not a compiler failure. Keep
+                # backend exceptions distinct from a recognized missing lowering.
+                kinds = ", ".join(str(arg) for arg in args[1:])
+                raise Unsupported(f"native helper {name} does not support ({kinds})")
+            return implementation
+        checked.__signature__ = inspect.signature(pick)
+        overload(stub, prefer_literal=prefer_literal, inline=inline or holds_record)(checked)
         library[name] = stub
 
     dunders = {"_rc_add": ("__add__", "__radd__"), "_rc_nadd": ("__iadd__", "__add__", "__radd__"),
-               "_rc_sub": ("__sub__", "__rsub__"), "_rc_mul": ("__mul__", "__rmul__"),
+               "_rc_sub": ("__sub__", "__rsub__"), "_rc_nsub": ("__sub__", "__rsub__"), "_rc_mul": ("__mul__", "__rmul__"),
                "_rc_nmul": ("__imul__", "__mul__", "__rmul__"), "_rc_div": ("__truediv__", "__rtruediv__"),
                "_rc_floordiv": ("__floordiv__", "__rfloordiv__"), "_rc_mod": ("__mod__", "__rmod__"),
                "_rc_pow": ("__pow__", "__rpow__")}
@@ -2138,8 +2411,19 @@ def _runtime():
             # An array argument stands in for a list; NumPy would work elementwise.
             if isinstance(a, types.Array) or isinstance(b, types.Array):
                 return None
-            if (number(a) and number(b)) or (sequences and not (number(a) and number(b))):
+            if number(a) and number(b):
                 return plain
+            if isinstance(a, types.Set) and isinstance(b, types.Set):
+                if kind(a.dtype) == kind(b.dtype) == "i" and name in ("_rc_sub", "_rc_and", "_rc_or", "_rc_xor"):
+                    symbol = {"_rc_sub": "-", "_rc_and": "&", "_rc_or": "|", "_rc_xor": "^"}[name]
+                    return made(f"def impl(st, a, b):\n    return a {symbol} b\n")
+            if sequences:
+                if name == "_rc_add" and ((isinstance(a, types.List) and isinstance(b, types.List))
+                        or (isinstance(a, types.BaseTuple) and isinstance(b, types.BaseTuple))):
+                    return plain
+                if name == "_rc_mul" and ((isinstance(a, types.List) and integer(b))
+                        or (integer(a) and isinstance(b, types.List))):
+                    return plain
             return None
 
         register(name, pick)
@@ -2227,6 +2511,7 @@ def _runtime():
     binary("_rc_add", add, lambda st, a, b: a + b, sequences=True)
     binary("_rc_nadd", add, lambda st, a, b: a + b)
     binary("_rc_sub", sub, lambda st, a, b: a - b)
+    binary("_rc_nsub", sub, lambda st, a, b: a - b)
     binary("_rc_mul", mul, lambda st, a, b: a * b, sequences=True)
     binary("_rc_nmul", mul, lambda st, a, b: a * b)
     binary("_rc_div", div, float_div)
@@ -2234,6 +2519,84 @@ def _runtime():
     binary("_rc_mod", mod, float_mod)
     binary("_rc_lshift", lshift, None)
     binary("_rc_rshift", rshift, None)
+
+    binary("_rc_and", lambda st, a, b: a & b, None)
+    binary("_rc_or", lambda st, a, b: a | b, None)
+    binary("_rc_xor", lambda st, a, b: a ^ b, None)
+
+    binary("_rc_nand", lambda st, a, b: a & b, None)
+    binary("_rc_nor", lambda st, a, b: a | b, None)
+    binary("_rc_nxor", lambda st, a, b: a ^ b, None)
+
+    def set_literal(st, values):
+        out = {np.int64(0)}
+        out.clear()
+        for value in values:
+            out.add(value)
+        return out
+
+    register("_rc_set", lambda st, values: set_literal if isinstance(values, types.BaseTuple)
+             and len(values) > 0 and all(kind(t) == "i" for t in values.types) else None)
+
+    def truth(st, a):
+        return bool(a)
+
+    def sequence_truth(st, a):
+        return len(a) != 0
+
+    def pick_truth(st, a):
+        if number(a) or isinstance(a, (types.NoneType, types.Set)):
+            return truth
+        if _flat_list_type(a) or (record_of(a) is None and columns_of(a) is None
+                and isinstance(a, (types.BaseTuple, types.List, types.Array))):
+            return sequence_truth
+        return None
+
+    def integer_tuple(a):
+        return (record_of(a) is None and columns_of(a) is None and isinstance(a, types.BaseTuple)
+                and all(integer(item) or integer_tuple(item) for item in a.types))
+
+    def comparison_picker(symbol):
+        def pick(st, a, b):
+            if isinstance(a, types.Set) and isinstance(b, types.Set) and kind(a.dtype) == kind(b.dtype) == "i":
+                return made("def impl(st, a, b):\n    return a " + symbol + " b\n")
+            if number(a) and number(b):
+                checks = []
+                if integer(a) and kind(b) == "f":
+                    checks.append("a > 9007199254740992 or a < -9007199254740992")
+                if integer(b) and kind(a) == "f":
+                    checks.append("b > 9007199254740992 or b < -9007199254740992")
+                check = "" if not checks else ("    if " + " or ".join(checks) + ":\n        st[0] = 1\n        return False\n")
+                return made("def impl(st, a, b):\n" + check + "    return a " + symbol + " b\n")
+            if isinstance(a, types.NoneType) or isinstance(b, types.NoneType):
+                if symbol not in ("==", "!="):
+                    return None
+                if not (number(a) or isinstance(a, types.NoneType)) or not (number(b) or isinstance(b, types.NoneType)):
+                    return None
+                equal = isinstance(a, types.NoneType) and isinstance(b, types.NoneType)
+                result = equal if symbol == "==" else not equal
+                return made("def impl(st, a, b):\n    return " + str(result) + "\n")
+            if integer_tuple(a) and integer_tuple(b):
+                return made("def impl(st, a, b):\n    return a " + symbol + " b\n")
+            return None
+        return pick
+
+    for label, symbol in (("eq", "=="), ("ne", "!="), ("lt", "<"), ("le", "<="), ("gt", ">"), ("ge", ">=")):
+        register("_rc_compare_" + label, comparison_picker(symbol))
+
+    def chain_operand(st, a):
+        if a > 9007199254740992 or a < -9007199254740992:
+            st[0] = 1
+        return a
+
+    register("_rc_chain_operand", lambda st, a: chain_operand if integer(a) else
+             (lambda st, a: a) if kind(a) == "f" else None)
+
+    register("_rc_truth", pick_truth)
+    # A represented tuple is reconstructed on return. Restrict value-producing
+    # Boolean expressions to singleton kinds so argument identity cannot be lost.
+    register("_rc_bool_value", lambda st, a: (lambda st, a: a)
+             if isinstance(a, (types.Boolean, types.NoneType)) else None)
 
     unary_dunders = {"_rc_neg": "__neg__", "_rc_pos": "__pos__", "_rc_abs": "__abs__"}
 
@@ -2390,7 +2753,7 @@ def _runtime():
         if np.uint64(position) >= np.uint64(size):
             st[0] = 1
         else:
-            target[position] = value
+            target[np.uint64(position)] = value
 
     def getitem_or(default):
         def getitem(st, target, index):
@@ -2399,7 +2762,7 @@ def _runtime():
             if np.uint64(position) >= np.uint64(size):
                 st[0] = 1
                 return default
-            return target[position]
+            return target[np.uint64(position)]
 
         return getitem
 
@@ -2407,7 +2770,8 @@ def _runtime():
 
     def vector(target):
         """A list, or a one-dimensional array standing in for a list argument."""
-        return isinstance(target, types.List) or (isinstance(target, types.Array) and target.ndim == 1)
+        return (_flat_list_type(target) or isinstance(target, types.List)
+                or (isinstance(target, types.Array) and target.ndim == 1))
 
     # Numba's own list reads and stores check bounds and raise IndexError, which falls
     # back, so lists skip the extra check. Arrays and tuples have no such check.
@@ -2438,6 +2802,8 @@ def _runtime():
                     f"    return NT(np.int64(target[0][at]){items})\n", NT=info.nt)
 
     def pick_getitem(st, target, index):
+        if isinstance(target, types.UnicodeType) and integer(index):
+            return _unicode_native.character
         if record_of(target) is not None:
             return record_item(target, "__getitem__", 3)
         if kind(index) != "i":
@@ -2445,7 +2811,7 @@ def _runtime():
         if columns_of(target) is not None:
             return row_reader(columns_of(target))
         if isinstance(target, types.List):
-            return list_read
+            return defaults.get(kind(target.dtype), list_read)
         if vector(target) or isinstance(target, types.UniTuple):
             return defaults.get(kind(target.dtype))
         return None
@@ -2480,6 +2846,55 @@ def _runtime():
              if isinstance(target, types.List) and isinstance(value, types.List)
              and kind(target.dtype) == kind(value.dtype) else None)
     register("_rc_getitem", pick_getitem)
+
+    def int_domain(st, value, low, high):
+        return low <= value <= high
+    register('_rc_int_domain', lambda st, value, low, high: int_domain if kind(value)=='i'
+             else (lambda st, value, low, high: False), inline='always')
+    def even_extent(st, value):
+        return value % 2 == 0
+    register('_rc_even_extent', lambda st, value: even_extent if kind(value)=='i'
+             else (lambda st, value: False), inline='always')
+    def power_extent(st, value, divisor):
+        n = value // divisor
+        return 0 < value <= MAX_ARRAY and value % divisor == 0 and n > 0 and (n & (n-1)) == 0
+    register('_rc_power_extent', lambda st, value, divisor: power_extent if kind(value)=='i' and integer(divisor)
+             else (lambda st, value, divisor: False), inline='always')
+    def array_extent(st, target, count):
+        return 0 <= count <= len(target) <= MAX_ARRAY
+    register('_rc_array_extent', lambda st, target, count: array_extent
+             if isinstance(target, types.Array) and target.ndim==1 and kind(target.dtype) in ('i','f','b') and kind(count)=='i'
+             else (lambda st, target, count: False), inline='always')
+    def proven_read(st, target, index):
+        return target[np.uint64(index)]
+    def proven_write(st, target, index, value):
+        target[np.uint64(index)] = value
+    register('_rc_proven_getitem', lambda st, target, index: proven_read
+             if isinstance(target,types.Array) and target.ndim==1 and integer(index) else pick_getitem(st,target,index), inline='always')
+    checked_store = library['_rc_setitem']
+    register('_rc_proven_setitem', lambda st, target, index, value: proven_write
+             if isinstance(target,types.Array) and target.ndim==1 and kind(index)=='i' and kind(target.dtype)==kind(value)
+             else (lambda st,target,index,value: checked_store(st,target,index,value)), inline='always')
+    def proven_sin(st, value):
+        return math.sin(value)
+    register('_rc_proven_sin', lambda st, value: proven_sin if kind(value)=='f' else None, inline='always')
+    def proven_flip(st, target, end):
+        for k in range((end+1)//2):
+            other = end-k
+            value=target[np.uint64(k)]
+            target[np.uint64(k)]=target[np.uint64(other)]
+            target[np.uint64(other)]=value
+    register('_rc_proven_flip', lambda st,target,end: proven_flip
+             if isinstance(target,types.Array) and target.ndim==1 and integer(end) else None, inline='always')
+    def proven_rotate(st, target, i, j):
+        value=target[np.uint64(j)]
+        if i<j:
+            for k in range(j,i,-1):target[np.uint64(k)]=target[np.uint64(k-1)]
+        else:
+            for k in range(j,i):target[np.uint64(k)]=target[np.uint64(k+1)]
+        target[np.uint64(i)]=value
+    register('_rc_proven_rotate', lambda st,target,i,j: proven_rotate
+             if isinstance(target,types.Array) and target.ndim==1 and integer(i) and integer(j) else None, inline='always')
     _install_column_rows()
 
     constant_reads = {}
@@ -2494,8 +2909,11 @@ def _runtime():
         if not isinstance(index, types.IntegerLiteral):
             return None
         position = index.literal_value
-        # Numba checks list bounds itself and raises IndexError, so lists read directly.
-        if isinstance(target, (types.BaseTuple, types.List)):
+        if isinstance(target, types.UnicodeType):
+            return _unicode_native.character
+        if isinstance(target, types.List):
+            return defaults.get(kind(target.dtype), list_read)
+        if isinstance(target, types.BaseTuple):
             if isinstance(target, types.BaseTuple) and not -len(target) <= position < len(target):
                 return None
             if position not in constant_reads:
@@ -2527,6 +2945,12 @@ def _runtime():
 
     def getattr_for(field):
         def pick(st, obj):
+            module = sys.modules.get("recompyler._flat")
+            getter = getattr(module, "field_getter", None) if module is not None else None
+            if getter is not None:
+                impl = getter(obj, field)
+                if impl is not None:
+                    return impl
             info, position = field_position(obj, field)
             if info is None:
                 return None
@@ -2552,6 +2976,22 @@ def _runtime():
                 target = info.methods.get(method)
                 return made(f"def impl(st, obj, args):\n    return D(st, obj{', ' if spread else ''}{spread})\n",
                             D=target) if target else None
+            if isinstance(obj, types.UnicodeType):
+                return _unicode_native.method(method, args.types)
+            if isinstance(obj, types.Set) and kind(obj.dtype) == "i":
+                pure = {("copy", 0), ("difference", 1), ("intersection", 1), ("union", 1),
+                        ("symmetric_difference", 1), ("isdisjoint", 1), ("issubset", 1), ("issuperset", 1)}
+                if (method, count) in pure and (not count or isinstance(args[0], types.Set) and kind(args[0].dtype) == "i"):
+                    return made(f"def impl(st, obj, args):\n    return obj.{method}({spread})\n")
+                updates = {"update", "difference_update", "intersection_update", "symmetric_difference_update"}
+                if not obj.reflected:
+                    if method in updates and count == 1 and isinstance(args[0], types.Set) and kind(args[0].dtype) == "i":
+                        return made(f"def impl(st, obj, args):\n    obj.{method}(args[0])\n")
+                    if method == "clear" and count == 0:
+                        return made("def impl(st, obj, args):\n    obj.clear()\n")
+                    if method in {"add", "remove", "discard"} and count == 1 and kind(args[0]) == "i":
+                        return made(f"def impl(st, obj, args):\n    obj.{method}(args[0])\n")
+                return None
             if isinstance(obj, types.List):
                 calls = {("append", 1): ("_rc_append", spread), ("insert", 2): ("_rc_insert", spread),
                          ("pop", 1): ("_rc_pop", spread), ("pop", 0): ("_rc_pop", "-1")}
@@ -2717,7 +3157,7 @@ def _runtime():
         if j < 0 or j >= size:
             st[0] = 1
             return
-        value = target[j]
+        value = target[np.uint64(j)]
         shorter = size - 1
         if i < 0:
             i += shorter
@@ -2727,16 +3167,58 @@ def _runtime():
             i = shorter
         if i < j:
             for k in range(j, i, -1):
-                target[k] = target[k - 1]
+                target[np.uint64(k)] = target[np.uint64(k - 1)]
         else:
             for k in range(j, i):
-                target[k] = target[k + 1]
-        target[i] = value
+                target[np.uint64(k)] = target[np.uint64(k + 1)]
+        target[np.uint64(i)] = value
 
     register("_rc_arange", lambda st, a, b, c: arange if integer(a) and integer(b) and integer(c) else None)
     register("_rc_full", lambda st, n, value: full if integer(n) and number(value) else None)
+
+    def full_reuse(st, target, n, value):
+        count = max(np.int64(n), 0)
+        if len(target) != count:
+            return np.full(count, value)
+        for index in range(count):
+            target[np.uint64(index)] = value
+        return target
+
+    register("_rc_full_reuse", lambda st, target, n, value: full_reuse
+             if (isinstance(target, types.Array) and target.ndim == 1
+                 and kind(target.dtype) == kind(value) and integer(n)) else None)
+
+    checked_arange = library["_rc_arange"]
+
+    def arange_reuse(st, target, a, b, c):
+        # This guarded extent cannot overflow signed int64. Other ranges keep
+        # the existing allocator and its checked zero-step behavior.
+        if c == 1 and 0 <= a <= b and len(target) == b - a:
+            for index in range(b - a):
+                target[np.uint64(index)] = a + index
+            return target
+        return checked_arange(st, a, b, c)
+
+    register("_rc_arange_reuse", lambda st, target, a, b, c: arange_reuse
+             if (isinstance(target, types.Array) and target.ndim == 1
+                 and target.dtype == types.int64 and all(map(integer, (a, b, c)))) else None)
     register("_rc_copy", lambda st, source: (lambda st, source: source.copy())
              if isinstance(source, types.Array) else None)
+
+    def copy_into(st, target, source):
+        for index in range(len(source)):
+            target[np.uint64(index)] = source[np.uint64(index)]
+
+    def same_copy_kind(target, source):
+        return (isinstance(target, types.Array) and isinstance(source, types.Array)
+                and target.ndim == source.ndim == 1 and target.dtype == source.dtype)
+
+    register("_rc_copy_fits", lambda st, target, source:
+             (lambda st, target, source: len(target) == len(source)) if same_copy_kind(target, source)
+             else (lambda st, target, source: False), inline="always")
+    register("_rc_copy_into", lambda st, target, source: copy_into
+             if same_copy_kind(target, source) else None, inline="always")
+
     register("_rc_rotate", lambda st, target, i, j: rotate if isinstance(target, types.Array)
              and integer(i) and integer(j) else None)
 
@@ -2757,9 +3239,9 @@ def _runtime():
             return
         i, j = 0, start
         while i < j:
-            value = target[i]
-            target[i] = target[j]
-            target[j] = value
+            value = target[np.uint64(i)]
+            target[np.uint64(i)] = target[np.uint64(j)]
+            target[np.uint64(j)] = value
             i += 1
             j -= 1
 
@@ -2785,6 +3267,46 @@ def _runtime():
         annotation = result.type_annotation
         types_of = annotation.typemap
         merged = set()
+
+        def contains_set(ty):
+            return (isinstance(ty, types.Set)
+                    or isinstance(ty, types.Optional) and contains_set(ty.type)
+                    or isinstance(ty, types.BaseTuple) and any(map(contains_set, ty.types))
+                    or isinstance(ty, (types.List, types.ListType)) and contains_set(ty.dtype))
+
+        if contains_set(result.signature.return_type):
+            # A fresh Python set with the same membership can have different
+            # table/finger state. Caller mutations can expose that difference.
+            return True
+
+        set_helpers = {library[name] for name in ("_rc_sub", "_rc_and", "_rc_or", "_rc_xor", "_rc_truth", "_rc_len",
+                       "_rc_compare_eq", "_rc_compare_ne", "_rc_compare_lt", "_rc_compare_le", "_rc_compare_gt", "_rc_compare_ge")}
+        set_methods = {"copy", "difference", "intersection", "union", "symmetric_difference", "isdisjoint", "issubset", "issuperset",
+                       "add", "remove", "discard", "clear", "update", "difference_update", "intersection_update", "symmetric_difference_update"}
+        for block in annotation.blocks.values():
+            for statement in block.body:
+                if isinstance(statement, (ir.SetItem, ir.StaticSetItem, ir.SetAttr)) and contains_set(types_of.get(statement.value.name)):
+                    return True
+                if not isinstance(statement, ir.Assign) or not isinstance(statement.value, ir.Expr):
+                    continue
+                value = statement.value
+                if value.op == "getiter" and contains_set(types_of.get(value.value.name)):
+                    return True
+                if value.op == "call" and any(contains_set(types_of.get(arg.name)) for arg in value.args):
+                    key = getattr(types_of.get(value.func.name), "typing_key", None)
+                    receiver = len(value.args) > 1 and isinstance(types_of.get(value.args[1].name), types.Set)
+                    argument_types = [types_of.get(arg.name) for arg in value.args]
+                    direct_sets = all(not contains_set(ty) or isinstance(ty, types.Set) for ty in argument_types)
+                    method_args = argument_types[2] if len(argument_types) == 3 else None
+                    method_values = (isinstance(method_args, types.BaseTuple)
+                                     and all(not contains_set(ty) or isinstance(ty, types.Set) for ty in method_args.types))
+                    allowed = (direct_sets and (
+                        key in (len, bool) and isinstance(argument_types[0], types.Set)
+                        or key in set_helpers and receiver)
+                        or receiver and method_values and getattr(key, "__name__", "") in {
+                            "_rc_method__" + name for name in set_methods})
+                    if not allowed:
+                        return True
 
         def is_array(variable):
             return isinstance(variable, ir.Var) and isinstance(types_of.get(variable.name), types.Array)
@@ -2828,6 +3350,12 @@ def _runtime():
                     continue
                 value, sources = statement.value, []
                 if isinstance(value, ir.Expr):
+                    if value.op == "getiter" and isinstance(types_of.get(value.value.name), types.Set):
+                        return True
+                    if value.op == "call":
+                        key = getattr(types_of.get(value.func.name), "typing_key", None)
+                        if key in (list, enumerate, iter, tuple) and any(isinstance(types_of.get(arg.name), types.Set) for arg in value.args):
+                            return True
                     # A record is a namedtuple to Numba, but indexing, measuring, comparing
                     # or testing one would follow tuple rules, not the class's.
                     if value.op in ("binop", "inplace_binop") and (is_record(value.lhs) or is_record(value.rhs)):
@@ -3074,6 +3602,7 @@ class Lifted:
                         if arg.arg not in read]
         self._flag = np.zeros(1, dtype=np.uint8)
         self.compiled_calls = self.fallback_calls = 0
+        self.problem = None
         self.gpu_note = None
 
     def _build(self):
@@ -3128,12 +3657,14 @@ class Lifted:
             if changed:
                 self._build()
 
-    def _load(self, decorate, cache=False):
+    def _load(self, decorate, cache=False, build=True):
         """Run the generated module and compile each function with ``decorate``.
 
         With ``cache``, the module is written to a file named after a hash of its
         source, constants and the runtime, so Numba can keep the machine code on disk
         and a later run loads it instead of compiling. A changed value gives a new file.
+        ``build`` is False for a second copy of the same module (the GPU's device
+        functions), which keeps the verdicts saved for the main build.
         """
         scope = {name: value for name, value in self._library.items() if name != "_named"}
         scope.update(self._unit.constants.values())
@@ -3141,7 +3672,8 @@ class Lifted:
             scope[alias] = self._library["_named"](family, name)
         scope["_rc_Fallback"] = _Fallback
         path = self._module_file() if cache else None
-        self._verdicts, self._verdict_file = {}, None
+        if build:
+            self._verdicts, self._verdict_file = {}, None
         if path is not None:
             self._verdict_file = path.with_suffix(".verdicts.json")
             try:
@@ -3189,6 +3721,19 @@ class Lifted:
         except OSError:
             pass
 
+    def _binding_text(self):
+        # Record registry tokens contain a process address. Bind semantic recipes
+        # to their stable class descriptor, leaving method/slice names intact.
+        tokens = {info.token: repr((position, info.cls.__module__, info.cls.__qualname__))
+                  for position, info in enumerate(self._records.infos.values())}
+        bindings = []
+        for (family, name), alias in self._unit.names.items():
+            if family in ("make", "blank", "fill"):
+                token, separator, kinds = name.partition("|")
+                name = tokens.get(token, token) + separator + kinds
+            bindings.append((family, name, alias))
+        return repr(sorted(bindings))
+
     def _name_records(self):
         """Name this build's record classes after everything their compiled code
         depends on: the generated source, the constants, and each class's attributes,
@@ -3205,7 +3750,8 @@ class Lifted:
         described = [(info.cls.__module__, info.cls.__qualname__, info.fields, sorted(info.boxed), info.kinds)
                      for info in infos]
         constants = sorted((name, _stable(value)) for name, value in self._unit.constants.values())
-        stem = hashlib.sha256("\n".join((self.source, repr(constants), repr(described))).encode()).hexdigest()[:16]
+        stem = hashlib.sha256("\n".join((self.source, repr(constants), repr(described),
+                                         self._binding_text())).encode()).hexdigest()[:16]
         classes = tuple(info.cls for info in infos)
         issued = _ISSUED.setdefault(stem, [])
         for number, known in enumerate(issued):
@@ -3224,7 +3770,7 @@ class Lifted:
             return None
         constants = sorted((name, _stable(value)) for name, value in self._unit.constants.values())
         digest = hashlib.sha256("\n".join((self.source, repr(constants), self._record_text,
-                                           _runtime_key())).encode()).hexdigest()
+                                           self._binding_text(), _runtime_key())).encode()).hexdigest()
         path = folder / f"rc_{digest[:32]}.py"
         try:
             _write_once(path, self.source + "\n")
@@ -3241,9 +3787,21 @@ class Lifted:
     def _prepare(self, shape, packed):
         if len(self._shapes) >= MAX_SHAPES:
             return False
+        self.problem = None
+        text = self._unit.native_unicode or _has(shape, "U")
+        if text and not self._unit.text_ready():
+            self.problem = "text unit lacks a read-only owner certificate"
+            return False
         before = {(id(item), signature) for item in self._dispatchers for signature in item.overloads}
         try:
             self._run(packed)
+        except Unsupported as exc:
+            if self._retype():
+                self._save_verdict("retype", ["".join(info.kinds) for info in self._records.infos.values()])
+                self._build()
+                return self._prepare(shape, packed)
+            self.problem = str(exc)
+            return False
         except self._compile_error:
             if self._retype():
                 # Saved beside this build's module, so a later process starts from
@@ -3251,6 +3809,8 @@ class Lifted:
                 self._save_verdict("retype", ["".join(info.kinds) for info in self._records.infos.values()])
                 self._build()
                 return self._prepare(shape, packed)
+            if any(type(value) is set for value in packed) or self._unit.native_sets:
+                self.problem = "native set use has no supported order-independent typing"
             return False
         except Exception:
             pass
@@ -3265,13 +3825,20 @@ class Lifted:
                     # the verdict saved when this signature was compiled and checked.
                     saved = self._verdicts.get(key)
                     if saved is None or saved == "unstable":
+                        self.problem = "native type, ownership or traversal guard declined the signature"
                         return False
                     verdict = set() if saved == "stable" else set(saved)
                 else:
                     verdict = self._unstable(result)
+                    if text:
+                        from numba import types
+                        if not _text_owners.safe(self._unit.owner_info(name), result.signature,
+                                                 result.type_annotation.typemap, types):
+                            verdict = True
                     self._save_verdict(key, "unstable" if verdict is True else sorted(verdict) if verdict else "stable")
                     self._save_verdict(f"{key}|gpu", bool(self._gpu_unsafe(result)))
                 if verdict is True:
+                    self.problem = "native type, ownership or traversal guard declined the signature"
                     return False
                 if verdict:
                     merged.setdefault(self._owners[name], set()).update(verdict)
@@ -3308,6 +3875,18 @@ class Lifted:
         return None
 
     def _pack_call(self, args):
+        text = self._unit.native_unicode
+        if text:
+            checked = tuple(None if index in self._unused else value for index, value in enumerate(args)) if self._unused else args
+            if not self._unit.text_entry(checked):
+                return None, None, None
+        if self._unit.native_sets:
+            # Local sets only consume inert values; their members/table never escape.
+            if not all(map(_set_source_safe, args)):
+                return None, None, None
+            for namespace, name, value, code in self._unit.guards:
+                if code is None and type(value) in (int, tuple) and not _set_source_safe(namespace.get(name)):
+                    return None, None, None
         if self._unused:
             args = tuple(None if index in self._unused else value for index, value in enumerate(args))
         # Plain numbers and None travel as they are: the same result as ``_pack``
@@ -3316,6 +3895,10 @@ class Lifted:
         shape = _scalar_shape(kinds)
         if shape and (int not in kinds or all(INT_MIN <= value <= INT_MAX for value in args if type(value) is int)):
             return args, shape, _NO_COPIES
+        if not text and any(map(_contains_text, args)):
+            text = True
+            if not self._unit.text_entry(args):
+                return None, None, None
         if list in kinds and tuple not in kinds and 0 < len(args) <= MAX_SEQUENCE:
             # Numbers and lists of numbers: what ``_pack`` gives, without its general walk.
             boundary = _Boundary(self._records, self._list_cache, self._unit.writes)
@@ -3349,6 +3932,9 @@ class Lifted:
                 except Unsupported:
                     return None, None, None
                 continue
+            if not text and _has(shape, "U") and not self._unit.text_entry(args):
+                boundary.discard()
+                return None, None, None
             return packed, shape, boundary
         return None, None, None
 
@@ -3377,6 +3963,8 @@ class Lifted:
                 if ok and ((self._unit.writes and boundary.copies) or boundary.boxes or boundary.columns):
                     ok = boundary.write_back()
                 if ok:
+                    if self._unit.native_unicode or _has(shape, "U"):
+                        result = _text_owners.materialize(self._unit.owner_info(self._root).result, result, full)
                     self.compiled_calls += 1
                     return result
                 # The copies may hold changes that never reached the originals.
@@ -3399,6 +3987,8 @@ class Lifted:
         counter = itertools.count()
 
         def expression(part):
+            if part == "N":
+                return "None"
             if type(part) is str:
                 return f"c{next(counter)}[i]"
             return "(" + "".join(expression(item) + ", " for item in part[1:]) + ")"
@@ -3427,8 +4017,15 @@ class Lifted:
         if backend == "gpu":
             from numba import cuda
 
-            scope.update(_rc_root=self._load(cuda.jit(device=True))[self._root], grid=cuda.grid)
-            decorate = cuda.jit
+            # numba-cuda defaults to LTO, whose final linker can fuse again
+            # after NVVM's fma=False. Emit strict PTX for both device and kernel.
+            # Pass the function directly: the decorator factory in 0.30.4
+            # does not forward its explicit lto argument.
+            strict_jit = functools.partial(cuda.jit, lto=False) if 'lto' in inspect.signature(cuda.jit).parameters else cuda.jit
+            def device_jit(function):
+                return strict_jit(function, device=True)
+            scope.update(_rc_root=self._load(device_jit, build=False)[self._root], grid=cuda.grid)
+            decorate = strict_jit
         else:
             decorate = njit(parallel=backend == "parallel")
         exec(compile(textwrap.dedent(source), f"<recompyler:{self.original.__name__}:{backend}>", "exec"), scope)
@@ -3461,7 +4058,7 @@ class Lifted:
             packed, shape = _pack(tuple(calls[0].tolist()))
         else:
             packed, shape = _pack(calls[0])
-        if _has(shape, "L") or _has(shape, "A") or _has(shape, "O"):
+        if _has(shape, "L") or _has(shape, "A") or _has(shape, "O") or _has(shape, "S") or _has(shape, "U"):
             raise _Reject
         ready = self._shapes.get(shape)
         if ready is None:

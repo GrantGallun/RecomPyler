@@ -1,0 +1,36 @@
+FFFF........                                                             [100%]
+================================== FAILURES ===================================
+______ test_identity_proof_matches_full_r8_ir_and_metadata[loops-args0] _______
+tests\test_scalar_identity.py:55: in test_identity_proof_matches_full_r8_ir_and_metadata
+    assert optimized.scalar_report.get('identity_noop') is True
+E   AssertionError: assert None is True
+E    +  where None = <built-in method get of dict object at 0x000001B810679680>('identity_noop')
+E    +    where <built-in method get of dict object at 0x000001B810679680> = {'rule': 'R8', 'fresh_sites': [], 'removed_sites': [], 'blocked': [], ...}.get
+E    +      where {'rule': 'R8', 'fresh_sites': [], 'removed_sites': [], 'blocked': [], ...} = <recompyler.heap._Program object at 0x000001B81064EF90>.scalar_report
+_____ test_identity_proof_matches_full_r8_ir_and_metadata[publish-args1] ______
+tests\test_scalar_identity.py:55: in test_identity_proof_matches_full_r8_ir_and_metadata
+    assert optimized.scalar_report.get('identity_noop') is True
+E   AssertionError: assert None is True
+E    +  where None = <built-in method get of dict object at 0x000001B810BD49C0>('identity_noop')
+E    +    where <built-in method get of dict object at 0x000001B810BD49C0> = {'rule': 'R8', 'fresh_sites': [], 'removed_sites': [], 'blocked': [], ...}.get
+E    +      where {'rule': 'R8', 'fresh_sites': [], 'removed_sites': [], 'blocked': [], ...} = <recompyler.heap._Program object at 0x000001B81056F8C0>.scalar_report
+_______ test_identity_proof_matches_full_r8_ir_and_metadata[read-args2] _______
+tests\test_scalar_identity.py:55: in test_identity_proof_matches_full_r8_ir_and_metadata
+    assert optimized.scalar_report.get('identity_noop') is True
+E   AssertionError: assert None is True
+E    +  where None = <built-in method get of dict object at 0x000001B8106B73C0>('identity_noop')
+E    +    where <built-in method get of dict object at 0x000001B8106B73C0> = {'rule': 'R8', 'fresh_sites': [], 'removed_sites': [], 'blocked': [], ...}.get
+E    +      where {'rule': 'R8', 'fresh_sites': [], 'removed_sites': [], 'blocked': [], ...} = <recompyler.heap._Program object at 0x000001B81071C590>.scalar_report
+___ test_identity_proof_matches_full_r8_ir_and_metadata[polymorphic-args3] ____
+tests\test_scalar_identity.py:55: in test_identity_proof_matches_full_r8_ir_and_metadata
+    assert optimized.scalar_report.get('identity_noop') is True
+E   AssertionError: assert None is True
+E    +  where None = <built-in method get of dict object at 0x000001B810A4A7C0>('identity_noop')
+E    +    where <built-in method get of dict object at 0x000001B810A4A7C0> = {'rule': 'R8', 'fresh_sites': [], 'removed_sites': [], 'blocked': [{'site': 'f0_polymorphic:t1', 'unknown': 'F2/F5 polymorphic record layout'}, {'site': 'f0_polymorphic:t2', 'unknown': 'F2/F5 polymorphic record layout'}], ...}.get
+E    +      where {'rule': 'R8', 'fresh_sites': [], 'removed_sites': [], 'blocked': [{'site': 'f0_polymorphic:t1', 'unknown': 'F2/F5 polymorphic record layout'}, {'site': 'f0_polymorphic:t2', 'unknown': 'F2/F5 polymorphic record layout'}], ...} = <recompyler.heap._Program object at 0x000001B81071C440>.scalar_report
+=========================== short test summary info ===========================
+FAILED tests/test_scalar_identity.py::test_identity_proof_matches_full_r8_ir_and_metadata[loops-args0]
+FAILED tests/test_scalar_identity.py::test_identity_proof_matches_full_r8_ir_and_metadata[publish-args1]
+FAILED tests/test_scalar_identity.py::test_identity_proof_matches_full_r8_ir_and_metadata[read-args2]
+FAILED tests/test_scalar_identity.py::test_identity_proof_matches_full_r8_ir_and_metadata[polymorphic-args3]
+4 failed, 8 passed in 2.53s

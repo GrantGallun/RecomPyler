@@ -1,0 +1,63 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\raytrace.py",
+  "profiler": "c",
+  "total_s": 0.5057239244954876,
+  "script_self_s": 0.01630692556500435,
+  "functions": [
+    {
+      "function": "render",
+      "qualname": "Scene.render",
+      "line": 245,
+      "calls": 1,
+      "self_s": 0.01630692556500435,
+      "cumulative_s": 0.3991703923820751,
+      "library_s": 0.0012201526405988261,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 1,
+        "compiled_samples": 1,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Explicit measurement-only verified native-region selection; not default coverage.",
+        "net_s_first_run": -7.826823649986181,
+        "net_s_cached": 0.04870245000347495,
+        "first_pass_s": 8.04838419999578,
+        "warm_start_s": 0.172858100006124,
+        "python_us_per_call": 226103.10000891332,
+        "compiled_cpu_us_per_call": 4542.54999931436,
+        "speedup": 49.77448790724168,
+        "changes_arguments": true,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "outside the supported subset: global 'Vector' is not a numeric constant",
+        "diagnostic_original_recommended": true
+      }
+    }
+  ],
+  "plan": {
+    "startup_s": 0.5492875000054482,
+    "saving_s": 0.04870245000347495,
+    "worth_running": false,
+    "aot_regions": {
+      "module": "inplace_04448d618d3377ed0191",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-depth-prepared-v1\\raytrace",
+      "functions": [
+        {
+          "function": "render",
+          "line": 245,
+          "qualname": "Scene.render",
+          "exports": {
+            "926fecda5a7a5307bf3de9faaaf8bdb0c41a66286d9e8c60600dba91d17c468c": "r0"
+          },
+          "seeds": {},
+          "seed_policy": "legacy-only",
+          "seed_policy_reason": "not all verified signatures have guarded strict seeds"
+        }
+      ]
+    }
+  }
+}

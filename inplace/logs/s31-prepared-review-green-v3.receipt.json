@@ -1,0 +1,19 @@
+{
+  "label": "s31-prepared-review-green-v3",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_prepared_cache.py",
+    "-k",
+    "random",
+    "tests/test_prepared_review_regressions.py",
+    "tests/test_prepared_descriptor_keys.py",
+    "--basetemp",
+    "inplace/temp/s31-prepared-review-green-v3"
+  ],
+  "exit_code": 1,
+  "wall_s": 7.271152899978915,
+  "end": "2026-11-14T06:39:03.626811+00:00"
+}

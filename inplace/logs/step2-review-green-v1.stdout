@@ -1,0 +1,29 @@
+.............................F..................                         [100%]
+================================== FAILURES ===================================
+_________ test_constructor_on_existing_input_does_not_omit_its_writes _________
+
+    def test_constructor_on_existing_input_does_not_omit_its_writes():
+>       a = analyze(reinitialize, Cell(1.0, 2.0))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_program.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_direct_program.py:50: in analyze
+    p.compile(SourceOnly())
+src\recompyler\heap.py:934: in compile
+    self.numeric_report = _numeric_versions.NumericVersions(self, sys.modules[__name__]).run()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <recompyler.numeric_versions.NumericVersions object at 0x00000196E1B0BBF0>
+
+    def run(self):
+        report={'rule':'R7','versions':[],'direct_edges':[],'blocked':[]}
+        if not self.ctor_safe:
+>           raise self.h.Unsupported('constructor receiver/rebinding is not proved fresh for native writeback')
+E           recompyler.lift.Unsupported: constructor receiver/rebinding is not proved fresh for native writeback
+
+src\recompyler\numeric_versions.py:287: Unsupported
+=========================== short test summary info ===========================
+FAILED tests/test_direct_program.py::test_constructor_on_existing_input_does_not_omit_its_writes
+1 failed, 47 passed in 1.77s

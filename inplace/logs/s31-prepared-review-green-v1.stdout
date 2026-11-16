@@ -1,0 +1,175 @@
+.F.....................F................................................ [ 46%]
+....................F................................................... [ 92%]
+.....F......                                                             [100%]
+================================== FAILURES ===================================
+________________ test_real_legacy_and_seed_records_are_emitted ________________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...b0d13c8369702f5d196781e0279f931b78fddbc5be997a2bb0b71ff7a66': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_real_legacy_and_seed_records_are_emitted(artifact):
+        pc, heap, module, source, section = artifact
+        cores = section['prepared']['cores']
+        assert any(core['variant'] == 'legacy' for core in cores)
+>       assert any(core['variant'] in ('strict-seed', 'wide-seed') for core in cores)
+E       assert False
+E        +  where False = any(<generator object test_real_legacy_and_seed_records_are_emitted.<locals>.<genexpr> at 0x000001C7717E28E0>)
+
+tests\test_prepared_cache.py:99: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_14c16d93d73276000552036c-vfm09ovp\rcaotr_14c16d93d73276000552036c.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_14c16d93d73276000552036c-vfm09ovp\rcaotr_14c16d93d73276000552036c.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_ test_each_live_key_component_change_declines_before_native[builtin-shadow] __
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...b0d13c8369702f5d196781e0279f931b78fddbc5be997a2bb0b71ff7a66': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001C77691D6D0>
+mutation = 'builtin-shadow'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+        assert bound(artifact), pc.last_miss()
+        if mutation == 'source-bytes':
+            before = source.read_bytes()
+            try:
+                source.write_bytes(before + b'\n# exact file bytes changed\n')
+                assert_no_binding(artifact)
+            finally:
+                source.write_bytes(before)
+            return
+        if mutation == 'entry-code':
+            monkeypatch.setattr(module.work, '__code__', module.read.__code__)
+        elif mutation == 'entry-constants':
+            code = module.work.__code__
+            monkeypatch.setattr(module.work, '__code__', code.replace(co_consts=code.co_consts + (123456789,)))
+        elif mutation in ('dependency-code', 'dependency-constants'):
+            code = module.helper.__code__
+            changed = module.read.__code__ if mutation == 'dependency-code' else code.replace(co_consts=(None, 2))
+            monkeypatch.setattr(module.helper, '__code__', changed)
+        elif mutation == 'entry-defaults':
+            monkeypatch.setattr(module.work, '__defaults__', (7,))
+        elif mutation == 'kwdefaults-replace':
+            monkeypatch.setattr(module.work, '__kwdefaults__', {'bias': 8})
+        elif mutation == 'kwdefaults-inplace':
+            monkeypatch.setitem(module.work.__kwdefaults__, 'bias', 8)
+        elif mutation == 'dependency-defaults':
+            monkeypatch.setattr(module.helper, '__defaults__', (9,))
+        elif mutation == 'global-constant':
+            monkeypatch.setattr(module, 'GLOBAL', 9)
+        elif mutation == 'method-body':
+            monkeypatch.setattr(module.Base.offset, '__code__', module.helper.__code__)
+        elif mutation == 'method-shadow':
+            monkeypatch.setattr(module.Box, 'offset', module.helper, raising=False)
+        elif mutation == 'constructor-body':
+            monkeypatch.setattr(module.Box.__init__, '__code__', module.read.__code__)
+        elif mutation == 'mro':
+            class Other: pass
+            before = module.Box.__bases__
+            try:
+                module.Box.__bases__ = (Other,)
+                assert_no_binding(artifact)
+            finally:
+                module.Box.__bases__ = before
+            return
+        elif mutation == 'finalizer':
+            monkeypatch.setattr(module.Base, '__del__', lambda self: None, raising=False)
+        elif mutation == 'custom-new':
+            monkeypatch.setattr(module.Box, '__new__', staticmethod(lambda cls, *a: object.__new__(cls)), raising=False)
+        elif mutation == 'getattribute':
+            monkeypatch.setattr(module.Box, '__getattribute__', lambda self, key: object.__getattribute__(self, key), raising=False)
+        elif mutation == 'slot-descriptor':
+            monkeypatch.setattr(module.Box, 'value', property(lambda self: 999), raising=False)
+        elif mutation == 'class-binding':
+            monkeypatch.setattr(module, 'Box', type('Box', (), {}))
+        elif mutation == 'builtin-shadow':
+            # Work's list append does not use a builtin global. This exercises the
+            # recorded absence recipe through the dependent helper's globals.
+            monkeypatch.setitem(module.__dict__, '__builtins__', {'len': lambda x: 999})
+        elif mutation == 'module-binding':
+            monkeypatch.setattr(module, 'random', object())
+            assert_no_binding(artifact, name='random_step')
+            return
+>       assert_no_binding(artifact)
+
+tests\test_prepared_cache.py:212: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...b0d13c8369702f5d196781e0279f931b78fddbc5be997a2bb0b71ff7a66': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+kwargs = {}
+
+    def assert_no_binding(artifact, **kwargs):
+>       assert bound(artifact, **kwargs) == [], 'incompatible metadata acquired a native binding'
+E       AssertionError: incompatible metadata acquired a native binding
+E       assert [<recompyler....01C771519160>] == []
+E         
+E         Left contains one more item: <recompyler._prepared._restore.<locals>.RuntimeProgram object at 0x000001C771519160>
+E         Use -v to get more diff
+
+tests\test_prepared_cache.py:92: AssertionError
+_________ test_hidden_random_holder_uses_live_state_and_keeps_aliases _________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...b0d13c8369702f5d196781e0279f931b78fddbc5be997a2bb0b71ff7a66': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_hidden_random_holder_uses_live_state_and_keeps_aliases(artifact):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section, 'random_step'), plan_snapshot=standalone(section))
+        programs = index.bind(module.random_step)
+>       assert programs, 'legacy synthetic RNG holder was not rebound'
+E       AssertionError: legacy synthetic RNG holder was not rebound
+E       assert []
+
+tests\test_prepared_cache.py:386: AssertionError
+____________ test_bound_method_function_cannot_masquerade_by_names ____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...8dd08a17b0d7c92fb697b291b46678d5fd950c24a538383626e11658ce4': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001C776D915C0>
+
+    def test_bound_method_function_cannot_masquerade_by_names(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section,'random_step'),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.random_step),pc.last_miss()
+E       AssertionError: {'reason': 'binding', 'detail': 'class changed during validation'}
+E       assert (<recompyler._prepared.PreparedIndex object at 0x000001C779947BD0> is not None and [])
+E        +  where [] = bind(<function random_step at 0x000001C779A47060>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x000001C779947BD0>.bind
+E        +    and   <function random_step at 0x000001C779A47060> = <module '_prepared_cache_fixture_prepared_real_aot4' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v1\\prepared-real-aot4\\workload.py'>.random_step
+
+tests\test_prepared_review_regressions.py:13: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_50181980f68e8c6390cc03ec-sc5glqy0\rcaotr_50181980f68e8c6390cc03ec.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_50181980f68e8c6390cc03ec-sc5glqy0\rcaotr_50181980f68e8c6390cc03ec.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_cache.py::test_real_legacy_and_seed_records_are_emitted
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[builtin-shadow]
+FAILED tests/test_prepared_cache.py::test_hidden_random_holder_uses_live_state_and_keeps_aliases
+FAILED tests/test_prepared_review_regressions.py::test_bound_method_function_cannot_masquerade_by_names
+4 failed, 152 passed in 34.01s

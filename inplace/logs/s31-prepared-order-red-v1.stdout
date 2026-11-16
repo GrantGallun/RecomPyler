@@ -1,0 +1,93 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____ test_post_lowering_entry_and_order_can_include_infos_outside_registry ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...701dc47b7374edefe2094e9926ae6492276c49146ca314a9d499a843338': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_post_lowering_entry_and_order_can_include_infos_outside_registry(artifact):
+        pc,heap,module,source,section=artifact
+        region=heap.lift_region(module.work)
+        assert region(module.Box(10),[])[2]==18
+        program=next(p for p in region.programs.values() if getattr(p,'run',None))
+        before=program.functions
+        program.functions={k:v for k,v in before.items() if v is not program.entry}
+        try:
+>           core=pc.capture(program,export='r0',plan_key={},build_key={})
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_order.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+program = <recompyler.heap._Program object at 0x00000198F4EC2E40>, seed = None
+export = 'r0', plan_key = {}, build_key = {}, variant = None
+
+    def capture(program, *, seed=None, export, plan_key, build_key, variant=None):
+        from . import heap as h
+        refs = References(program.entry_fn, program)
+        definitions = _definitions(refs, program)
+        cells, ids = [], {}
+        def cell(c):
+            c = h._find(c)
+            if id(c) not in ids:
+                ids[id(c)] = len(cells)
+                cells.append(None)
+                cells[ids[id(c)]] = dict(elem=kind(c.elem), mutated=c.mutated)
+            return ids[id(c)]
+        def kind(v):
+            if type(v) is str: return v
+            if type(v) is h.ObjT: return ['object', refs.ref(v.cls), v.nullable, [refs.ref(c) for c in sorted(v.classes, key=program.tag)]]
+            if _is_type(type(v), (h.ListT, h.ArrT)): return ['array' if type(v) is h.ArrT else 'list', cell(v.cell)]
+            if type(v) is h.TupT: return ['tuple', [kind(i) for i in v.items], v.nullable]
+            if type(v) is h.OptT: return ['optional', kind(v.base)]
+            if type(v) is h.StrT: return ['string', v.nullable]
+            if type(v) is h.DictT: return ['dict', cell(v.kcell), cell(v.vcell), v.nullable]
+            if type(v) is h.SetT: return ['set', cell(v.cell), v.nullable]
+            if type(v) is h.NdT: return ['ndarray', v.dtype, v.ndim, v.writable]
+            if type(v) is h.RngT: return ['random']
+            raise PreparedMiss('kind')
+        infos = list(program.functions.values())
+        def guard(g):
+            result=[g[0]]+[refs.value(v) for v in g[1:]]
+            if g[0]=='attr' and g[2] in ('__mro__','__defaults__','__kwdefaults__'):
+                result[3]=['current-attr',refs.ref(g[1]),g[2]]
+            return result
+>       execution = dict(entry_function=infos.index(program.entry),
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+            functions=[dict(binding=refs.ref(i.fn), owner=refs.ref(i.owner) if i.owner else None,
+                name=i.name, params=i.params, vars=[[n, kind(v)] for n, v in i.vars.items()], ret=kind(i.ret),
+                constant=literal_key(i.constant), sink=i.sink, generator=i.generator, coroutine=i.coroutine,
+                recursive=i.recursive) for i in infos],
+            order=[infos.index(i) for i in program.order], cells=cells,
+            classes=[dict(binding=refs.ref(c), assigned_names=sorted(names)) for c,names in program.class_fields.items()],
+            families=[dict(root=refs.ref(c), members=[refs.ref(m) for m in program.members[c]],
+                fields=[[n, kind(v)] for n,v in fields.items()], layout=list(program.layout(c)[0].items()),
+                slots=program.layout(c)[1]) for c, fields in program.fields.items()],
+            aliases=[[refs.ref(a), refs.ref(b)] for a,b in program.alias.items()],
+            written=[[refs.ref(c), n] for c,n in sorted(program.written, key=lambda v:(v[0].__qualname__,v[1]))],
+            globals=[dict(namespace=refs.ref(ns), name=n, kind=kind(v)) for ns,n,v in program.global_objects],
+            strings=list(vars(program).get('str_constants', {})),
+            guards=[guard(g) for g in program.guards.values()],
+            flags={n:bool(getattr(program,n,False)) for n in ('arrays_used','arrays_written','array_views','rng_used','fast_mixed','saw_mixed','mixed_kind_used','zero_optimized')},
+            reports={})
+E       ValueError: list.index(x): x not in list
+
+src\recompyler\_prepared.py:366: ValueError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_370cd1e17c844a5a262d76f5-nz4bmvol\rcaotr_370cd1e17c844a5a262d76f5.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_370cd1e17c844a5a262d76f5-nz4bmvol\rcaotr_370cd1e17c844a5a262d76f5.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_order.py::test_post_lowering_entry_and_order_can_include_infos_outside_registry
+1 failed in 5.88s

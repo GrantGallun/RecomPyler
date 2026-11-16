@@ -1,0 +1,58 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+_ test_subclasses_and_untyped_values_cannot_smuggle_owned_references[<lambda>0] _
+
+make = <function <lambda> at 0x0000028199F824B0>
+
+    @pytest.mark.parametrize('make', [
+        lambda owner: direct.Place(owner('field'), 1),
+        lambda owner: direct.Summary(helpers=frozenset((owner('helper'),))),
+        lambda owner: direct.Identity({'value': owner}, ('value',)),
+    ])
+    def test_subclasses_and_untyped_values_cannot_smuggle_owned_references(make):
+        class OwnedString(str):
+            pass
+>       with pytest.raises(ValueError, match='primitive'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_direct_safety.py:103: Failed
+_ test_subclasses_and_untyped_values_cannot_smuggle_owned_references[<lambda>1] _
+
+make = <function <lambda> at 0x0000028199F82560>
+
+    @pytest.mark.parametrize('make', [
+        lambda owner: direct.Place(owner('field'), 1),
+        lambda owner: direct.Summary(helpers=frozenset((owner('helper'),))),
+        lambda owner: direct.Identity({'value': owner}, ('value',)),
+    ])
+    def test_subclasses_and_untyped_values_cannot_smuggle_owned_references(make):
+        class OwnedString(str):
+            pass
+>       with pytest.raises(ValueError, match='primitive'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_direct_safety.py:103: Failed
+_ test_subclasses_and_untyped_values_cannot_smuggle_owned_references[<lambda>2] _
+
+make = <function <lambda> at 0x0000028199F82610>
+
+    @pytest.mark.parametrize('make', [
+        lambda owner: direct.Place(owner('field'), 1),
+        lambda owner: direct.Summary(helpers=frozenset((owner('helper'),))),
+        lambda owner: direct.Identity({'value': owner}, ('value',)),
+    ])
+    def test_subclasses_and_untyped_values_cannot_smuggle_owned_references(make):
+        class OwnedString(str):
+            pass
+>       with pytest.raises(ValueError, match='primitive'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_direct_safety.py:103: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_direct_safety.py::test_subclasses_and_untyped_values_cannot_smuggle_owned_references[<lambda>0]
+FAILED tests/test_direct_safety.py::test_subclasses_and_untyped_values_cannot_smuggle_owned_references[<lambda>1]
+FAILED tests/test_direct_safety.py::test_subclasses_and_untyped_values_cannot_smuggle_owned_references[<lambda>2]
+3 failed in 0.26s

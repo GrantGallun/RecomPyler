@@ -1,0 +1,17 @@
+{
+  "label": "s31-prepared-import-red-v1",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "inplace/prepared-cache-preparation/test_prepared_review_regressions.py",
+    "-k",
+    "namespace_alias or first_import",
+    "--basetemp",
+    "inplace/temp/s31-prepared-import-red-v1"
+  ],
+  "exit_code": 1,
+  "wall_s": 9.680128000007244,
+  "end": "2026-11-14T06:28:19.930430+00:00"
+}

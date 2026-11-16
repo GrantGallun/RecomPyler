@@ -1,0 +1,48 @@
+..............F
+================================== FAILURES ===================================
+____ test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit ____
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027336C7DCD0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000027339FE16A0>
+
+    def test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit(runner_artifact, monkeypatch, capsys):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:221: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027336C7DCD0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000027339FE16A0>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions']), (result, {n: r.prepared_reasons for n,r in regions.items()}, pc.last_miss())
+E       AssertionError: ({'script': 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-impl-v9\\prepa...'compiled_calls': 0, 'aot_calls': 0, ...}], 'not_found': [], 'batches': {}, ...}, {}, {'reason': 'plan', 'detail': ''})
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000027337C7DA80>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:208: AssertionError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 14 passed in 9.83s

@@ -1,0 +1,158 @@
+FFFFF.FF                                                                 [100%]
+================================== FAILURES ===================================
+_________ test_native_code_or_contract_changes_are_distinct[one-two] __________
+
+native_bindings = <module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>
+left = 'one', right = 'two'
+
+    @pytest.mark.parametrize('left,right',[('one','two'),('one','other_flags'),('method_one','method_two'),('get_one','get_two'),('member_one','member_two')])
+    def test_native_code_or_contract_changes_are_distinct(native_bindings,left,right):
+        from recompyler import _prepared as pc
+>       assert pc._binding_key(getattr(native_bindings,left))!=pc._binding_key(getattr(native_bindings,right))
+E       AssertionError: assert ['builtin', 'prepared_binding_probe', 'same', 'builtins', 'module'] != ['builtin', 'prepared_binding_probe', 'same', 'builtins', 'module']
+E        +  where ['builtin', 'prepared_binding_probe', 'same', 'builtins', 'module'] = <function _binding_key at 0x000001DF4CD9B060>(<built-in function same>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <built-in function same> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'one')
+E        +  and   ['builtin', 'prepared_binding_probe', 'same', 'builtins', 'module'] = <function _binding_key at 0x000001DF4CD9B060>(<built-in function same>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <built-in function same> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'two')
+
+inplace\prepared-cache-preparation\test_prepared_native_dependencies.py:64: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+probe.c
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\s31-prepared-native-dependencies-red-v1\native-binding-probe0\prepared_binding_probe.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\s31-prepared-native-dependencies-red-v1\native-binding-probe0\prepared_binding_probe.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_____ test_native_code_or_contract_changes_are_distinct[one-other_flags] ______
+
+native_bindings = <module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>
+left = 'one', right = 'other_flags'
+
+    @pytest.mark.parametrize('left,right',[('one','two'),('one','other_flags'),('method_one','method_two'),('get_one','get_two'),('member_one','member_two')])
+    def test_native_code_or_contract_changes_are_distinct(native_bindings,left,right):
+        from recompyler import _prepared as pc
+>       assert pc._binding_key(getattr(native_bindings,left))!=pc._binding_key(getattr(native_bindings,right))
+E       AssertionError: assert ['builtin', 'prepared_binding_probe', 'same', 'builtins', 'module'] != ['builtin', 'prepared_binding_probe', 'same', 'builtins', 'module']
+E        +  where ['builtin', 'prepared_binding_probe', 'same', 'builtins', 'module'] = <function _binding_key at 0x000001DF4CD9B060>(<built-in function same>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <built-in function same> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'one')
+E        +  and   ['builtin', 'prepared_binding_probe', 'same', 'builtins', 'module'] = <function _binding_key at 0x000001DF4CD9B060>(<built-in function same>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <built-in function same> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'other_flags')
+
+inplace\prepared-cache-preparation\test_prepared_native_dependencies.py:64: AssertionError
+__ test_native_code_or_contract_changes_are_distinct[method_one-method_two] ___
+
+native_bindings = <module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>
+left = 'method_one', right = 'method_two'
+
+    @pytest.mark.parametrize('left,right',[('one','two'),('one','other_flags'),('method_one','method_two'),('get_one','get_two'),('member_one','member_two')])
+    def test_native_code_or_contract_changes_are_distinct(native_bindings,left,right):
+        from recompyler import _prepared as pc
+>       assert pc._binding_key(getattr(native_bindings,left))!=pc._binding_key(getattr(native_bindings,right))
+E       AssertionError: assert ['descriptor', 'method_descriptor', 'same', 'prepared_binding_probe', 'Probe'] != ['descriptor', 'method_descriptor', 'same', 'prepared_binding_probe', 'Probe']
+E        +  where ['descriptor', 'method_descriptor', 'same', 'prepared_binding_probe', 'Probe'] = <function _binding_key at 0x000001DF4CD9B060>(<method 'same' of 'prepared_binding_probe.Probe' objects>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <method 'same' of 'prepared_binding_probe.Probe' objects> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'method_one')
+E        +  and   ['descriptor', 'method_descriptor', 'same', 'prepared_binding_probe', 'Probe'] = <function _binding_key at 0x000001DF4CD9B060>(<method 'same' of 'prepared_binding_probe.Probe' objects>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <method 'same' of 'prepared_binding_probe.Probe' objects> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'method_two')
+
+inplace\prepared-cache-preparation\test_prepared_native_dependencies.py:64: AssertionError
+_____ test_native_code_or_contract_changes_are_distinct[get_one-get_two] ______
+
+native_bindings = <module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>
+left = 'get_one', right = 'get_two'
+
+    @pytest.mark.parametrize('left,right',[('one','two'),('one','other_flags'),('method_one','method_two'),('get_one','get_two'),('member_one','member_two')])
+    def test_native_code_or_contract_changes_are_distinct(native_bindings,left,right):
+        from recompyler import _prepared as pc
+>       assert pc._binding_key(getattr(native_bindings,left))!=pc._binding_key(getattr(native_bindings,right))
+E       AssertionError: assert ['descriptor', 'getset_descriptor', 'same', 'prepared_binding_probe', 'Probe'] != ['descriptor', 'getset_descriptor', 'same', 'prepared_binding_probe', 'Probe']
+E        +  where ['descriptor', 'getset_descriptor', 'same', 'prepared_binding_probe', 'Probe'] = <function _binding_key at 0x000001DF4CD9B060>(<attribute 'same' of 'prepared_binding_probe.Probe' objects>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <attribute 'same' of 'prepared_binding_probe.Probe' objects> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'get_one')
+E        +  and   ['descriptor', 'getset_descriptor', 'same', 'prepared_binding_probe', 'Probe'] = <function _binding_key at 0x000001DF4CD9B060>(<attribute 'same' of 'prepared_binding_probe.Probe' objects>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <attribute 'same' of 'prepared_binding_probe.Probe' objects> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'get_two')
+
+inplace\prepared-cache-preparation\test_prepared_native_dependencies.py:64: AssertionError
+__ test_native_code_or_contract_changes_are_distinct[member_one-member_two] ___
+
+native_bindings = <module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>
+left = 'member_one', right = 'member_two'
+
+    @pytest.mark.parametrize('left,right',[('one','two'),('one','other_flags'),('method_one','method_two'),('get_one','get_two'),('member_one','member_two')])
+    def test_native_code_or_contract_changes_are_distinct(native_bindings,left,right):
+        from recompyler import _prepared as pc
+>       assert pc._binding_key(getattr(native_bindings,left))!=pc._binding_key(getattr(native_bindings,right))
+E       AssertionError: assert ['descriptor', 'member_descriptor', 'same', 'prepared_binding_probe', 'Probe'] != ['descriptor', 'member_descriptor', 'same', 'prepared_binding_probe', 'Probe']
+E        +  where ['descriptor', 'member_descriptor', 'same', 'prepared_binding_probe', 'Probe'] = <function _binding_key at 0x000001DF4CD9B060>(<member 'same' of 'prepared_binding_probe.Probe' objects>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <member 'same' of 'prepared_binding_probe.Probe' objects> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'member_one')
+E        +  and   ['descriptor', 'member_descriptor', 'same', 'prepared_binding_probe', 'Probe'] = <function _binding_key at 0x000001DF4CD9B060>(<member 'same' of 'prepared_binding_probe.Probe' objects>)
+E        +    where <function _binding_key at 0x000001DF4CD9B060> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>._binding_key
+E        +    and   <member 'same' of 'prepared_binding_probe.Probe' objects> = getattr(<module 'prepared_binding_probe' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\native-binding-probe0\\lib\\prepared_binding_probe.cp314-win_amd64.pyd'>, 'member_two')
+
+inplace\prepared-cache-preparation\test_prepared_native_dependencies.py:64: AssertionError
+__ test_malformed_class_module_is_rejected_without_user_equality[record-key] __
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...cd11070847eb48640bd10b8462d994fe167e193ad802950671e99b5ccb7': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001DF4DD4D480>
+path = 'record-key'
+
+    @pytest.mark.parametrize('path',['class-key','record-key'])
+    def test_malformed_class_module_is_rejected_without_user_equality(artifact,monkeypatch,path):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x000001DF4DCCE710> is not None and [])
+E        +  where [] = bind(<function work at 0x000001DF4CFC0930>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x000001DF4DCCE710>.bind
+E        +    and   <function work at 0x000001DF4CFC0930> = <module '_prepared_cache_fixture_prepared_real_aot0' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\prepared-real-aot0\\workload.py'>.work
+
+inplace\prepared-cache-preparation\test_prepared_native_dependencies.py:70: AssertionError
+_____________ test_module_global_range_is_sealed_by_exact_bounds ______________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-native-dependencies-red-v1/test_module_global_range_is_se0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001DF52626330>
+
+    def test_module_global_range_is_sealed_by_exact_bounds(tmp_path,monkeypatch):
+        from recompyler import heap,_prepared as pc
+        source=tmp_path/'global_range.py'
+        source.write_text('VALUES=range(5)\ndef work():\n    total=0\n    for item in VALUES: total+=item\n    return total\n')
+        module=load_source(source)
+        region=heap.lift_region(module.work);assert region()==10 and region.compiled_calls==1
+        section=heap.build_regions([(('work',2),module.work,region)],tmp_path)
+        index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work),pc.last_miss()
+E       AssertionError: {'reason': 'binding', 'detail': 'class key Box: dictionary'}
+E       assert (<recompyler._prepared.PreparedIndex object at 0x000001DF4FD6B9D0> is not None and [])
+E        +  where [] = bind(<function work at 0x000001DF4FEB96F0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x000001DF4FD6B9D0>.bind
+E        +    and   <function work at 0x000001DF4FEB96F0> = <module '_prepared_cache_fixture_test_module_global_range_is_se0' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\...e16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-red-v1\\test_module_global_range_is_se0\\global_range.py'>.work
+
+inplace\prepared-cache-preparation\test_prepared_native_dependencies.py:89: AssertionError
+---------------------------- Captured stdout call -----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_578820be6aa4fd5002316e44-5gw4u7aj\rcaotr_578820be6aa4fd5002316e44.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_578820be6aa4fd5002316e44-5gw4u7aj\rcaotr_578820be6aa4fd5002316e44.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_native_dependencies.py::test_native_code_or_contract_changes_are_distinct[one-two]
+FAILED inplace/prepared-cache-preparation/test_prepared_native_dependencies.py::test_native_code_or_contract_changes_are_distinct[one-other_flags]
+FAILED inplace/prepared-cache-preparation/test_prepared_native_dependencies.py::test_native_code_or_contract_changes_are_distinct[method_one-method_two]
+FAILED inplace/prepared-cache-preparation/test_prepared_native_dependencies.py::test_native_code_or_contract_changes_are_distinct[get_one-get_two]
+FAILED inplace/prepared-cache-preparation/test_prepared_native_dependencies.py::test_native_code_or_contract_changes_are_distinct[member_one-member_two]
+FAILED inplace/prepared-cache-preparation/test_prepared_native_dependencies.py::test_malformed_class_module_is_rejected_without_user_equality[record-key]
+FAILED inplace/prepared-cache-preparation/test_prepared_native_dependencies.py::test_module_global_range_is_sealed_by_exact_bounds
+7 failed, 1 passed in 12.18s

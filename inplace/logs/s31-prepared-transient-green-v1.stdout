@@ -1,0 +1,81 @@
+.......F................................................................ [ 62%]
+............................................                             [100%]
+================================== FAILURES ===================================
+_ test_incidental_search_roots_die_inside_native_validation[class-member-True] _
+
+native_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...cbe031d150318ce0cce26a94eb6605a1de6295418a6c2838418c2448f2b7c353': {'args': [...], 'ret': [...]}}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000201192B8050>
+finalizer = True, location = 'class-member'
+
+    @pytest.mark.parametrize('finalizer',[False,True])
+    @pytest.mark.parametrize('location',['global','dictionary','module','class-member'])
+    def test_incidental_search_roots_die_inside_native_validation(native_artifact,monkeypatch,finalizer,location):
+     pc,heap,module,section=native_artifact
+     index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section));assert index is not None
+     events=[]
+     class Payload:pass
+     if finalizer:Payload.__del__=lambda self:events.append('finalizer')
+     if location=='global':module.UNUSED=Payload();reference=weakref.ref(module.UNUSED,lambda ref:events.append('weak'))
+     elif location=='dictionary':module.UNUSED={'payload':Payload()};reference=weakref.ref(module.UNUSED['payload'],lambda ref:events.append('weak'))
+     elif location=='module':
+      module.UNUSED=ModuleType('unused_recipe_namespace');module.UNUSED.payload=Payload()
+      reference=weakref.ref(module.UNUSED.payload,lambda ref:events.append('weak'))
+     else:
+      module.UNUSED=type('UnusedRecipeClass',(),{'payload':Payload()})
+      reference=weakref.ref(module.UNUSED.payload,lambda ref:events.append('weak'))
+     original=pc.file_key;observed=[]
+     def observer(path):
+      if not observed:
+       observed.append(True);del module.UNUSED;gc.collect()
+       assert reference() is None,'incidental recipe search kept an unrelated payload alive across native validation'
+       assert events==(['finalizer','weak'] if finalizer else ['weak'])
+      return original(path)
+     monkeypatch.setattr(pc,'file_key',observer)
+     try:
+>     programs=index.bind(module.read)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_transient_lifetime.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\_prepared.py:886: in bind
+    return list(self._bind_records(entry,range(len(self._core_ids))))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:900: in _bind_records
+    yield _restore(core,entry,self.exports[core['generated']['digest']])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:760: in _restore
+    actual=_class_key(cls,refs)
+           ^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:382: in _class_key
+    encoded = _binding_key(value,refs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:396: in _binding_key
+    return ['builtin',module,name,_owner_key(value.__self__,refs,value,binding),_native_contract(value,refs)]
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:309: in _native_contract
+    return encode(contract)
+           ^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:306: in encode
+    return [encode(v) for v in item]
+            ^^^^^^^^^
+src\recompyler\_prepared.py:303: in encode
+    if path not in refs.binary_keys: refs.binary_keys[path]=file_key(path)
+                                                            ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = 'C:\\Python314\\python314.dll'
+
+    def observer(path):
+     if not observed:
+      observed.append(True);del module.UNUSED;gc.collect()
+      assert reference() is None,'incidental recipe search kept an unrelated payload alive across native validation'
+>     assert events==(['finalizer','weak'] if finalizer else ['weak'])
+E     AssertionError: assert ['weak', 'finalizer'] == ['finalizer', 'weak']
+E       
+E       At index 0 diff: 'weak' != 'finalizer'
+E       Use -v to get more diff
+
+tests\test_prepared_transient_lifetime.py:39: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_transient_lifetime.py::test_incidental_search_roots_die_inside_native_validation[class-member-True]
+1 failed, 115 passed in 33.51s

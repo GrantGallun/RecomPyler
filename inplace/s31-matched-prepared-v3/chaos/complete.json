@@ -1,0 +1,76 @@
+{
+  "name": "chaos",
+  "complete": true,
+  "shared_script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\chaos\\input\\run_benchmark.py",
+  "arguments": [],
+  "triples": [
+    {
+      "order": [
+        "plain",
+        "coverage",
+        "integrated"
+      ],
+      "wall_s": {
+        "plain": 0.8232909000071231,
+        "coverage": 0.36966249998658895,
+        "integrated": 0.3493818999850191
+      }
+    },
+    {
+      "order": [
+        "coverage",
+        "integrated",
+        "plain"
+      ],
+      "wall_s": {
+        "coverage": 0.3595962999970652,
+        "integrated": 0.35053350002272055,
+        "plain": 0.8229952999972738
+      }
+    },
+    {
+      "order": [
+        "integrated",
+        "plain",
+        "coverage"
+      ],
+      "wall_s": {
+        "integrated": 0.35678649999317713,
+        "plain": 0.8090608000056818,
+        "coverage": 0.3558376999862958
+      }
+    }
+  ],
+  "medians_s": {
+    "plain": 0.8229952999972738,
+    "coverage": 0.3595962999970652,
+    "integrated": 0.35053350002272055
+  },
+  "plain_over_coverage": 2.2886645385505653,
+  "plain_over_integrated": 2.3478363692597988,
+  "integrated_over_coverage": 0.9747972935916787,
+  "exact_behavior": true,
+  "exact_aot_calls": 20,
+  "jit_calls": 0,
+  "fallback_calls": 0,
+  "plan_key_counts": {
+    "coverage": {
+      "aot_regions": {
+        "module": "rcaotr_a6c578cf16623d3e5a53c009",
+        "functions": 1,
+        "export_keys": 1,
+        "seed_keys": 0
+      }
+    },
+    "integrated": {
+      "aot_regions": {
+        "module": "rcaotr_d23a94607b48d7372d8d7d0c",
+        "functions": 1,
+        "export_keys": 1,
+        "seed_keys": 0
+      }
+    }
+  },
+  "persisted_source_preparation_cache_key_count": 1,
+  "cache_key_note": "Sealed core count from the actual integrated plan; hits are proven separately by the fresh-process verifier, not inferred from timing."
+}

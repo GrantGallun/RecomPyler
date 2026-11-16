@@ -1,0 +1,75 @@
+........................................................................ [ 42%]
+........................................................................ [ 85%]
+.......................F                                                 [100%]
+================================== FAILURES ===================================
+________ test_preimport_poisoned_builtin_range_is_not_a_native_anchor _________
+
+    def test_preimport_poisoned_builtin_range_is_not_a_native_anchor():
+        from recompyler import _prepared as pc
+        real=builtins.range
+        fake=type('range',(),{})
+        try:
+            builtins.range=fake
+            importlib.reload(pc)
+            builtins.range=real
+            def entry(): return 1
+>           assert pc._class_key(fake,pc.References(entry))!={'builtin':'range'}
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_builtin_anchor.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\_prepared.py:255: in _class_key
+    return dict(mro=[refs.ref(v) for v in cls.__mro__],
+                     ^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <recompyler._prepared.References object at 0x000001B23E22DA90>
+value = <class 'test_prepared_builtin_anchor.range'>
+
+    def ref(self, value):
+        t = type(value)
+        if value is None or _is_type(t, (bool, int, float, complex, str, bytes, frozenset, slice)):
+            return ['literal', literal_key(value)]
+        if t is tuple: return ['tuple', [self.ref(v) for v in value]]
+        known = self.known.get(id(value))
+        if known is not None and known[0] is value: return known[1]
+        # Search only exact dictionaries/modules/classes, never descriptors.
+        while self.queue:
+            space, recipe, depth = self.queue.popleft()
+            if id(space) in self.seen: continue
+            self.seen.add(id(space))
+            for name, item in space.items():
+                if type(name) is not str: continue
+                path = ['item', recipe, name]
+                self.known.setdefault(id(item), (item, path))
+                if type(item) is FunctionType:
+                    plain = _plain_function(item)
+                    self.known.setdefault(id(plain), (plain, path))
+                if type(item) is ModuleType and depth < 2:
+                    self.known.setdefault(id(vars(item)), (vars(item), ['globals', path]))
+                    self.queue.append((vars(item), ['globals', path], depth + 1))
+                elif type(item) is type and depth < 3:
+                    for base in item.__mro__:
+                        base_path = path if base is item else ['mro', path, item.__mro__.index(base)]
+                        self.known.setdefault(id(base), (base, base_path))
+                        for attr, member in vars(base).items():
+                            if type(attr) is str:
+                                member_path = ['own', base_path, attr]
+                                self.known.setdefault(id(member), (member, member_path))
+                                if _is_type(type(member), (staticmethod, classmethod)):
+                                    self.known.setdefault(id(member.__func__), (member.__func__, ['descriptor-function', member_path]))
+                                if type(member) is FunctionType:
+                                    plain = _plain_function(member)
+                                    self.known.setdefault(id(plain), (plain, member_path))
+                elif t is random.Random and _is_type(type(item), (MethodType, BuiltinFunctionType)):
+                    if item.__self__ is value:
+                        self.known[id(value)] = (value, ['method-self', path])
+            known = self.known.get(id(value))
+            if known is not None and known[0] is value: return known[1]
+>       raise PreparedMiss('unreachable binding')
+E       recompyler._prepared_keys.PreparedMiss: unreachable binding
+
+src\recompyler\_prepared.py:136: PreparedMiss
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_builtin_anchor.py::test_preimport_poisoned_builtin_range_is_not_a_native_anchor
+1 failed, 167 passed in 56.97s

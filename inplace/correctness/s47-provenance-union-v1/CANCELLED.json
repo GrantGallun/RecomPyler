@@ -1,0 +1,38 @@
+{
+  "time": "2026-11-14T21:03:14.300760+00:00",
+  "owned_processes": [
+    {
+      "ProcessId": 2368,
+      "ParentProcessId": 8848,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Python314\\python.exe\" inplace/run_correctness.py s47-provenance-union-v1 python inplace/step0_union.py --output inplace/s47-provenance-union-v1 --correctness-label s47-provenance-union-v1",
+      "KernelModeTime": 0,
+      "UserModeTime": 312500
+    },
+    {
+      "ProcessId": 6244,
+      "ParentProcessId": 2368,
+      "Name": "python.exe",
+      "CommandLine": "python inplace/step0_union.py --output inplace/s47-provenance-union-v1 --correctness-label s47-provenance-union-v1",
+      "KernelModeTime": 781250,
+      "UserModeTime": 2343750
+    },
+    {
+      "ProcessId": 43516,
+      "ParentProcessId": 6244,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Python314\\python.exe -m pytest tests -q --basetemp D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s47-provenance-union-v1\\pytest-temp",
+      "KernelModeTime": 45000000,
+      "UserModeTime": 434843750
+    },
+    {
+      "ProcessId": 31712,
+      "ParentProcessId": 6244,
+      "Name": "conhost.exe",
+      "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+      "KernelModeTime": 3281250,
+      "UserModeTime": 0
+    }
+  ],
+  "reason": "New corpus test reads shared root; old union harness did not seal that external input. Entire attempt excluded."
+}

@@ -1,0 +1,35 @@
+.F
+================================== FAILURES ===================================
+________________ test_real_legacy_and_seed_records_are_emitted ________________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+
+    def test_real_legacy_and_seed_records_are_emitted(artifact):
+        pc, heap, module, source, section = artifact
+        cores = section['prepared']['cores']
+        assert any(core['variant'] == 'legacy' for core in cores)
+>       assert any(core['variant'] in ('strict-seed', 'wide-seed') for core in cores)
+E       assert False
+E        +  where False = any(<generator object test_real_legacy_and_seed_records_are_emitted.<locals>.<genexpr> at 0x0000016BC7794A00>)
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:102: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_8275361d5c047896923217ce-f22l3b8q\rcaotr_8275361d5c047896923217ce.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_8275361d5c047896923217ce-f22l3b8q\rcaotr_8275361d5c047896923217ce.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_cache.py::test_real_legacy_and_seed_records_are_emitted
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 1 passed in 7.23s

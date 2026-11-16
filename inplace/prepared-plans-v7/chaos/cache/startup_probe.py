@@ -1,0 +1,5 @@
+def probe(n):
+    total = 0.0
+    for i in range(n):
+        total += i * 0.5
+    return total

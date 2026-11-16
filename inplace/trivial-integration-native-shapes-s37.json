@@ -1,0 +1,39 @@
+{
+  "stage": "integration-native-shapes-s37",
+  "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-native-shapes-s37\\src",
+  "iterations": 50000,
+  "pairs": [
+    {
+      "pair": 0,
+      "order": [
+        "python",
+        "compiled"
+      ],
+      "python_ns_per_call": 55.112,
+      "compiled_ns_per_call": 7297.426
+    },
+    {
+      "pair": 1,
+      "order": [
+        "compiled",
+        "python"
+      ],
+      "compiled_ns_per_call": 7788.832,
+      "python_ns_per_call": 54.164
+    },
+    {
+      "pair": 2,
+      "order": [
+        "python",
+        "compiled"
+      ],
+      "python_ns_per_call": 55.926,
+      "compiled_ns_per_call": 7673.212
+    }
+  ],
+  "python_ns": 55.112,
+  "compiled_complete_ns": 7673.212,
+  "compiled_calls": 150101,
+  "fallback_calls": 0,
+  "target": "compiled complete call below same Python function; one numeric field read and comparison"
+}

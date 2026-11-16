@@ -1,0 +1,209 @@
+{
+  "totals": {
+    "aot_calls": 20,
+    "jit_calls": 0,
+    "unknown_native_calls": 0,
+    "rejected_attempts": 0,
+    "fallback_calls": 0
+  },
+  "functions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\input\\run_benchmark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\input\\run_benchmark.py",
+      "qualname": "Richards.run",
+      "function": "Richards.run",
+      "line": 385,
+      "kind": "region",
+      "aot_calls": 20,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "f345c7ad4b17d502243b8067b7b5d922ead273d48322603be54c85d79ca336d6": {
+          "aot_calls": 20,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "direct_report": null,
+          "last_rule_deltas": {},
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\cache\\rcaotr_339a85fabc90e82ee4596216.cp314-win_amd64.pyd",
+              "module_sha256": "8e76ab5a2482277841be4fbde96172f94709bc5ae8f24270eede7e3cdb70593e",
+              "export": "r1",
+              "digest": "f345c7ad4b17d502243b8067b7b5d922ead273d48322603be54c85d79ca336d6",
+              "generated_source_sha256": "e101458c00e1d55471ac049b2caf20cfd9def4aec423369026f803196b94139a",
+              "mode": "aot"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 20,
+      "unobserved_successes": 0
+    }
+  ],
+  "independent_functions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\input\\run_benchmark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\input\\run_benchmark.py",
+      "qualname": "Richards.run",
+      "function": "Richards.run",
+      "line": 385,
+      "kind": "region",
+      "aot_calls": 20,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "f345c7ad4b17d502243b8067b7b5d922ead273d48322603be54c85d79ca336d6": {
+          "aot_calls": 20,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "direct_report": null,
+          "last_rule_deltas": {},
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\cache\\rcaotr_339a85fabc90e82ee4596216.cp314-win_amd64.pyd",
+              "module_sha256": "8e76ab5a2482277841be4fbde96172f94709bc5ae8f24270eede7e3cdb70593e",
+              "export": "r1",
+              "digest": "f345c7ad4b17d502243b8067b7b5d922ead273d48322603be54c85d79ca336d6",
+              "generated_source_sha256": "e101458c00e1d55471ac049b2caf20cfd9def4aec423369026f803196b94139a",
+              "mode": "aot"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 20,
+      "unobserved_successes": 0
+    }
+  ],
+  "native_counter_source": "Observed program.run entry plus successful Region.attempt result; ordinary _run result without Python fallback; no product compiled/aot/jit counter reads",
+  "fallback_counter_source": "Original Python code-entry observation within each wrapper call",
+  "independent_direct_abi_observer": "unimplemented; missing program.run entry fails closed",
+  "runner_report": {
+    "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\input\\run_benchmark.py",
+    "functions": [
+      {
+        "function": "Richards.run",
+        "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\input\\run_benchmark.py",
+        "compiled_calls": 20,
+        "aot_calls": 20,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": true,
+        "ahead_of_time": true,
+        "aot_loaded": true,
+        "region": true
+      }
+    ],
+    "not_found": [],
+    "batches": {},
+    "batch_failures": {},
+    "exit_code": null
+  },
+  "timing_eligible": false,
+  "requested_rule_counters": [],
+  "loaded_product_modules": {
+    "recompyler": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\__init__.py",
+      "sha256": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843"
+    },
+    "recompyler.facts": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\facts.py",
+      "sha256": "724a9570fd5ad0d11b27e5134dc616473af3a959ad2c232e6821ad04e654d9ad"
+    },
+    "recompyler.escape": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\escape.py",
+      "sha256": "54ab41bb195df8b3577cb40374d1e0632e71a517d265ef5b1d0deb1dbca6bc20"
+    },
+    "recompyler.scalar": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\scalar.py",
+      "sha256": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc"
+    },
+    "recompyler.flow": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\flow.py",
+      "sha256": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1"
+    },
+    "recompyler._comparison": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\_comparison.py",
+      "sha256": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3"
+    },
+    "recompyler.lift": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\lift.py",
+      "sha256": "f950ee6c94bfde8dd8021f925c37b246bfe0a60203ba8d58a3f375890f1f8976"
+    },
+    "recompyler._heap": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0"
+    },
+    "recompyler.heap": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\heap.py",
+      "sha256": "f7acbf5af5bbb1c423b91a410c0ecc9d17341a4303492bd3578e5575d58a8ebd"
+    },
+    "recompyler.aot": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\aot.py",
+      "sha256": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f"
+    },
+    "recompyler.runner": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\runner.py",
+      "sha256": "03be23bb02ddcdf5af36d8931f01d2add7e0ad42eaa9c1500981d419d7a226aa"
+    },
+    "recompyler._origin": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\_origin.py",
+      "sha256": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32"
+    },
+    "recompyler.batch": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\batch.py",
+      "sha256": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740"
+    },
+    "recompyler._region_seed": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-noop\\src\\recompyler\\_region_seed.py",
+      "sha256": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413"
+    }
+  },
+  "numba_imported_before": false,
+  "numba_imported_by_audit_bootstrap": false,
+  "numba_imported_after": false,
+  "limitations": [
+    "Audit observers add overhead; never use this process as a latency sample.",
+    "Preparation/retry native entries do not count as successful complete calls.",
+    "Direct runner preparation-failure Python calls have no lifted wrapper and remain runner-only fallbacks."
+  ],
+  "product_functions": [
+    {
+      "function": "Richards.run",
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\input\\run_benchmark.py",
+      "compiled_calls": 20,
+      "aot_calls": 20,
+      "jit_calls": 0,
+      "fallback_calls": 0,
+      "lifted": true,
+      "ahead_of_time": true,
+      "aot_loaded": true,
+      "region": true,
+      "qualname": "Richards.run",
+      "line": 385,
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v3\\richards_super\\input\\run_benchmark.py",
+      "runner_line": null,
+      "identity_line_source": "unique canonical file/qualified-name plan match"
+    }
+  ],
+  "runner_total_compiled_calls": 20,
+  "runner_total_fallback_calls": 0,
+  "product_exact_aot_calls": 20,
+  "product_exact_jit_calls": 0,
+  "compiled_total_reconciles": true,
+  "runner_only_fallback_calls": 0,
+  "per_function_native_matches_product": true,
+  "product_exact_counter_matches_audit": true,
+  "batch_execution_needs_separate_audit": false
+}

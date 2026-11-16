@@ -1,0 +1,172 @@
+{
+  "sources": {
+    "integration-depth-prepared-v1": {
+      "source_manifest_sha256": "d2a980cd6b6cc7c122fd19fb22826c9bdf71b6e5d839e25807bffd8ee9c79358",
+      "source_files": {
+        "recompyler/__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+        "recompyler/__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+        "recompyler/_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+        "recompyler/_heap.c": "98943097571fdca3f2a82dc9bbd534e3fbd8d5bb04ea51bdaddefd18dc7aabd1",
+        "recompyler/_heap.cp314-win_amd64.pyd": "f35da8425cd4c87f436098a33f9686d918bfd3c1730b6cd89d5bf5c2806b4aeb",
+        "recompyler/_monitor.c": "2d6e52cb082b7528bbbb882f2454cd6a763e1b8d5732fe1002dfaa66ea5a36f4",
+        "recompyler/_monitor.cp314-win_amd64.pyd": "de2059c4f4f90a5c5d2c2e3951d7cfdca61c0df659e9fc58ccedfbf0fe61d240",
+        "recompyler/_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+        "recompyler/_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+        "recompyler/_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+        "recompyler/_prepared.py": "1f6bdf698d0a48aa929514aa624ecbbe94b8df7b048a1c6d040450ecd1f8bf40",
+        "recompyler/_prepared_keys.py": "c9bc541d6f4b6969f58c6b8fddbb1728eb5932b18c102854ca1d4584c34cbb48",
+        "recompyler/_pycc/__init__.py": "445e3c46acf12fb5d78f96a7965de6fa3374104f5a8b3e927df9612d4802c923",
+        "recompyler/_pycc/cc.py": "dab20f566d7658462117379effb43a9e30b5b6c261a5471cf353170772bdafea",
+        "recompyler/_pycc/compiler.py": "caf1167cc5c61aec8e4d46ed36b9a545b503ca56d167b824f9bca6b1a54f692e",
+        "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+        "recompyler/_pycc/llvm_types.py": "9f4a1b498c8573b877e7a2e656a1a1c0530a1f83695c85c5e41c73b68536e34a",
+        "recompyler/_pycc/modulemixin.c": "8240807920e741333522f107a0a3c7f57dae3c5e52cf1e8d0f02e967813a7e7e",
+        "recompyler/_pycc/platform.py": "a02136b55e3256f91204619afe790c1711a8f828845fed25a41e8d29bea544ce",
+        "recompyler/_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+        "recompyler/_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+        "recompyler/_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+        "recompyler/_runner_wrapper.py": "182e913872bf5b658544703775da232ef7e3003f2e91dc5f4750ad915e4e1bb1",
+        "recompyler/aot.py": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f",
+        "recompyler/batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+        "recompyler/benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+        "recompyler/depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+        "recompyler/escape.py": "f2787ac24f8c49938bfd75fce4f8ff7223f88e8b79ac312f6a1660f26e9e9ae4",
+        "recompyler/experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+        "recompyler/facts.py": "9f9f08c23cad271eaae67d1d7ac1c32424e388e6463ce54f4a1aec3ffb17ea1b",
+        "recompyler/flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+        "recompyler/heap.py": "698a9e3352921dc77e9f592e31e3dc7bb847c4121c93afad9621a0fc2c3a8e81",
+        "recompyler/lift.py": "76d9ba680d72df84f560f96194d897e74c2b4617202f4729003a617dca905aed",
+        "recompyler/monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+        "recompyler/numeric_versions.py": "e244fee707f8a55e86f3f9074427cdb2cbcfdc6cc6ebb47cd5dcbcdc45896a10",
+        "recompyler/profiler.py": "954ffc77e58af00f579acc83190374f162d9880fbf981b4bd13606873efb7aa6",
+        "recompyler/report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+        "recompyler/runner.py": "01038be1e9f8ef77429f8b2cc16022ddab5ffdc79408cae6f80d177d10ba63da",
+        "recompyler/scalar.py": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc",
+        "recompyler/variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+      },
+      "artifacts": {
+        "barnes_hut": {
+          "inplace_c4fbbd9d49bfd9a0908f.cp314-win_amd64.pyd": "410962e443ada81c76c15a230c329cf0f9d905f2f137cf6e21cfaeb16f7ceda6",
+          "plan.json": "738bc6ddd5f61ff67feccfbdf29dc7a8c602588f332e665c586649e9b2f413a9",
+          "r0.generated.py": "f74ab75fbbd61e9cd1fed3e1a25b0f7a8df7ed05070c3e2a630cdaf66550614f",
+          "r1.generated.py": "0ea25ff332a4508619296af7922e307212f5f38fa802a2239009392387d11dcb"
+        },
+        "fannkuch": {
+          "fannkuch.generated.py": "79021fa2251803de2ce4067bbbb032427199d391c389a4f89b1c22f4280c10de",
+          "plan.json": "b693dba0783a6efb031b7133c96f46a982015615bbd257ca0506952654336722",
+          "rcaot_d0e385d022cd179b71d35579.cp314-win_amd64.pyd": "13b5bffa19cac3299f58a8424d52b8d1cecf263a633cc7d70bc51aad8573a91b"
+        },
+        "scimark": {
+          "FFT_bitreverse.generated.py": "0416bd3ccec70a3f6c38350ad84423857c9f345bfdf75a4293a6352b22c64428",
+          "FFT_inverse.generated.py": "a26de6664a3556da44dfe45045c98240c996e5bdc19e62a41ebf1e7316443c3e",
+          "FFT_transform.generated.py": "7f00d708a64eccb727339e6a17e0195db087f9623280fd67ad57f7821dd34c25",
+          "FFT_transform_internal.generated.py": "fd3782e04745753430d58a5969481c1696bec3440e70f549e7f4d304e3b412f1",
+          "plan.json": "80fbc9dad5ca440d3c7029138d73b5fbaedbc6bf68c153789f74e1712cb3ce42",
+          "rcaot_ceceb3b4629aa34340f8507b.cp314-win_amd64.pyd": "04a90189ee7173d7aba7e2d2477b29ba184dfe00a1a945f76a444c0803cbd23f"
+        },
+        "raytrace": {
+          "inplace_04448d618d3377ed0191.cp314-win_amd64.pyd": "9bbb37b46d1d290248dd4a5078b91994043134cef1b58aa091bb92de4ee9855e",
+          "plan.json": "312f1a21faacc5c05314feb8f1e4e78f19cd715882f2c9760e82ea74f1f86097",
+          "r0.generated.py": "b06e8c2563a9726a21cdc368079a5138ac4383bb46f398e29e1d27714b83cde4"
+        }
+      },
+      "complete_sha256": "ef91582c743b8197386114d6f012e2dd15c86848b752270da446bd00d49efb17",
+      "build_receipt_sha256": "c5e467a00d4064e7bf429c82d3237886e310cb4aac4aa57193effe4a5b2a522a"
+    },
+    "integration-native-guards-v1": {
+      "source_manifest_sha256": "4cfb0fea5066a2668aed6fc86cc1f2bac334f8a08dd18ccf8b217a28d4187e4b",
+      "source_files": {
+        "recompyler/__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+        "recompyler/__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+        "recompyler/_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+        "recompyler/_guards.h": "8c2352b5cd76a88be7bc610c47f081e429f68f75d8f540e7f3c48753d51184ed",
+        "recompyler/_heap.c": "c99434a8b1e7a8030538f86731b144508406fcb2d50d28c9c053f7f8bdec51e8",
+        "recompyler/_heap.cp314-win_amd64.pyd": "95201a266168f8582f64d304beb22e3ecc58893fdb5b24f6fa247c8c010ccbe0",
+        "recompyler/_monitor.c": "2d6e52cb082b7528bbbb882f2454cd6a763e1b8d5732fe1002dfaa66ea5a36f4",
+        "recompyler/_monitor.cp314-win_amd64.pyd": "de2059c4f4f90a5c5d2c2e3951d7cfdca61c0df659e9fc58ccedfbf0fe61d240",
+        "recompyler/_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+        "recompyler/_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+        "recompyler/_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+        "recompyler/_prepared.py": "1f6bdf698d0a48aa929514aa624ecbbe94b8df7b048a1c6d040450ecd1f8bf40",
+        "recompyler/_prepared_keys.py": "c9bc541d6f4b6969f58c6b8fddbb1728eb5932b18c102854ca1d4584c34cbb48",
+        "recompyler/_pycc/__init__.py": "445e3c46acf12fb5d78f96a7965de6fa3374104f5a8b3e927df9612d4802c923",
+        "recompyler/_pycc/cc.py": "dab20f566d7658462117379effb43a9e30b5b6c261a5471cf353170772bdafea",
+        "recompyler/_pycc/compiler.py": "caf1167cc5c61aec8e4d46ed36b9a545b503ca56d167b824f9bca6b1a54f692e",
+        "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+        "recompyler/_pycc/llvm_types.py": "9f4a1b498c8573b877e7a2e656a1a1c0530a1f83695c85c5e41c73b68536e34a",
+        "recompyler/_pycc/modulemixin.c": "8240807920e741333522f107a0a3c7f57dae3c5e52cf1e8d0f02e967813a7e7e",
+        "recompyler/_pycc/platform.py": "a02136b55e3256f91204619afe790c1711a8f828845fed25a41e8d29bea544ce",
+        "recompyler/_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+        "recompyler/_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+        "recompyler/_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+        "recompyler/_runner_wrapper.py": "182e913872bf5b658544703775da232ef7e3003f2e91dc5f4750ad915e4e1bb1",
+        "recompyler/aot.py": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f",
+        "recompyler/batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+        "recompyler/benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+        "recompyler/depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+        "recompyler/escape.py": "f2787ac24f8c49938bfd75fce4f8ff7223f88e8b79ac312f6a1660f26e9e9ae4",
+        "recompyler/experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+        "recompyler/facts.py": "9f9f08c23cad271eaae67d1d7ac1c32424e388e6463ce54f4a1aec3ffb17ea1b",
+        "recompyler/flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+        "recompyler/heap.py": "007d871a30cba9437c0dd6d2d33ddad26888ec0bd24e059eb7fcb9a1c89654c0",
+        "recompyler/lift.py": "2ab7e865fa3b66c3d337a7d34c9a785f51384efd4c1a0fba756b8cd4ea7355d0",
+        "recompyler/monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+        "recompyler/numeric_versions.py": "e244fee707f8a55e86f3f9074427cdb2cbcfdc6cc6ebb47cd5dcbcdc45896a10",
+        "recompyler/profiler.py": "954ffc77e58af00f579acc83190374f162d9880fbf981b4bd13606873efb7aa6",
+        "recompyler/report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+        "recompyler/runner.py": "01038be1e9f8ef77429f8b2cc16022ddab5ffdc79408cae6f80d177d10ba63da",
+        "recompyler/scalar.py": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc",
+        "recompyler/variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+      },
+      "artifacts": {
+        "barnes_hut": {
+          "inplace_dfd39257fb73448ec995.cp314-win_amd64.pyd": "617b6bc96c31f232759948bedf1153d08a8a35143cd446e5810de3e48709e2d6",
+          "plan.json": "c845c15d108727dcbae2cb510ccf0dea81c8bf13671be941dc898c8618431944",
+          "r0.generated.py": "f74ab75fbbd61e9cd1fed3e1a25b0f7a8df7ed05070c3e2a630cdaf66550614f",
+          "r1.generated.py": "0ea25ff332a4508619296af7922e307212f5f38fa802a2239009392387d11dcb"
+        },
+        "fannkuch": {
+          "fannkuch.generated.py": "79021fa2251803de2ce4067bbbb032427199d391c389a4f89b1c22f4280c10de",
+          "plan.json": "f87e90bf55f3ef9d12e3716796c133517048bc5c51b073814bad7ab4e65030b9",
+          "rcaot_fa95e092a050c6ef0e12115f.cp314-win_amd64.pyd": "f1cd65af50f69b477ad32f8381964c7787227a8a795cb0e52ab455e2da7fe40f"
+        },
+        "scimark": {
+          "FFT_bitreverse.generated.py": "0416bd3ccec70a3f6c38350ad84423857c9f345bfdf75a4293a6352b22c64428",
+          "FFT_inverse.generated.py": "a26de6664a3556da44dfe45045c98240c996e5bdc19e62a41ebf1e7316443c3e",
+          "FFT_transform.generated.py": "7f00d708a64eccb727339e6a17e0195db087f9623280fd67ad57f7821dd34c25",
+          "FFT_transform_internal.generated.py": "fd3782e04745753430d58a5969481c1696bec3440e70f549e7f4d304e3b412f1",
+          "plan.json": "62145e8084945325b8c234be6434c3723e95e62776ebee152d7179aaf20a58d7",
+          "rcaot_2d9e8130aca34e96664098ac.cp314-win_amd64.pyd": "bfa62ed338a9fbb1de8736b2e337fce07101b676e2ae8ba084f13959cebced07"
+        },
+        "raytrace": {
+          "inplace_c74064aa755654568001.cp314-win_amd64.pyd": "36b301c1631b45712753e74e64ce31d04a810ed2dbdd58d628cd1dfd4c9acf6c",
+          "plan.json": "5dbb16e7d16350c1ba3885abe4e0a2cc537dcdd93fe96f48a0e5a620c35d793f",
+          "r0.generated.py": "b06e8c2563a9726a21cdc368079a5138ac4383bb46f398e29e1d27714b83cde4"
+        }
+      },
+      "complete_sha256": "25417b6d4eeab801d2dfd50b7b4e310e942c97f2c257b22044bb33c5cdb34e95",
+      "build_receipt_sha256": "5bfa3b22b6c4217c9bb2db7f2d2859555bc7c40218376018553617d6f7fdeb5f"
+    }
+  },
+  "drivers": {
+    "barnes_hut": "75c2550e69a0b565a8fdf1651a723f51e7f63333eb960fc778163722844bf7fa",
+    "scimark": "75259353833cd5ebe8f855467b7fd8a4447985ae81695cda26004025d9cd9ab1"
+  },
+  "shim": {
+    "pyperf.py": "71ac509a7161b8ac664a0f4bb2bf84868e82642a600d4afa3996482bd1011ade"
+  },
+  "references": {
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\barnes_hut\\plain-0.stdout": "ec7246304b661d0fe7045e9b24a5d62dcfa7291b47675eea77b0b656a13d4eca",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\barnes_hut\\audit.counts.json": "cfc562d5703a1e2e0cc496d38683bf7797cca9b450a09674b6ab831157c21c72",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\scimark\\plain-0.stdout": "144ff8db668be38e8c412eb950adc5b3d969e6237aa5105defe797f710105481",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\scimark\\audit.counts.json": "9b6fc4b435158b1c446bcbb19a59fbef76e9f71ba7e223224731e86cac62fec3"
+  },
+  "analysis_sha256": "6dcd635a3478e006260fce8cda506b7e61ce833f9a9e2f34c91da33a9071d0f4",
+  "pairs": 3,
+  "kernels": [
+    "barnes_hut",
+    "scimark"
+  ],
+  "self_sha256": "8de074ef873559082779daba365e6dd951ff32ca482d958739515e639ad8f706",
+  "harness_sha256": "6df6bb3b53b0c67aff356e989f853cba67031e92c77d32062c3326c2a30ae492"
+}

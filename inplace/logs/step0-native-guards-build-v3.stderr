@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\build_native_guards_v3.py", line 56, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\build_native_guards_v3.py", line 32, in main
+    frozen=inputs();write(output/'freeze.json',frozen)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\build_native_guards_v3.py", line 27, in inputs
+    return dict(files={str(p):sha(p) for p in paths},headers={p.relative_to(headers).as_posix():sha(p) for p in sorted(headers.rglob('*.h'))},header_root=str(headers),python=sys.version,executable=sys.executable,runtime_dll=runtime_dll(),abiflags=sys.abiflags,flags=repr(sys.flags),configuration={name:sysconfig.get_config_var(name) for name in ("Py_DEBUG","Py_GIL_DISABLED","Py_TRACE_REFS","Py_STATS","WITH_PYMALLOC","SIZEOF_VOID_P","SOABI","EXT_SUFFIX")})
+                                                                                                                                                                                                                                                       ^^^^^^^^^^^^
+AttributeError: module 'sys' has no attribute 'abiflags'

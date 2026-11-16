@@ -1,0 +1,52 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+______ test_function_attribute_metadata_never_runs_user_hooks[subclass] _______
+
+shape = 'subclass'
+
+    @pytest.mark.parametrize('shape',['subclass','foreign-key'])
+    def test_function_attribute_metadata_never_runs_user_hooks(shape):
+        from recompyler import _prepared as pc,_runner_wrapper as rw
+        events=[]
+        class Hostile(dict):
+            def __contains__(self,key): events.append('contains');return False
+            def get(self,key,default=None):events.append('get');return default
+        class Key:
+            def __hash__(self):return hash('__recompyler_original__')
+            def __eq__(self,other):events.append('equal');return False
+        def fn():return 1
+        fn.__dict__=Hostile() if shape=='subclass' else {Key():1}
+        events.clear()
+>       assert rw.original(fn) is None
+E       AssertionError: assert <function test_function_attribute_metadata_never_runs_user_hooks.<locals>.fn at 0x000002157A271A60> is None
+E        +  where <function test_function_attribute_metadata_never_runs_user_hooks.<locals>.fn at 0x000002157A271A60> = <function original at 0x000002157A2983B0>(<function test_function_attribute_metadata_never_runs_user_hooks.<locals>.fn at 0x000002157A271A60>)
+E        +    where <function original at 0x000002157A2983B0> = <module 'recompyler._runner_wrapper' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_runner_wrapper.py'>.original
+
+tests\test_prepared_runner_method.py:60: AssertionError
+_____ test_function_attribute_metadata_never_runs_user_hooks[foreign-key] _____
+
+shape = 'foreign-key'
+
+    @pytest.mark.parametrize('shape',['subclass','foreign-key'])
+    def test_function_attribute_metadata_never_runs_user_hooks(shape):
+        from recompyler import _prepared as pc,_runner_wrapper as rw
+        events=[]
+        class Hostile(dict):
+            def __contains__(self,key): events.append('contains');return False
+            def get(self,key,default=None):events.append('get');return default
+        class Key:
+            def __hash__(self):return hash('__recompyler_original__')
+            def __eq__(self,other):events.append('equal');return False
+        def fn():return 1
+        fn.__dict__=Hostile() if shape=='subclass' else {Key():1}
+        events.clear()
+>       assert rw.original(fn) is None
+E       AssertionError: assert <function test_function_attribute_metadata_never_runs_user_hooks.<locals>.fn at 0x000002157A29A400> is None
+E        +  where <function test_function_attribute_metadata_never_runs_user_hooks.<locals>.fn at 0x000002157A29A400> = <function original at 0x000002157A2983B0>(<function test_function_attribute_metadata_never_runs_user_hooks.<locals>.fn at 0x000002157A29A400>)
+E        +    where <function original at 0x000002157A2983B0> = <module 'recompyler._runner_wrapper' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_runner_wrapper.py'>.original
+
+tests\test_prepared_runner_method.py:60: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_runner_method.py::test_function_attribute_metadata_never_runs_user_hooks[subclass]
+FAILED tests/test_prepared_runner_method.py::test_function_attribute_metadata_never_runs_user_hooks[foreign-key]
+2 failed, 2 deselected in 0.22s

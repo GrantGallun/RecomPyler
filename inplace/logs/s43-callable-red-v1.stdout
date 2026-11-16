@@ -1,0 +1,51 @@
+FF............                                                           [100%]
+================================== FAILURES ===================================
+____________ test_warm_deployed_callable_enters_no_python_bytecode ____________
+
+    def test_warm_deployed_callable_enters_no_python_bytecode():
+        region = heap.lift_region(arithmetic)
+        assert region(1000) == arithmetic(1000)
+        assert region(1001) == arithmetic(1001)
+>       before = snapshot(region)
+                 ^^^^^^^^^^^^^^^^
+
+tests\test_native_scalar_entry.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+region = <recompyler.heap.Region object at 0x000001C788438AD0>
+
+    def snapshot(region):
+        assert heap._native is not None
+>       assert hasattr(heap._native, 'scalar_entry_snapshot'), 'real C scalar entry is absent'
+E       AssertionError: real C scalar entry is absent
+E       assert False
+E        +  where False = hasattr(<module 'recompyler._heap' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_heap.cp314-win_amd64.pyd'>, 'scalar_entry_snapshot')
+E        +    where <module 'recompyler._heap' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_heap.cp314-win_amd64.pyd'> = heap._native
+
+tests\test_native_scalar_entry.py:20: AssertionError
+____ test_checked_overflow_is_not_a_native_completion_and_next_call_resets ____
+
+    def test_checked_overflow_is_not_a_native_completion_and_next_call_resets():
+        region = heap.lift_region(arithmetic)
+        region(1000); region(1001)
+>       before = snapshot(region)
+                 ^^^^^^^^^^^^^^^^
+
+tests\test_native_scalar_entry.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+region = <recompyler.heap.Region object at 0x000001C78861D590>
+
+    def snapshot(region):
+        assert heap._native is not None
+>       assert hasattr(heap._native, 'scalar_entry_snapshot'), 'real C scalar entry is absent'
+E       AssertionError: real C scalar entry is absent
+E       assert False
+E        +  where False = hasattr(<module 'recompyler._heap' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_heap.cp314-win_amd64.pyd'>, 'scalar_entry_snapshot')
+E        +    where <module 'recompyler._heap' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_heap.cp314-win_amd64.pyd'> = heap._native
+
+tests\test_native_scalar_entry.py:20: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_native_scalar_entry.py::test_warm_deployed_callable_enters_no_python_bytecode
+FAILED tests/test_native_scalar_entry.py::test_checked_overflow_is_not_a_native_completion_and_next_call_resets
+2 failed, 12 passed in 2.13s

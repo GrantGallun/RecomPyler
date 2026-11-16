@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\tools\_phase_worker.py", line 121, in observe
+    report = runner.run_script(Path(config["script"]), config["script_args"], Path(config["plan"]), force=config["force"])
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\step0-union-depth-prepared-v2\pytest-temp\test_phases_reports_missing_co2\repo\src\recompyler\runner.py", line 7, in run_script
+    ns = {}; exec(compile(script.read_text(), str(script), 'exec'), ns)
+             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\step0-union-depth-prepared-v2\pytest-temp\test_phases_reports_missing_co2\target.py", line 2, in <module>
+    raise RuntimeError('sentinel')
+RuntimeError: sentinel

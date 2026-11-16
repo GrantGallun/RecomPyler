@@ -1,0 +1,4532 @@
+{
+  "complete": true,
+  "diagnostic_only": true,
+  "performance_acceptance": false,
+  "source_manifest": {
+    "recompyler/__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+    "recompyler/__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+    "recompyler/_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+    "recompyler/_direct_adapter.py": "f5f40cf214ac4ef4913fede53243820629f60c783b8299c1608a5d56a8e5e3e9",
+    "recompyler/_guards.h": "4ceed5ff3338f079ebffc074e6b4b6745ebb68848d9708fdb5686f6b58bfba42",
+    "recompyler/_heap.c": "d05bb51bbcb03c80fb43351203aa98d1f2ace7a69b22006b5ed41403c4af0064",
+    "recompyler/_heap.cp314-win_amd64.pyd": "76418745b95ac15eed9da13a66f571222328f7a799e3e1770b4c27c5c23ca944",
+    "recompyler/_monitor.c": "2d6e52cb082b7528bbbb882f2454cd6a763e1b8d5732fe1002dfaa66ea5a36f4",
+    "recompyler/_monitor.cp314-win_amd64.pyd": "de2059c4f4f90a5c5d2c2e3951d7cfdca61c0df659e9fc58ccedfbf0fe61d240",
+    "recompyler/_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+    "recompyler/_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+    "recompyler/_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+    "recompyler/_prepared.py": "d30a6e612600c3b4c7dbbbbc1bba4152a1523d1aa1afefbd88ed8617464dbecf",
+    "recompyler/_prepared_keys.py": "c9bc541d6f4b6969f58c6b8fddbb1728eb5932b18c102854ca1d4584c34cbb48",
+    "recompyler/_pycc/__init__.py": "445e3c46acf12fb5d78f96a7965de6fa3374104f5a8b3e927df9612d4802c923",
+    "recompyler/_pycc/cc.py": "dab20f566d7658462117379effb43a9e30b5b6c261a5471cf353170772bdafea",
+    "recompyler/_pycc/compiler.py": "caf1167cc5c61aec8e4d46ed36b9a545b503ca56d167b824f9bca6b1a54f692e",
+    "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+    "recompyler/_pycc/llvm_types.py": "9f4a1b498c8573b877e7a2e656a1a1c0530a1f83695c85c5e41c73b68536e34a",
+    "recompyler/_pycc/modulemixin.c": "8240807920e741333522f107a0a3c7f57dae3c5e52cf1e8d0f02e967813a7e7e",
+    "recompyler/_pycc/platform.py": "a02136b55e3256f91204619afe790c1711a8f828845fed25a41e8d29bea544ce",
+    "recompyler/_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+    "recompyler/_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+    "recompyler/_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+    "recompyler/_runner_wrapper.py": "182e913872bf5b658544703775da232ef7e3003f2e91dc5f4750ad915e4e1bb1",
+    "recompyler/aot.py": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f",
+    "recompyler/batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+    "recompyler/benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+    "recompyler/depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+    "recompyler/direct.py": "8bc5ec52a7939c33ca0ab2ddcf24560396d919df133dde8b15626c88f4556c9d",
+    "recompyler/escape.py": "f2787ac24f8c49938bfd75fce4f8ff7223f88e8b79ac312f6a1660f26e9e9ae4",
+    "recompyler/experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+    "recompyler/facts.py": "9f9f08c23cad271eaae67d1d7ac1c32424e388e6463ce54f4a1aec3ffb17ea1b",
+    "recompyler/flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+    "recompyler/heap.py": "2e2e0ac8cf457aeb958e06e45db6b3e10fc549a073ea3f157108db93deda8b08",
+    "recompyler/lift.py": "8c51d27ae252a9075971872cd205ba1e2fcfdd5892b751afea54ae37ccea92a9",
+    "recompyler/monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+    "recompyler/numeric_versions.py": "e244fee707f8a55e86f3f9074427cdb2cbcfdc6cc6ebb47cd5dcbcdc45896a10",
+    "recompyler/profiler.py": "9b6aaa8551dbbd83acbe43627fce442976c550392d7dafe27d72893fa702eef9",
+    "recompyler/provenance.py": "887c0da546de228fae6ac6bbb1783ae105003f7303c762e71b359c241f80f545",
+    "recompyler/report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+    "recompyler/runner.py": "01038be1e9f8ef77429f8b2cc16022ddab5ffdc79408cae6f80d177d10ba63da",
+    "recompyler/scalar.py": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc",
+    "recompyler/variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+  },
+  "passes": {
+    "s46-ten-components-v7": {
+      "complete_sha256": "4ac98c582c69bff7b07a701697e2fd6292a75a2d79c8a212bdc3e62db47aa82c",
+      "timing_receipt_sha256": "2849c4e88376c884404d6cc994a75b052e7cbeea8cf4e7a73019412c8e7bc36c",
+      "timing_audit_sha256": "c21d06a0ebe1346a996256e17e415e82fae8885d8b02c553ff31f25cd32f72ab",
+      "other_correctness_seen": true
+    },
+    "s46-ten-components-v8": {
+      "complete_sha256": "1975bda11475aee2452d909fff6cc4f16c72f3366a71e00d54d297d4b8efa347",
+      "timing_receipt_sha256": "ebf05e0940554480581c391f0e8a9c09dbc4b6e8f2eef3ed026d48a385d1b528",
+      "timing_audit_sha256": "99920d9417255c9f2a17c898adbca3b259be96188954e3f47b1a08aa1e96f44c",
+      "other_correctness_seen": true
+    }
+  },
+  "rows": [
+    {
+      "function": "Chaosgame.transform_point",
+      "program": "chaos",
+      "passes": [
+        {
+          "total": 131.2125,
+          "load": 43.475,
+          "native_envelope": 4.225,
+          "writeback": 4.225,
+          "other": 79.28750000000002,
+          "named_other": {
+            "binding_ns": 7.3875,
+            "program_lookup_ns": 4.3875,
+            "guards_ns": 10.4375,
+            "arrays_ns": 2.275,
+            "array_snapshot_rollback_ns": 0.75,
+            "arena_capacity_ns": 0.775,
+            "staged_payload_copy_ns": 2.9875,
+            "control_writes_ns": 1.65,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 4.8875,
+            "result_prepare_ns": 2.3625,
+            "result_ns": 8.025,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 33.3625
+          }
+        },
+        {
+          "total": 128.45,
+          "load": 39.9625,
+          "native_envelope": 3.6875,
+          "writeback": 3.95,
+          "other": 80.84999999999998,
+          "named_other": {
+            "binding_ns": 7.15,
+            "program_lookup_ns": 3.925,
+            "guards_ns": 9.9125,
+            "arrays_ns": 2.2,
+            "array_snapshot_rollback_ns": 0.8,
+            "arena_capacity_ns": 0.7375,
+            "staged_payload_copy_ns": 2.9625,
+            "control_writes_ns": 1.55,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 4.775,
+            "result_prepare_ns": 2.35,
+            "result_ns": 7.8625,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 36.625
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          128.45,
+          131.2125
+        ],
+        "load": [
+          39.9625,
+          43.475
+        ],
+        "native_envelope": [
+          3.6875,
+          4.225
+        ],
+        "writeback": [
+          3.95,
+          4.225
+        ],
+        "other": [
+          79.28750000000002,
+          80.84999999999998
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "de2259c42a6ebf3aa89eeb0816bc6c807eee3e8531db9c05ea0f6aa6178fd25b",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "height"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "maxx"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "maxy"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "minx"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "miny"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "num_total"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "num_trafos"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "splines"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "thickness"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "width"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "degree"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "knots"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "points"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "x"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "y"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "z"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 2,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 3,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "x"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "y"
+                },
+                {
+                  "space": "list",
+                  "owner": 4,
+                  "field": "*"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "list",
+                  "owner": 4,
+                  "field": "*"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [
+                "entry:25:constructor_receiver_origin_unproved:unknown operation",
+                "entry:26:constructor_receiver_origin_unproved:unknown operation"
+              ],
+              "private_allocation": true,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": true,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Chaosgame.transform_point",
+            "Chaosgame.get_random_trafo",
+            "Spline.GetDomain",
+            "Spline.__call__",
+            "GVector.__sub__",
+            "GVector.Mag",
+            "Chaosgame.truncate",
+            "Spline.GetIndex",
+            "GVector.linear_combination",
+            "GVector.__mul__",
+            "GVector.__add__",
+            "GVector.__init__",
+            "GVector.__init__",
+            "GVector.__mul__",
+            "GVector.__add__"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "Spline.__call__",
+      "program": "chaos",
+      "passes": [
+        {
+          "total": 83.225,
+          "load": 15.275,
+          "native_envelope": 2.9875,
+          "writeback": 2.025,
+          "other": 62.93749999999999,
+          "named_other": {
+            "binding_ns": 7.8125,
+            "program_lookup_ns": 3.8125,
+            "guards_ns": 6.1125,
+            "arrays_ns": 2.3625,
+            "array_snapshot_rollback_ns": 0.825,
+            "arena_capacity_ns": 0.825,
+            "staged_payload_copy_ns": 2.0,
+            "control_writes_ns": 2.025,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 3.6125,
+            "result_prepare_ns": 2.6875,
+            "result_ns": 8.0375,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 22.825
+          }
+        },
+        {
+          "total": 67.0,
+          "load": 11.6125,
+          "native_envelope": 2.075,
+          "writeback": 1.725,
+          "other": 51.5875,
+          "named_other": {
+            "binding_ns": 5.6125,
+            "program_lookup_ns": 3.3875,
+            "guards_ns": 4.525,
+            "arrays_ns": 2.025,
+            "array_snapshot_rollback_ns": 0.75,
+            "arena_capacity_ns": 0.725,
+            "staged_payload_copy_ns": 1.7875,
+            "control_writes_ns": 1.675,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 2.95,
+            "result_prepare_ns": 2.3625,
+            "result_ns": 6.65,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 19.1375
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          67.0,
+          83.225
+        ],
+        "load": [
+          11.6125,
+          15.275
+        ],
+        "native_envelope": [
+          2.075,
+          2.9875
+        ],
+        "writeback": [
+          1.725,
+          2.025
+        ],
+        "other": [
+          51.5875,
+          62.93749999999999
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "e4b5f15668fba894768298a09d92e746178b47fde8635e0daad006940e6c929e",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "degree"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "knots"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "points"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "x"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "y"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "z"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "list",
+                  "owner": 2,
+                  "field": "*"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "list",
+                  "owner": 2,
+                  "field": "*"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [
+                "entry:10:constructor_receiver_origin_unproved:unknown operation"
+              ],
+              "private_allocation": true,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Spline.__call__",
+            "Spline.GetDomain",
+            "Spline.GetIndex",
+            "GVector.linear_combination",
+            "GVector.__init__"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "create_cycle",
+      "program": "gc_collect",
+      "passes": [
+        {
+          "total": 174.7875,
+          "load": 24.45,
+          "native_envelope": 2.6125,
+          "writeback": 81.7,
+          "other": 66.02499999999999,
+          "named_other": {
+            "binding_ns": 7.3,
+            "program_lookup_ns": 5.5625,
+            "guards_ns": 5.15,
+            "arrays_ns": 2.9,
+            "array_snapshot_rollback_ns": 0.925,
+            "arena_capacity_ns": 1.15,
+            "staged_payload_copy_ns": 2.5625,
+            "control_writes_ns": 2.15,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 3.4875,
+            "result_prepare_ns": 1.6875,
+            "result_ns": 0.9,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 32.25
+          }
+        },
+        {
+          "total": 135.0875,
+          "load": 11.3125,
+          "native_envelope": 1.85,
+          "writeback": 74.5625,
+          "other": 47.36250000000001,
+          "named_other": {
+            "binding_ns": 6.3875,
+            "program_lookup_ns": 3.4125,
+            "guards_ns": 3.8875,
+            "arrays_ns": 2.2375,
+            "array_snapshot_rollback_ns": 1.0375,
+            "arena_capacity_ns": 0.7625,
+            "staged_payload_copy_ns": 1.7875,
+            "control_writes_ns": 1.7,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 2.4,
+            "result_prepare_ns": 1.4125,
+            "result_ns": 0.8,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 21.5375
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          135.0875,
+          174.7875
+        ],
+        "load": [
+          11.3125,
+          24.45
+        ],
+        "native_envelope": [
+          1.85,
+          2.6125
+        ],
+        "writeback": [
+          74.5625,
+          81.7
+        ],
+        "other": [
+          47.36250000000001,
+          66.02499999999999
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "35f9110cf9979784ab41007d834fca529d11048d7b307ebf0fe84db5bc9f4df0",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "next"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "prev"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "next"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "prev"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "next"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "prev"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [
+                "entry:3:constructor_receiver_origin_unproved:unknown operation"
+              ],
+              "private_allocation": true,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "create_cycle",
+            "Node.__init__",
+            "Node.link_next"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "Hex.link_nodes",
+      "program": "hexiom",
+      "passes": [
+        {
+          "total": 250.4625,
+          "load": 153.4625,
+          "native_envelope": 6.5125,
+          "writeback": 17.0875,
+          "other": 73.4,
+          "named_other": {
+            "binding_ns": 7.5625,
+            "program_lookup_ns": 4.2375,
+            "guards_ns": 6.05,
+            "arrays_ns": 2.3875,
+            "array_snapshot_rollback_ns": 0.9,
+            "arena_capacity_ns": 0.825,
+            "staged_payload_copy_ns": 14.2625,
+            "control_writes_ns": 1.5625,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 6.3,
+            "result_prepare_ns": 1.6125,
+            "result_ns": 0.8875,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 26.8125
+          }
+        },
+        {
+          "total": 291.775,
+          "load": 171.575,
+          "native_envelope": 7.4,
+          "writeback": 19.6,
+          "other": 93.19999999999999,
+          "named_other": {
+            "binding_ns": 8.3375,
+            "program_lookup_ns": 5.375,
+            "guards_ns": 7.2625,
+            "arrays_ns": 2.7875,
+            "array_snapshot_rollback_ns": 0.9875,
+            "arena_capacity_ns": 0.95,
+            "staged_payload_copy_ns": 22.7875,
+            "control_writes_ns": 2.0,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 8.0875,
+            "result_prepare_ns": 1.925,
+            "result_ns": 1.0375,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 31.6625
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          250.4625,
+          291.775
+        ],
+        "load": [
+          153.4625,
+          171.575
+        ],
+        "native_envelope": [
+          6.5125,
+          7.4
+        ],
+        "writeback": [
+          17.0875,
+          19.6
+        ],
+        "other": [
+          73.4,
+          93.19999999999999
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "e244f03bb50212277325deca025a27c31422b38fb4c42294525b295058ae13c8",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "nodes_by_id"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "nodes_by_pos"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "size"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "id"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "links"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pos"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "x"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "y"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 2,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [
+                "entry:15:unsupported_object_shape:unknown operation",
+                "entry:9:unsupported_object_shape:unknown operation"
+              ],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Hex.link_nodes",
+            "Hex.contains_pos"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "Done.filter_tiles",
+      "program": "hexiom",
+      "passes": [
+        {
+          "total": 87.8625,
+          "load": 20.3875,
+          "native_envelope": 3.5125,
+          "writeback": 11.775,
+          "other": 52.18749999999999,
+          "named_other": {
+            "binding_ns": 6.1375,
+            "program_lookup_ns": 3.8875,
+            "guards_ns": 5.0875,
+            "arrays_ns": 2.1875,
+            "array_snapshot_rollback_ns": 0.8875,
+            "arena_capacity_ns": 0.95,
+            "staged_payload_copy_ns": 1.8625,
+            "control_writes_ns": 1.925,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 4.0875,
+            "result_prepare_ns": 1.8375,
+            "result_ns": 0.8625,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 22.475
+          }
+        },
+        {
+          "total": 104.825,
+          "load": 20.925,
+          "native_envelope": 8.975,
+          "writeback": 14.35,
+          "other": 60.57500000000001,
+          "named_other": {
+            "binding_ns": 12.725,
+            "program_lookup_ns": 3.7125,
+            "guards_ns": 5.2875,
+            "arrays_ns": 2.3125,
+            "array_snapshot_rollback_ns": 0.8,
+            "arena_capacity_ns": 0.9625,
+            "staged_payload_copy_ns": 1.95,
+            "control_writes_ns": 2.1875,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 4.3,
+            "result_prepare_ns": 1.625,
+            "result_ns": 0.8875,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 23.825
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          87.8625,
+          104.825
+        ],
+        "load": [
+          20.3875,
+          20.925
+        ],
+        "native_envelope": [
+          3.5125,
+          8.975
+        ],
+        "writeback": [
+          11.775,
+          14.35
+        ],
+        "other": [
+          52.18749999999999,
+          60.57500000000001
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "44d106f4b5a00849a6786f341fc401301767de30c92be3a349a591bac1c9e813",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "cells"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "count"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 2,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Done.filter_tiles",
+            "Done.remove_all",
+            "Done.remove"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "schedule",
+      "program": "richards_super",
+      "passes": [
+        {
+          "total": 419.225,
+          "load": 112.6375,
+          "native_envelope": 6.0375,
+          "writeback": 176.8875,
+          "other": 123.66250000000002,
+          "named_other": {
+            "binding_ns": 6.475,
+            "program_lookup_ns": 4.0875,
+            "guards_ns": 16.95,
+            "arrays_ns": 2.175,
+            "array_snapshot_rollback_ns": 0.8,
+            "arena_capacity_ns": 0.7125,
+            "staged_payload_copy_ns": 1.825,
+            "control_writes_ns": 1.5625,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 32.475,
+            "result_prepare_ns": 2.35,
+            "result_ns": 1.05,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 53.2
+          }
+        },
+        {
+          "total": 458.85,
+          "load": 140.025,
+          "native_envelope": 2.95,
+          "writeback": 185.775,
+          "other": 130.10000000000005,
+          "named_other": {
+            "binding_ns": 9.975,
+            "program_lookup_ns": 4.4625,
+            "guards_ns": 18.2875,
+            "arrays_ns": 2.9625,
+            "array_snapshot_rollback_ns": 0.85,
+            "arena_capacity_ns": 0.85,
+            "staged_payload_copy_ns": 1.9375,
+            "control_writes_ns": 1.625,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 33.0625,
+            "result_prepare_ns": 2.175,
+            "result_ns": 0.95,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 52.9625
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          419.225,
+          458.85
+        ],
+        "load": [
+          112.6375,
+          140.025
+        ],
+        "native_envelope": [
+          2.95,
+          6.0375
+        ],
+        "writeback": [
+          176.8875,
+          185.775
+        ],
+        "other": [
+          123.66250000000002,
+          130.10000000000005
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "1f73975d0ea478dc43121e97098b26f1dc8685fda3f524fddd9adc76c68eca69",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "link"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "link"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "link"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "schedule",
+            "TaskState.isTaskHoldingOrWaiting",
+            "Task.runTask",
+            "TaskState.isWaitingWithPacket",
+            "TaskState.running",
+            "TaskState.packetPending",
+            "DeviceTask.fn",
+            "HandlerTask.fn",
+            "WorkTask.fn",
+            "IdleTask.fn",
+            "Task.fn",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Task.hold",
+            "Task.fn",
+            "HandlerTaskRec.workInAdd",
+            "HandlerTaskRec.deviceInAdd",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Task.fn",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Task.fn",
+            "Task.hold",
+            "Task.release",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Task.findtcb"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "Task.runTask",
+      "program": "richards_super",
+      "passes": [
+        {
+          "total": 542.825,
+          "load": 262.1125,
+          "native_envelope": 5.6375,
+          "writeback": 66.9625,
+          "other": 208.11250000000004,
+          "named_other": {
+            "binding_ns": 8.575,
+            "program_lookup_ns": 17.0125,
+            "guards_ns": 45.6625,
+            "arrays_ns": 5.1125,
+            "array_snapshot_rollback_ns": 1.0125,
+            "arena_capacity_ns": 1.05,
+            "staged_payload_copy_ns": 2.25,
+            "control_writes_ns": 2.2,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 52.5125,
+            "result_prepare_ns": 3.7,
+            "result_ns": 2.675,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 66.35
+          }
+        },
+        {
+          "total": 609.6875,
+          "load": 292.65,
+          "native_envelope": 5.2625,
+          "writeback": 79.1,
+          "other": 232.67500000000004,
+          "named_other": {
+            "binding_ns": 9.225,
+            "program_lookup_ns": 18.075,
+            "guards_ns": 49.8375,
+            "arrays_ns": 5.475,
+            "array_snapshot_rollback_ns": 1.225,
+            "arena_capacity_ns": 1.2125,
+            "staged_payload_copy_ns": 2.55,
+            "control_writes_ns": 2.4125,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 63.7375,
+            "result_prepare_ns": 4.5,
+            "result_ns": 3.0875,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 71.3375
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          542.825,
+          609.6875
+        ],
+        "load": [
+          262.1125,
+          292.65
+        ],
+        "native_envelope": [
+          5.2625,
+          5.6375
+        ],
+        "writeback": [
+          66.9625,
+          79.1
+        ],
+        "other": [
+          208.11250000000004,
+          232.67500000000004
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "31ff22e5ffc0974cc7ad7d2b75c83159f6c35f8b11a23cc530d8816bcf75840d",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Task.runTask",
+            "TaskState.isWaitingWithPacket",
+            "TaskState.running",
+            "TaskState.packetPending",
+            "HandlerTask.fn",
+            "Task.fn",
+            "HandlerTaskRec.workInAdd",
+            "HandlerTaskRec.deviceInAdd",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Packet.append_to",
+            "Task.findtcb",
+            "Task.addPacket"
+          ]
+        },
+        {
+          "digest": "21f715ee8d8bb19634b96555b086785b74c1b36432445520821123b6962aa6a8",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Task.runTask",
+            "TaskState.isWaitingWithPacket",
+            "TaskState.running",
+            "TaskState.packetPending",
+            "IdleTask.fn",
+            "Task.fn",
+            "Task.hold",
+            "Task.release",
+            "Task.findtcb"
+          ]
+        },
+        {
+          "digest": "aec28595233ea50394a0162593a29eeea1cea4e5411c20721fa824bc20400cfd",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Task.runTask",
+            "TaskState.isWaitingWithPacket",
+            "TaskState.running",
+            "TaskState.packetPending",
+            "DeviceTask.fn",
+            "Task.fn",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Task.hold",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        },
+        {
+          "digest": "aec28595233ea50394a0162593a29eeea1cea4e5411c20721fa824bc20400cfd",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Task.runTask",
+            "TaskState.isWaitingWithPacket",
+            "TaskState.running",
+            "TaskState.packetPending",
+            "DeviceTask.fn",
+            "Task.fn",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Task.hold",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "HandlerTask.fn",
+      "program": "richards_super",
+      "passes": [
+        {
+          "total": 668.7375,
+          "load": 423.5,
+          "native_envelope": 4.9125,
+          "writeback": 60.2625,
+          "other": 180.06249999999994,
+          "named_other": {
+            "binding_ns": 8.925,
+            "program_lookup_ns": 12.2625,
+            "guards_ns": 25.2875,
+            "arrays_ns": 4.2375,
+            "array_snapshot_rollback_ns": 1.7,
+            "arena_capacity_ns": 1.1375,
+            "staged_payload_copy_ns": 2.15,
+            "control_writes_ns": 2.25,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 53.1625,
+            "result_prepare_ns": 3.8,
+            "result_ns": 2.55,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 62.6
+          }
+        },
+        {
+          "total": 742.95,
+          "load": 478.3,
+          "native_envelope": 5.275,
+          "writeback": 69.125,
+          "other": 190.25000000000006,
+          "named_other": {
+            "binding_ns": 8.7,
+            "program_lookup_ns": 12.9625,
+            "guards_ns": 25.95,
+            "arrays_ns": 4.0,
+            "array_snapshot_rollback_ns": 1.15,
+            "arena_capacity_ns": 1.2375,
+            "staged_payload_copy_ns": 2.2875,
+            "control_writes_ns": 2.15,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 58.7625,
+            "result_prepare_ns": 3.95,
+            "result_ns": 2.7625,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 66.3375
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          668.7375,
+          742.95
+        ],
+        "load": [
+          423.5,
+          478.3
+        ],
+        "native_envelope": [
+          4.9125,
+          5.275
+        ],
+        "writeback": [
+          60.2625,
+          69.125
+        ],
+        "other": [
+          180.06249999999994,
+          190.25000000000006
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "52e5885da0fdae6201b5482224c80bc87355880821f9992283e304716d1c9a85",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "HandlerTask.fn",
+            "Task.fn",
+            "HandlerTaskRec.workInAdd",
+            "HandlerTaskRec.deviceInAdd",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Packet.append_to",
+            "Task.findtcb",
+            "Task.addPacket"
+          ]
+        },
+        {
+          "digest": "8ed9d91f6540220afb1ac8e830365bcce02f2ad972efc0b25a611e809bcdb27e",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "HandlerTask.fn",
+            "Task.fn",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "DeviceTask.fn",
+      "program": "richards_super",
+      "passes": [
+        {
+          "total": 623.3625,
+          "load": 331.2,
+          "native_envelope": 5.525,
+          "writeback": 74.0,
+          "other": 212.6375,
+          "named_other": {
+            "binding_ns": 10.5875,
+            "program_lookup_ns": 7.8375,
+            "guards_ns": 24.7375,
+            "arrays_ns": 4.3375,
+            "array_snapshot_rollback_ns": 1.175,
+            "arena_capacity_ns": 1.0875,
+            "staged_payload_copy_ns": 2.1625,
+            "control_writes_ns": 2.3375,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 60.625,
+            "result_prepare_ns": 4.0125,
+            "result_ns": 2.875,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 90.8625
+          }
+        },
+        {
+          "total": 577.9875,
+          "load": 301.1375,
+          "native_envelope": 4.65,
+          "writeback": 69.3625,
+          "other": 202.83749999999998,
+          "named_other": {
+            "binding_ns": 9.15,
+            "program_lookup_ns": 9.0125,
+            "guards_ns": 24.7,
+            "arrays_ns": 3.775,
+            "array_snapshot_rollback_ns": 1.6625,
+            "arena_capacity_ns": 1.325,
+            "staged_payload_copy_ns": 2.325,
+            "control_writes_ns": 2.4,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 62.4125,
+            "result_prepare_ns": 3.9125,
+            "result_ns": 2.7125,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 79.45
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          577.9875,
+          623.3625
+        ],
+        "load": [
+          301.1375,
+          331.2
+        ],
+        "native_envelope": [
+          4.65,
+          5.525
+        ],
+        "writeback": [
+          69.3625,
+          74.0
+        ],
+        "other": [
+          202.83749999999998,
+          212.6375
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "d96522bb2c765607f19c79a3057d621e70cd1abf9726831e535e1e4933879cde",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "DeviceTask.fn",
+            "Task.fn",
+            "Task.hold"
+          ]
+        },
+        {
+          "digest": "70ef59c50ccdf956f69d3d417b793eed28f6cf444c54a64d9fa14578f52c1184",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "DeviceTask.fn",
+            "Task.fn",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Task.hold",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        },
+        {
+          "digest": "70ef59c50ccdf956f69d3d417b793eed28f6cf444c54a64d9fa14578f52c1184",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "DeviceTask.fn",
+            "Task.fn",
+            "Task.waitTask",
+            "Task.qpkt",
+            "Task.hold",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        }
+      ]
+    },
+    {
+      "function": "Task.qpkt",
+      "program": "richards_super",
+      "passes": [
+        {
+          "total": 460.6875,
+          "load": 231.4125,
+          "native_envelope": 4.3125,
+          "writeback": 47.3625,
+          "other": 177.60000000000002,
+          "named_other": {
+            "binding_ns": 7.9625,
+            "program_lookup_ns": 14.1875,
+            "guards_ns": 33.9,
+            "arrays_ns": 4.35,
+            "array_snapshot_rollback_ns": 1.0125,
+            "arena_capacity_ns": 1.025,
+            "staged_payload_copy_ns": 2.225,
+            "control_writes_ns": 2.1375,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 50.175,
+            "result_prepare_ns": 3.675,
+            "result_ns": 2.6625,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 54.2875
+          }
+        },
+        {
+          "total": 610.175,
+          "load": 330.425,
+          "native_envelope": 6.575,
+          "writeback": 48.6625,
+          "other": 224.51249999999996,
+          "named_other": {
+            "binding_ns": 10.4125,
+            "program_lookup_ns": 20.0,
+            "guards_ns": 44.8125,
+            "arrays_ns": 5.8625,
+            "array_snapshot_rollback_ns": 1.5125,
+            "arena_capacity_ns": 1.2625,
+            "staged_payload_copy_ns": 2.675,
+            "control_writes_ns": 2.7125,
+            "recursion_frame_scan_ns": 0.0,
+            "unloader_init_ns": 57.5,
+            "result_prepare_ns": 5.775,
+            "result_ns": 3.0875,
+            "rng_store_ns": 0.0,
+            "shape_prepare_ns": 0.0,
+            "boundary_init_ns": 0.0,
+            "boundary_discard_ns": 0.0,
+            "result_validation_ns": 0.0,
+            "bookkeeping_ns": 68.9
+          }
+        }
+      ],
+      "ranges": {
+        "total": [
+          460.6875,
+          610.175
+        ],
+        "load": [
+          231.4125,
+          330.425
+        ],
+        "native_envelope": [
+          4.3125,
+          6.575
+        ],
+        "writeback": [
+          47.3625,
+          48.6625
+        ],
+        "other": [
+          177.60000000000002,
+          224.51249999999996
+        ]
+      },
+      "effect_reports": [
+        {
+          "digest": "6c940996212667761ddd37dfd24c7dc3b9f2c96e8ac0e021f96ce524f09f6a1f",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Task.qpkt",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        },
+        {
+          "digest": "6c940996212667761ddd37dfd24c7dc3b9f2c96e8ac0e021f96ce524f09f6a1f",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Task.qpkt",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        },
+        {
+          "digest": "6c940996212667761ddd37dfd24c7dc3b9f2c96e8ac0e021f96ce524f09f6a1f",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Task.qpkt",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        },
+        {
+          "digest": "6c940996212667761ddd37dfd24c7dc3b9f2c96e8ac0e021f96ce524f09f6a1f",
+          "effects": {
+            "entry": {
+              "reads": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "handle"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "last_packet"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "priority"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_holding"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "task_waiting"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "control"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "count"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "destination"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "device_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 1,
+                  "field": "work_in"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "data"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "datum"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "kind"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "holdCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskList"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "taskTab"
+                },
+                {
+                  "space": "list",
+                  "owner": 0,
+                  "field": "*"
+                },
+                {
+                  "space": "list",
+                  "owner": 1,
+                  "field": "*"
+                }
+              ],
+              "writes": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "packet_pending"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "ident"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                },
+                {
+                  "space": "field",
+                  "owner": 3,
+                  "field": "qpktCount"
+                }
+              ],
+              "topology": [
+                {
+                  "space": "field",
+                  "owner": 0,
+                  "field": "input"
+                },
+                {
+                  "space": "field",
+                  "owner": 2,
+                  "field": "link"
+                }
+              ],
+              "helpers": [],
+              "observers": [],
+              "failures": [],
+              "unknown": [],
+              "private_allocation": false,
+              "arrays_read": false,
+              "arrays_written": false,
+              "rng": false,
+              "recursive": false
+            }
+          },
+          "boundary_no_writeback": false,
+          "functions": [
+            "Task.qpkt",
+            "Task.findtcb",
+            "Task.addPacket",
+            "Packet.append_to"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    "s46-ten-components-v5 failed entire cohort",
+    "s46-ten-components-v6 unstarted cancelled"
+  ],
+  "native_body_isolated": false,
+  "observer_retained": true,
+  "limitations": "Two complete source-identical disturbed development passes, eight uniform samples each, no rare extras. Ranges are replay instrumentation sizes, not shares of earlier selection medians or guaranteed removable savings. Native includes CPUDispatcher and boxing. Other retains observers, guards, outputs and mandatory controls. No elapsed-time aggregates across functions."
+}

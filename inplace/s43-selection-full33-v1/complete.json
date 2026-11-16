@@ -1,0 +1,1196 @@
+{
+  "complete": true,
+  "eligible": [
+    "asyncio_tcp",
+    "asyncio_websockets",
+    "chaos",
+    "comprehensions",
+    "concurrent_imap",
+    "decimal_factorial",
+    "decimal_pi",
+    "deepcopy",
+    "deltablue",
+    "gc_collect",
+    "gc_traversal",
+    "generators",
+    "hexiom",
+    "json_dumps",
+    "json_loads",
+    "logging",
+    "mdp",
+    "meteor_contest",
+    "pathlib",
+    "pprint",
+    "python_startup",
+    "regex_compile",
+    "regex_dna",
+    "regex_effbot",
+    "regex_v8",
+    "richards_super",
+    "sqlalchemy_declarative",
+    "sqlite_synth",
+    "sympy",
+    "typing_runtime_protocols",
+    "unpack_sequence",
+    "xml_etree",
+    "yaml"
+  ],
+  "requested": [
+    "asyncio_tcp",
+    "asyncio_websockets",
+    "chaos",
+    "comprehensions",
+    "concurrent_imap",
+    "decimal_factorial",
+    "decimal_pi",
+    "deepcopy",
+    "deltablue",
+    "gc_collect",
+    "gc_traversal",
+    "generators",
+    "hexiom",
+    "json_dumps",
+    "json_loads",
+    "logging",
+    "mdp",
+    "meteor_contest",
+    "pathlib",
+    "pprint",
+    "python_startup",
+    "regex_compile",
+    "regex_dna",
+    "regex_effbot",
+    "regex_v8",
+    "richards_super",
+    "sqlalchemy_declarative",
+    "sqlite_synth",
+    "sympy",
+    "typing_runtime_protocols",
+    "unpack_sequence",
+    "xml_etree",
+    "yaml"
+  ],
+  "rows": [
+    {
+      "name": "asyncio_tcp",
+      "complete": true,
+      "captured": 49,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11555017147344901,
+          "compiled_us": 8.875178588953402,
+          "recommended": false
+        },
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.15233460923574668,
+          "compiled_us": 8.568412119308737,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "asyncio_websockets",
+      "complete": true,
+      "captured": 113,
+      "verified": 5,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.17424776807147616,
+          "compiled_us": 9.476923094972824,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11939096947386078,
+          "compiled_us": 8.45121530801407,
+          "recommended": false
+        },
+        {
+          "function": "peek_ahead",
+          "line": 73,
+          "python_us": 0.08062706310678544,
+          "compiled_us": 9.771014500048308,
+          "recommended": false
+        },
+        {
+          "function": "_is_dunder",
+          "line": 1212,
+          "python_us": 0.0840594060622961,
+          "compiled_us": 7.795735291438177,
+          "recommended": false
+        },
+        {
+          "function": "_split_optional_netmask",
+          "line": 156,
+          "python_us": 0.13754275930286655,
+          "compiled_us": 15.150231505416471,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "chaos",
+      "complete": true,
+      "captured": 60,
+      "verified": 10,
+      "deployed": 1,
+      "aot_calls": 20,
+      "worth_running": true,
+      "region_times": [
+        {
+          "function": "Chaosgame.create_image_chaos",
+          "line": 214,
+          "python_us": 35629.549998702714,
+          "compiled_us": 1463.06249735062,
+          "recommended": true
+        },
+        {
+          "function": "Chaosgame.transform_point",
+          "line": 178,
+          "python_us": 6.904827575359879,
+          "compiled_us": 38.704605302834686,
+          "recommended": false
+        },
+        {
+          "function": "Spline.__call__",
+          "line": 89,
+          "python_us": 2.390992649987525,
+          "compiled_us": 15.555523257421028,
+          "recommended": false
+        },
+        {
+          "function": "GVector.linear_combination",
+          "line": 48,
+          "python_us": 0.18167767001093463,
+          "compiled_us": 12.182500023090352,
+          "recommended": false
+        },
+        {
+          "function": "Spline.GetIndex",
+          "line": 112,
+          "python_us": 0.26770134306870186,
+          "compiled_us": 8.22409637327059,
+          "recommended": false
+        },
+        {
+          "function": "Chaosgame.get_random_trafo",
+          "line": 169,
+          "python_us": 0.4365543954970814,
+          "compiled_us": 22.091911780401407,
+          "recommended": false
+        },
+        {
+          "function": "GVector.__sub__",
+          "line": 40,
+          "python_us": 0.34052457492965815,
+          "compiled_us": 14.24818548266851,
+          "recommended": false
+        },
+        {
+          "function": "Spline.GetDomain",
+          "line": 84,
+          "python_us": 0.10523927410809669,
+          "compiled_us": 12.014858479027302,
+          "recommended": false
+        },
+        {
+          "function": "GVector.__add__",
+          "line": 34,
+          "python_us": 0.17987132356639074,
+          "compiled_us": 12.935833304557793,
+          "recommended": false
+        },
+        {
+          "function": "Chaosgame.truncate",
+          "line": 204,
+          "python_us": 0.09700208931783634,
+          "compiled_us": 15.619444470589599,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "comprehensions",
+      "complete": true,
+      "captured": 46,
+      "verified": 3,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.15027036265077073,
+          "compiled_us": 10.14523808234593,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.13733795366493456,
+          "compiled_us": 9.606250023352914,
+          "recommended": false
+        },
+        {
+          "function": "_is_dunder",
+          "line": 1212,
+          "python_us": 0.0865244392654324,
+          "compiled_us": 7.715064128159354,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "concurrent_imap",
+      "complete": true,
+      "captured": 65,
+      "verified": 4,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.1492418889844064,
+          "compiled_us": 9.594716494134868,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11428108849965289,
+          "compiled_us": 8.567660538866313,
+          "recommended": false
+        },
+        {
+          "function": "DefaultContext.get_context",
+          "line": 243,
+          "python_us": 0.11594773647731725,
+          "compiled_us": 10.603571354295127,
+          "recommended": false
+        },
+        {
+          "function": "get_executable",
+          "line": 45,
+          "python_us": 0.06992459463835056,
+          "compiled_us": 6.008958340923224,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "decimal_factorial",
+      "complete": true,
+      "captured": 44,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.14389093493951893,
+          "compiled_us": 8.580410408217515,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11603955185076037,
+          "compiled_us": 9.491477282029916,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "decimal_pi",
+      "complete": true,
+      "captured": 44,
+      "verified": 0,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": []
+    },
+    {
+      "name": "deepcopy",
+      "complete": true,
+      "captured": 48,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.15554680371854845,
+          "compiled_us": 8.607526861822173,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.14012773012177213,
+          "compiled_us": 9.51347399016165,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "deltablue",
+      "complete": true,
+      "captured": 51,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.1460331454962846,
+          "compiled_us": 9.466304302053606,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11139744505208633,
+          "compiled_us": 8.378571432591084,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "gc_collect",
+      "complete": true,
+      "captured": 47,
+      "verified": 4,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "create_cycle",
+          "line": 18,
+          "python_us": 3.208958848099359,
+          "compiled_us": 75.91339349996164,
+          "recommended": false
+        },
+        {
+          "function": "Node.link_next",
+          "line": 13,
+          "python_us": 0.13674781092098418,
+          "compiled_us": 15.758163722146453,
+          "recommended": false
+        },
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.21387155641652972,
+          "compiled_us": 9.280223848555348,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.1168445918659654,
+          "compiled_us": 9.404333347144227,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "gc_traversal",
+      "complete": true,
+      "captured": 44,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.15249779800131005,
+          "compiled_us": 9.198846181299395,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.16266506577494602,
+          "compiled_us": 11.497010864727402,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "generators",
+      "complete": true,
+      "captured": 47,
+      "verified": 1,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "Tree.__iter__",
+          "line": 21,
+          "python_us": 0.38478991416372954,
+          "compiled_us": 10.160648175601468,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "hexiom",
+      "complete": true,
+      "captured": 69,
+      "verified": 12,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "Done.already_done",
+          "line": 63,
+          "python_us": 0.08401904014562724,
+          "compiled_us": 9.232432431245625,
+          "recommended": false
+        },
+        {
+          "function": "Done.remove_unfixed",
+          "line": 77,
+          "python_us": 1.0493437915866917,
+          "compiled_us": 26.6820946283563,
+          "recommended": false
+        },
+        {
+          "function": "Done.remove",
+          "line": 66,
+          "python_us": 0.15698450363905334,
+          "compiled_us": 26.94882823561784,
+          "recommended": false
+        },
+        {
+          "function": "Done.__getitem__",
+          "line": 57,
+          "python_us": 0.08605066266886836,
+          "compiled_us": 12.316840285267164,
+          "recommended": false
+        },
+        {
+          "function": "Hex.get_by_id",
+          "line": 219,
+          "python_us": 0.08343250543529541,
+          "compiled_us": 133.85625015871483,
+          "recommended": false
+        },
+        {
+          "function": "Done.next_cell",
+          "line": 151,
+          "python_us": 0.6117294504616588,
+          "compiled_us": 153.68749986269643,
+          "recommended": false
+        },
+        {
+          "function": "Hex.link_nodes",
+          "line": 204,
+          "python_us": 15.07239595513157,
+          "compiled_us": 147.36607304907272,
+          "recommended": false
+        },
+        {
+          "function": "Done.next_cell_first",
+          "line": 119,
+          "python_us": 0.5025817535422091,
+          "compiled_us": 10.223250028502662,
+          "recommended": false
+        },
+        {
+          "function": "play_move",
+          "line": 339,
+          "python_us": 0.1902224146274277,
+          "compiled_us": 166.30833245775042,
+          "recommended": false
+        },
+        {
+          "function": "Done.filter_tiles",
+          "line": 85,
+          "python_us": 5.938034898565364,
+          "compiled_us": 23.276015044020085,
+          "recommended": false
+        },
+        {
+          "function": "Done.set_done",
+          "line": 60,
+          "python_us": 0.13604734139249786,
+          "compiled_us": 28.759849308037452,
+          "recommended": false
+        },
+        {
+          "function": "Done.remove_all",
+          "line": 73,
+          "python_us": 1.5487865900521522,
+          "compiled_us": 20.454275631652163,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "json_dumps",
+      "complete": true,
+      "captured": 48,
+      "verified": 0,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": []
+    },
+    {
+      "name": "json_loads",
+      "complete": true,
+      "captured": 46,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.15102501021606093,
+          "compiled_us": 9.022395816929121,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.1253018891877284,
+          "compiled_us": 8.9869718067348,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "logging",
+      "complete": true,
+      "captured": 52,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.15516426746365067,
+          "compiled_us": 9.426654447880164,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11772760891060528,
+          "compiled_us": 8.608441576497727,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "mdp",
+      "complete": true,
+      "captured": 46,
+      "verified": 0,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": []
+    },
+    {
+      "name": "meteor_contest",
+      "complete": true,
+      "captured": 49,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.18248161794355267,
+          "compiled_us": 9.961050702680739,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.12230824618643908,
+          "compiled_us": 8.227370675865977,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "pathlib",
+      "complete": true,
+      "captured": 57,
+      "verified": 1,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.1584273612980092,
+          "compiled_us": 8.810824735903843,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "pprint",
+      "complete": true,
+      "captured": 46,
+      "verified": 1,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_safe_key.__lt__",
+          "line": 99,
+          "python_us": 0.08129868802691644,
+          "compiled_us": 9.794758068070927,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "python_startup",
+      "complete": true,
+      "captured": 45,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.1537377458732283,
+          "compiled_us": 8.72146465369933,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11536576812447948,
+          "compiled_us": 8.308571445273367,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "regex_compile",
+      "complete": true,
+      "captured": 70,
+      "verified": 0,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": []
+    },
+    {
+      "name": "regex_dna",
+      "complete": true,
+      "captured": 48,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.16030794662575806,
+          "compiled_us": 9.364795877612481,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.12746104129959296,
+          "compiled_us": 8.807954570813733,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "regex_effbot",
+      "complete": true,
+      "captured": 49,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.14332093109700433,
+          "compiled_us": 8.727941188707891,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.111403589981879,
+          "compiled_us": 8.395684528208914,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "regex_v8",
+      "complete": true,
+      "captured": 61,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.1476935479634752,
+          "compiled_us": 8.455821917366798,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11509530100889426,
+          "compiled_us": 8.309027786405446,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "richards_super",
+      "complete": true,
+      "captured": 81,
+      "verified": 18,
+      "deployed": 1,
+      "aot_calls": 20,
+      "worth_running": true,
+      "region_times": [
+        {
+          "function": "Richards.run",
+          "line": 385,
+          "python_us": 27623.61249915557,
+          "compiled_us": 2400.1624988159165,
+          "recommended": true
+        },
+        {
+          "function": "schedule",
+          "line": 369,
+          "python_us": 7.136801241641077,
+          "compiled_us": 283.3124999597203,
+          "recommended": false
+        },
+        {
+          "function": "Task.runTask",
+          "line": 209,
+          "python_us": 10.223039804483767,
+          "compiled_us": 3321.2125017598737,
+          "recommended": false
+        },
+        {
+          "function": "HandlerTask.fn",
+          "line": 284,
+          "python_us": 12.80991709189805,
+          "compiled_us": 2723.7499962211587,
+          "recommended": false
+        },
+        {
+          "function": "DeviceTask.fn",
+          "line": 261,
+          "python_us": 13.78441480580653,
+          "compiled_us": 5126.825002662372,
+          "recommended": false
+        },
+        {
+          "function": "Task.qpkt",
+          "line": 239,
+          "python_us": 59.53590998350353,
+          "compiled_us": 21922.687505139038,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.isTaskHoldingOrWaiting",
+          "line": 140,
+          "python_us": 0.0943234325778477,
+          "compiled_us": 60.538636303549126,
+          "recommended": false
+        },
+        {
+          "function": "IdleTask.fn",
+          "line": 318,
+          "python_us": 0.9780493352281918,
+          "compiled_us": 264.67916783682693,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.isWaitingWithPacket",
+          "line": 143,
+          "python_us": 0.09018995115184225,
+          "compiled_us": 94.1388890270092,
+          "recommended": false
+        },
+        {
+          "function": "Task.addPacket",
+          "line": 199,
+          "python_us": 0.4064951580777929,
+          "compiled_us": 121.31388737341493,
+          "recommended": false
+        },
+        {
+          "function": "Task.fn",
+          "line": 196,
+          "python_us": 0.2383971953179298,
+          "compiled_us": 152.34821382494243,
+          "recommended": false
+        },
+        {
+          "function": "Task.findtcb",
+          "line": 246,
+          "python_us": 0.08435834454740625,
+          "compiled_us": 217.12499947170727,
+          "recommended": false
+        },
+        {
+          "function": "Task.hold",
+          "line": 226,
+          "python_us": 0.3865930283813947,
+          "compiled_us": 233.6281258976669,
+          "recommended": false
+        },
+        {
+          "function": "HandlerTaskRec.deviceInAdd",
+          "line": 87,
+          "python_us": 0.16685100184440313,
+          "compiled_us": 17.099241989798788,
+          "recommended": false
+        },
+        {
+          "function": "Packet.append_to",
+          "line": 44,
+          "python_us": 0.11459043847139583,
+          "compiled_us": 15.565340204788797,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.running",
+          "line": 119,
+          "python_us": 0.22814627786971187,
+          "compiled_us": 84.0750006318558,
+          "recommended": false
+        },
+        {
+          "function": "Task.waitTask",
+          "line": 222,
+          "python_us": 0.23503113233402928,
+          "compiled_us": 88.5659084650053,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.packetPending",
+          "line": 107,
+          "python_us": 0.3033079463979322,
+          "compiled_us": 101.06250010721851,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "sqlalchemy_declarative",
+      "complete": true,
+      "captured": 112,
+      "verified": 4,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "cast",
+          "line": 2300,
+          "python_us": 0.06616119451879526,
+          "compiled_us": 21.98897056908155,
+          "recommended": false
+        },
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.15280715517691756,
+          "compiled_us": 8.53350002823087,
+          "recommended": false
+        },
+        {
+          "function": "_is_dunder",
+          "line": 1212,
+          "python_us": 0.0940331533043222,
+          "compiled_us": 7.638117281596441,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.1308648600183099,
+          "compiled_us": 9.351623384055209,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "sqlite_synth",
+      "complete": true,
+      "captured": 48,
+      "verified": 3,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.1813344166747128,
+          "compiled_us": 9.614084543935745,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.1201680680198752,
+          "compiled_us": 8.495792079172881,
+          "recommended": false
+        },
+        {
+          "function": "AvgLength.step",
+          "line": 21,
+          "python_us": 0.1647772289360735,
+          "compiled_us": 11.61045924052406,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "sympy",
+      "complete": true,
+      "captured": 213,
+      "verified": 1,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "dup_strip",
+          "line": 255,
+          "python_us": 0.08080444313662838,
+          "compiled_us": 7.060555556866651,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "typing_runtime_protocols",
+      "complete": true,
+      "captured": 51,
+      "verified": 3,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.16559139914279905,
+          "compiled_us": 11.087115350304744,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11948387010864192,
+          "compiled_us": 11.260937469614873,
+          "recommended": false
+        },
+        {
+          "function": "_is_dunder",
+          "line": 1212,
+          "python_us": 0.10295529578296322,
+          "compiled_us": 8.214999979827553,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "unpack_sequence",
+      "complete": true,
+      "captured": 48,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.15114198907889997,
+          "compiled_us": 9.192382776745944,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.16011642276448673,
+          "compiled_us": 11.228525694698478,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "xml_etree",
+      "complete": true,
+      "captured": 57,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_escape_cdata",
+          "line": 1018,
+          "python_us": 0.09888350372754903,
+          "compiled_us": 10.947844829984362,
+          "recommended": false
+        },
+        {
+          "function": "_escape_attrib",
+          "line": 1034,
+          "python_us": 0.14707921919273673,
+          "compiled_us": 12.052148463226331,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "yaml",
+      "complete": true,
+      "captured": 68,
+      "verified": 2,
+      "deployed": 0,
+      "aot_calls": 0,
+      "worth_running": false,
+      "region_times": [
+        {
+          "function": "_is_dunder",
+          "line": 46,
+          "python_us": 0.16382353030220495,
+          "compiled_us": 8.902222180040553,
+          "recommended": false
+        },
+        {
+          "function": "_is_sunder",
+          "line": 57,
+          "python_us": 0.11422938052152472,
+          "compiled_us": 8.719821406495093,
+          "recommended": false
+        }
+      ]
+    }
+  ],
+  "programs_deploying": 2,
+  "baseline_programs_deploying": 2,
+  "cohort_complete": true,
+  "timing_scope": "gate warm complete Region wrapper replay; excludes fresh_copy and cold preparation; includes any gate fallback",
+  "source_manifest": {
+    "recompyler/__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+    "recompyler/__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+    "recompyler/_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+    "recompyler/_direct_adapter.py": "f5f40cf214ac4ef4913fede53243820629f60c783b8299c1608a5d56a8e5e3e9",
+    "recompyler/_guards.h": "4ceed5ff3338f079ebffc074e6b4b6745ebb68848d9708fdb5686f6b58bfba42",
+    "recompyler/_heap.c": "d05bb51bbcb03c80fb43351203aa98d1f2ace7a69b22006b5ed41403c4af0064",
+    "recompyler/_heap.cp314-win_amd64.pyd": "76418745b95ac15eed9da13a66f571222328f7a799e3e1770b4c27c5c23ca944",
+    "recompyler/_monitor.c": "2d6e52cb082b7528bbbb882f2454cd6a763e1b8d5732fe1002dfaa66ea5a36f4",
+    "recompyler/_monitor.cp314-win_amd64.pyd": "de2059c4f4f90a5c5d2c2e3951d7cfdca61c0df659e9fc58ccedfbf0fe61d240",
+    "recompyler/_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+    "recompyler/_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+    "recompyler/_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+    "recompyler/_prepared.py": "d30a6e612600c3b4c7dbbbbc1bba4152a1523d1aa1afefbd88ed8617464dbecf",
+    "recompyler/_prepared_keys.py": "c9bc541d6f4b6969f58c6b8fddbb1728eb5932b18c102854ca1d4584c34cbb48",
+    "recompyler/_pycc/__init__.py": "445e3c46acf12fb5d78f96a7965de6fa3374104f5a8b3e927df9612d4802c923",
+    "recompyler/_pycc/cc.py": "dab20f566d7658462117379effb43a9e30b5b6c261a5471cf353170772bdafea",
+    "recompyler/_pycc/compiler.py": "caf1167cc5c61aec8e4d46ed36b9a545b503ca56d167b824f9bca6b1a54f692e",
+    "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+    "recompyler/_pycc/llvm_types.py": "9f4a1b498c8573b877e7a2e656a1a1c0530a1f83695c85c5e41c73b68536e34a",
+    "recompyler/_pycc/modulemixin.c": "8240807920e741333522f107a0a3c7f57dae3c5e52cf1e8d0f02e967813a7e7e",
+    "recompyler/_pycc/platform.py": "a02136b55e3256f91204619afe790c1711a8f828845fed25a41e8d29bea544ce",
+    "recompyler/_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+    "recompyler/_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+    "recompyler/_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+    "recompyler/_runner_wrapper.py": "182e913872bf5b658544703775da232ef7e3003f2e91dc5f4750ad915e4e1bb1",
+    "recompyler/aot.py": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f",
+    "recompyler/batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+    "recompyler/benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+    "recompyler/depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+    "recompyler/direct.py": "8bc5ec52a7939c33ca0ab2ddcf24560396d919df133dde8b15626c88f4556c9d",
+    "recompyler/escape.py": "f2787ac24f8c49938bfd75fce4f8ff7223f88e8b79ac312f6a1660f26e9e9ae4",
+    "recompyler/experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+    "recompyler/facts.py": "9f9f08c23cad271eaae67d1d7ac1c32424e388e6463ce54f4a1aec3ffb17ea1b",
+    "recompyler/flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+    "recompyler/heap.py": "12d6e38cada4ad151906656c18eb615205aa5a8f22dfc840729e07b50f18c999",
+    "recompyler/lift.py": "f73299e9dd4623e97cf3d6386ff4a46e6388cbaff5eff8cd7ca2e952e25e6fad",
+    "recompyler/monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+    "recompyler/numeric_versions.py": "e244fee707f8a55e86f3f9074427cdb2cbcfdc6cc6ebb47cd5dcbcdc45896a10",
+    "recompyler/profiler.py": "954ffc77e58af00f579acc83190374f162d9880fbf981b4bd13606873efb7aa6",
+    "recompyler/report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+    "recompyler/runner.py": "01038be1e9f8ef77429f8b2cc16022ddab5ffdc79408cae6f80d177d10ba63da",
+    "recompyler/scalar.py": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc",
+    "recompyler/variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+  },
+  "shim_manifest": {
+    "pyperf.py": "c7d7f5d32e195734cef7faa6059416da92bf398c03499d0bbd5190044b37f282"
+  },
+  "input_manifest_sha256": "3799981e066e6cf0659a4644a49bb96b2eac6df7e35c96da3717101bdf43fc0a",
+  "helper_sha256": {
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s41_select.py": "b21eb4414ec56b13b67688713135a36a8a70713f6d488d7dac7a0ca75bc6e1ac",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\capture_profile_s23.py": "2403d83ecba9ed00f024e73044d4cca9bd7dd55bd163198be71b1d147e540d84",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\capture_behavior.py": "4e72c778bbe7b735bdf8cac92b6b718b7cbebcf5d8e79a8e1490d55644769409",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\capture_audit.py": "26d2313e8b15af631f7849bb934f948185f13ecfd39a4920ac7c3a04cc89bee2",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\heldout_identity.py": "9dab8b230683543c9fc6cc265c9548232c3f2b0eb4493fc117d010607d315857",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\freeze_build_step0.py": "2f151c88949b23ecf6f1406d06479dce0fd1d261267aa81b145b79b34db5b93a"
+  },
+  "selection": "unchanged normal gate;20-loop shim; no force or selection threshold change"
+}

@@ -1,0 +1,42 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______ test_derived_empty_pickle_slot_cache_does_not_change_runtime_key _______
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-slot-cache-red-v1/test_derived_empty_pickle_slot0')
+
+    def test_derived_empty_pickle_slot_cache_does_not_change_runtime_key(tmp_path):
+        from recompyler import heap,_prepared as pc
+        source=tmp_path/'pickle_cache.py';source.write_text(SOURCE)
+        module=load_source(source)
+        assert copyreg._slotnames(module.Box)==[]
+        region=heap.lift_region(module.read)
+        assert region(module.Box(10))==10
+        section=heap.build_regions([(('read',module.read.__code__.co_firstlineno),module.read,region)],tmp_path)
+        index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.read),pc.last_miss()
+E       AssertionError: None
+E       assert (<recompyler._prepared.PreparedIndex object at 0x00000225AD303B60> is not None and [])
+E        +  where [] = bind(<function read at 0x00000225AA052560>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x00000225AD303B60>.bind
+E        +    and   <function read at 0x00000225AA052560> = <module '_prepared_cache_fixture_test_derived_empty_pickle_slot0' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-slot-cache-red-v1\\test_derived_empty_pickle_slot0\\pickle_cache.py'>.read
+
+inplace\prepared-cache-preparation\test_prepared_slot_cache.py:13: AssertionError
+---------------------------- Captured stdout call -----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_d69a2cf92a3469b83f0e53b4-v1jvpn2d\rcaotr_d69a2cf92a3469b83f0e53b4.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_d69a2cf92a3469b83f0e53b4-v1jvpn2d\rcaotr_d69a2cf92a3469b83f0e53b4.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_slot_cache.py::test_derived_empty_pickle_slot_cache_does_not_change_runtime_key
+1 failed in 4.71s

@@ -1,0 +1,112 @@
+{
+  "label": "s46-ten-components-v8",
+  "command": [
+    "python",
+    "inplace/s46_ten_components.py",
+    "--output",
+    "inplace/s46-ten-components-v8",
+    "--lock-label",
+    "s46-ten-components-v8"
+  ],
+  "exit_code": 0,
+  "wall_s": 51.30088620004244,
+  "end": "2026-11-14T21:01:05.687744+00:00",
+  "class": "development",
+  "owner_token": "41112:a7e64bbff66f4d8fb88137c09051b96a",
+  "development_descriptive_overlap_enabled": true,
+  "correctness_samples": [
+    {
+      "time": "2026-11-14T21:00:14.721981+00:00",
+      "other_correctness_processes": [
+        {
+          "pid": 44652,
+          "command": "\"C:\\Python314\\python.exe\" matrix/provenance_gates.py matrix/unicode-union-v1 tests -q",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 17280,
+          "command": "C:\\Python314\\python.exe -m pytest tests -q --basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\unicode-union-v1\\pytest",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 42072,
+          "command": "\"C:\\Python314\\python.exe\" matrix/correctness_gates.py matrix/unicode-heldout-gate-v1 matrix/heldout_compare.py matrix/unicode-heldout-v1 --all-safe --baseline matrix/temp/unicode-before-59a56357-v1",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 21524,
+          "command": "C:\\Python314\\python.exe matrix/heldout_compare.py matrix/unicode-heldout-v1 --all-safe --baseline matrix/temp/unicode-before-59a56357-v1",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 32788,
+          "command": "C:\\Python314\\python.exe D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\heldout_native.py pprint D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\unicode-heldout-v1\\pprint-after",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        }
+      ]
+    },
+    {
+      "time": "2026-11-14T21:00:45.121066+00:00",
+      "other_correctness_processes": [
+        {
+          "pid": 44652,
+          "command": "\"C:\\Python314\\python.exe\" matrix/provenance_gates.py matrix/unicode-union-v1 tests -q",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 17280,
+          "command": "C:\\Python314\\python.exe -m pytest tests -q --basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\unicode-union-v1\\pytest",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 42072,
+          "command": "\"C:\\Python314\\python.exe\" matrix/correctness_gates.py matrix/unicode-heldout-gate-v1 matrix/heldout_compare.py matrix/unicode-heldout-v1 --all-safe --baseline matrix/temp/unicode-before-59a56357-v1",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 21524,
+          "command": "C:\\Python314\\python.exe matrix/heldout_compare.py matrix/unicode-heldout-v1 --all-safe --baseline matrix/temp/unicode-before-59a56357-v1",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 43104,
+          "command": "C:\\Python314\\python.exe D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\heldout_native.py regex_dna D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\unicode-heldout-v1\\regex_dna-after",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        }
+      ]
+    },
+    {
+      "time": "2026-11-14T21:01:05.687493+00:00",
+      "other_correctness_processes": [
+        {
+          "pid": 44652,
+          "command": "\"C:\\Python314\\python.exe\" matrix/provenance_gates.py matrix/unicode-union-v1 tests -q",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 17280,
+          "command": "C:\\Python314\\python.exe -m pytest tests -q --basetemp=D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\unicode-union-v1\\pytest",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 42072,
+          "command": "\"C:\\Python314\\python.exe\" matrix/correctness_gates.py matrix/unicode-heldout-gate-v1 matrix/heldout_compare.py matrix/unicode-heldout-v1 --all-safe --baseline matrix/temp/unicode-before-59a56357-v1",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 21524,
+          "command": "C:\\Python314\\python.exe matrix/heldout_compare.py matrix/unicode-heldout-v1 --all-safe --baseline matrix/temp/unicode-before-59a56357-v1",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        },
+        {
+          "pid": 20020,
+          "command": "C:\\Python314\\python.exe D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\heldout_native.py richards_super D:\\Code\\Datathon\\recompyler-codex-20261111\\wave17-matrix\\matrix\\unicode-heldout-v1\\richards_super-before",
+          "priority_verified": "NOT_BELOW_NORMAL"
+        }
+      ]
+    }
+  ],
+  "correctness_sampling_interval_s": 30,
+  "other_correctness_seen": true,
+  "correctness_observation_complete": true
+}

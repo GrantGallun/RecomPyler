@@ -48,14 +48,32 @@ _LOCAL = _E.PY_RETURN | _E.PY_YIELD | _E.PY_RESUME | _E.CALL
 _LIBRARY_LOCAL = _E.PY_RETURN | _E.PY_YIELD | _E.PY_RESUME
 # Calling one of these returns an object without running its code.
 _LAZY = 0x20 | 0x80 | 0x100 | 0x200
-_UNSUPPORTED = ((0x04, "takes *args"), (0x08, "takes **kwargs"), (0x20, "is a generator"),
-                (0x80, "is a coroutine"), (0x200, "is an async generator"))
+_UNSUPPORTED = ((0x04, "takes *args"), (0x08, "takes **kwargs"))
+# Generators and async generators: a sample holds the values a call yielded.
+_GENERATOR = 0x20 | 0x200
 MAX_RARE = 16
+# Values kept per sampled generator call; later ones are not copied.
+MAX_YIELDS = 1024
 MAX_CAPTURE_FAILURES = 32
 LIST_CHECK_CALLS = 64
 # Copy failures (other than size) after which an argument-type signature is skipped.
 SIGNATURE_FAILURES = 4
 _SCRIPT, _C, _PY = 0, 1, 2
+
+
+class Yielded:
+    """What a sampled generator call produced: the values it yielded, in order (the
+    first MAX_YIELDS), whether it ran to its end (``finished``) rather than being
+    closed early or cut short (``truncated``), and the value it returned."""
+
+    __slots__ = ("values", "finished", "truncated", "value")
+
+    def __init__(self, values, finished, truncated, value=None):
+        self.values, self.finished, self.truncated, self.value = values, finished, truncated, value
+
+    def __repr__(self):
+        state = "finished" if self.finished else "truncated" if self.truncated else "closed early"
+        return f"Yielded({self.values!r}, {state}, value={self.value!r})"
 
 
 class Stats:
@@ -87,11 +105,12 @@ class Sampler:
 
     def __init__(self, function, code, size, copy, seed):
         self.function, self.copy, self.size = function, copy, size
-        self.names = code.co_varnames[:code.co_argcount]
+        self.names = code.co_varnames[:code.co_argcount + code.co_kwonlyargcount]
         self.random = random.Random(seed)
         self.seen, self.next, self.weight = 0, 0, 1.0
         self.samples, self.rare, self.signatures = [], {}, {}
         self.failures, self.uncaptured, self.info = 0, 0, None
+        self.declines = {}
         # Set by the C backend: this sampler's index there, and how to stop it.
         self.index, self.stop = None, None
         # Captured samples are copies, so this is the only record of list reuse, which
@@ -101,6 +120,13 @@ class Sampler:
         # Argument-type signatures whose values failed to copy SIGNATURE_FAILURES
         # times for a reason other than size: later calls with them are not tried.
         self.uncopyable, self.copy_failures = set(), {}
+        # Generators: sampled calls that ran to their end, were closed early or were
+        # cut short at MAX_YIELDS, and the values they yielded.
+        self.generator = bool(code.co_flags & _GENERATOR)
+        self.finished = self.closed = self.truncated = self.yields = 0
+        # Sampled generator calls suspended after yielding, by id: a generator that is
+        # dropped while suspended may be closed without running again.
+        self.open = {}
 
     def _uniform(self):
         return self.random.random() or 0.5
@@ -153,8 +179,12 @@ class Sampler:
             self._failed()
             return None
         try:
+            if self.generator:
+                # Mutable: the values it yields are added as it goes.
+                return [self.copy(given), given, slot, signature if new else None, []]
             return self.copy(given), given, slot, signature if new else None
         except Exception as exc:
+            self.declines[str(exc)] = self.declines.get(str(exc), 0) + 1
             # A value of a type that cannot be copied fails the same way every time,
             # usually after walking much of the arguments; size limits vary by call.
             if "too large" not in str(exc):
@@ -169,12 +199,58 @@ class Sampler:
         """The share of calls passing lists that passed the very list objects of the call before."""
         return self.reused_lists / self.with_lists if self.with_lists else 0.0
 
-    def leave(self, pending, result):
-        inputs, given, slot, signature = pending
+    def yielded(self, pending, value):
+        """A sampled generator call yielded ``value``. False once no more are kept: the
+        sample is then stored as it is, cut short."""
+        values = pending[4]
+        try:
+            values.append(self.copy(value))
+        except Exception as exc:
+            self.declines[str(exc)] = self.declines.get(str(exc), 0) + 1
+            self.discard(pending)
+            self._failed()
+            return False
+        self.yields += 1
+        if len(values) >= MAX_YIELDS:
+            self.truncated += 1
+            self.open.pop(id(pending), None)
+            self._store(pending, Yielded(values, False, True))
+            return False
+        if len(values) == 1:
+            self.open[id(pending)] = pending
+        return True
+
+    def discard(self, pending):
+        """A failed call or yield capture must not be flushed as closed early."""
+        self.open.pop(id(pending), None)
+
+    def flush(self):
+        """Store the sampled generator calls still suspended as closed early."""
+        for pending in list(self.open.values()):
+            self.leave(pending, None, False)
+
+    def leave(self, pending, result, finished=True):
+        if self.generator:
+            self.open.pop(id(pending), None)
+            if finished:
+                self.finished += 1
+            else:
+                self.closed += 1
+            self._store(pending, Yielded(pending[4], finished, False, result if finished else None))
+            return
+        self._store(pending, result)
+
+    def _store(self, pending, result):
+        inputs, given, slot, signature = pending[:4]
         try:
             # The arguments as the call left them, for functions that change them.
-            sample = inputs, self.copy(result), self.copy(given)
-        except Exception:
+            if type(result) is Yielded:
+                result = Yielded(result.values, result.finished, result.truncated, self.copy(result.value))
+            else:
+                result = self.copy(result)
+            sample = inputs, result, self.copy(given)
+        except Exception as exc:
+            self.declines[str(exc)] = self.declines.get(str(exc), 0) + 1
             self._failed()
             return
         if slot is not None:
@@ -216,8 +292,8 @@ def _unsupported(code):
     for flag, reason in _UNSUPPORTED:
         if code.co_flags & flag:
             return reason
-    if code.co_kwonlyargcount:
-        return "takes keyword-only arguments"
+    if code.co_kwonlyargcount and code.co_flags & (_GENERATOR | 0x80):
+        return "takes keyword-only arguments in a generator or coroutine"
     return None
 
 
@@ -228,7 +304,9 @@ class CallMonitor:
     and methods, copied with ``copy`` (which raises for values it cannot copy).
     """
 
-    def __init__(self, paths, max_samples=0, copy=None, seed=0, bias=None, backend=None):
+    def __init__(self, paths, max_samples=0, copy=None, seed=0, bias=None, backend=None, yield_bias=None, all_origins=False):
+        self.all_origins = all_origins
+        self._own_folder = os.path.normcase(os.path.dirname(__file__)) + os.sep
         self.files, self.folders = set(), []
         for path in paths:
             path = os.path.normcase(os.path.abspath(path))
@@ -248,14 +326,21 @@ class CallMonitor:
             raise ImportError("recompyler._monitor is not built")
         self.backend, self._core, self._indexed = backend, None, []
         # Seconds of each callback that its own clock readings miss (the call into it
-        # and the return from it); None measures it on start.
+        # and the return from it); None measures it on start. A generator's yield and
+        # resume callbacks miss a different amount from a call's, so they have their own.
         self.bias = bias
+        self.yield_bias = bias if yield_bias is None and bias is not None else yield_bias
 
     def watches(self, filename):
         found = self._watched.get(filename)
         if found is None:
             path = os.path.normcase(os.path.abspath(filename)) if filename[:1] != "<" else filename
-            found = self._watched[filename] = path in self.files or path.startswith(tuple(self.folders))
+            found = path in self.files or path.startswith(tuple(self.folders))
+            if self.all_origins and not path.startswith(self._own_folder):
+                # Real source files only: frozen import machinery, exec strings and
+                # native boundaries keep the existing attribution path.
+                found = found or (not path.startswith('<') and path.endswith(('.py', '.pyw')) and os.path.isfile(path))
+            self._watched[filename] = found
         return found
 
     def _register(self, code, frame):
@@ -312,6 +397,8 @@ class CallMonitor:
             _M.set_local_events(tool, code, 0)
         _M.free_tool_id(tool)
         self._tool = None
+        for sampler in self.samplers.values():
+            sampler.flush()
         if self._core is not None:
             offset = self._sync()
         else:
@@ -322,6 +409,8 @@ class CallMonitor:
     def _core_callbacks(self):
         if self.bias is None:
             self.bias = calibrate("c")
+        if self.yield_bias is None:
+            self.yield_bias = calibrate_yield("c")
         indexed = self._indexed
 
         def watch(code, frame):
@@ -334,7 +423,8 @@ class CallMonitor:
             if sampler is not None and sampler.index is None:
                 sampler.index = index
                 sampler.stop = lambda: core.stop_sampling(index)
-                core.configure(index, sampler.size, sampler.names, sampler.random.getrandbits(64))
+                core.configure(index, sampler.size, sampler.names, sampler.random.getrandbits(64),
+                               sampler.generator)
             return index
 
         def classify(code):
@@ -347,12 +437,20 @@ class CallMonitor:
             sampler = indexed[index].sampler
             return None if sampler is None else sampler.capture(given, None if slot < 0 else slot, new)
 
-        def leave(index, pending, value):
+        def leave(index, pending, value, finished):
             sampler = indexed[index].sampler
             if sampler is not None:
-                sampler.leave(pending, value)
+                if finished < 0:
+                    sampler.discard(pending)
+                else:
+                    sampler.leave(pending, value, finished)
 
-        core = self._core = _accelerator.Core(_M.DISABLE, watch, classify, capture, leave, self.bias)
+        def yielded(index, pending, value):
+            sampler = indexed[index].sampler
+            return sampler is not None and sampler.yielded(pending, value)
+
+        core = self._core = _accelerator.Core(_M.DISABLE, watch, classify, capture, leave, self.bias,
+                                              self.yield_bias, yielded)
         return {_E.PY_START: core.on_start, _E.PY_RESUME: core.on_resume, _E.PY_THROW: core.on_resume,
                 _E.PY_RETURN: core.on_return, _E.PY_YIELD: core.on_yield, _E.PY_UNWIND: core.on_unwind,
                 _E.CALL: core.on_call, _E.C_RETURN: core.on_c_return, _E.C_RAISE: core.on_c_return}
@@ -396,6 +494,11 @@ class CallMonitor:
         bias = self.bias
         if bias is None:
             bias = self.bias = calibrate("python")
+        if self.yield_bias is None:
+            self.yield_bias = calibrate_yield("python")
+        yield_bias = self.yield_bias
+        # Samples of suspended generator frames, by frame.
+        suspended = {}
 
         def thread():
             state = threads.get(get_ident())
@@ -434,7 +537,7 @@ class CallMonitor:
             active = state.active
             active[info.stats] = active.get(info.stats, 0) + 1
 
-        def leave(code, value, returned):
+        def leave(code, value, returned, how=None):
             began = perf_counter()
             state = thread()
             now = began - state.off
@@ -453,9 +556,16 @@ class CallMonitor:
             stack.pop()
             close(state, entry, now)
             pending = entry[5]
-            if pending is not None and returned and info.sampler is not None:
-                info.sampler.leave(pending, value)
-            state.off += perf_counter() - began + bias
+            sampler = info.sampler
+            if pending is not None and sampler is not None:
+                if how == "yield" and sampler.generator:
+                    if sampler.yielded(pending, value):
+                        suspended[getframe(2)] = pending
+                elif returned or (how == "closed" and sampler.generator):
+                    sampler.leave(pending, value, returned)
+                elif sampler.generator:
+                    sampler.discard(pending)
+            state.off += perf_counter() - began + (yield_bias if how == "yield" else bias)
 
         def library_exit(code):
             began = perf_counter()
@@ -507,8 +617,9 @@ class CallMonitor:
                 return
             began = perf_counter()
             state = thread()
-            push(state, info, began - state.off, None)
-            state.off += perf_counter() - began + bias
+            pending = suspended.pop(getframe(1), None) if suspended and info.sampler is not None else None
+            push(state, info, began - state.off, pending)
+            state.off += perf_counter() - began + yield_bias
 
         def on_return(code, offset, value):
             if code in codes:
@@ -518,13 +629,13 @@ class CallMonitor:
 
         def on_yield(code, offset, value):
             if code in codes:
-                leave(code, value, False)
+                leave(code, value, False, "yield")
             else:
                 library_exit(code)
 
         def on_unwind(code, offset, exception):
             if code in codes:
-                leave(code, None, False)
+                leave(code, None, False, "closed" if isinstance(exception, GeneratorExit) else None)
             elif code in library:
                 library_exit(code)
 
@@ -563,7 +674,34 @@ class CallMonitor:
 
 
 _CALIBRATION = "<recompyler-calibration>"
-_bias = {}
+_bias, _yield_bias = {}, {}
+
+
+def calibrate_yield(backend="python", values=20000, rounds=5):
+    """calibrate() for a generator's yield and resume callbacks: a loop over a
+    generator timed with and without monitoring."""
+    if backend in _yield_bias:
+        return _yield_bias[backend]
+    space = {}
+    source = ("def values(n):\n    for _ in range(n):\n        yield None\n"
+              "def loop(n):\n    for _ in values(n):\n        pass\n")
+    exec(compile(source, _CALIBRATION, "exec"), space)
+    loop, residuals = space["loop"], []
+    call_bias = calibrate(backend)
+    for _ in range(rounds):
+        start = perf_counter()
+        loop(values)
+        plain = perf_counter() - start
+        monitor = CallMonitor([], bias=call_bias, backend=backend, yield_bias=0.0)
+        monitor.files.add(_CALIBRATION)
+        with monitor:
+            loop(values)
+        measured = next(stats.cumulative_s for stats in monitor.stats.values() if stats.key[1] == "loop")
+        # Each value makes two callbacks: PY_RESUME and PY_YIELD of the generator.
+        residuals.append((measured - plain) / (2 * values))
+    residuals.sort()
+    _yield_bias[backend] = max(residuals[len(residuals) // 2], 0.0)
+    return _yield_bias[backend]
 
 
 def calibrate(backend="python", calls=20000, rounds=5):
@@ -592,18 +730,20 @@ def calibrate(backend="python", calls=20000, rounds=5):
 
 
 def _function(code, frame):
-    """The function object running ``code``: a module-level function, or a method
-    found on the class of its first argument."""
+    """Find a plain function without probing arbitrary user metadata."""
     function = frame.f_globals.get(code.co_name)
-    if getattr(function, "__code__", None) is code:
+    if type(function) is FunctionType and function.__code__ is code:
         return function
+    for candidate in tuple(frame.f_globals.values()):
+        if type(candidate) is FunctionType and candidate.__code__ is code:
+            return candidate
     if code.co_argcount:
         try:
             first = frame.f_locals.get(code.co_varnames[0])
         except Exception:
             return None
-        for klass in type(first).__mro__:
-            candidate = vars(klass).get(code.co_name)
-            if getattr(candidate, "__code__", None) is code:
+        for klass in type.__getattribute__(type(first), "__mro__"):
+            candidate = type.__getattribute__(klass, "__dict__").get(code.co_name)
+            if type(candidate) is FunctionType and candidate.__code__ is code:
                 return candidate
     return None

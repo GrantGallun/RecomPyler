@@ -1,0 +1,18 @@
+{
+  "label": "s31-prepared-global-green-v1",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_prepared_globals.py",
+    "tests/test_prepared_slot_cache.py",
+    "tests/test_prepared_cache.py",
+    "tests/test_prepared_review_regressions.py",
+    "--basetemp",
+    "inplace/temp/s31-prepared-global-green-v1"
+  ],
+  "exit_code": 1,
+  "wall_s": 41.36349220000557,
+  "end": "2026-11-14T07:21:16.739840+00:00"
+}

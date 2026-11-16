@@ -24,6 +24,13 @@ def compact_profile(report):
             item["reason"] = candidate["reason"][:160]
         hotspots.append(item)
     compact = {"schema": "recompyler.profile.v1", "script": Path(report["script"]).name, "hotspots": hotspots}
+    if "candidate_ranking" in report:
+        compact["candidate_ranking"] = dict(report["candidate_ranking"])
+    if "uncaptured_hotspots" in report:
+        compact["uncaptured_hotspots"] = [
+            dict({key: row[key] for key in ("function", "file", "line", "self_s", "cumulative_s")
+                  if key in row}, capture_reason=row["capture_reason"][:160])
+            for row in report["uncaptured_hotspots"][:10]]
     if "plan" in report:
         compact["plan"] = report["plan"]
     return compact

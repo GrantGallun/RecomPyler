@@ -1,0 +1,135 @@
+FFFFFFF                                                                  [100%]
+================================== FAILURES ===================================
+_____ test_replacing_parent_reference_invalidates_child_family_locations ______
+
+    def test_replacing_parent_reference_invalidates_child_family_locations():
+        parent_link = direct.Place('field', 1, 'child')
+        child_number = direct.Place('field', 2, 'value')
+        analysis = direct.Effects((direct.FunctionIR('root', (
+            direct.Operation('load_numeric', place=child_number),
+            direct.Operation('store_reference', place=parent_link))),))
+>       assert not analysis.borrowable('root'), 'no path-dependency proof permits a stale child map'
+E       AssertionError: no path-dependency proof permits a stale child map
+E       assert not frozenset({Place(space='field', owner=2, field='value')})
+E        +  where frozenset({Place(space='field', owner=2, field='value')}) = borrowable('root')
+E        +    where borrowable = <recompyler.direct.Effects object at 0x0000029C8D122E40>.borrowable
+
+tests\test_direct_safety.py:17: AssertionError
+_____ test_identity_cycle_without_original_or_producer_cannot_materialize _____
+
+    def test_identity_cycle_without_original_or_producer_cannot_materialize():
+        identity = direct.Identity({'a': direct.Producer('forward', ('b',)),
+                                    'b': direct.Producer('forward', ('a',))}, ('a',))
+>       assert identity.problems
+E       assert ()
+E        +  where () = <recompyler.direct.Identity object at 0x0000029C8D123B60>.problems
+
+tests\test_direct_safety.py:23: AssertionError
+_______ test_unanchored_phi_arm_is_not_hidden_by_an_anchored_other_arm ________
+
+    def test_unanchored_phi_arm_is_not_hidden_by_an_anchored_other_arm():
+        identity = direct.Identity({'source': direct.Producer('existing'),
+                                    'loop': direct.Producer('forward', ('loop',)),
+                                    'phi': direct.Producer('select', ('source', 'loop'))}, ('phi',))
+>       assert any(problem.startswith('loop:') for problem in identity.problems)
+E       assert False
+E        +  where False = any(<generator object test_unanchored_phi_arm_is_not_hidden_by_an_anchored_other_arm.<locals>.<genexpr> at 0x0000029C8D15F060>)
+
+tests\test_direct_safety.py:31: AssertionError
+_______ test_proof_metadata_cannot_retain_arbitrary_class_identity_keys _______
+
+    def test_proof_metadata_cannot_retain_arbitrary_class_identity_keys():
+        class Ephemeral:
+            pass
+>       with pytest.raises(ValueError, match='primitive'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_direct_safety.py:37: Failed
+______ test_constructor_escape_cache_does_not_keep_classes_alive[False] _______
+
+class_cell = False
+
+    @pytest.mark.parametrize('class_cell', [False, True])
+    def test_constructor_escape_cache_does_not_keep_classes_alive(class_cell):
+        def discover():
+            if class_cell:
+                class Ephemeral:
+                    def __init__(self, value):
+                        self.value = value if __class__ is not None else 0
+            else:
+                class Ephemeral:
+                    def __init__(self, value):
+                        self.value = value
+            heap._init_assigned(Ephemeral, Ephemeral.__init__)
+            return weakref.ref(Ephemeral)
+        reference = discover()
+        gc.collect()
+>       assert reference() is None, 'constructor facts must not change ordinary class weakref lifetime'
+E       AssertionError: constructor facts must not change ordinary class weakref lifetime
+E       assert <class 'test_direct_safety.test_constructor_escape_cache_does_not_keep_classes_alive.<locals>.discover.<locals>.Ephemeral'> is None
+E        +  where <class 'test_direct_safety.test_constructor_escape_cache_does_not_keep_classes_alive.<locals>.discover.<locals>.Ephemeral'> = <weakref at 0x0000029C8D1E26B0; to 'type' at 0x0000029C8BA3A420 (Ephemeral)>()
+
+tests\test_direct_safety.py:56: AssertionError
+_______ test_constructor_escape_cache_does_not_keep_classes_alive[True] _______
+
+class_cell = True
+
+    @pytest.mark.parametrize('class_cell', [False, True])
+    def test_constructor_escape_cache_does_not_keep_classes_alive(class_cell):
+        def discover():
+            if class_cell:
+                class Ephemeral:
+                    def __init__(self, value):
+                        self.value = value if __class__ is not None else 0
+            else:
+                class Ephemeral:
+                    def __init__(self, value):
+                        self.value = value
+            heap._init_assigned(Ephemeral, Ephemeral.__init__)
+            return weakref.ref(Ephemeral)
+        reference = discover()
+        gc.collect()
+>       assert reference() is None, 'constructor facts must not change ordinary class weakref lifetime'
+E       AssertionError: constructor facts must not change ordinary class weakref lifetime
+E       assert <class 'test_direct_safety.test_constructor_escape_cache_does_not_keep_classes_alive.<locals>.discover.<locals>.Ephemeral'> is None
+E        +  where <class 'test_direct_safety.test_constructor_escape_cache_does_not_keep_classes_alive.<locals>.discover.<locals>.Ephemeral'> = <weakref at 0x0000029C8D1AA0C0; to 'type' at 0x0000029C8BA341B0 (Ephemeral)>()
+
+tests\test_direct_safety.py:56: AssertionError
+_______ test_unproved_llvm_intrinsic_is_not_automatically_callback_free _______
+
+    def test_unproved_llvm_intrinsic_is_not_automatically_callback_free():
+        from llvmlite import ir
+        from numba import njit, types
+        from numba.extending import intrinsic
+        from recompyler import _direct_adapter as adapter
+    
+        @intrinsic
+        def marker(typingctx):
+            def codegen(context, builder, sig, args):
+                function = ir.Function(builder.module, ir.FunctionType(ir.VoidType(), ()), 'llvm.sideeffect')
+                builder.call(function, ())
+                return context.get_dummy_value()
+            return types.void(), codegen
+    
+        def native(F, I, top, st):
+            marker()
+            return 1
+    
+        signature = (types.float64[::1], types.int64[::1], types.int64[::1], types.uint8[::1])
+>       with pytest.raises(adapter.AdapterDecline, match='intrinsic'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: Regex pattern did not match.
+E         Expected regex: 'intrinsic'
+E         Actual message: 'unsupported raw result kind: Literal[int](1)'
+
+tests\test_direct_safety.py:78: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_direct_safety.py::test_replacing_parent_reference_invalidates_child_family_locations
+FAILED tests/test_direct_safety.py::test_identity_cycle_without_original_or_producer_cannot_materialize
+FAILED tests/test_direct_safety.py::test_unanchored_phi_arm_is_not_hidden_by_an_anchored_other_arm
+FAILED tests/test_direct_safety.py::test_proof_metadata_cannot_retain_arbitrary_class_identity_keys
+FAILED tests/test_direct_safety.py::test_constructor_escape_cache_does_not_keep_classes_alive[False]
+FAILED tests/test_direct_safety.py::test_constructor_escape_cache_does_not_keep_classes_alive[True]
+FAILED tests/test_direct_safety.py::test_unproved_llvm_intrinsic_is_not_automatically_callback_free
+7 failed in 0.92s

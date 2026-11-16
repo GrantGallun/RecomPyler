@@ -1,0 +1,56 @@
+{
+  "complete": true,
+  "variant": "integration-depth-prepared-v1",
+  "lock_label": "step0-integration-final-build-v1",
+  "union_evidence": {
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\logs\\step0-union-depth-prepared-v2.receipt.json": "872dbc7fc046f389fab53672a3c4a46c4c60262ce551deeca1baa26129b862bd",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\complete.json": "740055315946f1b16870216cbc8551591bd08030e61367e8bb88473692b9bc71",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\freeze.json": "18d3e1e54888f79e2d1e6b064477d56cde6452f4057460942dcac880082ee931",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0_union.py": "2cc1c08b7cbb764d04eaec36b70743069496b2c096b36b1735d5a364381c4f23"
+  },
+  "build_inputs": {
+    "files": {
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\freeze_build_step0.py": "2f151c88949b23ecf6f1406d06479dce0fd1d261267aa81b145b79b34db5b93a",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\build_all.py": "ec3b15e031b4b760dafaa70ec3a0c2a895c8e5d6bcba07c54947367bc4a75be2",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\build_kernels.py": "c1901ba8477651f39b13fb688c4d28bdfdf98122a7c2a2e14f15b2a7bc3343ba",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py": "75c2550e69a0b565a8fdf1651a723f51e7f63333eb960fc778163722844bf7fa",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\fannkuch.py": "9ebe071d474df2d9651286e80c7efc59e3796207fad75804b34871150dce7531",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py": "75259353833cd5ebe8f855467b7fd8a4447985ae81695cda26004025d9cd9ab1",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\raytrace.py": "6fbfc3df050c3eb08928a1f05fb7c3cec8058b24216f70d9f8ae55462e06ff2d",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\barnes_hut\\plan.json": "4be0a7a0f323b24993d8b540708837a7231171b8dc4a6a7d1cdf2e64fbe38183",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\fannkuch\\plan.json": "eea44db09e95701f441c34dd173bb29f99149175c88f68b11a37487fef75b149",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\scimark\\plan.json": "67f65834938e1c386d9ebf1a96132596b79819c322daa378c3c05b73a7426615",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\raytrace\\plan.json": "bcd5084b90d5128dff3d2d5cd55ba0b943ace4d2811a74c65e808c05f715e461"
+    },
+    "shim": {
+      "pyperf.py": "71ac509a7161b8ac664a0f4bb2bf84868e82642a600d4afa3996482bd1011ade"
+    }
+  },
+  "source_manifest_sha256": "d2a980cd6b6cc7c122fd19fb22826c9bdf71b6e5d839e25807bffd8ee9c79358",
+  "artifacts": {
+    "barnes_hut": {
+      "inplace_c4fbbd9d49bfd9a0908f.cp314-win_amd64.pyd": "410962e443ada81c76c15a230c329cf0f9d905f2f137cf6e21cfaeb16f7ceda6",
+      "plan.json": "738bc6ddd5f61ff67feccfbdf29dc7a8c602588f332e665c586649e9b2f413a9",
+      "r0.generated.py": "f74ab75fbbd61e9cd1fed3e1a25b0f7a8df7ed05070c3e2a630cdaf66550614f",
+      "r1.generated.py": "0ea25ff332a4508619296af7922e307212f5f38fa802a2239009392387d11dcb"
+    },
+    "fannkuch": {
+      "fannkuch.generated.py": "79021fa2251803de2ce4067bbbb032427199d391c389a4f89b1c22f4280c10de",
+      "plan.json": "b693dba0783a6efb031b7133c96f46a982015615bbd257ca0506952654336722",
+      "rcaot_d0e385d022cd179b71d35579.cp314-win_amd64.pyd": "13b5bffa19cac3299f58a8424d52b8d1cecf263a633cc7d70bc51aad8573a91b"
+    },
+    "scimark": {
+      "FFT_bitreverse.generated.py": "0416bd3ccec70a3f6c38350ad84423857c9f345bfdf75a4293a6352b22c64428",
+      "FFT_inverse.generated.py": "a26de6664a3556da44dfe45045c98240c996e5bdc19e62a41ebf1e7316443c3e",
+      "FFT_transform.generated.py": "7f00d708a64eccb727339e6a17e0195db087f9623280fd67ad57f7821dd34c25",
+      "FFT_transform_internal.generated.py": "fd3782e04745753430d58a5969481c1696bec3440e70f549e7f4d304e3b412f1",
+      "plan.json": "80fbc9dad5ca440d3c7029138d73b5fbaedbc6bf68c153789f74e1712cb3ce42",
+      "rcaot_ceceb3b4629aa34340f8507b.cp314-win_amd64.pyd": "04a90189ee7173d7aba7e2d2477b29ba184dfe00a1a945f76a444c0803cbd23f"
+    },
+    "raytrace": {
+      "inplace_04448d618d3377ed0191.cp314-win_amd64.pyd": "9bbb37b46d1d290248dd4a5078b91994043134cef1b58aa091bb92de4ee9855e",
+      "plan.json": "312f1a21faacc5c05314feb8f1e4e78f19cd715882f2c9760e82ea74f1f86097",
+      "r0.generated.py": "b06e8c2563a9726a21cdc368079a5138ac4383bb46f398e29e1d27714b83cde4"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+F....................................................................... [ 62%]
+...........................................                              [100%]
+================================== FAILURES ===================================
+____ test_module_global_record_rebinds_current_input_without_regeneration _____
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-global-green-v1/test_module_global_record_rebi0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002175C3E15B0>
+
+    def test_module_global_record_rebinds_current_input_without_regeneration(tmp_path,monkeypatch):
+        from recompyler import heap,_prepared as pc
+        source=tmp_path/'global_fixture.py'
+        source.write_text(SOURCE+'\nGLOBAL_BOX=Box(10)\ndef global_read():\n    return GLOBAL_BOX.value\n')
+        module=load_source(source)
+        region=heap.lift_region(module.global_read)
+        assert region()==10 and region.compiled_calls==1
+        section=heap.build_regions([(('global_read',module.global_read.__code__.co_firstlineno),module.global_read,region)],tmp_path)
+        index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section))
+        assert index is not None and index.bind(module.global_read),pc.last_miss()
+        def forbidden(*a,**k): raise AssertionError('regeneration on global-input prepared hit')
+        monkeypatch.setattr(heap.Region,'_make_program',forbidden)
+        fast=heap.lift_region(module.global_read,index.exports,prepared=index)
+        assert fast()==10 and fast.aot_calls==1 and fast.prepared_hits==1
+        module.GLOBAL_BOX=module.Box(20)
+>       assert fast()==20 and fast.aot_calls==2 and fast.prepared_hits==2
+E       assert (20 == 20 and 1 == 2)
+E        +  where 20 = <recompyler.heap.Region object at 0x000002175FADA0D0>()
+E        +  and   1 = <recompyler.heap.Region object at 0x000002175FADA0D0>.aot_calls
+
+tests\test_prepared_globals.py:18: AssertionError
+---------------------------- Captured stdout call -----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_8765d02c06893dd84b06adca-dawj101s\rcaotr_8765d02c06893dd84b06adca.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_8765d02c06893dd84b06adca-dawj101s\rcaotr_8765d02c06893dd84b06adca.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_globals.py::test_module_global_record_rebinds_current_input_without_regeneration
+1 failed, 114 passed in 39.94s

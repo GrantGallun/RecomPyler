@@ -1,0 +1,36 @@
+{
+  "instrumented": true,
+  "timing_note": "Diagnostic timers add overhead; not an uninstrumented performance result. Native entries include retries; actual successful mode counts and Python fallbacks are in runner. Other attempt time includes preparation/compilation and unmeasured conversion/commit work. Timers attribute only the selected region.",
+  "attempts": [],
+  "runner": {
+    "functions": [
+      {
+        "function": "target",
+        "region": true,
+        "aot_calls": 1,
+        "jit_calls": 0,
+        "fallback_calls": 0
+      }
+    ],
+    "exit_code": null,
+    "batches": {}
+  },
+  "loaded_native_modules": [
+    {
+      "module": "_hashlib",
+      "path": "C:\\Python314\\DLLs\\_hashlib.pyd",
+      "sha256": "58c5c9ff93f989e2a233b8c5e06420ea73dd6c013e1f08d996fb0f2828eba0aa"
+    }
+  ],
+  "numba_imported": false,
+  "totals_ns": {
+    "load_ns": 0,
+    "guards_ns": 0,
+    "native_ns": 0,
+    "result_ns": 0,
+    "writeback_ns": 0,
+    "attempt_ns": 0,
+    "other_attempt_ns": 0
+  },
+  "error": "no target Region.attempt calls observed; target may be uncalled, lazy, or unsupported"
+}

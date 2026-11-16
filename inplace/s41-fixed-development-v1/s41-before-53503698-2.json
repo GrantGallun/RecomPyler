@@ -1,0 +1,97 @@
+{
+  "complete": true,
+  "rows": {
+    "field": {
+      "samples_ns": [
+        {
+          "python": 34.348,
+          "compiled": 7636.508
+        },
+        {
+          "compiled": 7487.866,
+          "python": 35.352
+        },
+        {
+          "python": 35.736,
+          "compiled": 7400.598
+        }
+      ],
+      "python_ns": 35.352,
+      "compiled_ns": 7487.866,
+      "independent_native_audit_entries": 3,
+      "compiled_calls": 150105,
+      "jit_calls": 150105,
+      "aot_calls": 0,
+      "fallback_calls": 0
+    },
+    "scalar": {
+      "samples_ns": [
+        {
+          "python": 25.372,
+          "compiled": 4857.632
+        },
+        {
+          "compiled": 4631.58,
+          "python": 25.368
+        },
+        {
+          "python": 25.366,
+          "compiled": 4957.104
+        }
+      ],
+      "python_ns": 25.368,
+      "compiled_ns": 4857.632,
+      "independent_native_audit_entries": 3,
+      "compiled_calls": 150105,
+      "jit_calls": 150105,
+      "aot_calls": 0,
+      "fallback_calls": 0
+    }
+  },
+  "source_manifest": {
+    "recompyler/__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+    "recompyler/__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+    "recompyler/_comparison.py": "b1a7e002b0c6363d37959e431c33287761bebf4b690aa17fa9ff04bd140b9ebf",
+    "recompyler/_direct_adapter.py": "a3eb0e0550cc39cd99939a8766a817b5f6dc38c2028b4070080e5b36d6267e6e",
+    "recompyler/_guards.h": "aa7736aabdac77b58b2cc681466aa50e8d6ddfff94842bf261a82685031b5f41",
+    "recompyler/_heap.c": "7598602ddd23195f7ca21063256ea6f33a8d1f801118cf48daa185c0559e7363",
+    "recompyler/_heap.cp314-win_amd64.pyd": "76418745b95ac15eed9da13a66f571222328f7a799e3e1770b4c27c5c23ca944",
+    "recompyler/_monitor.c": "2d6e52cb082b7528bbbb882f2454cd6a763e1b8d5732fe1002dfaa66ea5a36f4",
+    "recompyler/_monitor.cp314-win_amd64.pyd": "de2059c4f4f90a5c5d2c2e3951d7cfdca61c0df659e9fc58ccedfbf0fe61d240",
+    "recompyler/_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+    "recompyler/_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+    "recompyler/_origin.py": "f1586c03345b0058c5feb59cebc51f1a483c309a5b42098c48df2b3a7ad2279f",
+    "recompyler/_prepared.py": "32e51547dbfdde206d308623413874925c98e0a73a27e1a06d41631137751d40",
+    "recompyler/_prepared_keys.py": "e19e0ce2d17a6941a27b808c7ae56bd3605eeb9a154c0b709e8e339134d553a6",
+    "recompyler/_pycc/__init__.py": "445e3c46acf12fb5d78f96a7965de6fa3374104f5a8b3e927df9612d4802c923",
+    "recompyler/_pycc/cc.py": "dab20f566d7658462117379effb43a9e30b5b6c261a5471cf353170772bdafea",
+    "recompyler/_pycc/compiler.py": "caf1167cc5c61aec8e4d46ed36b9a545b503ca56d167b824f9bca6b1a54f692e",
+    "recompyler/_pycc/LICENSE.numba": "3a70e0a21cad03147246f6363d07bf76fae216c72779707f4ae5db06bcacf067",
+    "recompyler/_pycc/llvm_types.py": "9f4a1b498c8573b877e7a2e656a1a1c0530a1f83695c85c5e41c73b68536e34a",
+    "recompyler/_pycc/modulemixin.c": "8240807920e741333522f107a0a3c7f57dae3c5e52cf1e8d0f02e967813a7e7e",
+    "recompyler/_pycc/platform.py": "a02136b55e3256f91204619afe790c1711a8f828845fed25a41e8d29bea544ce",
+    "recompyler/_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+    "recompyler/_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+    "recompyler/_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+    "recompyler/_runner_wrapper.py": "c9071a02144b39774802ce9b6e69a11406ded150e5967599b31dfad0e96513b6",
+    "recompyler/aot.py": "17f94358ed219b3072109d710a6f326941a2972395106ed4d6b23ebd9c737b87",
+    "recompyler/batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+    "recompyler/benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+    "recompyler/depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+    "recompyler/direct.py": "a263065a09a164b1bea3f21c163bc9c8ee5169bd449cf22f0533c2936838a250",
+    "recompyler/escape.py": "4ad75a8c18c9486c1070d1b051022ecaf59a044c0b29ca2405528e8e6d9ded04",
+    "recompyler/experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+    "recompyler/facts.py": "995b3ede4f3595d67f2a2372d851cf4016be20e78599603973f3b4e897c5018d",
+    "recompyler/flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+    "recompyler/heap.py": "df22eaf474d29734081abb8d5d8b2db4d3deade8699d1a9c8c273df91b97e384",
+    "recompyler/lift.py": "fb9c9366b64ebc9a4233bd3718b71d78f1880c0c12f3c49ef0c9872b2bf991c9",
+    "recompyler/monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+    "recompyler/numeric_versions.py": "9103ae37bbf1707112415fe6a38bcf2f514107e0d9ce06dd2d3f6f2f26c87d95",
+    "recompyler/profiler.py": "ff2b482a1a0abc2cb64263a4e52b91eb432507a1a7b5c6c3a313c2b8399e2ca6",
+    "recompyler/report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+    "recompyler/runner.py": "c6aeb7b155c788c2a48076e068166b0e15e48c5887643462846d4d62cbcb7554",
+    "recompyler/scalar.py": "07353ea8b8649b4c91a0b6032f655d22b285f7a2d68c42d389d7e4abf92bd363",
+    "recompyler/variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+  },
+  "helper_sha256": "0dde742df42543af40e0f42825f7d6f25336d266c339f43e59f3709ecdf4fc8f"
+}

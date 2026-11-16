@@ -1,0 +1,57 @@
+{
+  "kind": "instrumented-region-diagnostic",
+  "script": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_rejects_unsupporte0\\target.py",
+    "bytes": 40,
+    "sha256": "75506a459f1ef1dc23ae209e8b76704211012e224ca3c03e353f1dd1183f6185"
+  },
+  "plan": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_rejects_unsupporte0\\plan.json",
+    "bytes": 17,
+    "sha256": "1ed32de75bf2d6b53c489000b618be3e3c4b24d4cccafd2c2cfcf97267a14e36"
+  },
+  "python": {
+    "path": "C:\\Python314\\python.exe",
+    "bytes": 106328,
+    "sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a"
+  },
+  "source": [
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_rejects_unsupporte0\\repo\\src\\recompyler\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_rejects_unsupporte0\\repo\\src\\recompyler\\heap.py",
+      "bytes": 708,
+      "sha256": "79081fc914ef7968deeb71f88ffe5c120a5808c7bf115ba240f3cb992bbc5a81"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_rejects_unsupporte0\\repo\\src\\recompyler\\runner.py",
+      "bytes": 591,
+      "sha256": "228fdfa076cb8736799f1912dbe8652c767ac9fd3dafe674c500fa98082002f4"
+    }
+  ],
+  "artifacts": [],
+  "planned_artifacts": [],
+  "cache": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_rejects_unsupporte0\\out\\cache",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\tools\\_phase_worker.py",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_rejects_unsupporte0\\out\\config.json"
+  ],
+  "returncode": 2,
+  "error": null,
+  "timeout_scope": "direct child only; descendants created by the target/tool may survive a timeout",
+  "worker": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\tools\\_phase_worker.py",
+    "bytes": 7720,
+    "sha256": "6e443b3ed80ace34475d7c7bd6fdb32383cfd732b27db77f5ba2de22301a429e"
+  },
+  "checks": [],
+  "diagnostic": {
+    "instrumented": true,
+    "error": "ValueError: unsupported engine: phases currently instruments only heap.Region targets"
+  },
+  "status": "error"
+}

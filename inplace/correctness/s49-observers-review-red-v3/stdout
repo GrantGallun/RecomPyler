@@ -1,0 +1,134 @@
+......FFFFFFFFFFFF............FFFF...................                    [100%]
+================================== FAILURES ===================================
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[int-container0-identity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('identity', (0, {1: 2}), None)
+E   assert True is False
+E    +  where True = <recompyler.heap.Region object at 0x0000026C75B4D150>(*(0, {1: 2}))
+E    +  and   False = <function identity at 0x0000026C75D3EC40>(*(0, {1: 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[int-container0-nonidentity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('nonidentity', (0, {1: 2}), None)
+E   assert False is True
+E    +  where False = <recompyler.heap.Region object at 0x0000026C7A1A48D0>(*(0, {1: 2}))
+E    +  and   True = <function nonidentity at 0x0000026C75EE2350>(*(0, {1: 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[int-container1-identity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('identity', (0, {1, 2}), None)
+E   assert True is False
+E    +  where True = <recompyler.heap.Region object at 0x0000026C7A1C8250>(*(0, {1, 2}))
+E    +  and   False = <function identity at 0x0000026C75D3EC40>(*(0, {1, 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[int-container1-nonidentity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('nonidentity', (0, {1, 2}), None)
+E   assert False is True
+E    +  where False = <recompyler.heap.Region object at 0x0000026C77DE1C50>(*(0, {1, 2}))
+E    +  and   True = <function nonidentity at 0x0000026C75EE2350>(*(0, {1, 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[float-container0-identity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('identity', (0.0, {1: 2}), None)
+E   assert True is False
+E    +  where True = <recompyler.heap.Region object at 0x0000026C77E2C7D0>(*(0.0, {1: 2}))
+E    +  and   False = <function identity at 0x0000026C75D3EC40>(*(0.0, {1: 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[float-container0-nonidentity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('nonidentity', (0.0, {1: 2}), None)
+E   assert False is True
+E    +  where False = <recompyler.heap.Region object at 0x0000026C77E2DD60>(*(0.0, {1: 2}))
+E    +  and   True = <function nonidentity at 0x0000026C75EE2350>(*(0.0, {1: 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[float-container1-identity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('identity', (0.0, {1, 2}), None)
+E   assert True is False
+E    +  where True = <recompyler.heap.Region object at 0x0000026C77E2F890>(*(0.0, {1, 2}))
+E    +  and   False = <function identity at 0x0000026C75D3EC40>(*(0.0, {1, 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[float-container1-nonidentity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('nonidentity', (0.0, {1, 2}), None)
+E   assert False is True
+E    +  where False = <recompyler.heap.Region object at 0x0000026C7AA0C6E0>(*(0.0, {1, 2}))
+E    +  and   True = <function nonidentity at 0x0000026C75EE2350>(*(0.0, {1, 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[bool-container0-identity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('identity', (False, {1: 2}), None)
+E   assert True is False
+E    +  where True = <recompyler.heap.Region object at 0x0000026C7AA0D4F0>(*(False, {1: 2}))
+E    +  and   False = <function identity at 0x0000026C75D3EC40>(*(False, {1: 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[bool-container0-nonidentity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('nonidentity', (False, {1: 2}), None)
+E   assert False is True
+E    +  where False = <recompyler.heap.Region object at 0x0000026C7AA0E990>(*(False, {1: 2}))
+E    +  and   True = <function nonidentity at 0x0000026C75EE2350>(*(False, {1: 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[bool-container1-identity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('identity', (False, {1, 2}), None)
+E   assert True is False
+E    +  where True = <recompyler.heap.Region object at 0x0000026C7AA0FC50>(*(False, {1, 2}))
+E    +  and   False = <function identity at 0x0000026C75D3EC40>(*(False, {1, 2}))
+_ test_numeric_vs_container_identity_cannot_compare_a_handle[bool-container1-nonidentity] _
+tests\test_numeric_observers.py:33: in test_numeric_vs_container_identity_cannot_compare_a_handle
+    assert region(*args) is fn(*args),(fn.__name__,args,region.problem)
+E   AssertionError: ('nonidentity', (False, {1, 2}), None)
+E   assert False is True
+E    +  where False = <recompyler.heap.Region object at 0x0000026C7AC8CF50>(*(False, {1, 2}))
+E    +  and   True = <function nonidentity at 0x0000026C75EE2350>(*(False, {1, 2}))
+_____ test_mixed_and_special_numeric_values_use_type_proof[-0.0-identity] _____
+tests\test_numeric_observers.py:98: in test_mixed_and_special_numeric_values_use_type_proof
+    assert region(*args) is expected
+E   assert True is False
+E    +  where True = <recompyler.heap.Region object at 0x0000026C7AA0FC50>(*(-0.0, {1: 2}))
+___ test_mixed_and_special_numeric_values_use_type_proof[-0.0-nonidentity] ____
+tests\test_numeric_observers.py:98: in test_mixed_and_special_numeric_values_use_type_proof
+    assert region(*args) is expected
+E   assert False is True
+E    +  where False = <recompyler.heap.Region object at 0x0000026C77E2D9A0>(*(-0.0, {1: 2}))
+__ test_mixed_and_special_numeric_values_use_type_proof[-0.0-mixed_identity] __
+tests\test_numeric_observers.py:98: in test_mixed_and_special_numeric_values_use_type_proof
+    assert region(*args) is expected
+E   assert True is False
+E    +  where True = <recompyler.heap.Region object at 0x0000026C77E2DC70>(*(True, -0.0, {1: 2}))
+_ test_mixed_and_special_numeric_values_use_type_proof[-0.0-mixed_nonidentity] _
+tests\test_numeric_observers.py:98: in test_mixed_and_special_numeric_values_use_type_proof
+    assert region(*args) is expected
+E   assert False is True
+E    +  where False = <recompyler.heap.Region object at 0x0000026C7AA0EE40>(*(True, -0.0, {1: 2}))
+============================== warnings summary ===============================
+tests\test_numeric_observers.py:121
+  D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\tests\test_numeric_observers.py:121: SyntaxWarning: "is" with 'int' literal. Did you mean "=="?
+    return 0 is container is mark_container(events,container)
+
+tests\test_numeric_observers.py:124
+  D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\tests\test_numeric_observers.py:124: SyntaxWarning: "is not" with 'int' literal. Did you mean "!="?
+    return 0 is not container is mark_container(events,container)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[int-container0-identity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[int-container0-nonidentity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[int-container1-identity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[int-container1-nonidentity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[float-container0-identity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[float-container0-nonidentity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[float-container1-identity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[float-container1-nonidentity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[bool-container0-identity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[bool-container0-nonidentity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[bool-container1-identity]
+FAILED tests/test_numeric_observers.py::test_numeric_vs_container_identity_cannot_compare_a_handle[bool-container1-nonidentity]
+FAILED tests/test_numeric_observers.py::test_mixed_and_special_numeric_values_use_type_proof[-0.0-identity]
+FAILED tests/test_numeric_observers.py::test_mixed_and_special_numeric_values_use_type_proof[-0.0-nonidentity]
+FAILED tests/test_numeric_observers.py::test_mixed_and_special_numeric_values_use_type_proof[-0.0-mixed_identity]
+FAILED tests/test_numeric_observers.py::test_mixed_and_special_numeric_values_use_type_proof[-0.0-mixed_nonidentity]
+16 failed, 37 passed, 2 warnings in 6.98s

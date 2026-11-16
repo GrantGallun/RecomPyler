@@ -1,0 +1,66 @@
+{
+  "totals": {
+    "aot_calls": 20,
+    "jit_calls": 0,
+    "unknown_native_calls": 0,
+    "rejected_attempts": 0,
+    "fallback_calls": 0
+  },
+  "functions": [
+    {
+      "function": "Chaosgame.create_image_chaos",
+      "kind": "region",
+      "aot_calls": 20,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "34d57ed1fc8f2e16b8f6dc199a16caeb9dbb78b5c63d5a5786e7e5d4eccab985": {
+          "aot_calls": 20,
+          "jit_calls": 0,
+          "unknown_native_calls": 0
+        }
+      }
+    }
+  ],
+  "runner_report": {
+    "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v2\\chaos\\input\\run_benchmark.py",
+    "functions": [
+      {
+        "function": "Chaosgame.create_image_chaos",
+        "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v2\\chaos\\input\\run_benchmark.py",
+        "compiled_calls": 20,
+        "aot_calls": 20,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": true,
+        "ahead_of_time": true,
+        "aot_loaded": true,
+        "region": true
+      }
+    ],
+    "not_found": [],
+    "batches": {},
+    "batch_failures": {},
+    "exit_code": null
+  },
+  "numba_imported_before": false,
+  "numba_imported_by_audit_bootstrap": false,
+  "numba_imported_after": false,
+  "timing_eligible": false,
+  "limitations": [
+    "Audit imports/patches add overhead; this process is never a latency sample.",
+    "Successful Region.attempt mode uses its actual selected latest program, not export availability.",
+    "jit_calls includes fresh JIT and Numba disk-cache execution; no machine-code cache-hit inference."
+  ],
+  "runner_total_compiled_calls": 20,
+  "runner_total_fallback_calls": 0,
+  "product_exact_aot_calls": 20,
+  "product_exact_jit_calls": 0,
+  "compiled_total_reconciles": true,
+  "runner_only_fallback_calls": 0,
+  "product_exact_counter_matches_audit": true,
+  "batch_execution_needs_separate_audit": false,
+  "fallback_note": "Audit wrapper counts exclude direct runner preparation-failure Python calls; runner counter retains those."
+}

@@ -1,0 +1,230 @@
+
+C:/Python314/python314.dll:	file format coff-x86-64
+
+Disassembly of section .text:
+
+00000001802ac188 <_PyObject_DebugMallocStats>:
+1802af10c: 48 8b c4                    	movq	%rsp, %rax
+1802af10f: 48 89 70 08                 	movq	%rsi, 0x8(%rax)
+1802af113: 48 89 78 10                 	movq	%rdi, 0x10(%rax)
+1802af117: 4c 89 70 18                 	movq	%r14, 0x18(%rax)
+1802af11b: 4c 89 78 20                 	movq	%r15, 0x20(%rax)
+1802af11f: 55                          	pushq	%rbp
+1802af120: 48 8d 68 b8                 	leaq	-0x48(%rax), %rbp
+1802af124: 48 81 ec 40 01 00 00        	subq	$0x140, %rsp            # imm = 0x140
+1802af12b: 48 8d 05 3e 01 d9 ff        	leaq	-0x26fec2(%rip), %rax   # 0x18003f270 <PyErr_CheckSignals+0xb0>
+1802af132: 48 c7 44 24 20 00 00 00 00  	movq	$0x0, 0x20(%rsp)
+1802af13b: 48 89 44 24 28              	movq	%rax, 0x28(%rsp)
+1802af140: 4c 8d 3d 29 62 3e 00        	leaq	0x3e6229(%rip), %r15    # 0x180695370 <_PyRuntime+0x370>
+1802af147: 48 8d 05 5e 07 d7 ff        	leaq	-0x28f8a2(%rip), %rax   # 0x18001f8ac <PySequence_Fast+0x150>
+1802af14e: 48 c7 44 24 48 00 00 00 00  	movq	$0x0, 0x48(%rsp)
+1802af157: 48 89 44 24 30              	movq	%rax, 0x30(%rsp)
+1802af15c: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af161: 48 8d 05 50 3d e2 ff        	leaq	-0x1dc2b0(%rip), %rax   # 0x1800d2eb8 <PyMem_RawRealloc+0x28>
+1802af168: 48 c7 44 24 70 00 00 00 00  	movq	$0x0, 0x70(%rsp)
+1802af171: 48 89 44 24 38              	movq	%rax, 0x38(%rsp)
+1802af176: bf 28 00 00 00              	movl	$0x28, %edi
+1802af17b: 48 8d 05 ca c7 da ff        	leaq	-0x253836(%rip), %rax   # 0x18005b94c <_PyLong_ExactDealloc+0x1bc>
+1802af182: 48 c7 45 98 00 00 00 00     	movq	$0x0, -0x68(%rbp)
+1802af18a: 48 89 44 24 40              	movq	%rax, 0x40(%rsp)
+1802af18f: 44 8b c7                    	movl	%edi, %r8d
+1802af192: 48 8d 05 87 e7 d8 ff        	leaq	-0x271879(%rip), %rax   # 0x18003d920 <PyType_GenericAlloc+0x1b0>
+1802af199: 49 8b cf                    	movq	%r15, %rcx
+1802af19c: 48 89 44 24 50              	movq	%rax, 0x50(%rsp)
+1802af1a1: 48 8d 05 18 fb d6 ff        	leaq	-0x2904e8(%rip), %rax   # 0x18001ecc0 <PyList_New+0x218>
+1802af1a8: 48 89 44 24 58              	movq	%rax, 0x58(%rsp)
+1802af1ad: 48 8d 05 fc b7 d8 ff        	leaq	-0x274804(%rip), %rax   # 0x18003a9b0 <_PyErr_FormatNote+0x580>
+1802af1b4: 48 89 44 24 60              	movq	%rax, 0x60(%rsp)
+1802af1b9: 48 8d 05 e0 e2 da ff        	leaq	-0x251d20(%rip), %rax   # 0x18005d4a0 <PyObject_GC_Del+0x1a0>
+1802af1c0: 48 89 44 24 68              	movq	%rax, 0x68(%rsp)
+1802af1c5: 48 8d 05 00 cc ff ff        	leaq	-0x3400(%rip), %rax     # 0x1802abdcc <_PyMem_GetCurrentAllocatorName+0x74>
+1802af1cc: 48 89 44 24 78              	movq	%rax, 0x78(%rsp)
+1802af1d1: 48 8d 05 e0 cb ff ff        	leaq	-0x3420(%rip), %rax     # 0x1802abdb8 <_PyMem_GetCurrentAllocatorName+0x60>
+1802af1d8: 48 89 45 80                 	movq	%rax, -0x80(%rbp)
+1802af1dc: 48 8d 05 f1 cb ff ff        	leaq	-0x340f(%rip), %rax     # 0x1802abdd4 <_PyMem_GetCurrentAllocatorName+0x7c>
+1802af1e3: 48 89 45 88                 	movq	%rax, -0x78(%rbp)
+1802af1e7: 48 8d 05 d6 cb ff ff        	leaq	-0x342a(%rip), %rax     # 0x1802abdc4 <_PyMem_GetCurrentAllocatorName+0x6c>
+1802af1ee: 48 89 45 90                 	movq	%rax, -0x70(%rbp)
+1802af1f2: 48 8d 05 f7 cf ff ff        	leaq	-0x3009(%rip), %rax     # 0x1802ac1f0 <_PyObject_DebugMallocStats+0x68>
+1802af1f9: 48 89 45 a0                 	movq	%rax, -0x60(%rbp)
+1802af1fd: 48 8d 05 d8 cf ff ff        	leaq	-0x3028(%rip), %rax     # 0x1802ac1dc <_PyObject_DebugMallocStats+0x54>
+1802af204: 48 89 45 a8                 	movq	%rax, -0x58(%rbp)
+1802af208: 48 8d 05 e9 cf ff ff        	leaq	-0x3017(%rip), %rax     # 0x1802ac1f8 <_PyObject_DebugMallocStats+0x70>
+1802af20f: 48 89 45 b0                 	movq	%rax, -0x50(%rbp)
+1802af213: 48 8d 05 ce cf ff ff        	leaq	-0x3032(%rip), %rax     # 0x1802ac1e8 <_PyObject_DebugMallocStats+0x60>
+1802af21a: 48 89 45 b8                 	movq	%rax, -0x48(%rbp)
+1802af21e: e8 61 4c f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af223: 48 8d 35 6e 61 3e 00        	leaq	0x3e616e(%rip), %rsi    # 0x180695398 <_PyRuntime+0x398>
+1802af22a: 4c 8d 35 8f 61 3e 00        	leaq	0x3e618f(%rip), %r14    # 0x1806953c0 <_PyRuntime+0x3c0>
+1802af231: 85 c0                       	testl	%eax, %eax
+1802af233: 75 34                       	jne	0x1802af269 <_PyObject_DebugMallocStats+0x30e1>
+1802af235: 44 8b c7                    	movl	%edi, %r8d
+1802af238: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af23d: 48 8b ce                    	movq	%rsi, %rcx
+1802af240: e8 3f 4c f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af245: 85 c0                       	testl	%eax, %eax
+1802af247: 75 20                       	jne	0x1802af269 <_PyObject_DebugMallocStats+0x30e1>
+1802af249: 44 8b c7                    	movl	%edi, %r8d
+1802af24c: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af251: 49 8b ce                    	movq	%r14, %rcx
+1802af254: e8 2b 4c f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af259: 85 c0                       	testl	%eax, %eax
+1802af25b: 75 0c                       	jne	0x1802af269 <_PyObject_DebugMallocStats+0x30e1>
+1802af25d: 48 8d 05 f4 07 29 00        	leaq	0x2907f4(%rip), %rax    # 0x18053fa58 <PY_TIMEOUT_MAX+0x10ac8>
+1802af264: e9 45 02 00 00              	jmp	0x1802af4ae <_PyObject_DebugMallocStats+0x3326>
+1802af269: 4c 8b c7                    	movq	%rdi, %r8
+1802af26c: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af271: 49 8b cf                    	movq	%r15, %rcx
+1802af274: e8 0b 4c f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af279: 85 c0                       	testl	%eax, %eax
+1802af27b: 75 34                       	jne	0x1802af2b1 <_PyObject_DebugMallocStats+0x3129>
+1802af27d: 4c 8b c7                    	movq	%rdi, %r8
+1802af280: 48 8d 54 24 48              	leaq	0x48(%rsp), %rdx
+1802af285: 48 8b ce                    	movq	%rsi, %rcx
+1802af288: e8 f7 4b f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af28d: 85 c0                       	testl	%eax, %eax
+1802af28f: 75 20                       	jne	0x1802af2b1 <_PyObject_DebugMallocStats+0x3129>
+1802af291: 4c 8b c7                    	movq	%rdi, %r8
+1802af294: 48 8d 54 24 48              	leaq	0x48(%rsp), %rdx
+1802af299: 49 8b ce                    	movq	%r14, %rcx
+1802af29c: e8 e3 4b f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af2a1: 85 c0                       	testl	%eax, %eax
+1802af2a3: 75 0c                       	jne	0x1802af2b1 <_PyObject_DebugMallocStats+0x3129>
+1802af2a5: 48 8d 05 6c 07 29 00        	leaq	0x29076c(%rip), %rax    # 0x18053fa18 <PY_TIMEOUT_MAX+0x10a88>
+1802af2ac: e9 fd 01 00 00              	jmp	0x1802af4ae <_PyObject_DebugMallocStats+0x3326>
+1802af2b1: 4c 8b c7                    	movq	%rdi, %r8
+1802af2b4: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af2b9: 49 8b cf                    	movq	%r15, %rcx
+1802af2bc: e8 c3 4b f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af2c1: 85 c0                       	testl	%eax, %eax
+1802af2c3: 75 33                       	jne	0x1802af2f8 <_PyObject_DebugMallocStats+0x3170>
+1802af2c5: 4c 8b c7                    	movq	%rdi, %r8
+1802af2c8: 48 8d 54 24 70              	leaq	0x70(%rsp), %rdx
+1802af2cd: 48 8b ce                    	movq	%rsi, %rcx
+1802af2d0: e8 af 4b f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af2d5: 85 c0                       	testl	%eax, %eax
+1802af2d7: 75 1f                       	jne	0x1802af2f8 <_PyObject_DebugMallocStats+0x3170>
+1802af2d9: 4c 8b c7                    	movq	%rdi, %r8
+1802af2dc: 48 8d 55 98                 	leaq	-0x68(%rbp), %rdx
+1802af2e0: 49 8b ce                    	movq	%r14, %rcx
+1802af2e3: e8 9c 4b f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af2e8: 85 c0                       	testl	%eax, %eax
+1802af2ea: 75 0c                       	jne	0x1802af2f8 <_PyObject_DebugMallocStats+0x3170>
+1802af2ec: 48 8d 05 45 07 29 00        	leaq	0x290745(%rip), %rax    # 0x18053fa38 <PY_TIMEOUT_MAX+0x10aa8>
+1802af2f3: e9 b6 01 00 00              	jmp	0x1802af4ae <_PyObject_DebugMallocStats+0x3326>
+1802af2f8: 4c 8d 05 11 4b e2 ff        	leaq	-0x1db4ef(%rip), %r8    # 0x1800d3e10 <PyConfig_SetString+0x6dc>
+1802af2ff: 49 8b cf                    	movq	%r15, %rcx
+1802af302: 48 8d 15 53 52 e2 ff        	leaq	-0x1dadad(%rip), %rdx   # 0x1800d455c <PyObject_Free+0x15c>
+1802af309: 4c 89 45 00                 	movq	%r8, (%rbp)
+1802af30d: 4c 8d 15 94 72 e5 ff        	leaq	-0x1a8d6c(%rip), %r10   # 0x1801065a8 <PyCell_New+0x1b8>
+1802af314: 48 89 55 08                 	movq	%rdx, 0x8(%rbp)
+1802af318: 4c 8d 0d a9 4a e2 ff        	leaq	-0x1db557(%rip), %r9    # 0x1800d3dc8 <PyConfig_SetString+0x694>
+1802af31f: 4c 89 45 28                 	movq	%r8, 0x28(%rbp)
+1802af323: 48 8d 05 be 60 3e 00        	leaq	0x3e60be(%rip), %rax    # 0x1806953e8 <_PyRuntime+0x3e8>
+1802af32a: 48 89 55 30                 	movq	%rdx, 0x30(%rbp)
+1802af32e: 48 89 45 c0                 	movq	%rax, -0x40(%rbp)
+1802af332: 48 8d 55 c0                 	leaq	-0x40(%rbp), %rdx
+1802af336: 48 8d 05 53 54 e2 ff        	leaq	-0x1dabad(%rip), %rax   # 0x1800d4790 <PyMem_RawFree+0x38>
+1802af33d: 4c 89 55 f0                 	movq	%r10, -0x10(%rbp)
+1802af341: 48 89 45 c8                 	movq	%rax, -0x38(%rbp)
+1802af345: 4c 8b c7                    	movq	%rdi, %r8
+1802af348: 48 8d 05 d9 29 f2 ff        	leaq	-0xdd627(%rip), %rax    # 0x1801d1d28 <_PyTime_FromSeconds+0x714>
+1802af34f: 4c 89 4d f8                 	movq	%r9, -0x8(%rbp)
+1802af353: 48 89 45 d0                 	movq	%rax, -0x30(%rbp)
+1802af357: 48 8d 05 f6 4a e2 ff        	leaq	-0x1db50a(%rip), %rax   # 0x1800d3e54 <PyConfig_SetString+0x720>
+1802af35e: 48 89 45 d8                 	movq	%rax, -0x28(%rbp)
+1802af362: 48 8d 05 0b 4d e2 ff        	leaq	-0x1db2f5(%rip), %rax   # 0x1800d4074 <PyConfig_SetString+0x940>
+1802af369: 48 89 45 e0                 	movq	%rax, -0x20(%rbp)
+1802af36d: 48 8d 05 a4 60 3e 00        	leaq	0x3e60a4(%rip), %rax    # 0x180695418 <_PyRuntime+0x418>
+1802af374: 48 89 45 e8                 	movq	%rax, -0x18(%rbp)
+1802af378: 48 8d 05 c9 60 3e 00        	leaq	0x3e60c9(%rip), %rax    # 0x180695448 <_PyRuntime+0x448>
+1802af37f: 48 89 45 10                 	movq	%rax, 0x10(%rbp)
+1802af383: 4c 89 55 18                 	movq	%r10, 0x18(%rbp)
+1802af387: 4c 89 4d 20                 	movq	%r9, 0x20(%rbp)
+1802af38b: e8 f4 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af390: 85 c0                       	testl	%eax, %eax
+1802af392: 0f 85 14 01 00 00           	jne	0x1802af4ac <_PyObject_DebugMallocStats+0x3324>
+1802af398: 4c 8b c7                    	movq	%rdi, %r8
+1802af39b: 48 8d 55 e8                 	leaq	-0x18(%rbp), %rdx
+1802af39f: 48 8b ce                    	movq	%rsi, %rcx
+1802af3a2: e8 dd 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af3a7: 85 c0                       	testl	%eax, %eax
+1802af3a9: 0f 85 fd 00 00 00           	jne	0x1802af4ac <_PyObject_DebugMallocStats+0x3324>
+1802af3af: 4c 8b c7                    	movq	%rdi, %r8
+1802af3b2: 48 8d 55 10                 	leaq	0x10(%rbp), %rdx
+1802af3b6: 49 8b ce                    	movq	%r14, %rcx
+1802af3b9: e8 c6 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af3be: 85 c0                       	testl	%eax, %eax
+1802af3c0: 0f 85 e6 00 00 00           	jne	0x1802af4ac <_PyObject_DebugMallocStats+0x3324>
+1802af3c6: 4c 8d 3d 23 60 3e 00        	leaq	0x3e6023(%rip), %r15    # 0x1806953f0 <_PyRuntime+0x3f0>
+1802af3cd: 4c 8b c7                    	movq	%rdi, %r8
+1802af3d0: 49 8b cf                    	movq	%r15, %rcx
+1802af3d3: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af3d8: e8 a7 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af3dd: 48 8d 35 3c 60 3e 00        	leaq	0x3e603c(%rip), %rsi    # 0x180695420 <_PyRuntime+0x420>
+1802af3e4: 4c 8d 35 65 60 3e 00        	leaq	0x3e6065(%rip), %r14    # 0x180695450 <_PyRuntime+0x450>
+1802af3eb: 85 c0                       	testl	%eax, %eax
+1802af3ed: 75 34                       	jne	0x1802af423 <_PyObject_DebugMallocStats+0x329b>
+1802af3ef: 4c 8b c7                    	movq	%rdi, %r8
+1802af3f2: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af3f7: 48 8b ce                    	movq	%rsi, %rcx
+1802af3fa: e8 85 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af3ff: 85 c0                       	testl	%eax, %eax
+1802af401: 75 20                       	jne	0x1802af423 <_PyObject_DebugMallocStats+0x329b>
+1802af403: 4c 8b c7                    	movq	%rdi, %r8
+1802af406: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af40b: 49 8b ce                    	movq	%r14, %rcx
+1802af40e: e8 71 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af413: 85 c0                       	testl	%eax, %eax
+1802af415: 75 0c                       	jne	0x1802af423 <_PyObject_DebugMallocStats+0x329b>
+1802af417: 48 8d 05 2a 06 29 00        	leaq	0x29062a(%rip), %rax    # 0x18053fa48 <PY_TIMEOUT_MAX+0x10ab8>
+1802af41e: e9 8b 00 00 00              	jmp	0x1802af4ae <_PyObject_DebugMallocStats+0x3326>
+1802af423: 4c 8b c7                    	movq	%rdi, %r8
+1802af426: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af42b: 49 8b cf                    	movq	%r15, %rcx
+1802af42e: e8 51 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af433: 85 c0                       	testl	%eax, %eax
+1802af435: 75 31                       	jne	0x1802af468 <_PyObject_DebugMallocStats+0x32e0>
+1802af437: 4c 8b c7                    	movq	%rdi, %r8
+1802af43a: 48 8d 54 24 48              	leaq	0x48(%rsp), %rdx
+1802af43f: 48 8b ce                    	movq	%rsi, %rcx
+1802af442: e8 3d 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af447: 85 c0                       	testl	%eax, %eax
+1802af449: 75 1d                       	jne	0x1802af468 <_PyObject_DebugMallocStats+0x32e0>
+1802af44b: 4c 8b c7                    	movq	%rdi, %r8
+1802af44e: 48 8d 54 24 48              	leaq	0x48(%rsp), %rdx
+1802af453: 49 8b ce                    	movq	%r14, %rcx
+1802af456: e8 29 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af45b: 85 c0                       	testl	%eax, %eax
+1802af45d: 75 09                       	jne	0x1802af468 <_PyObject_DebugMallocStats+0x32e0>
+1802af45f: 48 8d 05 a2 05 29 00        	leaq	0x2905a2(%rip), %rax    # 0x18053fa08 <PY_TIMEOUT_MAX+0x10a78>
+1802af466: eb 46                       	jmp	0x1802af4ae <_PyObject_DebugMallocStats+0x3326>
+1802af468: 4c 8b c7                    	movq	%rdi, %r8
+1802af46b: 48 8d 54 24 20              	leaq	0x20(%rsp), %rdx
+1802af470: 49 8b cf                    	movq	%r15, %rcx
+1802af473: e8 0c 4a f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af478: 85 c0                       	testl	%eax, %eax
+1802af47a: 75 30                       	jne	0x1802af4ac <_PyObject_DebugMallocStats+0x3324>
+1802af47c: 4c 8b c7                    	movq	%rdi, %r8
+1802af47f: 48 8d 54 24 70              	leaq	0x70(%rsp), %rdx
+1802af484: 48 8b ce                    	movq	%rsi, %rcx
+1802af487: e8 f8 49 f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af48c: 85 c0                       	testl	%eax, %eax
+1802af48e: 75 1c                       	jne	0x1802af4ac <_PyObject_DebugMallocStats+0x3324>
+1802af490: 4c 8b c7                    	movq	%rdi, %r8
+1802af493: 48 8d 55 98                 	leaq	-0x68(%rbp), %rdx
+1802af497: 49 8b ce                    	movq	%r14, %rcx
+1802af49a: e8 e5 49 f3 ff              	callq	0x1801e3e84 <_Py_InitDumpStack+0x108>
+1802af49f: 85 c0                       	testl	%eax, %eax
+1802af4a1: 75 09                       	jne	0x1802af4ac <_PyObject_DebugMallocStats+0x3324>
+1802af4a3: 48 8d 05 7e 05 29 00        	leaq	0x29057e(%rip), %rax    # 0x18053fa28 <PY_TIMEOUT_MAX+0x10a98>
+1802af4aa: eb 02                       	jmp	0x1802af4ae <_PyObject_DebugMallocStats+0x3326>
+1802af4ac: 33 c0                       	xorl	%eax, %eax
+1802af4ae: 4c 8d 9c 24 40 01 00 00     	leaq	0x140(%rsp), %r11
+1802af4b6: 49 8b 73 10                 	movq	0x10(%r11), %rsi
+1802af4ba: 49 8b 7b 18                 	movq	0x18(%r11), %rdi
+1802af4be: 4d 8b 73 20                 	movq	0x20(%r11), %r14
+1802af4c2: 4d 8b 7b 28                 	movq	0x28(%r11), %r15
+1802af4c6: 49 8b e3                    	movq	%r11, %rsp
+1802af4c9: 5d                          	popq	%rbp
+1802af4ca: c3                          	retq

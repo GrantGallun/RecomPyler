@@ -1,0 +1,88 @@
+.FFF.........................                                            [100%]
+================================== FAILURES ===================================
+____ test_actual_raw_entry_uses_borrowed_aliasing_arrays_and_typed_results ____
+
+    def test_actual_raw_entry_uses_borrowed_aliasing_arrays_and_typed_results():
+        from numba import types
+>       entry = build(source, types.int64, types.float64)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_adapter.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_direct_adapter.py:62: in build
+    return adapter.build(njit(_nrt=nrt, error_model='numpy')(fn), signature)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_direct_adapter.py:173: in build
+    library.finalize()
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\codegen.py:749: in finalize
+    require_global_compiler_lock()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def require_global_compiler_lock():
+        """Sentry that checks the global_compiler_lock is acquired.
+        """
+        # Use assert to allow turning off this check
+>       assert global_compiler_lock.is_locked()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler_lock.py:56: AssertionError
+__________ test_checked_status_is_not_turned_into_a_python_exception __________
+
+    def test_checked_status_is_not_turned_into_a_python_exception():
+        from numba import types
+>       entry = build(checked_exit, types.int64)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_adapter.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_direct_adapter.py:62: in build
+    return adapter.build(njit(_nrt=nrt, error_model='numpy')(fn), signature)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_direct_adapter.py:173: in build
+    library.finalize()
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\codegen.py:749: in finalize
+    require_global_compiler_lock()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def require_global_compiler_lock():
+        """Sentry that checks the global_compiler_lock is acquired.
+        """
+        # Use assert to allow turning off this check
+>       assert global_compiler_lock.is_locked()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler_lock.py:56: AssertionError
+____ test_static_native_exception_returns_status_before_any_python_boxing _____
+
+    def test_static_native_exception_returns_status_before_any_python_boxing():
+        from numba import types
+>       entry = build(raises_static, types.int64)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_adapter.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_direct_adapter.py:62: in build
+    return adapter.build(njit(_nrt=nrt, error_model='numpy')(fn), signature)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_direct_adapter.py:173: in build
+    library.finalize()
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\codegen.py:749: in finalize
+    require_global_compiler_lock()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def require_global_compiler_lock():
+        """Sentry that checks the global_compiler_lock is acquired.
+        """
+        # Use assert to allow turning off this check
+>       assert global_compiler_lock.is_locked()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\compiler_lock.py:56: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_direct_adapter.py::test_actual_raw_entry_uses_borrowed_aliasing_arrays_and_typed_results
+FAILED tests/test_direct_adapter.py::test_checked_status_is_not_turned_into_a_python_exception
+FAILED tests/test_direct_adapter.py::test_static_native_exception_returns_status_before_any_python_boxing
+3 failed, 26 passed in 1.23s

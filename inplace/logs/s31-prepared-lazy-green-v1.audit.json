@@ -1,0 +1,46 @@
+[
+  {
+    "before": {
+      "time": "2026-11-14T08:35:30.153866+00:00",
+      "blockers": [],
+      "active": [
+        {
+          "pid": 0,
+          "name": "system idle process",
+          "cpu_s": 13.265625,
+          "command": ""
+        },
+        {
+          "pid": 43444,
+          "name": "firestorm.exe",
+          "cpu_s": 0.09375,
+          "command": ""
+        }
+      ]
+    },
+    "after_atomic_create": {
+      "time": "2026-11-14T08:35:31.246340+00:00",
+      "blockers": [],
+      "active": [
+        {
+          "pid": 0,
+          "name": "system idle process",
+          "cpu_s": 12.46875,
+          "command": ""
+        },
+        {
+          "pid": 43444,
+          "name": "firestorm.exe",
+          "cpu_s": 0.078125,
+          "command": ""
+        },
+        {
+          "pid": 33604,
+          "name": "python.exe",
+          "cpu_s": 0.75,
+          "command": "C:\\Python314\\python.exe -m autonomy jobs-serve"
+        }
+      ]
+    }
+  }
+]

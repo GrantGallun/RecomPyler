@@ -1,0 +1,331 @@
+{
+  "complete": true,
+  "eligible": [
+    "asyncio_tcp",
+    "asyncio_websockets",
+    "chaos",
+    "comprehensions",
+    "concurrent_imap",
+    "decimal_factorial",
+    "decimal_pi",
+    "deepcopy",
+    "deltablue",
+    "gc_collect",
+    "gc_traversal",
+    "generators",
+    "hexiom",
+    "json_dumps",
+    "json_loads",
+    "logging",
+    "mdp",
+    "meteor_contest",
+    "pathlib",
+    "pprint",
+    "python_startup",
+    "regex_compile",
+    "regex_dna",
+    "regex_effbot",
+    "regex_v8",
+    "richards_super",
+    "sqlalchemy_declarative",
+    "sqlite_synth",
+    "sympy",
+    "typing_runtime_protocols",
+    "unpack_sequence",
+    "xml_etree",
+    "yaml"
+  ],
+  "requested": [
+    "chaos",
+    "richards_super"
+  ],
+  "rows": [
+    {
+      "name": "chaos",
+      "complete": true,
+      "captured": 60,
+      "verified": 11,
+      "deployed": 1,
+      "aot_calls": 20,
+      "worth_running": true,
+      "region_times": [
+        {
+          "function": "Chaosgame.create_image_chaos",
+          "line": 214,
+          "python_us": 35406.962499109795,
+          "compiled_us": 1526.1250009643845,
+          "recommended": true
+        },
+        {
+          "function": "Chaosgame.transform_point",
+          "line": 178,
+          "python_us": 7.664312990444521,
+          "compiled_us": 32.97980765637476,
+          "recommended": false
+        },
+        {
+          "function": "Spline.__call__",
+          "line": 89,
+          "python_us": 2.623632078537858,
+          "compiled_us": 14.775806419258457,
+          "recommended": false
+        },
+        {
+          "function": "GVector.linear_combination",
+          "line": 48,
+          "python_us": 0.23295515844120926,
+          "compiled_us": 14.76280486691039,
+          "recommended": false
+        },
+        {
+          "function": "Spline.GetIndex",
+          "line": 112,
+          "python_us": 0.2792355373357186,
+          "compiled_us": 9.280873507440809,
+          "recommended": false
+        },
+        {
+          "function": "GVector.Mag",
+          "line": 26,
+          "python_us": 0.2480907774265649,
+          "compiled_us": 6.358928593337103,
+          "recommended": false
+        },
+        {
+          "function": "Chaosgame.get_random_trafo",
+          "line": 169,
+          "python_us": 0.4417613659122501,
+          "compiled_us": 24.890530326184958,
+          "recommended": false
+        },
+        {
+          "function": "GVector.__sub__",
+          "line": 40,
+          "python_us": 0.34997260723609297,
+          "compiled_us": 12.992372846337414,
+          "recommended": false
+        },
+        {
+          "function": "Spline.GetDomain",
+          "line": 84,
+          "python_us": 0.1103430249682599,
+          "compiled_us": 14.093849232368585,
+          "recommended": false
+        },
+        {
+          "function": "GVector.__add__",
+          "line": 34,
+          "python_us": 0.1633403366575075,
+          "compiled_us": 14.126190459743762,
+          "recommended": false
+        },
+        {
+          "function": "Chaosgame.truncate",
+          "line": 204,
+          "python_us": 0.09993023203880808,
+          "compiled_us": 16.857017487238505,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "richards_super",
+      "complete": true,
+      "captured": 81,
+      "verified": 18,
+      "deployed": 1,
+      "aot_calls": 20,
+      "worth_running": true,
+      "region_times": [
+        {
+          "function": "Richards.run",
+          "line": 385,
+          "python_us": 30051.0375018348,
+          "compiled_us": 2492.624997103121,
+          "recommended": true
+        },
+        {
+          "function": "schedule",
+          "line": 369,
+          "python_us": 7.210812885657044,
+          "compiled_us": 311.25416717259213,
+          "recommended": false
+        },
+        {
+          "function": "Task.runTask",
+          "line": 209,
+          "python_us": 11.26064943893053,
+          "compiled_us": 5443.437494250247,
+          "recommended": false
+        },
+        {
+          "function": "HandlerTask.fn",
+          "line": 284,
+          "python_us": 36.859740113141015,
+          "compiled_us": 6687.224995403085,
+          "recommended": false
+        },
+        {
+          "function": "DeviceTask.fn",
+          "line": 261,
+          "python_us": 13.063576234977491,
+          "compiled_us": 3625.474997534184,
+          "recommended": false
+        },
+        {
+          "function": "Task.qpkt",
+          "line": 239,
+          "python_us": 45.59962699927796,
+          "compiled_us": 11951.624997891486,
+          "recommended": false
+        },
+        {
+          "function": "IdleTask.fn",
+          "line": 318,
+          "python_us": 1.8551360307935252,
+          "compiled_us": 277.58125179389026,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.isTaskHoldingOrWaiting",
+          "line": 140,
+          "python_us": 0.09530903171347406,
+          "compiled_us": 64.6562499847884,
+          "recommended": false
+        },
+        {
+          "function": "Task.addPacket",
+          "line": 199,
+          "python_us": 0.6952040865787679,
+          "compiled_us": 134.51562426780583,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.isWaitingWithPacket",
+          "line": 143,
+          "python_us": 0.12575402073971004,
+          "compiled_us": 96.33928545684154,
+          "recommended": false
+        },
+        {
+          "function": "Task.fn",
+          "line": 196,
+          "python_us": 0.5082585868959072,
+          "compiled_us": 175.58958340183986,
+          "recommended": false
+        },
+        {
+          "function": "Task.findtcb",
+          "line": 246,
+          "python_us": 0.08872112291158106,
+          "compiled_us": 266.1781254573725,
+          "recommended": false
+        },
+        {
+          "function": "Task.hold",
+          "line": 226,
+          "python_us": 0.6352940598684226,
+          "compiled_us": 250.24687693075975,
+          "recommended": false
+        },
+        {
+          "function": "HandlerTaskRec.deviceInAdd",
+          "line": 87,
+          "python_us": 0.17911035592251134,
+          "compiled_us": 21.324999608858036,
+          "recommended": false
+        },
+        {
+          "function": "Packet.append_to",
+          "line": 44,
+          "python_us": 0.13185730640685733,
+          "compiled_us": 23.397265749736107,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.running",
+          "line": 119,
+          "python_us": 0.3592599416151643,
+          "compiled_us": 93.6725005885819,
+          "recommended": false
+        },
+        {
+          "function": "Task.waitTask",
+          "line": 222,
+          "python_us": 0.3319363000342741,
+          "compiled_us": 97.51249936843206,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.packetPending",
+          "line": 107,
+          "python_us": 0.4231513528306812,
+          "compiled_us": 107.73437588795787,
+          "recommended": false
+        }
+      ]
+    }
+  ],
+  "programs_deploying": 2,
+  "baseline_programs_deploying": 2,
+  "cohort_complete": false,
+  "timing_scope": "gate warm complete Region wrapper replay; excludes fresh_copy and cold preparation; includes any gate fallback",
+  "source_manifest": {
+    "recompyler/__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+    "recompyler/__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+    "recompyler/_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+    "recompyler/_direct_adapter.py": "f5f40cf214ac4ef4913fede53243820629f60c783b8299c1608a5d56a8e5e3e9",
+    "recompyler/_guards.h": "4ceed5ff3338f079ebffc074e6b4b6745ebb68848d9708fdb5686f6b58bfba42",
+    "recompyler/_heap.c": "d05bb51bbcb03c80fb43351203aa98d1f2ace7a69b22006b5ed41403c4af0064",
+    "recompyler/_heap.cp314-win_amd64.pyd": "76418745b95ac15eed9da13a66f571222328f7a799e3e1770b4c27c5c23ca944",
+    "recompyler/_monitor.c": "2d6e52cb082b7528bbbb882f2454cd6a763e1b8d5732fe1002dfaa66ea5a36f4",
+    "recompyler/_monitor.cp314-win_amd64.pyd": "de2059c4f4f90a5c5d2c2e3951d7cfdca61c0df659e9fc58ccedfbf0fe61d240",
+    "recompyler/_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+    "recompyler/_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+    "recompyler/_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+    "recompyler/_prepared.py": "d30a6e612600c3b4c7dbbbbc1bba4152a1523d1aa1afefbd88ed8617464dbecf",
+    "recompyler/_prepared_keys.py": "c9bc541d6f4b6969f58c6b8fddbb1728eb5932b18c102854ca1d4584c34cbb48",
+    "recompyler/_pycc/__init__.py": "445e3c46acf12fb5d78f96a7965de6fa3374104f5a8b3e927df9612d4802c923",
+    "recompyler/_pycc/cc.py": "dab20f566d7658462117379effb43a9e30b5b6c261a5471cf353170772bdafea",
+    "recompyler/_pycc/compiler.py": "caf1167cc5c61aec8e4d46ed36b9a545b503ca56d167b824f9bca6b1a54f692e",
+    "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+    "recompyler/_pycc/llvm_types.py": "9f4a1b498c8573b877e7a2e656a1a1c0530a1f83695c85c5e41c73b68536e34a",
+    "recompyler/_pycc/modulemixin.c": "8240807920e741333522f107a0a3c7f57dae3c5e52cf1e8d0f02e967813a7e7e",
+    "recompyler/_pycc/platform.py": "a02136b55e3256f91204619afe790c1711a8f828845fed25a41e8d29bea544ce",
+    "recompyler/_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+    "recompyler/_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+    "recompyler/_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+    "recompyler/_runner_wrapper.py": "182e913872bf5b658544703775da232ef7e3003f2e91dc5f4750ad915e4e1bb1",
+    "recompyler/aot.py": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f",
+    "recompyler/batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+    "recompyler/benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+    "recompyler/depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+    "recompyler/direct.py": "8bc5ec52a7939c33ca0ab2ddcf24560396d919df133dde8b15626c88f4556c9d",
+    "recompyler/escape.py": "f2787ac24f8c49938bfd75fce4f8ff7223f88e8b79ac312f6a1660f26e9e9ae4",
+    "recompyler/experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+    "recompyler/facts.py": "9f9f08c23cad271eaae67d1d7ac1c32424e388e6463ce54f4a1aec3ffb17ea1b",
+    "recompyler/flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+    "recompyler/heap.py": "12d6e38cada4ad151906656c18eb615205aa5a8f22dfc840729e07b50f18c999",
+    "recompyler/lift.py": "f73299e9dd4623e97cf3d6386ff4a46e6388cbaff5eff8cd7ca2e952e25e6fad",
+    "recompyler/monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+    "recompyler/numeric_versions.py": "e244fee707f8a55e86f3f9074427cdb2cbcfdc6cc6ebb47cd5dcbcdc45896a10",
+    "recompyler/profiler.py": "954ffc77e58af00f579acc83190374f162d9880fbf981b4bd13606873efb7aa6",
+    "recompyler/report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+    "recompyler/runner.py": "01038be1e9f8ef77429f8b2cc16022ddab5ffdc79408cae6f80d177d10ba63da",
+    "recompyler/scalar.py": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc",
+    "recompyler/variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+  },
+  "shim_manifest": {
+    "pyperf.py": "c7d7f5d32e195734cef7faa6059416da92bf398c03499d0bbd5190044b37f282"
+  },
+  "input_manifest_sha256": "3799981e066e6cf0659a4644a49bb96b2eac6df7e35c96da3717101bdf43fc0a",
+  "helper_sha256": {
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s41_select.py": "b21eb4414ec56b13b67688713135a36a8a70713f6d488d7dac7a0ca75bc6e1ac",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\capture_profile_s23.py": "2403d83ecba9ed00f024e73044d4cca9bd7dd55bd163198be71b1d147e540d84",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\capture_behavior.py": "4e72c778bbe7b735bdf8cac92b6b718b7cbebcf5d8e79a8e1490d55644769409",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\capture_audit.py": "26d2313e8b15af631f7849bb934f948185f13ecfd39a4920ac7c3a04cc89bee2",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\heldout_identity.py": "9dab8b230683543c9fc6cc265c9548232c3f2b0eb4493fc117d010607d315857",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\freeze_build_step0.py": "2f151c88949b23ecf6f1406d06479dce0fd1d261267aa81b145b79b34db5b93a"
+  },
+  "selection": "unchanged normal gate;20-loop shim; no force or selection threshold change"
+}

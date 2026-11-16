@@ -1,0 +1,56 @@
+.F                                                                       [100%]
+================================== FAILURES ===================================
+_____________ test_first_import_rejects_export_from_other_binary ______________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...55cdfb630d7b9449e9a1f99b8b1d787f47531dc69bc6181e5b2a323f91c': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-import-red-v1/test_first_import_rejects_expo0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000022A02537950>
+
+    def test_first_import_rejects_export_from_other_binary(artifact,tmp_path,monkeypatch):
+        import importlib.machinery
+        import sys
+        pc,heap,module,source,section=artifact
+        other_source=tmp_path/'other.py'
+        other_source.write_text('def other(x):\n    return x+999\n')
+        other=load_source(other_source)
+        region=heap.lift_region(other.other)
+        assert region(1)==1000 and region.compiled_calls==1
+        other_section=heap.build_regions([(('other',1),other.other,region)],tmp_path)
+        other_index=pc.open_index(other_section,other_section['functions'][0],plan_snapshot=standalone(other_section))
+        assert other_index is not None
+        target_name=next(iter(section['functions'][0]['exports'].values()))
+        replacement=vars(other_index.module)[target_name]
+        monkeypatch.setattr(replacement,'__module__',section['module'])
+        sys.modules.pop(section['module'],None)
+        pc._VERIFIED_MODULES.pop(section['module'],None)
+        original=importlib.machinery.ExtensionFileLoader.exec_module
+        def observer(loader,native):
+            original(loader,native)
+            if native.__name__==section['module']:
+                setattr(native,target_name,replacement)
+        monkeypatch.setattr(importlib.machinery.ExtensionFileLoader,'exec_module',observer)
+>       assert pc.open_index(section,row_for(section),plan_snapshot=standalone(section)) is None
+E       AssertionError: assert <recompyler._prepared.PreparedIndex object at 0x0000022A0272E350> is None
+E        +  where <recompyler._prepared.PreparedIndex object at 0x0000022A0272E350> = <function open_index at 0x0000022A018B66C0>({'functions': [{'function': 'work', 'line': 15, 'qualname': 'work', 'file': 'D:\\Code\\Datathon\\recompyler-codex-2026...1f99b8b1d787f47531dc69bc6181e5b2a323f91c': {'args': ['i', 'i', 'i'], 'ret': ['i', 'i', 'i']}, ...}}, 'schema': 1, ...}}, {'function': 'work', 'line': 15, 'qualname': 'work', 'file': 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-import-red-v1\\prepared-real-aot0\\workload.py', ...}, plan_snapshot={'mode': 'standalone', 'functions': [], 'plan': {'aot_regions': {'functions': [{'function': 'work', 'line': 15, 'qualn...374b548': {...}, '1efea55cdfb630d7b9449e9a1f99b8b1d787f47531dc69bc6181e5b2a323f91c': {...}, ...}}, 'schema': 1, ...}}}})
+E        +    where <function open_index at 0x0000022A018B66C0> = <module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_prepared.py'>.open_index
+E        +    and   {'function': 'work', 'line': 15, 'qualname': 'work', 'file': 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-import-red-v1\\prepared-real-aot0\\workload.py', ...} = row_for({'functions': [{'function': 'work', 'line': 15, 'qualname': 'work', 'file': 'D:\\Code\\Datathon\\recompyler-codex-2026...1f99b8b1d787f47531dc69bc6181e5b2a323f91c': {'args': ['i', 'i', 'i'], 'ret': ['i', 'i', 'i']}, ...}}, 'schema': 1, ...}})
+E        +    and   {'mode': 'standalone', 'functions': [], 'plan': {'aot_regions': {'functions': [{'function': 'work', 'line': 15, 'qualn...374b548': {...}, '1efea55cdfb630d7b9449e9a1f99b8b1d787f47531dc69bc6181e5b2a323f91c': {...}, ...}}, 'schema': 1, ...}}}} = standalone({'functions': [{'function': 'work', 'line': 15, 'qualname': 'work', 'file': 'D:\\Code\\Datathon\\recompyler-codex-2026...1f99b8b1d787f47531dc69bc6181e5b2a323f91c': {'args': ['i', 'i', 'i'], 'ret': ['i', 'i', 'i']}, ...}}, 'schema': 1, ...}})
+
+inplace\prepared-cache-preparation\test_prepared_review_regressions.py:128: AssertionError
+---------------------------- Captured stdout call -----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_7495c3957ddf3fb66be97b33-1a9td_1k\rcaotr_7495c3957ddf3fb66be97b33.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_7495c3957ddf3fb66be97b33-1a9td_1k\rcaotr_7495c3957ddf3fb66be97b33.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_review_regressions.py::test_first_import_rejects_export_from_other_binary
+1 failed, 1 passed, 5 deselected in 8.17s

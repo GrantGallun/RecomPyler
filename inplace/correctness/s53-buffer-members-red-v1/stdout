@@ -1,0 +1,117 @@
+.FFFFFFF.                                                                [100%]
+================================== FAILURES ===================================
+_ test_direct_member_read_preserves_exact_bits_first_warm_and_python_write[9223372036854775808] _
+
+pattern = 9223372036854775808
+
+    @pytest.mark.parametrize('pattern',[0x8000000000000000,0x7ff8000000000042,0x7ff8000000001234,0x3ff4000000000000])
+    def test_direct_member_read_preserves_exact_bits_first_warm_and_python_write(pattern):
+        values=make_array([pattern]);box=BufferBox(values);region=heap.lift_region(read_member)
+        for call in (1,2):
+            expected=read_member(box,0);actual=region(box,0)
+            assert type(actual) is float and bits(actual)==bits(expected)
+>           assert region.compiled_calls==call and region.fallback_calls==0,region.problem
+E           AssertionError: an array of typecode 'd'
+E           assert (0 == 1)
+E            +  where 0 = <recompyler.heap.Region object at 0x0000028C7311D6A0>.compiled_calls
+
+inplace\task2-preparation\test_array_buffer_members.py:53: AssertionError
+_ test_direct_member_read_preserves_exact_bits_first_warm_and_python_write[9221120237041090626] _
+
+pattern = 9221120237041090626
+
+    @pytest.mark.parametrize('pattern',[0x8000000000000000,0x7ff8000000000042,0x7ff8000000001234,0x3ff4000000000000])
+    def test_direct_member_read_preserves_exact_bits_first_warm_and_python_write(pattern):
+        values=make_array([pattern]);box=BufferBox(values);region=heap.lift_region(read_member)
+        for call in (1,2):
+            expected=read_member(box,0);actual=region(box,0)
+            assert type(actual) is float and bits(actual)==bits(expected)
+>           assert region.compiled_calls==call and region.fallback_calls==0,region.problem
+E           AssertionError: an array of typecode 'd'
+E           assert (0 == 1)
+E            +  where 0 = <recompyler.heap.Region object at 0x0000028C74330190>.compiled_calls
+
+inplace\task2-preparation\test_array_buffer_members.py:53: AssertionError
+_ test_direct_member_read_preserves_exact_bits_first_warm_and_python_write[9221120237041095220] _
+
+pattern = 9221120237041095220
+
+    @pytest.mark.parametrize('pattern',[0x8000000000000000,0x7ff8000000000042,0x7ff8000000001234,0x3ff4000000000000])
+    def test_direct_member_read_preserves_exact_bits_first_warm_and_python_write(pattern):
+        values=make_array([pattern]);box=BufferBox(values);region=heap.lift_region(read_member)
+        for call in (1,2):
+            expected=read_member(box,0);actual=region(box,0)
+            assert type(actual) is float and bits(actual)==bits(expected)
+>           assert region.compiled_calls==call and region.fallback_calls==0,region.problem
+E           AssertionError: an array of typecode 'd'
+E           assert (0 == 1)
+E            +  where 0 = <recompyler.heap.Region object at 0x0000028C74330E10>.compiled_calls
+
+inplace\task2-preparation\test_array_buffer_members.py:53: AssertionError
+_ test_direct_member_read_preserves_exact_bits_first_warm_and_python_write[4608308318706860032] _
+
+pattern = 4608308318706860032
+
+    @pytest.mark.parametrize('pattern',[0x8000000000000000,0x7ff8000000000042,0x7ff8000000001234,0x3ff4000000000000])
+    def test_direct_member_read_preserves_exact_bits_first_warm_and_python_write(pattern):
+        values=make_array([pattern]);box=BufferBox(values);region=heap.lift_region(read_member)
+        for call in (1,2):
+            expected=read_member(box,0);actual=region(box,0)
+            assert type(actual) is float and bits(actual)==bits(expected)
+>           assert region.compiled_calls==call and region.fallback_calls==0,region.problem
+E           AssertionError: an array of typecode 'd'
+E           assert (0 == 1)
+E            +  where 0 = <recompyler.heap.Region object at 0x0000028C743843E0>.compiled_calls
+
+inplace\task2-preparation\test_array_buffer_members.py:53: AssertionError
+_ test_direct_member_store_updates_original_storage_and_releases_export[-0.0] _
+
+replacement = -0.0
+
+    @pytest.mark.parametrize('replacement',[-0.0,1.25])
+    def test_direct_member_store_updates_original_storage_and_releases_export(replacement):
+        values=array('d',[4.5,8.0]);box=BufferBox(values);region=heap.lift_region(store_member)
+        actual=region(box,0,replacement)
+        assert bits(actual)==bits(4.5) and bits(values[0])==bits(replacement)
+>       assert box.data is values and region.compiled_calls==1 and region.fallback_calls==0,region.problem
+E       AssertionError: an array of typecode 'd'
+E       assert (array('d', [-0.0, 8.0]) is array('d', [-0.0, 8.0]) and 0 == 1)
+E        +  where array('d', [-0.0, 8.0]) = <test_array_buffer_members.BufferBox object at 0x0000028C74384D60>.data
+E        +  and   0 = <recompyler.heap.Region object at 0x0000028C74384E90>.compiled_calls
+
+inplace\task2-preparation\test_array_buffer_members.py:65: AssertionError
+_ test_direct_member_store_updates_original_storage_and_releases_export[1.25] _
+
+replacement = 1.25
+
+    @pytest.mark.parametrize('replacement',[-0.0,1.25])
+    def test_direct_member_store_updates_original_storage_and_releases_export(replacement):
+        values=array('d',[4.5,8.0]);box=BufferBox(values);region=heap.lift_region(store_member)
+        actual=region(box,0,replacement)
+        assert bits(actual)==bits(4.5) and bits(values[0])==bits(replacement)
+>       assert box.data is values and region.compiled_calls==1 and region.fallback_calls==0,region.problem
+E       AssertionError: an array of typecode 'd'
+E       assert (array('d', [1.25, 8.0]) is array('d', [1.25, 8.0]) and 0 == 1)
+E        +  where array('d', [1.25, 8.0]) = <test_array_buffer_members.BufferBox object at 0x0000028C74319EB0>.data
+E        +  and   0 = <recompyler.heap.Region object at 0x0000028C74319FD0>.compiled_calls
+
+inplace\task2-preparation\test_array_buffer_members.py:65: AssertionError
+_________ test_exception_after_store_replays_once_and_releases_export _________
+
+    def test_exception_after_store_replays_once_and_releases_export():
+        values=array('d',[4.5]);box=BufferBox(values);region=heap.lift_region(write_then_read)
+        assert region(box,0)==5.5
+>       assert region.compiled_calls==1 and region.direct_calls==1
+E       assert (0 == 1)
+E        +  where 0 = <recompyler.heap.Region object at 0x0000028C74315590>.compiled_calls
+
+inplace\task2-preparation\test_array_buffer_members.py:72: AssertionError
+=========================== short test summary info ===========================
+FAILED inplace/task2-preparation/test_array_buffer_members.py::test_direct_member_read_preserves_exact_bits_first_warm_and_python_write[9223372036854775808]
+FAILED inplace/task2-preparation/test_array_buffer_members.py::test_direct_member_read_preserves_exact_bits_first_warm_and_python_write[9221120237041090626]
+FAILED inplace/task2-preparation/test_array_buffer_members.py::test_direct_member_read_preserves_exact_bits_first_warm_and_python_write[9221120237041095220]
+FAILED inplace/task2-preparation/test_array_buffer_members.py::test_direct_member_read_preserves_exact_bits_first_warm_and_python_write[4608308318706860032]
+FAILED inplace/task2-preparation/test_array_buffer_members.py::test_direct_member_store_updates_original_storage_and_releases_export[-0.0]
+FAILED inplace/task2-preparation/test_array_buffer_members.py::test_direct_member_store_updates_original_storage_and_releases_export[1.25]
+FAILED inplace/task2-preparation/test_array_buffer_members.py::test_exception_after_store_replays_once_and_releases_export
+7 failed, 2 passed in 2.76s

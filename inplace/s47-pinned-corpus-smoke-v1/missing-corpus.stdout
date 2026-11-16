@@ -1,0 +1,13 @@
+
+=================================== ERRORS ====================================
+______________ ERROR collecting tests/test_provenance_corpus.py _______________
+tests\test_provenance_corpus.py:10: in <module>
+    assert ROOT.is_dir(), 'selected provenance corpus is missing'
+E   AssertionError: selected provenance corpus is missing
+E   assert False
+E    +  where False = is_dir()
+E    +    where is_dir = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/s47-pinned-corpus-smoke-v1/missing').is_dir
+=========================== short test summary info ===========================
+ERROR tests/test_provenance_corpus.py - AssertionError: selected provenance c...
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.27s

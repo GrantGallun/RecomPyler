@@ -1,0 +1,108 @@
+{
+  "label": "frozen-coverage",
+  "mode": "compile-only pre-AOT phase bound",
+  "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\preparation-phases\\frozen-src",
+  "source_files": {
+    "recompyler\\__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+    "recompyler\\__main__.py": "49c1c8a507e2ad9bfb92f66b751281fc884372c300f9bf4931761c2eb0e0633f",
+    "recompyler\\_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+    "recompyler\\_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+    "recompyler\\_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+    "recompyler\\_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+    "recompyler\\_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+    "recompyler\\_region_seed.py": "f8e6a77fff68266009f19defd1d6855b6311e7fece88caac31bea5811f566709",
+    "recompyler\\_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+    "recompyler\\aot.py": "279ef415917e3d7948154fb42af02845ed2c5578d6c4e48cb23a712500818f1d",
+    "recompyler\\batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+    "recompyler\\benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+    "recompyler\\depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+    "recompyler\\experimental.py": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+    "recompyler\\flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+    "recompyler\\heap.py": "1ba37b5f574ce8df8cc9148ec548893438abb282647b70eba9f27146dd86869a",
+    "recompyler\\lift.py": "1710e7792cd6379216388fd4089a21cd72711c3472ada404e11cd7af08fd8e1b",
+    "recompyler\\monitor.py": "e56637494fb0560a70e42d5e5da9488a71f50a90592d0c069558a6532f39406e",
+    "recompyler\\profiler.py": "5799cf465a39559a7f8fc3398a174aa985748b41aed6f0fea832dc14ad9571c3",
+    "recompyler\\report.py": "d52985b837c7f660bdf13b38f8b104706e49cd2af17d658f4a2992b209e13355",
+    "recompyler\\runner.py": "8c4b6531e653e97417300752164e091c97551a908d8e19cd742844b55fcf0e56",
+    "recompyler\\variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+  },
+  "input": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v2\\richards_super\\input\\run_benchmark.py",
+  "input_sha256": "665b3d5551171e147c127b6f8671edc9a7703c736d317cc4a991bb00f599dc36",
+  "origin": {
+    "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v2\\richards_super\\input\\run_benchmark.py",
+    "sha256": "665b3d5551171e147c127b6f8671edc9a7703c736d317cc4a991bb00f599dc36",
+    "module": "__main__",
+    "code_sha256": "0ef3ca80e673e5ac79827342124fef269a3dbd99e8b9d431e4d7cb171e9088e3",
+    "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "library_version": null
+  },
+  "fixture_iterations": 20,
+  "fixture_s": 0.714462400006596,
+  "args": [
+    "Richards instance",
+    1
+  ],
+  "reference": true,
+  "reference_counts": {
+    "hold": 9297,
+    "queued": 23246
+  },
+  "unmeasured_discovery_s": 0.15519099999801256,
+  "preparation_s": 0.09995319999870844,
+  "phases": {
+    "program_construct": {
+      "calls": 1,
+      "inclusive_s": 0.0016601999814156443,
+      "exclusive_s": 0.0016601999814156443
+    },
+    "settle": {
+      "calls": 1,
+      "inclusive_s": 0.09114460001001135,
+      "exclusive_s": 0.09114460001001135
+    },
+    "zero_proofs": {
+      "calls": 1,
+      "inclusive_s": 9.00006853044033e-07,
+      "exclusive_s": 9.00006853044033e-07
+    },
+    "origin_identity": {
+      "calls": 55,
+      "inclusive_s": 0.006334400182822719,
+      "exclusive_s": 0.006334400182822719
+    },
+    "source_digest": {
+      "calls": 1,
+      "inclusive_s": 0.0005031999899074435,
+      "exclusive_s": 0.0005031999899074435
+    },
+    "compile": {
+      "calls": 1,
+      "inclusive_s": 0.09826199998497032,
+      "exclusive_s": 0.00027889979537576437
+    }
+  },
+  "four_fresh_copy_s": [
+    3.689998993650079e-05,
+    1.4999997802078724e-05,
+    9.799987310543656e-06,
+    8.200004231184721e-06
+  ],
+  "generated_digest": "7506f505ee6ec06713c2d03227eaf79a2544e1304c07ed052431567e25563e44",
+  "digest_hits": [
+    "7506f505ee6ec06713c2d03227eaf79a2544e1304c07ed052431567e25563e44"
+  ],
+  "digest_misses": [],
+  "generated_source_sha256": "e7dc0fa00eb510224317396fb1964452f250d3adfc1eff856084fd637fde0468",
+  "generated_source_bytes": 51036,
+  "function_count": 55,
+  "source_ast_nodes": 11957,
+  "analysis_iterations": null,
+  "scalar_removed_sites": [],
+  "scalar_field_clones": [],
+  "scalar_fresh_return_clones": [],
+  "existing_plan_digest_match": false,
+  "recorded_warm_start_s": 0.5270831999951042,
+  "note": "Comparison excludes module imports/JIT/native work; four native calls in warm_start_time are not simulated by dummy exports.",
+  "actual_saved_aot_first_call": null,
+  "frozen_native_note": "No historical frozen artifact is claimed compatible with this relocated exact input origin. Phase digest is independently deterministic."
+}

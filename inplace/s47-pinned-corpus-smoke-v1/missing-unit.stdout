@@ -1,0 +1,20 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________________ test_corpus_all_facts_or_decline _______________________
+
+    def test_corpus_all_facts_or_decline():
+        total=0
+        import os
+        selected=os.environ.get('RECOMPYLER_PROVENANCE_CORPUS')
+        root=Path(selected) if selected else Path(__file__).resolve().parents[2]/'provenance-cases'
+        if selected:
+>           assert root.is_dir(), 'selected provenance corpus is missing'
+E           AssertionError: selected provenance corpus is missing
+E           assert False
+E            +  where False = is_dir()
+E            +    where is_dir = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/s47-pinned-corpus-smoke-v1/missing').is_dir
+
+tests\test_provenance.py:132: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_provenance.py::test_corpus_all_facts_or_decline - Assertion...
+1 failed in 0.23s

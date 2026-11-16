@@ -1,0 +1,35 @@
+................................F....................................... [ 59%]
+..................................................                       [100%]
+================================== FAILURES ===================================
+____ test_prepared_runtime_preserves_writeback_alias_and_original_identity ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...3a9a4403149b80ae2566712a6fb05619fdd30cca31c365328ba3ca9d2c0': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_prepared_runtime_preserves_writeback_alias_and_original_identity(artifact):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+        assert index is not None, pc.last_miss()
+        programs = index.bind(module.work)
+        assert programs, pc.last_miss()
+        program = programs[0]
+        region = heap.lift_region(module.work, {program.digest: program.run}, prepared=index)
+        box, values = module.Box(10), []
+        result = region(box, values)
+        assert result == (box, values, 18)
+        assert result[0] is box and result[1] is values and values == [18]
+        assert region.prepared_hits == 1
+        assert (region.compiled_calls, region.aot_calls, region.jit_calls, region.fallback_calls) == (1, 1, 0, 0)
+        alias_index = pc.open_index(section, row_for(section, 'alias'), plan_snapshot=standalone(section))
+        alias_program = alias_index.bind(module.alias)[0]
+        alias = heap.lift_region(module.alias, {alias_program.digest: alias_program.run}, prepared=alias_index)
+        shared = []
+        result = alias(box, shared, shared)
+        assert result[0] is result[1] is shared and result[2] is box
+>       assert alias.aot_calls == 1
+E       assert 0 == 1
+E        +  where 0 = <recompyler.heap.Region object at 0x0000023CEFF20150>.aot_calls
+
+tests\test_prepared_cache.py:139: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_cache.py::test_prepared_runtime_preserves_writeback_alias_and_original_identity
+1 failed, 121 passed in 22.61s

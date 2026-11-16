@@ -1,0 +1,23 @@
+.........F                                                               [100%]
+================================== FAILURES ===================================
+_________ test_attached_lifted_original_mutation_invalidates_wrapper __________
+
+wrapper = (<function work at 0x000001F664D0D850>, <function work at 0x000001F664D0D6F0>)
+
+    def test_attached_lifted_original_mutation_invalidates_wrapper(wrapper):
+        from recompyler import _runner_wrapper as rw, heap
+        fast, fn = wrapper
+        state = dict(zip(fast.__code__.co_freevars, fast.__closure__))['state'].cell_contents
+        state['lifted'] = heap.Region(fn)
+        assert rw.record_lifted(fast)
+        assert rw.guard(fast)
+        state['lifted'].original = lambda *args: 999
+>       assert not rw.guard(fast)
+E       AssertionError: assert not True
+E        +  where True = <function guard at 0x000001F664CEC670>(<function work at 0x000001F664D0D850>)
+E        +    where <function guard at 0x000001F664CEC670> = <module 'recompyler._runner_wrapper' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\_runner_wrapper.py'>.guard
+
+inplace\prepared-cache-preparation\test_runner_prepared_integration.py:70: AssertionError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_integration.py::test_attached_lifted_original_mutation_invalidates_wrapper
+1 failed, 9 passed in 0.30s

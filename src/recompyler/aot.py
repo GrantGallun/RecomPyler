@@ -29,7 +29,11 @@ def _lifter_key():
 def _digest(unit, source):
     """A hash of generated code and every constant baked into it."""
     constants = sorted((name, _stable(value)) for name, value in unit.constants.values())
-    return hashlib.sha256("\n".join((source, repr(constants), _lifter_key())).encode()).hexdigest()
+    from ._origin import cache_identity
+    # Code generation follows runner wrappers to their original functions.
+    # Seal those same sources while live guards still retain each wrapper/code.
+    origins = sorted({repr(cache_identity(_unwrap(value))) for namespace,name,value,code in unit.guards if type(value) is FunctionType})
+    return hashlib.sha256("\n".join((source, repr(constants), repr(origins), _lifter_key())).encode()).hexdigest()
 
 
 def _qualnames(fn, keys):
@@ -84,7 +88,8 @@ def build(entries, folder):
             export = f"f{len(exports)}"
             exports.append((export, signature, lifted._compiled.py_func))
             exported[shape] = export
-        planned.append({"function": name, "line": line, "qualname": fn.__qualname__,
+        planned.append({"function": name, "line": line, "qualname": fn.__qualname__, "file": fn.__code__.co_filename,
+                        "origin": __import__("recompyler._origin", fromlist=["identity"]).identity(fn),
                         "digest": _digest(lifted._unit, lifted.source), "exports": exported,
                         "promote": {names[key]: sorted(value) for key, value in lifted._promote.items()}})
     if not planned:

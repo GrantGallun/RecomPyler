@@ -1,0 +1,619 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\chaos\\input\\run_benchmark.py",
+  "profiler": "c",
+  "total_s": 1.3414004656915441,
+  "script_self_s": 0.8964142902113963,
+  "functions": [
+    {
+      "function": "create_image_chaos",
+      "qualname": "Chaosgame.create_image_chaos",
+      "line": 214,
+      "calls": 20,
+      "self_s": 0.040426440798910335,
+      "cumulative_s": 1.1170044444443192,
+      "library_s": 0.002283767971675843,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "saves 266 ms a run once the compiled code is cached",
+        "net_s_first_run": -5.061366700043436,
+        "net_s_cached": 0.2662033999513369,
+        "first_pass_s": 5.732416199985892,
+        "warm_start_s": 0.40484609999111854,
+        "python_us_per_call": 34753.82499891566,
+        "compiled_cpu_us_per_call": 1201.350001792889,
+        "speedup": 28.92897569155468,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "outside the supported subset: global 'random' is not a numeric constant"
+      }
+    },
+    {
+      "function": "transform_point",
+      "qualname": "Chaosgame.transform_point",
+      "line": 178,
+      "calls": 100000,
+      "self_s": 0.09047711477614939,
+      "cumulative_s": 1.0741694424650632,
+      "library_s": 0.03448450251016766,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.17x Python",
+        "net_s_first_run": -6.7016129939751234,
+        "net_s_cached": -3.612169693997549,
+        "first_pass_s": 3.3779429999995045,
+        "warm_start_s": 0.28849970002193004,
+        "python_us_per_call": 6.919278181977832,
+        "compiled_cpu_us_per_call": 40.15597812173402,
+        "speedup": 0.17231003964096797,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "outside the supported subset: comparison at line 4"
+      }
+    },
+    {
+      "function": "__call__",
+      "qualname": "Spline.__call__",
+      "line": 89,
+      "calls": 203000,
+      "self_s": 0.40290598254068755,
+      "cumulative_s": 0.758261566166766,
+      "library_s": 0.02424895641161129,
+      "signatures": 2,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 1,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.11x Python",
+        "net_s_first_run": -7.059877076901807,
+        "net_s_cached": -3.890896276908074,
+        "first_pass_s": 3.301446500001475,
+        "warm_start_s": 0.13246570000774227,
+        "python_us_per_call": 2.385562732433419,
+        "compiled_cpu_us_per_call": 20.899999071843922,
+        "speedup": 0.11414176260166459,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "the compiled version did not apply to the captured calls"
+      }
+    },
+    {
+      "function": "linear_combination",
+      "qualname": "GVector.linear_combination",
+      "line": 48,
+      "calls": 1217970,
+      "self_s": 0.0876608623075299,
+      "cumulative_s": 0.23617801614454947,
+      "library_s": 0.12982896802714095,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.01x Python",
+        "net_s_first_run": -17.288933285697553,
+        "net_s_cached": -17.109307385730048,
+        "first_pass_s": 0.18470369998249225,
+        "warm_start_s": 0.005077800014987588,
+        "python_us_per_call": 0.18601373453078887,
+        "compiled_cpu_us_per_call": 14.229241060093045,
+        "speedup": 0.013072639204383016,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "outside the supported subset: comparison at line 2"
+      }
+    },
+    {
+      "function": "GetIndex",
+      "qualname": "Spline.GetIndex",
+      "line": 112,
+      "calls": 202995,
+      "self_s": 0.05031555544701405,
+      "cumulative_s": 0.07409571151947603,
+      "library_s": 0.006792161526391283,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.02x Python",
+        "net_s_first_run": -2.763983078997807,
+        "net_s_cached": -2.3495700790064795,
+        "first_pass_s": 0.4230747999972664,
+        "warm_start_s": 0.008661800005938858,
+        "python_us_per_call": 0.2691401571545768,
+        "compiled_cpu_us_per_call": 11.800992069765925,
+        "speedup": 0.022806570461487922,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "the compiled version did not apply to the captured calls"
+      }
+    },
+    {
+      "function": "Mag",
+      "qualname": "GVector.Mag",
+      "line": 26,
+      "calls": 300000,
+      "self_s": 0.06003740362939425,
+      "cumulative_s": 0.06940150560694747,
+      "library_s": 0.009364101977553219,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.04x Python",
+        "net_s_first_run": -2.217986566421766,
+        "net_s_cached": -2.05230026642648,
+        "first_pass_s": 0.19925940001849085,
+        "warm_start_s": 0.03357310002320446,
+        "python_us_per_call": 0.2566237532523263,
+        "compiled_cpu_us_per_call": 6.985714307929911,
+        "speedup": 0.03673550648371305,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 6.985714307929911,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": false,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function takes objects"
+      }
+    },
+    {
+      "function": "get_random_trafo",
+      "qualname": "Chaosgame.get_random_trafo",
+      "line": 169,
+      "calls": 100000,
+      "self_s": 0.0307900327607058,
+      "cumulative_s": 0.06263043551007286,
+      "library_s": 0.004114718962227926,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.02x Python",
+        "net_s_first_run": -3.5946696343093225,
+        "net_s_cached": -2.807173034329391,
+        "first_pass_s": 0.7964922999963164,
+        "warm_start_s": 0.008995700016384944,
+        "python_us_per_call": 0.426559966796031,
+        "compiled_cpu_us_per_call": 28.408333309926093,
+        "speedup": 0.01501531125189198,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "outside the supported subset: global 'random' is not a numeric constant"
+      }
+    },
+    {
+      "function": "__sub__",
+      "qualname": "GVector.__sub__",
+      "line": 40,
+      "calls": 100000,
+      "self_s": 0.01734040188603103,
+      "cumulative_s": 0.05305810397840105,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.02x Python",
+        "net_s_first_run": -1.7103084846321803,
+        "net_s_cached": -1.3641242846361206,
+        "first_pass_s": 0.3851061000023037,
+        "warm_start_s": 0.03892190000624396,
+        "python_us_per_call": 0.3371271294451038,
+        "compiled_cpu_us_per_call": 13.589150975743872,
+        "speedup": 0.024808549853251552,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "the compiled version did not apply to the captured calls"
+      }
+    },
+    {
+      "function": "GetDomain",
+      "qualname": "Spline.GetDomain",
+      "line": 84,
+      "calls": 505995,
+      "self_s": 0.044639397179707885,
+      "cumulative_s": 0.049164097697939724,
+      "library_s": 0.004524700518231839,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.01x Python",
+        "net_s_first_run": -6.8178973663939715,
+        "net_s_cached": -6.5872823663571936,
+        "first_pass_s": 0.23557390001951717,
+        "warm_start_s": 0.00495889998273924,
+        "python_us_per_call": 0.10449669932640733,
+        "compiled_cpu_us_per_call": 13.113169643474976,
+        "speedup": 0.007968836076059168,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "the compiled version did not apply to the captured calls"
+      }
+    },
+    {
+      "function": "__init__",
+      "qualname": "GVector.__init__",
+      "line": 21,
+      "calls": 1418005,
+      "self_s": 0.021390834619523957,
+      "cumulative_s": 0.021390834619523957,
+      "library_s": 0.0,
+      "signatures": 2,
+      "candidate": {
+        "status": "skipped",
+        "reason": "the compiled version did not apply to the captured calls",
+        "region_reason": "as a region: a 'GVector' object with attributes its __init__ does not set"
+      }
+    },
+    {
+      "function": "__add__",
+      "qualname": "GVector.__add__",
+      "line": 34,
+      "calls": 100000,
+      "self_s": 0.007899201911641285,
+      "cumulative_s": 0.019434700050624087,
+      "library_s": 0.010236198373604566,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.01x Python",
+        "net_s_first_run": -1.500561499586527,
+        "net_s_cached": -1.3203136995692857,
+        "first_pass_s": 0.18507559999125078,
+        "warm_start_s": 0.004827799974009395,
+        "python_us_per_call": 0.176391055575246,
+        "compiled_cpu_us_per_call": 13.331250051528007,
+        "speedup": 0.013231396522716063,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "outside the supported subset: global 'GVector' is not a numeric constant"
+      }
+    },
+    {
+      "function": "__init__",
+      "qualname": "Chaosgame.__init__",
+      "line": 147,
+      "calls": 1,
+      "self_s": 0.0005453996127471328,
+      "cumulative_s": 0.018864553974708542,
+      "library_s": 0.0007082694501150399,
+      "signatures": 1,
+      "candidate": {
+        "status": "skipped",
+        "reason": "outside the supported subset: comprehension at line 4",
+        "region_reason": "as a region: a 'Chaosgame' object with attributes its __init__ does not set"
+      }
+    },
+    {
+      "function": "__mul__",
+      "qualname": "GVector.__mul__",
+      "line": 43,
+      "calls": 100000,
+      "self_s": 0.005141201225342229,
+      "cumulative_s": 0.01628300204174593,
+      "library_s": 0.00974279866204597,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.01x Python",
+        "net_s_first_run": -1.1944498275805768,
+        "net_s_cached": -1.0789771275702902,
+        "first_pass_s": 0.1457523000135552,
+        "warm_start_s": 0.03027960000326857,
+        "python_us_per_call": 0.15795222627145006,
+        "compiled_cpu_us_per_call": 10.644927501941666,
+        "speedup": 0.014838262284326418,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 10.644927501941666,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": false,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function takes objects"
+      }
+    },
+    {
+      "function": "truncate",
+      "qualname": "Chaosgame.truncate",
+      "line": 204,
+      "calls": 100000,
+      "self_s": 0.010529604449402541,
+      "cumulative_s": 0.010529604449402541,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": false,
+        "recommendation": "one call at a time it is 0.00x Python",
+        "net_s_first_run": -2.3702192235980055,
+        "net_s_cached": -2.2389559236073273,
+        "first_pass_s": 0.13928999999188818,
+        "warm_start_s": 0.008026700001209974,
+        "python_us_per_call": 0.10434405910075573,
+        "compiled_cpu_us_per_call": 22.41363629516193,
+        "speedup": 0.00465538289845806,
+        "changes_arguments": false,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "the compiled version did not apply to the captured calls"
+      }
+    }
+  ],
+  "plan": {
+    "startup_s": 0.1238065000216011,
+    "saving_s": 0.2662033999513369,
+    "worth_running": true,
+    "aot_regions": {
+      "functions": [
+        {
+          "function": "create_image_chaos",
+          "line": 214,
+          "qualname": "Chaosgame.create_image_chaos",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\chaos\\input\\run_benchmark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\chaos\\input\\run_benchmark.py",
+            "sha256": "5d20fd29c8ea89e0ebe4040ae4c05f26f1a620cd2a7fc654d9d7f8cb205651ac",
+            "module": "__main__",
+            "code_sha256": "954d405e8a6616c2bc7ddc34be9dc52d1cad62cf4378de464d1d9841c04df512",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "exports": {
+            "ecfc8043de2431a93d149447a611ceae08c678d8ded6299dc48f61ca11656926": "r0"
+          },
+          "seeds": {},
+          "seed_policy": "legacy-only",
+          "seed_policy_reason": "not all verified signatures have guarded strict seeds",
+          "prepared": []
+        }
+      ],
+      "module": "rcaotr_4316052aaf18765f7725d096",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\prepared-plans-v1\\chaos\\cache",
+      "prepared": {
+        "build_key": {
+          "compiler": {
+            "cflags": [],
+            "ldflags": [],
+            "llvmlite_build": {
+              "metadata_sha256": "8f1269fc707c42d99b010322f95da3fc46a9ad3c542080fa0bc6d9deab6a9c05",
+              "record_sha256": "7992aaa78df2bcdd946336fc2ecd29f322197992dd2a47b27e9874a71216f1bd",
+              "version": "0.50.0"
+            },
+            "numba_build": {
+              "metadata_sha256": "03180342d0a32eeed6a7ae09124b5c73d4d3acd8208cfe3fd039f4f440088b0b",
+              "record_sha256": "50b4727c7b19696e4b2519d0d818de8126caab67b9cccb9676d9479e798cce85",
+              "version": "0.68.1"
+            },
+            "schema": 1,
+            "sources": {
+              "__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+              "__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+              "_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+              "_heap.c": "d0a6fbf6b33b62ad318dda1f5a2e7d9466c924c863423c8ef5f1e66994eefdc6",
+              "_monitor.c": "2d6e52cb082b7528bbbb882f2454cd6a763e1b8d5732fe1002dfaa66ea5a36f4",
+              "_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+              "_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+              "_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+              "_prepared.py": "8ee1b44d8a144c5c3bb17e80412d69282f63413157d0a1c82458c60a8b00f0fd",
+              "_prepared_keys.py": "27e8e64b32399ff9e3980c626fc06775bbcd8c829e229f1dba72b429bdb8f10e",
+              "_pycc/__init__.py": "445e3c46acf12fb5d78f96a7965de6fa3374104f5a8b3e927df9612d4802c923",
+              "_pycc/cc.py": "dab20f566d7658462117379effb43a9e30b5b6c261a5471cf353170772bdafea",
+              "_pycc/compiler.py": "caf1167cc5c61aec8e4d46ed36b9a545b503ca56d167b824f9bca6b1a54f692e",
+              "_pycc/llvm_types.py": "9f4a1b498c8573b877e7a2e656a1a1c0530a1f83695c85c5e41c73b68536e34a",
+              "_pycc/modulemixin.c": "8240807920e741333522f107a0a3c7f57dae3c5e52cf1e8d0f02e967813a7e7e",
+              "_pycc/platform.py": "a02136b55e3256f91204619afe790c1711a8f828845fed25a41e8d29bea544ce",
+              "_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+              "_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+              "_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+              "_runner_wrapper.py": "2120bd7a79700f94d0404e4513872c43d025c68c31e2f7b0f8cc197a6a508ddb",
+              "aot.py": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f",
+              "batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+              "benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+              "depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+              "escape.py": "f2787ac24f8c49938bfd75fce4f8ff7223f88e8b79ac312f6a1660f26e9e9ae4",
+              "experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+              "facts.py": "724a9570fd5ad0d11b27e5134dc616473af3a959ad2c232e6821ad04e654d9ad",
+              "flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+              "heap.py": "26263b2d2ea1fa527666329e12d0a4ec0651e328438457bc267a8b0625c7d600",
+              "lift.py": "f950ee6c94bfde8dd8021f925c37b246bfe0a60203ba8d58a3f375890f1f8976",
+              "monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+              "profiler.py": "954ffc77e58af00f579acc83190374f162d9880fbf981b4bd13606873efb7aa6",
+              "report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+              "runner.py": "01038be1e9f8ef77429f8b2cc16022ddab5ffdc79408cae6f80d177d10ba63da",
+              "scalar.py": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc",
+              "variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+            },
+            "target_cpu": "",
+            "target_environment": {
+              "NUMBA_CPU_FEATURES": null,
+              "NUMBA_CPU_NAME": null,
+              "NUMBA_OPT": null
+            },
+            "use_nrt": true
+          },
+          "runtime": {
+            "api_version": 1013,
+            "byteorder": "little",
+            "cache_tag": "cpython-314",
+            "debug": false,
+            "extension": ".cp314-win_amd64.pyd",
+            "free_threaded": false,
+            "header_abi": "63f5afc7b544fcd617dd3ea12bbcede5b6db1b3e798268ab73ae3b1182d5ea87",
+            "implementation": "cpython",
+            "load_contracts_version": 1,
+            "native_sha256": {
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared\\src\\recompyler\\_heap.cp314-win_amd64.pyd",
+              "sha256": "cd5317e9a13afdba07c95f16c94ee09b11f7928384d87053f7aa684165112905"
+            },
+            "numpy_abi": [
+              "2.4.4",
+              33554432,
+              {
+                "file": "C:\\Users\\grant\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\_core\\_multiarray_umath.cp314-win_amd64.pyd",
+                "sha256": "c4d8aa9b07deebc0f6e437098c1c3055145f7d810af770453f9cd74452b9d96a"
+              }
+            ],
+            "pointer_bits": 64,
+            "prepared_origin_version": 1,
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "python_binary_sha256": [
+              {
+                "file": "C:\\Python314\\python.exe",
+                "sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a"
+              },
+              {
+                "file": "C:\\Python314\\python314.dll",
+                "sha256": "a07f7d09c3121492bb066535c6d0811df5fbc2090cbca7031a97bb47ce1480c9"
+              }
+            ],
+            "soabi": "cp314-win_amd64"
+          }
+        },
+        "cores": [],
+        "manifest": {
+          "functions": [
+            {
+              "exports": {
+                "ecfc8043de2431a93d149447a611ceae08c678d8ded6299dc48f61ca11656926": "r0"
+              },
+              "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\chaos\\input\\run_benchmark.py",
+              "function": "create_image_chaos",
+              "line": 214,
+              "origin": {
+                "code_sha256": "954d405e8a6616c2bc7ddc34be9dc52d1cad62cf4378de464d1d9841c04df512",
+                "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\chaos\\input\\run_benchmark.py",
+                "library_version": null,
+                "module": "__main__",
+                "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+                "sha256": "5d20fd29c8ea89e0ebe4040ae4c05f26f1a620cd2a7fc654d9d7f8cb205651ac"
+              },
+              "prepared": [],
+              "qualname": "Chaosgame.create_image_chaos",
+              "seed_policy": "legacy-only",
+              "seed_policy_reason": "not all verified signatures have guarded strict seeds",
+              "seeds": {}
+            }
+          ],
+          "signatures": {
+            "ecfc8043de2431a93d149447a611ceae08c678d8ded6299dc48f61ca11656926": {
+              "args": [
+                "i",
+                "i",
+                "i",
+                "i",
+                "i",
+                "i"
+              ],
+              "ret": [
+                "i"
+              ]
+            }
+          }
+        },
+        "schema": 1,
+        "bundle_seal": "4316052aaf18765f7725d096b2e001941bfc04844406a5986393d797509f9362",
+        "seal_export": "_prepared_seal",
+        "diagnostics": [
+          {
+            "function": "Chaosgame.create_image_chaos",
+            "variant": "legacy",
+            "reason": "'range' is not a plain class"
+          }
+        ],
+        "artifact": {
+          "file": "rcaotr_4316052aaf18765f7725d096.cp314-win_amd64.pyd",
+          "length": 67072,
+          "sha256": "6a2caf3090057d7d04237cbf386b4d25120f3a81459d8c5a13995e7e8fb7cd48"
+        }
+      }
+    }
+  }
+}

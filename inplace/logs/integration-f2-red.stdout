@@ -1,0 +1,9 @@
+..................F.                                                     [100%]
+================================== FAILURES ===================================
+____________ test_structural_ast_work_is_cached_once_per_analysis _____________
+tests\test_escape_cache.py:212: in test_structural_ast_work_is_cached_once_per_analysis
+    assert cached['walk'] == cached['walk_distinct_nodes'] == len(STRUCTURAL_SPEC)
+E   assert 50 == 3
+=========================== short test summary info ===========================
+FAILED tests/test_escape_cache.py::test_structural_ast_work_is_cached_once_per_analysis
+1 failed, 19 passed in 0.28s

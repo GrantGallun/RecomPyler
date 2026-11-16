@@ -1,0 +1,32 @@
+{
+  "label": "s31-prepared-current-green-v6",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_prepared_cache_api.py",
+    "tests/test_prepared_cache.py",
+    "tests/test_prepared_cache_adversarial.py",
+    "tests/test_prepared_cache_more.py",
+    "tests/test_runner_prepared_integration.py",
+    "tests/test_runner_prepared_artifact.py",
+    "tests/test_profiler_prepared_assembly.py",
+    "tests/test_prepared_snapshot_window.py",
+    "tests/test_prepared_review_regressions.py",
+    "tests/test_prepared_descriptor_keys.py",
+    "tests/test_prepared_builtin_anchor.py",
+    "tests/test_prepared_order.py",
+    "tests/test_prepared_slot_cache.py",
+    "tests/test_prepared_globals.py",
+    "tests/test_prepared_native_dependencies.py",
+    "tests/test_prepared_native_lifetime.py",
+    "tests/test_prepared_runner_method.py",
+    "tests/test_prepared_lazy_validation.py",
+    "--basetemp",
+    "inplace/temp/s31-prepared-current-green-v6"
+  ],
+  "exit_code": 0,
+  "wall_s": 83.27278219998698,
+  "end": "2026-11-14T08:38:50.215852+00:00"
+}

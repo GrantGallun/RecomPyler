@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\prepared-cache-preparation\verify_prepared_hit.py", line 265, in <module>
+    main()
+    ~~~~^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\prepared-cache-preparation\verify_prepared_hit.py", line 253, in main
+    child(options)
+    ~~~~~^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\prepared-cache-preparation\verify_prepared_hit.py", line 133, in child
+    report = run_script(script, arguments, plan_path, False)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\bases\integration-prepared-v5\src\recompyler\runner.py", line 314, in run_script
+    exec(code, module.__dict__)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\integration-smoke20-v4\chaos\input\run_benchmark.py", line 309, in <module>
+    main(runner, args)
+    ~~~~^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\integration-smoke20-v4\chaos\input\run_benchmark.py", line 270, in main
+    runner.bench_func('chaos', chaos.create_image_chaos,
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      args.width, args.height, args.iterations,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      args.filename, args.rng_seed)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\integration-smoke20-v4\shim\pyperf.py", line 31, in bench_func
+    func(*args)
+    ~~~~^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\bases\integration-prepared-v5\src\recompyler\runner.py", line 279, in fast
+    return state["lifted"](*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\capture_audit.py", line 212, in call
+    return original(region, *args, **kwargs)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\bases\integration-prepared-v5\src\recompyler\heap.py", line 7151, in __call__
+    ok, value = self.attempt(args, kwargs)
+                ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\capture_audit.py", line 140, in attempt
+    result = original(region, *args, **kwargs)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\bases\integration-prepared-v5\src\recompyler\heap.py", line 7048, in attempt
+    program = self.program_for(args)
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\bases\integration-prepared-v5\src\recompyler\heap.py", line 6896, in program_for
+    candidate = self._make_program()
+  File "D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\prepared-cache-preparation\verify_prepared_hit.py", line 69, in fail
+    raise ForbiddenWork(label)
+child.<locals>.ForbiddenWork: Region._make_program

@@ -1,0 +1,22 @@
+{
+  "label": "s46-compile-probe-v3",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "inplace/s46-policy-preparation/test_compile_probe.py",
+    "-q",
+    "-s",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "complete": true,
+  "execution_class": "correctness",
+  "timing_eligible": false,
+  "process_priority": "BELOW_NORMAL",
+  "priority_verified": 16384,
+  "workers": "serial; thread env1; total run cap4",
+  "start": "2026-11-14T20:50:23.086412+00:00",
+  "end": "2026-11-14T20:50:39.565597+00:00",
+  "timing_lock_taken": false
+}

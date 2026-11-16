@@ -1,0 +1,49 @@
+........................................................................ [  6%]
+.............................................................. [ 11%]
+................................................................ [ 16%]
+......................................... [ 20%]
+................................... [ 23%]
+........................................................................ [ 29%]
+........................................................................ [ 35%]
+........................................................................ [ 41%]
+.................................................................................................................................. [ 52%]
+........................................................................ [ 58%]
+......................................... [ 61%]
+........................................................................ [ 68%]
+........................................................................ [ 74%]
+........................................................................ [ 80%]
+........................................................................ [ 86%]
+........................................................................ [ 92%]
+........................................................................ [ 98%]
+..................                                                       [100%]
+============================== warnings summary ===============================
+tests/test_backends.py::BackendTests::test_arrays_in_arrays_out
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 4 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_auto_measures_once_per_size_and_matches
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 5 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 1 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 6 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_gpu_runs_exactly_or_explains_why_not
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 3 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_batch.py::GpuTrustTests::test_gpu_stays_in_use_after_first_batch
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 16 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1183 passed, 10 warnings, 131 subtests passed in 324.11s (0:05:24)

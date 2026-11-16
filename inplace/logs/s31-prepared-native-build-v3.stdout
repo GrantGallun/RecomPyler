@@ -1,0 +1,10 @@
+running build_ext
+building 'recompyler._heap' extension
+"C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX86\x64\cl.exe" /c /nologo /O2 /W3 /GL /DNDEBUG /MD -IC:\Python314\include -IC:\Python314\Include "-IC:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\Auxiliary\VS\include" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\um" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\shared" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\winrt" "-IC:\Program Files (x86)\Windows Kits\10\\include\10.0.26100.0\\cppwinrt" /Tcsrc/recompyler/_heap.c /Fobuild\temp.win-amd64-cpython-314\Release\src/recompyler/_heap.obj
+_heap.c
+"C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\bin\HostX86\x64\link.exe" /nologo /INCREMENTAL:NO /LTCG /DLL /MANIFEST:EMBED,ID=2 /MANIFESTUAC:NO /LIBPATH:C:\Python314\libs /LIBPATH:C:\Python314 /LIBPATH:C:\Python314\PCbuild\amd64 "/LIBPATH:C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools\VC\Tools\MSVC\14.50.35717\lib\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\10\lib\10.0.26100.0\ucrt\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\10\\lib\10.0.26100.0\\um\x64" /EXPORT:PyInit__heap build\temp.win-amd64-cpython-314\Release\src/recompyler/_heap.obj /OUT:build\lib.win-amd64-cpython-314\recompyler\_heap.cp314-win_amd64.pyd /IMPLIB:build\temp.win-amd64-cpython-314\Release\src/recompyler\_heap.cp314-win_amd64.lib
+   Creating library build\temp.win-amd64-cpython-314\Release\src/recompyler\_heap.cp314-win_amd64.lib and object build\temp.win-amd64-cpython-314\Release\src/recompyler\_heap.cp314-win_amd64.exp
+Generating code
+Finished generating code
+copying build\lib.win-amd64-cpython-314\recompyler\_monitor.cp314-win_amd64.pyd -> src\recompyler
+copying build\lib.win-amd64-cpython-314\recompyler\_heap.cp314-win_amd64.pyd -> src\recompyler

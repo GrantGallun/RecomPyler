@@ -1,0 +1,34 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_________ test_hidden_random_holder_uses_live_state_and_keeps_aliases _________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...7841d191d25a1ecd80e1e441322fa9a70bad1694a0d4f49c5015bdf15ea': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_hidden_random_holder_uses_live_state_and_keeps_aliases(artifact):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section, 'random_step'), plan_snapshot=standalone(section))
+        programs = index.bind(module.random_step)
+>       assert programs, 'legacy synthetic RNG holder was not rebound'
+E       AssertionError: legacy synthetic RNG holder was not rebound
+E       assert []
+
+tests\test_prepared_cache.py:386: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_f447ca6fac0413fad9ebe58d-5olxd618\rcaotr_f447ca6fac0413fad9ebe58d.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_f447ca6fac0413fad9ebe58d-5olxd618\rcaotr_f447ca6fac0413fad9ebe58d.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_cache.py::test_hidden_random_holder_uses_live_state_and_keeps_aliases
+1 failed, 104 deselected in 5.83s

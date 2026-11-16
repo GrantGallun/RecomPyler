@@ -1,0 +1,523 @@
+diff --git a/inplace/INTEGRATION.md b/inplace/INTEGRATION.md
+index dbfdb15..bfa7a3f 100644
+--- a/inplace/INTEGRATION.md
++++ b/inplace/INTEGRATION.md
+@@ -1,3 +1,5 @@
++> SUPERSEDED: S31 / CHECKPOINT18 reopened Step0. This is verified candidate evidence; acceptance requires matched frozen-coverage comparison, prepared-AOT cache if regressed, newly authorized depth commits, and final gates.
++
+ # Accepted integration evidence
+ 
+ Final-source gates complete; coordinator commits this step before Step1. Source variant: integration-cache.
+diff --git a/src/recompyler/_heap.c b/src/recompyler/_heap.c
+index 1b0433a..15187a9 100644
+--- a/src/recompyler/_heap.c
++++ b/src/recompyler/_heap.c
+@@ -13,9 +13,19 @@
+  * A value that does not fit raises Mismatch, and the call is handed back to Python;
+  * a heap too small for the arguments raises Grow, and the caller retries with more.
+  */
++#ifndef _GNU_SOURCE
++#define _GNU_SOURCE
++#endif
+ #define PY_SSIZE_T_CLEAN
+ #include <Python.h>
+ #include <math.h>
++#include <stdint.h>
++#include <structmember.h>
++#ifdef _WIN32
++#include <windows.h>
++#elif defined(__linux__) || defined(__APPLE__)
++#include <dlfcn.h>
++#endif
+ 
+ static PyObject *Mismatch, *Grow;
+ 
+@@ -432,7 +442,148 @@ static PyObject *write_back(PyObject *self, PyObject *const *args, Py_ssize_t na
+     Py_RETURN_NONE;
+ }
+ 
++/* Establish executable provenance without trusting writable Python names or
++ * third-party Closure offsets. Both public CPython accessors use the installed
++ * headers; no address escapes this helper or enters a saved plan. */
++static PyObject *binary_location(const void *address, int identity) {
++    uintptr_t base;
++#ifdef _WIN32
++    HMODULE module;
++    wchar_t path[32768];
++    if (!GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
++                            GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
++                            (LPCWSTR)address, &module))
++        Py_RETURN_NONE;
++    DWORD length = GetModuleFileNameW(module, path, 32768);
++    if (!length || length >= 32768)
++        Py_RETURN_NONE;
++    base = (uintptr_t)module;
++    PyObject *filename = PyUnicode_FromWideChar(path, length);
++    if (filename == NULL) return NULL;
++    if (!identity) return filename;
++    return Py_BuildValue("(NK)", filename, (unsigned long long)((uintptr_t)address-base));
++#elif defined(__linux__) || defined(__APPLE__)
++    Dl_info info;
++    if (!dladdr(address, &info) || !info.dli_fname)
++        Py_RETURN_NONE;
++    base = (uintptr_t)info.dli_fbase;
++    PyObject *filename = PyUnicode_DecodeFSDefault(info.dli_fname);
++    if (filename == NULL) return NULL;
++    if (!identity) return filename;
++    return Py_BuildValue("(NK)", filename, (unsigned long long)((uintptr_t)address-base));
++#else
++    Py_RETURN_NONE;
++#endif
++}
++
++static PyObject *binary_origin(const void *address) {
++    return binary_location(address, 0);
++}
++
++/* Stable image-relative coordinates, never a process address. NULL is a valid
++ * absent getter/setter/closure; a non-NULL target outside an image is a miss. */
++static PyObject *binary_identity(const void *address) {
++    if (address == NULL) Py_RETURN_NONE;
++    PyObject *result = binary_location(address, 1);
++    if (result == Py_None) {
++        Py_DECREF(result);
++        PyErr_SetString(PyExc_ValueError, "native dependency has no binary image");
++        return NULL;
++    }
++    return result;
++}
++
++static PyObject *prepared_binding(PyObject *self, PyObject *value) {
++    PyObject *first = NULL, *second = NULL, *third = NULL, *result = NULL;
++    int flags = 0, offset = 0;
++    const char *kind = NULL;
++    if (Py_IS_TYPE(value, &PyCFunction_Type)) {
++        first = binary_identity((const void *)PyCFunction_GET_FUNCTION(value));
++        if (first == NULL) return NULL;
++        second = binary_identity((const void *)((PyCFunctionObject *)value)->vectorcall);
++        if (second == NULL) { Py_DECREF(first); return NULL; }
++        return Py_BuildValue("(sNNi)", "builtin", first, second, PyCFunction_GET_FLAGS(value));
++    }
++    if (Py_IS_TYPE(value, &PyMethodDescr_Type) || Py_IS_TYPE(value, &PyClassMethodDescr_Type)) {
++        PyMethodDescrObject *d = (PyMethodDescrObject *)value;
++        first = binary_identity((const void *)d->d_method->ml_meth);
++        if (first == NULL) return NULL;
++        second = binary_identity((const void *)d->vectorcall);
++        if (second == NULL) { Py_DECREF(first); return NULL; }
++        return Py_BuildValue("(sNNi)", "method", first, second, d->d_method->ml_flags);
++    }
++    if (Py_IS_TYPE(value, &PyMemberDescr_Type)) {
++        PyMemberDef *member = ((PyMemberDescrObject *)value)->d_member;
++        return Py_BuildValue("(sini)", "member", member->type, member->offset, member->flags);
++    }
++    if (Py_IS_TYPE(value, &PyGetSetDescr_Type)) {
++        PyGetSetDef *d = ((PyGetSetDescrObject *)value)->d_getset;
++        kind = "getset";
++        first = binary_identity((const void *)d->get);
++        if (first == NULL) return NULL;
++        second = binary_identity((const void *)d->set);
++        if (second == NULL) goto done;
++        third = binary_identity(d->closure);
++        if (third == NULL) goto done;
++    } else if (Py_IS_TYPE(value, &PyWrapperDescr_Type)) {
++        PyWrapperDescrObject *d = (PyWrapperDescrObject *)value;
++        kind = "wrapper"; flags = d->d_base->flags; offset = d->d_base->offset;
++        first = binary_identity(d->d_wrapped);
++        if (first == NULL) return NULL;
++        second = binary_identity((const void *)d->d_base->wrapper);
++        if (second == NULL) goto done;
++        third = binary_identity(d->d_base->function);
++        if (third == NULL) goto done;
++    } else {
++        PyErr_SetString(PyExc_TypeError, "unsupported exact native binding");
++        return NULL;
++    }
++    result = Py_BuildValue("(sOOOii)", kind, first, second, third, flags, offset);
++ done:
++    Py_XDECREF(first); Py_XDECREF(second); Py_XDECREF(third);
++    return result;
++}
++
++static PyObject *prepared_origin(PyObject *self, PyObject *value) {
++    if (!Py_IS_TYPE(value, &PyCFunction_Type)) {
++        PyErr_SetString(PyExc_TypeError, "prepared_origin requires an exact builtin");
++        return NULL;
++    }
++    PyObject *owner = PyCFunction_GET_SELF(value);
++    if (owner == NULL)
++        Py_RETURN_NONE;
++    PyObject *code = binary_origin((const void *)PyCFunction_GET_FUNCTION(value));
++    if (code == NULL)
++        return NULL;
++    PyObject *closure = binary_origin((const void *)Py_TYPE(owner));
++    if (closure == NULL) {
++        Py_DECREF(code);
++        return NULL;
++    }
++    PyObject *result = PyTuple_Pack(2, code, closure);
++    Py_DECREF(code);
++    Py_DECREF(closure);
++    return result;
++}
++
++/* Canonical type pointers cannot be replaced through the builtins dictionary. */
++static PyObject *prepared_builtin(PyObject *self, PyObject *value) {
++    PyTypeObject *known[] = {&PyBaseObject_Type, &PyType_Type, &PyRange_Type,
++        &PyLong_Type, &PyFloat_Type, &PyBool_Type, &PyComplex_Type, &PyList_Type,
++        &PyTuple_Type, &PyDict_Type, &PySet_Type, &PyFrozenSet_Type,
++        &PyUnicode_Type, &PyBytes_Type, &PyByteArray_Type, &PySlice_Type,
++        &PySuper_Type, &PyEnum_Type, &PyZip_Type, &PyReversed_Type};
++    for (size_t i = 0; i < sizeof(known) / sizeof(known[0]); i++) {
++        if (value == (PyObject *)known[i])
++            return PyUnicode_FromString(known[i]->tp_name);
++    }
++    Py_RETURN_NONE;
++}
++
+ static PyMethodDef methods[] = {
++    {"prepared_binding", prepared_binding, METH_O, "Return installed-header native code and descriptor identities."},
++    {"prepared_builtin", prepared_builtin, METH_O, "Return a canonical native builtin type name."},
++    {"prepared_origin", prepared_origin, METH_O, "Return native code and owner-type binary origins."},
+     {"load", (PyCFunction)(void (*)(void))load, METH_FASTCALL, "Copy one argument into the heap."},
+     {"write_back", (PyCFunction)(void (*)(void))write_back, METH_FASTCALL, "Store written attributes back."},
+     {NULL, NULL, 0, NULL},
+@@ -447,6 +598,8 @@ static int exec_module(PyObject *module) {
+         return -1;
+     if (PyModule_AddIntConstant(module, "LOAD_CONTRACTS_VERSION", 1) < 0)
+         return -1;
++    if (PyModule_AddIntConstant(module, "PREPARED_ORIGIN_VERSION", 1) < 0)
++        return -1;
+     return 0;
+ }
+ 
+diff --git a/src/recompyler/heap.py b/src/recompyler/heap.py
+index f7370ed..4b13b75 100644
+--- a/src/recompyler/heap.py
++++ b/src/recompyler/heap.py
+@@ -945,7 +945,15 @@ class _Program:
+         origins = [origin_identity(info.fn) for info in self.order]
+         self.digest = _source_digest(self.source + "\n# origins: " + repr(origins) + ("\n# inference seed: " + self.seed_identity
+                                                     if hasattr(self, "seed_identity") else ""))
+-        built = (ahead_of_time or {}).get(self.digest)
++        if hasattr(ahead_of_time, 'resolve_program'):
++            try:
++                built = ahead_of_time.resolve_program(self)
++            except Exception as exc:
++                from ._prepared import PreparedMiss
++                if not isinstance(exc, PreparedMiss): raise
++                raise Unsupported(str(exc)) from exc
++        else:
++            built = (ahead_of_time or {}).get(self.digest)
+         if built is not None:
+             # Built from this exact code, after the checks below passed at build time.
+             self.module, self.run, self.cached, self.ahead_of_time = None, built, True, True
+@@ -6838,13 +6846,16 @@ def _signature(program, kinds):
+ class Region:
+     """A compiled stand-in for ``original`` that falls back whenever it cannot be sure."""
+ 
+-    def __init__(self, fn, ahead_of_time=None, seeds=None):
++    def __init__(self, fn, ahead_of_time=None, seeds=None, prepared=None):
+         if not isinstance(fn, FunctionType):
+             raise Unsupported("only plain Python functions can be lifted")
+         self.original = fn
+         # Source digest -> function exported by an ahead-of-time module.
+         self.ahead_of_time = ahead_of_time or {}
+         self.seeds = seeds if type(seeds) is dict else {}
++        self.prepared = prepared
++        self.prepared_hits = self.prepared_misses = 0
++        self.prepared_reasons = []
+         self.programs, self.latest = {}, None
+         self.compiled_calls = self.fallback_calls = 0
+         self.aot_calls = self.jit_calls = 0
+@@ -6864,6 +6875,25 @@ class Region:
+ 
+     def program_for(self, args):
+         """The program compiled for these argument types, or None."""
++        if self.prepared is not None:
++            if len(self.programs) >= MAX_SIGNATURES:
++                return None
++            candidates = (self.prepared.iter_bind(self.original) if hasattr(self.prepared, "iter_bind")
++                          else self.prepared.bind(self.original))
++            for record_id, program in enumerate(candidates):
++                if program.broken or not program.guards_hold():
++                    continue
++                try:
++                    self.load(program, args)
++                except (_Mismatch, RecursionError):
++                    continue
++                if len(self.programs) < MAX_SIGNATURES:
++                    self.programs[('prepared', record_id)] = program
++                self.prepared_reasons = list(self.prepared.reasons)
++                self.prepared_hits += 1
++                return program
++            self.prepared_reasons = list(self.prepared.reasons)
++            self.prepared_misses += 1
+         try:
+             candidate = self._make_program()
+             seen = {}
+@@ -6886,7 +6916,16 @@ class Region:
+                     continue
+                 try:
+                     seeded = restore(self.original, seed)
+-                    seeded.compile(ExactExport({digest: self.ahead_of_time[digest]}))
++                    exact = ExactExport({digest: self.ahead_of_time[digest]})
++                    if hasattr(self.ahead_of_time, 'resolve_program'):
++                        verified = self.ahead_of_time
++                        class ExactVerified(dict):
++                            def resolve_program(self, program):
++                                if program.digest != digest:
++                                    raise Unsupported('no exact saved seed export')
++                                return verified.resolve_program(program)
++                        exact = ExactVerified(exact)
++                    seeded.compile(exact)
+                     if seeded.digest != digest:
+                         continue
+                     self.load(seeded, args)
+@@ -7221,13 +7260,13 @@ async def _replay(values):
+         yield value
+ 
+ 
+-def lift_region(fn, ahead_of_time=None, seeds=None):
++def lift_region(fn, ahead_of_time=None, seeds=None, prepared=None):
+ 
+     """Compile ``fn`` and everything it reaches as one region. Compilation happens on
+     the first call, when the argument types are known; a region that cannot be
+     compiled runs as plain Python, and ``problem`` says why. ``ahead_of_time`` maps
+     source digests to functions of a module built by ``build_regions``."""
+-    return Region(_unwrap(fn), ahead_of_time, seeds)
++    return Region(_unwrap(fn), ahead_of_time, seeds, prepared)
+ 
+ 
+ def _inlined_entry(program):
+@@ -7249,7 +7288,7 @@ def _source_digest(source):
+     return digest.hexdigest()
+ 
+ 
+-def build_regions(entries, folder):
++def build_regions(entries, folder, *, plan_factory=None):
+     """Compile the regions the profiler verified into one extension module, so a
+     later run uses them without importing Numba.
+ 
+@@ -7257,7 +7296,7 @@ def build_regions(entries, folder):
+     compiled with exactly one signature is exported, keyed by its source digest.
+     Returns the plan section, or None if nothing was built.
+     """
+-    planned, exports = [], []
++    planned, exports, pending = [], [], []
+     export_numbers = itertools.count()
+     for (name, line), fn, region in entries:
+         if getattr(region, "experimental_numeric", False):
+@@ -7276,6 +7315,7 @@ def build_regions(entries, folder):
+             exports.append((export, overloads[0].signature, _inlined_entry(program)))
+             digests[program.digest] = legacy[program.digest] = export
+             function_exports.add(export)
++            pending.append((program, None, export, 'legacy'))
+             strict_covered = False
+             source_exports = {program.source: export}
+             for widen_objects in (False, True):
+@@ -7319,6 +7359,7 @@ def build_regions(entries, folder):
+                     source_exports[normalized.source] = seeded_export
+                 digests[normalized.digest] = seeded_export
+                 seeds[normalized.digest] = seed
++                pending.append((normalized, seed, seeded_export, 'wide-seed' if widen_objects else 'strict-seed'))
+                 if not widen_objects:
+                     strict_covered = True
+             complete_strict_coverage = complete_strict_coverage and strict_covered
+@@ -7339,14 +7380,49 @@ def build_regions(entries, folder):
+     if not planned:
+         return None
+     from ._pycc import CC
+-    identity = hashlib.sha256(repr([sorted(item["exports"].items()) for item in planned]).encode()
+-                              + repr([str(signature) for _, signature, _ in exports]).encode()).hexdigest()[:24]
++    from . import _prepared as pc
++    section = dict(functions=planned)
++    snapshot = (plan_factory(section) if plan_factory is not None else
++                dict(mode='standalone', functions=[], plan=dict(aot_regions=section)))
++    key = pc.plan_key(snapshot)
++    build_key = dict(compiler=pc.compiler_key(), runtime=pc.runtime_key())
++    cores, signatures, diagnostics = [], {}, []
++    for program, seed, export, variant in pending:
++        row = next((r for r in planned if r['qualname'] == program.entry_fn.__qualname__
++                    and r['exports'].get(program.digest) == export), None)
++        if row is None: continue
++        signatures[program.digest] = pc._signature(program)
++        try:
++            core = pc.capture(program, seed=seed, export=export, plan_key=key,
++                              build_key=build_key, variant=variant)
++            if pc.core_id(core) not in {pc.core_id(c) for c in cores}: cores.append(core)
++        except (pc.PreparedMiss, OSError, KeyError, IndexError, TypeError, ValueError, AttributeError, RecursionError) as exc:
++            diagnostics.append(dict(function=row['qualname'], variant=variant, reason=str(exc)))
++    for row in planned:
++        row['prepared'] = [pc.core_id(c) for c in cores if c['entry_id']['qualname']==row['qualname']
++                           and c['generated']['digest'] in row['exports']]
++    # Freeze mapping, ABI and record membership in the same native seal.
++    import json
++    signatures = json.loads(pc.canonical(signatures))
++    manifest = dict(functions=json.loads(pc.canonical(planned)), signatures=signatures)
++    prepared = pc.bundle(cores, manifest, build_key)
++    prepared['diagnostics'] = diagnostics
++    identity = prepared['bundle_seal'][:24]
+     module = f"rcaotr_{identity}"
+-    if not any(Path(folder).glob(f"{module}.*")):
+-        cc = CC(module)
+-        cc.output_dir = str(folder)
+-        cc.verbose = False
+-        for export, signature, function in exports:
+-            cc.export(export, signature)(function)
+-        cc.compile()
+-    return {"module": module, "folder": str(folder), "functions": planned}
++    cc = CC(module)
++    cc.output_dir = str(folder)
++    cc.verbose = False
++    for export, signature, function in exports:
++        cc.export(export, signature)(function)
++    words = tuple(int(prepared['bundle_seal'][i:i+8], 16) for i in range(0, 64, 8))
++    namespace = {'__name__': __name__}
++    exec('def _prepared_seal():\n    return ' + repr(words), namespace)
++    cc.export('_prepared_seal', 'UniTuple(uint64, 8)()')(namespace['_prepared_seal'])
++    path = Path(folder) / cc.output_file
++    if path.exists():
++        raise Unsupported('refuse to reuse an existing prepared artifact build')
++    cc.compile()
++    prepared['artifact'] = dict(file=path.name, length=path.stat().st_size,
++                               sha256=hashlib.sha256(path.read_bytes()).hexdigest())
++    section.update(module=module, folder=str(folder), prepared=prepared)
++    return section
+diff --git a/src/recompyler/profiler.py b/src/recompyler/profiler.py
+index 3be63b8..e5f9681 100644
+--- a/src/recompyler/profiler.py
++++ b/src/recompyler/profiler.py
+@@ -1022,21 +1022,31 @@ def profile_script(script, script_args, limit, sample_limit, try_compile, includ
+                                          row["candidate"]["_lifted"], row["candidate"]["_rows"])
+                                         for row, sampler in built])
+     regions = [(row, sampler) for row, sampler in chosen if row["candidate"].get("engine") == "region"]
+-    region_section = None
+-    if regions:
+-        region_section = build_regions_ahead_of_time([((row["function"], row["line"]), sampler.function,
+-                                                       row["candidate"]["_region"]) for row, sampler in regions])
++    region_entries = [((row["function"], row["line"]), sampler.function,
++                       row["candidate"]["_region"]) for row, sampler in regions]
++    # The complete runner snapshot must be primitive before it is sealed. Keep
++    # compile-only objects in local build inputs, never in the saved plan key.
+     for row in rows:
+-        row["candidate"].pop("_lifted", None)
+-        row["candidate"].pop("_rows", None)
+-        row["candidate"].pop("_captured", None)
+-        row["candidate"].pop("_region", None)
+-    if chosen:
++        for private in ("_lifted", "_rows", "_captured", "_region"):
++            row["candidate"].pop(private, None)
++    frozen = False
++    def plan_factory(preview):
++        nonlocal frozen
++        if frozen:
++            raise RuntimeError("region plan factory must be called exactly once")
++        report["plan"] = run_plan([row["candidate"] for row, _ in chosen], section, preview)
++        frozen = True
++        return dict(report, mode="saved", force=False)
++    region_section = (build_regions_ahead_of_time(region_entries, plan_factory=plan_factory)
++                      if regions else None)
++    if chosen and (not frozen or region_section is None):
++        # A failed build changes coverage; retain the former conservative gate.
++        # Successful builds keep the exact snapshot already sealed by factory.
+         report["plan"] = run_plan([row["candidate"] for row, _ in chosen], section, region_section)
+     return report
+ 
+ 
+-def build_regions_ahead_of_time(entries):
++def build_regions_ahead_of_time(entries, *, plan_factory=None):
+     """build_ahead_of_time for regions (recompyler.heap.build_regions)."""
+     from .lift import _cache_dir
+ 
+@@ -1046,7 +1056,7 @@ def build_regions_ahead_of_time(entries):
+     try:
+         from .heap import build_regions
+ 
+-        return build_regions(entries, folder)
++        return build_regions(entries, folder, **({"plan_factory": plan_factory} if plan_factory is not None else {}))
+     except Exception as exc:
+         print(f"recompyler: ahead-of-time build of regions skipped ({type(exc).__name__}: {str(exc)[:120]})",
+               file=sys.stderr)
+diff --git a/src/recompyler/runner.py b/src/recompyler/runner.py
+index a043f79..e1657e3 100644
+--- a/src/recompyler/runner.py
++++ b/src/recompyler/runner.py
+@@ -189,7 +189,14 @@ def run_script(script, script_args, plan, force=False):
+ 
+         def prepare():
+             origin_entry = (region_entries if state["region"] else built).get(key)
+-            if origin_entry and origin_entry.get("origin") and _origin_identity(fn) != origin_entry["origin"]:
++            current_origin = _origin_identity(fn) if origin_entry and origin_entry.get("origin") else None
++            expected_origin = origin_entry.get("origin") if origin_entry else None
++            if current_origin is not None and region_section and 'prepared' in region_section:
++                # Prepared definitions bind exact file/code/default/dependency keys.
++                # Module labels change when a profiled import runs as __main__.
++                current_origin = {k:v for k,v in current_origin.items() if k != 'module'}
++                expected_origin = {k:v for k,v in expected_origin.items() if k != 'module'}
++            if current_origin is not None and current_origin != expected_origin:
+                 if aot_only:
+                     state["failed"] = True
+                 elif state["region"]:
+@@ -218,18 +225,34 @@ def run_script(script, script_args, plan, force=False):
+             if state["region"]:
+                 from .heap import lift_region
+ 
+-                exports, built_ahead = region_exports.get(key), {}
++                exports, built_ahead, prepared = region_exports.get(key), {}, None
+                 if exports:
+-                    from .aot import load
+-
+-                    if "regions" not in extension:
+-                        extension["regions"] = load(region_section)
+-                    if extension["regions"] is not None:
+-                        built_ahead = {digest: getattr(extension["regions"], name)
+-                                       for digest, name in exports.items()}
++                    if "prepared" in region_section:
++                        # Presence is authoritative: corrupt/null metadata must
++                        # never route a changed artifact through legacy load().
++                        from ._prepared import open_index, PreparedArtifactMismatch
++                        try:
++                            prepared = open_index(region_section, region_entries[key],
++                                plan_snapshot=dict(data, mode="saved", force=bool(force)),
++                                module=extension.get("regions"))
++                        except PreparedArtifactMismatch:
++                            prepared = None
++                        if prepared is not None:
++                            extension["regions"] = prepared.module
++                            built_ahead = prepared.exports
++                    else:
++                        from .aot import load
++                        if "regions" not in extension:
++                            extension["regions"] = load(region_section)
++                        if extension["regions"] is not None:
++                            built_ahead = {digest: getattr(extension["regions"], name)
++                                           for digest, name in exports.items()}
+                 state["aot_loaded"] = bool(built_ahead)
+-                state["lifted"] = lift_region(fn, _AotOnlyExports(built_ahead) if aot_only else built_ahead,
+-                                              **({"seeds": region_seeds[key]} if region_seeds.get(key) else {}))
++                options = {"seeds": region_seeds[key]} if region_seeds.get(key) else {}
++                if prepared is not None:
++                    options["prepared"] = prepared
++                state["lifted"] = lift_region(fn, built_ahead if hasattr(built_ahead, 'resolve_program') else (_AotOnlyExports(built_ahead) if aot_only else built_ahead),
++                                              **options)
+                 return
+             from .lift import lift
+ 
+@@ -248,6 +271,8 @@ def run_script(script, script_args, plan, force=False):
+                     prepare()
+                 except Exception:
+                     state["failed"] = True
++                from ._runner_wrapper import record_lifted
++                record_lifted(fast)
+             if state["lifted"] is None:
+                 state["python_calls"] += 1
+                 return fn(*args, **kwargs)
+@@ -255,6 +280,8 @@ def run_script(script, script_args, plan, force=False):
+ 
+         fast.__recompyler_original__ = fn
+         fast.__recompyler_lifted__ = lambda: state["lifted"]
++        from ._runner_wrapper import register
++        register(fast, fn, prepare, state)
+         used.append((fn.__qualname__, state))
+         return fast
+ 

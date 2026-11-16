@@ -1,0 +1,10 @@
+{
+  "function": "Task.qpkt",
+  "differences": {
+    "co_flags": [
+      "134217731",
+      "3"
+    ]
+  },
+  "source": "def qpkt(self, pkt):\n    t = self.findtcb(pkt.ident)\n    taskWorkArea.qpktCount += 1\n    pkt.link = None\n    pkt.ident = self.ident\n    return t.addPacket(pkt, self)\n"
+}

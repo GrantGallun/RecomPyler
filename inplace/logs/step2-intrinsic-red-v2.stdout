@@ -1,0 +1,31 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_unproved_llvm_intrinsic_is_not_automatically_callback_free _______
+
+    def test_unproved_llvm_intrinsic_is_not_automatically_callback_free():
+        from llvmlite import ir
+        from numba import njit, types
+        from numba.extending import intrinsic
+        from recompyler import _direct_adapter as adapter
+    
+        @intrinsic
+        def marker(typingctx):
+            def codegen(context, builder, sig, args):
+                function = ir.Function(builder.module, ir.FunctionType(ir.VoidType(), ()), 'llvm.sideeffect')
+                builder.call(function, ())
+                return context.get_dummy_value()
+            return types.void(), codegen
+    
+        def native(F, I, top, st):
+            marker()
+            return I[0]
+    
+        signature = (types.float64[::1], types.int64[::1], types.int64[::1], types.uint8[::1])
+>       with pytest.raises(adapter.AdapterDecline, match='intrinsic'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterDecline
+
+tests\test_direct_safety.py:78: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_direct_safety.py::test_unproved_llvm_intrinsic_is_not_automatically_callback_free
+1 failed in 1.00s

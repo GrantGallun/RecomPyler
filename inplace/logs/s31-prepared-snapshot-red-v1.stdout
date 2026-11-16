@@ -1,0 +1,72 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+___ test_function_change_after_fingerprint_cannot_be_captured_as_new_guard ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...e42a3953971fad0c0b814af8534846d20df7130438ab9a84416e81e30ed': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001948271B360>
+
+    def test_function_change_after_fingerprint_cannot_be_captured_as_new_guard(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+        assert index is not None and index.bind(module.work)
+        original=pc.function_key
+        changed=[]
+        def observer(fn,refs):
+            result=original(fn,refs)
+            if fn is module.work and not changed:
+                changed.append(True)
+                monkeypatch.setattr(fn,'__code__',module.read.__code__)
+            return result
+        monkeypatch.setattr(pc,'function_key',observer)
+>       assert index.bind(module.work)==[]
+E       assert [<recompyler....01948248DA90>] == []
+E         
+E         Left contains one more item: <recompyler._prepared._restore.<locals>.RuntimeProgram object at 0x000001948248DA90>
+E         Use -v to get more diff
+
+inplace\prepared-cache-preparation\test_prepared_snapshot_window.py:19: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_5f3992c7dfd5980da88b0481-eugmgxen\rcaotr_5f3992c7dfd5980da88b0481.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_5f3992c7dfd5980da88b0481-eugmgxen\rcaotr_5f3992c7dfd5980da88b0481.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_____ test_class_change_after_fingerprint_cannot_be_captured_as_new_guard _____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...e42a3953971fad0c0b814af8534846d20df7130438ab9a84416e81e30ed': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019482463E10>
+
+    def test_class_change_after_fingerprint_cannot_be_captured_as_new_guard(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+        assert index is not None and index.bind(module.work)
+        original=pc._class_key
+        changed=[]
+        def observer(cls,refs):
+            result=original(cls,refs)
+            if cls is module.Box and not changed:
+                changed.append(True)
+                monkeypatch.setattr(cls,'value',property(lambda self:999),raising=False)
+            return result
+        monkeypatch.setattr(pc,'_class_key',observer)
+>       assert index.bind(module.work)==[]
+E       assert [<recompyler....01948268BE00>] == []
+E         
+E         Left contains one more item: <recompyler._prepared._restore.<locals>.RuntimeProgram object at 0x000001948268BE00>
+E         Use -v to get more diff
+
+inplace\prepared-cache-preparation\test_prepared_snapshot_window.py:36: AssertionError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_snapshot_window.py::test_function_change_after_fingerprint_cannot_be_captured_as_new_guard
+FAILED inplace/prepared-cache-preparation/test_prepared_snapshot_window.py::test_class_change_after_fingerprint_cannot_be_captured_as_new_guard
+2 failed in 6.23s

@@ -1,0 +1,265 @@
+PEER_PROCESS_SNAPSHOT 2026-11-14T23:25:44.292414+00:00
+[{"ProcessId":41972,"ParentProcessId":11860,"CommandLine":"C:\\Python314\\python.exe -m autonomy jobs-serve"},{"ProcessId":37812,"ParentProcessId":22968,"CommandLine":"\"C:\\Python314\\python.exe\" matrix/run_unicode_suite.py"},{"ProcessId":20012,"ParentProcessId":5056,"CommandLine":"C:\\Python314\\python.exe claude/bench.py spectral_norm scimark"},{"ProcessId":13664,"ParentProcessId":20012,"CommandLine":"C:\\Python314\\python.exe -m recompyler profile --json D:\\Code\\Datathon\\recompyler-codex-20261111\\wave19-claude\\claude\\out\\plans\\scimark.plan.json --limit 40 --samples 8 D:\\Code\\Datathon\\recompyler-coverage\\corpus\\pyperformance-1.14.0\\benchmarks\\bm_scimark\\run_benchmark.py"},{"ProcessId":16508,"ParentProcessId":37812,"CommandLine":"C:\\Python314\\python.exe -c \"import json, sys, work\nfrom recompyler import heap, aot\nfrom recompyler.runner import _AotOnlyExports\nsection=json.load(open(\u0027artifact.json\u0027)); entry=section[\u0027functions\u0027][0]; module=aot.load(section)\nregion=heap.lift_region(work.step,_AotOnlyExports({d:getattr(module,e) for d,e in entry[\u0027exports\u0027].items()}),\n                        seeds=entry.get(\u0027seeds\u0027))\nfirst=region(7)\nassert region.compiled_calls==1, region.problem\nif sys.argv[1]==\u0027constant\u0027: work.OFFSET=4\nif sys.argv[1]==\u0027helper\u0027: work.helper.__code__=(lambda value=2:value+10).__code__\nif sys.argv[1]==\u0027defaults\u0027: work.helper.__defaults__=(3,)\nif sys.argv[1]==\u0027constructor\u0027: work.Left.__init__=lambda self,value,next: work.Node.__init__(self,value+1,next)\nif sys.argv[1]==\u0027mro\u0027: work.Left.__bases__=(work.Other,)\nif sys.argv[1]==\u0027unseen\u0027: work.STATE.root=work.Other(12,first.next)\nif sys.argv[1]==\u0027field\u0027: first.value=12.5\nalias=work.STATE.root\nsecond=region(9)\nprint(json.dumps(dict(compiled=region.compiled_calls,fallback=region.fallback_calls,\n    calls=work.STATE.calls,numba=\u0027numba\u0027 in sys.modules,identity=second is alias,value=second.value)))\n\" mro"},{"ProcessId":8368,"ParentProcessId":22676,"CommandLine":"\"C:\\Python314\\python.exe\" inplace/flat-preparation/time_locked.py s56-native-shape-three-pair python inplace/flat-preparation/measure_flat.py"}]
+
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v916__vphi96_1_2.1' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v899__vphi186_0_6.1' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v899__vphi70_0_2.1' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v899__vphi186_0_5.1' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v899__vphi186_0_6.2' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v899__vphi70_0_2.2' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v899__vphi186_0_5.2' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v916__vphi96_1_2.2' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2555__vphi96_1_2.1' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_6.1' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi70_0_2.1' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_5.1' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_6.2' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi70_0_2.2' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_5.2' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2555__vphi96_1_2.2' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2555__vphi96_1_2.3' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_6.3' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi70_0_2.3' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_5.3' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2555__vphi96_1_2.4' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_6.4' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi70_0_2.4' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_5.4' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_6.5' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi70_0_2.5' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v2538__vphi186_0_5.5' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2555__vphi96_1_2.5' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2555__vphi96_1_2.6' is not in scope.
+
+This warning came from an internal pedantic check. Please report the warning
+message and traceback, along with a minimal reproducer at:
+https://github.com/numba/numba/issues/new?template=bug_report.md
+[0m
+  warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+WARMED_JIT_DEVELOPMENT no AOT/default deployment claim; timers absent from complete/whole measurements; bulk undo retained
+{"correctness": "spectral_norm", "loops": 20, "boundary_calls": 104000, "exact_type_bits_postargs": true}
+{"correctness": "fft", "loops": 20, "boundary_calls": 2000, "exact_type_bits_postargs": true}
+{"target": "spectral_norm", "pair": 0, "mode": "current", "loops": 20, "seconds": 0.5738822999992408, "python_seconds": 1.2365105000208132}
+{"target": "spectral_norm", "pair": 0, "mode": "flat", "loops": 20, "seconds": 0.3445062000537291, "python_seconds": 1.2365105000208132}
+{"target": "spectral_norm", "pair": 1, "mode": "flat", "loops": 20, "seconds": 0.35336970002390444, "python_seconds": 1.2365105000208132}
+{"target": "spectral_norm", "pair": 1, "mode": "current", "loops": 20, "seconds": 0.5304693999933079, "python_seconds": 1.2365105000208132}
+{"target": "spectral_norm", "pair": 2, "mode": "current", "loops": 20, "seconds": 0.55672950000735, "python_seconds": 1.2365105000208132}
+{"target": "spectral_norm", "pair": 2, "mode": "flat", "loops": 20, "seconds": 0.3381041999673471, "python_seconds": 1.2365105000208132}
+{"complete_call": "part_A_times_u", "pair": 0, "mode": "current", "us": 5.37294}
+{"complete_call": "part_A_times_u", "pair": 0, "mode": "flat", "us": 3.13724}
+{"complete_call": "part_A_times_u", "pair": 1, "mode": "flat", "us": 3.24708}
+{"complete_call": "part_A_times_u", "pair": 1, "mode": "current", "us": 4.8079600000000005}
+{"complete_call": "part_A_times_u", "pair": 2, "mode": "current", "us": 5.1284600000000005}
+{"complete_call": "part_A_times_u", "pair": 2, "mode": "flat", "us": 3.86232}
+{"complete_call": "part_A_times_u", "mode": "python", "us": 11.35266}
+{"components": "part_A_times_u", "us": {"argument_shape": 0.2518, "variant_lookup": 0.1717, "holder": 0.4385, "dispatch_guard_native_cleanup_box": 2.4741, "audit_result_accounting": 0.7803}, "instrumented": true, "envelope": "includes C guard scan, buffer export/undo, native body, cleanup and result boxing; not isolated body"}
+{"complete_call": "part_At_times_u", "pair": 0, "mode": "current", "us": 5.49}
+{"complete_call": "part_At_times_u", "pair": 0, "mode": "flat", "us": 3.18808}
+{"complete_call": "part_At_times_u", "pair": 1, "mode": "flat", "us": 3.17728}
+{"complete_call": "part_At_times_u", "pair": 1, "mode": "current", "us": 5.05316}
+{"complete_call": "part_At_times_u", "pair": 2, "mode": "current", "us": 4.844060000000001}
+{"complete_call": "part_At_times_u", "pair": 2, "mode": "flat", "us": 3.2509}
+{"complete_call": "part_At_times_u", "mode": "python", "us": 11.638819999999999}
+{"components": "part_At_times_u", "us": {"argument_shape": 0.1983, "variant_lookup": 0.1368, "holder": 0.35769999999999996, "dispatch_guard_native_cleanup_box": 2.0087, "audit_result_accounting": 0.6657000000000001}, "instrumented": true, "envelope": "includes C guard scan, buffer export/undo, native body, cleanup and result boxing; not isolated body"}
+{"target": "fft", "pair": 0, "mode": "current", "loops": 20, "seconds": 0.028542599990032613, "python_seconds": 3.430865200003609}
+{"target": "fft", "pair": 0, "mode": "flat", "loops": 20, "seconds": 0.030050400004256517, "python_seconds": 3.430865200003609}
+{"target": "fft", "pair": 1, "mode": "flat", "loops": 20, "seconds": 0.022759900020901114, "python_seconds": 3.430865200003609}
+{"target": "fft", "pair": 1, "mode": "current", "loops": 20, "seconds": 0.028775899962056428, "python_seconds": 3.430865200003609}
+{"target": "fft", "pair": 2, "mode": "current", "loops": 20, "seconds": 0.029255400004331023, "python_seconds": 3.430865200003609}
+{"target": "fft", "pair": 2, "mode": "flat", "loops": 20, "seconds": 0.024903699988499284, "python_seconds": 3.430865200003609}
+{"complete_call": "FFT_transform", "pair": 0, "mode": "current", "us": 13.349}
+{"complete_call": "FFT_transform", "pair": 0, "mode": "flat", "us": 10.1325}
+{"complete_call": "FFT_transform", "pair": 1, "mode": "flat", "us": 10.142}
+{"complete_call": "FFT_transform", "pair": 1, "mode": "current", "us": 14.248}
+{"complete_call": "FFT_transform", "pair": 2, "mode": "current", "us": 13.2215}
+{"complete_call": "FFT_transform", "pair": 2, "mode": "flat", "us": 16.6835}
+{"complete_call": "FFT_transform", "mode": "python", "us": 1708.738}
+{"components": "FFT_transform", "us": {"argument_shape": 0.2452, "variant_lookup": 0.1574, "holder": 0.42860000000000004, "dispatch_guard_native_cleanup_box": 9.2095, "audit_result_accounting": 0.728}, "instrumented": true, "envelope": "includes C guard scan, buffer export/undo, native body, cleanup and result boxing; not isolated body"}
+{"complete_call": "FFT_inverse", "pair": 0, "mode": "current", "us": 14.1115}
+{"complete_call": "FFT_inverse", "pair": 0, "mode": "flat", "us": 10.7165}
+{"complete_call": "FFT_inverse", "pair": 1, "mode": "flat", "us": 10.5865}
+{"complete_call": "FFT_inverse", "pair": 1, "mode": "current", "us": 13.675}
+{"complete_call": "FFT_inverse", "pair": 2, "mode": "current", "us": 15.0075}
+{"complete_call": "FFT_inverse", "pair": 2, "mode": "flat", "us": 16.029}
+{"complete_call": "FFT_inverse", "mode": "python", "us": 1752.3965}
+{"components": "FFT_inverse", "us": {"argument_shape": 0.2442, "variant_lookup": 0.1655, "holder": 0.4304, "dispatch_guard_native_cleanup_box": 10.4689, "audit_result_accounting": 0.8887}, "instrumented": true, "envelope": "includes C guard scan, buffer export/undo, native body, cleanup and result boxing; not isolated body"}
+{"trivial_list_read": true, "pair": 0, "mode": "current", "us": 4.0991800000000005}
+{"trivial_list_read": true, "pair": 0, "mode": "flat", "us": 3.16694}
+{"trivial_list_read": true, "pair": 1, "mode": "flat", "us": 2.89452}
+{"trivial_list_read": true, "pair": 1, "mode": "current", "us": 3.75328}
+{"trivial_list_read": true, "pair": 2, "mode": "current", "us": 3.9163}
+{"trivial_list_read": true, "pair": 2, "mode": "flat", "us": 3.6466399999999997}
+{"trivial_list_read": true, "mode": "python", "us": 0.05618}
+{"final_counters": {"spectral": {"current": {"part_A_times_u": {"native": 223002, "fallback": 0, "flat": null}, "part_At_times_u": {"native": 223002, "fallback": 0, "flat": null}}, "flat": {"part_A_times_u": {"native": 224002, "fallback": 0, "flat": 224002}, "part_At_times_u": {"native": 224002, "fallback": 0, "flat": 224002}}}, "fft": {"current": {"FFT_transform": {"native": 4601, "fallback": 0, "flat": null}, "FFT_inverse": {"native": 4601, "fallback": 0, "flat": null}}, "flat": {"FFT_transform": {"native": 5601, "fallback": 0, "flat": 5601}, "FFT_inverse": {"native": 5601, "fallback": 0, "flat": 5601}}}}}
+PASS exact20loop traces; all timed public wrapper calls native; no fallback
+PEER_PROCESS_SNAPSHOT 2026-11-14T23:26:24.037757+00:00
+[{"ProcessId":41972,"ParentProcessId":11860,"CommandLine":"C:\\Python314\\python.exe -m autonomy jobs-serve"},{"ProcessId":37812,"ParentProcessId":22968,"CommandLine":"\"C:\\Python314\\python.exe\" matrix/run_unicode_suite.py"},{"ProcessId":20012,"ParentProcessId":5056,"CommandLine":"C:\\Python314\\python.exe claude/bench.py spectral_norm scimark"},{"ProcessId":13664,"ParentProcessId":20012,"CommandLine":"C:\\Python314\\python.exe -m recompyler profile --json D:\\Code\\Datathon\\recompyler-codex-20261111\\wave19-claude\\claude\\out\\plans\\scimark.plan.json --limit 40 --samples 8 D:\\Code\\Datathon\\recompyler-coverage\\corpus\\pyperformance-1.14.0\\benchmarks\\bm_scimark\\run_benchmark.py"},{"ProcessId":8368,"ParentProcessId":22676,"CommandLine":"\"C:\\Python314\\python.exe\" inplace/flat-preparation/time_locked.py s56-native-shape-three-pair python inplace/flat-preparation/measure_flat.py"},{"ProcessId":24692,"ParentProcessId":29748,"CommandLine":"\"C:\\Python314\\python.exe\" -c \"import os,psutil,subprocess,sys;psutil.Process().nice(psutil.BELOW_NORMAL_PRIORITY_CLASS);[subprocess.run([sys.executable,\u0027matrix/build_kernels.py\u0027,\u0027unicode-current-v3\u0027,name],check=True) for name in [\u0027fannkuch\u0027,\u0027scimark\u0027]]\""},{"ProcessId":16772,"ParentProcessId":24692,"CommandLine":"C:\\Python314\\python.exe matrix/build_kernels.py unicode-current-v3 scimark"},{"ProcessId":44044,"ParentProcessId":37812,"CommandLine":"C:\\Python314\\python.exe -c \"import json,startup_math\nfrom recompyler import heap,_pycc\nstartup_math.STATE.root=startup_math.Node(2.0)\nr=heap.lift_region(startup_math.run)\nassert r(1.0)==2.0 and r.compiled_calls==1,r.problem\nassert not any(\u0027sin\u0027 in getattr(info,\u0027math_used\u0027,()) for info in r.latest.order)\nheap._math_agrees=lambda:set()\nexports=[]\nclass ObservedBuild(_pycc.CC):\n    def export(self,name,signature):\n        if name!=\u0027_prepared_seal\u0027: exports.append(name)\n        return super().export(name,signature)\n_pycc.CC=ObservedBuild\nsection=heap.build_regions([((\u0027run\u0027,9),startup_math.run,r)],\u0027.\u0027)\nprint(json.dumps(dict(exports=len(exports),seeds=len(section[\u0027functions\u0027][0][\u0027seeds\u0027]))))\n\""}]
+

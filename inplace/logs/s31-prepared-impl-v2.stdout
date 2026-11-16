@@ -1,0 +1,84 @@
+.E
+=================================== ERRORS ====================================
+_______ ERROR at setup of test_real_legacy_and_seed_records_are_emitted _______
+
+tmp_path_factory = TempPathFactory(_given_basetemp=WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s3...ompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-impl-v2'), _retention_count=3, _retention_policy='all')
+
+    @pytest.fixture(scope='module')
+    def artifact(tmp_path_factory):
+        from recompyler import heap, _prepared as pc
+        folder = tmp_path_factory.mktemp('prepared-real-aot')
+        source = folder / 'workload.py'
+        source.write_text(SOURCE, encoding='utf-8')
+        module = load_source(source)
+        calls = [(module.work, (module.Box(10), [])),
+                 (module.alias, (module.Box(10), [], [])),
+                 (module.random_step, (100,)), (module.read, (module.Box(10),))]
+        entries = []
+        for fn, args in calls:
+            region = heap.lift_region(fn)
+            region(*args)
+            assert region.compiled_calls == 1, region.problem
+            entries.append(((fn.__name__, fn.__code__.co_firstlineno), fn, region))
+>       section = heap.build_regions(entries, folder)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7385: in build_regions
+    key = pc.plan_key(snapshot)
+          ^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:153: in plan_key
+    return dict(version=1, digest=digest(copy(snapshot)))
+                                         ^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:148: in copy
+    result[k] = copy(v, path + (k,))
+                ^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:148: in copy
+    result[k] = copy(v, path + (k,))
+                ^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:148: in copy
+    result[k] = copy(v, path + (k,))
+                ^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:150: in copy
+    if type(value) is list: return [copy(v, path + ('*',)) for v in value]
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:148: in copy
+    result[k] = copy(v, path + (k,))
+                ^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:148: in copy
+    result[k] = copy(v, path + (k,))
+                ^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:148: in copy
+    result[k] = copy(v, path + (k,))
+                ^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:150: in copy
+    if type(value) is list: return [copy(v, path + ('*',)) for v in value]
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared_keys.py:148: in copy
+    result[k] = copy(v, path + (k,))
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+value = ('i',)
+path = ('plan', 'aot_regions', 'functions', '*', 'seeds', '30d5f81f4887b2f8e5cd38ee5957d50f33ed10fba09c1d52c91e585a54ed8da5', ...)
+
+    def copy(value, path=()):
+        if type(value) is dict:
+            result = {}
+            for k, v in value.items():
+                if type(k) is not str: raise PreparedMiss('plan dictionary key')
+                if path == ('plan', 'aot_regions') and k in ('prepared', 'module', 'folder'): continue
+                if path == ('plan', 'aot_regions', 'functions', '*') and k == 'prepared': continue
+                result[k] = copy(v, path + (k,))
+            return result
+        if type(value) is list: return [copy(v, path + ('*',)) for v in value]
+>       if type(value) not in (str, int, float, bool, type(None)): raise PreparedMiss('nonprimitive plan')
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       recompyler._prepared_keys.PreparedMiss: nonprimitive plan
+
+src\recompyler\_prepared_keys.py:151: PreparedMiss
+=========================== short test summary info ===========================
+ERROR inplace/prepared-cache-preparation/test_prepared_cache.py::test_real_legacy_and_seed_records_are_emitted
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 passed, 1 error in 1.51s

@@ -1,0 +1,158 @@
+{
+  "audit_accounting_complete": true,
+  "observer_lost": false,
+  "totals": {
+    "aot_calls": 500,
+    "jit_calls": 0,
+    "unknown_native_calls": 0,
+    "rejected_attempts": 0,
+    "fallback_calls": 0
+  },
+  "functions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+      "qualname": "FFT_transform",
+      "function": "FFT_transform",
+      "line": 358,
+      "kind": "ordinary",
+      "aot_calls": 250,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "c2f982ce621c382eba3b6d6e1aad2d277306e10e13892a59bf13746e82bcff66": {
+          "aot_calls": 250,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-depth-prepared-v1\\scimark\\rcaot_ceceb3b4629aa34340f8507b.cp314-win_amd64.pyd",
+              "module_sha256": "04a90189ee7173d7aba7e2d2477b29ba184dfe00a1a945f76a444c0803cbd23f",
+              "export": "f3",
+              "mode": "aot",
+              "generated_source_sha256": "c2f982ce621c382eba3b6d6e1aad2d277306e10e13892a59bf13746e82bcff66"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 250,
+      "unobserved_successes": 0
+    },
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+      "qualname": "FFT_inverse",
+      "function": "FFT_inverse",
+      "line": 362,
+      "kind": "ordinary",
+      "aot_calls": 250,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "b5e136b2d7ced30b03d085667c06f6f554d698e3c5e46f55fdeb08a45990fd99": {
+          "aot_calls": 250,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-depth-prepared-v1\\scimark\\rcaot_ceceb3b4629aa34340f8507b.cp314-win_amd64.pyd",
+              "module_sha256": "04a90189ee7173d7aba7e2d2477b29ba184dfe00a1a945f76a444c0803cbd23f",
+              "export": "f2",
+              "mode": "aot",
+              "generated_source_sha256": "b5e136b2d7ced30b03d085667c06f6f554d698e3c5e46f55fdeb08a45990fd99"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 250,
+      "unobserved_successes": 0
+    }
+  ],
+  "independent_functions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+      "qualname": "FFT_transform",
+      "function": "FFT_transform",
+      "line": 358,
+      "kind": "ordinary",
+      "aot_calls": 250,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "c2f982ce621c382eba3b6d6e1aad2d277306e10e13892a59bf13746e82bcff66": {
+          "aot_calls": 250,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-depth-prepared-v1\\scimark\\rcaot_ceceb3b4629aa34340f8507b.cp314-win_amd64.pyd",
+              "module_sha256": "04a90189ee7173d7aba7e2d2477b29ba184dfe00a1a945f76a444c0803cbd23f",
+              "export": "f3",
+              "mode": "aot",
+              "generated_source_sha256": "c2f982ce621c382eba3b6d6e1aad2d277306e10e13892a59bf13746e82bcff66"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 250,
+      "unobserved_successes": 0
+    },
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+      "qualname": "FFT_inverse",
+      "function": "FFT_inverse",
+      "line": 362,
+      "kind": "ordinary",
+      "aot_calls": 250,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "b5e136b2d7ced30b03d085667c06f6f554d698e3c5e46f55fdeb08a45990fd99": {
+          "aot_calls": 250,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-depth-prepared-v1\\scimark\\rcaot_ceceb3b4629aa34340f8507b.cp314-win_amd64.pyd",
+              "module_sha256": "04a90189ee7173d7aba7e2d2477b29ba184dfe00a1a945f76a444c0803cbd23f",
+              "export": "f2",
+              "mode": "aot",
+              "generated_source_sha256": "b5e136b2d7ced30b03d085667c06f6f554d698e3c5e46f55fdeb08a45990fd99"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 250,
+      "unobserved_successes": 0
+    }
+  ],
+  "native_counter_source": "Observed program.run entry plus successful Region.attempt result; ordinary _run result without Python fallback; no product compiled/aot/jit counter reads",
+  "fallback_counter_source": "Original Python code-entry observation within each wrapper call",
+  "independent_direct_abi_observer": "unimplemented; missing program.run entry fails closed"
+}

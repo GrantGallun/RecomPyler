@@ -1,0 +1,120 @@
+FFFFFF                                                                   [100%]
+================================== FAILURES ===================================
+_________ test_constructor_on_existing_input_does_not_omit_its_writes _________
+
+    def test_constructor_on_existing_input_does_not_omit_its_writes():
+>       a = analyze(reinitialize, Cell(1.0, 2.0))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_direct_program.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_direct_program.py:50: in analyze
+    p.compile(SourceOnly())
+src\recompyler\heap.py:933: in compile
+    self.numeric_report = _numeric_versions.NumericVersions(self, sys.modules[__name__]).run()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <recompyler.numeric_versions.NumericVersions object at 0x000002406A6CC590>
+
+    def run(self):
+        report={'rule':'R7','versions':[],'direct_edges':[],'blocked':[]}
+        if not self.ctor_safe:
+>           raise self.h.Unsupported('constructor receiver/rebinding is not proved fresh for native writeback')
+E           recompyler.lift.Unsupported: constructor receiver/rebinding is not proved fresh for native writeback
+
+src\recompyler\numeric_versions.py:287: Unsupported
+_______ test_all_persistent_names_and_operands_are_primitive[<lambda>0] _______
+
+make = <function <lambda> at 0x000002406A33BB60>
+
+    @pytest.mark.parametrize('make', [
+        lambda obj: direct.FunctionIR(obj, ()),
+        lambda obj: direct.Helper(obj),
+        lambda obj: direct.Operation('call', callee=obj),
+        lambda obj: direct.Producer('forward', (obj,)),
+    ])
+    def test_all_persistent_names_and_operands_are_primitive(make):
+        class Ephemeral:
+            pass
+>       with pytest.raises(ValueError, match='primitive'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_direct_safety.py:91: Failed
+_______ test_all_persistent_names_and_operands_are_primitive[<lambda>1] _______
+
+make = <function <lambda> at 0x000002406A33BC10>
+
+    @pytest.mark.parametrize('make', [
+        lambda obj: direct.FunctionIR(obj, ()),
+        lambda obj: direct.Helper(obj),
+        lambda obj: direct.Operation('call', callee=obj),
+        lambda obj: direct.Producer('forward', (obj,)),
+    ])
+    def test_all_persistent_names_and_operands_are_primitive(make):
+        class Ephemeral:
+            pass
+>       with pytest.raises(ValueError, match='primitive'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_direct_safety.py:91: Failed
+_______ test_all_persistent_names_and_operands_are_primitive[<lambda>2] _______
+
+make = <function <lambda> at 0x000002406A33BCC0>
+
+    @pytest.mark.parametrize('make', [
+        lambda obj: direct.FunctionIR(obj, ()),
+        lambda obj: direct.Helper(obj),
+        lambda obj: direct.Operation('call', callee=obj),
+        lambda obj: direct.Producer('forward', (obj,)),
+    ])
+    def test_all_persistent_names_and_operands_are_primitive(make):
+        class Ephemeral:
+            pass
+>       with pytest.raises(ValueError, match='primitive'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_direct_safety.py:91: Failed
+_______ test_all_persistent_names_and_operands_are_primitive[<lambda>3] _______
+
+make = <function <lambda> at 0x000002406A33BD70>
+
+    @pytest.mark.parametrize('make', [
+        lambda obj: direct.FunctionIR(obj, ()),
+        lambda obj: direct.Helper(obj),
+        lambda obj: direct.Operation('call', callee=obj),
+        lambda obj: direct.Producer('forward', (obj,)),
+    ])
+    def test_all_persistent_names_and_operands_are_primitive(make):
+        class Ephemeral:
+            pass
+>       with pytest.raises(ValueError, match='primitive'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests\test_direct_safety.py:91: Failed
+__________ test_entry_owns_environments_after_dispatcher_collection ___________
+
+    def test_entry_owns_environments_after_dispatcher_collection():
+        import gc
+        from numba import njit, types
+        from recompyler import _direct_adapter as adapter
+        dispatcher = njit(_nrt=False)(checked_exit)
+        signature = (types.float64[::1], types.int64[::1], types.int64[::1], types.uint8[::1], types.int64)
+        entry = adapter.build(dispatcher, signature)
+>       assert entry.environments, 'machine code and Python environment ownership are separate'
+               ^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'Entry' object has no attribute 'environments'
+
+tests\test_direct_adapter.py:116: AttributeError
+=========================== short test summary info ===========================
+FAILED tests/test_direct_program.py::test_constructor_on_existing_input_does_not_omit_its_writes
+FAILED tests/test_direct_safety.py::test_all_persistent_names_and_operands_are_primitive[<lambda>0]
+FAILED tests/test_direct_safety.py::test_all_persistent_names_and_operands_are_primitive[<lambda>1]
+FAILED tests/test_direct_safety.py::test_all_persistent_names_and_operands_are_primitive[<lambda>2]
+FAILED tests/test_direct_safety.py::test_all_persistent_names_and_operands_are_primitive[<lambda>3]
+FAILED tests/test_direct_adapter.py::test_entry_owns_environments_after_dispatcher_collection
+6 failed in 1.32s

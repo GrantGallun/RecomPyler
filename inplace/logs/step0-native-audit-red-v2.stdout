@@ -1,0 +1,346 @@
+FFFFFFFFFFFFFFFFF                                                        [100%]
+================================== FAILURES ===================================
+_ test_audit_getter_events_exceptions_and_mutations_match_python[log-heap-code] _
+
+path = 'heap-code', mode = 'log'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...swer)
+E                    ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-code\', \'log\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...swer)\n           ^^^^^^^^^^^^^^\nAssertionError: (\'heap-code\', \'log\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[log-heap-defaults] _
+
+path = 'heap-defaults', mode = 'log'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...)
+E                    ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-defaults\', \'log\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...)\n           ^^^^^^^^^^^^^^\nAssertionError: (\'heap-defaults\', \'log\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[log-heap-kwdefaults-attr] _
+
+path = 'heap-kwdefaults-attr', mode = 'log'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...       ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-kwdefaults-attr\', \'log\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...       ^^^^^^^^^^^^^^\nAssertionError: (\'heap-kwdefaults-attr\', \'log\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[log-heap-kwdefaults] _
+
+path = 'heap-kwdefaults', mode = 'log'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...n           ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-kwdefaults\', \'log\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...n           ^^^^^^^^^^^^^^\nAssertionError: (\'heap-kwdefaults\', \'log\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[log-lift-code] _
+
+path = 'lift-code', mode = 'log'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...swer)
+E                    ^^^^^^^^^^^^^^
+E         AssertionError: (\'lift-code\', \'log\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...swer)\n           ^^^^^^^^^^^^^^\nAssertionError: (\'lift-code\', \'log\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[raise-heap-code] _
+
+path = 'heap-code', mode = 'raise'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...er)
+E                    ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-code\', \'raise\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...er)\n           ^^^^^^^^^^^^^^\nAssertionError: (\'heap-code\', \'raise\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[raise-heap-defaults] _
+
+path = 'heap-defaults', mode = 'raise'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...n           ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-defaults\', \'raise\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...n           ^^^^^^^^^^^^^^\nAssertionError: (\'heap-defaults\', \'raise\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[raise-heap-kwdefaults-attr] _
+
+path = 'heap-kwdefaults-attr', mode = 'raise'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...     ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-kwdefaults-attr\', \'raise\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...     ^^^^^^^^^^^^^^\nAssertionError: (\'heap-kwdefaults-attr\', \'raise\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[raise-heap-kwdefaults] _
+
+path = 'heap-kwdefaults', mode = 'raise'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...          ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-kwdefaults\', \'raise\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...          ^^^^^^^^^^^^^^\nAssertionError: (\'heap-kwdefaults\', \'raise\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[raise-lift-code] _
+
+path = 'lift-code', mode = 'raise'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...er)
+E                    ^^^^^^^^^^^^^^
+E         AssertionError: (\'lift-code\', \'raise\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...er)\n           ^^^^^^^^^^^^^^\nAssertionError: (\'lift-code\', \'raise\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[mutate-heap-code] _
+
+path = 'heap-code', mode = 'mutate'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...r)
+E                    ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-code\', \'mutate\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...r)\n           ^^^^^^^^^^^^^^\nAssertionError: (\'heap-code\', \'mutate\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[mutate-heap-defaults] _
+
+path = 'heap-defaults', mode = 'mutate'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...           ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-defaults\', \'mutate\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...           ^^^^^^^^^^^^^^\nAssertionError: (\'heap-defaults\', \'mutate\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[mutate-heap-kwdefaults-attr] _
+
+path = 'heap-kwdefaults-attr', mode = 'mutate'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...    ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-kwdefaults-attr\', \'mutate\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...    ^^^^^^^^^^^^^^\nAssertionError: (\'heap-kwdefaults-attr\', \'mutate\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[mutate-heap-kwdefaults] _
+
+path = 'heap-kwdefaults', mode = 'mutate'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...         ^^^^^^^^^^^^^^
+E         AssertionError: (\'heap-kwdefaults\', \'mutate\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...         ^^^^^^^^^^^^^^\nAssertionError: (\'heap-kwdefaults\', \'mutate\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_ test_audit_getter_events_exceptions_and_mutations_match_python[mutate-lift-code] _
+
+path = 'lift-code', mode = 'mutate'
+
+    @pytest.mark.parametrize('path',['heap-code','heap-defaults','heap-kwdefaults-attr','heap-kwdefaults','lift-code'])
+    @pytest.mark.parametrize('mode',['log','raise','mutate'])
+    def test_audit_getter_events_exceptions_and_mutations_match_python(path,mode):
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(SOURCE),path,mode],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 28, in <module>
+E             assert answer is None,(path,mod...r)
+E                    ^^^^^^^^^^^^^^
+E         AssertionError: (\'lift-code\', \'mutate\', \'native skipped audit fallback\', True)
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nfrom types import SimpleNamespace\nfrom ...r)\n           ^^^^^^^^^^^^^^\nAssertionError: (\'lift-code\', \'mutate\', \'native skipped audit fallback\', True)\n').returncode
+
+tests\test_native_guard_audit.py:55: AssertionError
+_____ test_global_native_audit_hook_declines_and_preserves_python_events ______
+
+    def test_global_native_audit_hook_declines_and_preserves_python_events():
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(C_HOOK_SOURCE)],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 15, in <module>
+E             assert native.check_heap_guards(program.guards) is None
+E                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         AssertionError
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport ctypes,json,os,sys,traceback\nfrom recompyler impo...ck_heap_guards(program.guards) is None\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n').returncode
+
+tests\test_native_guard_audit.py:87: AssertionError
+_____________ test_busy_mutex_and_all_worker_return_paths_release _____________
+
+native_guard_probe = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/step0-native-audit-red-v2/native-guard-probe0/lib')
+
+    def test_busy_mutex_and_all_worker_return_paths_release(native_guard_probe):
+        source=r'''
+    import json,sys
+    sys.path.insert(0,sys.argv[1])
+    import _guard_probe as probe
+    from recompyler import _heap as native
+    assert probe.available() is True
+    assert probe.exercise(native.check_heap_guards,0) is True
+    assert probe.available() is True
+    for guards,expected in (({},True),({0:('item',{},'x',object())},False),({0:('future',)},None)):
+     assert native.check_heap_guards(guards) is expected
+     assert probe.available() is True
+    assert probe.exercise(native.check_heap_guards,1) is True
+    assert probe.available() is True
+    assert native.check_heap_guards({}) is True
+    print(json.dumps(dict(nonblocking_busy=True,true_false_none_error_cleanup=True)))
+    '''
+        child=subprocess.run([sys.executable,'-c',textwrap.dedent(source),str(native_guard_probe)],capture_output=True,text=True,timeout=30)
+>       assert child.returncode==0,(child.stdout,child.stderr)
+E       AssertionError: ('', 'Traceback (most recent call last):
+E           File "<string>", line 7, in <module>
+E             assert probe.exercise(native.check_heap_guards,0) is True
+E                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         AssertionError
+E         ')
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['C:\\Python314\\python.exe', '-c', "\nimport json,sys\nsys.path.insert(0,sys.argv[1])\nimport _...(native.check_heap_guards,0) is True\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n').returncode
+
+tests\test_native_guard_audit.py:124: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[log-heap-code]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[log-heap-defaults]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[log-heap-kwdefaults-attr]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[log-heap-kwdefaults]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[log-lift-code]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[raise-heap-code]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[raise-heap-defaults]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[raise-heap-kwdefaults-attr]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[raise-heap-kwdefaults]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[raise-lift-code]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[mutate-heap-code]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[mutate-heap-defaults]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[mutate-heap-kwdefaults-attr]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[mutate-heap-kwdefaults]
+FAILED tests/test_native_guard_audit.py::test_audit_getter_events_exceptions_and_mutations_match_python[mutate-lift-code]
+FAILED tests/test_native_guard_audit.py::test_global_native_audit_hook_declines_and_preserves_python_events
+FAILED tests/test_native_guard_audit.py::test_busy_mutex_and_all_worker_return_paths_release
+17 failed in 3.66s

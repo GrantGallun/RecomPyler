@@ -1,0 +1,18 @@
+{
+  "label": "integration-noop-green",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_scalar_identity.py",
+    "tests/test_scalar_fields.py",
+    "tests/test_scalar_fresh.py",
+    "-q",
+    "--tb=short",
+    "--basetemp",
+    "inplace/temp/noop-green"
+  ],
+  "exit_code": 0,
+  "wall_s": 10.55664940000861,
+  "end": "2026-11-14T03:34:34.487089+00:00"
+}

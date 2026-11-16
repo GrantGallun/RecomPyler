@@ -1,0 +1,82 @@
+[
+  {
+    "before": {
+      "time": "2026-11-14T07:46:34.263987+00:00",
+      "blockers": [],
+      "active": [
+        {
+          "pid": 0,
+          "name": "system idle process",
+          "cpu_s": 12.34375,
+          "command": ""
+        },
+        {
+          "pid": 4,
+          "name": "system",
+          "cpu_s": 0.203125,
+          "command": ""
+        },
+        {
+          "pid": 5708,
+          "name": "msmpeng.exe",
+          "cpu_s": 0.0625,
+          "command": ""
+        },
+        {
+          "pid": 11428,
+          "name": "steamwebhelper.exe",
+          "cpu_s": 0.0625,
+          "command": "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=renderer --enable-chrome-runtime --user-data-dir=\"C:\\Users\\grant\\AppData\\Local\\Steam\\htmlcache\" --user-agent-product=\"Valve Steam Client\" --buildid=1794424036 --steamid=0 --valve-initial-threadpool-size=4 --gaia-url=http://disabled.invalid --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1794421459614027 --launch-time-ticks=177946198054 --field-trial-handle=3524,i,5399556391984982508,9761777905949668764,262144 --enable-features=PlatformHEVCDecoderSupport --disable-features=BlockPromptsIfIgnoredOften,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WebUsbDeviceDetection,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=3540 --mojo-platform-channel-handle=3536 /prefetch:1"
+        },
+        {
+          "pid": 33604,
+          "name": "python.exe",
+          "cpu_s": 0.53125,
+          "command": "C:\\Python314\\python.exe -m autonomy jobs-serve"
+        },
+        {
+          "pid": 17184,
+          "name": "wmiprvse.exe",
+          "cpu_s": 0.0625,
+          "command": ""
+        }
+      ]
+    },
+    "after_atomic_create": {
+      "time": "2026-11-14T07:46:35.370600+00:00",
+      "blockers": [],
+      "active": [
+        {
+          "pid": 0,
+          "name": "system idle process",
+          "cpu_s": 12.625,
+          "command": ""
+        },
+        {
+          "pid": 5708,
+          "name": "msmpeng.exe",
+          "cpu_s": 0.0625,
+          "command": ""
+        },
+        {
+          "pid": 11428,
+          "name": "steamwebhelper.exe",
+          "cpu_s": 0.109375,
+          "command": "\"C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win64\\steamwebhelper.exe\" --type=renderer --enable-chrome-runtime --user-data-dir=\"C:\\Users\\grant\\AppData\\Local\\Steam\\htmlcache\" --user-agent-product=\"Valve Steam Client\" --buildid=1794424036 --steamid=0 --valve-initial-threadpool-size=4 --gaia-url=http://disabled.invalid --lang=en-US --device-scale-factor=1.25 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1794421459614027 --launch-time-ticks=177946198054 --field-trial-handle=3524,i,5399556391984982508,9761777905949668764,262144 --enable-features=PlatformHEVCDecoderSupport --disable-features=BlockPromptsIfIgnoredOften,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC,WebUsbDeviceDetection,WinRetrieveSuggestionsOnlyOnDemand --variations-seed-version --enable-logging=handle --log-file=3540 --mojo-platform-channel-handle=3536 /prefetch:1"
+        },
+        {
+          "pid": 43444,
+          "name": "firestorm.exe",
+          "cpu_s": 0.125,
+          "command": ""
+        },
+        {
+          "pid": 13016,
+          "name": "codex.exe",
+          "cpu_s": 0.0625,
+          "command": "C:\\Users\\grant\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe exec -C D:/Code/Datathon/recompyler-codex-20261111 --skip-git-repo-check --approve-for-me -o wave17-matrix-last-message.md \"You are the Codex coordinator for a new run named wave17-matrix in this workspace. Your brief is CLAUDE-BRIEF-language-matrix.md in the workspace root; read it fully, then RULES.md, CLAUDE-CHECKPOINTS.md (protocol and pattern log P1 to P14), CLAUDE-TIMING-LOCK.md and wave14-capture/REPORT.md. Create the ledger WAVE17-MATRIX-PLAN.md in the workspace root and the isolated clone wave17-matrix from wave16-inplace commit 7e3b688 as the brief says. Follow the checkpoint protocol for the whole run: write CHECKPOINT lines to the ledger, re-read CLAUDE-STEERING.md after every checkpoint, follow entries addressed to wave17-matrix and ACK each numbered item. Another run, wave16-inplace, is active in parallel: never edit its clone or any other wave directory, take the TIMING.lock directory for every test suite, build, profile or timing run exactly as CLAUDE-TIMING-LOCK.md says, and enforce the no-other-heavy-process check before each acquisition. The Windows sandbox helper is broken on this machine: use reviewed escalation with the ordinary user token for commands that need it, and do not change folder permissions, ACLs, system settings or anything outside this workspace. Do not push, do not install anything globally, do not touch processes you did not start. The capabilities the brief asks for do not exist yet; building them is the task, and a missing analysis is a thing to design, not a reason to close a step (pattern P14). Every verdict in the matrix comes from actually running the construct, never from reading source. Commit accepted steps in the wave17-matrix clone only. Finish by writing wave17-matrix/REPORT.md and a CHECKPOINT DONE line.\""
+        }
+      ]
+    }
+  }
+]

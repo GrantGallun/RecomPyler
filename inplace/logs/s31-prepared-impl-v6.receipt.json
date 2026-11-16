@@ -1,0 +1,19 @@
+{
+  "label": "s31-prepared-impl-v6",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "inplace/prepared-cache-preparation/test_prepared_cache.py",
+    "inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py",
+    "inplace/prepared-cache-preparation/test_runner_prepared_integration.py",
+    "inplace/prepared-cache-preparation/test_runner_prepared_artifact.py",
+    "inplace/prepared-cache-preparation/test_profiler_prepared_assembly.py",
+    "--basetemp",
+    "inplace/temp/s31-prepared-impl-v6"
+  ],
+  "exit_code": 1,
+  "wall_s": 18.574703299993416,
+  "end": "2026-11-14T05:49:43.371663+00:00"
+}

@@ -1,0 +1,16 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________________ test_raw_adapter_mechanism_exists ______________________
+
+    def test_raw_adapter_mechanism_exists():
+>       assert importlib.util.find_spec('recompyler._direct_adapter') is not None, 'shared raw native adapter is missing'
+E       AssertionError: shared raw native adapter is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x00000273E8454CA0>('recompyler._direct_adapter')
+E        +    where <function find_spec at 0x00000273E8454CA0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_direct_adapter.py:10: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_direct_adapter.py::test_raw_adapter_mechanism_exists - Asse...
+1 failed in 0.30s

@@ -1,0 +1,1323 @@
+{
+  "complete": true,
+  "model_only": true,
+  "source_sha256": {
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\S46-TEN-BOUND.json": "d736d5842aac3901250a209f620c6df2ef16be666054a02ce9fc692f0d0e50ee",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s55_entry_budget.py": "61e45e3002b4d24c7e07868b8cedafd49e519e0ce81a9a9384d6a7d72897b81e",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s43-selection-full33-v1\\chaos\\complete.json": "8388f3daf33568be41e1c51bbe18e0e94fede1c06b48685ef8cd73396eea3641",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s46-ten-components-v7\\complete.json": "4ac98c582c69bff7b07a701697e2fd6292a75a2d79c8a212bdc3e62db47aa82c",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s46-ten-components-v8\\complete.json": "1975bda11475aee2452d909fff6cc4f16c72f3366a71e00d54d297d4b8efa347",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s43-selection-full33-v1\\gc_collect\\complete.json": "7a20c983bddb8b4596ec15cde0a05df7832c89a2e0e420a5852202231528ac51",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s43-selection-full33-v1\\hexiom\\complete.json": "7dd149e5a855f6593a4ffe2fe205952303aebf9b533bd2658ee03c4dba644703",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s43-selection-full33-v1\\richards_super\\complete.json": "d5530ff866e0b370dfe753060dff528b96fbd7f23534b45bf7dde9bc6363d411"
+  },
+  "assumption": "Optimistically remove measured load, writeback and observer bookkeeping; retain every other observed exclusive component, including timers. This is a conservative provisional projection of conversion-only DESIGN93, not a measured speedup, lower bound, or a prediction for an unbuilt demand-based runtime. A future lazy design has unmeasured costs.",
+  "rows": [
+    {
+      "function": "Chaosgame.transform_point",
+      "python_us": 6.904827575359879,
+      "prior_selection_compiled_us": 38.704605302834686,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 43.475,
+            "writeback": 4.225,
+            "guards": 10.4375,
+            "unloader_init": 4.8875,
+            "program_lookup": 4.3875,
+            "binding": 7.3875,
+            "result": 8.025,
+            "native": 4.225,
+            "observer_bookkeeping": 33.3625,
+            "residual": 10.800000000000011
+          },
+          "observed_complete": 131.2125,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 10.4375,
+            "unloader_init": 4.8875,
+            "program_lookup": 4.3875,
+            "binding": 7.3875,
+            "result": 8.025,
+            "native": 4.225,
+            "observer_bookkeeping": 0.0,
+            "residual": 10.800000000000011
+          },
+          "estimated_complete": 50.15000000000001,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 7.3875,
+            "program_lookup": 4.3875,
+            "guards": 10.4375,
+            "arrays": 2.275,
+            "array_snapshot_rollback": 0.75,
+            "arena_capacity": 0.775,
+            "staged_payload_copy": 2.9875,
+            "control_writes": 1.65,
+            "recursion_frame_scan": 0.0,
+            "native": 4.225,
+            "unloader_init": 4.8875,
+            "result_prepare": 2.3625,
+            "result": 8.025,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 39.9625,
+            "writeback": 3.95,
+            "guards": 9.9125,
+            "unloader_init": 4.775,
+            "program_lookup": 3.925,
+            "binding": 7.15,
+            "result": 7.8625,
+            "native": 3.6875,
+            "observer_bookkeeping": 36.625,
+            "residual": 10.599999999999994
+          },
+          "observed_complete": 128.45,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 9.9125,
+            "unloader_init": 4.775,
+            "program_lookup": 3.925,
+            "binding": 7.15,
+            "result": 7.8625,
+            "native": 3.6875,
+            "observer_bookkeeping": 0.0,
+            "residual": 10.599999999999994
+          },
+          "estimated_complete": 47.912499999999994,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 7.15,
+            "program_lookup": 3.925,
+            "guards": 9.9125,
+            "arrays": 2.2,
+            "array_snapshot_rollback": 0.8,
+            "arena_capacity": 0.7375,
+            "staged_payload_copy": 2.9625,
+            "control_writes": 1.55,
+            "recursion_frame_scan": 0.0,
+            "native": 3.6875,
+            "unloader_init": 4.775,
+            "result_prepare": 2.35,
+            "result": 7.8625,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "guards",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "Spline.__call__",
+      "python_us": 2.390992649987525,
+      "prior_selection_compiled_us": 15.555523257421028,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 15.275,
+            "writeback": 2.025,
+            "guards": 6.1125,
+            "unloader_init": 3.6125,
+            "program_lookup": 3.8125,
+            "binding": 7.8125,
+            "result": 8.0375,
+            "native": 2.9875,
+            "observer_bookkeeping": 22.825,
+            "residual": 10.724999999999994
+          },
+          "observed_complete": 83.225,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 6.1125,
+            "unloader_init": 3.6125,
+            "program_lookup": 3.8125,
+            "binding": 7.8125,
+            "result": 8.0375,
+            "native": 2.9875,
+            "observer_bookkeeping": 0.0,
+            "residual": 10.724999999999994
+          },
+          "estimated_complete": 43.099999999999994,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 7.8125,
+            "program_lookup": 3.8125,
+            "guards": 6.1125,
+            "arrays": 2.3625,
+            "array_snapshot_rollback": 0.825,
+            "arena_capacity": 0.825,
+            "staged_payload_copy": 2.0,
+            "control_writes": 2.025,
+            "recursion_frame_scan": 0.0,
+            "native": 2.9875,
+            "unloader_init": 3.6125,
+            "result_prepare": 2.6875,
+            "result": 8.0375,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 11.6125,
+            "writeback": 1.725,
+            "guards": 4.525,
+            "unloader_init": 2.95,
+            "program_lookup": 3.3875,
+            "binding": 5.6125,
+            "result": 6.65,
+            "native": 2.075,
+            "observer_bookkeeping": 19.1375,
+            "residual": 9.324999999999996
+          },
+          "observed_complete": 67.0,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 4.525,
+            "unloader_init": 2.95,
+            "program_lookup": 3.3875,
+            "binding": 5.6125,
+            "result": 6.65,
+            "native": 2.075,
+            "observer_bookkeeping": 0.0,
+            "residual": 9.324999999999996
+          },
+          "estimated_complete": 34.525,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 5.6125,
+            "program_lookup": 3.3875,
+            "guards": 4.525,
+            "arrays": 2.025,
+            "array_snapshot_rollback": 0.75,
+            "arena_capacity": 0.725,
+            "staged_payload_copy": 1.7875,
+            "control_writes": 1.675,
+            "recursion_frame_scan": 0.0,
+            "native": 2.075,
+            "unloader_init": 2.95,
+            "result_prepare": 2.3625,
+            "result": 6.65,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "result",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "create_cycle",
+      "python_us": 3.208958848099359,
+      "prior_selection_compiled_us": 75.91339349996164,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 24.45,
+            "writeback": 81.7,
+            "guards": 5.15,
+            "unloader_init": 3.4875,
+            "program_lookup": 5.5625,
+            "binding": 7.3,
+            "result": 0.9,
+            "native": 2.6125,
+            "observer_bookkeeping": 32.25,
+            "residual": 11.375
+          },
+          "observed_complete": 174.7875,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 5.15,
+            "unloader_init": 3.4875,
+            "program_lookup": 5.5625,
+            "binding": 7.3,
+            "result": 0.9,
+            "native": 2.6125,
+            "observer_bookkeeping": 0.0,
+            "residual": 11.375
+          },
+          "estimated_complete": 36.3875,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 7.3,
+            "program_lookup": 5.5625,
+            "guards": 5.15,
+            "arrays": 2.9,
+            "array_snapshot_rollback": 0.925,
+            "arena_capacity": 1.15,
+            "staged_payload_copy": 2.5625,
+            "control_writes": 2.15,
+            "recursion_frame_scan": 0.0,
+            "native": 2.6125,
+            "unloader_init": 3.4875,
+            "result_prepare": 1.6875,
+            "result": 0.9,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 11.3125,
+            "writeback": 74.5625,
+            "guards": 3.8875,
+            "unloader_init": 2.4,
+            "program_lookup": 3.4125,
+            "binding": 6.3875,
+            "result": 0.8,
+            "native": 1.85,
+            "observer_bookkeeping": 21.5375,
+            "residual": 8.9375
+          },
+          "observed_complete": 135.0875,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 3.8875,
+            "unloader_init": 2.4,
+            "program_lookup": 3.4125,
+            "binding": 6.3875,
+            "result": 0.8,
+            "native": 1.85,
+            "observer_bookkeeping": 0.0,
+            "residual": 8.9375
+          },
+          "estimated_complete": 27.675,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 6.3875,
+            "program_lookup": 3.4125,
+            "guards": 3.8875,
+            "arrays": 2.2375,
+            "array_snapshot_rollback": 1.0375,
+            "arena_capacity": 0.7625,
+            "staged_payload_copy": 1.7875,
+            "control_writes": 1.7,
+            "recursion_frame_scan": 0.0,
+            "native": 1.85,
+            "unloader_init": 2.4,
+            "result_prepare": 1.4125,
+            "result": 0.8,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "binding",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "Hex.link_nodes",
+      "python_us": 15.07239595513157,
+      "prior_selection_compiled_us": 147.36607304907272,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 153.4625,
+            "writeback": 17.0875,
+            "guards": 6.05,
+            "unloader_init": 6.3,
+            "program_lookup": 4.2375,
+            "binding": 7.5625,
+            "result": 0.8875,
+            "native": 6.5125,
+            "observer_bookkeeping": 26.8125,
+            "residual": 21.55000000000001
+          },
+          "observed_complete": 250.4625,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 6.05,
+            "unloader_init": 6.3,
+            "program_lookup": 4.2375,
+            "binding": 7.5625,
+            "result": 0.8875,
+            "native": 6.5125,
+            "observer_bookkeeping": 0.0,
+            "residual": 21.55000000000001
+          },
+          "estimated_complete": 53.10000000000001,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 7.5625,
+            "program_lookup": 4.2375,
+            "guards": 6.05,
+            "arrays": 2.3875,
+            "array_snapshot_rollback": 0.9,
+            "arena_capacity": 0.825,
+            "staged_payload_copy": 14.2625,
+            "control_writes": 1.5625,
+            "recursion_frame_scan": 0.0,
+            "native": 6.5125,
+            "unloader_init": 6.3,
+            "result_prepare": 1.6125,
+            "result": 0.8875,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 171.575,
+            "writeback": 19.6,
+            "guards": 7.2625,
+            "unloader_init": 8.0875,
+            "program_lookup": 5.375,
+            "binding": 8.3375,
+            "result": 1.0375,
+            "native": 7.4,
+            "observer_bookkeeping": 31.6625,
+            "residual": 31.4375
+          },
+          "observed_complete": 291.775,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 7.2625,
+            "unloader_init": 8.0875,
+            "program_lookup": 5.375,
+            "binding": 8.3375,
+            "result": 1.0375,
+            "native": 7.4,
+            "observer_bookkeeping": 0.0,
+            "residual": 31.4375
+          },
+          "estimated_complete": 68.9375,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 8.3375,
+            "program_lookup": 5.375,
+            "guards": 7.2625,
+            "arrays": 2.7875,
+            "array_snapshot_rollback": 0.9875,
+            "arena_capacity": 0.95,
+            "staged_payload_copy": 22.7875,
+            "control_writes": 2.0,
+            "recursion_frame_scan": 0.0,
+            "native": 7.4,
+            "unloader_init": 8.0875,
+            "result_prepare": 1.925,
+            "result": 1.0375,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "staged_payload_copy",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "Done.filter_tiles",
+      "python_us": 5.938034898565364,
+      "prior_selection_compiled_us": 23.276015044020085,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 20.3875,
+            "writeback": 11.775,
+            "guards": 5.0875,
+            "unloader_init": 4.0875,
+            "program_lookup": 3.8875,
+            "binding": 6.1375,
+            "result": 0.8625,
+            "native": 3.5125,
+            "observer_bookkeeping": 22.475,
+            "residual": 9.649999999999991
+          },
+          "observed_complete": 87.8625,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 5.0875,
+            "unloader_init": 4.0875,
+            "program_lookup": 3.8875,
+            "binding": 6.1375,
+            "result": 0.8625,
+            "native": 3.5125,
+            "observer_bookkeeping": 0.0,
+            "residual": 9.649999999999991
+          },
+          "estimated_complete": 33.224999999999994,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 6.1375,
+            "program_lookup": 3.8875,
+            "guards": 5.0875,
+            "arrays": 2.1875,
+            "array_snapshot_rollback": 0.8875,
+            "arena_capacity": 0.95,
+            "staged_payload_copy": 1.8625,
+            "control_writes": 1.925,
+            "recursion_frame_scan": 0.0,
+            "native": 3.5125,
+            "unloader_init": 4.0875,
+            "result_prepare": 1.8375,
+            "result": 0.8625,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 20.925,
+            "writeback": 14.35,
+            "guards": 5.2875,
+            "unloader_init": 4.3,
+            "program_lookup": 3.7125,
+            "binding": 12.725,
+            "result": 0.8875,
+            "native": 8.975,
+            "observer_bookkeeping": 23.825,
+            "residual": 9.837500000000006
+          },
+          "observed_complete": 104.825,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 5.2875,
+            "unloader_init": 4.3,
+            "program_lookup": 3.7125,
+            "binding": 12.725,
+            "result": 0.8875,
+            "native": 8.975,
+            "observer_bookkeeping": 0.0,
+            "residual": 9.837500000000006
+          },
+          "estimated_complete": 45.725,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 12.725,
+            "program_lookup": 3.7125,
+            "guards": 5.2875,
+            "arrays": 2.3125,
+            "array_snapshot_rollback": 0.8,
+            "arena_capacity": 0.9625,
+            "staged_payload_copy": 1.95,
+            "control_writes": 2.1875,
+            "recursion_frame_scan": 0.0,
+            "native": 8.975,
+            "unloader_init": 4.3,
+            "result_prepare": 1.625,
+            "result": 0.8875,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "binding",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "schedule",
+      "python_us": 7.136801241641077,
+      "prior_selection_compiled_us": 283.3124999597203,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 112.6375,
+            "writeback": 176.8875,
+            "guards": 16.95,
+            "unloader_init": 32.475,
+            "program_lookup": 4.0875,
+            "binding": 6.475,
+            "result": 1.05,
+            "native": 6.0375,
+            "observer_bookkeeping": 53.2,
+            "residual": 9.425000000000011
+          },
+          "observed_complete": 419.225,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 16.95,
+            "unloader_init": 32.475,
+            "program_lookup": 4.0875,
+            "binding": 6.475,
+            "result": 1.05,
+            "native": 6.0375,
+            "observer_bookkeeping": 0.0,
+            "residual": 9.425000000000011
+          },
+          "estimated_complete": 76.50000000000001,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 6.475,
+            "program_lookup": 4.0875,
+            "guards": 16.95,
+            "arrays": 2.175,
+            "array_snapshot_rollback": 0.8,
+            "arena_capacity": 0.7125,
+            "staged_payload_copy": 1.825,
+            "control_writes": 1.5625,
+            "recursion_frame_scan": 0.0,
+            "native": 6.0375,
+            "unloader_init": 32.475,
+            "result_prepare": 2.35,
+            "result": 1.05,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 140.025,
+            "writeback": 185.775,
+            "guards": 18.2875,
+            "unloader_init": 33.0625,
+            "program_lookup": 4.4625,
+            "binding": 9.975,
+            "result": 0.95,
+            "native": 2.95,
+            "observer_bookkeeping": 52.9625,
+            "residual": 10.400000000000034
+          },
+          "observed_complete": 458.85,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 18.2875,
+            "unloader_init": 33.0625,
+            "program_lookup": 4.4625,
+            "binding": 9.975,
+            "result": 0.95,
+            "native": 2.95,
+            "observer_bookkeeping": 0.0,
+            "residual": 10.400000000000034
+          },
+          "estimated_complete": 80.08750000000003,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 9.975,
+            "program_lookup": 4.4625,
+            "guards": 18.2875,
+            "arrays": 2.9625,
+            "array_snapshot_rollback": 0.85,
+            "arena_capacity": 0.85,
+            "staged_payload_copy": 1.9375,
+            "control_writes": 1.625,
+            "recursion_frame_scan": 0.0,
+            "native": 2.95,
+            "unloader_init": 33.0625,
+            "result_prepare": 2.175,
+            "result": 0.95,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "unloader_init",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "Task.runTask",
+      "python_us": 10.223039804483767,
+      "prior_selection_compiled_us": 3321.2125017598737,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 262.1125,
+            "writeback": 66.9625,
+            "guards": 45.6625,
+            "unloader_init": 52.5125,
+            "program_lookup": 17.0125,
+            "binding": 8.575,
+            "result": 2.675,
+            "native": 5.6375,
+            "observer_bookkeeping": 66.35,
+            "residual": 15.325000000000045
+          },
+          "observed_complete": 542.825,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 45.6625,
+            "unloader_init": 52.5125,
+            "program_lookup": 17.0125,
+            "binding": 8.575,
+            "result": 2.675,
+            "native": 5.6375,
+            "observer_bookkeeping": 0.0,
+            "residual": 15.325000000000045
+          },
+          "estimated_complete": 147.40000000000003,
+          "load_attempt_counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "guard_attempt_counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "lookup_scope_counts": [
+            4,
+            6
+          ],
+          "retained_named": {
+            "binding": 8.575,
+            "program_lookup": 17.0125,
+            "guards": 45.6625,
+            "arrays": 5.1125,
+            "array_snapshot_rollback": 1.0125,
+            "arena_capacity": 1.05,
+            "staged_payload_copy": 2.25,
+            "control_writes": 2.2,
+            "recursion_frame_scan": 0.0,
+            "native": 5.6375,
+            "unloader_init": 52.5125,
+            "result_prepare": 3.7,
+            "result": 2.675,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 292.65,
+            "writeback": 79.1,
+            "guards": 49.8375,
+            "unloader_init": 63.7375,
+            "program_lookup": 18.075,
+            "binding": 9.225,
+            "result": 3.0875,
+            "native": 5.2625,
+            "observer_bookkeeping": 71.3375,
+            "residual": 17.375
+          },
+          "observed_complete": 609.6875,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 49.8375,
+            "unloader_init": 63.7375,
+            "program_lookup": 18.075,
+            "binding": 9.225,
+            "result": 3.0875,
+            "native": 5.2625,
+            "observer_bookkeeping": 0.0,
+            "residual": 17.375
+          },
+          "estimated_complete": 166.6,
+          "load_attempt_counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "guard_attempt_counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "lookup_scope_counts": [
+            4,
+            6
+          ],
+          "retained_named": {
+            "binding": 9.225,
+            "program_lookup": 18.075,
+            "guards": 49.8375,
+            "arrays": 5.475,
+            "array_snapshot_rollback": 1.225,
+            "arena_capacity": 1.2125,
+            "staged_payload_copy": 2.55,
+            "control_writes": 2.4125,
+            "recursion_frame_scan": 0.0,
+            "native": 5.2625,
+            "unloader_init": 63.7375,
+            "result_prepare": 4.5,
+            "result": 3.0875,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "unloader_init",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "HandlerTask.fn",
+      "python_us": 12.80991709189805,
+      "prior_selection_compiled_us": 2723.7499962211587,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 423.5,
+            "writeback": 60.2625,
+            "guards": 25.2875,
+            "unloader_init": 53.1625,
+            "program_lookup": 12.2625,
+            "binding": 8.925,
+            "result": 2.55,
+            "native": 4.9125,
+            "observer_bookkeeping": 62.6,
+            "residual": 15.274999999999977
+          },
+          "observed_complete": 668.7375,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 25.2875,
+            "unloader_init": 53.1625,
+            "program_lookup": 12.2625,
+            "binding": 8.925,
+            "result": 2.55,
+            "native": 4.9125,
+            "observer_bookkeeping": 0.0,
+            "residual": 15.274999999999977
+          },
+          "estimated_complete": 122.37499999999999,
+          "load_attempt_counts": [
+            1,
+            2
+          ],
+          "guard_attempt_counts": [
+            1,
+            2
+          ],
+          "lookup_scope_counts": [
+            4,
+            6
+          ],
+          "retained_named": {
+            "binding": 8.925,
+            "program_lookup": 12.2625,
+            "guards": 25.2875,
+            "arrays": 4.2375,
+            "array_snapshot_rollback": 1.7,
+            "arena_capacity": 1.1375,
+            "staged_payload_copy": 2.15,
+            "control_writes": 2.25,
+            "recursion_frame_scan": 0.0,
+            "native": 4.9125,
+            "unloader_init": 53.1625,
+            "result_prepare": 3.8,
+            "result": 2.55,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 478.3,
+            "writeback": 69.125,
+            "guards": 25.95,
+            "unloader_init": 58.7625,
+            "program_lookup": 12.9625,
+            "binding": 8.7,
+            "result": 2.7625,
+            "native": 5.275,
+            "observer_bookkeeping": 66.3375,
+            "residual": 14.774999999999977
+          },
+          "observed_complete": 742.95,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 25.95,
+            "unloader_init": 58.7625,
+            "program_lookup": 12.9625,
+            "binding": 8.7,
+            "result": 2.7625,
+            "native": 5.275,
+            "observer_bookkeeping": 0.0,
+            "residual": 14.774999999999977
+          },
+          "estimated_complete": 129.18749999999997,
+          "load_attempt_counts": [
+            1,
+            2
+          ],
+          "guard_attempt_counts": [
+            1,
+            2
+          ],
+          "lookup_scope_counts": [
+            4,
+            6
+          ],
+          "retained_named": {
+            "binding": 8.7,
+            "program_lookup": 12.9625,
+            "guards": 25.95,
+            "arrays": 4.0,
+            "array_snapshot_rollback": 1.15,
+            "arena_capacity": 1.2375,
+            "staged_payload_copy": 2.2875,
+            "control_writes": 2.15,
+            "recursion_frame_scan": 0.0,
+            "native": 5.275,
+            "unloader_init": 58.7625,
+            "result_prepare": 3.95,
+            "result": 2.7625,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "unloader_init",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "DeviceTask.fn",
+      "python_us": 13.78441480580653,
+      "prior_selection_compiled_us": 5126.825002662372,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 331.2,
+            "writeback": 74.0,
+            "guards": 24.7375,
+            "unloader_init": 60.625,
+            "program_lookup": 7.8375,
+            "binding": 10.5875,
+            "result": 2.875,
+            "native": 5.525,
+            "observer_bookkeeping": 90.8625,
+            "residual": 15.112499999999955
+          },
+          "observed_complete": 623.3625,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 24.7375,
+            "unloader_init": 60.625,
+            "program_lookup": 7.8375,
+            "binding": 10.5875,
+            "result": 2.875,
+            "native": 5.525,
+            "observer_bookkeeping": 0.0,
+            "residual": 15.112499999999955
+          },
+          "estimated_complete": 127.29999999999995,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 10.5875,
+            "program_lookup": 7.8375,
+            "guards": 24.7375,
+            "arrays": 4.3375,
+            "array_snapshot_rollback": 1.175,
+            "arena_capacity": 1.0875,
+            "staged_payload_copy": 2.1625,
+            "control_writes": 2.3375,
+            "recursion_frame_scan": 0.0,
+            "native": 5.525,
+            "unloader_init": 60.625,
+            "result_prepare": 4.0125,
+            "result": 2.875,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 301.1375,
+            "writeback": 69.3625,
+            "guards": 24.7,
+            "unloader_init": 62.4125,
+            "program_lookup": 9.0125,
+            "binding": 9.15,
+            "result": 2.7125,
+            "native": 4.65,
+            "observer_bookkeeping": 79.45,
+            "residual": 15.399999999999977
+          },
+          "observed_complete": 577.9875,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 24.7,
+            "unloader_init": 62.4125,
+            "program_lookup": 9.0125,
+            "binding": 9.15,
+            "result": 2.7125,
+            "native": 4.65,
+            "observer_bookkeeping": 0.0,
+            "residual": 15.399999999999977
+          },
+          "estimated_complete": 128.03749999999997,
+          "load_attempt_counts": [
+            1
+          ],
+          "guard_attempt_counts": [
+            1
+          ],
+          "lookup_scope_counts": [
+            4
+          ],
+          "retained_named": {
+            "binding": 9.15,
+            "program_lookup": 9.0125,
+            "guards": 24.7,
+            "arrays": 3.775,
+            "array_snapshot_rollback": 1.6625,
+            "arena_capacity": 1.325,
+            "staged_payload_copy": 2.325,
+            "control_writes": 2.4,
+            "recursion_frame_scan": 0.0,
+            "native": 4.65,
+            "unloader_init": 62.4125,
+            "result_prepare": 3.9125,
+            "result": 2.7125,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "unloader_init",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    },
+    {
+      "function": "Task.qpkt",
+      "python_us": 59.53590998350353,
+      "prior_selection_compiled_us": 21922.687505139038,
+      "passes": [
+        {
+          "label": "s46-ten-components-v7",
+          "current": {
+            "load": 231.4125,
+            "writeback": 47.3625,
+            "guards": 33.9,
+            "unloader_init": 50.175,
+            "program_lookup": 14.1875,
+            "binding": 7.9625,
+            "result": 2.6625,
+            "native": 4.3125,
+            "observer_bookkeeping": 54.2875,
+            "residual": 14.425000000000011
+          },
+          "observed_complete": 460.6875,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 33.9,
+            "unloader_init": 50.175,
+            "program_lookup": 14.1875,
+            "binding": 7.9625,
+            "result": 2.6625,
+            "native": 4.3125,
+            "observer_bookkeeping": 0.0,
+            "residual": 14.425000000000011
+          },
+          "estimated_complete": 127.62500000000001,
+          "load_attempt_counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "guard_attempt_counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "lookup_scope_counts": [
+            4,
+            6
+          ],
+          "retained_named": {
+            "binding": 7.9625,
+            "program_lookup": 14.1875,
+            "guards": 33.9,
+            "arrays": 4.35,
+            "array_snapshot_rollback": 1.0125,
+            "arena_capacity": 1.025,
+            "staged_payload_copy": 2.225,
+            "control_writes": 2.1375,
+            "recursion_frame_scan": 0.0,
+            "native": 4.3125,
+            "unloader_init": 50.175,
+            "result_prepare": 3.675,
+            "result": 2.6625,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        },
+        {
+          "label": "s46-ten-components-v8",
+          "current": {
+            "load": 330.425,
+            "writeback": 48.6625,
+            "guards": 44.8125,
+            "unloader_init": 57.5,
+            "program_lookup": 20.0,
+            "binding": 10.4125,
+            "result": 3.0875,
+            "native": 6.575,
+            "observer_bookkeeping": 68.9,
+            "residual": 19.799999999999955
+          },
+          "observed_complete": 610.175,
+          "estimated": {
+            "load": 0.0,
+            "writeback": 0.0,
+            "guards": 44.8125,
+            "unloader_init": 57.5,
+            "program_lookup": 20.0,
+            "binding": 10.4125,
+            "result": 3.0875,
+            "native": 6.575,
+            "observer_bookkeeping": 0.0,
+            "residual": 19.799999999999955
+          },
+          "estimated_complete": 162.18749999999994,
+          "load_attempt_counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "guard_attempt_counts": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "lookup_scope_counts": [
+            4,
+            6
+          ],
+          "retained_named": {
+            "binding": 10.4125,
+            "program_lookup": 20.0,
+            "guards": 44.8125,
+            "arrays": 5.8625,
+            "array_snapshot_rollback": 1.5125,
+            "arena_capacity": 1.2625,
+            "staged_payload_copy": 2.675,
+            "control_writes": 2.7125,
+            "recursion_frame_scan": 0.0,
+            "native": 6.575,
+            "unloader_init": 57.5,
+            "result_prepare": 5.775,
+            "result": 3.0875,
+            "rng_store": 0.0,
+            "shape_prepare": 0.0,
+            "boundary_init": 0.0,
+            "boundary_discard": 0.0,
+            "result_validation": 0.0
+          }
+        }
+      ],
+      "projected_below_python": false,
+      "largest_remaining_named_component": "unloader_init",
+      "remaining_work": "Step2/3 demand-based guard/result-owner runtime; Step4b alone is insufficient",
+      "revised_first_touch_cost": "unknown; no measured prototype"
+    }
+  ],
+  "projected_winners": 0,
+  "request": "S55.3: steer the next demand-based entry/result-owner prototype and budget before Step2/3 activation; initial conversion-only design is insufficient."
+}

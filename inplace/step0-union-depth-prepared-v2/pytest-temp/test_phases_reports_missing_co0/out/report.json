@@ -1,0 +1,91 @@
+{
+  "kind": "instrumented-region-diagnostic",
+  "script": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\pytest-temp\\test_phases_reports_missing_co0\\target.py",
+    "bytes": 30,
+    "sha256": "91a2cd28caff637330459cf3b02e966b4f1e0fde7399167d012d0b6b3ccbc3d2"
+  },
+  "plan": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\pytest-temp\\test_phases_reports_missing_co0\\plan.json",
+    "bytes": 16,
+    "sha256": "4bd983b6647b5c3df810ea9a9841cc832f58a4c06b92c4d3e0da3df7fc6082dd"
+  },
+  "python": {
+    "path": "C:\\Python314\\python.exe",
+    "bytes": 106328,
+    "sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a"
+  },
+  "source": [
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\pytest-temp\\test_phases_reports_missing_co0\\repo\\src\\recompyler\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\pytest-temp\\test_phases_reports_missing_co0\\repo\\src\\recompyler\\heap.py",
+      "bytes": 708,
+      "sha256": "79081fc914ef7968deeb71f88ffe5c120a5808c7bf115ba240f3cb992bbc5a81"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\pytest-temp\\test_phases_reports_missing_co0\\repo\\src\\recompyler\\runner.py",
+      "bytes": 581,
+      "sha256": "47a141183decd796b45cf0d7c6f9257203d36de8810ac10b36aead50f2d5e03a"
+    }
+  ],
+  "artifacts": [],
+  "planned_artifacts": [],
+  "cache": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\pytest-temp\\test_phases_reports_missing_co0\\out\\cache",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\tools\\_phase_worker.py",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0-union-depth-prepared-v2\\pytest-temp\\test_phases_reports_missing_co0\\out\\config.json"
+  ],
+  "returncode": 2,
+  "error": null,
+  "timeout_scope": "direct child only; descendants created by the target/tool may survive a timeout",
+  "worker": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\tools\\_phase_worker.py",
+    "bytes": 7720,
+    "sha256": "6e443b3ed80ace34475d7c7bd6fdb32383cfd732b27db77f5ba2de22301a429e"
+  },
+  "checks": [
+    "check answer 42"
+  ],
+  "diagnostic": {
+    "instrumented": true,
+    "timing_note": "Diagnostic timers add overhead; not an uninstrumented performance result. Native entries include retries; actual successful mode counts and Python fallbacks are in runner. Other attempt time includes preparation/compilation and unmeasured conversion/commit work. Timers attribute only the selected region.",
+    "attempts": [],
+    "runner": {
+      "functions": [
+        {
+          "function": "target",
+          "region": true,
+          "aot_calls": 1,
+          "jit_calls": 0,
+          "fallback_calls": 0
+        }
+      ],
+      "exit_code": null,
+      "batches": {}
+    },
+    "loaded_native_modules": [
+      {
+        "module": "_hashlib",
+        "path": "C:\\Python314\\DLLs\\_hashlib.pyd",
+        "sha256": "58c5c9ff93f989e2a233b8c5e06420ea73dd6c013e1f08d996fb0f2828eba0aa"
+      }
+    ],
+    "numba_imported": false,
+    "totals_ns": {
+      "load_ns": 0,
+      "guards_ns": 0,
+      "native_ns": 0,
+      "result_ns": 0,
+      "writeback_ns": 0,
+      "attempt_ns": 0,
+      "other_attempt_ns": 0
+    },
+    "error": "no target Region.attempt calls observed; target may be uncalled, lazy, or unsupported"
+  },
+  "status": "error"
+}

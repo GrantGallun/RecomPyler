@@ -1,0 +1,132 @@
+--- inplace/capture_audit.py
++++ inplace/capture_audit.py
+@@ -21,6 +21,7 @@
+         self.native_bindings = {}
+         self.previous_profile = None
+         self.observer = None
++        self.observer_lost = False
+ 
+     def row(self, value, kind):
+         identifier = id(value)
+@@ -75,7 +76,8 @@
+     def finish(self, value, kind, context):
+         assert self.contexts.get()[-1] is context
+         self.contexts.reset(context['token'])
+-        assert sys.getprofile() is self.observer, 'Application replaced independent audit observer'
++        if sys.getprofile() is not self.observer:
++            self.observer_lost = True
+         row = self.row(value, kind)
+         row['fallback_calls'] += int(context['python_fallback'])
+         if kind == 'ordinary' and not context['python_fallback'] and context['native'] is not None:
+@@ -126,38 +128,64 @@
+             return load
+         self.patch(cls, 'load', wrap_load)
+         def wrap_attempt(original):
++            missing = object()
+             @functools.wraps(original)
+             def attempt(region, *args, **kwargs):
+                 before = counter_state(region, auditor.rule_counters)
++                row = auditor.row(region, 'region')
+                 events = []
+                 token = auditor.attempts.set(auditor.attempts.get() + (events,))
++                result, original_error = missing, None
+                 try:
+                     result = original(region, *args, **kwargs)
++                    return result
++                except BaseException as exc:
++                    original_error = exc
++                    raise
+                 finally:
+-                    auditor.attempts.reset(token)
+-                row = auditor.row(region, 'region')
+-                row['native_entries'] += len(events)
+-                program = getattr(region, 'latest', None)
+-                deltas = auditor.record_rule(row, region, before, bool(result[0]), program)
+-                if result[0]:
+-                    digest = str(getattr(program, 'digest', 'unknown'))
+-                    # Raw direct adapters may bypass program.run. Until a trusted
+-                    # C ABI-entry observer exists, such success is unproven.
+-                    matching = [e for e in events if e['digest'] == digest]
+-                    mode = matching[-1]['mode'] if matching else 'unknown_native'
+-                    if not matching:
+-                        row['unobserved_successes'] += 1
+-                    row[mode + '_calls'] += 1
+-                    if mode not in row['modes_observed']:
+-                        row['modes_observed'].append(mode)
+-                    event = row['programs'].setdefault(digest, dict(aot_calls=0, jit_calls=0,
+-                        unknown_native_calls=0, direct_report=jsonable(getattr(program, 'direct_report', None))))
+-                    event[mode + '_calls'] += 1
+-                    event['last_rule_deltas'] = deltas
+-                    event['native_events'] = events
+-                else:
+-                    row['rejected_attempts'] += 1
+-                return result
++                    try:
++                        auditor.attempts.reset(token)
++                        row['native_entries'] += len(events)
++                        successful = result is not missing and bool(result[0])
++                        if not successful:
++                            row['rejected_attempts'] += 1
++                        program = getattr(region, 'latest', None)
++                        digest = str(getattr(program, 'digest', 'unknown'))
++                        event = row['programs'].setdefault(digest, dict(aot_calls=0, jit_calls=0,
++                            unknown_native_calls=0, direct_report=jsonable(getattr(program, 'direct_report', None))))
++                        raised = None
++                        if original_error is not None:
++                            # Retain only serializable facts, never exception args,
++                            # traceback frames, or the application exception object.
++                            raised = dict(exception_type=type(original_error).__module__ + '.' + type(original_error).__qualname__,
++                                native_events=list(events), rule_counters_before=before)
++                            event.setdefault('raising_attempts', []).append(raised)
++                            raised['rule_counters_after'] = counter_state(region, auditor.rule_counters)
++                        elif not successful:
++                            event['last_rejected_native_events'] = list(events)
++                        deltas = auditor.record_rule(row, region, before, successful, program)
++                        if raised is not None:
++                            raised['rule_deltas'] = deltas
++                        if successful:
++                            # Raw direct adapters may bypass program.run. Until a
++                            # trusted C ABI observer exists, success is unproven.
++                            matching = [e for e in events if e['digest'] == digest]
++                            mode = matching[-1]['mode'] if matching else 'unknown_native'
++                            if not matching:
++                                row['unobserved_successes'] += 1
++                            row[mode + '_calls'] += 1
++                            if mode not in row['modes_observed']:
++                                row['modes_observed'].append(mode)
++                            event[mode + '_calls'] += 1
++                            event['last_rule_deltas'] = deltas
++                            event['native_events'] = events
++                    except BaseException as audit_error:
++                        if original_error is None:
++                            raise
++                        # The original exception remains in flight. Make secondary
++                        # audit failure explicit and fail reconciliation closed.
++                        row.setdefault('attempt_accounting_errors', []).append(dict(
++                            exception_type=type(audit_error).__module__ + '.' + type(audit_error).__qualname__))
+             return attempt
+         self.patch(cls, 'attempt', wrap_attempt)
+         for name in ('__call__', 'values', '_resumed'):
+@@ -230,7 +258,9 @@
+     def result(self):
+         fields = ('aot_calls', 'jit_calls', 'unknown_native_calls', 'rejected_attempts', 'fallback_calls')
+         rows = list(self.rows.values())
+-        return dict(totals={name: sum(row[name] for row in rows) for name in fields},
++        complete = not self.observer_lost and not any(row.get('attempt_accounting_errors') for row in rows)
++        return dict(audit_accounting_complete=complete, observer_lost=self.observer_lost,
++                    totals={name: sum(row[name] for row in rows) for name in fields},
+                     functions=rows, independent_functions=rows,
+                     native_counter_source='Observed program.run entry plus successful Region.attempt result; ordinary _run result without Python fallback; no product compiled/aot/jit counter reads',
+                     fallback_counter_source='Original Python code-entry observation within each wrapper call',
+@@ -283,9 +313,9 @@
+             result['product_exact_aot_calls'] = sum(f['aot_calls'] for f in fields)
+             result['product_exact_jit_calls'] = sum(f['jit_calls'] for f in fields)
+             totals = result['totals']
+-            result['compiled_total_reconciles'] = sum(totals[k] for k in ('aot_calls', 'jit_calls', 'unknown_native_calls')) == result['runner_total_compiled_calls']
++            result['compiled_total_reconciles'] = result['audit_accounting_complete'] and sum(totals[k] for k in ('aot_calls', 'jit_calls', 'unknown_native_calls')) == result['runner_total_compiled_calls']
+             result['runner_only_fallback_calls'] = result['runner_total_fallback_calls'] - totals['fallback_calls']
+-            result['per_function_native_matches_product'] = native_reconciles(fields, result['independent_functions'])
++            result['per_function_native_matches_product'] = result['audit_accounting_complete'] and native_reconciles(fields, result['independent_functions'])
+             result['product_exact_counter_matches_audit'] = result['per_function_native_matches_product']
+             result['batch_execution_needs_separate_audit'] = bool(report.get('batches'))
+         args.output.parent.mkdir(parents=True, exist_ok=True)

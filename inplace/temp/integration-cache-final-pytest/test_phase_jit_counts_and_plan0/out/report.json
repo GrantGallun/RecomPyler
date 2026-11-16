@@ -1,0 +1,123 @@
+{
+  "kind": "instrumented-region-diagnostic",
+  "script": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0\\target.py",
+    "bytes": 30,
+    "sha256": "91a2cd28caff637330459cf3b02e966b4f1e0fde7399167d012d0b6b3ccbc3d2"
+  },
+  "plan": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0\\plan.json",
+    "bytes": 218,
+    "sha256": "36ea35fa55438708f924b5982b012ecdf0ebfb8cdc1de0d4d8532e874b2b166a"
+  },
+  "python": {
+    "path": "C:\\Python314\\python.exe",
+    "bytes": 106328,
+    "sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a"
+  },
+  "source": [
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0\\repo\\src\\recompyler\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0\\repo\\src\\recompyler\\heap.py",
+      "bytes": 709,
+      "sha256": "e3ecc8f6e5e19768b52e82665f6f9f014f33fbcf0ca4f8e4039448a813f7478c"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0\\repo\\src\\recompyler\\runner.py",
+      "bytes": 591,
+      "sha256": "7b9a0ff0a72a6a491ce3b31e2bf626d76ced45bd082b7c6f42db2ddedcfcb5ad"
+    }
+  ],
+  "artifacts": [],
+  "planned_artifacts": [
+    {
+      "section": "aot_regions",
+      "module": "kernel",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0",
+      "candidates": [
+        {
+          "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0\\kernel.pyd",
+          "bytes": 25,
+          "sha256": "d675a3955c7119e7403da7f48f105c6a5e5cf9b43a9c339148f51c15984d8aff"
+        }
+      ],
+      "loaded": null
+    }
+  ],
+  "cache": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0\\out\\cache",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\tools\\_phase_worker.py",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-cache-final-pytest\\test_phase_jit_counts_and_plan0\\out\\config.json"
+  ],
+  "returncode": 0,
+  "error": null,
+  "timeout_scope": "direct child only; descendants created by the target/tool may survive a timeout",
+  "worker": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\tools\\_phase_worker.py",
+    "bytes": 7720,
+    "sha256": "6e443b3ed80ace34475d7c7bd6fdb32383cfd732b27db77f5ba2de22301a429e"
+  },
+  "checks": [
+    "check answer 42"
+  ],
+  "diagnostic": {
+    "instrumented": true,
+    "timing_note": "Diagnostic timers add overhead; not an uninstrumented performance result. Native entries include retries; actual successful mode counts and Python fallbacks are in runner. Other attempt time includes preparation/compilation and unmeasured conversion/commit work. Timers attribute only the selected region.",
+    "attempts": [
+      {
+        "load_ns": 1200,
+        "guards_ns": 800,
+        "native_ns": 1000,
+        "result_ns": 500,
+        "writeback_ns": 400,
+        "function": "target",
+        "line": 1,
+        "native_entries": 1,
+        "native_modes": [
+          "jit"
+        ],
+        "ok": true,
+        "attempt_ns": 17800,
+        "aot_calls": 0,
+        "jit_calls": 1,
+        "other_attempt_ns": 13900
+      }
+    ],
+    "runner": {
+      "functions": [
+        {
+          "function": "target",
+          "region": true,
+          "aot_calls": 0,
+          "jit_calls": 1,
+          "fallback_calls": 0
+        }
+      ],
+      "exit_code": null,
+      "batches": {}
+    },
+    "loaded_native_modules": [
+      {
+        "module": "_hashlib",
+        "path": "C:\\Python314\\DLLs\\_hashlib.pyd",
+        "sha256": "58c5c9ff93f989e2a233b8c5e06420ea73dd6c013e1f08d996fb0f2828eba0aa"
+      }
+    ],
+    "numba_imported": false,
+    "totals_ns": {
+      "load_ns": 1200,
+      "guards_ns": 800,
+      "native_ns": 1000,
+      "result_ns": 500,
+      "writeback_ns": 400,
+      "attempt_ns": 17800,
+      "other_attempt_ns": 13900
+    }
+  },
+  "status": "ok"
+}

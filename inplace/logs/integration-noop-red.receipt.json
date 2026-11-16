@@ -1,0 +1,16 @@
+{
+  "label": "integration-noop-red",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_scalar_identity.py",
+    "-q",
+    "--tb=short",
+    "--basetemp",
+    "inplace/temp/noop-red"
+  ],
+  "exit_code": 1,
+  "wall_s": 5.208019299985608,
+  "end": "2026-11-14T03:33:41.618796+00:00"
+}

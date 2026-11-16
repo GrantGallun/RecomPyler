@@ -1,0 +1,118 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+___ test_selected_class_method_hits_and_late_adapter_change_declines[code] ____
+
+method_artifact = (WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-method-red-v1/runner...e/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-method-red-v1/runner-method0/plan.json'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001C693A3F820>
+capsys = <_pytest.capture.CaptureFixture object at 0x000001C693ADA270>
+mutation = 'code'
+
+    @pytest.mark.parametrize('mutation',['code','marker'])
+    def test_selected_class_method_hits_and_late_adapter_change_declines(method_artifact,monkeypatch,capsys,mutation):
+        from recompyler import heap,_prepared as pc
+        from recompyler.runner import run_script
+        source,plan=method_artifact;regions=[];original=heap.lift_region
+        def lift(*a,**kw):
+            value=original(*a,**kw);regions.append(value);return value
+        def forbidden(*a,**kw): raise AssertionError(('regeneration',pc.last_miss()))
+        monkeypatch.setattr(heap,'lift_region',lift)
+        monkeypatch.setattr(heap.Region,'_make_program',forbidden)
+>       result=run_script(source,[],plan,False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_runner_method.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-method-red-v1\runner-method0\method_workload.py:4: in <module>
+    if __name__=='__main__': print(Box(10).read())
+                                   ^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (<recompyler.heap.Region object at 0x000001C69629BB10>,), kw = {}
+
+>   def forbidden(*a,**kw): raise AssertionError(('regeneration',pc.last_miss()))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ('regeneration', {'reason': 'binding', 'detail': 'class key Box: dictionary,member:read'})
+
+tests\test_prepared_runner_method.py:33: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_8bca738636b079c3f87ca8e0-vowvok_3\rcaotr_8bca738636b079c3f87ca8e0.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_8bca738636b079c3f87ca8e0-vowvok_3\rcaotr_8bca738636b079c3f87ca8e0.cp314-win_amd64.exp
+Generating code
+Finished generating code
+__ test_selected_class_method_hits_and_late_adapter_change_declines[marker] ___
+
+method_artifact = (WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-method-red-v1/runner...e/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-method-red-v1/runner-method0/plan.json'))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001C6974A70B0>
+capsys = <_pytest.capture.CaptureFixture object at 0x000001C69301C910>
+mutation = 'marker'
+
+    @pytest.mark.parametrize('mutation',['code','marker'])
+    def test_selected_class_method_hits_and_late_adapter_change_declines(method_artifact,monkeypatch,capsys,mutation):
+        from recompyler import heap,_prepared as pc
+        from recompyler.runner import run_script
+        source,plan=method_artifact;regions=[];original=heap.lift_region
+        def lift(*a,**kw):
+            value=original(*a,**kw);regions.append(value);return value
+        def forbidden(*a,**kw): raise AssertionError(('regeneration',pc.last_miss()))
+        monkeypatch.setattr(heap,'lift_region',lift)
+        monkeypatch.setattr(heap.Region,'_make_program',forbidden)
+>       result=run_script(source,[],plan,False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_runner_method.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-method-red-v1\runner-method0\method_workload.py:4: in <module>
+    if __name__=='__main__': print(Box(10).read())
+                                   ^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (<recompyler.heap.Region object at 0x000001C695E84CD0>,), kw = {}
+
+>   def forbidden(*a,**kw): raise AssertionError(('regeneration',pc.last_miss()))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: ('regeneration', {'reason': 'binding', 'detail': 'class key Box: dictionary,member:read'})
+
+tests\test_prepared_runner_method.py:33: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_runner_method.py::test_selected_class_method_hits_and_late_adapter_change_declines[code]
+FAILED tests/test_prepared_runner_method.py::test_selected_class_method_hits_and_late_adapter_change_declines[marker]
+2 failed in 5.40s

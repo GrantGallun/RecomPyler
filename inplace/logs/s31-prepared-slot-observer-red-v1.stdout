@@ -1,0 +1,24 @@
+F..                                                                      [100%]
+================================== FAILURES ===================================
+______________ test_nested_code_cache_observer_is_not_normalized ______________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-slot-observer-red-v1/test_nested_code_cache_observe0')
+
+    def test_nested_code_cache_observer_is_not_normalized(tmp_path):
+        from types import SimpleNamespace
+        import pytest
+        from recompyler import _prepared as pc
+        source=tmp_path/'nested_observer.py'
+        source.write_text('def work(box):\n    return (x.__slotnames__ for x in [box])\n')
+        module=load_source(source)
+        info=SimpleNamespace(fn=module.work)
+        program=SimpleNamespace(entry_fn=module.work,entry=info,order=[info],functions={0:info},class_fields={},guards={})
+        assert '__slotnames__' not in module.work.__code__.co_names
+>       with pytest.raises(pc.PreparedMiss): pc._definitions(pc.References(module.work,program),program)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE PreparedMiss
+
+inplace\prepared-cache-preparation\test_prepared_slot_cache.py:67: Failed
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_slot_cache.py::test_nested_code_cache_observer_is_not_normalized
+1 failed, 2 passed, 3 deselected in 0.24s

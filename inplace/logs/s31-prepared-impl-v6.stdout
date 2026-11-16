@@ -1,0 +1,553 @@
+........................................................................ [ 54%]
+....................FFFF..........FFFFFFFF..............F..              [100%]
+================================== FAILURES ===================================
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[written] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+mutation = 'written'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+        assert index is not None and index.bind(module.work)
+        section = _forged_section(pc, original, mutation)
+        # Read the real compiled metadata function, not a Python stand-in. Its full
+        # constant seal remains the original even after every JSON hash was updated.
+        native = sys.modules[original['module']]
+        metadata = vars(native)[original['prepared']['seal_export']]
+        assert type(metadata) is BuiltinFunctionType
+        actual = metadata()
+        words = lambda seal: tuple(int(seal[i:i + 8], 16) for i in range(0, 64, 8))
+        assert type(actual) is tuple and len(actual) == 8
+        assert all(type(word) is int and 0 <= word <= 0xffffffff for word in actual)
+        assert actual == words(original['prepared']['bundle_seal'])
+        assert actual != words(section['prepared']['bundle_seal'])
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'seal'
+E       AssertionError: assert 'artifact' == 'seal'
+E         
+E         - seal
+E         + artifact
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:105: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_3b92678f8e9449df9fd3f508-w0shbg0d\rcaotr_3b92678f8e9449df9fd3f508.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_3b92678f8e9449df9fd3f508-w0shbg0d\rcaotr_3b92678f8e9449df9fd3f508.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[return-conversion] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+mutation = 'return-conversion'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+        assert index is not None and index.bind(module.work)
+        section = _forged_section(pc, original, mutation)
+        # Read the real compiled metadata function, not a Python stand-in. Its full
+        # constant seal remains the original even after every JSON hash was updated.
+        native = sys.modules[original['module']]
+        metadata = vars(native)[original['prepared']['seal_export']]
+        assert type(metadata) is BuiltinFunctionType
+        actual = metadata()
+        words = lambda seal: tuple(int(seal[i:i + 8], 16) for i in range(0, 64, 8))
+        assert type(actual) is tuple and len(actual) == 8
+        assert all(type(word) is int and 0 <= word <= 0xffffffff for word in actual)
+        assert actual == words(original['prepared']['bundle_seal'])
+        assert actual != words(section['prepared']['bundle_seal'])
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'seal'
+E       AssertionError: assert 'artifact' == 'seal'
+E         
+E         - seal
+E         + artifact
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:105: AssertionError
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[guard-deletion] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+mutation = 'guard-deletion'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+        assert index is not None and index.bind(module.work)
+        section = _forged_section(pc, original, mutation)
+        # Read the real compiled metadata function, not a Python stand-in. Its full
+        # constant seal remains the original even after every JSON hash was updated.
+        native = sys.modules[original['module']]
+        metadata = vars(native)[original['prepared']['seal_export']]
+        assert type(metadata) is BuiltinFunctionType
+        actual = metadata()
+        words = lambda seal: tuple(int(seal[i:i + 8], 16) for i in range(0, 64, 8))
+        assert type(actual) is tuple and len(actual) == 8
+        assert all(type(word) is int and 0 <= word <= 0xffffffff for word in actual)
+        assert actual == words(original['prepared']['bundle_seal'])
+        assert actual != words(section['prepared']['bundle_seal'])
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'seal'
+E       AssertionError: assert 'artifact' == 'seal'
+E         
+E         - seal
+E         + artifact
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:105: AssertionError
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[cell-mutation] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+mutation = 'cell-mutation'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+        assert index is not None and index.bind(module.work)
+        section = _forged_section(pc, original, mutation)
+        # Read the real compiled metadata function, not a Python stand-in. Its full
+        # constant seal remains the original even after every JSON hash was updated.
+        native = sys.modules[original['module']]
+        metadata = vars(native)[original['prepared']['seal_export']]
+        assert type(metadata) is BuiltinFunctionType
+        actual = metadata()
+        words = lambda seal: tuple(int(seal[i:i + 8], 16) for i in range(0, 64, 8))
+        assert type(actual) is tuple and len(actual) == 8
+        assert all(type(word) is int and 0 <= word <= 0xffffffff for word in actual)
+        assert actual == words(original['prepared']['bundle_seal'])
+        assert actual != words(section['prepared']['bundle_seal'])
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'seal'
+E       AssertionError: assert 'artifact' == 'seal'
+E         
+E         - seal
+E         + artifact
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:105: AssertionError
+____ test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit ____
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000251666F98D0>
+capsys = <_pytest.capture.CaptureFixture object at 0x00000251653BB4D0>
+
+    def test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit(runner_artifact, monkeypatch, capsys):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000251666F98D0>
+capsys = <_pytest.capture.CaptureFixture object at 0x00000251653BB4D0>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions'])
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000025168A4C3C0>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:206: AssertionError
+__ test_wrapper_mutation_after_hit_invalidates_before_native[forged-marker] ___
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025168A2E580>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025166679590>
+mutation = 'forged-marker'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025168A2E580>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025166679590>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions'])
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000025168A4F4C0>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:206: AssertionError
+___ test_wrapper_mutation_after_hit_invalidates_before_native[changed-code] ___
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025168AE22E0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025165445950>
+mutation = 'changed-code'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025168AE22E0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025165445950>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions'])
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000025168B5E960>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:206: AssertionError
+__ test_wrapper_mutation_after_hit_invalidates_before_native[changed-marker] __
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025168B9EC10>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025166B1F490>
+mutation = 'changed-marker'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025168B9EC10>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025166B1F490>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions'])
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000025168B5E7A0>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:206: AssertionError
+_ test_wrapper_mutation_after_hit_invalidates_before_native[changed-fn-cell] __
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025168B9DC50>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025165378640>
+mutation = 'changed-fn-cell'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025168B9DC50>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000025165378640>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions'])
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000025168A4EF80>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:206: AssertionError
+_ test_wrapper_mutation_after_hit_invalidates_before_native[changed-prepare-cell] _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000251689522E0>
+capsys = <_pytest.capture.CaptureFixture object at 0x000002516894CB90>
+mutation = 'changed-prepare-cell'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000251689522E0>
+capsys = <_pytest.capture.CaptureFixture object at 0x000002516894CB90>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions'])
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000025168A3BCA0>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:206: AssertionError
+_ test_wrapper_mutation_after_hit_invalidates_before_native[changed-lifted-state] _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002516878AF20>
+capsys = <_pytest.capture.CaptureFixture object at 0x00000251688A27A0>
+mutation = 'changed-lifted-state'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002516878AF20>
+capsys = <_pytest.capture.CaptureFixture object at 0x00000251688A27A0>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions'])
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000025168A38580>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:206: AssertionError
+______ test_trusted_wrapper_registry_does_not_pin_finished_runner_graph _______
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025166913EE0>
+capsys = <_pytest.capture.CaptureFixture object at 0x00000251688A2140>
+
+    def test_trusted_wrapper_registry_does_not_pin_finished_runner_graph(runner_artifact, monkeypatch, capsys):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:262: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000025166913EE0>
+capsys = <_pytest.capture.CaptureFixture object at 0x00000251688A2140>
+
+    def _real_saved_run(runner_artifact, monkeypatch, capsys):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        from recompyler.runner import run_script
+        regions = {}
+        original = heap.lift_region
+        def capture(fn, *args, **kwargs):
+            region = original(fn, *args, **kwargs)
+            regions[fn.__name__] = region
+            return region
+        monkeypatch.setattr(heap, 'lift_region', capture)
+        def forbidden(*args, **kwargs):
+            raise AssertionError('saved wrapper test unexpectedly regenerated code')
+        monkeypatch.setattr(heap.Region, '_make_program', forbidden)
+        monkeypatch.setattr(heap, '_seed', forbidden)
+        result = run_script(source, [], plan_file, False)
+        assert capsys.readouterr().out == '18\n4\n'
+        assert result['exit_code'] in (None, 0) and result['not_found'] == []
+        assert {row['function'] for row in result['functions']} == {'work', 'helper'}
+>       assert all(row['aot_calls'] == row['compiled_calls'] == 1
+                   and row['jit_calls'] == row['fallback_calls'] == 0 for row in result['functions'])
+E       assert False
+E        +  where False = all(<generator object _real_saved_run.<locals>.<genexpr> at 0x0000025168887680>)
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:206: AssertionError
+_ test_runner_validates_present_prepared_payload_before_legacy_load[verified] _
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-impl-v6/test_runner_validates_present_4')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000251670C5470>
+kind = 'verified'
+
+    @pytest.mark.parametrize('kind', ['absent','null','bad-core','bad-artifact','verified'])
+    def test_runner_validates_present_prepared_payload_before_legacy_load(tmp_path, monkeypatch, kind):
+        from recompyler import runner, heap, aot
+        import recompyler
+        script = tmp_path / 'work.py'
+        script.write_text('def work(x):\n    return x + 1\nassert work(10) == 11\n')
+        section = dict(module='unused_native',folder=str(tmp_path),functions=[dict(function='work',line=1,exports={'digest':'r0'})])
+        if kind != 'absent': section['prepared'] = None if kind == 'null' else {'fixture':'present'}
+        data = dict(script=str(script),functions=[dict(function='work',line=1,candidate=dict(status='verified',recommended=True,engine='region'))],
+                    plan=dict(worth_running=True,aot_regions=section))
+        plan = tmp_path / 'plan.json'; plan.write_text(json.dumps(data))
+        old_loads, opens, lifts = [], [], []
+        export = lambda *args: None
+        native = SimpleNamespace(r0=export)
+        index = SimpleNamespace(module=native,exports={'digest':export},bind=lambda fn:[])
+        pc = ModuleType('recompyler._prepared')
+        class PreparedArtifactMismatch(Exception): pass
+        pc.PreparedArtifactMismatch = PreparedArtifactMismatch
+        def open_index(received, row, *, plan_snapshot, module=None):
+            opens.append(plan_snapshot)
+            assert plan_snapshot['functions'] == data['functions']
+            assert plan_snapshot['mode'] == 'saved' and plan_snapshot['force'] is False
+            if kind == 'bad-artifact': raise PreparedArtifactMismatch('changed artifact')
+            return index if kind == 'verified' else None
+        pc.open_index = open_index
+        monkeypatch.setitem(sys.modules, 'recompyler._prepared', pc)
+        monkeypatch.setattr(recompyler, '_prepared', pc, raising=False)
+        def old_load(section): old_loads.append(section); return native
+        monkeypatch.setattr(aot, 'load', old_load)
+        def lift(fn, exports, **kwargs): lifts.append((exports,kwargs)); return None
+        monkeypatch.setattr(heap, 'lift_region', lift)
+        runner.run_script(script, [], plan)
+        assert len(old_loads) == (1 if kind == 'absent' else 0)
+        assert len(opens) == (0 if kind == 'absent' else 1)
+        assert len(lifts) == 1
+        exports, kwargs = lifts[0]
+>       assert exports.allow_jit is False
+               ^^^^^^^^^^^^^^^^^
+E       AttributeError: 'dict' object has no attribute 'allow_jit'
+
+inplace\prepared-cache-preparation\test_runner_prepared_artifact.py:43: AttributeError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[written]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[return-conversion]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[guard-deletion]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[cell-mutation]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[forged-marker]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-code]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-marker]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-fn-cell]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-prepare-cell]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-lifted-state]
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_trusted_wrapper_registry_does_not_pin_finished_runner_graph
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_artifact.py::test_runner_validates_present_prepared_payload_before_legacy_load[verified]
+13 failed, 118 passed in 16.96s

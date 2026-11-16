@@ -1,0 +1,54 @@
+F
+================================== FAILURES ===================================
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[written] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+mutation = 'written'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+        assert index is not None and index.bind(module.work)
+        section = _forged_section(pc, original, mutation)
+        # Read the real compiled metadata function, not a Python stand-in. Its full
+        # constant seal remains the original even after every JSON hash was updated.
+        native = sys.modules[original['module']]
+        metadata = vars(native)[original['prepared']['seal_export']]
+        assert type(metadata) is BuiltinFunctionType
+        actual = metadata()
+        words = lambda seal: tuple(int(seal[i:i + 8], 16) for i in range(0, 64, 8))
+        assert type(actual) is tuple and len(actual) == 8
+        assert all(type(word) is int and 0 <= word <= 0xffffffff for word in actual)
+        assert actual == words(original['prepared']['bundle_seal'])
+        assert actual != words(section['prepared']['bundle_seal'])
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'seal'
+E       AssertionError: assert 'artifact' == 'seal'
+E         
+E         - seal
+E         + artifact
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:107: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_eabf7c633eda12684ac318e8-j_hs0ddv\rcaotr_eabf7c633eda12684ac318e8.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_eabf7c633eda12684ac318e8-j_hs0ddv\rcaotr_eabf7c633eda12684ac318e8.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[written]
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed in 6.34s

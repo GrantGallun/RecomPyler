@@ -1,0 +1,13 @@
+# Guarded preparation-cache design input
+
+Status: preparation only for Step4 after reads/stores acceptance. This is not an implemented mechanism, a measured speedup, or permission to skip the brief's ordering.
+
+The integration diagnostic proves that legacy AOT lookup still regenerates the checked program first. The R8 no-op certificate addresses an integration regression but leaves inference/F2 and binding cost. transform_point's historical 441 us mean is a first lookup of3504 us followed by3.6-4.2 us lookups, not441 us steady dispatch. Fixed-cost work must distinguish these cases.
+
+A future source-independent AOT execution descriptor can reuse the versioned guarded seed's class/type/cell/binding data, augmented with already-lowered runtime layout, return/argument contract, constant/global slots, mutation/effect flags, recursion/array/RNG needs, dependency code fingerprints and adapter ABI. Load it by non-executable JSON, resolve live dependencies statically, check every binding and load actual values. Do not deserialize executable pickle or trust arbitrary descriptor JSON merely because a module exports r0.
+
+The soundness requirement is a compiled seal: the actual typed native capsule binds the exact canonical execution-descriptor hash, generated-source identity, compiler/runtime ABI and installed-header facts. Runtime validates that seal plus live code/default/global/class/layout guards before using any descriptor offset or native signature. A forged/stale plan cannot pair a different layout with an export. Missing or unresolvable dependencies retain the ordinary preparation/arena path. Caches contain no process addresses or live input graph nodes.
+
+Persistent bindings must not add finalizer/weakref lifetime effects. Prefer weak dependency references and fresh per-call strong pins where appropriate; neither a cached class key nor an old input graph is automatically inert merely because it was safe at compilation. A weakref callback attached to a class later, or custom metaclass finalization, is a counterexample to an unqualified strong dependency cache. Per-call raw graph pins exist only within the reviewed atomic interval and selected result ownership.
+
+Tests before activation: compatible descriptor avoids regeneration and completes actual saved AOT without Numba; changed code/defaults/globals/class/MRO or ABI/hash mismatch declines; tampered runtime offsets/kinds cannot enter native code; class and nested-object weakrefs/finalizers retain Python timing; unmodified gate reflects real fresh-process costs rather than an in-process memoization artifact. Whole-call/trivial and deployment measurements still decide acceptance. This sketch names proofs to build, not a reason to close preparation work as missing.

@@ -1,0 +1,21 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+________ test_preimport_poisoned_builtin_range_is_not_a_native_anchor _________
+
+    def test_preimport_poisoned_builtin_range_is_not_a_native_anchor():
+        from recompyler import _prepared as pc
+        real=builtins.range
+        fake=type('range',(),{})
+        try:
+            builtins.range=fake
+            importlib.reload(pc)
+            builtins.range=real
+            def entry(): return 1
+>           with pytest.raises(pc.PreparedMiss): pc._class_key(fake,pc.References(entry))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE PreparedMiss
+
+inplace\prepared-cache-preparation\test_prepared_builtin_anchor.py:14: Failed
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_builtin_anchor.py::test_preimport_poisoned_builtin_range_is_not_a_native_anchor
+1 failed in 0.22s

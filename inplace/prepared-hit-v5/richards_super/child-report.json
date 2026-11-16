@@ -1,0 +1,232 @@
+{
+  "audit_accounting_complete": true,
+  "observer_lost": false,
+  "totals": {
+    "aot_calls": 20,
+    "jit_calls": 0,
+    "unknown_native_calls": 0,
+    "rejected_attempts": 0,
+    "fallback_calls": 0
+  },
+  "functions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+      "qualname": "Richards.run",
+      "function": "Richards.run",
+      "line": 385,
+      "kind": "region",
+      "aot_calls": 20,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "06cdbe81709854d2f8d5aafc883d3ab14c55fb00d56aa35e311aa3856ad89354": {
+          "aot_calls": 20,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "direct_report": null,
+          "last_rule_deltas": {},
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\prepared-plans-v8\\richards_super\\cache\\rcaotr_21b17b5bcfe301f65e23799c.cp314-win_amd64.pyd",
+              "module_sha256": "3d0401120db3a42b741cb7f22abed64633728c1a1d9cf90122ad73b69bca98af",
+              "export": "r1",
+              "digest": "06cdbe81709854d2f8d5aafc883d3ab14c55fb00d56aa35e311aa3856ad89354",
+              "generated_source_sha256": "e101458c00e1d55471ac049b2caf20cfd9def4aec423369026f803196b94139a",
+              "mode": "aot"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 20,
+      "unobserved_successes": 0
+    }
+  ],
+  "independent_functions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+      "qualname": "Richards.run",
+      "function": "Richards.run",
+      "line": 385,
+      "kind": "region",
+      "aot_calls": 20,
+      "jit_calls": 0,
+      "unknown_native_calls": 0,
+      "rejected_attempts": 0,
+      "fallback_calls": 0,
+      "programs": {
+        "06cdbe81709854d2f8d5aafc883d3ab14c55fb00d56aa35e311aa3856ad89354": {
+          "aot_calls": 20,
+          "jit_calls": 0,
+          "unknown_native_calls": 0,
+          "direct_report": null,
+          "last_rule_deltas": {},
+          "native_events": [
+            {
+              "module_path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\prepared-plans-v8\\richards_super\\cache\\rcaotr_21b17b5bcfe301f65e23799c.cp314-win_amd64.pyd",
+              "module_sha256": "3d0401120db3a42b741cb7f22abed64633728c1a1d9cf90122ad73b69bca98af",
+              "export": "r1",
+              "digest": "06cdbe81709854d2f8d5aafc883d3ab14c55fb00d56aa35e311aa3856ad89354",
+              "generated_source_sha256": "e101458c00e1d55471ac049b2caf20cfd9def4aec423369026f803196b94139a",
+              "mode": "aot"
+            }
+          ]
+        }
+      },
+      "rule_counters": {},
+      "modes_observed": [
+        "aot"
+      ],
+      "native_entries": 20,
+      "unobserved_successes": 0
+    }
+  ],
+  "native_counter_source": "Observed program.run entry plus successful Region.attempt result; ordinary _run result without Python fallback; no product compiled/aot/jit counter reads",
+  "fallback_counter_source": "Original Python code-entry observation within each wrapper call",
+  "independent_direct_abi_observer": "unimplemented; missing program.run entry fails closed",
+  "verified": true,
+  "diagnostic_only": true,
+  "timing_eligible": false,
+  "runner_report": {
+    "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+    "functions": [
+      {
+        "function": "Richards.run",
+        "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+        "compiled_calls": 20,
+        "aot_calls": 20,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": true,
+        "ahead_of_time": true,
+        "aot_loaded": true,
+        "region": true
+      }
+    ],
+    "not_found": [],
+    "batches": {},
+    "batch_failures": {},
+    "exit_code": null
+  },
+  "error_type": null,
+  "forbidden_calls": [],
+  "guarded_entries": [
+    "Region._make_program",
+    "Program.__init__",
+    "Program.function",
+    "Program.register",
+    "Program.compile",
+    "Program.settle",
+    "Program.prove_zero_int_results",
+    "Function.__init__",
+    "Gen.__init__",
+    "Gen.run",
+    "heap._seed",
+    "heap._init_assigned",
+    "heap._source_digest",
+    "heap._merge_cycles",
+    "heap._borrow_heap_context",
+    "seed.restore",
+    "EscapeAnalysis.__init__",
+    "ScalarReplacer.__init__",
+    "ScalarReplacer.run",
+    "flow.analyse",
+    "ast.unparse"
+  ],
+  "prepared_regions": [
+    {
+      "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+      "canonical_file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v4\\richards_super\\input\\run_benchmark.py",
+      "qualname": "Richards.run",
+      "function": "Richards.run",
+      "line": 385,
+      "prepared_hits": 1,
+      "prepared_misses": 0,
+      "prepared_reasons": []
+    }
+  ],
+  "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src",
+  "loaded_product_modules": {
+    "recompyler": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\__init__.py",
+      "sha256": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843"
+    },
+    "recompyler.facts": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\facts.py",
+      "sha256": "724a9570fd5ad0d11b27e5134dc616473af3a959ad2c232e6821ad04e654d9ad"
+    },
+    "recompyler.escape": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\escape.py",
+      "sha256": "f2787ac24f8c49938bfd75fce4f8ff7223f88e8b79ac312f6a1660f26e9e9ae4"
+    },
+    "recompyler.scalar": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\scalar.py",
+      "sha256": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc"
+    },
+    "recompyler.flow": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\flow.py",
+      "sha256": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1"
+    },
+    "recompyler._comparison": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\_comparison.py",
+      "sha256": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3"
+    },
+    "recompyler.lift": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\lift.py",
+      "sha256": "f950ee6c94bfde8dd8021f925c37b246bfe0a60203ba8d58a3f375890f1f8976"
+    },
+    "recompyler._heap": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\_heap.cp314-win_amd64.pyd",
+      "sha256": "f35da8425cd4c87f436098a33f9686d918bfd3c1730b6cd89d5bf5c2806b4aeb"
+    },
+    "recompyler.heap": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\heap.py",
+      "sha256": "0be9f9d0d357ca325181f1620af305ea5f1ded4ba7191e4a455e12be015348cc"
+    },
+    "recompyler._region_seed": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\_region_seed.py",
+      "sha256": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413"
+    },
+    "recompyler.runner": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\runner.py",
+      "sha256": "01038be1e9f8ef77429f8b2cc16022ddab5ffdc79408cae6f80d177d10ba63da"
+    },
+    "recompyler._origin": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\_origin.py",
+      "sha256": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32"
+    },
+    "recompyler.batch": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\batch.py",
+      "sha256": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740"
+    },
+    "recompyler._runner_wrapper": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\_runner_wrapper.py",
+      "sha256": "182e913872bf5b658544703775da232ef7e3003f2e91dc5f4750ad915e4e1bb1"
+    },
+    "recompyler._prepared_keys": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\_prepared_keys.py",
+      "sha256": "c9bc541d6f4b6969f58c6b8fddbb1728eb5932b18c102854ca1d4584c34cbb48"
+    },
+    "recompyler._prepared": {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-prepared-v8\\src\\recompyler\\_prepared.py",
+      "sha256": "84223adf8e597b55a9fab75c8ccf2766b4f6658ad08c0e847de5e15b27f0751a"
+    }
+  },
+  "source_manifest_sha256": "37bf92670ccc9f5980579fe6f1b6bbf0c67ae60cf2b4ab7ccf29a03f182bdd07",
+  "plan_sha256": "75d91c403783133466754b4e3cb1333f925cecb10224ca276cc7e249a71758e3",
+  "script_sha256": "665b3d5551171e147c127b6f8671edc9a7703c736d317cc4a991bb00f599dc36",
+  "shim_sha256": "c7d7f5d32e195734cef7faa6059416da92bf398c03499d0bbd5190044b37f282",
+  "workload_executions": 1,
+  "fixture_executed_before_runner": false,
+  "force": false,
+  "audit_helper_sha256": "26d2313e8b15af631f7849bb934f948185f13ecfd39a4920ac7c3a04cc89bee2",
+  "identity_helper_sha256": "9dab8b230683543c9fc6cc265c9548232c3f2b0eb4493fc117d010607d315857",
+  "metadata_seal_calls_counted_as_computational": false
+}

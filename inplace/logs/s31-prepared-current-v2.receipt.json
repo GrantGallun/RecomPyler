@@ -1,0 +1,21 @@
+{
+  "label": "s31-prepared-current-v2",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_prepared_cache_api.py",
+    "tests/test_prepared_cache.py",
+    "tests/test_prepared_cache_adversarial.py",
+    "tests/test_prepared_cache_more.py",
+    "tests/test_runner_prepared_integration.py",
+    "tests/test_runner_prepared_artifact.py",
+    "tests/test_profiler_prepared_assembly.py",
+    "--basetemp",
+    "inplace/temp/s31-prepared-current-v2"
+  ],
+  "exit_code": 0,
+  "wall_s": 26.43446089999634,
+  "end": "2026-11-14T06:14:32.927032+00:00"
+}

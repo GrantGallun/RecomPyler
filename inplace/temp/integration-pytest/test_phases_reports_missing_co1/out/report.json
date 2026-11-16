@@ -1,0 +1,57 @@
+{
+  "kind": "instrumented-region-diagnostic",
+  "script": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_reports_missing_co1\\target.py",
+    "bytes": 30,
+    "sha256": "91a2cd28caff637330459cf3b02e966b4f1e0fde7399167d012d0b6b3ccbc3d2"
+  },
+  "plan": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_reports_missing_co1\\plan.json",
+    "bytes": 16,
+    "sha256": "4bd983b6647b5c3df810ea9a9841cc832f58a4c06b92c4d3e0da3df7fc6082dd"
+  },
+  "python": {
+    "path": "C:\\Python314\\python.exe",
+    "bytes": 106328,
+    "sha256": "7ca24f26d6e3f463419ee4f537ddd3acd312c38fe45e678cce08572f26a8bd1a"
+  },
+  "source": [
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_reports_missing_co1\\repo\\src\\recompyler\\__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_reports_missing_co1\\repo\\src\\recompyler\\heap.py",
+      "bytes": 708,
+      "sha256": "79081fc914ef7968deeb71f88ffe5c120a5808c7bf115ba240f3cb992bbc5a81"
+    },
+    {
+      "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_reports_missing_co1\\repo\\src\\recompyler\\runner.py",
+      "bytes": 606,
+      "sha256": "2f5b9695ebcf4221b03e0bb2717eb5b1eb924b71a1d4d5ba2d85caa118f983cb"
+    }
+  ],
+  "artifacts": [],
+  "planned_artifacts": [],
+  "cache": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_reports_missing_co1\\out\\cache",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\tools\\_phase_worker.py",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\integration-pytest\\test_phases_reports_missing_co1\\out\\config.json"
+  ],
+  "returncode": 2,
+  "error": null,
+  "timeout_scope": "direct child only; descendants created by the target/tool may survive a timeout",
+  "worker": {
+    "path": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\tools\\_phase_worker.py",
+    "bytes": 7720,
+    "sha256": "6e443b3ed80ace34475d7c7bd6fdb32383cfd732b27db77f5ba2de22301a429e"
+  },
+  "checks": [],
+  "diagnostic": {
+    "instrumented": true,
+    "error": "ValueError: target is not selected or is ambiguous; select one function/line in the plan"
+  },
+  "status": "error"
+}

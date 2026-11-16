@@ -1,0 +1,67 @@
+FF........                                                               [100%]
+================================== FAILURES ===================================
+_______ test_alternating_scalar_specializations_reuse_retained_programs _______
+
+    def test_alternating_scalar_specializations_reuse_retained_programs():
+     region=heap.lift_region(plus_one)
+     assert region(1)==2 and region(1.5)==2.5
+     assert region.compiled_calls==2 and region.fallback_calls==0
+     with patch.object(region,'_make_program',forbidden):
+>     assert region(3)==4
+             ^^^^^^^^^
+
+tests\test_fixed_variants.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7297: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7190: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6983: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (), kwargs = {}
+
+>   def forbidden(*args,**kwargs):raise AssertionError('retained specialization repeated program preparation')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: retained specialization repeated program preparation
+
+tests\test_fixed_variants.py:12: AssertionError
+___ test_alternating_object_layout_specializations_reuse_retained_programs ____
+
+    def test_alternating_object_layout_specializations_reuse_retained_programs():
+     region=heap.lift_region(present)
+     assert region(Record(1.0)) is True
+     assert region(Record(None)) is False
+     assert region.compiled_calls==2
+     with patch.object(region,'_make_program',forbidden):
+>     assert region(Record(2.0)) is True
+             ^^^^^^^^^^^^^^^^^^^
+
+tests\test_fixed_variants.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7297: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7190: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6983: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (), kwargs = {}
+
+>   def forbidden(*args,**kwargs):raise AssertionError('retained specialization repeated program preparation')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: retained specialization repeated program preparation
+
+tests\test_fixed_variants.py:12: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_fixed_variants.py::test_alternating_scalar_specializations_reuse_retained_programs
+FAILED tests/test_fixed_variants.py::test_alternating_object_layout_specializations_reuse_retained_programs
+2 failed, 8 passed in 2.28s

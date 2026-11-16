@@ -1,0 +1,22 @@
+......F..                                                                [100%]
+================================== FAILURES ===================================
+__ test_malformed_class_module_is_rejected_without_user_equality[record-key] __
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...9a466a04ca4183e81ab2aba1f8ce528d06f48b0142a81779c6f12080628': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001B6026C1F30>
+path = 'record-key'
+
+    @pytest.mark.parametrize('path',['class-key','record-key'])
+    def test_malformed_class_module_is_rejected_without_user_equality(artifact,monkeypatch,path):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x000001B6026AE990> is not None and [])
+E        +  where [] = bind(<function work at 0x000001B602CD0B40>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x000001B6026AE990>.bind
+E        +    and   <function work at 0x000001B602CD0B40> = <module '_prepared_cache_fixture_prepared_real_aot0' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-native-dependencies-green-v1\\prepared-real-aot0\\workload.py'>.work
+
+tests\test_prepared_native_dependencies.py:70: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_native_dependencies.py::test_malformed_class_module_is_rejected_without_user_equality[record-key]
+1 failed, 8 passed in 12.00s

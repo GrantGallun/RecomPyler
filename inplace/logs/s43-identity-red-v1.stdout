@@ -1,0 +1,265 @@
+FFFFFFFFF..F.FF                                                          [100%]
+================================== FAILURES ===================================
+_ test_first_and_warm_scalar_forwarding_preserve_python_box[forward-1000009] __
+
+fn = <function forward at 0x00000170E5E7B060>, value = 1000009
+
+    @pytest.mark.parametrize('fn,value',[(forward,int('1000009')),(forward,float('12345.625')),(positive,int('1000009')),(positive,float('12345.625')),(float_exact,float('12345.625')),(magnitude,int('1000009'))])
+    def test_first_and_warm_scalar_forwarding_preserve_python_box(fn,value):
+     region=heap.lift_region(fn)
+     assert fn(value) is value
+>    observe_identity(region,(value,),value)
+
+tests\test_native_scalar_identity.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170E5FDD6A0>, args = (1000009,)
+expected = 1000009
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 1000009 is 1000009
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_ test_first_and_warm_scalar_forwarding_preserve_python_box[forward-12345.625] _
+
+fn = <function forward at 0x00000170E5E7B060>, value = 12345.625
+
+    @pytest.mark.parametrize('fn,value',[(forward,int('1000009')),(forward,float('12345.625')),(positive,int('1000009')),(positive,float('12345.625')),(float_exact,float('12345.625')),(magnitude,int('1000009'))])
+    def test_first_and_warm_scalar_forwarding_preserve_python_box(fn,value):
+     region=heap.lift_region(fn)
+     assert fn(value) is value
+>    observe_identity(region,(value,),value)
+
+tests\test_native_scalar_identity.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170E8FFB250>
+args = (12345.625,), expected = 12345.625
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 12345.625 is 12345.625
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_ test_first_and_warm_scalar_forwarding_preserve_python_box[positive-1000009] _
+
+fn = <function positive at 0x00000170E5E7B1C0>, value = 1000009
+
+    @pytest.mark.parametrize('fn,value',[(forward,int('1000009')),(forward,float('12345.625')),(positive,int('1000009')),(positive,float('12345.625')),(float_exact,float('12345.625')),(magnitude,int('1000009'))])
+    def test_first_and_warm_scalar_forwarding_preserve_python_box(fn,value):
+     region=heap.lift_region(fn)
+     assert fn(value) is value
+>    observe_identity(region,(value,),value)
+
+tests\test_native_scalar_identity.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170E6009A90>, args = (1000009,)
+expected = 1000009
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 1000009 is 1000009
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_ test_first_and_warm_scalar_forwarding_preserve_python_box[positive-12345.625] _
+
+fn = <function positive at 0x00000170E5E7B1C0>, value = 12345.625
+
+    @pytest.mark.parametrize('fn,value',[(forward,int('1000009')),(forward,float('12345.625')),(positive,int('1000009')),(positive,float('12345.625')),(float_exact,float('12345.625')),(magnitude,int('1000009'))])
+    def test_first_and_warm_scalar_forwarding_preserve_python_box(fn,value):
+     region=heap.lift_region(fn)
+     assert fn(value) is value
+>    observe_identity(region,(value,),value)
+
+tests\test_native_scalar_identity.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170E9135E00>
+args = (12345.625,), expected = 12345.625
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 12345.625 is 12345.625
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_ test_first_and_warm_scalar_forwarding_preserve_python_box[float_exact-12345.625] _
+
+fn = <function float_exact at 0x00000170E60526C0>, value = 12345.625
+
+    @pytest.mark.parametrize('fn,value',[(forward,int('1000009')),(forward,float('12345.625')),(positive,int('1000009')),(positive,float('12345.625')),(float_exact,float('12345.625')),(magnitude,int('1000009'))])
+    def test_first_and_warm_scalar_forwarding_preserve_python_box(fn,value):
+     region=heap.lift_region(fn)
+     assert fn(value) is value
+>    observe_identity(region,(value,),value)
+
+tests\test_native_scalar_identity.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170E92DF100>
+args = (12345.625,), expected = 12345.625
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 12345.625 is 12345.625
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_ test_first_and_warm_scalar_forwarding_preserve_python_box[magnitude-1000009] _
+
+fn = <function magnitude at 0x00000170E6052770>, value = 1000009
+
+    @pytest.mark.parametrize('fn,value',[(forward,int('1000009')),(forward,float('12345.625')),(positive,int('1000009')),(positive,float('12345.625')),(float_exact,float('12345.625')),(magnitude,int('1000009'))])
+    def test_first_and_warm_scalar_forwarding_preserve_python_box(fn,value):
+     region=heap.lift_region(fn)
+     assert fn(value) is value
+>    observe_identity(region,(value,),value)
+
+tests\test_native_scalar_identity.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170EA494170>, args = (1000009,)
+expected = 1000009
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 1000009 is 1000009
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_ test_code_constant_and_folded_constant_keep_the_actual_constant_box[code_integer] _
+
+fn = <function code_integer at 0x00000170E6052820>
+
+    @pytest.mark.parametrize('fn',[code_integer,code_float,folded_integer])
+    def test_code_constant_and_folded_constant_keep_the_actual_constant_box(fn):
+     expected=fn();assert fn() is expected
+     region=heap.lift_region(fn)
+>    observe_identity(region,(),expected)
+
+tests\test_native_scalar_identity.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170EA470F30>, args = ()
+expected = 1000003
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 1000003 is 1000003
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_ test_code_constant_and_folded_constant_keep_the_actual_constant_box[code_float] _
+
+fn = <function code_float at 0x00000170E60528D0>
+
+    @pytest.mark.parametrize('fn',[code_integer,code_float,folded_integer])
+    def test_code_constant_and_folded_constant_keep_the_actual_constant_box(fn):
+     expected=fn();assert fn() is expected
+     region=heap.lift_region(fn)
+>    observe_identity(region,(),expected)
+
+tests\test_native_scalar_identity.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170E937B460>, args = ()
+expected = 12345.625
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 12345.625 is 12345.625
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_ test_code_constant_and_folded_constant_keep_the_actual_constant_box[folded_integer] _
+
+fn = <function folded_integer at 0x00000170E6052980>
+
+    @pytest.mark.parametrize('fn',[code_integer,code_float,folded_integer])
+    def test_code_constant_and_folded_constant_keep_the_actual_constant_box(fn):
+     expected=fn();assert fn() is expected
+     region=heap.lift_region(fn)
+>    observe_identity(region,(),expected)
+
+tests\test_native_scalar_identity.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+call = <recompyler.heap.Region object at 0x00000170E92AE050>, args = ()
+expected = 1000005
+
+    def observe_identity(call,args,expected):
+     result=call(*args)
+     assert type(result) is type(expected)
+>    assert result is expected
+E    assert 1000005 is 1000005
+
+tests\test_native_scalar_identity.py:20: AssertionError
+_____ test_existing_fresh_branch_selects_the_right_identity_origin[True] ______
+
+flag = True
+
+    @pytest.mark.parametrize('flag',[True,False])
+    def test_existing_fresh_branch_selects_the_right_identity_origin(flag):
+     value=int('1000009');region=heap.lift_region(select)
+     for _ in range(2):
+      actual=region(flag,value);expected=select(flag,value)
+      assert type(actual) is type(expected) and actual==expected
+>     assert (actual is value)==flag
+E     assert (1000009 is 1000009) == True
+
+tests\test_native_scalar_identity.py:51: AssertionError
+______ test_forwarded_float_box_keeps_signed_zero_nan_and_identity[-0.0] ______
+
+value = -0.0
+
+    @pytest.mark.parametrize('value',[-0.0,float('nan')])
+    def test_forwarded_float_box_keeps_signed_zero_nan_and_identity(value):
+     region=heap.lift_region(forward)
+     for _ in range(2):
+      actual=region(value)
+>     assert type(actual) is float and actual is value
+E     AssertionError: assert (<class 'float'> is float and -0.0 is -0.0)
+E      +  where <class 'float'> = type(-0.0)
+
+tests\test_native_scalar_identity.py:58: AssertionError
+______ test_forwarded_float_box_keeps_signed_zero_nan_and_identity[nan] _______
+
+value = nan
+
+    @pytest.mark.parametrize('value',[-0.0,float('nan')])
+    def test_forwarded_float_box_keeps_signed_zero_nan_and_identity(value):
+     region=heap.lift_region(forward)
+     for _ in range(2):
+      actual=region(value)
+>     assert type(actual) is float and actual is value
+E     AssertionError: assert (<class 'float'> is float and nan is nan)
+E      +  where <class 'float'> = type(nan)
+
+tests\test_native_scalar_identity.py:58: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_native_scalar_identity.py::test_first_and_warm_scalar_forwarding_preserve_python_box[forward-1000009]
+FAILED tests/test_native_scalar_identity.py::test_first_and_warm_scalar_forwarding_preserve_python_box[forward-12345.625]
+FAILED tests/test_native_scalar_identity.py::test_first_and_warm_scalar_forwarding_preserve_python_box[positive-1000009]
+FAILED tests/test_native_scalar_identity.py::test_first_and_warm_scalar_forwarding_preserve_python_box[positive-12345.625]
+FAILED tests/test_native_scalar_identity.py::test_first_and_warm_scalar_forwarding_preserve_python_box[float_exact-12345.625]
+FAILED tests/test_native_scalar_identity.py::test_first_and_warm_scalar_forwarding_preserve_python_box[magnitude-1000009]
+FAILED tests/test_native_scalar_identity.py::test_code_constant_and_folded_constant_keep_the_actual_constant_box[code_integer]
+FAILED tests/test_native_scalar_identity.py::test_code_constant_and_folded_constant_keep_the_actual_constant_box[code_float]
+FAILED tests/test_native_scalar_identity.py::test_code_constant_and_folded_constant_keep_the_actual_constant_box[folded_integer]
+FAILED tests/test_native_scalar_identity.py::test_existing_fresh_branch_selects_the_right_identity_origin[True]
+FAILED tests/test_native_scalar_identity.py::test_forwarded_float_box_keeps_signed_zero_nan_and_identity[-0.0]
+FAILED tests/test_native_scalar_identity.py::test_forwarded_float_box_keeps_signed_zero_nan_and_identity[nan]
+12 failed, 3 passed in 2.38s

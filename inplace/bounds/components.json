@@ -1,0 +1,1306 @@
+{
+  "derivation_only": true,
+  "new_measurements": false,
+  "runtime_sources_imported": false,
+  "units": "microseconds per instrumented attempt unless labeled otherwise",
+  "heldout": [
+    {
+      "program": "chaos",
+      "function": "Chaosgame.transform_point",
+      "line": 178,
+      "attempts": 8,
+      "mean_attempt_us": 585.2,
+      "mean_exclusive_us": {
+        "arena_capacity": 0.7625,
+        "array_snapshot_rollback": 0.8625,
+        "arrays": 5.225,
+        "binding": 7.325,
+        "bookkeeping": 25.8,
+        "control_writes": 3.0875,
+        "guards": 7.8875,
+        "load": 51.5125,
+        "native": 4.55,
+        "program_lookup": 441.425,
+        "recursion_frame_scan": 2.125,
+        "result": 8.6,
+        "result_prepare": 2.45,
+        "rng_store": 8.8125,
+        "staged_payload_copy": 3.1625,
+        "unloader_init": 5.625,
+        "writeback": 5.9875
+      },
+      "program_lookup_chronological_us": [
+        3504.0,
+        4.2,
+        4.0,
+        3.7,
+        4.0,
+        4.2,
+        3.7,
+        3.6
+      ],
+      "raw_source": "wave14-capture/capture/s18-other/chaos/data.json",
+      "raw_json_pointer": "/rows/0/attempts",
+      "summary_json_pointer": "/rows/0",
+      "fresh_gate_python_us": 8.158050843769036,
+      "fresh_gate_complete_compiled_us": 32.955999922705814,
+      "fresh_gate_note": "Fresh gate samples from frozen stages/base; not the unserialized historical S10 or S13 contexts.",
+      "count_context_separate_from_timing": {
+        "lists_changed": 0,
+        "lists_examined_for_writeback": 0,
+        "lists_loaded": 8,
+        "object_fields_changed": 0,
+        "object_fields_examined_for_writeback": 32,
+        "objects_loaded": 20,
+        "payload_bytes_written_to_arena": 6080,
+        "region_load_entries": 1,
+        "rngs_loaded": 1,
+        "tracked_mutable_identities": 29
+      },
+      "integrity": {
+        "artifact_sha256": {
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\boundary-eight2\\chaos-aot\\rcaotr_473a95c3ce2117b07b5fc366.cp314-win_amd64.pyd": "0f455789f42a1c4d634db32786022398d912b984cce60c1d36304232fbf358d6"
+        },
+        "manifest_sha256": "3799981e066e6cf0659a4644a49bb96b2eac6df7e35c96da3717101bdf43fc0a",
+        "prior_phases_sha256": "6f76430dae2c9a785e649c5e409a513c953d35552eb76a43fdbf585d6b85a2e7",
+        "section_sha256": "9b776e5f8eb3e1664d92eecfcc7618e96d472c435bf904c751dd5cf6bf4e7f24",
+        "source_sha256": {
+          "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+          "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+          "recompyler/_heap.c": "3c75e33bb259e360835bba7052c675898e7688e22550f21fdee34d45499d77d8",
+          "recompyler/_heap.cp314-win_amd64.pyd": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+          "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+          "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+          "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+          "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+          "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+          "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+          "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+          "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+          "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+          "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+          "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+          "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+          "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+          "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+          "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+          "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+          "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+          "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+          "recompyler/experimental.py": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+          "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+          "recompyler/heap.py": "24f3d93ba9df6f6f8bb065bad013af5973a051d633e589b421a2a45de7db80a8",
+          "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+          "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+          "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+          "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+          "recompyler/runner.py": "c3fecf59d1ff65b689d4e6157a132efabac620e712c4e5b4dd545e3137235386",
+          "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+        }
+      },
+      "source_runtime": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\stages\\base\\src\\recompyler\\heap.py",
+      "instrumentation": {
+        "inserted_sites": {
+          "arena_capacity_ns": 1,
+          "array_snapshot_rollback_ns": 4,
+          "binding_ns": 5,
+          "control_writes_ns": 3,
+          "program_lookup_ns": 4,
+          "recursion_frame_scan_ns": 2,
+          "result_prepare_ns": 2,
+          "rng_store_ns": 1,
+          "staged_payload_copy_ns": 3,
+          "unloader_init_ns": 1
+        },
+        "instrumented_ast_sha256": "c090fed7c53b02ba632d753b3f215c3e7e421f708ed17cfddf87203bd00675e0",
+        "original_attempt_sha256": "0c4c20f239fbf8e330b8ecd6388cb2c590bedf951c2bffe3c4f61a735e471ec6",
+        "semantics": "Original attempt body and call frame retained; phase context managers finish entering before each body. No additional wrapper attempt frame is present while sys._getframe traverses callers."
+      },
+      "limitations": [
+        "Each exclusive integer bucket sums exactly to its instrumented attempt. Timers/context managers allocate and add overhead; these are classification measurements, not headline timings or an uninstrumented speedup.",
+        "Inclusive method envelopes may overlap and must not be added. Exclusive load excludes nested arrays work; exclusive write-back excludes nested result conversion. Compare historical phases only as separate contexts.",
+        "Bookkeeping includes uncovered dispatch, loop/branch/counter work, recorder transitions, and call/return observer overhead. Fine buckets also retain some timer overhead. No overhead subtraction or timing bound is claimed.",
+        "Native timing includes the Python-to-AOT extension call. Input copying, reference recomputation, resets, and structural checks occur outside timers.",
+        "The attempt is source-instrumented in memory only. Original baseline files and AOT artifacts remain hash-identical; no digest check is bypassed."
+      ]
+    },
+    {
+      "program": "gc_collect",
+      "function": "create_cycle",
+      "line": 18,
+      "attempts": 8,
+      "mean_attempt_us": 249.525,
+      "mean_exclusive_us": {
+        "arena_capacity": 0.7375,
+        "array_snapshot_rollback": 0.8375,
+        "arrays": 2.675,
+        "binding": 7.25,
+        "bookkeeping": 23.475,
+        "control_writes": 3.65,
+        "guards": 4.2625,
+        "load": 16.0,
+        "native": 2.7,
+        "program_lookup": 97.5,
+        "recursion_frame_scan": 1.9875,
+        "result": 1.4,
+        "result_prepare": 4.4375,
+        "rng_store": 0.9125,
+        "staged_payload_copy": 1.8875,
+        "unloader_init": 2.8625,
+        "writeback": 76.95
+      },
+      "program_lookup_chronological_us": [
+        754.2,
+        4.0,
+        4.2,
+        3.3,
+        3.9,
+        3.3,
+        3.5,
+        3.6
+      ],
+      "raw_source": "wave14-capture/capture/s18-other/gc_collect/data.json",
+      "raw_json_pointer": "/rows/0/attempts",
+      "summary_json_pointer": "/rows/2",
+      "fresh_gate_python_us": 4.393269441757034,
+      "fresh_gate_complete_compiled_us": 89.92053439474799,
+      "fresh_gate_note": "Fresh gate samples from frozen stages/base; not the unserialized historical S10 or S13 contexts.",
+      "count_context_separate_from_timing": {
+        "lists_changed": 0,
+        "lists_examined_for_writeback": 0,
+        "lists_loaded": 0,
+        "object_fields_changed": 2,
+        "object_fields_examined_for_writeback": 2,
+        "objects_loaded": 1,
+        "payload_bytes_written_to_arena": 16,
+        "region_load_entries": 1,
+        "rngs_loaded": 0,
+        "tracked_mutable_identities": 1
+      },
+      "integrity": {
+        "artifact_sha256": {
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\boundary-eight2\\gc_collect-aot\\rcaotr_2532899e7f535858a44e123d.cp314-win_amd64.pyd": "a0d553b187d053fbdddde1ad45b5973130d5384c0fe7475504fb9b9d5db7cc29"
+        },
+        "manifest_sha256": "3799981e066e6cf0659a4644a49bb96b2eac6df7e35c96da3717101bdf43fc0a",
+        "prior_phases_sha256": "6f76430dae2c9a785e649c5e409a513c953d35552eb76a43fdbf585d6b85a2e7",
+        "section_sha256": "78887dfe64c4ce9f7b76ffc6741ca356809447c9b9cb0fddc2cf7a19bd8dbdfb",
+        "source_sha256": {
+          "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+          "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+          "recompyler/_heap.c": "3c75e33bb259e360835bba7052c675898e7688e22550f21fdee34d45499d77d8",
+          "recompyler/_heap.cp314-win_amd64.pyd": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+          "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+          "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+          "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+          "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+          "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+          "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+          "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+          "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+          "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+          "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+          "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+          "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+          "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+          "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+          "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+          "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+          "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+          "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+          "recompyler/experimental.py": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+          "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+          "recompyler/heap.py": "24f3d93ba9df6f6f8bb065bad013af5973a051d633e589b421a2a45de7db80a8",
+          "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+          "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+          "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+          "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+          "recompyler/runner.py": "c3fecf59d1ff65b689d4e6157a132efabac620e712c4e5b4dd545e3137235386",
+          "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+        }
+      },
+      "source_runtime": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\stages\\base\\src\\recompyler\\heap.py",
+      "instrumentation": {
+        "inserted_sites": {
+          "arena_capacity_ns": 1,
+          "array_snapshot_rollback_ns": 4,
+          "binding_ns": 5,
+          "control_writes_ns": 3,
+          "program_lookup_ns": 4,
+          "recursion_frame_scan_ns": 2,
+          "result_prepare_ns": 2,
+          "rng_store_ns": 1,
+          "staged_payload_copy_ns": 3,
+          "unloader_init_ns": 1
+        },
+        "instrumented_ast_sha256": "c090fed7c53b02ba632d753b3f215c3e7e421f708ed17cfddf87203bd00675e0",
+        "original_attempt_sha256": "0c4c20f239fbf8e330b8ecd6388cb2c590bedf951c2bffe3c4f61a735e471ec6",
+        "semantics": "Original attempt body and call frame retained; phase context managers finish entering before each body. No additional wrapper attempt frame is present while sys._getframe traverses callers."
+      },
+      "limitations": [
+        "Each exclusive integer bucket sums exactly to its instrumented attempt. Timers/context managers allocate and add overhead; these are classification measurements, not headline timings or an uninstrumented speedup.",
+        "Inclusive method envelopes may overlap and must not be added. Exclusive load excludes nested arrays work; exclusive write-back excludes nested result conversion. Compare historical phases only as separate contexts.",
+        "Bookkeeping includes uncovered dispatch, loop/branch/counter work, recorder transitions, and call/return observer overhead. Fine buckets also retain some timer overhead. No overhead subtraction or timing bound is claimed.",
+        "Native timing includes the Python-to-AOT extension call. Input copying, reference recomputation, resets, and structural checks occur outside timers.",
+        "The attempt is source-instrumented in memory only. Original baseline files and AOT artifacts remain hash-identical; no digest check is bypassed."
+      ]
+    },
+    {
+      "program": "gc_collect",
+      "function": "create_gc_cycles",
+      "line": 33,
+      "attempts": 2,
+      "mean_attempt_us": 9373.95,
+      "mean_exclusive_us": {
+        "arena_capacity": 1.1,
+        "array_snapshot_rollback": 1.0,
+        "arrays": 3.05,
+        "binding": 9.05,
+        "bookkeeping": 42.95,
+        "control_writes": 5.6,
+        "guards": 6.7,
+        "load": 9.95,
+        "native": 5.0,
+        "program_lookup": 224.5,
+        "recursion_frame_scan": 2.9,
+        "result": 9040.75,
+        "result_prepare": 3.4,
+        "rng_store": 1.45,
+        "staged_payload_copy": 2.05,
+        "unloader_init": 3.8,
+        "writeback": 10.7
+      },
+      "program_lookup_chronological_us": [
+        444.4,
+        4.6
+      ],
+      "raw_source": "wave14-capture/capture/s18-other/gc_collect/data.json",
+      "raw_json_pointer": "/rows/1/attempts",
+      "summary_json_pointer": "/rows/3",
+      "fresh_gate_python_us": 442.35344855757114,
+      "fresh_gate_complete_compiled_us": 6614.7000034106895,
+      "fresh_gate_note": "Fresh gate samples from frozen stages/base; not the unserialized historical S10 or S13 contexts.",
+      "count_context_separate_from_timing": {
+        "lists_changed": 0,
+        "lists_examined_for_writeback": 0,
+        "lists_loaded": 0,
+        "object_fields_changed": 0,
+        "object_fields_examined_for_writeback": 0,
+        "objects_loaded": 0,
+        "payload_bytes_written_to_arena": 0,
+        "region_load_entries": 1,
+        "rngs_loaded": 0,
+        "tracked_mutable_identities": 0
+      },
+      "integrity": {
+        "artifact_sha256": {
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\boundary-eight2\\gc_collect-aot\\rcaotr_2532899e7f535858a44e123d.cp314-win_amd64.pyd": "a0d553b187d053fbdddde1ad45b5973130d5384c0fe7475504fb9b9d5db7cc29"
+        },
+        "manifest_sha256": "3799981e066e6cf0659a4644a49bb96b2eac6df7e35c96da3717101bdf43fc0a",
+        "prior_phases_sha256": "6f76430dae2c9a785e649c5e409a513c953d35552eb76a43fdbf585d6b85a2e7",
+        "section_sha256": "78887dfe64c4ce9f7b76ffc6741ca356809447c9b9cb0fddc2cf7a19bd8dbdfb",
+        "source_sha256": {
+          "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+          "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+          "recompyler/_heap.c": "3c75e33bb259e360835bba7052c675898e7688e22550f21fdee34d45499d77d8",
+          "recompyler/_heap.cp314-win_amd64.pyd": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+          "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+          "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+          "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+          "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+          "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+          "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+          "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+          "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+          "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+          "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+          "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+          "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+          "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+          "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+          "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+          "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+          "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+          "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+          "recompyler/experimental.py": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+          "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+          "recompyler/heap.py": "24f3d93ba9df6f6f8bb065bad013af5973a051d633e589b421a2a45de7db80a8",
+          "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+          "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+          "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+          "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+          "recompyler/runner.py": "c3fecf59d1ff65b689d4e6157a132efabac620e712c4e5b4dd545e3137235386",
+          "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+        }
+      },
+      "source_runtime": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\stages\\base\\src\\recompyler\\heap.py",
+      "instrumentation": {
+        "inserted_sites": {
+          "arena_capacity_ns": 1,
+          "array_snapshot_rollback_ns": 4,
+          "binding_ns": 5,
+          "control_writes_ns": 3,
+          "program_lookup_ns": 4,
+          "recursion_frame_scan_ns": 2,
+          "result_prepare_ns": 2,
+          "rng_store_ns": 1,
+          "staged_payload_copy_ns": 3,
+          "unloader_init_ns": 1
+        },
+        "instrumented_ast_sha256": "c090fed7c53b02ba632d753b3f215c3e7e421f708ed17cfddf87203bd00675e0",
+        "original_attempt_sha256": "0c4c20f239fbf8e330b8ecd6388cb2c590bedf951c2bffe3c4f61a735e471ec6",
+        "semantics": "Original attempt body and call frame retained; phase context managers finish entering before each body. No additional wrapper attempt frame is present while sys._getframe traverses callers."
+      },
+      "limitations": [
+        "Each exclusive integer bucket sums exactly to its instrumented attempt. Timers/context managers allocate and add overhead; these are classification measurements, not headline timings or an uninstrumented speedup.",
+        "Inclusive method envelopes may overlap and must not be added. Exclusive load excludes nested arrays work; exclusive write-back excludes nested result conversion. Compare historical phases only as separate contexts.",
+        "Bookkeeping includes uncovered dispatch, loop/branch/counter work, recorder transitions, and call/return observer overhead. Fine buckets also retain some timer overhead. No overhead subtraction or timing bound is claimed.",
+        "Native timing includes the Python-to-AOT extension call. Input copying, reference recomputation, resets, and structural checks occur outside timers.",
+        "The attempt is source-instrumented in memory only. Original baseline files and AOT artifacts remain hash-identical; no digest check is bypassed."
+      ]
+    },
+    {
+      "program": "hexiom",
+      "function": "Hex.link_nodes",
+      "line": 204,
+      "attempts": 2,
+      "mean_attempt_us": 1153.85,
+      "mean_exclusive_us": {
+        "arena_capacity": 1.05,
+        "array_snapshot_rollback": 1.15,
+        "arrays": 2.9,
+        "binding": 9.85,
+        "bookkeeping": 29.65,
+        "control_writes": 3.1,
+        "guards": 4.9,
+        "load": 146.95,
+        "native": 7.35,
+        "program_lookup": 897.45,
+        "recursion_frame_scan": 2.15,
+        "result": 0.95,
+        "result_prepare": 1.7,
+        "rng_store": 0.95,
+        "staged_payload_copy": 13.8,
+        "unloader_init": 7.25,
+        "writeback": 22.7
+      },
+      "program_lookup_chronological_us": [
+        1790.7,
+        4.2
+      ],
+      "raw_source": "wave14-capture/capture/s18-other/hexiom/data.json",
+      "raw_json_pointer": "/rows/0/attempts",
+      "summary_json_pointer": "/rows/4",
+      "fresh_gate_python_us": 14.615316846994945,
+      "fresh_gate_complete_compiled_us": 146.44807435196034,
+      "fresh_gate_note": "Fresh gate samples from frozen stages/base; not the unserialized historical S10 or S13 contexts.",
+      "count_context_separate_from_timing": {
+        "lists_changed": 19,
+        "lists_examined_for_writeback": 19,
+        "lists_loaded": 21,
+        "object_fields_changed": 0,
+        "object_fields_examined_for_writeback": 0,
+        "objects_loaded": 26,
+        "payload_bytes_written_to_arena": 2584,
+        "region_load_entries": 1,
+        "rngs_loaded": 0,
+        "tracked_mutable_identities": 48
+      },
+      "integrity": {
+        "artifact_sha256": {
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\boundary-eight2\\hexiom-aot\\rcaotr_4fb2b2bee300ebb3c20c4de7.cp314-win_amd64.pyd": "296dd5b1efa71c9bc16ef1e942413668fde0425537f1243b90a114a3b0d34585"
+        },
+        "manifest_sha256": "3799981e066e6cf0659a4644a49bb96b2eac6df7e35c96da3717101bdf43fc0a",
+        "prior_phases_sha256": "6f76430dae2c9a785e649c5e409a513c953d35552eb76a43fdbf585d6b85a2e7",
+        "section_sha256": "2648f6a4049f20191795f22a863a13571ac3ea88767ba3f815eb8e4cd30c33f2",
+        "source_sha256": {
+          "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+          "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+          "recompyler/_heap.c": "3c75e33bb259e360835bba7052c675898e7688e22550f21fdee34d45499d77d8",
+          "recompyler/_heap.cp314-win_amd64.pyd": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+          "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+          "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+          "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+          "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+          "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+          "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+          "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+          "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+          "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+          "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+          "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+          "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+          "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+          "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+          "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+          "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+          "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+          "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+          "recompyler/experimental.py": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+          "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+          "recompyler/heap.py": "24f3d93ba9df6f6f8bb065bad013af5973a051d633e589b421a2a45de7db80a8",
+          "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+          "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+          "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+          "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+          "recompyler/runner.py": "c3fecf59d1ff65b689d4e6157a132efabac620e712c4e5b4dd545e3137235386",
+          "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+        }
+      },
+      "source_runtime": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\stages\\base\\src\\recompyler\\heap.py",
+      "instrumentation": {
+        "inserted_sites": {
+          "arena_capacity_ns": 1,
+          "array_snapshot_rollback_ns": 4,
+          "binding_ns": 5,
+          "control_writes_ns": 3,
+          "program_lookup_ns": 4,
+          "recursion_frame_scan_ns": 2,
+          "result_prepare_ns": 2,
+          "rng_store_ns": 1,
+          "staged_payload_copy_ns": 3,
+          "unloader_init_ns": 1
+        },
+        "instrumented_ast_sha256": "c090fed7c53b02ba632d753b3f215c3e7e421f708ed17cfddf87203bd00675e0",
+        "original_attempt_sha256": "0c4c20f239fbf8e330b8ecd6388cb2c590bedf951c2bffe3c4f61a735e471ec6",
+        "semantics": "Original attempt body and call frame retained; phase context managers finish entering before each body. No additional wrapper attempt frame is present while sys._getframe traverses callers."
+      },
+      "limitations": [
+        "Each exclusive integer bucket sums exactly to its instrumented attempt. Timers/context managers allocate and add overhead; these are classification measurements, not headline timings or an uninstrumented speedup.",
+        "Inclusive method envelopes may overlap and must not be added. Exclusive load excludes nested arrays work; exclusive write-back excludes nested result conversion. Compare historical phases only as separate contexts.",
+        "Bookkeeping includes uncovered dispatch, loop/branch/counter work, recorder transitions, and call/return observer overhead. Fine buckets also retain some timer overhead. No overhead subtraction or timing bound is claimed.",
+        "Native timing includes the Python-to-AOT extension call. Input copying, reference recomputation, resets, and structural checks occur outside timers.",
+        "The attempt is source-instrumented in memory only. Original baseline files and AOT artifacts remain hash-identical; no digest check is bypassed."
+      ]
+    },
+    {
+      "program": "richards_super",
+      "function": "DeviceTask.fn",
+      "line": 261,
+      "attempts": 8,
+      "mean_attempt_us": 1192.725,
+      "mean_exclusive_us": {
+        "arena_capacity": 0.8125,
+        "array_snapshot_rollback": 1.0,
+        "arrays": 2.9125,
+        "binding": 7.1875,
+        "bookkeeping": 27.3625,
+        "control_writes": 3.05,
+        "guards": 16.3,
+        "load": 55.55,
+        "native": 3.425,
+        "program_lookup": 1033.85,
+        "recursion_frame_scan": 2.0625,
+        "result": 2.025,
+        "result_prepare": 2.6625,
+        "rng_store": 0.775,
+        "staged_payload_copy": 1.95,
+        "unloader_init": 8.75,
+        "writeback": 23.05
+      },
+      "program_lookup_chronological_us": [
+        4216.7,
+        4026.8,
+        6.5,
+        3.6,
+        3.7,
+        6.1,
+        3.8,
+        3.6
+      ],
+      "raw_source": "wave14-capture/capture/s18-other/richards_super/data.json",
+      "raw_json_pointer": "/rows/0/attempts",
+      "summary_json_pointer": "/rows/5",
+      "fresh_gate_python_us": 7.7810062878011825,
+      "fresh_gate_complete_compiled_us": 4503.537496930221,
+      "fresh_gate_note": "Fresh gate samples from frozen stages/base; not the unserialized historical S10 or S13 contexts.",
+      "count_context_separate_from_timing": {
+        "lists_changed": 0,
+        "lists_examined_for_writeback": 0,
+        "lists_loaded": 27,
+        "object_fields_changed": 3.375,
+        "object_fields_examined_for_writeback": 159,
+        "objects_loaded": 66.5,
+        "payload_bytes_written_to_arena": 4644,
+        "region_load_entries": 1,
+        "rngs_loaded": 0,
+        "tracked_mutable_identities": 93.5
+      },
+      "integrity": {
+        "artifact_sha256": {
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\boundary-eight2\\richards_super-aot\\rcaotr_f4d8c60e63d0a2a5df7da3e8.cp314-win_amd64.pyd": "1daeb0f63607fcca20028787aadfa7b0cd0edd71cefde2a511dfe9b76ec9da1b"
+        },
+        "manifest_sha256": "3799981e066e6cf0659a4644a49bb96b2eac6df7e35c96da3717101bdf43fc0a",
+        "prior_phases_sha256": "6f76430dae2c9a785e649c5e409a513c953d35552eb76a43fdbf585d6b85a2e7",
+        "section_sha256": "00ee6cb540c0b08ea31d7be9e933a95457d10e69ee7e6df52d880176227f0cf7",
+        "source_sha256": {
+          "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+          "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+          "recompyler/_heap.c": "3c75e33bb259e360835bba7052c675898e7688e22550f21fdee34d45499d77d8",
+          "recompyler/_heap.cp314-win_amd64.pyd": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+          "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+          "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+          "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+          "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+          "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+          "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+          "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+          "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+          "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+          "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+          "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+          "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+          "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+          "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+          "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+          "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+          "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+          "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+          "recompyler/experimental.py": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+          "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+          "recompyler/heap.py": "24f3d93ba9df6f6f8bb065bad013af5973a051d633e589b421a2a45de7db80a8",
+          "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+          "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+          "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+          "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+          "recompyler/runner.py": "c3fecf59d1ff65b689d4e6157a132efabac620e712c4e5b4dd545e3137235386",
+          "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+        }
+      },
+      "source_runtime": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\stages\\base\\src\\recompyler\\heap.py",
+      "instrumentation": {
+        "inserted_sites": {
+          "arena_capacity_ns": 1,
+          "array_snapshot_rollback_ns": 4,
+          "binding_ns": 5,
+          "control_writes_ns": 3,
+          "program_lookup_ns": 4,
+          "recursion_frame_scan_ns": 2,
+          "result_prepare_ns": 2,
+          "rng_store_ns": 1,
+          "staged_payload_copy_ns": 3,
+          "unloader_init_ns": 1
+        },
+        "instrumented_ast_sha256": "c090fed7c53b02ba632d753b3f215c3e7e421f708ed17cfddf87203bd00675e0",
+        "original_attempt_sha256": "0c4c20f239fbf8e330b8ecd6388cb2c590bedf951c2bffe3c4f61a735e471ec6",
+        "semantics": "Original attempt body and call frame retained; phase context managers finish entering before each body. No additional wrapper attempt frame is present while sys._getframe traverses callers."
+      },
+      "limitations": [
+        "Each exclusive integer bucket sums exactly to its instrumented attempt. Timers/context managers allocate and add overhead; these are classification measurements, not headline timings or an uninstrumented speedup.",
+        "Inclusive method envelopes may overlap and must not be added. Exclusive load excludes nested arrays work; exclusive write-back excludes nested result conversion. Compare historical phases only as separate contexts.",
+        "Bookkeeping includes uncovered dispatch, loop/branch/counter work, recorder transitions, and call/return observer overhead. Fine buckets also retain some timer overhead. No overhead subtraction or timing bound is claimed.",
+        "Native timing includes the Python-to-AOT extension call. Input copying, reference recomputation, resets, and structural checks occur outside timers.",
+        "The attempt is source-instrumented in memory only. Original baseline files and AOT artifacts remain hash-identical; no digest check is bypassed."
+      ]
+    },
+    {
+      "program": "richards_super",
+      "function": "Task.qpkt",
+      "line": 239,
+      "attempts": 8,
+      "mean_attempt_us": 2888.4,
+      "mean_exclusive_us": {
+        "arena_capacity": 0.7875,
+        "array_snapshot_rollback": 1.0875,
+        "arrays": 3.725,
+        "binding": 6.725,
+        "bookkeeping": 30.3125,
+        "control_writes": 3.9875,
+        "guards": 13.725,
+        "load": 55.0375,
+        "native": 3.7875,
+        "program_lookup": 2701.8125,
+        "recursion_frame_scan": 3.1875,
+        "result": 2.45,
+        "result_prepare": 3.075,
+        "rng_store": 1.125,
+        "staged_payload_copy": 4.1,
+        "unloader_init": 10.4875,
+        "writeback": 42.9875
+      },
+      "program_lookup_chronological_us": [
+        4617.2,
+        3049.0,
+        3697.1,
+        3100.2,
+        3.3,
+        3533.2,
+        3.8,
+        3610.7
+      ],
+      "raw_source": "wave14-capture/capture/s18-other/richards_super/data.json",
+      "raw_json_pointer": "/rows/1/attempts",
+      "summary_json_pointer": "/rows/6",
+      "fresh_gate_python_us": 97.398133802162,
+      "fresh_gate_complete_compiled_us": 14819.162501225946,
+      "fresh_gate_note": "Fresh gate samples from frozen stages/base; not the unserialized historical S10 or S13 contexts.",
+      "count_context_separate_from_timing": {
+        "lists_changed": 0,
+        "lists_examined_for_writeback": 0,
+        "lists_loaded": 23.75,
+        "object_fields_changed": 4,
+        "object_fields_examined_for_writeback": 83.5,
+        "objects_loaded": 60.75,
+        "payload_bytes_written_to_arena": 4210,
+        "region_load_entries": 1,
+        "rngs_loaded": 0,
+        "tracked_mutable_identities": 84.5
+      },
+      "integrity": {
+        "artifact_sha256": {
+          "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\capture\\boundary-eight2\\richards_super-aot\\rcaotr_f4d8c60e63d0a2a5df7da3e8.cp314-win_amd64.pyd": "1daeb0f63607fcca20028787aadfa7b0cd0edd71cefde2a511dfe9b76ec9da1b"
+        },
+        "manifest_sha256": "3799981e066e6cf0659a4644a49bb96b2eac6df7e35c96da3717101bdf43fc0a",
+        "prior_phases_sha256": "6f76430dae2c9a785e649c5e409a513c953d35552eb76a43fdbf585d6b85a2e7",
+        "section_sha256": "00ee6cb540c0b08ea31d7be9e933a95457d10e69ee7e6df52d880176227f0cf7",
+        "source_sha256": {
+          "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+          "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+          "recompyler/_heap.c": "3c75e33bb259e360835bba7052c675898e7688e22550f21fdee34d45499d77d8",
+          "recompyler/_heap.cp314-win_amd64.pyd": "17e2e43e8825188a9e4339586b47fcc712d81a13ef90874cf869cac099dd16e0",
+          "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+          "recompyler/_monitor.cp314-win_amd64.pyd": "00d6138bbf198ecff79cea44e18de1d122727c3c0e2acacbe9260a603f22e9e5",
+          "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+          "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+          "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+          "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+          "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+          "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+          "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+          "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+          "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+          "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+          "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+          "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+          "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+          "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+          "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+          "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+          "recompyler/experimental.py": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+          "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+          "recompyler/heap.py": "24f3d93ba9df6f6f8bb065bad013af5973a051d633e589b421a2a45de7db80a8",
+          "recompyler/lift.py": "96cafc9a9fc65baf9169311c92edb01556c88427e1557905988f1d6e1014cdeb",
+          "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+          "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+          "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+          "recompyler/runner.py": "c3fecf59d1ff65b689d4e6157a132efabac620e712c4e5b4dd545e3137235386",
+          "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+        }
+      },
+      "source_runtime": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave14-capture\\stages\\base\\src\\recompyler\\heap.py",
+      "instrumentation": {
+        "inserted_sites": {
+          "arena_capacity_ns": 1,
+          "array_snapshot_rollback_ns": 4,
+          "binding_ns": 5,
+          "control_writes_ns": 3,
+          "program_lookup_ns": 4,
+          "recursion_frame_scan_ns": 2,
+          "result_prepare_ns": 2,
+          "rng_store_ns": 1,
+          "staged_payload_copy_ns": 3,
+          "unloader_init_ns": 1
+        },
+        "instrumented_ast_sha256": "c090fed7c53b02ba632d753b3f215c3e7e421f708ed17cfddf87203bd00675e0",
+        "original_attempt_sha256": "0c4c20f239fbf8e330b8ecd6388cb2c590bedf951c2bffe3c4f61a735e471ec6",
+        "semantics": "Original attempt body and call frame retained; phase context managers finish entering before each body. No additional wrapper attempt frame is present while sys._getframe traverses callers."
+      },
+      "limitations": [
+        "Each exclusive integer bucket sums exactly to its instrumented attempt. Timers/context managers allocate and add overhead; these are classification measurements, not headline timings or an uninstrumented speedup.",
+        "Inclusive method envelopes may overlap and must not be added. Exclusive load excludes nested arrays work; exclusive write-back excludes nested result conversion. Compare historical phases only as separate contexts.",
+        "Bookkeeping includes uncovered dispatch, loop/branch/counter work, recorder transitions, and call/return observer overhead. Fine buckets also retain some timer overhead. No overhead subtraction or timing bound is claimed.",
+        "Native timing includes the Python-to-AOT extension call. Input copying, reference recomputation, resets, and structural checks occur outside timers.",
+        "The attempt is source-instrumented in memory only. Original baseline files and AOT artifacts remain hash-identical; no digest check is bypassed."
+      ]
+    }
+  ],
+  "kernels": {
+    "barnes_wave15": {
+      "source": "wave15-depth2/depth2/barnes-native-phase.json",
+      "json_pointer": "/attempts",
+      "attempts": 500,
+      "mean_us": {
+        "load_ns": 115.4398,
+        "guards_ns": 10.6998,
+        "native_ns": 161.12779999999998,
+        "result_ns": 0.6638,
+        "writeback_ns": 40.1962,
+        "attempt_ns": 548.5746,
+        "other_attempt_ns": 220.4472
+      },
+      "note": "Diagnostic timers add overhead; not an uninstrumented performance result. Native entries include retries; actual successful mode counts and Python fallbacks are in runner. Other attempt time includes preparation/compilation and unmeasured conversion/commit work. Timers attribute only the selected region.",
+      "native_entries": 500,
+      "runner": {
+        "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+        "functions": [
+          {
+            "function": "advance_system",
+            "compiled_calls": 500,
+            "aot_calls": 500,
+            "jit_calls": 0,
+            "fallback_calls": 0,
+            "lifted": true,
+            "ahead_of_time": true,
+            "aot_loaded": true,
+            "region": true
+          }
+        ],
+        "not_found": [],
+        "batches": {},
+        "batch_failures": {},
+        "exit_code": null
+      },
+      "excluding_first_attempt": {
+        "attempts": 499,
+        "mean_us": {
+          "load_ns": 114.76472945891784,
+          "guards_ns": 10.68316633266533,
+          "native_ns": 161.1308617234469,
+          "result_ns": 0.6633266533066132,
+          "writeback_ns": 40.14048096192385,
+          "attempt_ns": 384.3699398797595,
+          "other_attempt_ns": 56.987374749499
+        }
+      }
+    },
+    "fft_historical_wave11": {
+      "source": "wave11-ledger/gap-ledger/work/scimark/phases.json",
+      "json_pointer": "/attempts",
+      "attempts": 100,
+      "mean_us": {
+        "pack_ns": 6.761,
+        "guards_ns": 2.158,
+        "native_ns": 28.58,
+        "writeback_ns": 3.608,
+        "complete_call_ns": 43.337,
+        "other_ns": 2.23
+      },
+      "note": "Diagnostic timers add overhead. Native includes Python AOT adapter/status result; other includes shape preparation and binding. Only selected compiled functions are instrumented; SciMark other components remain Python. No kernel-wide subtraction from independently timed minima.",
+      "native_entries": 100,
+      "runner": {
+        "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+        "functions": [
+          {
+            "function": "FFT_transform_internal",
+            "compiled_calls": 0,
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "fallback_calls": 0,
+            "lifted": false,
+            "ahead_of_time": false,
+            "aot_loaded": false,
+            "region": false
+          },
+          {
+            "function": "FFT_bitreverse",
+            "compiled_calls": 0,
+            "aot_calls": 0,
+            "jit_calls": 0,
+            "fallback_calls": 0,
+            "lifted": false,
+            "ahead_of_time": false,
+            "aot_loaded": false,
+            "region": false
+          },
+          {
+            "function": "FFT_transform",
+            "compiled_calls": 50,
+            "aot_calls": 50,
+            "jit_calls": 0,
+            "fallback_calls": 0,
+            "lifted": true,
+            "ahead_of_time": true,
+            "aot_loaded": true,
+            "region": false
+          },
+          {
+            "function": "FFT_inverse",
+            "compiled_calls": 50,
+            "aot_calls": 50,
+            "jit_calls": 0,
+            "fallback_calls": 0,
+            "lifted": true,
+            "ahead_of_time": true,
+            "aot_loaded": true,
+            "region": false
+          }
+        ],
+        "not_found": [],
+        "batches": {},
+        "batch_failures": {},
+        "exit_code": null
+      },
+      "by_function": {
+        "FFT_inverse": {
+          "attempts": 50,
+          "mean_us": {
+            "pack_ns": 8.172,
+            "guards_ns": 2.712,
+            "native_ns": 27.082,
+            "writeback_ns": 5.004,
+            "complete_call_ns": 45.248,
+            "other_ns": 2.278
+          }
+        },
+        "FFT_transform": {
+          "attempts": 50,
+          "mean_us": {
+            "pack_ns": 5.35,
+            "guards_ns": 1.604,
+            "native_ns": 30.078,
+            "writeback_ns": 2.212,
+            "complete_call_ns": 41.426,
+            "other_ns": 2.182
+          }
+        }
+      },
+      "excluding_first_attempt": {
+        "attempts": 99,
+        "mean_us": {
+          "pack_ns": 6.28989898989899,
+          "guards_ns": 2.0828282828282827,
+          "native_ns": 28.48080808080808,
+          "writeback_ns": 3.5676767676767676,
+          "complete_call_ns": 42.508080808080805,
+          "other_ns": 2.0868686868686868
+        }
+      }
+    },
+    "raytrace_historical_wave11": {
+      "source": "wave11-ledger/gap-ledger/work/raytrace/phases.json",
+      "json_pointer": "/attempts",
+      "attempts": 1,
+      "mean_us": {
+        "load_ns": 1524.2,
+        "guards_ns": 122.3,
+        "native_ns": 10818.9,
+        "result_ns": 1.1,
+        "writeback_ns": 610.9,
+        "attempt_ns": 185142.5,
+        "other_attempt_ns": 172065.1
+      },
+      "note": "Diagnostic timers add overhead; not an uninstrumented performance result. Native entries include retries; actual successful mode counts and Python fallbacks are in runner. Other attempt time includes preparation/compilation and unmeasured conversion/commit work. Timers attribute only the selected region.",
+      "native_entries": 7,
+      "runner": {
+        "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\raytrace.py",
+        "functions": [
+          {
+            "function": "Scene.render",
+            "compiled_calls": 1,
+            "aot_calls": 1,
+            "jit_calls": 0,
+            "fallback_calls": 0,
+            "lifted": true,
+            "ahead_of_time": true,
+            "aot_loaded": true,
+            "region": true
+          }
+        ],
+        "not_found": [],
+        "batches": {},
+        "batch_failures": {},
+        "exit_code": null
+      }
+    }
+  },
+  "barnes_separate_heavy_probe_wave13": {
+    "source": "wave13-depth/depth/boundary-phases.json",
+    "attempts": 500,
+    "timer_switches": 6821638,
+    "mean_us_per_attempt": {
+      "graph_walk_and_unclassified_guard_work": 164.1604,
+      "exact_type_guards": 31.510999999999996,
+      "scalar_copy_in": 60.926,
+      "known_and_remember_alias_bookkeeping": 79.7928,
+      "copy_out": 36.9858
+    },
+    "warning": "Instrumented copy adds QPC timer switches at fine-grained operations; these are observed diagnostic times, not an additive decomposition of the old 13.6ms. Ranges/conversions and contract map operations not separated from graph walk; all labels are exact scope definitions."
+  },
+  "heldout_observed_attempt_aggregate": {
+    "meaning": "Sum of these 36 instrumented attempts, with observed counts only; not a workload-population total, a gate estimate, or a speedup bound. No kernel context is pooled.",
+    "attempts": 36,
+    "total_us": 60382.399999999994,
+    "by_component_us": {
+      "program_lookup": 36440.6,
+      "result": 18199.2,
+      "load": 1738.6,
+      "writeback": 1258.6,
+      "bookkeeping": 1000.8,
+      "guards": 360.6,
+      "binding": 265.7,
+      "unloader_init": 243.9,
+      "native": 140.4,
+      "arrays": 128.2,
+      "control_writes": 127.6,
+      "staged_payload_copy": 120.49999999999999,
+      "result_prepare": 111.19999999999999,
+      "rng_store": 97.80000000000001,
+      "recursion_frame_scan": 85.0,
+      "array_snapshot_rollback": 34.6,
+      "arena_capacity": 29.1
+    },
+    "by_region_us": {
+      "Task.qpkt": 23107.2,
+      "create_gc_cycles": 18747.9,
+      "DeviceTask.fn": 9541.8,
+      "Chaosgame.transform_point": 4681.6,
+      "Hex.link_nodes": 2307.7,
+      "create_cycle": 1996.2
+    },
+    "largest_region": "Task.qpkt",
+    "without_largest_region_us": 37275.2,
+    "without_largest_by_component_us": {
+      "result": 18179.600000000002,
+      "program_lookup": 14826.099999999999,
+      "load": 1298.3,
+      "writeback": 914.6999999999999,
+      "bookkeeping": 758.3,
+      "guards": 250.8,
+      "binding": 211.89999999999998,
+      "unloader_init": 160.0,
+      "native": 110.1,
+      "arrays": 98.39999999999999,
+      "control_writes": 95.69999999999999,
+      "rng_store": 88.80000000000001,
+      "staged_payload_copy": 87.69999999999999,
+      "result_prepare": 86.6,
+      "recursion_frame_scan": 59.49999999999999,
+      "array_snapshot_rollback": 25.900000000000002,
+      "arena_capacity": 22.8
+    },
+    "top_individual_mean_component_us": [
+      {
+        "function": "create_gc_cycles",
+        "component": "result",
+        "mean_us": 9040.75
+      },
+      {
+        "function": "Task.qpkt",
+        "component": "program_lookup",
+        "mean_us": 2701.8125
+      },
+      {
+        "function": "DeviceTask.fn",
+        "component": "program_lookup",
+        "mean_us": 1033.85
+      }
+    ]
+  },
+  "missing": [
+    "Barnes: named other subcomponents not separated in current wave15 phase record; first preparation is included in coarse residual.",
+    "FFT: result conversion/status is included in native; no separate result number. Shape preparation and binding are combined in other. No named-other partition.",
+    "Raytrace: only one cold attempt with seven native entries; warmed per-call load/guards/result/writeback and named-other partition are absent.",
+    "No current integrated wave16 context is measured here. Existing instruments classify costs with observer overhead; a causal direct-access saving is not obtained by summing their buckets."
+  ],
+  "separate_wave13_counterfactual_ladders": {
+    "scimark": {
+      "variants": {
+        "product": {
+          "samples_ms": [
+            2.0875000045634806,
+            2.1009999909438193,
+            2.0991999917896464,
+            2.1203999931458384,
+            2.2403999901143834
+          ],
+          "median_ms": 2.1009999909438193
+        },
+        "direct": {
+          "samples_ms": [
+            1.524099992820993,
+            1.5451000072062016,
+            1.5226999967126176,
+            1.5133000124478713,
+            1.5238000050885603
+          ],
+          "median_ms": 1.5238000050885603
+        },
+        "numeric": {
+          "samples_ms": [
+            1.088100005290471,
+            1.0883999930229038,
+            1.0792999964905903,
+            1.0978999926010147,
+            1.0922999936155975
+          ],
+          "median_ms": 1.0883999930229038
+        },
+        "status": {
+          "samples_ms": [
+            0.9939000010490417,
+            1.0581999958958477,
+            1.0119999933522195,
+            1.0156999924220145,
+            0.9924000041792169
+          ],
+          "median_ms": 1.0119999933522195
+        },
+        "bounds": {
+          "samples_ms": [
+            0.7442999922204763,
+            0.7508999988203868,
+            0.7485999958589673,
+            0.7466999959433451,
+            0.7557999924756587
+          ],
+          "median_ms": 0.7485999958589673
+        },
+        "array": {
+          "samples_ms": [
+            0.7193000055849552,
+            0.7247000030474737,
+            0.7271000067703426,
+            0.7237999961944297,
+            0.7125999982235953
+          ],
+          "median_ms": 0.7237999961944297
+        },
+        "hand": {
+          "samples_ms": [
+            0.64080000447575,
+            0.6326000002445653,
+            0.633100004051812,
+            0.6323999987216666,
+            0.6320000102277845
+          ],
+          "median_ms": 0.6326000002445653
+        },
+        "c": {
+          "samples_ms": [
+            0.426769,
+            0.425577,
+            0.4282,
+            0.425577,
+            0.428438
+          ],
+          "median_ms": 0.426769
+        }
+      },
+      "steps": [
+        {
+          "from": "product",
+          "to": "direct",
+          "saving_ms": 0.577199985855259,
+          "saving_pct_of_previous": 27.472631525141846
+        },
+        {
+          "from": "direct",
+          "to": "numeric",
+          "saving_ms": 0.4354000120656565,
+          "saving_pct_of_previous": 28.573304279543684
+        },
+        {
+          "from": "numeric",
+          "to": "status",
+          "saving_ms": 0.07639999967068434,
+          "saving_pct_of_previous": 7.0194781477802355
+        },
+        {
+          "from": "status",
+          "to": "bounds",
+          "saving_ms": 0.26339999749325216,
+          "saving_pct_of_previous": 26.027667907461897
+        },
+        {
+          "from": "bounds",
+          "to": "array",
+          "saving_ms": 0.02479999966453761,
+          "saving_pct_of_previous": 3.3128506280689067
+        },
+        {
+          "from": "array",
+          "to": "hand",
+          "saving_ms": 0.09119999594986439,
+          "saving_pct_of_previous": 12.60016529833829
+        },
+        {
+          "from": "hand",
+          "to": "c",
+          "saving_ms": 0.2058310002445653,
+          "saving_pct_of_previous": 32.537306380807834
+        }
+      ],
+      "gap_ms": 1.6742309909438193,
+      "method": "five fresh rotating processes, each rung outputs checked; signed order-dependent deltas telescope, no pooling with other cohorts"
+    },
+    "raytrace": {
+      "variants": {
+        "product": {
+          "samples_ms": [
+            3.6032000061823055,
+            3.526100001181476,
+            3.455700003542006,
+            3.5557999945012853,
+            3.44990000303369
+          ],
+          "median_ms": 3.526100001181476
+        },
+        "native-original": {
+          "samples_ms": [
+            2.345799992326647,
+            2.466999998432584,
+            2.398999989964068,
+            2.4907000042730942,
+            2.3061000101733953
+          ],
+          "median_ms": 2.398999989964068
+        },
+        "native-fixed": {
+          "samples_ms": [
+            1.5061000012792647,
+            1.5107000072021037,
+            1.5364999999292195,
+            1.5073000104166567,
+            1.526199994259514
+          ],
+          "median_ms": 1.5107000072021037
+        },
+        "native-failure": {
+          "samples_ms": [
+            1.5142999909585342,
+            1.5627000102540478,
+            1.6079000051831827,
+            1.5344000130426139,
+            1.52009999146685
+          ],
+          "median_ms": 1.5344000130426139
+        },
+        "typed-arena": {
+          "samples_ms": [
+            1.5140000032261014,
+            1.5241000073729083,
+            1.5608000103384256,
+            1.5361999976448715,
+            1.5522999892709777
+          ],
+          "median_ms": 1.5361999976448715
+        },
+        "typed-core": {
+          "samples_ms": [
+            0.7909999985713512,
+            0.7982999959494919,
+            0.794000006862916,
+            0.8012999896891415,
+            0.7844000065233558
+          ],
+          "median_ms": 0.794000006862916
+        },
+        "hand": {
+          "samples_ms": [
+            0.8016999927349389,
+            0.800199995865114,
+            0.860799991642125,
+            0.800199995865114,
+            0.8112999930744991
+          ],
+          "median_ms": 0.8016999927349389
+        },
+        "c": {
+          "samples_ms": [
+            0.622988,
+            0.607252,
+            0.604391,
+            0.603676,
+            0.617027
+          ],
+          "median_ms": 0.607252
+        }
+      },
+      "steps": [
+        {
+          "from": "product",
+          "to": "native-original",
+          "saving_ms": 1.1271000112174079,
+          "saving_pct_of_previous": 31.96449365700789
+        },
+        {
+          "from": "native-original",
+          "to": "native-fixed",
+          "saving_ms": 0.8882999827619642,
+          "saving_pct_of_previous": 37.027927739810835
+        },
+        {
+          "from": "native-fixed",
+          "to": "native-failure",
+          "saving_ms": -0.02370000584051013,
+          "saving_pct_of_previous": -1.5688095404463387
+        },
+        {
+          "from": "native-failure",
+          "to": "typed-arena",
+          "saving_ms": -0.0017999846022576094,
+          "saving_pct_of_previous": -0.11730869310202617
+        },
+        {
+          "from": "typed-arena",
+          "to": "typed-core",
+          "saving_ms": 0.7421999907819554,
+          "saving_pct_of_previous": 48.31402108578393
+        },
+        {
+          "from": "typed-core",
+          "to": "hand",
+          "saving_ms": -0.007699985872022808,
+          "saving_pct_of_previous": -0.9697715120237032
+        },
+        {
+          "from": "hand",
+          "to": "c",
+          "saving_ms": 0.19444799273493885,
+          "saving_pct_of_previous": 24.254458587631294
+        }
+      ],
+      "gap_ms": 2.918848001181476,
+      "method": "five fresh rotating processes, each rung outputs checked; signed order-dependent deltas telescope, no pooling with other cohorts"
+    }
+  },
+  "provenance": {
+    "wave14-capture/capture/s18-other/summary.json": {
+      "sha256": "f74698dea631c0d818da0f52d945e6ac98d9a699582cf0c17531c87868cb38a3",
+      "bytes": 152803
+    },
+    "wave14-capture/capture/s18-report/summary.json": {
+      "sha256": "505025cfa3ef306dc5df6388eadf2c1463e26c30aedbad1b1462e69f44482f06",
+      "bytes": 140107
+    },
+    "wave14-capture/capture/s18-other/chaos/data.json": {
+      "sha256": "be7cd15e3dbba6b4642ba9c36249bcdf2d795a56ca818ce35cba998371b49e33",
+      "bytes": 42749
+    },
+    "wave14-capture/capture/s18-other/gc_collect/data.json": {
+      "sha256": "bb553f68dc2ae7dea64a788885bad53a54dfa408038811db6b7a0ff26f615ef3",
+      "bytes": 42982
+    },
+    "wave14-capture/capture/s18-other/hexiom/data.json": {
+      "sha256": "215f431adffcb4ddcffc19d59da38fe980ad72df094e72397cecadf82fd1dd46",
+      "bytes": 14412
+    },
+    "wave14-capture/capture/s18-other/richards_super/data.json": {
+      "sha256": "a397e86cb65bc56a5807fe07062f6a580db2b28a4e177f0c131ce1b78f7fdbe8",
+      "bytes": 72723
+    },
+    "wave15-depth2/depth2/barnes-native-phase.json": {
+      "sha256": "a76bba93ea73776ac15b92f4637dbd9a6eeb0f95dc773824a86ca0be744e66de",
+      "bytes": 209847
+    },
+    "wave11-ledger/gap-ledger/work/scimark/phases.json": {
+      "sha256": "d033e94c7a60a945501454ff8b140e34152ddc561d7a5baaf84f430d62b9f363",
+      "bytes": 26198
+    },
+    "wave11-ledger/gap-ledger/work/raytrace/phases.json": {
+      "sha256": "dd7fc188ef34c6e55092db26193c072059dc9befcccaeb94423f214dcc7cdd46",
+      "bytes": 4278
+    },
+    "wave13-depth/depth/boundary-phases.json": {
+      "sha256": "498d178497d31a1588e20da24c7a8f2b59294d764c8b15c5adcdfb70f73fcdd0",
+      "bytes": 211106
+    },
+    "wave13-depth/depth/ladder-v3-scimark-summary.json": {
+      "sha256": "acda14342f84fd5d4f6c15c278167d3b0d677a3de7f50086e9f451c1d9ec3a29",
+      "bytes": 3158
+    },
+    "wave13-depth/depth/ladder-v3-raytrace-summary.json": {
+      "sha256": "310e13bbd0b1f0c088ec245f90d6fc60f8f29b72d8045ad64230a25e3d3d8ccd",
+      "bytes": 3253
+    }
+  }
+}

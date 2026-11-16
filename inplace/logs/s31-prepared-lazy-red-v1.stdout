@@ -1,0 +1,176 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+_____ test_region_stops_restoring_after_first_compatible_candidate[False] _____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...a7ed215015c871dc64307da12054b19f2a32b13c7e681839a3e874b6688': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000209AEBB7820>
+first_misses = False
+
+    @pytest.mark.parametrize('first_misses',[False,True])
+    def test_region_stops_restoring_after_first_compatible_candidate(artifact,monkeypatch,first_misses):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+        assert index is not None and len(index.cores)>1
+        original=pc._restore;calls=[]
+        def restore(*a,**kw):
+            calls.append(True)
+            if first_misses and len(calls)==1:raise pc.PreparedMiss('first candidate incompatible')
+            assert len(calls)<=1+int(first_misses),'unused later descriptor was restored'
+            return original(*a,**kw)
+        monkeypatch.setattr(pc,'_restore',restore)
+        fast=heap.lift_region(module.work,index.exports,prepared=index)
+        box,items=module.Box(10),[]
+>       assert fast(box,items)==(box,items,18)
+               ^^^^^^^^^^^^^^^
+
+tests\test_prepared_lazy_validation.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6881: in program_for
+    candidates = self.prepared.bind(self.original)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:839: in bind
+    programs.append(_restore(core,entry,self.exports[core['generated']['digest']]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = ({'backend': 'heap', 'build_key': {'compiler': {'cflags': [], 'ldflags': [], 'llvmlite_build': {'metadata_sha256': '8f...}, ...}, <function work at 0x00000209ADE156F0>, <built-in method r0 of _dynfunc._Closure object at 0x00000209B0E20BE0>)
+kw = {}
+
+    def restore(*a,**kw):
+        calls.append(True)
+        if first_misses and len(calls)==1:raise pc.PreparedMiss('first candidate incompatible')
+>       assert len(calls)<=1+int(first_misses),'unused later descriptor was restored'
+E       AssertionError: unused later descriptor was restored
+E       assert 2 <= (1 + 0)
+E        +  where 2 = len([True, True])
+E        +  and   0 = int(False)
+
+tests\test_prepared_lazy_validation.py:13: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_539156ef899f401ba7b07ca4-nc0bf9fg\rcaotr_539156ef899f401ba7b07ca4.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_539156ef899f401ba7b07ca4-nc0bf9fg\rcaotr_539156ef899f401ba7b07ca4.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_____ test_region_stops_restoring_after_first_compatible_candidate[True] ______
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...a7ed215015c871dc64307da12054b19f2a32b13c7e681839a3e874b6688': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000209ADFCB5C0>
+first_misses = True
+
+    @pytest.mark.parametrize('first_misses',[False,True])
+    def test_region_stops_restoring_after_first_compatible_candidate(artifact,monkeypatch,first_misses):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+        assert index is not None and len(index.cores)>1
+        original=pc._restore;calls=[]
+        def restore(*a,**kw):
+            calls.append(True)
+            if first_misses and len(calls)==1:raise pc.PreparedMiss('first candidate incompatible')
+            assert len(calls)<=1+int(first_misses),'unused later descriptor was restored'
+            return original(*a,**kw)
+        monkeypatch.setattr(pc,'_restore',restore)
+        fast=heap.lift_region(module.work,index.exports,prepared=index)
+        box,items=module.Box(10),[]
+>       assert fast(box,items)==(box,items,18)
+               ^^^^^^^^^^^^^^^
+
+tests\test_prepared_lazy_validation.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6881: in program_for
+    candidates = self.prepared.bind(self.original)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\_prepared.py:839: in bind
+    programs.append(_restore(core,entry,self.exports[core['generated']['digest']]))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = ({'backend': 'heap', 'build_key': {'compiler': {'cflags': [], 'ldflags': [], 'llvmlite_build': {'metadata_sha256': '8f...}, ...}, <function work at 0x00000209ADE156F0>, <built-in method r1 of _dynfunc._Closure object at 0x00000209B0E20B80>)
+kw = {}
+
+    def restore(*a,**kw):
+        calls.append(True)
+        if first_misses and len(calls)==1:raise pc.PreparedMiss('first candidate incompatible')
+>       assert len(calls)<=1+int(first_misses),'unused later descriptor was restored'
+E       AssertionError: unused later descriptor was restored
+E       assert 3 <= (1 + 1)
+E        +  where 3 = len([True, True, True])
+E        +  and   1 = int(True)
+
+tests\test_prepared_lazy_validation.py:13: AssertionError
+_________ test_resolution_cache_uses_exact_immutable_recipe_structure _________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...a7ed215015c871dc64307da12054b19f2a32b13c7e681839a3e874b6688': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000209AE0A6690>
+
+    def test_resolution_cache_uses_exact_immutable_recipe_structure(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        refs=pc.References(module.work)
+        def forbidden(*a,**kw):raise AssertionError('recipe lookup serialized JSON')
+        monkeypatch.setattr(pc,'canonical',forbidden)
+>       assert refs.resolve(['entry']) is module.work
+               ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_lazy_validation.py:29: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\_prepared.py:152: in resolve
+    cache_key = canonical(recipe)
+                ^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = (['entry'],), kw = {}
+
+>   def forbidden(*a,**kw):raise AssertionError('recipe lookup serialized JSON')
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: recipe lookup serialized JSON
+
+tests\test_prepared_lazy_validation.py:27: AssertionError
+___ test_inert_snapshot_has_no_native_image_io_but_class_key_still_seals_it ___
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...a7ed215015c871dc64307da12054b19f2a32b13c7e681839a3e874b6688': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000209B344FBD0>
+
+    def test_inert_snapshot_has_no_native_image_io_but_class_key_still_seals_it(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        class Plain: unused=abs
+        monkeypatch.setattr(module,'SnapshotClass',Plain,raising=False)
+        calls=[];original=pc.file_key
+        def record(path):calls.append(str(path));return original(path)
+        monkeypatch.setattr(pc,'file_key',record)
+        snapshot=pc._class_snapshot(Plain)
+>       assert calls==[],'identity snapshot redundantly hashed native images'
+E       AssertionError: identity snapshot redundantly hashed native images
+E       assert ['C:\\Python3...ython314.dll'] == []
+E         
+E         Left contains 2 more items, first extra item: 'C:\\Python314\\python314.dll'
+E         Use -v to get more diff
+
+tests\test_prepared_lazy_validation.py:56: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_lazy_validation.py::test_region_stops_restoring_after_first_compatible_candidate[False]
+FAILED tests/test_prepared_lazy_validation.py::test_region_stops_restoring_after_first_compatible_candidate[True]
+FAILED tests/test_prepared_lazy_validation.py::test_resolution_cache_uses_exact_immutable_recipe_structure
+FAILED tests/test_prepared_lazy_validation.py::test_inert_snapshot_has_no_native_image_io_but_class_key_still_seals_it
+4 failed in 6.24s

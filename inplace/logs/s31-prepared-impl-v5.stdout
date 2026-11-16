@@ -1,0 +1,22 @@
+........................................................................ [ 77%]
+...................F
+================================== FAILURES ===================================
+________________ test_late_finalizer_guard_after_prepared_hit _________________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000023A4C9E77E0>
+
+    def test_late_finalizer_guard_after_prepared_hit(artifact, monkeypatch):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section, 'read'), plan_snapshot=standalone(section))
+        program = index.bind(module.read)[0]
+        region = heap.lift_region(module.read, {program.digest: program.run}, prepared=index)
+>       box = module.Box(10)
+              ^^^^^^^^^^^^^^
+E       TypeError: object.__new__() takes exactly one argument (the type to instantiate)
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:376: TypeError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_cache.py::test_late_finalizer_guard_after_prepared_hit
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 91 passed in 8.71s

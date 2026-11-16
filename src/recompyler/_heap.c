@@ -6,15 +6,26 @@
  * program as small integers and lists (see heap._Program.c_kind):
  *
  *   0 float, 1 int-or-float ("mixed"), 2 int, 3 bool, 4 None, 9 anything else (no fit)
- *   [10, cls, nullable, [size, names, offsets, kinds]]   an object of class cls
- *   [11, item kind, ListT]                               a list
+ *   [10, {cls: [size, names, offsets, kinds, tag]}, nullable]   an object of one of
+ *                                                        the classes (tag -1: none)
+ *   [11, item kind, ListT, canonical cell]               a list
  *
  * A value that does not fit raises Mismatch, and the call is handed back to Python;
  * a heap too small for the arguments raises Grow, and the caller retries with more.
  */
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 #include <math.h>
+#include <stdint.h>
+#include <structmember.h>
+#ifdef _WIN32
+#include <windows.h>
+#elif defined(__linux__) || defined(__APPLE__)
+#include <dlfcn.h>
+#endif
 
 static PyObject *Mismatch, *Grow;
 
@@ -28,7 +39,7 @@ typedef struct {
     double *F;
     long long *I;
     Py_ssize_t cap, top;
-    PyObject *handles, *objects, *lists;
+    PyObject *handles, *objects, *lists, *contracts;
 } State;
 
 static int mismatch(void) {
@@ -104,16 +115,17 @@ static int remember(State *s, PyObject *key, PyObject *value, long long handle, 
 }
 
 static int load_instance(State *s, PyObject *kind, PyObject *value, long long *out) {
-    PyObject *cls = PyList_GET_ITEM(kind, 1), *plan = PyList_GET_ITEM(kind, 3), *key;
+    PyObject *cls = (PyObject *)Py_TYPE(value), *key;
+    PyObject *plan = PyDict_GetItemWithError(PyList_GET_ITEM(kind, 1), cls);
+    if (plan == NULL) {
+        return PyErr_Occurred() ? -1 : mismatch();
+    }
     int found = known(s, value, &key, out);
     if (found != 0) {
         Py_XDECREF(key);
         return found < 0 ? -1 : 0;
     }
-    if ((PyObject *)Py_TYPE(value) != cls) {
-        Py_DECREF(key);
-        return mismatch();
-    }
+    long long tag = PyLong_AsLongLong(PyList_GET_ITEM(plan, 4));
     Py_ssize_t size = PyLong_AsSsize_t(PyList_GET_ITEM(plan, 0));
     PyObject *names = PyList_GET_ITEM(plan, 1), *offsets = PyList_GET_ITEM(plan, 2), *kinds = PyList_GET_ITEM(plan, 3);
     Py_ssize_t count = PyTuple_GET_SIZE(names);
@@ -133,6 +145,8 @@ static int load_instance(State *s, PyObject *kind, PyObject *value, long long *o
         return -1;
     }
     s->top += size;
+    if (tag >= 0)
+        s->I[handle] = tag;
     int failed = remember(s, key, value, handle, cls, s->objects) < 0;
     Py_DECREF(key);
     for (Py_ssize_t i = 0; !failed && i < count; i++) {
@@ -161,15 +175,24 @@ static int load_instance(State *s, PyObject *kind, PyObject *value, long long *o
 }
 
 static int load_list(State *s, PyObject *kind, PyObject *value, long long *out) {
+    if (!PyList_CheckExact(value) || PyList_GET_SIZE(kind) < 4)
+        return mismatch();
+    PyObject *root = PyList_GET_ITEM(kind, 3);
     PyObject *key;
     int found = known(s, value, &key, out);
     if (found != 0) {
+        int failed = found < 0;
+        if (!failed) {
+            PyObject *contract = PyDict_GetItemWithError(s->contracts, key);
+            if (contract == NULL && PyErr_Occurred())
+                failed = 1;
+            else if (contract != root) {
+                mismatch();
+                failed = 1;
+            }
+        }
         Py_XDECREF(key);
-        return found < 0 ? -1 : 0;
-    }
-    if (!PyList_CheckExact(value)) {
-        Py_DECREF(key);
-        return mismatch();
+        return failed ? -1 : 0;
     }
     PyObject *item_kind = PyList_GET_ITEM(kind, 1);
     Py_ssize_t count = PyList_GET_SIZE(value);
@@ -185,6 +208,8 @@ static int load_list(State *s, PyObject *kind, PyObject *value, long long *out) 
     }
     s->top = data + count;
     int failed = remember(s, key, value, handle, PyList_GET_ITEM(kind, 2), s->lists) < 0;
+    if (!failed)
+        failed = PyDict_SetItem(s->contracts, key, root) < 0;
     Py_DECREF(key);
     if (failed)
         return -1;
@@ -268,20 +293,34 @@ static int heap_views(PyObject *F, PyObject *I, Py_buffer *fb, Py_buffer *ib) {
     return 0;
 }
 
-/* load(kind, value, F, I, top, handles, objects, lists) -> (handle, top) */
+/* load(kind, value, F, I, top, handles, objects, lists[, contracts]) -> (handle, top) */
 static PyObject *load(PyObject *self, PyObject *const *args, Py_ssize_t nargs) {
-    if (nargs != 8) {
-        PyErr_SetString(PyExc_TypeError, "load takes 8 arguments");
+    if (nargs != 8 && nargs != 9) {
+        PyErr_SetString(PyExc_TypeError, "load takes 8 or 9 arguments");
+        return NULL;
+    }
+    /* Legacy private callers get an isolated map: an already-known list whose
+       contract is unavailable is rejected, never accepted without validation. */
+    PyObject *owned_contracts = nargs == 8 ? PyDict_New() : NULL;
+    PyObject *contracts = nargs == 8 ? owned_contracts : args[8];
+    if (contracts == NULL)
+        return NULL;
+    if (!PyDict_Check(contracts)) {
+        Py_XDECREF(owned_contracts);
+        PyErr_SetString(PyExc_TypeError, "list contracts must be a dict");
         return NULL;
     }
     Py_buffer fb, ib;
-    if (heap_views(args[2], args[3], &fb, &ib) < 0)
+    if (heap_views(args[2], args[3], &fb, &ib) < 0) {
+        Py_XDECREF(owned_contracts);
         return NULL;
-    State s = {(double *)fb.buf, (long long *)ib.buf, fb.len / 8, PyLong_AsSsize_t(args[4]), args[5], args[6], args[7]};
+    }
+    State s = {(double *)fb.buf, (long long *)ib.buf, fb.len / 8, PyLong_AsSsize_t(args[4]), args[5], args[6], args[7], contracts};
     long long handle = 0;
     int failed = s.top < 0 || load_value(&s, args[0], args[1], &handle) < 0;
     PyBuffer_Release(&fb);
     PyBuffer_Release(&ib);
+    Py_XDECREF(owned_contracts);
     if (failed)
         return NULL;
     return Py_BuildValue("Ln", handle, s.top);
@@ -403,18 +442,199 @@ static PyObject *write_back(PyObject *self, PyObject *const *args, Py_ssize_t na
     Py_RETURN_NONE;
 }
 
+/* Establish executable provenance without trusting writable Python names or
+ * third-party Closure offsets. Both public CPython accessors use the installed
+ * headers; no address escapes this helper or enters a saved plan. */
+static PyObject *binary_location(const void *address, int identity) {
+    uintptr_t base;
+#ifdef _WIN32
+    HMODULE module;
+    wchar_t path[32768];
+    if (!GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
+                            GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+                            (LPCWSTR)address, &module))
+        Py_RETURN_NONE;
+    DWORD length = GetModuleFileNameW(module, path, 32768);
+    if (!length || length >= 32768)
+        Py_RETURN_NONE;
+    base = (uintptr_t)module;
+    PyObject *filename = PyUnicode_FromWideChar(path, length);
+    if (filename == NULL) return NULL;
+    if (!identity) return filename;
+    return Py_BuildValue("(NK)", filename, (unsigned long long)((uintptr_t)address-base));
+#elif defined(__linux__) || defined(__APPLE__)
+    Dl_info info;
+    if (!dladdr(address, &info) || !info.dli_fname)
+        Py_RETURN_NONE;
+    base = (uintptr_t)info.dli_fbase;
+    PyObject *filename = PyUnicode_DecodeFSDefault(info.dli_fname);
+    if (filename == NULL) return NULL;
+    if (!identity) return filename;
+    return Py_BuildValue("(NK)", filename, (unsigned long long)((uintptr_t)address-base));
+#else
+    Py_RETURN_NONE;
+#endif
+}
+
+static PyObject *binary_origin(const void *address) {
+    return binary_location(address, 0);
+}
+
+/* Stable image-relative coordinates, never a process address. NULL is a valid
+ * absent getter/setter/closure; a non-NULL target outside an image is a miss. */
+static PyObject *binary_identity(const void *address) {
+    if (address == NULL) Py_RETURN_NONE;
+    PyObject *result = binary_location(address, 1);
+    if (result == Py_None) {
+        Py_DECREF(result);
+        PyErr_SetString(PyExc_ValueError, "native dependency has no binary image");
+        return NULL;
+    }
+    return result;
+}
+
+static PyObject *prepared_binding(PyObject *self, PyObject *value) {
+    PyObject *first = NULL, *second = NULL, *third = NULL, *result = NULL;
+    int flags = 0, offset = 0;
+    const char *kind = NULL;
+    if (Py_IS_TYPE(value, &PyCFunction_Type)) {
+        first = binary_identity((const void *)PyCFunction_GET_FUNCTION(value));
+        if (first == NULL) return NULL;
+        second = binary_identity((const void *)((PyCFunctionObject *)value)->vectorcall);
+        if (second == NULL) { Py_DECREF(first); return NULL; }
+        return Py_BuildValue("(sNNi)", "builtin", first, second, PyCFunction_GET_FLAGS(value));
+    }
+    if (Py_IS_TYPE(value, &PyMethodDescr_Type) || Py_IS_TYPE(value, &PyClassMethodDescr_Type)) {
+        PyMethodDescrObject *d = (PyMethodDescrObject *)value;
+        first = binary_identity((const void *)d->d_method->ml_meth);
+        if (first == NULL) return NULL;
+        second = binary_identity((const void *)d->vectorcall);
+        if (second == NULL) { Py_DECREF(first); return NULL; }
+        return Py_BuildValue("(sNNi)", "method", first, second, d->d_method->ml_flags);
+    }
+    if (Py_IS_TYPE(value, &PyMemberDescr_Type)) {
+        PyMemberDef *member = ((PyMemberDescrObject *)value)->d_member;
+        return Py_BuildValue("(sini)", "member", member->type, member->offset, member->flags);
+    }
+    if (Py_IS_TYPE(value, &PyGetSetDescr_Type)) {
+        PyGetSetDef *d = ((PyGetSetDescrObject *)value)->d_getset;
+        kind = "getset";
+        first = binary_identity((const void *)d->get);
+        if (first == NULL) return NULL;
+        second = binary_identity((const void *)d->set);
+        if (second == NULL) goto done;
+        third = binary_identity(d->closure);
+        if (third == NULL) goto done;
+    } else if (Py_IS_TYPE(value, &PyWrapperDescr_Type)) {
+        PyWrapperDescrObject *d = (PyWrapperDescrObject *)value;
+        kind = "wrapper"; flags = d->d_base->flags; offset = d->d_base->offset;
+        first = binary_identity(d->d_wrapped);
+        if (first == NULL) return NULL;
+        second = binary_identity((const void *)d->d_base->wrapper);
+        if (second == NULL) goto done;
+        third = binary_identity(d->d_base->function);
+        if (third == NULL) goto done;
+    } else {
+        PyErr_SetString(PyExc_TypeError, "unsupported exact native binding");
+        return NULL;
+    }
+    result = Py_BuildValue("(sOOOii)", kind, first, second, third, flags, offset);
+ done:
+    Py_XDECREF(first); Py_XDECREF(second); Py_XDECREF(third);
+    return result;
+}
+
+static PyObject *prepared_origin(PyObject *self, PyObject *value) {
+    if (!Py_IS_TYPE(value, &PyCFunction_Type)) {
+        PyErr_SetString(PyExc_TypeError, "prepared_origin requires an exact builtin");
+        return NULL;
+    }
+    PyObject *owner = PyCFunction_GET_SELF(value);
+    if (owner == NULL)
+        Py_RETURN_NONE;
+    PyObject *code = binary_origin((const void *)PyCFunction_GET_FUNCTION(value));
+    if (code == NULL)
+        return NULL;
+    PyObject *closure = binary_origin((const void *)Py_TYPE(owner));
+    if (closure == NULL) {
+        Py_DECREF(code);
+        return NULL;
+    }
+    PyObject *result = PyTuple_Pack(2, code, closure);
+    Py_DECREF(code);
+    Py_DECREF(closure);
+    return result;
+}
+
+/* Canonical type pointers cannot be replaced through the builtins dictionary. */
+static PyObject *prepared_builtin(PyObject *self, PyObject *value) {
+    PyTypeObject *known[] = {&PyBaseObject_Type, &PyType_Type, &PyRange_Type,
+        &PyLong_Type, &PyFloat_Type, &PyBool_Type, &PyComplex_Type, &PyList_Type,
+        &PyTuple_Type, &PyDict_Type, &PySet_Type, &PyFrozenSet_Type,
+        &PyUnicode_Type, &PyBytes_Type, &PyByteArray_Type, &PySlice_Type,
+        &PySuper_Type, &PyEnum_Type, &PyZip_Type, &PyReversed_Type};
+    for (size_t i = 0; i < sizeof(known) / sizeof(known[0]); i++) {
+        if (value == (PyObject *)known[i])
+            return PyUnicode_FromString(known[i]->tp_name);
+    }
+    Py_RETURN_NONE;
+}
+
+#include "_guards.h"
+
+/* The interpreter's original builtin snapshot survives Python rebinding. */
+static PyObject *canonical_builtin(PyObject *self, PyObject *name) {
+    if (!PyUnicode_CheckExact(name)) {
+        PyErr_SetString(PyExc_TypeError, "exact builtin name required"); return NULL;
+    }
+#if GUARD_AUDIT_CAPABILITY
+    if (Py_Version == PY_VERSION_HEX &&
+            !strcmp(Py_GetVersion(), RECOMPYLER_GUARD_BUILD_SIGNATURE)) {
+        PyObject *snapshot = PyThreadState_Get()->interp->builtins_copy;
+        if (snapshot && PyDict_CheckExact(snapshot)) {
+            PyObject *value = PyDict_GetItemWithError(snapshot, name);
+            if (value) return Py_NewRef(value);
+            if (PyErr_Occurred()) return NULL;
+        }
+    }
+#endif
+    Py_RETURN_NONE;
+}
+
 static PyMethodDef methods[] = {
+    {"_register_passive_attribute_audit",register_passive_audit,METH_O,NULL},
+    {"check_heap_guards", check_heap_guards, METH_O, "Check admitted live heap guards, or None for Python fallback."},
+    {"check_lift_guards", (PyCFunction)(void (*)(void))check_lift_guards, METH_FASTCALL, "Check admitted flat lift guards, or None for Python fallback."},
+    {"prepared_binding", prepared_binding, METH_O, "Return installed-header native code and descriptor identities."},
+    {"prepared_builtin", prepared_builtin, METH_O, "Return a canonical native builtin type name."},
+    {"_canonical_builtin", canonical_builtin, METH_O, "Return an original interpreter builtin, or None."},
+    {"prepared_origin", prepared_origin, METH_O, "Return native code and owner-type binary origins."},
     {"load", (PyCFunction)(void (*)(void))load, METH_FASTCALL, "Copy one argument into the heap."},
     {"write_back", (PyCFunction)(void (*)(void))write_back, METH_FASTCALL, "Store written attributes back."},
     {NULL, NULL, 0, NULL},
 };
 
 static int exec_module(PyObject *module) {
+    if (PyType_Ready(&GuardAttributeType)<0 ||
+            PyModule_AddObjectRef(module,"GuardAttribute",(PyObject *)&GuardAttributeType)<0 ||
+            PyModule_AddIntConstant(module,"GUARD_ATTRIBUTES_VERSION",1)<0) return -1;
     Mismatch = PyErr_NewException("recompyler._heap.Mismatch", NULL, NULL);
     Grow = PyErr_NewException("recompyler._heap.Grow", NULL, NULL);
     if (Mismatch == NULL || Grow == NULL)
         return -1;
     if (PyModule_AddObjectRef(module, "Mismatch", Mismatch) < 0 || PyModule_AddObjectRef(module, "Grow", Grow) < 0)
+        return -1;
+#ifdef RECOMPYLER_GUARD_BUILD_SIGNATURE
+    if (PyModule_AddStringConstant(module, "GUARD_BUILD_SIGNATURE", RECOMPYLER_GUARD_BUILD_SIGNATURE) < 0)
+        return -1;
+#endif
+    if (PyModule_AddIntConstant(module, "GUARD_AUDIT_CAPABILITY", GUARD_AUDIT_CAPABILITY) < 0)
+        return -1;
+    if (PyModule_AddIntConstant(module, "GUARD_CHECKS_VERSION", 1) < 0)
+        return -1;
+    if (PyModule_AddIntConstant(module, "LOAD_CONTRACTS_VERSION", 1) < 0)
+        return -1;
+    if (PyModule_AddIntConstant(module, "PREPARED_ORIGIN_VERSION", 1) < 0)
         return -1;
     return 0;
 }

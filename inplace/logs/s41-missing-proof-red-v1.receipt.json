@@ -1,0 +1,15 @@
+{
+  "label": "s41-missing-proof-red-v1",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_fixed_costs_aot.py::test_missing_recursion_proof_stays_conservative_when_captured",
+    "--basetemp",
+    "inplace/s41-missing-proof-red-v1"
+  ],
+  "exit_code": 1,
+  "wall_s": 1.529103800014127,
+  "end": "2026-11-14T17:27:37.628283+00:00"
+}

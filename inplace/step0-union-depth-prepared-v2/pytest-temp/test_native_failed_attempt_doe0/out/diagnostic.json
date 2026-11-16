@@ -1,0 +1,54 @@
+{
+  "instrumented": true,
+  "timing_note": "Diagnostic timers add overhead; not an uninstrumented performance result. Native entries include retries; actual successful mode counts and Python fallbacks are in runner. Other attempt time includes preparation/compilation and unmeasured conversion/commit work. Timers attribute only the selected region.",
+  "attempts": [
+    {
+      "load_ns": 1200,
+      "guards_ns": 900,
+      "native_ns": 2500,
+      "result_ns": 0,
+      "writeback_ns": 0,
+      "function": "target",
+      "line": 1,
+      "native_entries": 1,
+      "native_modes": [
+        "aot"
+      ],
+      "ok": false,
+      "attempt_ns": 17700,
+      "aot_calls": 0,
+      "jit_calls": 0,
+      "other_attempt_ns": 13100
+    }
+  ],
+  "runner": {
+    "functions": [
+      {
+        "function": "target",
+        "region": true,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 1
+      }
+    ],
+    "exit_code": null,
+    "batches": {}
+  },
+  "loaded_native_modules": [
+    {
+      "module": "_hashlib",
+      "path": "C:\\Python314\\DLLs\\_hashlib.pyd",
+      "sha256": "58c5c9ff93f989e2a233b8c5e06420ea73dd6c013e1f08d996fb0f2828eba0aa"
+    }
+  ],
+  "numba_imported": false,
+  "totals_ns": {
+    "load_ns": 1200,
+    "guards_ns": 900,
+    "native_ns": 2500,
+    "result_ns": 0,
+    "writeback_ns": 0,
+    "attempt_ns": 17700,
+    "other_attempt_ns": 13100
+  }
+}

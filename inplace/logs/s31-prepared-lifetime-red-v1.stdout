@@ -1,0 +1,45 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________________ test_nested_class_payload_is_not_retained __________________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-lifetime-red-v1/test_nested_class_payload_is_n0')
+
+    def test_nested_class_payload_is_not_retained(tmp_path):
+        from recompyler import heap,_prepared as pc
+        source=tmp_path/'nested_retention.py'
+        source.write_text(SOURCE+"\nevents=[]\nclass Sentinel:\n    def __del__(self): events.append('destroyed')\nBox.unused=type('Holder',(),{'payload':Sentinel()})\n")
+        module=load_source(source)
+        region=heap.lift_region(module.read)
+        assert region(module.Box(10))==10 and region.compiled_calls==1
+        section=heap.build_regions([(('read',module.read.__code__.co_firstlineno),module.read,region)],tmp_path)
+        index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section))
+        assert index is not None,pc.last_miss()
+        fast=heap.lift_region(module.read,index.exports,prepared=index)
+        assert fast(module.Box(10))==10 and fast.aot_calls==1
+        reference=weakref.ref(module.Box.unused.payload)
+        module.Box.unused=None
+        gc.collect()
+>       assert reference() is None and module.events==['destroyed']
+E       AssertionError: assert (<_prepared_cache_fixture_test_nested_class_payload_is_n0.Sentinel object at 0x0000024E336FDBE0> is None)
+E        +  where <_prepared_cache_fixture_test_nested_class_payload_is_n0.Sentinel object at 0x0000024E336FDBE0> = <weakref at 0x0000024E36D4AE30; to '_prepared_cache_fixture_test_nested_class_payload_is_n0.Sentinel' at 0x0000024E336FDBE0>()
+
+inplace\prepared-cache-preparation\test_prepared_review_regressions.py:146: AssertionError
+---------------------------- Captured stdout call -----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_e66c48e4a01412e0122c0e5d-ck8g7f5t\rcaotr_e66c48e4a01412e0122c0e5d.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_e66c48e4a01412e0122c0e5d-ck8g7f5t\rcaotr_e66c48e4a01412e0122c0e5d.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_review_regressions.py::test_nested_class_payload_is_not_retained
+1 failed, 7 deselected in 4.84s

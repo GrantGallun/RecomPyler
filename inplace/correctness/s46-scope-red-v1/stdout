@@ -1,0 +1,31 @@
+FFFF                                                                     [100%]
+================================== FAILURES ===================================
+_ test_successful_dynamic_class_collects_with_warm_cache_alive[make_plain-read_plain] _
+inplace\task2-preparation\test_compile_scoped_runtime.py:37: in test_successful_dynamic_class_collects_with_warm_cache_alive
+    assert watch() is None
+E   AssertionError: assert <class 'test_compile_scoped_runtime.make_plain.<locals>.Local'> is None
+E    +  where <class 'test_compile_scoped_runtime.make_plain.<locals>.Local'> = <weakref at 0x000002452879E430; to 'type' at 0x000002452745EA90 (Local)>()
+_ test_successful_dynamic_class_collects_with_warm_cache_alive[make_class_closure-read_method] _
+inplace\task2-preparation\test_compile_scoped_runtime.py:32: in test_successful_dynamic_class_collects_with_warm_cache_alive
+    assert region.compiled_calls==1 and region.fallback_calls==0,region.problem
+E   AssertionError: free variable '__class__' that holds type at line 1 of 'make_class_closure.<locals>.Local.read'
+E   assert (0 == 1)
+E    +  where 0 = <recompyler.heap.Region object at 0x000002452D0B3890>.compiled_calls
+_ test_collected_same_name_class_is_replaced_without_old_executable_binding[make_plain-read_plain] _
+inplace\task2-preparation\test_compile_scoped_runtime.py:47: in test_collected_same_name_class_is_replaced_without_old_executable_binding
+    gc.collect();assert watch() is None
+                 ^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: assert <class 'test_compile_scoped_runtime.make_plain.<locals>.Local'> is None
+E    +  where <class 'test_compile_scoped_runtime.make_plain.<locals>.Local'> = <weakref at 0x000002452CCD93A0; to 'type' at 0x0000024527CC8A70 (Local)>()
+_ test_collected_same_name_class_is_replaced_without_old_executable_binding[make_class_closure-read_method] _
+inplace\task2-preparation\test_compile_scoped_runtime.py:45: in test_collected_same_name_class_is_replaced_without_old_executable_binding
+    assert region(item) is True and region.compiled_calls==1
+E   assert (True is True and 0 == 1)
+E    +  where True = <recompyler.heap.Region object at 0x000002452D1EE9E0>(<test_compile_scoped_runtime.make_class_closure.<locals>.Local object at 0x00000245272C8D70>)
+E    +  and   0 = <recompyler.heap.Region object at 0x000002452D1EE9E0>.compiled_calls
+=========================== short test summary info ===========================
+FAILED inplace/task2-preparation/test_compile_scoped_runtime.py::test_successful_dynamic_class_collects_with_warm_cache_alive[make_plain-read_plain]
+FAILED inplace/task2-preparation/test_compile_scoped_runtime.py::test_successful_dynamic_class_collects_with_warm_cache_alive[make_class_closure-read_method]
+FAILED inplace/task2-preparation/test_compile_scoped_runtime.py::test_collected_same_name_class_is_replaced_without_old_executable_binding[make_plain-read_plain]
+FAILED inplace/task2-preparation/test_compile_scoped_runtime.py::test_collected_same_name_class_is_replaced_without_old_executable_binding[make_class_closure-read_method]
+4 failed in 3.73s

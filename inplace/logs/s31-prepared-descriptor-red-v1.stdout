@@ -1,0 +1,84 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_______ test_slot_descriptor_owner_and_intrinsic_name_are_sealed[False] _______
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-descriptor-red-v1/test_slot_descriptor_owner_and0')
+foreign = False
+
+    @pytest.mark.parametrize('foreign',[False,True])
+    def test_slot_descriptor_owner_and_intrinsic_name_are_sealed(tmp_path,foreign):
+        from recompyler import heap,_prepared as pc
+        source=tmp_path/'slots.py'
+        source.write_text("class Box:\n    __slots__=('x','y')\n    def __init__(self):\n        self.x=2\n        self.y=8\nclass Other:\n    __slots__=('x','y')\ndef work(box):\n    box.x=1\n    return box.y\n")
+        module=load_source(source)
+        region=heap.lift_region(module.work)
+        assert region(module.Box())==8 and region.compiled_calls==1
+        section=heap.build_regions([(('work',9),module.work,region)],tmp_path)
+        index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section))
+        assert index is not None and index.bind(module.work),pc.last_miss()
+        module.Box.x=module.Other.x if foreign else module.Box.y
+>       assert index.bind(module.work)==[]
+E       assert [<recompyler....025034DD2F90>] == []
+E         
+E         Left contains 3 more items, first extra item: <recompyler._prepared._restore.<locals>.RuntimeProgram object at 0x0000025034DD2660>
+E         Use -v to get more diff
+
+inplace\prepared-cache-preparation\test_prepared_descriptor_keys.py:16: AssertionError
+---------------------------- Captured stdout call -----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_7621efd100cfd80ac72deb69-4e2a7uyv\rcaotr_7621efd100cfd80ac72deb69.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_7621efd100cfd80ac72deb69-4e2a7uyv\rcaotr_7621efd100cfd80ac72deb69.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_______ test_slot_descriptor_owner_and_intrinsic_name_are_sealed[True] ________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-descriptor-red-v1/test_slot_descriptor_owner_and1')
+foreign = True
+
+    @pytest.mark.parametrize('foreign',[False,True])
+    def test_slot_descriptor_owner_and_intrinsic_name_are_sealed(tmp_path,foreign):
+        from recompyler import heap,_prepared as pc
+        source=tmp_path/'slots.py'
+        source.write_text("class Box:\n    __slots__=('x','y')\n    def __init__(self):\n        self.x=2\n        self.y=8\nclass Other:\n    __slots__=('x','y')\ndef work(box):\n    box.x=1\n    return box.y\n")
+        module=load_source(source)
+        region=heap.lift_region(module.work)
+        assert region(module.Box())==8 and region.compiled_calls==1
+        section=heap.build_regions([(('work',9),module.work,region)],tmp_path)
+        index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section))
+        assert index is not None and index.bind(module.work),pc.last_miss()
+        module.Box.x=module.Other.x if foreign else module.Box.y
+>       assert index.bind(module.work)==[]
+E       assert [<recompyler....025031CC4440>] == []
+E         
+E         Left contains 3 more items, first extra item: <recompyler._prepared._restore.<locals>.RuntimeProgram object at 0x00000250318E9940>
+E         Use -v to get more diff
+
+inplace\prepared-cache-preparation\test_prepared_descriptor_keys.py:16: AssertionError
+---------------------------- Captured stdout call -----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_df4c2fe7d6ae65b0cdf5613e-clyzcqnr\rcaotr_df4c2fe7d6ae65b0cdf5613e.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_df4c2fe7d6ae65b0cdf5613e-clyzcqnr\rcaotr_df4c2fe7d6ae65b0cdf5613e.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_descriptor_keys.py::test_slot_descriptor_owner_and_intrinsic_name_are_sealed[False]
+FAILED inplace/prepared-cache-preparation/test_prepared_descriptor_keys.py::test_slot_descriptor_owner_and_intrinsic_name_are_sealed[True]
+2 failed in 7.48s

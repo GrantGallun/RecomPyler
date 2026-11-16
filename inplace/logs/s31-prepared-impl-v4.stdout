@@ -1,0 +1,201 @@
+.FFF..............E..................................................... [ 76%]
+.................F..FF                                                   [100%]
+=================================== ERRORS ====================================
+_ ERROR at teardown of test_each_live_key_component_change_declines_before_native[mro] _
+
+cls = <class '_pytest.runner.CallInfo'>
+func = <function call_and_report.<locals>.<lambda> at 0x0000027A7ECE3950>
+when = 'teardown'
+reraise = (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+
+    @classmethod
+    def from_call(
+        cls,
+        func: Callable[[], TResult],
+        when: Literal["collect", "setup", "call", "teardown"],
+        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,
+    ) -> CallInfo[TResult]:
+        """Call func, wrapping the result in a CallInfo.
+    
+        :param func:
+            The function to call. Called without arguments.
+        :type func: Callable[[], _pytest.runner.TResult]
+        :param when:
+            The phase in which the function is called.
+        :param reraise:
+            Exception or exceptions that shall propagate if raised by the
+            function, instead of being wrapped in the CallInfo.
+        """
+        excinfo = None
+        instant = timing.Instant()
+        try:
+>           result: TResult | None = func()
+                                     ^^^^^^
+
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\runner.py:361: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\runner.py:250: in <lambda>
+    lambda: runtest_hook(item=item, **kwds),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\pluggy\_hooks.py:512: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\pluggy\_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\logging.py:873: in pytest_runtest_teardown
+    yield
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\capture.py:905: in pytest_runtest_teardown
+    return (yield)
+            ^^^^^
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\runner.py:199: in pytest_runtest_teardown
+    item.session._setupstate.teardown_exact(nextitem)
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\runner.py:579: in teardown_exact
+    raise exceptions[0]
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\runner.py:568: in teardown_exact
+    fin()
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\fixtures.py:1166: in finish
+    raise exceptions[0]
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\fixtures.py:1156: in finish
+    fin()
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\fixtures.py:1014: in _teardown_yield_fixture
+    next(it)
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\monkeypatch.py:62: in monkeypatch
+    mpatch.undo()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027A7F2F5230>
+
+    def undo(self) -> None:
+        """Undo previous changes.
+    
+        This call consumes the undo stack. Calling it a second time has no
+        effect unless you do more monkeypatching after the undo call.
+    
+        There is generally no need to call `undo()`, since it is
+        called automatically during tear-down.
+    
+        .. note::
+            The same `monkeypatch` fixture is used across a
+            single test function invocation. If `monkeypatch` is used both by
+            the test function itself and one of the test fixtures,
+            calling `undo()` will undo all of the changes made in
+            both functions.
+    
+            Prefer to use :meth:`context() <pytest.MonkeyPatch.context>` instead.
+        """
+        for obj, name, value in reversed(self._setattr):
+            if value is not NOTSET:
+                setattr(obj, name, value)
+            else:
+>               delattr(obj, name)
+E               TypeError: cannot delete '__bases__' attribute of immutable type 'Box'
+
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\_pytest\monkeypatch.py:411: TypeError
+================================== FAILURES ===================================
+________________ test_real_legacy_and_seed_records_are_emitted ________________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+
+    def test_real_legacy_and_seed_records_are_emitted(artifact):
+        pc, heap, module, source, section = artifact
+        cores = section['prepared']['cores']
+        assert any(core['variant'] == 'legacy' for core in cores)
+>       assert any(core['variant'] in ('strict-seed', 'wide-seed') for core in cores)
+E       assert False
+E        +  where False = any(<generator object test_real_legacy_and_seed_records_are_emitted.<locals>.<genexpr> at 0x0000027A7F32CD40>)
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:103: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_d8ebe433ed39d0c2139c3a1d-hcbm5gum\rcaotr_d8ebe433ed39d0c2139c3a1d.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_d8ebe433ed39d0c2139c3a1d-hcbm5gum\rcaotr_d8ebe433ed39d0c2139c3a1d.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_______ test_prepared_bind_skips_all_program_construction_and_analysis ________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027A0004C510>
+
+    def test_prepared_bind_skips_all_program_construction_and_analysis(artifact, monkeypatch):
+        pc, heap, module, source, section = artifact
+        def forbidden(*args, **kwargs):
+            raise AssertionError('analysis ran on valid prepared bind')
+        for owner, name in [(heap._Program, '__init__'), (heap._Function, '__init__'),
+                            (heap._Program, 'compile'), (heap._Program, 'settle'),
+                            (heap._Program, 'register'), (heap._Gen, 'run'),
+                            (heap, '_seed'), (heap, '_init_assigned'), (heap, '_source_digest')]:
+            monkeypatch.setattr(owner, name, forbidden)
+        programs = bound(artifact)
+>       assert programs and all(program.ahead_of_time for program in programs)
+E       assert ([])
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:119: AssertionError
+____ test_prepared_runtime_preserves_writeback_alias_and_original_identity ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+
+    def test_prepared_runtime_preserves_writeback_alias_and_original_identity(artifact):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+>       program = index.bind(module.work)[0]
+                  ^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'bind'
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:126: AttributeError
+___________ test_python_replacement_seal_or_export_is_never_called ____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027A04FEF460>
+
+    def test_python_replacement_seal_or_export_is_never_called(artifact, monkeypatch):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+>       assert index is not None
+E       assert None is not None
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:320: AssertionError
+________________ test_late_finalizer_guard_after_prepared_hit _________________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027A02B3FD20>
+
+    def test_late_finalizer_guard_after_prepared_hit(artifact, monkeypatch):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section, 'read'), plan_snapshot=standalone(section))
+>       program = index.bind(module.read)[0]
+                  ^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'bind'
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:365: AttributeError
+_________ test_hidden_random_holder_uses_live_state_and_keeps_aliases _________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...SC v.1944 64 bit (AMD64)]', 'implementation': 'cpython', 'cache_tag': 'cpython-314', 'api_version': 1013, ...}}, ...}})
+
+    def test_hidden_random_holder_uses_live_state_and_keeps_aliases(artifact):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section, 'random_step'), plan_snapshot=standalone(section))
+>       programs = index.bind(module.random_step)
+                   ^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'bind'
+
+inplace\prepared-cache-preparation\test_prepared_cache.py:377: AttributeError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_cache.py::test_real_legacy_and_seed_records_are_emitted
+FAILED inplace/prepared-cache-preparation/test_prepared_cache.py::test_prepared_bind_skips_all_program_construction_and_analysis
+FAILED inplace/prepared-cache-preparation/test_prepared_cache.py::test_prepared_runtime_preserves_writeback_alias_and_original_identity
+FAILED inplace/prepared-cache-preparation/test_prepared_cache.py::test_python_replacement_seal_or_export_is_never_called
+FAILED inplace/prepared-cache-preparation/test_prepared_cache.py::test_late_finalizer_guard_after_prepared_hit
+FAILED inplace/prepared-cache-preparation/test_prepared_cache.py::test_hidden_random_holder_uses_live_state_and_keeps_aliases
+ERROR inplace/prepared-cache-preparation/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[mro]
+6 failed, 87 passed, 1 error in 6.44s

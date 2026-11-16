@@ -1,0 +1,1521 @@
+.FFFFFFFFFFFFFFFFFFFFFFFF............................................... [ 43%]
+.....................FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.FF.F............... [ 86%]
+...FF.FF..F.........F..                                                  [100%]
+================================== FAILURES ===================================
+________________ test_real_legacy_and_seed_records_are_emitted ________________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_real_legacy_and_seed_records_are_emitted(artifact):
+        pc, heap, module, source, section = artifact
+        cores = section['prepared']['cores']
+        assert any(core['variant'] == 'legacy' for core in cores)
+        assert any(core['variant'] in ('strict-seed', 'wide-seed') for core in cores)
+>       assert all(row['prepared'] for row in section['functions'])
+E       assert False
+E        +  where False = all(<generator object test_real_legacy_and_seed_records_are_emitted.<locals>.<genexpr> at 0x0000026A756F69B0>)
+
+tests\test_prepared_cache.py:100: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_bf45e2a6fd7270db24ddb3db-y93nshk0\rcaotr_bf45e2a6fd7270db24ddb3db.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_bf45e2a6fd7270db24ddb3db-y93nshk0\rcaotr_bf45e2a6fd7270db24ddb3db.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_______ test_prepared_bind_skips_all_program_construction_and_analysis ________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7606A2C0>
+
+    def test_prepared_bind_skips_all_program_construction_and_analysis(artifact, monkeypatch):
+        pc, heap, module, source, section = artifact
+        def forbidden(*args, **kwargs):
+            raise AssertionError('analysis ran on valid prepared bind')
+        for owner, name in [(heap._Program, '__init__'), (heap._Function, '__init__'),
+                            (heap._Program, 'compile'), (heap._Program, 'settle'),
+                            (heap._Program, 'register'), (heap._Gen, 'run'),
+                            (heap, '_seed'), (heap, '_init_assigned'), (heap, '_source_digest')]:
+            monkeypatch.setattr(owner, name, forbidden)
+        programs = bound(artifact)
+>       assert programs and all(program.ahead_of_time for program in programs)
+E       assert ([])
+
+tests\test_prepared_cache.py:115: AssertionError
+____ test_prepared_runtime_preserves_writeback_alias_and_original_identity ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_prepared_runtime_preserves_writeback_alias_and_original_identity(artifact):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section), plan_snapshot=standalone(section))
+        assert index is not None, pc.last_miss()
+        programs = index.bind(module.work)
+>       assert programs, pc.last_miss()
+E       AssertionError: None
+E       assert []
+
+tests\test_prepared_cache.py:124: AssertionError
+__ test_each_live_key_component_change_declines_before_native[source-bytes] ___
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A785E0770>
+mutation = 'source-bytes'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+___ test_each_live_key_component_change_declines_before_native[entry-code] ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A751E4710>
+mutation = 'entry-code'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[entry-constants] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AE86CF0>
+mutation = 'entry-constants'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[dependency-code] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AE868B0>
+mutation = 'dependency-code'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[dependency-constants] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7A762250>
+mutation = 'dependency-constants'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[entry-defaults] __
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7A763550>
+mutation = 'entry-defaults'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[kwdefaults-replace] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A783D2B70>
+mutation = 'kwdefaults-replace'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[kwdefaults-inplace] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A783D3A70>
+mutation = 'kwdefaults-inplace'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[dependency-defaults] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7A773850>
+mutation = 'dependency-defaults'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[global-constant] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7A770830>
+mutation = 'global-constant'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+___ test_each_live_key_component_change_declines_before_native[method-body] ___
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A756E5090>
+mutation = 'method-body'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+__ test_each_live_key_component_change_declines_before_native[method-shadow] __
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AA93890>
+mutation = 'method-shadow'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[constructor-body] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AA937D0>
+mutation = 'constructor-body'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_______ test_each_live_key_component_change_declines_before_native[mro] _______
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7A9F01B0>
+mutation = 'mro'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+____ test_each_live_key_component_change_declines_before_native[finalizer] ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7A782E60>
+mutation = 'finalizer'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+___ test_each_live_key_component_change_declines_before_native[custom-new] ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AD66B70>
+mutation = 'custom-new'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+__ test_each_live_key_component_change_declines_before_native[getattribute] ___
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AD66A30>
+mutation = 'getattribute'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[slot-descriptor] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AF31E20>
+mutation = 'slot-descriptor'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+__ test_each_live_key_component_change_declines_before_native[class-binding] __
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AE98750>
+mutation = 'class-binding'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[builtin-shadow] __
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AE9BC50>
+mutation = 'builtin-shadow'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_each_live_key_component_change_declines_before_native[module-binding] __
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7ACE9A20>
+mutation = 'module-binding'
+
+    @pytest.mark.parametrize('mutation', ['source-bytes', 'entry-code', 'entry-constants',
+        'dependency-code', 'dependency-constants', 'entry-defaults', 'kwdefaults-replace',
+        'kwdefaults-inplace', 'dependency-defaults', 'global-constant', 'method-body',
+        'method-shadow', 'constructor-body', 'mro', 'finalizer', 'custom-new',
+        'getattribute', 'slot-descriptor', 'class-binding', 'builtin-shadow', 'module-binding'])
+    def test_each_live_key_component_change_declines_before_native(artifact, monkeypatch, mutation):
+        pc, heap, module, source, section = artifact
+        module = load_source(source)
+        artifact = (pc, heap, module, source, section)
+>       assert bound(artifact), pc.last_miss()
+E       AssertionError: None
+E       assert []
+E        +  where [] = bound((<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...913b572472cb01a2d76ae9be3c78e9163c4e98b79c38ec90117b412c0b6': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}}))
+
+tests\test_prepared_cache.py:151: AssertionError
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[written] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...c17200d4854253ef0ec4f2691eb85a212749a1efb46f74c5875c10a99e4': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'written'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A750D3150> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A9F26C0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A750D3150>.bind
+E        +    and   <function work at 0x0000026A7A9F26C0> = <module '_prepared_cache_fixture_prepared_real_aot1' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot1\\workload.py'>.work
+
+tests\test_prepared_cache_adversarial.py:88: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_0e3580d639df7cac48d8ae28-u0v2uawy\rcaotr_0e3580d639df7cac48d8ae28.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_0e3580d639df7cac48d8ae28-u0v2uawy\rcaotr_0e3580d639df7cac48d8ae28.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[return-conversion] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...c17200d4854253ef0ec4f2691eb85a212749a1efb46f74c5875c10a99e4': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'return-conversion'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7A9DF7D0> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A9F26C0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7A9DF7D0>.bind
+E        +    and   <function work at 0x0000026A7A9F26C0> = <module '_prepared_cache_fixture_prepared_real_aot1' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot1\\workload.py'>.work
+
+tests\test_prepared_cache_adversarial.py:88: AssertionError
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[guard-deletion] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...c17200d4854253ef0ec4f2691eb85a212749a1efb46f74c5875c10a99e4': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'guard-deletion'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A78A923D0> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A9F26C0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A78A923D0>.bind
+E        +    and   <function work at 0x0000026A7A9F26C0> = <module '_prepared_cache_fixture_prepared_real_aot1' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot1\\workload.py'>.work
+
+tests\test_prepared_cache_adversarial.py:88: AssertionError
+_ test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[cell-mutation] _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...c17200d4854253ef0ec4f2691eb85a212749a1efb46f74c5875c10a99e4': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'cell-mutation'
+
+    @pytest.mark.parametrize('mutation', ['written', 'return-conversion', 'guard-deletion', 'cell-mutation'])
+    def test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal(artifact, mutation):
+        pc, heap, module, source, original = artifact
+        # Establish this artifact really binds before forging anything.
+        index = pc.open_index(original, row_for(original), plan_snapshot=standalone(original))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A78A934D0> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A9F26C0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A78A934D0>.bind
+E        +    and   <function work at 0x0000026A7A9F26C0> = <module '_prepared_cache_fixture_prepared_real_aot1' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot1\\workload.py'>.work
+
+tests\test_prepared_cache_adversarial.py:88: AssertionError
+_______ test_complete_runner_snapshot_really_binds_before_plan_mutation _______
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+
+    def test_complete_runner_snapshot_really_binds_before_plan_mutation(runner_artifact):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        index = pc.open_index(section, row_for(section), plan_snapshot=report)
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7A051E50> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A6A0CA0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7A051E50>.bind
+E        +    and   <function work at 0x0000026A7A6A0CA0> = <module '_prepared_cache_fixture_prepared_runner_adversarial0' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-runner-adversarial0\\workload.py'>.work
+
+tests\test_prepared_cache_adversarial.py:155: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_ddf3771ab21e0975351bb151-g9a86vq8\rcaotr_ddf3771ab21e0975351bb151.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_ddf3771ab21e0975351bb151-g9a86vq8\rcaotr_ddf3771ab21e0975351bb151.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_ test_top_level_candidate_edits_invalidate_unchanged_plan[recommended-False] _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'recommended', value = False
+
+    @pytest.mark.parametrize('field,value', [
+        ('recommended', False), ('status', 'declined'), ('engine', 'lift'),
+        ('batch_backends', {'cpu': 1.25}), ('batch_size', 16),
+        ('future_selection_option', {'enabled': True}),
+    ])
+    def test_top_level_candidate_edits_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0]['candidate'][field] = value
+        assert changed['plan'] == report['plan'], 'only the top-level candidate changed'
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:171: AssertionError
+__ test_top_level_candidate_edits_invalidate_unchanged_plan[status-declined] __
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'status', value = 'declined'
+
+    @pytest.mark.parametrize('field,value', [
+        ('recommended', False), ('status', 'declined'), ('engine', 'lift'),
+        ('batch_backends', {'cpu': 1.25}), ('batch_size', 16),
+        ('future_selection_option', {'enabled': True}),
+    ])
+    def test_top_level_candidate_edits_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0]['candidate'][field] = value
+        assert changed['plan'] == report['plan'], 'only the top-level candidate changed'
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:171: AssertionError
+____ test_top_level_candidate_edits_invalidate_unchanged_plan[engine-lift] ____
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'engine', value = 'lift'
+
+    @pytest.mark.parametrize('field,value', [
+        ('recommended', False), ('status', 'declined'), ('engine', 'lift'),
+        ('batch_backends', {'cpu': 1.25}), ('batch_size', 16),
+        ('future_selection_option', {'enabled': True}),
+    ])
+    def test_top_level_candidate_edits_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0]['candidate'][field] = value
+        assert changed['plan'] == report['plan'], 'only the top-level candidate changed'
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:171: AssertionError
+_ test_top_level_candidate_edits_invalidate_unchanged_plan[batch_backends-value3] _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'batch_backends', value = {'cpu': 1.25}
+
+    @pytest.mark.parametrize('field,value', [
+        ('recommended', False), ('status', 'declined'), ('engine', 'lift'),
+        ('batch_backends', {'cpu': 1.25}), ('batch_size', 16),
+        ('future_selection_option', {'enabled': True}),
+    ])
+    def test_top_level_candidate_edits_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0]['candidate'][field] = value
+        assert changed['plan'] == report['plan'], 'only the top-level candidate changed'
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:171: AssertionError
+___ test_top_level_candidate_edits_invalidate_unchanged_plan[batch_size-16] ___
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'batch_size', value = 16
+
+    @pytest.mark.parametrize('field,value', [
+        ('recommended', False), ('status', 'declined'), ('engine', 'lift'),
+        ('batch_backends', {'cpu': 1.25}), ('batch_size', 16),
+        ('future_selection_option', {'enabled': True}),
+    ])
+    def test_top_level_candidate_edits_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0]['candidate'][field] = value
+        assert changed['plan'] == report['plan'], 'only the top-level candidate changed'
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:171: AssertionError
+_ test_top_level_candidate_edits_invalidate_unchanged_plan[future_selection_option-value5] _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'future_selection_option', value = {'enabled': True}
+
+    @pytest.mark.parametrize('field,value', [
+        ('recommended', False), ('status', 'declined'), ('engine', 'lift'),
+        ('batch_backends', {'cpu': 1.25}), ('batch_size', 16),
+        ('future_selection_option', {'enabled': True}),
+    ])
+    def test_top_level_candidate_edits_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0]['candidate'][field] = value
+        assert changed['plan'] == report['plan'], 'only the top-level candidate changed'
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:171: AssertionError
+____ test_top_level_function_controls_invalidate_unchanged_plan[calls-99] _____
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'calls', value = 99
+
+    @pytest.mark.parametrize('field,value', [('calls', 99), ('line', 999), ('file', 'different.py')])
+    def test_top_level_function_controls_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0][field] = value
+        assert changed['plan'] == report['plan']
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:183: AssertionError
+____ test_top_level_function_controls_invalidate_unchanged_plan[line-999] _____
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'line', value = 999
+
+    @pytest.mark.parametrize('field,value', [('calls', 99), ('line', 999), ('file', 'different.py')])
+    def test_top_level_function_controls_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0][field] = value
+        assert changed['plan'] == report['plan']
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:183: AssertionError
+_ test_top_level_function_controls_invalidate_unchanged_plan[file-different.py] _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+field = 'file', value = 'different.py'
+
+    @pytest.mark.parametrize('field,value', [('calls', 99), ('line', 999), ('file', 'different.py')])
+    def test_top_level_function_controls_invalidate_unchanged_plan(runner_artifact, field, value):
+        pc, heap, module, source, section, report, plan_file = runner_artifact
+        changed = deepcopy(report)
+        changed['functions'][0][field] = value
+        assert changed['plan'] == report['plan']
+        assert pc.plan_key(changed) != pc.plan_key(report)
+        index = pc.open_index(section, row_for(section), plan_snapshot=changed)
+        assert index is None or index.bind(module.work) == []
+>       assert pc.last_miss()['reason'] == 'plan'
+E       AssertionError: assert 'artifact' == 'plan'
+E         
+E         - plan
+E         + artifact
+
+tests\test_prepared_cache_adversarial.py:183: AssertionError
+____ test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit ____
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AF839A0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000026A7A275550>
+
+    def test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit(runner_artifact, monkeypatch, capsys):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_cache_adversarial.py:217: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_prepared_cache_adversarial.py:200: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-review-green-v5\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x0000026A7ADE16D0>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError(('saved wrapper test unexpectedly regenerated code', pc.last_miss(), {n:r.prepared_reasons for n,r in regions.items()}))
+E       AssertionError: ('saved wrapper test unexpectedly regenerated code', {'reason': 'artifact', 'detail': 'unverified or changed loaded module'}, {'work': []})
+
+tests\test_prepared_cache_adversarial.py:197: AssertionError
+__ test_wrapper_mutation_after_hit_invalidates_before_native[forged-marker] ___
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AFC5010>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000026A78B9C2D0>
+mutation = 'forged-marker'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_cache_adversarial.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_prepared_cache_adversarial.py:200: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-review-green-v5\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x0000026A7ADE25D0>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError(('saved wrapper test unexpectedly regenerated code', pc.last_miss(), {n:r.prepared_reasons for n,r in regions.items()}))
+E       AssertionError: ('saved wrapper test unexpectedly regenerated code', {'reason': 'artifact', 'detail': 'unverified or changed loaded module'}, {'work': []})
+
+tests\test_prepared_cache_adversarial.py:197: AssertionError
+___ test_wrapper_mutation_after_hit_invalidates_before_native[changed-code] ___
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AFC6AC0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000026A75639F90>
+mutation = 'changed-code'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_cache_adversarial.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_prepared_cache_adversarial.py:200: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-review-green-v5\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x0000026A7619B2F0>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError(('saved wrapper test unexpectedly regenerated code', pc.last_miss(), {n:r.prepared_reasons for n,r in regions.items()}))
+E       AssertionError: ('saved wrapper test unexpectedly regenerated code', {'reason': 'artifact', 'detail': 'unverified or changed loaded module'}, {'work': []})
+
+tests\test_prepared_cache_adversarial.py:197: AssertionError
+__ test_wrapper_mutation_after_hit_invalidates_before_native[changed-marker] __
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A783DE7B0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000026A7606A3F0>
+mutation = 'changed-marker'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_cache_adversarial.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_prepared_cache_adversarial.py:200: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-review-green-v5\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x0000026A7894CF50>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError(('saved wrapper test unexpectedly regenerated code', pc.last_miss(), {n:r.prepared_reasons for n,r in regions.items()}))
+E       AssertionError: ('saved wrapper test unexpectedly regenerated code', {'reason': 'artifact', 'detail': 'unverified or changed loaded module'}, {'work': []})
+
+tests\test_prepared_cache_adversarial.py:197: AssertionError
+_ test_wrapper_mutation_after_hit_invalidates_before_native[changed-fn-cell] __
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A79ECC2F0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000026A78909F30>
+mutation = 'changed-fn-cell'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_cache_adversarial.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_prepared_cache_adversarial.py:200: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-review-green-v5\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x0000026A7894F890>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError(('saved wrapper test unexpectedly regenerated code', pc.last_miss(), {n:r.prepared_reasons for n,r in regions.items()}))
+E       AssertionError: ('saved wrapper test unexpectedly regenerated code', {'reason': 'artifact', 'detail': 'unverified or changed loaded module'}, {'work': []})
+
+tests\test_prepared_cache_adversarial.py:197: AssertionError
+_ test_wrapper_mutation_after_hit_invalidates_before_native[changed-prepare-cell] _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A78CBF5B0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000026A7A75E450>
+mutation = 'changed-prepare-cell'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_cache_adversarial.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_prepared_cache_adversarial.py:200: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-review-green-v5\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x0000026A7894D8B0>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError(('saved wrapper test unexpectedly regenerated code', pc.last_miss(), {n:r.prepared_reasons for n,r in regions.items()}))
+E       AssertionError: ('saved wrapper test unexpectedly regenerated code', {'reason': 'artifact', 'detail': 'unverified or changed loaded module'}, {'work': []})
+
+tests\test_prepared_cache_adversarial.py:197: AssertionError
+_ test_wrapper_mutation_after_hit_invalidates_before_native[changed-lifted-state] _
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AAD9940>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000026A78B647C0>
+mutation = 'changed-lifted-state'
+
+    @pytest.mark.parametrize('mutation', ['forged-marker', 'changed-code', 'changed-marker',
+                                        'changed-fn-cell', 'changed-prepare-cell', 'changed-lifted-state'])
+    def test_wrapper_mutation_after_hit_invalidates_before_native(runner_artifact, monkeypatch, capsys, mutation):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_cache_adversarial.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_prepared_cache_adversarial.py:200: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-review-green-v5\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x0000026A783D0500>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError(('saved wrapper test unexpectedly regenerated code', pc.last_miss(), {n:r.prepared_reasons for n,r in regions.items()}))
+E       AssertionError: ('saved wrapper test unexpectedly regenerated code', {'reason': 'artifact', 'detail': 'unverified or changed loaded module'}, {'work': []})
+
+tests\test_prepared_cache_adversarial.py:197: AssertionError
+______ test_trusted_wrapper_registry_does_not_pin_finished_runner_graph _______
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AE382F0>
+capsys = <_pytest.capture.CaptureFixture object at 0x0000026A78B65E10>
+
+    def test_trusted_wrapper_registry_does_not_pin_finished_runner_graph(runner_artifact, monkeypatch, capsys):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_prepared_cache_adversarial.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_prepared_cache_adversarial.py:200: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-review-green-v5\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x0000026A783D0F50>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError(('saved wrapper test unexpectedly regenerated code', pc.last_miss(), {n:r.prepared_reasons for n,r in regions.items()}))
+E       AssertionError: ('saved wrapper test unexpectedly regenerated code', {'reason': 'artifact', 'detail': 'unverified or changed loaded module'}, {'work': []})
+
+tests\test_prepared_cache_adversarial.py:197: AssertionError
+_____________ test_malformed_runtime_grammar_declines[bool-index] _____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'bool-index'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+---------------------------- Captured stdout setup ----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_fa46ab4bf7c10a867107253f-m646lly7\rcaotr_fa46ab4bf7c10a867107253f.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_fa46ab4bf7c10a867107253f-m646lly7\rcaotr_fa46ab4bf7c10a867107253f.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_____________ test_malformed_runtime_grammar_declines[bad-index] ______________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'bad-index'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+______________ test_malformed_runtime_grammar_declines[bad-kind] ______________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'bad-kind'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+__________ test_malformed_runtime_grammar_declines[duplicate-param] ___________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'duplicate-param'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+__________ test_malformed_runtime_grammar_declines[duplicate-field] ___________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'duplicate-field'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+____________ test_malformed_runtime_grammar_declines[alias-cycle] _____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'alias-cycle'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+___________ test_malformed_runtime_grammar_declines[unknown-guard] ____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'unknown-guard'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+_____________ test_malformed_runtime_grammar_declines[wrong-flag] _____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'wrong-flag'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+______________ test_malformed_runtime_grammar_declines[bad-cell] ______________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+mutation = 'bad-cell'
+
+    @pytest.mark.parametrize('mutation', ['bool-index','bad-index','bad-kind','duplicate-param','duplicate-field','alias-cycle','unknown-guard','wrong-flag','bad-cell'])
+    def test_malformed_runtime_grammar_declines(artifact, mutation):
+        pc=artifact[0]
+>       core=deepcopy(next(c for c in artifact[4]['prepared']['cores'] if c['entry_id']['qualname']=='work'))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:11: StopIteration
+__________ test_compiler_generation_miss_retains_sealed_ordinary_map __________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AB55160>
+
+    def test_compiler_generation_miss_retains_sealed_ordinary_map(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        key=pc.compiler_key()
+        monkeypatch.setattr(pc,'compiler_key',lambda:dict(key,schema=999))
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+        assert index is not None and index.exports and not index.bind(module.work)
+        assert index.exports.allow_jit is False
+>       program=next(c for c in section['prepared']['cores'] if c['entry_id']['qualname']=='work')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests\test_prepared_cache_more.py:40: StopIteration
+_____________ test_each_guarded_builtin_replacement_is_a_key_miss _____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AB54BB0>
+
+    def test_each_guarded_builtin_replacement_is_a_key_miss(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7A041C50> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A14F530>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7A041C50>.bind
+E        +    and   <function work at 0x0000026A7A14F530> = <module '_prepared_cache_fixture_prepared_real_aot2' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot2\\workload.py'>.work
+
+tests\test_prepared_cache_more.py:49: AssertionError
+_ test_verified_metadata_detaches_from_caller_and_rejects_later_internal_edits _
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...4841074ee47fff305fc8046e2e1ac7487dd1a9448d01d335c38d6fe1d25': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7AB17850>
+
+    def test_verified_metadata_detaches_from_caller_and_rejects_later_internal_edits(artifact,monkeypatch):
+        pc,heap,module,source,original=artifact
+        section=deepcopy(original)
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7D307250> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A14F530>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7D307250>.bind
+E        +    and   <function work at 0x0000026A7A14F530> = <module '_prepared_cache_fixture_prepared_real_aot2' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot2\\workload.py'>.work
+
+tests\test_prepared_cache_more.py:85: AssertionError
+___ test_function_change_after_fingerprint_cannot_be_captured_as_new_guard ____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...378795c5d7a82b6cd70f128e2b351177c885ea324e104b80b902f269b42': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7524D940>
+
+    def test_function_change_after_fingerprint_cannot_be_captured_as_new_guard(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7D3537D0> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7D345A60>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7D3537D0>.bind
+E        +    and   <function work at 0x0000026A7D345A60> = <module '_prepared_cache_fixture_prepared_real_aot3' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot3\\workload.py'>.work
+
+tests\test_prepared_snapshot_window.py:9: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_ed86454c7c6e79579958cb44-tfqkpn5e\rcaotr_ed86454c7c6e79579958cb44.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_ed86454c7c6e79579958cb44-tfqkpn5e\rcaotr_ed86454c7c6e79579958cb44.cp314-win_amd64.exp
+Generating code
+Finished generating code
+_____ test_class_change_after_fingerprint_cannot_be_captured_as_new_guard _____
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...378795c5d7a82b6cd70f128e2b351177c885ea324e104b80b902f269b42': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7A72B4D0>
+
+    def test_class_change_after_fingerprint_cannot_be_captured_as_new_guard(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7E3515D0> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7D345A60>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7E3515D0>.bind
+E        +    and   <function work at 0x0000026A7D345A60> = <module '_prepared_cache_fixture_prepared_real_aot3' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot3\\workload.py'>.work
+
+tests\test_prepared_snapshot_window.py:26: AssertionError
+_______ test_actual_function_builtins_cannot_hide_behind_globals_entry ________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...a60af21e45366ea679798a927a47940797b679b8ac0250b5bee9d60a3ac': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_actual_function_builtins_cannot_hide_behind_globals_entry(artifact):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7ADA0AD0> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A2699B0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7ADA0AD0>.bind
+E        +    and   <function work at 0x0000026A7A2699B0> = <module '_prepared_cache_fixture_prepared_real_aot4' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot4\\workload.py'>.work
+
+tests\test_prepared_review_regressions.py:26: AssertionError
+__________ test_nested_unsupported_class_value_never_runs_type_hooks __________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...a60af21e45366ea679798a927a47940797b679b8ac0250b5bee9d60a3ac': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000026A7D7DC750>
+
+    def test_nested_unsupported_class_value_never_runs_type_hooks(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7A54FD50> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A2699B0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7A54FD50>.bind
+E        +    and   <function work at 0x0000026A7A2699B0> = <module '_prepared_cache_fixture_prepared_real_aot4' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot4\\workload.py'>.work
+
+tests\test_prepared_review_regressions.py:42: AssertionError
+________________ test_actual_builtin_namespace_alias_is_sealed ________________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...a60af21e45366ea679798a927a47940797b679b8ac0250b5bee9d60a3ac': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_actual_builtin_namespace_alias_is_sealed(artifact):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x0000026A7AEF1150> is not None and [])
+E        +  where [] = bind(<function work at 0x0000026A7A2699B0>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x0000026A7AEF1150>.bind
+E        +    and   <function work at 0x0000026A7A2699B0> = <module '_prepared_cache_fixture_prepared_real_aot4' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-review-green-v5\\prepared-real-aot4\\workload.py'>.work
+
+tests\test_prepared_review_regressions.py:92: AssertionError
+__________ test_used_keyword_default_keys_never_invoke_user_equality __________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...a60af21e45366ea679798a927a47940797b679b8ac0250b5bee9d60a3ac': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_used_keyword_default_keys_never_invoke_user_equality(artifact):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       program=index.bind(module.work)[0]
+                ^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'bind'
+
+tests\test_prepared_review_regressions.py:258: AttributeError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_cache.py::test_real_legacy_and_seed_records_are_emitted
+FAILED tests/test_prepared_cache.py::test_prepared_bind_skips_all_program_construction_and_analysis
+FAILED tests/test_prepared_cache.py::test_prepared_runtime_preserves_writeback_alias_and_original_identity
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[source-bytes]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[entry-code]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[entry-constants]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[dependency-code]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[dependency-constants]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[entry-defaults]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[kwdefaults-replace]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[kwdefaults-inplace]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[dependency-defaults]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[global-constant]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[method-body]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[method-shadow]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[constructor-body]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[mro]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[finalizer]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[custom-new]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[getattribute]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[slot-descriptor]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[class-binding]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[builtin-shadow]
+FAILED tests/test_prepared_cache.py::test_each_live_key_component_change_declines_before_native[module-binding]
+FAILED tests/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[written]
+FAILED tests/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[return-conversion]
+FAILED tests/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[guard-deletion]
+FAILED tests/test_prepared_cache_adversarial.py::test_well_typed_forgery_with_all_json_hashes_updated_still_fails_native_seal[cell-mutation]
+FAILED tests/test_prepared_cache_adversarial.py::test_complete_runner_snapshot_really_binds_before_plan_mutation
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_candidate_edits_invalidate_unchanged_plan[recommended-False]
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_candidate_edits_invalidate_unchanged_plan[status-declined]
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_candidate_edits_invalidate_unchanged_plan[engine-lift]
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_candidate_edits_invalidate_unchanged_plan[batch_backends-value3]
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_candidate_edits_invalidate_unchanged_plan[batch_size-16]
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_candidate_edits_invalidate_unchanged_plan[future_selection_option-value5]
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_function_controls_invalidate_unchanged_plan[calls-99]
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_function_controls_invalidate_unchanged_plan[line-999]
+FAILED tests/test_prepared_cache_adversarial.py::test_top_level_function_controls_invalidate_unchanged_plan[file-different.py]
+FAILED tests/test_prepared_cache_adversarial.py::test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit
+FAILED tests/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[forged-marker]
+FAILED tests/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-code]
+FAILED tests/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-marker]
+FAILED tests/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-fn-cell]
+FAILED tests/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-prepare-cell]
+FAILED tests/test_prepared_cache_adversarial.py::test_wrapper_mutation_after_hit_invalidates_before_native[changed-lifted-state]
+FAILED tests/test_prepared_cache_adversarial.py::test_trusted_wrapper_registry_does_not_pin_finished_runner_graph
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[bool-index]
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[bad-index]
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[bad-kind]
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[duplicate-param]
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[duplicate-field]
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[alias-cycle]
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[unknown-guard]
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[wrong-flag]
+FAILED tests/test_prepared_cache_more.py::test_malformed_runtime_grammar_declines[bad-cell]
+FAILED tests/test_prepared_cache_more.py::test_compiler_generation_miss_retains_sealed_ordinary_map
+FAILED tests/test_prepared_cache_more.py::test_each_guarded_builtin_replacement_is_a_key_miss
+FAILED tests/test_prepared_cache_more.py::test_verified_metadata_detaches_from_caller_and_rejects_later_internal_edits
+FAILED tests/test_prepared_snapshot_window.py::test_function_change_after_fingerprint_cannot_be_captured_as_new_guard
+FAILED tests/test_prepared_snapshot_window.py::test_class_change_after_fingerprint_cannot_be_captured_as_new_guard
+FAILED tests/test_prepared_review_regressions.py::test_actual_function_builtins_cannot_hide_behind_globals_entry
+FAILED tests/test_prepared_review_regressions.py::test_nested_unsupported_class_value_never_runs_type_hooks
+FAILED tests/test_prepared_review_regressions.py::test_actual_builtin_namespace_alias_is_sealed
+FAILED tests/test_prepared_review_regressions.py::test_used_keyword_default_keys_never_invoke_user_equality
+64 failed, 103 passed in 55.93s

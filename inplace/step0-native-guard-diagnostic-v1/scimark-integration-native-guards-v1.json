@@ -1,0 +1,91 @@
+{
+  "report": {
+    "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+    "functions": [
+      {
+        "function": "FFT_transform_internal",
+        "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": false,
+        "ahead_of_time": false,
+        "aot_loaded": false,
+        "region": false
+      },
+      {
+        "function": "FFT_bitreverse",
+        "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+        "compiled_calls": 0,
+        "aot_calls": 0,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": false,
+        "ahead_of_time": false,
+        "aot_loaded": false,
+        "region": false
+      },
+      {
+        "function": "FFT_transform",
+        "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+        "compiled_calls": 250,
+        "aot_calls": 250,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": true,
+        "ahead_of_time": true,
+        "aot_loaded": true,
+        "region": false
+      },
+      {
+        "function": "FFT_inverse",
+        "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+        "compiled_calls": 250,
+        "aot_calls": 250,
+        "jit_calls": 0,
+        "fallback_calls": 0,
+        "lifted": true,
+        "ahead_of_time": true,
+        "aot_loaded": true,
+        "region": false
+      }
+    ],
+    "not_found": [],
+    "batches": {},
+    "batch_failures": {},
+    "exit_code": null
+  },
+  "hits": {
+    "lift:None": 500
+  },
+  "unsupported_single_guard_shapes": {},
+  "profile": [
+    {
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\guard_rule_diagnostic.py",
+      "line": 40,
+      "name": "inspect_lift",
+      "calls": 500,
+      "self_s": 0.00023040000000000002,
+      "cumulative_s": 0.0004536
+    },
+    {
+      "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-native-guards-v1\\src\\recompyler\\lift.py",
+      "line": 1961,
+      "name": "guards_hold",
+      "calls": 500,
+      "self_s": 0.0020524000000000002,
+      "cumulative_s": 0.003627
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "name": "<built-in method recompyler._heap.check_lift_guards>",
+      "calls": 500,
+      "self_s": 0.0002231,
+      "cumulative_s": 0.0002231
+    }
+  ],
+  "diagnostic_only": true,
+  "profiler_overhead_retained": true
+}

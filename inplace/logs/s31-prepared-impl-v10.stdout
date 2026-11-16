@@ -1,0 +1,47 @@
+..............F
+================================== FAILURES ===================================
+____ test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit ____
+
+runner_artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...rsarial0\\workload.py', 'function': 'helper', 'line': 4, 'calls': 1, ...}], 'mode': 'saved', 'force': False, ...}, ...)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000204D7CDDF30>
+capsys = <_pytest.capture.CaptureFixture object at 0x00000204D8E57770>
+
+    def test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit(runner_artifact, monkeypatch, capsys):
+>       work, wrapper = _real_saved_run(runner_artifact, monkeypatch, capsys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:221: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:204: in _real_saved_run
+    result = run_script(source, [], plan_file, False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:314: in run_script
+    exec(code, module.__dict__)
+inplace\temp\s31-prepared-impl-v10\prepared-runner-adversarial0\workload.py:31: in <module>
+    print(work(Box(10), [])[2])
+          ^^^^^^^^^^^^^^^^^
+src\recompyler\runner.py:279: in fast
+    return state["lifted"](*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7151: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7048: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6896: in program_for
+    candidate = self._make_program()
+                ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<recompyler.heap.Region object at 0x00000204DB9BF8A0>,), kwargs = {}
+
+    def forbidden(*args, **kwargs):
+>       raise AssertionError('saved wrapper test unexpectedly regenerated code')
+E       AssertionError: saved wrapper test unexpectedly regenerated code
+
+inplace\prepared-cache-preparation\test_prepared_cache_adversarial.py:201: AssertionError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_adversarial.py::test_plain_profile_binding_to_actual_runner_wrapper_is_a_prepared_hit
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!
+1 failed, 14 passed in 10.11s

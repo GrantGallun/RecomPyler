@@ -1,0 +1,40 @@
+{
+  "barnes_hut": {
+    "pairs": 3,
+    "base_median_ms": 34.19250002480112,
+    "candidate_median_ms": 32.714700006181374,
+    "independent_median_change_percent": -4.3220004900134334,
+    "paired_differences_ms": [
+      -2.1539999870583415,
+      -0.008400005754083395,
+      -1.6204000276047736
+    ],
+    "paired_median_difference_ms": -1.6204000276047736,
+    "paired_mean_difference_ms": -1.260933340139066,
+    "mean_difference_bootstrap95_ms": [
+      -2.1539999870583415,
+      -0.008400005754083395
+    ],
+    "exact_two_sided_signflip_p": 0.25,
+    "limitations": "Fresh-process paired observations; descriptive bootstrap/exact sign flips assume exchangeable pair noise. No multiplicity correction; source causality also requires behavior/native gates."
+  },
+  "scimark": {
+    "pairs": 3,
+    "base_median_ms": 1.4463000115938485,
+    "candidate_median_ms": 1.4591000217478722,
+    "independent_median_change_percent": 0.8850176347518612,
+    "paired_differences_ms": [
+      0.03409996861591935,
+      0.01260003773495555,
+      0.000800006091594696
+    ],
+    "paired_median_difference_ms": 0.01260003773495555,
+    "paired_mean_difference_ms": 0.0158333374808232,
+    "mean_difference_bootstrap95_ms": [
+      0.000800006091594696,
+      0.03409996861591935
+    ],
+    "exact_two_sided_signflip_p": 0.25,
+    "limitations": "Fresh-process paired observations; descriptive bootstrap/exact sign flips assume exchangeable pair noise. No multiplicity correction; source causality also requires behavior/native gates."
+  }
+}

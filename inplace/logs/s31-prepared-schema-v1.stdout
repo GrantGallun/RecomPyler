@@ -1,0 +1,20 @@
+...........F.                                                            [100%]
+================================== FAILURES ===================================
+_____________ test_each_guarded_builtin_replacement_is_a_key_miss _____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...3bf6114803b06fdf92ddd217217bb9f64b216d198c145548bc9d89f8c73': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001B3FA7FDF30>
+
+    def test_each_guarded_builtin_replacement_is_a_key_miss(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.work)
+E       AssertionError: assert (<recompyler._prepared.PreparedIndex object at 0x000001B3FA7E2490> is not None and [])
+E        +  where [] = bind(<function work at 0x000001B3FBDF2C40>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x000001B3FA7E2490>.bind
+E        +    and   <function work at 0x000001B3FBDF2C40> = <module '_prepared_cache_fixture_prepared_real_aot0' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-schema-v1\\prepared-real-aot0\\workload.py'>.work
+
+inplace\prepared-cache-preparation\test_prepared_cache_more.py:49: AssertionError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_cache_more.py::test_each_guarded_builtin_replacement_is_a_key_miss
+1 failed, 12 passed in 9.95s

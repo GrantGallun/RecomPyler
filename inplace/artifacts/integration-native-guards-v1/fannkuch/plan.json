@@ -1,0 +1,77 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\fannkuch.py",
+  "profiler": "c",
+  "total_s": 0.2305993425998827,
+  "script_self_s": 0.21482790012669284,
+  "functions": [
+    {
+      "function": "fannkuch",
+      "qualname": "fannkuch",
+      "line": 14,
+      "calls": 1,
+      "self_s": 0.21482790012669284,
+      "cumulative_s": 0.22899693725048564,
+      "library_s": 0.014169037123792805,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 1,
+        "compiled_samples": 1,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Explicit measurement-only verified native-region selection; not default coverage.",
+        "net_s_first_run": -2.990938274767585,
+        "net_s_cached": 0.1318068252337538,
+        "first_pass_s": 3.195787000004202,
+        "warm_start_s": 0.07304190000286326,
+        "python_us_per_call": 231878.6999967415,
+        "compiled_cpu_us_per_call": 24452.099998597987,
+        "speedup": 9.482976922638004,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 24452.099998597987,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": false,
+        "batch_size": 1,
+        "batch_us_per_call": 24281.700010760687,
+        "batch_speedup": 9.549524946522773,
+        "batch_backends": {
+          "cpu": 9.549524946522773
+        },
+        "best_backend": "cpu",
+        "backend_note": null,
+        "diagnostic_original_recommended": true
+      }
+    }
+  ],
+  "plan": {
+    "startup_s": 0.49472470000910107,
+    "saving_s": 0.1318068252337538,
+    "worth_running": false,
+    "aot": {
+      "module": "rcaot_fa95e092a050c6ef0e12115f",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-native-guards-v1\\fannkuch",
+      "functions": [
+        {
+          "function": "fannkuch",
+          "line": 14,
+          "qualname": "fannkuch",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\fannkuch.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\fannkuch.py",
+            "sha256": "9ebe071d474df2d9651286e80c7efc59e3796207fad75804b34871150dce7531",
+            "module": "__main__",
+            "code_sha256": "564e57d7ca7dbb0152a628c59c23bf1eb7c209ac9d65bfb30d33665f9708adf9",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "a8943cdcb140407526a4bae68c23a03af88478abf74525a6bfb4afe768edd0a1",
+          "exports": {
+            "('T', 'i')": "f0"
+          },
+          "promote": {}
+        }
+      ]
+    }
+  }
+}

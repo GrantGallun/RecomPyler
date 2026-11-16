@@ -1,0 +1,17 @@
+{
+  "label": "step2-review-red-v1",
+  "command": [
+    "C:/Python314/python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_direct_program.py::test_constructor_on_existing_input_does_not_omit_its_writes",
+    "tests/test_direct_safety.py::test_all_persistent_names_and_operands_are_primitive",
+    "tests/test_direct_adapter.py::test_entry_owns_environments_after_dispatcher_collection",
+    "--basetemp",
+    "inplace/step2-review-red-v1"
+  ],
+  "exit_code": 1,
+  "wall_s": 2.9197986999934074,
+  "end": "2026-11-14T16:41:18.292153+00:00"
+}

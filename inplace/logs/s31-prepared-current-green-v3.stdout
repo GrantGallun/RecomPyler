@@ -1,0 +1,51 @@
+........................................................................ [ 39%]
+....................F................................................... [ 78%]
+.....F..................................                                 [100%]
+================================== FAILURES ===================================
+_________ test_hidden_random_holder_uses_live_state_and_keeps_aliases _________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...e36037c8485aaa9d3bec20804e7c6f3b0807ac2c0c1fafb29afc0e7f536': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_hidden_random_holder_uses_live_state_and_keeps_aliases(artifact):
+        pc, heap, module, source, section = artifact
+        index = pc.open_index(section, row_for(section, 'random_step'), plan_snapshot=standalone(section))
+        programs = index.bind(module.random_step)
+>       assert programs, 'legacy synthetic RNG holder was not rebound'
+E       AssertionError: legacy synthetic RNG holder was not rebound
+E       assert []
+
+tests\test_prepared_cache.py:386: AssertionError
+____________ test_bound_method_function_cannot_masquerade_by_names ____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...0ab6e35508b223d9ac367d403c4fc659f5ed933e64b3c20825f497140d2': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000277B987DB70>
+
+    def test_bound_method_function_cannot_masquerade_by_names(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section,'random_step'),plan_snapshot=standalone(section))
+>       assert index is not None and index.bind(module.random_step),pc.last_miss()
+E       AssertionError: {'reason': 'binding', 'detail': 'binding key'}
+E       assert (<recompyler._prepared.PreparedIndex object at 0x00000277BC79B4D0> is not None and [])
+E        +  where [] = bind(<function random_step at 0x00000277BD7DEA30>)
+E        +    where bind = <recompyler._prepared.PreparedIndex object at 0x00000277BC79B4D0>.bind
+E        +    and   <function random_step at 0x00000277BD7DEA30> = <module '_prepared_cache_fixture_prepared_real_aot4' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\s31-prepared-current-green-v3\\prepared-real-aot4\\workload.py'>.random_step
+
+tests\test_prepared_review_regressions.py:13: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_6d19e8cedf9e6d6d924b34ca-xw9sek4z\rcaotr_6d19e8cedf9e6d6d924b34ca.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_6d19e8cedf9e6d6d924b34ca-xw9sek4z\rcaotr_6d19e8cedf9e6d6d924b34ca.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_cache.py::test_hidden_random_holder_uses_live_state_and_keeps_aliases
+FAILED tests/test_prepared_review_regressions.py::test_bound_method_function_cannot_masquerade_by_names
+2 failed, 182 passed in 73.32s (0:01:13)

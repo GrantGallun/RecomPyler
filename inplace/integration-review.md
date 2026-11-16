@@ -1,0 +1,1 @@
+Independent read-only reviewer: no concrete correctness defect. Compared all frozen Python/C files with normalized line endings; only heap.py/lift.py intentionally differ, retaining depth range/scalar rules. Union suite, three-pair four-kernel native/checksum check, and ordinary chaos/Richards smoke remain required.

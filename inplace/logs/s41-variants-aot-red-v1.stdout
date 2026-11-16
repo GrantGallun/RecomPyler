@@ -1,0 +1,60 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+______________ test_prepared_alternating_variants_do_not_rebind _______________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/s41-variants-aot-red-v1/test_prepared_alternating_vari0')
+
+    def test_prepared_alternating_variants_do_not_rebind(tmp_path):
+     source=tmp_path/'variants_work.py';source.write_text('def scalar(x):\n    return x * 2 + 1\n')
+     spec=importlib.util.spec_from_file_location('_s41_variants_aot',source);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
+     region=heap.lift_region(module.scalar);assert region(2)==5 and region(2.5)==6.0
+     section=heap.build_regions([(('scalar',module.scalar.__code__.co_firstlineno),module.scalar,region)],tmp_path/'aot')
+     index=pc.open_index(section,section['functions'][0],plan_snapshot={'mode':'standalone','functions':[],'plan':{'aot_regions':section}})
+     assert index is not None,pc.last_miss()
+     rebound=heap.lift_region(module.scalar,prepared=index)
+     assert rebound(3)==7 and rebound(3.5)==8.0
+     assert rebound.aot_calls==2 and rebound.jit_calls==0 and rebound.fallback_calls==0
+     def forbidden(*args,**kwargs):raise AssertionError('retained prepared variant rebound its descriptor')
+     with patch.object(index,'iter_bind',forbidden):
+>     assert rebound(4)==9 and rebound(4.5)==10.0
+             ^^^^^^^^^^
+
+tests\test_fixed_costs_aot.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7297: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7190: in attempt
+    program = self.program_for(args)
+              ^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:6966: in program_for
+    candidates = (self.prepared.iter_bind(self.original) if hasattr(self.prepared, "iter_bind")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<function scalar at 0x0000020EE945E560>,), kwargs = {}
+
+>   def forbidden(*args,**kwargs):raise AssertionError('retained prepared variant rebound its descriptor')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: retained prepared variant rebound its descriptor
+
+tests\test_fixed_costs_aot.py:66: AssertionError
+---------------------------- Captured stdout call -----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_ce34df378d20656362346baf-65z6x32j\rcaotr_ce34df378d20656362346baf.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_ce34df378d20656362346baf-65z6x32j\rcaotr_ce34df378d20656362346baf.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED tests/test_fixed_costs_aot.py::test_prepared_alternating_variants_do_not_rebind
+1 failed in 6.03s

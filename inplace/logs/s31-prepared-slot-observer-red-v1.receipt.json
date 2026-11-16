@@ -1,0 +1,17 @@
+{
+  "label": "s31-prepared-slot-observer-red-v1",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "inplace/prepared-cache-preparation/test_prepared_slot_cache.py",
+    "-k",
+    "nested_code or guard_cache or bad_slot",
+    "--basetemp",
+    "inplace/temp/s31-prepared-slot-observer-red-v1"
+  ],
+  "exit_code": 1,
+  "wall_s": 1.5063531999767292,
+  "end": "2026-11-14T07:13:46.096379+00:00"
+}

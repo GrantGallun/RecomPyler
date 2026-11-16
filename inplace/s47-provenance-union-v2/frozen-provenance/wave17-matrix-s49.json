@@ -1,0 +1,176 @@
+﻿{
+  "rule": "S49-exempt",
+  "note": "Only exact builtin numeric reference identity is exempt. Aggregate/field/call-entry/observer obligations remain. Original owner files are unchanged.",
+  "cases": [
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "code_constant_float",
+      "classification": "S49-exempt",
+      "args": [
+        3
+      ],
+      "expected_type": "float",
+      "expected_value": 3
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "code_constant_integer",
+      "classification": "S49-exempt",
+      "args": [
+        3
+      ],
+      "expected_type": "int",
+      "expected_value": 10001
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "discarded_helper_selected_input",
+      "classification": "S49-exempt",
+      "args": [
+        10000
+      ],
+      "expected_type": "int",
+      "expected_value": 10000
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "early_selected_input",
+      "classification": "S49-exempt",
+      "args": [
+        10000,
+        true
+      ],
+      "expected_type": "int",
+      "expected_value": 10000
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "constant_alias",
+      "classification": "S49-exempt",
+      "args": [
+        3
+      ],
+      "expected_type": "int",
+      "expected_value": 10000
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "input_alias",
+      "classification": "S49-exempt",
+      "args": [
+        10000
+      ],
+      "expected_type": "int",
+      "expected_value": 10000
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "remainder_selected_input",
+      "classification": "S49-exempt",
+      "args": [
+        1099511627776,
+        1152921504606847000
+      ],
+      "expected_type": "int",
+      "expected_value": 1099511627776
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "nonlocal_fresh_update",
+      "classification": "S49-exempt",
+      "args": [
+        10000
+      ],
+      "expected_type": "int",
+      "expected_value": 10001
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "nonlocal_old_alias",
+      "classification": "S49-exempt",
+      "args": [
+        10000
+      ],
+      "expected_type": "int",
+      "expected_value": 10000
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "nonlocal_late_shared_read",
+      "classification": "S49-exempt",
+      "args": [
+        3
+      ],
+      "expected_type": "int",
+      "expected_value": 6
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "nonlocal_rebind_and_snapshot",
+      "classification": "S49-exempt",
+      "args": [
+        3
+      ],
+      "expected_type": "int",
+      "expected_value": 207
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "fresh_alias",
+      "classification": "S49-exempt",
+      "args": [
+        10000
+      ],
+      "expected_type": "int",
+      "expected_value": 10001
+    },
+    {
+      "file": "wave18-lift-owners.py",
+      "function": "literal_actual_runtime",
+      "classification": "S49-exempt",
+      "args": [
+        3
+      ],
+      "expected_type": "int",
+      "expected_value": 10001
+    }
+  ],
+  "numeric_leaf_facets": [
+    {
+      "file": "wave16-inplace-direct.py",
+      "functions": [
+        "field_aliases",
+        "field_phi",
+        "field_loop",
+        "shared_fresh_producer",
+        "distinct_equal_producers",
+        "dynamic_producer",
+        "returned_before_finally",
+        "first_equal_minimum",
+        "surviving_store_alias"
+      ],
+      "classification": "S49-exempt numeric leaves",
+      "expected": "Example field7.25; exact numeric leaves only, preserve aggregate/record/container ownership and effects."
+    },
+    {
+      "file": "wave16-inplace-callable.py",
+      "functions": [
+        "warm_no_python_entry",
+        "checked_integer_overflow"
+      ],
+      "classification": "S49-exempt numeric leaves",
+      "expected": "3013 for value1002 and 27670116110564327428 for value(1<<63)-1; native-entry/status behavior remains required."
+    },
+    {
+      "file": "wave18-lift-range-escapes.py",
+      "functions": [
+        "ignored_range_selected_input",
+        "repeated_iteration_numeric_alias",
+        "longrange_first_owner",
+        "constructed_longrange_first_owner"
+      ],
+      "classification": "S49-exempt numeric leaves",
+      "expected": "Numeric leaves equal actual range/input values, exact int; range object identity remains exact."
+    }
+  ]
+}

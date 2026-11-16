@@ -1,0 +1,33 @@
+.............F.......                                                    [100%]
+================================== FAILURES ===================================
+_______________ test_unused_random_input_needs_no_state_export ________________
+
+    def test_unused_random_input_needs_no_state_export():
+     import random
+     from recompyler import _rng
+     generator=random.Random(42);state=generator.getstate();region=warmed(unused_random,generator,2)
+     assert not getattr(region.latest,'rng_used',False)
+>    with patch.object(_rng,'store',forbidden):assert region(generator,3)==4
+                                                      ^^^^^^^^^^^^^^^^^^^
+
+tests\test_fixed_costs.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\recompyler\heap.py:7294: in __call__
+    ok, value = self.attempt(args, kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\recompyler\heap.py:7274: in attempt
+    store(rng, I, handle)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+args = (<random.Random object at 0x000001F9A83F9570>, array([2147483648, 3564348608, 1266698288, ...,          0,          0,
+                0], shape=(65536,)), 0)
+kwargs = {}
+
+>   def forbidden(*args,**kwargs):raise AssertionError('unneeded boundary operation executed')
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError: unneeded boundary operation executed
+
+tests\test_fixed_costs.py:21: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_fixed_costs.py::test_unused_random_input_needs_no_state_export
+1 failed, 20 passed in 9.20s

@@ -1,0 +1,243 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+  "profiler": "c",
+  "total_s": 0.5238961644839122,
+  "script_self_s": 0.19277469970984384,
+  "functions": [
+    {
+      "function": "FFT_transform_internal",
+      "qualname": "FFT_transform_internal",
+      "line": 286,
+      "calls": 100,
+      "self_s": 0.16773231854313053,
+      "cumulative_s": 0.19327963884279598,
+      "library_s": 0.005052832988440059,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Explicit measurement-only verified native-region selection; not default coverage.",
+        "net_s_first_run": -3.8079900134116267,
+        "net_s_cached": 0.11977148659118966,
+        "first_pass_s": 3.9674224000045797,
+        "warm_start_s": 0.039660900001763366,
+        "python_us_per_call": 1620.1875023398316,
+        "compiled_cpu_us_per_call": 25.863636410301268,
+        "speedup": 62.64345340450752,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 25.863636410301268,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": true,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function changes its arguments",
+        "diagnostic_original_recommended": true
+      }
+    },
+    {
+      "function": "FFT_bitreverse",
+      "qualname": "FFT_bitreverse",
+      "line": 337,
+      "calls": 100,
+      "self_s": 0.020408893717103638,
+      "cumulative_s": 0.02042259051813744,
+      "library_s": 1.369680103380233e-05,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Explicit measurement-only verified native-region selection; not default coverage.",
+        "net_s_first_run": -0.8317398243569327,
+        "net_s_cached": -0.011238124356910167,
+        "first_pass_s": 0.8483272000012221,
+        "warm_start_s": 0.027825500001199543,
+        "python_us_per_call": 173.85535751860255,
+        "compiled_cpu_us_per_call": 7.981601075708782,
+        "speedup": 21.782015396348765,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 7.981601075708782,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": true,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function changes its arguments",
+        "diagnostic_original_recommended": false
+      }
+    },
+    {
+      "function": "FFT_inverse",
+      "qualname": "FFT_inverse",
+      "line": 362,
+      "calls": 50,
+      "self_s": 0.004595342237735167,
+      "cumulative_s": 0.10303870802454185,
+      "library_s": 8.39676067698747e-06,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Explicit measurement-only verified native-region selection; not default coverage.",
+        "net_s_first_run": -2.8279714905129367,
+        "net_s_cached": 0.04648050947616866,
+        "first_pass_s": 2.9066075999871828,
+        "warm_start_s": 0.03215559999807738,
+        "python_us_per_call": 1598.4375022526365,
+        "compiled_cpu_us_per_call": 25.71531276771566,
+        "speedup": 62.15897573135483,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 25.71531276771566,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": true,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function changes its arguments",
+        "diagnostic_original_recommended": true
+      }
+    },
+    {
+      "function": "FFT_transform",
+      "qualname": "FFT_transform",
+      "line": 358,
+      "calls": 50,
+      "self_s": 3.814521187450737e-05,
+      "cumulative_s": 0.09488281502854079,
+      "library_s": 0.0,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Explicit measurement-only verified native-region selection; not default coverage.",
+        "net_s_first_run": -2.5416665893224657,
+        "net_s_cached": 0.04203571066880778,
+        "first_pass_s": 2.6179313999891747,
+        "warm_start_s": 0.03422909999790136,
+        "python_us_per_call": 1551.0125012951903,
+        "compiled_cpu_us_per_call": 25.716287961007435,
+        "speedup": 60.31245658964963,
+        "list_reuse": 0.0,
+        "compiled_fresh_us_per_call": 25.716287961007435,
+        "compiled_reused_us_per_call": null,
+        "changes_arguments": true,
+        "batch_size": 0,
+        "batch_us_per_call": null,
+        "batch_speedup": null,
+        "batch_backends": {},
+        "best_backend": null,
+        "backend_note": "not batched: the function changes its arguments",
+        "diagnostic_original_recommended": true
+      }
+    }
+  ],
+  "plan": {
+    "startup_s": 0.5195601000013994,
+    "saving_s": 0.19704958237925593,
+    "worth_running": false,
+    "aot": {
+      "module": "rcaot_b8c93f6b381c2cc82f1fc8d1",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-noop\\scimark",
+      "functions": [
+        {
+          "function": "FFT_transform_internal",
+          "line": 286,
+          "qualname": "FFT_transform_internal",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+            "sha256": "75259353833cd5ebe8f855467b7fd8a4447985ae81695cda26004025d9cd9ab1",
+            "module": "__main__",
+            "code_sha256": "964d4a2dfb79f155b19487b905440b749fe5fec201844ccc770c51b0792297f1",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "9ee089c0c2364f2d4871de186d081292bb082b0ae9f6349aab51e47c0323373c",
+          "exports": {
+            "('T', 'i', ('A', 'f'), 'i')": "f0"
+          },
+          "promote": {}
+        },
+        {
+          "function": "FFT_bitreverse",
+          "line": 337,
+          "qualname": "FFT_bitreverse",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+            "sha256": "75259353833cd5ebe8f855467b7fd8a4447985ae81695cda26004025d9cd9ab1",
+            "module": "__main__",
+            "code_sha256": "84a17fa4f7ad4a4ca271a68cf29e6f90d7307126254fbbdd46409e71a0b32853",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "2aede571edf0c6540da88f7bfc563e9a883f8081aee5db7be8f4eefa8b12e183",
+          "exports": {
+            "('T', 'i', ('A', 'f'))": "f1"
+          },
+          "promote": {}
+        },
+        {
+          "function": "FFT_inverse",
+          "line": 362,
+          "qualname": "FFT_inverse",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+            "sha256": "75259353833cd5ebe8f855467b7fd8a4447985ae81695cda26004025d9cd9ab1",
+            "module": "__main__",
+            "code_sha256": "a1675413866068bf711ac8b8a4545528b02de507e7ed1ebc6ee9cffee39b76cd",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "f19eacbe2a543325b8c64f7d116f884b94d45d27e9e1b023e690ce7815e5cdd4",
+          "exports": {
+            "('T', 'i', ('A', 'f'))": "f2"
+          },
+          "promote": {}
+        },
+        {
+          "function": "FFT_transform",
+          "line": 358,
+          "qualname": "FFT_transform",
+          "file": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+          "origin": {
+            "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py",
+            "sha256": "75259353833cd5ebe8f855467b7fd8a4447985ae81695cda26004025d9cd9ab1",
+            "module": "__main__",
+            "code_sha256": "4dae874363c70626d6ea61dfc6c4c6dcb428fdbea1730e0267d7048ab7025eae",
+            "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+            "library_version": null
+          },
+          "digest": "d441c672172c8ced5674aef23d5d4c4bb257ee4a71c77565d2a8652986317bca",
+          "exports": {
+            "('T', 'i', ('A', 'f'))": "f3"
+          },
+          "promote": {}
+        }
+      ]
+    }
+  }
+}

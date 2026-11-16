@@ -1,0 +1,180 @@
+.FFFF                                                                    [100%]
+================================== FAILURES ===================================
+___ test_runner_validates_present_prepared_payload_before_legacy_load[null] ___
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/pytest-of-grant/pytest-3/test_runner_validates_present_1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000028054DE10F0>
+kind = 'null'
+
+    @pytest.mark.parametrize('kind', ['absent','null','bad-core','bad-artifact','verified'])
+    def test_runner_validates_present_prepared_payload_before_legacy_load(tmp_path, monkeypatch, kind):
+        from recompyler import runner, heap, aot
+        import recompyler
+        script = tmp_path / 'work.py'
+        script.write_text('def work(x):\n    return x + 1\nassert work(10) == 11\n')
+        section = dict(module='unused_native',folder=str(tmp_path),functions=[dict(function='work',line=1,exports={'digest':'r0'})])
+        if kind != 'absent': section['prepared'] = None if kind == 'null' else {'fixture':'present'}
+        data = dict(script=str(script),functions=[dict(function='work',line=1,candidate=dict(status='verified',recommended=True,engine='region'))],
+                    plan=dict(worth_running=True,aot_regions=section))
+        plan = tmp_path / 'plan.json'; plan.write_text(json.dumps(data))
+        old_loads, opens, lifts = [], [], []
+        export = lambda *args: None
+        native = SimpleNamespace(r0=export)
+        index = SimpleNamespace(module=native,exports={'digest':export},bind=lambda fn:[])
+        pc = ModuleType('recompyler._prepared')
+        class PreparedArtifactMismatch(Exception): pass
+        pc.PreparedArtifactMismatch = PreparedArtifactMismatch
+        def open_index(received, row, *, plan_snapshot, module=None):
+            opens.append(plan_snapshot)
+            assert plan_snapshot['functions'] == data['functions']
+            assert plan_snapshot['mode'] == 'saved' and plan_snapshot['force'] is False
+            if kind == 'bad-artifact': raise PreparedArtifactMismatch('changed artifact')
+            return index if kind == 'verified' else None
+        pc.open_index = open_index
+        monkeypatch.setitem(sys.modules, 'recompyler._prepared', pc)
+        monkeypatch.setattr(recompyler, '_prepared', pc, raising=False)
+        def old_load(section): old_loads.append(section); return native
+        monkeypatch.setattr(aot, 'load', old_load)
+        def lift(fn, exports, **kwargs): lifts.append((exports,kwargs)); return None
+        monkeypatch.setattr(heap, 'lift_region', lift)
+        runner.run_script(script, [], plan)
+>       assert len(old_loads) == (1 if kind == 'absent' else 0)
+E       AssertionError: assert 1 == 0
+E        +  where 1 = len([{'module': 'unused_native', 'folder': 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\...r_validates_present_1', 'functions': [{'function': 'work', 'line': 1, 'exports': {'digest': 'r0'}}], 'prepared': None}])
+
+inplace\prepared-cache-preparation\test_runner_prepared_artifact.py:39: AssertionError
+_ test_runner_validates_present_prepared_payload_before_legacy_load[bad-core] _
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/pytest-of-grant/pytest-3/test_runner_validates_present_2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000028054F84710>
+kind = 'bad-core'
+
+    @pytest.mark.parametrize('kind', ['absent','null','bad-core','bad-artifact','verified'])
+    def test_runner_validates_present_prepared_payload_before_legacy_load(tmp_path, monkeypatch, kind):
+        from recompyler import runner, heap, aot
+        import recompyler
+        script = tmp_path / 'work.py'
+        script.write_text('def work(x):\n    return x + 1\nassert work(10) == 11\n')
+        section = dict(module='unused_native',folder=str(tmp_path),functions=[dict(function='work',line=1,exports={'digest':'r0'})])
+        if kind != 'absent': section['prepared'] = None if kind == 'null' else {'fixture':'present'}
+        data = dict(script=str(script),functions=[dict(function='work',line=1,candidate=dict(status='verified',recommended=True,engine='region'))],
+                    plan=dict(worth_running=True,aot_regions=section))
+        plan = tmp_path / 'plan.json'; plan.write_text(json.dumps(data))
+        old_loads, opens, lifts = [], [], []
+        export = lambda *args: None
+        native = SimpleNamespace(r0=export)
+        index = SimpleNamespace(module=native,exports={'digest':export},bind=lambda fn:[])
+        pc = ModuleType('recompyler._prepared')
+        class PreparedArtifactMismatch(Exception): pass
+        pc.PreparedArtifactMismatch = PreparedArtifactMismatch
+        def open_index(received, row, *, plan_snapshot, module=None):
+            opens.append(plan_snapshot)
+            assert plan_snapshot['functions'] == data['functions']
+            assert plan_snapshot['mode'] == 'saved' and plan_snapshot['force'] is False
+            if kind == 'bad-artifact': raise PreparedArtifactMismatch('changed artifact')
+            return index if kind == 'verified' else None
+        pc.open_index = open_index
+        monkeypatch.setitem(sys.modules, 'recompyler._prepared', pc)
+        monkeypatch.setattr(recompyler, '_prepared', pc, raising=False)
+        def old_load(section): old_loads.append(section); return native
+        monkeypatch.setattr(aot, 'load', old_load)
+        def lift(fn, exports, **kwargs): lifts.append((exports,kwargs)); return None
+        monkeypatch.setattr(heap, 'lift_region', lift)
+        runner.run_script(script, [], plan)
+>       assert len(old_loads) == (1 if kind == 'absent' else 0)
+E       AssertionError: assert 1 == 0
+E        +  where 1 = len([{'module': 'unused_native', 'folder': 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\...t_2', 'functions': [{'function': 'work', 'line': 1, 'exports': {'digest': 'r0'}}], 'prepared': {'fixture': 'present'}}])
+
+inplace\prepared-cache-preparation\test_runner_prepared_artifact.py:39: AssertionError
+_ test_runner_validates_present_prepared_payload_before_legacy_load[bad-artifact] _
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/pytest-of-grant/pytest-3/test_runner_validates_present_3')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000028054F4AE00>
+kind = 'bad-artifact'
+
+    @pytest.mark.parametrize('kind', ['absent','null','bad-core','bad-artifact','verified'])
+    def test_runner_validates_present_prepared_payload_before_legacy_load(tmp_path, monkeypatch, kind):
+        from recompyler import runner, heap, aot
+        import recompyler
+        script = tmp_path / 'work.py'
+        script.write_text('def work(x):\n    return x + 1\nassert work(10) == 11\n')
+        section = dict(module='unused_native',folder=str(tmp_path),functions=[dict(function='work',line=1,exports={'digest':'r0'})])
+        if kind != 'absent': section['prepared'] = None if kind == 'null' else {'fixture':'present'}
+        data = dict(script=str(script),functions=[dict(function='work',line=1,candidate=dict(status='verified',recommended=True,engine='region'))],
+                    plan=dict(worth_running=True,aot_regions=section))
+        plan = tmp_path / 'plan.json'; plan.write_text(json.dumps(data))
+        old_loads, opens, lifts = [], [], []
+        export = lambda *args: None
+        native = SimpleNamespace(r0=export)
+        index = SimpleNamespace(module=native,exports={'digest':export},bind=lambda fn:[])
+        pc = ModuleType('recompyler._prepared')
+        class PreparedArtifactMismatch(Exception): pass
+        pc.PreparedArtifactMismatch = PreparedArtifactMismatch
+        def open_index(received, row, *, plan_snapshot, module=None):
+            opens.append(plan_snapshot)
+            assert plan_snapshot['functions'] == data['functions']
+            assert plan_snapshot['mode'] == 'saved' and plan_snapshot['force'] is False
+            if kind == 'bad-artifact': raise PreparedArtifactMismatch('changed artifact')
+            return index if kind == 'verified' else None
+        pc.open_index = open_index
+        monkeypatch.setitem(sys.modules, 'recompyler._prepared', pc)
+        monkeypatch.setattr(recompyler, '_prepared', pc, raising=False)
+        def old_load(section): old_loads.append(section); return native
+        monkeypatch.setattr(aot, 'load', old_load)
+        def lift(fn, exports, **kwargs): lifts.append((exports,kwargs)); return None
+        monkeypatch.setattr(heap, 'lift_region', lift)
+        runner.run_script(script, [], plan)
+>       assert len(old_loads) == (1 if kind == 'absent' else 0)
+E       AssertionError: assert 1 == 0
+E        +  where 1 = len([{'module': 'unused_native', 'folder': 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\...t_3', 'functions': [{'function': 'work', 'line': 1, 'exports': {'digest': 'r0'}}], 'prepared': {'fixture': 'present'}}])
+
+inplace\prepared-cache-preparation\test_runner_prepared_artifact.py:39: AssertionError
+_ test_runner_validates_present_prepared_payload_before_legacy_load[verified] _
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/pytest-of-grant/pytest-3/test_runner_validates_present_4')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000028054F4B130>
+kind = 'verified'
+
+    @pytest.mark.parametrize('kind', ['absent','null','bad-core','bad-artifact','verified'])
+    def test_runner_validates_present_prepared_payload_before_legacy_load(tmp_path, monkeypatch, kind):
+        from recompyler import runner, heap, aot
+        import recompyler
+        script = tmp_path / 'work.py'
+        script.write_text('def work(x):\n    return x + 1\nassert work(10) == 11\n')
+        section = dict(module='unused_native',folder=str(tmp_path),functions=[dict(function='work',line=1,exports={'digest':'r0'})])
+        if kind != 'absent': section['prepared'] = None if kind == 'null' else {'fixture':'present'}
+        data = dict(script=str(script),functions=[dict(function='work',line=1,candidate=dict(status='verified',recommended=True,engine='region'))],
+                    plan=dict(worth_running=True,aot_regions=section))
+        plan = tmp_path / 'plan.json'; plan.write_text(json.dumps(data))
+        old_loads, opens, lifts = [], [], []
+        export = lambda *args: None
+        native = SimpleNamespace(r0=export)
+        index = SimpleNamespace(module=native,exports={'digest':export},bind=lambda fn:[])
+        pc = ModuleType('recompyler._prepared')
+        class PreparedArtifactMismatch(Exception): pass
+        pc.PreparedArtifactMismatch = PreparedArtifactMismatch
+        def open_index(received, row, *, plan_snapshot, module=None):
+            opens.append(plan_snapshot)
+            assert plan_snapshot['functions'] == data['functions']
+            assert plan_snapshot['mode'] == 'saved' and plan_snapshot['force'] is False
+            if kind == 'bad-artifact': raise PreparedArtifactMismatch('changed artifact')
+            return index if kind == 'verified' else None
+        pc.open_index = open_index
+        monkeypatch.setitem(sys.modules, 'recompyler._prepared', pc)
+        monkeypatch.setattr(recompyler, '_prepared', pc, raising=False)
+        def old_load(section): old_loads.append(section); return native
+        monkeypatch.setattr(aot, 'load', old_load)
+        def lift(fn, exports, **kwargs): lifts.append((exports,kwargs)); return None
+        monkeypatch.setattr(heap, 'lift_region', lift)
+        runner.run_script(script, [], plan)
+>       assert len(old_loads) == (1 if kind == 'absent' else 0)
+E       AssertionError: assert 1 == 0
+E        +  where 1 = len([{'module': 'unused_native', 'folder': 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\temp\\...t_4', 'functions': [{'function': 'work', 'line': 1, 'exports': {'digest': 'r0'}}], 'prepared': {'fixture': 'present'}}])
+
+inplace\prepared-cache-preparation\test_runner_prepared_artifact.py:39: AssertionError
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_artifact.py::test_runner_validates_present_prepared_payload_before_legacy_load[null]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_artifact.py::test_runner_validates_present_prepared_payload_before_legacy_load[bad-core]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_artifact.py::test_runner_validates_present_prepared_payload_before_legacy_load[bad-artifact]
+FAILED inplace/prepared-cache-preparation/test_runner_prepared_artifact.py::test_runner_validates_present_prepared_payload_before_legacy_load[verified]
+4 failed, 1 passed in 0.31s

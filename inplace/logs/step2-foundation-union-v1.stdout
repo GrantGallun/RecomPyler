@@ -1,0 +1,61 @@
+........................................................................ [  5%]
+.............................................................. [ 10%]
+................................................................ [ 15%]
+.................................................................................................................................................... [ 26%]
+........................................................................ [ 32%]
+........................................................................ [ 37%]
+........................................................................ [ 43%]
+.......................................................... [ 47%]
+........................................................................ [ 53%]
+....................................................................F............................................ [ 61%]
+........................................................................ [ 67%]
+........................................................................ [ 72%]
+........................................................................ [ 78%]
+........................................................................ [ 83%]
+........................................................................ [ 89%]
+........................................................................ [ 94%]
+....................................................................     [100%]
+================================== FAILURES ===================================
+_________________ MonitorTest.test_library_time_is_kept_apart _________________
+
+self = <test_monitor.MonitorTest testMethod=test_library_time_is_kept_apart>
+
+    def test_library_time_is_kept_apart(self):
+        uses_json = self.rows["uses_json"]
+>       self.assertGreater(uses_json["library_s"], 5 * uses_json["self_s"])
+E       AssertionError: 0.0014621033624280244 not greater than 0.0024052201479207724
+
+tests\test_monitor.py:147: AssertionError
+============================== warnings summary ===============================
+tests/test_backends.py::BackendTests::test_arrays_in_arrays_out
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 4 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_auto_measures_once_per_size_and_matches
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 5 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 1 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 6 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_gpu_runs_exactly_or_explains_why_not
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 3 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_batch.py::GpuTrustTests::test_gpu_stays_in_use_after_first_batch
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 16 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_monitor.py::MonitorTest::test_library_time_is_kept_apart - ...
+1 failed, 1304 passed, 10 warnings, 131 subtests passed in 511.59s (0:08:31)

@@ -1,0 +1,165 @@
+{
+  "common": {
+    "builds": {
+      "integration-depth-prepared-v1": {
+        "source_manifest_sha256": "d2a980cd6b6cc7c122fd19fb22826c9bdf71b6e5d839e25807bffd8ee9c79358",
+        "source_files": {
+          "recompyler/__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+          "recompyler/__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+          "recompyler/_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+          "recompyler/_heap.c": "98943097571fdca3f2a82dc9bbd534e3fbd8d5bb04ea51bdaddefd18dc7aabd1",
+          "recompyler/_heap.cp314-win_amd64.pyd": "f35da8425cd4c87f436098a33f9686d918bfd3c1730b6cd89d5bf5c2806b4aeb",
+          "recompyler/_monitor.c": "2d6e52cb082b7528bbbb882f2454cd6a763e1b8d5732fe1002dfaa66ea5a36f4",
+          "recompyler/_monitor.cp314-win_amd64.pyd": "de2059c4f4f90a5c5d2c2e3951d7cfdca61c0df659e9fc58ccedfbf0fe61d240",
+          "recompyler/_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+          "recompyler/_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+          "recompyler/_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+          "recompyler/_prepared.py": "1f6bdf698d0a48aa929514aa624ecbbe94b8df7b048a1c6d040450ecd1f8bf40",
+          "recompyler/_prepared_keys.py": "c9bc541d6f4b6969f58c6b8fddbb1728eb5932b18c102854ca1d4584c34cbb48",
+          "recompyler/_pycc/__init__.py": "445e3c46acf12fb5d78f96a7965de6fa3374104f5a8b3e927df9612d4802c923",
+          "recompyler/_pycc/cc.py": "dab20f566d7658462117379effb43a9e30b5b6c261a5471cf353170772bdafea",
+          "recompyler/_pycc/compiler.py": "caf1167cc5c61aec8e4d46ed36b9a545b503ca56d167b824f9bca6b1a54f692e",
+          "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+          "recompyler/_pycc/llvm_types.py": "9f4a1b498c8573b877e7a2e656a1a1c0530a1f83695c85c5e41c73b68536e34a",
+          "recompyler/_pycc/modulemixin.c": "8240807920e741333522f107a0a3c7f57dae3c5e52cf1e8d0f02e967813a7e7e",
+          "recompyler/_pycc/platform.py": "a02136b55e3256f91204619afe790c1711a8f828845fed25a41e8d29bea544ce",
+          "recompyler/_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+          "recompyler/_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+          "recompyler/_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+          "recompyler/_runner_wrapper.py": "182e913872bf5b658544703775da232ef7e3003f2e91dc5f4750ad915e4e1bb1",
+          "recompyler/aot.py": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f",
+          "recompyler/batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+          "recompyler/benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+          "recompyler/depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+          "recompyler/escape.py": "f2787ac24f8c49938bfd75fce4f8ff7223f88e8b79ac312f6a1660f26e9e9ae4",
+          "recompyler/experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+          "recompyler/facts.py": "9f9f08c23cad271eaae67d1d7ac1c32424e388e6463ce54f4a1aec3ffb17ea1b",
+          "recompyler/flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+          "recompyler/heap.py": "698a9e3352921dc77e9f592e31e3dc7bb847c4121c93afad9621a0fc2c3a8e81",
+          "recompyler/lift.py": "76d9ba680d72df84f560f96194d897e74c2b4617202f4729003a617dca905aed",
+          "recompyler/monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+          "recompyler/numeric_versions.py": "e244fee707f8a55e86f3f9074427cdb2cbcfdc6cc6ebb47cd5dcbcdc45896a10",
+          "recompyler/profiler.py": "954ffc77e58af00f579acc83190374f162d9880fbf981b4bd13606873efb7aa6",
+          "recompyler/report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+          "recompyler/runner.py": "01038be1e9f8ef77429f8b2cc16022ddab5ffdc79408cae6f80d177d10ba63da",
+          "recompyler/scalar.py": "371298b9eb0e72441d98b98f295f720c9b59820280aaaabe98369959aef42ddc",
+          "recompyler/variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+        },
+        "artifacts": {
+          "barnes_hut": {
+            "inplace_c4fbbd9d49bfd9a0908f.cp314-win_amd64.pyd": "410962e443ada81c76c15a230c329cf0f9d905f2f137cf6e21cfaeb16f7ceda6",
+            "plan.json": "738bc6ddd5f61ff67feccfbdf29dc7a8c602588f332e665c586649e9b2f413a9",
+            "r0.generated.py": "f74ab75fbbd61e9cd1fed3e1a25b0f7a8df7ed05070c3e2a630cdaf66550614f",
+            "r1.generated.py": "0ea25ff332a4508619296af7922e307212f5f38fa802a2239009392387d11dcb"
+          },
+          "fannkuch": {
+            "fannkuch.generated.py": "79021fa2251803de2ce4067bbbb032427199d391c389a4f89b1c22f4280c10de",
+            "plan.json": "b693dba0783a6efb031b7133c96f46a982015615bbd257ca0506952654336722",
+            "rcaot_d0e385d022cd179b71d35579.cp314-win_amd64.pyd": "13b5bffa19cac3299f58a8424d52b8d1cecf263a633cc7d70bc51aad8573a91b"
+          },
+          "scimark": {
+            "FFT_bitreverse.generated.py": "0416bd3ccec70a3f6c38350ad84423857c9f345bfdf75a4293a6352b22c64428",
+            "FFT_inverse.generated.py": "a26de6664a3556da44dfe45045c98240c996e5bdc19e62a41ebf1e7316443c3e",
+            "FFT_transform.generated.py": "7f00d708a64eccb727339e6a17e0195db087f9623280fd67ad57f7821dd34c25",
+            "FFT_transform_internal.generated.py": "fd3782e04745753430d58a5969481c1696bec3440e70f549e7f4d304e3b412f1",
+            "plan.json": "80fbc9dad5ca440d3c7029138d73b5fbaedbc6bf68c153789f74e1712cb3ce42",
+            "rcaot_ceceb3b4629aa34340f8507b.cp314-win_amd64.pyd": "04a90189ee7173d7aba7e2d2477b29ba184dfe00a1a945f76a444c0803cbd23f"
+          },
+          "raytrace": {
+            "inplace_04448d618d3377ed0191.cp314-win_amd64.pyd": "9bbb37b46d1d290248dd4a5078b91994043134cef1b58aa091bb92de4ee9855e",
+            "plan.json": "312f1a21faacc5c05314feb8f1e4e78f19cd715882f2c9760e82ea74f1f86097",
+            "r0.generated.py": "b06e8c2563a9726a21cdc368079a5138ac4383bb46f398e29e1d27714b83cde4"
+          }
+        },
+        "complete_sha256": "ef91582c743b8197386114d6f012e2dd15c86848b752270da446bd00d49efb17",
+        "build_receipt_sha256": "c5e467a00d4064e7bf429c82d3237886e310cb4aac4aa57193effe4a5b2a522a"
+      },
+      "depth-tip-v1": {
+        "source_manifest_sha256": "d4437cfd6594aaa3aa4cddfbfeffa82df314b3a4acb8f8290b01683d437c5c85",
+        "source_files": {
+          "recompyler/__init__.py": "80212f65369be7bd37c3a161ab17878790b583f301351e764edf9b2b7d87900e",
+          "recompyler/__main__.py": "5a7f44ddc710e8345f799a2815696c6c30f44892b571559f75202741aa4bb13f",
+          "recompyler/_heap.c": "3c75e33bb259e360835bba7052c675898e7688e22550f21fdee34d45499d77d8",
+          "recompyler/_heap.cp314-win_amd64.pyd": "be614d2bb7bdffbea2ce5a942f8935d928fdd6c9786831523d55292b67c36399",
+          "recompyler/_monitor.c": "c47cf655ac3fa25ad24ad260a8df39b747cd74fcb26b1878d8ac5394c030bf4c",
+          "recompyler/_monitor.cp314-win_amd64.pyd": "64405ecdadcae47dc76b1ad83f2deb96cba25201c46732ed09d004304fc0803e",
+          "recompyler/_nd.py": "8f63c55e6720eb2920babc3e2d6b8d13a1856fdc91a36827347e47d67efa6ddc",
+          "recompyler/_optimize.py": "25b0b3ed5136d46ccecf1091526aa48bc5e834deebf54bc9ee63a16cc46fe00f",
+          "recompyler/_pycc/__init__.py": "2f0fe18f60bbb751a85a2bc0f48458dccb893ee37cda80c865c6b3a67346e505",
+          "recompyler/_pycc/cc.py": "90e4d632bf7370dfa6da3a3ae67774fdb1dbadc9dd724ebb340e3273bb75bc08",
+          "recompyler/_pycc/compiler.py": "d0ca6ec93bfde94c0e91ac9f05fbe961d04276f99231ce8cface442fc6c1d934",
+          "recompyler/_pycc/LICENSE.numba": "5f7ae5e48a0a107a9d86a9ef6c18dcce68e55959855d39380050deaea366631c",
+          "recompyler/_pycc/llvm_types.py": "447a82402a623ce300c9fb755d5a77397bb4f67ae7ce1ed0805f65a5e8ee0062",
+          "recompyler/_pycc/modulemixin.c": "8be84e1b90b1ef87a0d43248ef1ce7db91f85288b3e74c8727e68a7353164d8a",
+          "recompyler/_pycc/platform.py": "df1c1f62283ff76032665ed832569b4e55abef7b89a88c395b20e46955ab027a",
+          "recompyler/_record_types.py": "0bce15187b9c775d1d296d3347ba802fb55664d28c458c02f3f9411db29ddf05",
+          "recompyler/_region_seed.py": "e9fd4e12c90510dfdbae863729ded78df1c7457eee646051f1341f3c5e85798e",
+          "recompyler/_rng.py": "32bf317168f126f3dd884355b7abcb3bf3360a14dcaa2abd9aef69421d2c9cdd",
+          "recompyler/aot.py": "aa95db1e3c48d7abb61c807c2c7e5857668c805cabf5f4cb2babfb46a61a8e4e",
+          "recompyler/batch.py": "bc4ae4c757dc203d58e72e4244c20bf5018150d6e3f032eefdf30cfef8654150",
+          "recompyler/benchmark.py": "632def808196a9b2c81c312b272c81d080152fa0757396055b529a0961e16bb0",
+          "recompyler/depmap.py": "3bcb10c527fc6ddc1274735a42d0f1240cbfbca7bcdc7c8f7b9b76f0dce6ecbe",
+          "recompyler/escape.py": "7df963c6b74998ed7829dfd15aeaab80fcf67d1b475baa94410b2d95af740dfd",
+          "recompyler/experimental.py": "6e8ef5a8abd00b7ce2f8f91950a67aa231b00b51eeb732301cad579427053cd8",
+          "recompyler/facts.py": "9f9f08c23cad271eaae67d1d7ac1c32424e388e6463ce54f4a1aec3ffb17ea1b",
+          "recompyler/flow.py": "c0a607c6649baa17c67b1757bf53ea14faec08ee830db87bbc485ebcc76bf73f",
+          "recompyler/heap.py": "460f0d1d3e3e4b22c2a058c7fa68b35b9a39daed420189fdfd8f519690a7b5e9",
+          "recompyler/lift.py": "d493dbbd91d15519337ac8e64a88b42c6811a35bfd8b89c87446c0d6cb28d5d5",
+          "recompyler/monitor.py": "fb8bef3c99aebd5458bdddbf270724a3d9fb1d48cf1d0a858db2cb1e1fbc5f39",
+          "recompyler/numeric_versions.py": "e244fee707f8a55e86f3f9074427cdb2cbcfdc6cc6ebb47cd5dcbcdc45896a10",
+          "recompyler/profiler.py": "a07eb10d76a9c77604d5ded37c0b5cc6bc9ba95bf4baf64ced82727b751ec927",
+          "recompyler/report.py": "f63e24c86bc84442220480e0994e55d674a466bb698a4f261f4670b56b4b6b08",
+          "recompyler/runner.py": "c3fecf59d1ff65b689d4e6157a132efabac620e712c4e5b4dd545e3137235386",
+          "recompyler/scalar.py": "79af253cf404e97c757495d13ef3dc7ca8e0bc7250ec60a684bfe2bd2bf6f123",
+          "recompyler/variants.py": "7ab540debc165667ed1ac71ca1f2ee1b0dd81242e8ed60b56d23df55367fa65a"
+        },
+        "artifacts": {
+          "barnes_hut": {
+            "inplace_ea598faa706bb1355b1e.cp314-win_amd64.pyd": "6bafc1c026630d074d33dcdd91a46c6927acb26aefb9a52a2937b1b0cfaec92c",
+            "plan.json": "3960c321ecf824996e784e93db8ae90f2f1c251e99ae1c300c80f2955f89c105",
+            "r0.generated.py": "f74ab75fbbd61e9cd1fed3e1a25b0f7a8df7ed05070c3e2a630cdaf66550614f",
+            "r1.generated.py": "0ea25ff332a4508619296af7922e307212f5f38fa802a2239009392387d11dcb"
+          },
+          "fannkuch": {
+            "fannkuch.generated.py": "79021fa2251803de2ce4067bbbb032427199d391c389a4f89b1c22f4280c10de",
+            "plan.json": "4ccda5f60501ee5d668eac11f19fe904cecd667af03b338b4f31004b091b626b",
+            "rcaot_f541853f75ce1a3b1a002589.cp314-win_amd64.pyd": "b0cc1ac389ff72e2092b4d2e5c5fc202761c73c119a295a377b7b1aa1c89f44e"
+          },
+          "scimark": {
+            "FFT_bitreverse.generated.py": "0416bd3ccec70a3f6c38350ad84423857c9f345bfdf75a4293a6352b22c64428",
+            "FFT_inverse.generated.py": "a26de6664a3556da44dfe45045c98240c996e5bdc19e62a41ebf1e7316443c3e",
+            "FFT_transform.generated.py": "7f00d708a64eccb727339e6a17e0195db087f9623280fd67ad57f7821dd34c25",
+            "FFT_transform_internal.generated.py": "fd3782e04745753430d58a5969481c1696bec3440e70f549e7f4d304e3b412f1",
+            "plan.json": "79525c7f57db18de3df4eb77ba1298e73855bde2007bf5513ed77ddb72141afd",
+            "rcaot_08335cc4460d625318e4bd39.cp314-win_amd64.pyd": "5a68d0aa0f9e396e0241a7ff6511ba82af44cd0f9b398168eec93e582cad2377"
+          },
+          "raytrace": {
+            "inplace_233d6764febf93d6a676.cp314-win_amd64.pyd": "8076746d18547b64e89562d0f39b408d094cf674d9c4b3c71957a78901225d8f",
+            "plan.json": "c8b30a53995fa7c5cbf116e58dac17c20a674510fe49ac1569dff88426d4511b",
+            "r0.generated.py": "b06e8c2563a9726a21cdc368079a5138ac4383bb46f398e29e1d27714b83cde4"
+          }
+        },
+        "complete_sha256": "55b8273c44b2e84f10dcf0bd182f90b6291346a350ce718aab4094fb7531faa5",
+        "build_receipt_sha256": "ad94f05ed5190ee7f6ce3e3e6653261006148e656794c782db607ad0a95118cd"
+      }
+    },
+    "files": {
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0_guard_ablation.py": "34d86634118e770f05ea0fd76975a225e3ca6541613656232acf023a50bccf31",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\capture_audit.py": "26d2313e8b15af631f7849bb934f948185f13ecfd39a4920ac7c3a04cc89bee2",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\heldout_identity.py": "9dab8b230683543c9fc6cc265c9548232c3f2b0eb4493fc117d010607d315857",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\step0_final_cohort.py": "d28d852723b2e6fff85b07db788a69858d3e0f9d4b1ecfbfb61906e2362003bc",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py": "75c2550e69a0b565a8fdf1651a723f51e7f63333eb960fc778163722844bf7fa",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\scimark.py": "75259353833cd5ebe8f855467b7fd8a4447985ae81695cda26004025d9cd9ab1",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\barnes_hut\\audit.counts.json": "cfc562d5703a1e2e0cc496d38683bf7797cca9b450a09674b6ab831157c21c72",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\barnes_hut\\plain-0.stdout": "ec7246304b661d0fe7045e9b24a5d62dcfa7291b47675eea77b0b656a13d4eca",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\barnes_hut\\plain-0.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\scimark\\audit.counts.json": "9b6fc4b435158b1c446bcbb19a59fbef76e9f71ba7e223224731e86cac62fec3",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\scimark\\plain-0.stdout": "144ff8db668be38e8c412eb950adc5b3d969e6237aa5105defe797f710105481",
+      "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave11-ledger\\gap-ledger\\work\\scimark\\plain-0.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "shim": {
+      "pyperf.py": "71ac509a7161b8ac664a0f4bb2bf84868e82642a600d4afa3996482bd1011ade"
+    }
+  },
+  "profile_helper": "d3c1754f4bae3f94ce4c2667e95ffcbb4070eaa53bed5fc00fc2967af94f3a62"
+}

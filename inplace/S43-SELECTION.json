@@ -1,0 +1,265 @@
+{
+  "cohort": "s43-selection-full33-v1",
+  "complete_sha256": "5776369f0d71c090b4e0bf826cc61d3b7112e97e33160c7bcfeb40f3e77e8ea5",
+  "receipt_sha256": "3854382a7c802518ef61ea682ae39beaba44eef49688546d27f21ac45509298f",
+  "programs": 33,
+  "programs_deploying": 2,
+  "baseline_programs_deploying": 2,
+  "totals": {
+    "captured": 2022,
+    "verified": 100,
+    "deployed": 2,
+    "aot_calls": 40
+  },
+  "deploying": [
+    {
+      "name": "chaos",
+      "complete": true,
+      "captured": 60,
+      "verified": 10,
+      "deployed": 1,
+      "aot_calls": 20,
+      "worth_running": true,
+      "region_times": [
+        {
+          "function": "Chaosgame.create_image_chaos",
+          "line": 214,
+          "python_us": 35629.549998702714,
+          "compiled_us": 1463.06249735062,
+          "recommended": true
+        },
+        {
+          "function": "Chaosgame.transform_point",
+          "line": 178,
+          "python_us": 6.904827575359879,
+          "compiled_us": 38.704605302834686,
+          "recommended": false
+        },
+        {
+          "function": "Spline.__call__",
+          "line": 89,
+          "python_us": 2.390992649987525,
+          "compiled_us": 15.555523257421028,
+          "recommended": false
+        },
+        {
+          "function": "GVector.linear_combination",
+          "line": 48,
+          "python_us": 0.18167767001093463,
+          "compiled_us": 12.182500023090352,
+          "recommended": false
+        },
+        {
+          "function": "Spline.GetIndex",
+          "line": 112,
+          "python_us": 0.26770134306870186,
+          "compiled_us": 8.22409637327059,
+          "recommended": false
+        },
+        {
+          "function": "Chaosgame.get_random_trafo",
+          "line": 169,
+          "python_us": 0.4365543954970814,
+          "compiled_us": 22.091911780401407,
+          "recommended": false
+        },
+        {
+          "function": "GVector.__sub__",
+          "line": 40,
+          "python_us": 0.34052457492965815,
+          "compiled_us": 14.24818548266851,
+          "recommended": false
+        },
+        {
+          "function": "Spline.GetDomain",
+          "line": 84,
+          "python_us": 0.10523927410809669,
+          "compiled_us": 12.014858479027302,
+          "recommended": false
+        },
+        {
+          "function": "GVector.__add__",
+          "line": 34,
+          "python_us": 0.17987132356639074,
+          "compiled_us": 12.935833304557793,
+          "recommended": false
+        },
+        {
+          "function": "Chaosgame.truncate",
+          "line": 204,
+          "python_us": 0.09700208931783634,
+          "compiled_us": 15.619444470589599,
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "richards_super",
+      "complete": true,
+      "captured": 81,
+      "verified": 18,
+      "deployed": 1,
+      "aot_calls": 20,
+      "worth_running": true,
+      "region_times": [
+        {
+          "function": "Richards.run",
+          "line": 385,
+          "python_us": 27623.61249915557,
+          "compiled_us": 2400.1624988159165,
+          "recommended": true
+        },
+        {
+          "function": "schedule",
+          "line": 369,
+          "python_us": 7.136801241641077,
+          "compiled_us": 283.3124999597203,
+          "recommended": false
+        },
+        {
+          "function": "Task.runTask",
+          "line": 209,
+          "python_us": 10.223039804483767,
+          "compiled_us": 3321.2125017598737,
+          "recommended": false
+        },
+        {
+          "function": "HandlerTask.fn",
+          "line": 284,
+          "python_us": 12.80991709189805,
+          "compiled_us": 2723.7499962211587,
+          "recommended": false
+        },
+        {
+          "function": "DeviceTask.fn",
+          "line": 261,
+          "python_us": 13.78441480580653,
+          "compiled_us": 5126.825002662372,
+          "recommended": false
+        },
+        {
+          "function": "Task.qpkt",
+          "line": 239,
+          "python_us": 59.53590998350353,
+          "compiled_us": 21922.687505139038,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.isTaskHoldingOrWaiting",
+          "line": 140,
+          "python_us": 0.0943234325778477,
+          "compiled_us": 60.538636303549126,
+          "recommended": false
+        },
+        {
+          "function": "IdleTask.fn",
+          "line": 318,
+          "python_us": 0.9780493352281918,
+          "compiled_us": 264.67916783682693,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.isWaitingWithPacket",
+          "line": 143,
+          "python_us": 0.09018995115184225,
+          "compiled_us": 94.1388890270092,
+          "recommended": false
+        },
+        {
+          "function": "Task.addPacket",
+          "line": 199,
+          "python_us": 0.4064951580777929,
+          "compiled_us": 121.31388737341493,
+          "recommended": false
+        },
+        {
+          "function": "Task.fn",
+          "line": 196,
+          "python_us": 0.2383971953179298,
+          "compiled_us": 152.34821382494243,
+          "recommended": false
+        },
+        {
+          "function": "Task.findtcb",
+          "line": 246,
+          "python_us": 0.08435834454740625,
+          "compiled_us": 217.12499947170727,
+          "recommended": false
+        },
+        {
+          "function": "Task.hold",
+          "line": 226,
+          "python_us": 0.3865930283813947,
+          "compiled_us": 233.6281258976669,
+          "recommended": false
+        },
+        {
+          "function": "HandlerTaskRec.deviceInAdd",
+          "line": 87,
+          "python_us": 0.16685100184440313,
+          "compiled_us": 17.099241989798788,
+          "recommended": false
+        },
+        {
+          "function": "Packet.append_to",
+          "line": 44,
+          "python_us": 0.11459043847139583,
+          "compiled_us": 15.565340204788797,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.running",
+          "line": 119,
+          "python_us": 0.22814627786971187,
+          "compiled_us": 84.0750006318558,
+          "recommended": false
+        },
+        {
+          "function": "Task.waitTask",
+          "line": 222,
+          "python_us": 0.23503113233402928,
+          "compiled_us": 88.5659084650053,
+          "recommended": false
+        },
+        {
+          "function": "TaskState.packetPending",
+          "line": 107,
+          "python_us": 0.3033079463979322,
+          "compiled_us": 101.06250010721851,
+          "recommended": false
+        }
+      ]
+    }
+  ],
+  "largest_capture_rows": [
+    {
+      "name": "sympy",
+      "captured": 213,
+      "verified": 1,
+      "deployed": 0,
+      "aot_calls": 0
+    },
+    {
+      "name": "asyncio_websockets",
+      "captured": 113,
+      "verified": 5,
+      "deployed": 0,
+      "aot_calls": 0
+    },
+    {
+      "name": "sqlalchemy_declarative",
+      "captured": 112,
+      "verified": 4,
+      "deployed": 0,
+      "aot_calls": 0
+    }
+  ],
+  "leave_largest_capture_out": {
+    "captured": 1809,
+    "verified": 99,
+    "deployed": 2,
+    "aot_calls": 40
+  },
+  "leave_either_deploying_program_out": 1,
+  "interpretation": "Step4a partial commit has measured trivial-call gain but no increase in programs deploying; normal gate,20 loops, exact behavior/native audits, final Step4b still required."
+}

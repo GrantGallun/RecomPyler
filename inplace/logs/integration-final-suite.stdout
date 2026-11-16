@@ -1,0 +1,466 @@
+........................................................................ [  7%]
+.............................................................. [ 14%]
+............................................................................................................................................ [ 29%]
+........................................................................ [ 37%]
+........................................................................ [ 44%]
+........................................................................ [ 52%]
+.......................................................... [ 58%]
+........................................................................ [ 66%]
+................................................................................................................. [ 78%]
+........................................................................ [ 86%]
+........................................................................ [ 94%]
+....................................................                     [100%]
+============================== warnings summary ===============================
+tests/test_backends.py::BackendTests::test_arrays_in_arrays_out
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 4 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_auto_measures_once_per_size_and_matches
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 5 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_backends_raise_like_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 1 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_every_backend_matches_a_python_loop
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 6 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_backends.py::BackendTests::test_gpu_runs_exactly_or_explains_why_not
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 3 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_batch.py::GpuTrustTests::test_gpu_stays_in_use_after_first_batch
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cuda\dispatcher.py:540: NumbaPerformanceWarning: [1mGrid size 16 will likely result in GPU under-utilization due to low occupancy.[0m
+    warn(NumbaPerformanceWarning(msg))
+
+tests/test_lift.py::LiftTests::test_compiled_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2360__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::LiftTests::test_compiled_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2619__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::LiftTests::test_compiled_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v2654__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::LiftTests::test_compiled_code_is_reused_from_disk
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v5391__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::LiftTests::test_compiled_code_is_reused_from_disk
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v5426__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::LiftTests::test_int_start_promoted_for_float_sums
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v6247__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::LiftTests::test_lists_and_arrays_change_in_place
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v6305__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::LiftTests::test_one_list_passed_twice_is_one_list
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v7768__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ListCacheTests::test_cache_is_bounded
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v8037__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ListCacheTests::test_one_list_passed_twice_with_a_cached_copy
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v8081__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_attribute_writes_reach_the_objects
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8198__vphi72_0_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_attribute_writes_reach_the_objects
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8198_at_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_attribute_writes_reach_the_objects
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8198__vphi72_0_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_attribute_writes_reach_the_objects
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8198_at_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_attribute_writes_reach_the_objects
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8189__vphi72_0_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_attribute_writes_reach_the_objects
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8189_at_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_attribute_writes_reach_the_objects
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8189__vphi72_0_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_attribute_writes_reach_the_objects
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8189_at_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_column_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8326__vphi72_0_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_column_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8326_at_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_column_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8326__vphi72_0_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_column_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8326_at_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_column_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8326__vphi72_0_2.3' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_column_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8326_at_2.3' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_column_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8326__vphi72_0_2.4' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::ObjectColumnTests::test_column_calls_neither_leak_nor_free_too_much
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8326_at_2.4' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8775__vphi72_0_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8775_at_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8775__vphi72_0_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8775_at_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8775__vphi72_0_2.3' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8775_at_2.3' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8777__vphi72_0_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8777_at_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8841__vphi72_0_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_an_object_returned_twice_is_one_object
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v8841_at_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_attributes_that_are_ints_and_bools
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v9019__vphi72_0_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_lift.py::MadeObjectTests::test_attributes_that_are_ints_and_bools
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable 'impl_v9019_at_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_full_fft_vectors_and_guard_misses
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v10249__vphi186_0_6.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_full_fft_vectors_and_guard_misses
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v10249__vphi70_0_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_full_fft_vectors_and_guard_misses
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v10249__vphi186_0_5.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_full_fft_vectors_and_guard_misses
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v10256__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_full_fft_vectors_and_guard_misses
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v10249__vphi186_0_6.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_full_fft_vectors_and_guard_misses
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v10249__vphi70_0_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_full_fft_vectors_and_guard_misses
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__power_extent_v10249__vphi186_0_5.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_full_fft_vectors_and_guard_misses
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v10256__vphi96_1_2.2' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+tests/test_range_product.py::NativeRangeTests::test_multiple_guarded_calls_keep_function_identity
+  C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\core\ssa.py:304: NumbaIRAssumptionWarning: [1mvariable '_runtime__locals__array_extent_v10448__vphi96_1_2.1' is not in scope.
+  
+  This warning came from an internal pedantic check. Please report the warning
+  message and traceback, along with a minimal reproducer at:
+  https://github.com/numba/numba/issues/new?template=bug_report.md
+  [0m
+    warnings.warn(errors.NumbaIRAssumptionWarning(wmsg,
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+929 passed, 57 warnings, 131 subtests passed in 416.55s (0:06:56)

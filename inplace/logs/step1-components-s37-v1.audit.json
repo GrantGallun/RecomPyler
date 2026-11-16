@@ -1,0 +1,106 @@
+[
+  {
+    "before": {
+      "time": "2026-11-14T16:09:38.202836+00:00",
+      "blockers": [],
+      "active": [
+        {
+          "pid": 0,
+          "name": "system idle process",
+          "cpu_s": 11.9375,
+          "command": ""
+        },
+        {
+          "pid": 5708,
+          "name": "msmpeng.exe",
+          "cpu_s": 0.0625,
+          "command": ""
+        },
+        {
+          "pid": 41784,
+          "name": "dwm.exe",
+          "cpu_s": 0.078125,
+          "command": ""
+        },
+        {
+          "pid": 34308,
+          "name": "claude.exe",
+          "cpu_s": 0.0625,
+          "command": "\"C:\\Program Files\\WindowsApps\\Claude_5.11492.5.0_x64__pzs8sxrjxfjjc\\app\\Claude.exe\" --type=gpu-process --gpu-recent-crash-count=0 --user-data-dir=\"C:\\Users\\grant\\AppData\\Local\\Claude-Data\\claude_pzs8sxrjxfjjc\" --gpu-preferences=WAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --field-trial-handle=2512,i,18048956249780230388,6830065431944895082,262144 --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker --disable-features=BackForwardCache,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SharedWorkerExtendedLifetime,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=2516,i,10157293979334858121,1592800217570768732,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=2508 /prefetch:2"
+        },
+        {
+          "pid": 11860,
+          "name": "python.exe",
+          "cpu_s": 0.828125,
+          "command": "python  -m webapp"
+        },
+        {
+          "pid": 10876,
+          "name": "firestorm.exe",
+          "cpu_s": 0.078125,
+          "command": ""
+        }
+      ]
+    },
+    "after_atomic_create": {
+      "time": "2026-11-14T16:09:39.335802+00:00",
+      "blockers": [],
+      "active": [
+        {
+          "pid": 0,
+          "name": "system idle process",
+          "cpu_s": 11.03125,
+          "command": ""
+        },
+        {
+          "pid": 4,
+          "name": "system",
+          "cpu_s": 0.125,
+          "command": ""
+        },
+        {
+          "pid": 5708,
+          "name": "msmpeng.exe",
+          "cpu_s": 0.21875,
+          "command": ""
+        },
+        {
+          "pid": 41784,
+          "name": "dwm.exe",
+          "cpu_s": 0.0625,
+          "command": ""
+        },
+        {
+          "pid": 34308,
+          "name": "claude.exe",
+          "cpu_s": 0.140625,
+          "command": "\"C:\\Program Files\\WindowsApps\\Claude_5.11492.5.0_x64__pzs8sxrjxfjjc\\app\\Claude.exe\" --type=gpu-process --gpu-recent-crash-count=0 --user-data-dir=\"C:\\Users\\grant\\AppData\\Local\\Claude-Data\\claude_pzs8sxrjxfjjc\" --gpu-preferences=WAAAAAAAAADgAAAEAAAAAAAAAAAAAGAAQAAAAAAAAAADAAAAAAAAADgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAoAAAAAAAAAAgAAAAAAAAAEAAAAAIAAAABAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --field-trial-handle=2512,i,18048956249780230388,6830065431944895082,262144 --enable-features=AllowWindowCaptureExclusionInRemoteSessions,DocumentPolicyIncludeJSCallStacksInCrashReports,HttpCacheZstdCompression,HttpCacheZstdDecompression,IsolatesPriorityUseProcessPriority,PdfUseShowSaveFilePicker --disable-features=BackForwardCache,DropInputEventsWhilePaintHolding,LocalNetworkAccessChecks,NetworkServiceSandbox,ScreenAIOCREnabled,SharedWorkerExtendedLifetime,SpareRendererForSitePerProcess,TraceSiteInstanceGetProcessCreation --variations-seed-version --pseudonymization-salt-handle=2516,i,10157293979334858121,1592800217570768732,4 --trace-process-track-uuid=3190708988185955192 --mojo-platform-channel-handle=2508 /prefetch:2"
+        },
+        {
+          "pid": 11860,
+          "name": "python.exe",
+          "cpu_s": 0.90625,
+          "command": "python  -m webapp"
+        },
+        {
+          "pid": 10876,
+          "name": "firestorm.exe",
+          "cpu_s": 0.09375,
+          "command": ""
+        },
+        {
+          "pid": 20728,
+          "name": "codex.exe",
+          "cpu_s": 0.078125,
+          "command": "C:\\Users\\grant\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe exec -C D:/Code/Datathon/recompyler-codex-20261111 --skip-git-repo-check --approve-for-me -o wave17-matrix-last-message-part2.md \"You are resuming the run named wave17-matrix in this workspace; the previous process stopped cleanly at CHECKPOINT 31 waiting for the user's backend choice. The user has now chosen. Their words to the orchestrator on 2026-11-14, in answer to the question 'Which backend route should the coverage work take for ordinary code?': 'Extend Numba'. You are therefore authorized by the user to IMPLEMENT Step 3 of CLAUDE-BRIEF-language-matrix.md on the extend-Numba route (Numba native types plus the managed-object extension type with intrinsics), writing product source and tests inside the wave17-matrix clone only, in the order given by steering entry S38 in CLAUDE-STEERING.md. Read the whole ledger WAVE17-MATRIX-PLAN.md, wave17-matrix/REPORT.md, CLAUDE-BRIEF-language-matrix.md, CLAUDE-CHECKPOINTS.md, CLAUDE-TIMING-LOCK.md, RULES.md and every CLAUDE-STEERING.md entry addressed to wave17-matrix (S32 to S36 and S38; S38 is new and governs); continue the checkpoint numbering from 32; treat any directory without a complete receipt as a failed attempt and do not reuse it. Another run, wave16-inplace, is active in parallel and is the trunk: never edit its clone or any other wave directory, stay out of load, write-back, start-up and prepared-cache code, take TIMING.lock for every suite, build, profile or timing run exactly as CLAUDE-TIMING-LOCK.md says, and enforce the no-other-heavy-process check. The Windows sandbox helper is broken on this machine: use reviewed escalation with the ordinary user token, and do not change folder permissions, ACLs, system settings or anything outside this workspace. Do not push, do not install anything globally, do not touch processes you did not start. The capabilities do not exist yet; building them is the task, and a missing analysis is a thing to design, not a reason to close a step (pattern P14). Keep process proportionate as S38.6 says. Follow the checkpoint protocol, re-read CLAUDE-STEERING.md after every checkpoint and ACK each numbered item. Commit each accepted capability in the wave17-matrix clone. Finish by updating wave17-matrix/REPORT.md and writing a CHECKPOINT DONE line.\""
+        },
+        {
+          "pid": 41972,
+          "name": "python.exe",
+          "cpu_s": 0.171875,
+          "command": "C:\\Python314\\python.exe -m autonomy jobs-serve"
+        }
+      ]
+    }
+  }
+]

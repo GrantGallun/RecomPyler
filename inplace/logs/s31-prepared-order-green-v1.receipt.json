@@ -1,0 +1,17 @@
+{
+  "label": "s31-prepared-order-green-v1",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_prepared_order.py",
+    "tests/test_prepared_cache.py",
+    "tests/test_prepared_review_regressions.py",
+    "--basetemp",
+    "inplace/temp/s31-prepared-order-green-v1"
+  ],
+  "exit_code": 0,
+  "wall_s": 39.557889700023225,
+  "end": "2026-11-14T06:56:00.571790+00:00"
+}

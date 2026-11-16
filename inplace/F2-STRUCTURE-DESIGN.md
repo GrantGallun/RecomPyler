@@ -1,0 +1,9 @@
+# F2 immutable structure cache
+
+Step0 integration correction, not a change to escape eligibility. Checkpoints13/14 carry bound/design. Original per-analysis ASTs are parsed once and never mutated during the constructor; scalar replacement reparses separate source trees. Cache the ordered breadth-first nodes, node-parent relation and lazy unparse text only within that analysis instance. Recompute origin environments, summary reads, capture/identity/mutation events, allocation categories and the same fixed point on every scan. No cross-program/class/input cache, summary cache, live graph probe, new native path or gate change.
+
+Measured exact Richards55-function input: original134.247/128.758ms versus structural variant38.246/38.059ms including cache construction, state equality and AST immutability checked. Target90.699?96.001ms per compile; whole-process acceptance must be measured separately, including both cold seed attempts. Pure caches need no new safety assumptions about input object lifetimes.
+
+Tests: full frozen-analysis oracle comparison on recursion/alias/fresh-return/conditional capture/cast/offset/identity cases; cached AST immutability; fresh source gets fresh caches; AST walks and unparse requests execute structural work at most once per immutable node/expression. Test behavior first fails for repeated work before product changes. Native paths remain covered by existing scalar/fresh suites and final union/kernel/smoke gates.
+
+Implementation: initialize per-instance node/parent/text dictionaries after parse and before scans; scan traverses cached ordered nodes, uses same parent map, and lazily renders each requested AST expression once. Do not pre-render every AST subtree (quadratic and unnecessary); do not memoize origin or summaries. Independent review before timing, final-source rebuild because compiler digest seals escape.py.

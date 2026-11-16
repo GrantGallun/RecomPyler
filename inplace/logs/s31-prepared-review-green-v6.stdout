@@ -1,0 +1,19 @@
+........................................................................ [ 43%]
+........................................................................ [ 86%]
+....................F..                                                  [100%]
+================================== FAILURES ===================================
+__________ test_used_keyword_default_keys_never_invoke_user_equality __________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...50c55a0958fc699ae4446d7e209e82c442bf6b6d403f6442dcc0fc16833': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+
+    def test_used_keyword_default_keys_never_invoke_user_equality(artifact):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+>       program=index.bind(module.work)[0]
+                ^^^^^^^^^^
+E       AttributeError: 'NoneType' object has no attribute 'bind'
+
+tests\test_prepared_review_regressions.py:258: AttributeError
+=========================== short test summary info ===========================
+FAILED tests/test_prepared_review_regressions.py::test_used_keyword_default_keys_never_invoke_user_equality
+1 failed, 166 passed in 56.14s

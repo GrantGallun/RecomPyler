@@ -1,0 +1,130 @@
+F.FFF                                                                    [100%]
+================================== FAILURES ===================================
+____________ test_bound_method_function_cannot_masquerade_by_names ____________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...c66533547ef39818f0c9a47199ec80760d7aba4821a615137e76f3b59e3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002311B1BF820>
+
+    def test_bound_method_function_cannot_masquerade_by_names(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section,'random_step'),plan_snapshot=standalone(section))
+        assert index is not None and index.bind(module.random_step),pc.last_miss()
+        old=module.random.randrange
+        def replacement(self,*args): return 0
+        replacement.__module__=old.__func__.__module__
+        replacement.__qualname__=old.__func__.__qualname__
+        replacement.__name__=old.__func__.__name__
+        monkeypatch.setattr(module.random,'randrange',MethodType(replacement,old.__self__))
+>       assert index.bind(module.random_step)==[]
+E       assert [<recompyler....02311A6B86E0>] == []
+E         
+E         Left contains one more item: <recompyler._prepared._restore.<locals>.RuntimeProgram object at 0x000002311A6B86E0>
+E         Use -v to get more diff
+
+inplace\prepared-cache-preparation\test_prepared_review_regressions.py:20: AssertionError
+---------------------------- Captured stdout setup ----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_1fb248f1e9fbd56a90eb6aa5-amhkjt04\rcaotr_1fb248f1e9fbd56a90eb6aa5.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_1fb248f1e9fbd56a90eb6aa5-amhkjt04\rcaotr_1fb248f1e9fbd56a90eb6aa5.cp314-win_amd64.exp
+Generating code
+Finished generating code
+__________ test_nested_unsupported_class_value_never_runs_type_hooks __________
+
+artifact = (<module 'recompyler._prepared' from 'D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\...c66533547ef39818f0c9a47199ec80760d7aba4821a615137e76f3b59e3': {'args': [...], 'ret': [...]}, ...}}, 'schema': 1, ...}})
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002311A3CC180>
+
+    def test_nested_unsupported_class_value_never_runs_type_hooks(artifact,monkeypatch):
+        pc,heap,module,source,section=artifact
+        index=pc.open_index(section,row_for(section),plan_snapshot=standalone(section))
+        assert index is not None and index.bind(module.work)
+        events=[]
+        class Meta(type):
+            def __getattribute__(cls,name):
+                if name in ('__module__','__name__','__qualname__'): events.append(name)
+                return super().__getattribute__(name)
+        class Hostile(metaclass=Meta): pass
+        monkeypatch.setattr(module.Box,'unused',Hostile(),raising=False)
+        assert index.bind(module.work)==[]
+>       assert events==[]
+E       AssertionError: assert ['__module__'... '__module__'] == []
+E         
+E         Left contains 3 more items, first extra item: '__module__'
+E         Use -v to get more diff
+
+inplace\prepared-cache-preparation\test_prepared_review_regressions.py:51: AssertionError
+___________ test_unsupported_literal_type_metadata_is_not_looked_up ___________
+
+    def test_unsupported_literal_type_metadata_is_not_looked_up():
+        from recompyler import _prepared as pc
+        events=[]
+        class Meta(type):
+            def __getattribute__(cls,name):
+                if name in ('__module__','__name__','__qualname__'): events.append(name)
+                return super().__getattribute__(name)
+        class Hostile(metaclass=Meta): pass
+        with pytest.raises(pc.PreparedMiss): pc.literal_key(Hostile())
+>       assert events==[]
+E       AssertionError: assert ['__name__'] == []
+E         
+E         Left contains one more item: '__name__'
+E         Use -v to get more diff
+
+inplace\prepared-cache-preparation\test_prepared_review_regressions.py:63: AssertionError
+__ test_unrelated_class_value_destruction_is_not_delayed_by_prepared_program __
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-review-red-v1/test_unrelated_class_value_des0')
+
+    def test_unrelated_class_value_destruction_is_not_delayed_by_prepared_program(tmp_path):
+        from recompyler import heap,_prepared as pc
+        source=tmp_path/'retention_fixture.py'
+        source.write_text(SOURCE+'''\nevents=[]
+    class Sentinel:
+        def __del__(self): events.append('destroyed')
+    Box.unused=[Sentinel()]
+    ''')
+        module=load_source(source)
+        region=heap.lift_region(module.read)
+        assert region(module.Box(10))==10 and region.compiled_calls==1
+        section=heap.build_regions([(('read',module.read.__code__.co_firstlineno),module.read,region)],tmp_path)
+        index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section))
+        assert index is not None,pc.last_miss()
+        fast=heap.lift_region(module.read,index.exports,prepared=index)
+        assert fast(module.Box(10))==10 and fast.aot_calls==1
+        reference=weakref.ref(module.Box.unused[0])
+        module.Box.unused=None
+        gc.collect()
+>       assert reference() is None and module.events==['destroyed']
+E       AssertionError: assert (<_prepared_cache_fixture_test_unrelated_class_value_des0.Sentinel object at 0x000002311A6B8590> is None)
+E        +  where <_prepared_cache_fixture_test_unrelated_class_value_des0.Sentinel object at 0x000002311A6B8590> = <weakref at 0x0000023120149990; to '_prepared_cache_fixture_test_unrelated_class_value_des0.Sentinel' at 0x000002311A6B8590>()
+
+inplace\prepared-cache-preparation\test_prepared_review_regressions.py:85: AssertionError
+---------------------------- Captured stdout call -----------------------------
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_ab4e046a584b8c9a27ba11ef-8kvlg2ht\rcaotr_ab4e046a584b8c9a27ba11ef.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_ab4e046a584b8c9a27ba11ef-8kvlg2ht\rcaotr_ab4e046a584b8c9a27ba11ef.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_review_regressions.py::test_bound_method_function_cannot_masquerade_by_names
+FAILED inplace/prepared-cache-preparation/test_prepared_review_regressions.py::test_nested_unsupported_class_value_never_runs_type_hooks
+FAILED inplace/prepared-cache-preparation/test_prepared_review_regressions.py::test_unsupported_literal_type_metadata_is_not_looked_up
+FAILED inplace/prepared-cache-preparation/test_prepared_review_regressions.py::test_unrelated_class_value_destruction_is_not_delayed_by_prepared_program
+4 failed, 1 passed in 8.47s

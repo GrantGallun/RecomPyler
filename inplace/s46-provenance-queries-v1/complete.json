@@ -1,0 +1,2826 @@
+{
+  "complete": true,
+  "source_sha256": {
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s46-ten-components-v8\\chaos\\input\\run_benchmark.py": "5d20fd29c8ea89e0ebe4040ae4c05f26f1a620cd2a7fc654d9d7f8cb205651ac",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s46-ten-components-v8\\gc_collect\\input\\run_benchmark.py": "7886042f07e517abb79c58643a4b488710f3079936c6990522624bfb9c2acb9b",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s46-ten-components-v8\\hexiom\\input\\run_benchmark.py": "d7518220380d27449b8951bc9ca2e19593569d9bd9f5cb6d86867f354f22e115",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s46-ten-components-v8\\richards_super\\input\\run_benchmark.py": "665b3d5551171e147c127b6f8671edc9a7703c736d317cc4a991bb00f599dc36",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\src\\recompyler\\provenance.py": "887c0da546de228fae6ac6bbb1783ae105003f7303c762e71b359c241f80f545",
+    "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\s46_provenance_queries.py": "22ad9cb1df881e749fcf58dbf01ae7a1cf4b673bd100c280f91207319fd5e491"
+  },
+  "rows": [
+    {
+      "program": "chaos",
+      "function": "Chaosgame.transform_point",
+      "source_sha256": "68edb2f31219e193335bf8caaed227e8cd650465c8713b8d5bbb4bd250e1a5fc",
+      "valid": false,
+      "reason": "cannot bind original source/bytecode: ValueError",
+      "result": {
+        "unknown": true,
+        "origin_kinds": [
+          "unknown"
+        ],
+        "descendant_kinds": [
+          "unknown"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 0,
+      "accesses": [
+        {
+          "site": [
+            2,
+            32,
+            2,
+            42,
+            "Attribute"
+          ],
+          "original_line": 179,
+          "expression": "self.width",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            3,
+            32,
+            3,
+            43,
+            "Attribute"
+          ],
+          "original_line": 180,
+          "expression": "self.height",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            17,
+            6,
+            49,
+            "Attribute"
+          ],
+          "original_line": 183,
+          "expression": "self.splines[trafo[0]].GetDomain",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            26,
+            8,
+            51,
+            "Subscript"
+          ],
+          "original_line": 185,
+          "expression": "self.num_trafos[trafo[0]]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            10,
+            16,
+            10,
+            38,
+            "Subscript"
+          ],
+          "original_line": 187,
+          "expression": "self.splines[trafo[0]]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            18,
+            8,
+            18,
+            19,
+            "Attribute"
+          ],
+          "original_line": 195,
+          "expression": "basepoint.x",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            20,
+            8,
+            20,
+            19,
+            "Attribute"
+          ],
+          "original_line": 197,
+          "expression": "basepoint.y",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            24,
+            4,
+            24,
+            17,
+            "Attribute"
+          ],
+          "original_line": 201,
+          "expression": "self.truncate",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            2,
+            9,
+            2,
+            16,
+            "Attribute"
+          ],
+          "original_line": 179,
+          "expression": "point.x",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            2,
+            19,
+            2,
+            28,
+            "Attribute"
+          ],
+          "original_line": 179,
+          "expression": "self.minx",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            3,
+            9,
+            3,
+            16,
+            "Attribute"
+          ],
+          "original_line": 180,
+          "expression": "point.y",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            3,
+            19,
+            3,
+            28,
+            "Attribute"
+          ],
+          "original_line": 180,
+          "expression": "self.miny",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            5,
+            16,
+            5,
+            37,
+            "Attribute"
+          ],
+          "original_line": 182,
+          "expression": "self.get_random_trafo",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            17,
+            6,
+            39,
+            "Subscript"
+          ],
+          "original_line": 183,
+          "expression": "self.splines[trafo[0]]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            26,
+            8,
+            41,
+            "Attribute"
+          ],
+          "original_line": 185,
+          "expression": "self.num_trafos",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            42,
+            8,
+            50,
+            "Subscript"
+          ],
+          "original_line": 185,
+          "expression": "trafo[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            10,
+            16,
+            10,
+            28,
+            "Attribute"
+          ],
+          "original_line": 187,
+          "expression": "self.splines",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            10,
+            29,
+            10,
+            37,
+            "Subscript"
+          ],
+          "original_line": 187,
+          "expression": "trafo[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            12,
+            20,
+            12,
+            42,
+            "Subscript"
+          ],
+          "original_line": 189,
+          "expression": "self.splines[trafo[0]]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            15,
+            20,
+            15,
+            42,
+            "Subscript"
+          ],
+          "original_line": 192,
+          "expression": "self.splines[trafo[0]]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            17,
+            7,
+            17,
+            21,
+            "Attribute"
+          ],
+          "original_line": 194,
+          "expression": "derivative.Mag",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            19,
+            12,
+            19,
+            26,
+            "Attribute"
+          ],
+          "original_line": 196,
+          "expression": "self.thickness",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            21,
+            12,
+            21,
+            26,
+            "Attribute"
+          ],
+          "original_line": 198,
+          "expression": "self.thickness",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            17,
+            6,
+            29,
+            "Attribute"
+          ],
+          "original_line": 183,
+          "expression": "self.splines",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            30,
+            6,
+            38,
+            "Subscript"
+          ],
+          "original_line": 183,
+          "expression": "trafo[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            9,
+            29,
+            9,
+            37,
+            "Subscript"
+          ],
+          "original_line": 186,
+          "expression": "trafo[1]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            12,
+            20,
+            12,
+            32,
+            "Attribute"
+          ],
+          "original_line": 189,
+          "expression": "self.splines",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            12,
+            33,
+            12,
+            41,
+            "Subscript"
+          ],
+          "original_line": 189,
+          "expression": "trafo[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            15,
+            20,
+            15,
+            32,
+            "Attribute"
+          ],
+          "original_line": 192,
+          "expression": "self.splines",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            15,
+            33,
+            15,
+            41,
+            "Subscript"
+          ],
+          "original_line": 192,
+          "expression": "trafo[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            18,
+            23,
+            18,
+            35,
+            "Attribute"
+          ],
+          "original_line": 195,
+          "expression": "derivative.y",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            18,
+            38,
+            18,
+            52,
+            "Attribute"
+          ],
+          "original_line": 195,
+          "expression": "derivative.Mag",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            20,
+            24,
+            20,
+            36,
+            "Attribute"
+          ],
+          "original_line": 197,
+          "expression": "derivative.x",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            20,
+            39,
+            20,
+            53,
+            "Attribute"
+          ],
+          "original_line": 197,
+          "expression": "derivative.Mag",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "chaos",
+      "function": "Spline.__call__",
+      "source_sha256": "6a61811167dc3e62f6974c08255575349147867d953c05014a5ff07253ee9798",
+      "valid": false,
+      "reason": "cannot bind original source/bytecode: ValueError",
+      "result": {
+        "unknown": true,
+        "origin_kinds": [
+          "unknown"
+        ],
+        "descendant_kinds": [
+          "unknown"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 0,
+      "accesses": [
+        {
+          "site": [
+            13,
+            8,
+            13,
+            18,
+            "Attribute"
+          ],
+          "original_line": 101,
+          "expression": "self.knots",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            22,
+            11,
+            22,
+            15,
+            "Subscript"
+          ],
+          "original_line": 110,
+          "expression": "d[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            3,
+            10,
+            3,
+            24,
+            "Attribute"
+          ],
+          "original_line": 91,
+          "expression": "self.GetDomain",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            12,
+            6,
+            18,
+            "Subscript"
+          ],
+          "original_line": 94,
+          "expression": "dom[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            7,
+            15,
+            7,
+            29,
+            "Subscript"
+          ],
+          "original_line": 95,
+          "expression": "self.points[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            12,
+            8,
+            18,
+            "Subscript"
+          ],
+          "original_line": 96,
+          "expression": "dom[1]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            9,
+            15,
+            9,
+            30,
+            "Subscript"
+          ],
+          "original_line": 97,
+          "expression": "self.points[-1]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            10,
+            8,
+            10,
+            21,
+            "Attribute"
+          ],
+          "original_line": 98,
+          "expression": "self.GetIndex",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            11,
+            9,
+            11,
+            46,
+            "Subscript"
+          ],
+          "original_line": 99,
+          "expression": "self.points[I - self.degree + 1 + ii]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            4,
+            11,
+            4,
+            17,
+            "Subscript"
+          ],
+          "original_line": 92,
+          "expression": "dom[0]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            4,
+            25,
+            4,
+            31,
+            "Subscript"
+          ],
+          "original_line": 92,
+          "expression": "dom[1]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            7,
+            15,
+            7,
+            26,
+            "Attribute"
+          ],
+          "original_line": 95,
+          "expression": "self.points",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            9,
+            15,
+            9,
+            26,
+            "Attribute"
+          ],
+          "original_line": 97,
+          "expression": "self.points",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            11,
+            9,
+            11,
+            20,
+            "Attribute"
+          ],
+          "original_line": 99,
+          "expression": "self.points",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            14,
+            23,
+            14,
+            34,
+            "Attribute"
+          ],
+          "original_line": 102,
+          "expression": "self.degree",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            16,
+            17,
+            16,
+            41,
+            "Subscript"
+          ],
+          "original_line": 104,
+          "expression": "U[ii + self.degree - ik]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            17,
+            17,
+            17,
+            26,
+            "Subscript"
+          ],
+          "original_line": 105,
+          "expression": "U[ii - 1]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            21,
+            12,
+            21,
+            20,
+            "Subscript"
+          ],
+          "original_line": 109,
+          "expression": "d[index]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            21,
+            23,
+            21,
+            50,
+            "Attribute"
+          ],
+          "original_line": 109,
+          "expression": "d[index].linear_combination",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            21,
+            51,
+            21,
+            63,
+            "Subscript"
+          ],
+          "original_line": 109,
+          "expression": "d[index + 1]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            12,
+            25,
+            12,
+            36,
+            "Attribute"
+          ],
+          "original_line": 100,
+          "expression": "self.degree",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            21,
+            23,
+            21,
+            31,
+            "Subscript"
+          ],
+          "original_line": 109,
+          "expression": "d[index]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            11,
+            25,
+            11,
+            36,
+            "Attribute"
+          ],
+          "original_line": 99,
+          "expression": "self.degree",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            15,
+            28,
+            15,
+            39,
+            "Attribute"
+          ],
+          "original_line": 103,
+          "expression": "self.degree",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            16,
+            24,
+            16,
+            35,
+            "Attribute"
+          ],
+          "original_line": 104,
+          "expression": "self.degree",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            20,
+            29,
+            20,
+            40,
+            "Attribute"
+          ],
+          "original_line": 108,
+          "expression": "self.degree",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "gc_collect",
+      "function": "create_cycle",
+      "source_sha256": "9b29de09499fb6ebecd2087a8a27c1b59dafea7ed472d9ea2cd79e071252c34a",
+      "valid": true,
+      "reason": "",
+      "result": {
+        "unknown": false,
+        "origin_kinds": [
+          "singleton"
+        ],
+        "descendant_kinds": [
+          "singleton"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 13,
+      "accesses": [
+        {
+          "site": [
+            13,
+            4,
+            13,
+            21,
+            "Attribute"
+          ],
+          "original_line": 30,
+          "expression": "current.link_next",
+          "fact": {
+            "unknown": false,
+            "origin_kinds": [
+              "attribute"
+            ],
+            "descendant_kinds": [
+              "attribute",
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            10,
+            8,
+            10,
+            25,
+            "Attribute"
+          ],
+          "original_line": 27,
+          "expression": "current.link_next",
+          "fact": {
+            "unknown": false,
+            "origin_kinds": [
+              "attribute"
+            ],
+            "descendant_kinds": [
+              "attribute",
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "hexiom",
+      "function": "Hex.link_nodes",
+      "source_sha256": "5326e13b7eb79d9e63364c5daa2e7c2cc12992fec466e367f7dd56fab5b572d1",
+      "valid": false,
+      "reason": "cannot bind original source/bytecode: ValueError",
+      "result": {
+        "unknown": true,
+        "origin_kinds": [
+          "unknown"
+        ],
+        "descendant_kinds": [
+          "unknown"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 0,
+      "accesses": [
+        {
+          "site": [
+            2,
+            16,
+            2,
+            32,
+            "Attribute"
+          ],
+          "original_line": 205,
+          "expression": "self.nodes_by_id",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            3,
+            17,
+            3,
+            25,
+            "Attribute"
+          ],
+          "original_line": 206,
+          "expression": "node.pos",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            5,
+            21,
+            5,
+            26,
+            "Attribute"
+          ],
+          "original_line": 208,
+          "expression": "dir.x",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            21,
+            6,
+            26,
+            "Attribute"
+          ],
+          "original_line": 209,
+          "expression": "dir.y",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            7,
+            15,
+            7,
+            32,
+            "Attribute"
+          ],
+          "original_line": 210,
+          "expression": "self.contains_pos",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            16,
+            8,
+            33,
+            "Attribute"
+          ],
+          "original_line": 211,
+          "expression": "node.links.append",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            34,
+            8,
+            64,
+            "Attribute"
+          ],
+          "original_line": 211,
+          "expression": "self.nodes_by_pos[nx, ny].id",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            16,
+            8,
+            26,
+            "Attribute"
+          ],
+          "original_line": 211,
+          "expression": "node.links",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            34,
+            8,
+            61,
+            "Subscript"
+          ],
+          "original_line": 211,
+          "expression": "self.nodes_by_pos[nx, ny]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            34,
+            8,
+            51,
+            "Attribute"
+          ],
+          "original_line": 211,
+          "expression": "self.nodes_by_pos",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "hexiom",
+      "function": "Done.filter_tiles",
+      "source_sha256": "348e697f17be096b1149c54b60ab48738a518f4565e847fb6baa3858985b1268",
+      "valid": false,
+      "reason": "cannot bind original source/bytecode: ValueError",
+      "result": {
+        "unknown": true,
+        "origin_kinds": [
+          "unknown"
+        ],
+        "descendant_kinds": [
+          "unknown"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 0,
+      "accesses": [
+        {
+          "site": [
+            3,
+            11,
+            3,
+            19,
+            "Subscript"
+          ],
+          "original_line": 87,
+          "expression": "tiles[v]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            4,
+            12,
+            4,
+            27,
+            "Attribute"
+          ],
+          "original_line": 88,
+          "expression": "self.remove_all",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "richards_super",
+      "function": "Task.qpkt",
+      "source_sha256": "c055ba5a80c1b32aa34c1a6eac160cd8f3dc262f993d4752caff39e79e775e3e",
+      "valid": false,
+      "reason": "cannot bind original source/bytecode: ValueError",
+      "result": {
+        "unknown": true,
+        "origin_kinds": [
+          "unknown"
+        ],
+        "descendant_kinds": [
+          "unknown"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 0,
+      "accesses": [
+        {
+          "site": [
+            3,
+            4,
+            3,
+            26,
+            "Attribute"
+          ],
+          "original_line": 241,
+          "expression": "taskWorkArea.qpktCount",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            4,
+            4,
+            4,
+            12,
+            "Attribute"
+          ],
+          "original_line": 242,
+          "expression": "pkt.link",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            5,
+            4,
+            5,
+            13,
+            "Attribute"
+          ],
+          "original_line": 243,
+          "expression": "pkt.ident",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            5,
+            16,
+            5,
+            26,
+            "Attribute"
+          ],
+          "original_line": 243,
+          "expression": "self.ident",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            2,
+            8,
+            2,
+            20,
+            "Attribute"
+          ],
+          "original_line": 240,
+          "expression": "self.findtcb",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            2,
+            21,
+            2,
+            30,
+            "Attribute"
+          ],
+          "original_line": 240,
+          "expression": "pkt.ident",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            11,
+            6,
+            22,
+            "Attribute"
+          ],
+          "original_line": 244,
+          "expression": "t.addPacket",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "richards_super",
+      "function": "DeviceTask.fn",
+      "source_sha256": "758cc55c68c7a46f78ce33c7b8e6d3afe02da66860deb72cc6a272fd52eb239d",
+      "valid": false,
+      "reason": "cannot bind original source/bytecode: ValueError",
+      "result": {
+        "unknown": true,
+        "origin_kinds": [
+          "unknown"
+        ],
+        "descendant_kinds": [
+          "unknown"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 0,
+      "accesses": [
+        {
+          "site": [
+            4,
+            4,
+            4,
+            14,
+            "Attribute"
+          ],
+          "original_line": 264,
+          "expression": "super().fn",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            14,
+            6,
+            23,
+            "Attribute"
+          ],
+          "original_line": 266,
+          "expression": "d.pending",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            13,
+            8,
+            13,
+            17,
+            "Attribute"
+          ],
+          "original_line": 273,
+          "expression": "d.pending",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            10,
+            12,
+            10,
+            21,
+            "Attribute"
+          ],
+          "original_line": 270,
+          "expression": "d.pending",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            16,
+            15,
+            16,
+            24,
+            "Attribute"
+          ],
+          "original_line": 276,
+          "expression": "self.hold",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            19,
+            8,
+            32,
+            "Attribute"
+          ],
+          "original_line": 268,
+          "expression": "self.waitTask",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            11,
+            19,
+            11,
+            28,
+            "Attribute"
+          ],
+          "original_line": 271,
+          "expression": "self.qpkt",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            15,
+            18,
+            15,
+            27,
+            "Attribute"
+          ],
+          "original_line": 275,
+          "expression": "pkt.datum",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "richards_super",
+      "function": "HandlerTask.fn",
+      "source_sha256": "1d24c0defd9418cdb3c48f7c213d9701fa43e0af7d43c89da44569a2726561db",
+      "valid": false,
+      "reason": "cannot bind original source/bytecode: ValueError",
+      "result": {
+        "unknown": true,
+        "origin_kinds": [
+          "unknown"
+        ],
+        "descendant_kinds": [
+          "unknown"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 0,
+      "accesses": [
+        {
+          "site": [
+            10,
+            11,
+            10,
+            20,
+            "Attribute"
+          ],
+          "original_line": 293,
+          "expression": "h.work_in",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            13,
+            12,
+            13,
+            22,
+            "Attribute"
+          ],
+          "original_line": 296,
+          "expression": "work.datum",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            18,
+            10,
+            18,
+            21,
+            "Attribute"
+          ],
+          "original_line": 301,
+          "expression": "h.device_in",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            22,
+            4,
+            22,
+            15,
+            "Attribute"
+          ],
+          "original_line": 305,
+          "expression": "h.device_in",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            22,
+            18,
+            22,
+            26,
+            "Attribute"
+          ],
+          "original_line": 305,
+          "expression": "dev.link",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            23,
+            4,
+            23,
+            13,
+            "Attribute"
+          ],
+          "original_line": 306,
+          "expression": "dev.datum",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            23,
+            16,
+            23,
+            32,
+            "Subscript"
+          ],
+          "original_line": 306,
+          "expression": "work.data[count]",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            24,
+            4,
+            24,
+            14,
+            "Attribute"
+          ],
+          "original_line": 307,
+          "expression": "work.datum",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            4,
+            4,
+            4,
+            14,
+            "Attribute"
+          ],
+          "original_line": 287,
+          "expression": "super().fn",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            15,
+            8,
+            15,
+            17,
+            "Attribute"
+          ],
+          "original_line": 298,
+          "expression": "h.work_in",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            15,
+            20,
+            15,
+            29,
+            "Attribute"
+          ],
+          "original_line": 298,
+          "expression": "work.link",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            23,
+            16,
+            23,
+            25,
+            "Attribute"
+          ],
+          "original_line": 306,
+          "expression": "work.data",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            25,
+            11,
+            25,
+            20,
+            "Attribute"
+          ],
+          "original_line": 308,
+          "expression": "self.qpkt",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            11,
+            6,
+            19,
+            "Attribute"
+          ],
+          "original_line": 289,
+          "expression": "pkt.kind",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            12,
+            15,
+            12,
+            28,
+            "Attribute"
+          ],
+          "original_line": 295,
+          "expression": "self.waitTask",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            16,
+            15,
+            16,
+            24,
+            "Attribute"
+          ],
+          "original_line": 299,
+          "expression": "self.qpkt",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            20,
+            15,
+            20,
+            28,
+            "Attribute"
+          ],
+          "original_line": 303,
+          "expression": "self.waitTask",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            7,
+            12,
+            7,
+            23,
+            "Attribute"
+          ],
+          "original_line": 290,
+          "expression": "h.workInAdd",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            9,
+            12,
+            9,
+            25,
+            "Attribute"
+          ],
+          "original_line": 292,
+          "expression": "h.deviceInAdd",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "richards_super",
+      "function": "Task.runTask",
+      "source_sha256": "1de2732e6222adaf46f9de6874af893d0a041d346fb173ad8767e6a9027b50c3",
+      "valid": false,
+      "reason": "cannot bind original source/bytecode: ValueError",
+      "result": {
+        "unknown": true,
+        "origin_kinds": [
+          "unknown"
+        ],
+        "descendant_kinds": [
+          "unknown"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 0,
+      "accesses": [
+        {
+          "site": [
+            2,
+            7,
+            2,
+            31,
+            "Attribute"
+          ],
+          "original_line": 210,
+          "expression": "self.isWaitingWithPacket",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            3,
+            14,
+            3,
+            24,
+            "Attribute"
+          ],
+          "original_line": 211,
+          "expression": "self.input",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            4,
+            8,
+            4,
+            18,
+            "Attribute"
+          ],
+          "original_line": 212,
+          "expression": "self.input",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            4,
+            21,
+            4,
+            29,
+            "Attribute"
+          ],
+          "original_line": 212,
+          "expression": "msg.link",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            12,
+            11,
+            12,
+            18,
+            "Attribute"
+          ],
+          "original_line": 220,
+          "expression": "self.fn",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            12,
+            24,
+            12,
+            35,
+            "Attribute"
+          ],
+          "original_line": 220,
+          "expression": "self.handle",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            5,
+            11,
+            5,
+            21,
+            "Attribute"
+          ],
+          "original_line": 213,
+          "expression": "self.input",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            6,
+            12,
+            6,
+            24,
+            "Attribute"
+          ],
+          "original_line": 214,
+          "expression": "self.running",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            12,
+            8,
+            30,
+            "Attribute"
+          ],
+          "original_line": 216,
+          "expression": "self.packetPending",
+          "fact": {
+            "unknown": true,
+            "origin_kinds": [
+              "unknown"
+            ],
+            "descendant_kinds": [
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    },
+    {
+      "program": "richards_super",
+      "function": "schedule",
+      "source_sha256": "9d7199967aabb86be8a64f111d9147ae741ec68b6a4b0d25c32fa8f8c7a29cca",
+      "valid": true,
+      "reason": "",
+      "result": {
+        "unknown": false,
+        "origin_kinds": [
+          "singleton"
+        ],
+        "descendant_kinds": [
+          "singleton"
+        ],
+        "child_count": 0
+      },
+      "unresolved_callback_sites": 24,
+      "accesses": [
+        {
+          "site": [
+            2,
+            8,
+            2,
+            29,
+            "Attribute"
+          ],
+          "original_line": 370,
+          "expression": "taskWorkArea.taskList",
+          "fact": {
+            "unknown": false,
+            "origin_kinds": [
+              "attribute"
+            ],
+            "descendant_kinds": [
+              "attribute",
+              "global"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            7,
+            11,
+            7,
+            35,
+            "Attribute"
+          ],
+          "original_line": 375,
+          "expression": "t.isTaskHoldingOrWaiting",
+          "fact": {
+            "unknown": false,
+            "origin_kinds": [
+              "attribute"
+            ],
+            "descendant_kinds": [
+              "attribute",
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            8,
+            16,
+            8,
+            22,
+            "Attribute"
+          ],
+          "original_line": 376,
+          "expression": "t.link",
+          "fact": {
+            "unknown": false,
+            "origin_kinds": [
+              "attribute"
+            ],
+            "descendant_kinds": [
+              "attribute",
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            5,
+            27,
+            5,
+            34,
+            "Attribute"
+          ],
+          "original_line": 373,
+          "expression": "t.ident",
+          "fact": {
+            "unknown": false,
+            "origin_kinds": [
+              "attribute"
+            ],
+            "descendant_kinds": [
+              "attribute",
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            12,
+            16,
+            12,
+            25,
+            "Attribute"
+          ],
+          "original_line": 380,
+          "expression": "t.runTask",
+          "fact": {
+            "unknown": false,
+            "origin_kinds": [
+              "attribute"
+            ],
+            "descendant_kinds": [
+              "attribute",
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        },
+        {
+          "site": [
+            11,
+            37,
+            11,
+            44,
+            "Attribute"
+          ],
+          "original_line": 379,
+          "expression": "t.ident",
+          "fact": {
+            "unknown": false,
+            "origin_kinds": [
+              "attribute"
+            ],
+            "descendant_kinds": [
+              "attribute",
+              "unknown"
+            ],
+            "child_count": 0
+          }
+        }
+      ],
+      "stores": [],
+      "scope": "Unassumed shared source facts, not a direct eligibility verdict; exact typed/effect guards may discharge callback sites. Physical roots remain runtime facts."
+    }
+  ],
+  "product_execution": false,
+  "timing_eligible": false
+}

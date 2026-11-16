@@ -1,0 +1,18 @@
+{
+  "label": "integration-f2-green",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_escape_cache.py",
+    "tests/test_escape_facts.py",
+    "tests/test_scalar_identity.py",
+    "tests/test_scalar_fields.py",
+    "tests/test_scalar_fresh.py",
+    "-q",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "wall_s": 10.543189099989831,
+  "end": "2026-11-14T04:25:26.179836+00:00"
+}

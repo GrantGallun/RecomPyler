@@ -1,0 +1,16 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____________________ test_direct_proof_mechanism_exists ______________________
+
+    def test_direct_proof_mechanism_exists():
+>       assert importlib.util.find_spec('recompyler.direct') is not None, 'typed direct effects and identity proof mechanism is missing'
+E       AssertionError: typed direct effects and identity proof mechanism is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x00000282A2604CA0>('recompyler.direct')
+E        +    where <function find_spec at 0x00000282A2604CA0> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests\test_direct_module.py:5: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_direct_module.py::test_direct_proof_mechanism_exists - Asse...
+1 failed in 0.19s

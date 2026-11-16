@@ -1,0 +1,104 @@
+FFFFFF                                                                   [100%]
+================================== FAILURES ===================================
+_________ test_original_record_method_has_source_bound_summary[read] __________
+
+fn = <function Record.read at 0x00000126D79AF480>
+
+    @pytest.mark.parametrize('fn',[Record.read,Record.store])
+    def test_original_record_method_has_source_bound_summary(fn):
+        summary=p.analyze(fn)
+>       assert summary.valid,summary.reason
+E       AssertionError: cannot bind original source/bytecode: ValueError
+E       assert False
+E        +  where False = Summary(valid=False, reason='cannot bind original source/bytecode: ValueError', result=Value(origins=frozenset({Origin...pressions={}, before={}, after={}, stores=[], escaped=set(), observations=[], dependencies=(), assumptions=frozenset()).valid
+
+inplace\task2-preparation\test_shared_method_binding.py:16: AssertionError
+_________ test_original_record_method_has_source_bound_summary[store] _________
+
+fn = <function Record.store at 0x00000126D7A55C70>
+
+    @pytest.mark.parametrize('fn',[Record.read,Record.store])
+    def test_original_record_method_has_source_bound_summary(fn):
+        summary=p.analyze(fn)
+>       assert summary.valid,summary.reason
+E       AssertionError: cannot bind original source/bytecode: ValueError
+E       assert False
+E        +  where False = Summary(valid=False, reason='cannot bind original source/bytecode: ValueError', result=Value(origins=frozenset({Origin...pressions={}, before={}, after={}, stores=[], escaped=set(), observations=[], dependencies=(), assumptions=frozenset()).valid
+
+inplace\task2-preparation\test_shared_method_binding.py:16: AssertionError
+______ test_real_s46_richards_method_has_source_bound_summary[Task.qpkt] ______
+
+name = 'Task.qpkt'
+
+    @pytest.mark.parametrize('name',['Task.qpkt','DeviceTask.fn','HandlerTask.fn','Task.runTask'])
+    def test_real_s46_richards_method_has_source_bound_summary(name):
+        clone=Path(__file__).resolve().parents[2]
+        sys.path.insert(0,str(clone/'inplace/s46-ten-components-v8/shim'))
+        namespace=runpy.run_path(str(clone/'inplace/s46-ten-components-v8/richards_super/input/run_benchmark.py'),run_name='wave16_method_source_test')
+        owner,member=name.split('.');fn=getattr(namespace[owner],member)
+        summary=p.analyze(fn)
+>       assert summary.valid,summary.reason
+E       AssertionError: cannot bind original source/bytecode: ValueError
+E       assert False
+E        +  where False = Summary(valid=False, reason='cannot bind original source/bytecode: ValueError', result=Value(origins=frozenset({Origin...pressions={}, before={}, after={}, stores=[], escaped=set(), observations=[], dependencies=(), assumptions=frozenset()).valid
+
+inplace\task2-preparation\test_shared_method_binding.py:25: AssertionError
+____ test_real_s46_richards_method_has_source_bound_summary[DeviceTask.fn] ____
+
+name = 'DeviceTask.fn'
+
+    @pytest.mark.parametrize('name',['Task.qpkt','DeviceTask.fn','HandlerTask.fn','Task.runTask'])
+    def test_real_s46_richards_method_has_source_bound_summary(name):
+        clone=Path(__file__).resolve().parents[2]
+        sys.path.insert(0,str(clone/'inplace/s46-ten-components-v8/shim'))
+        namespace=runpy.run_path(str(clone/'inplace/s46-ten-components-v8/richards_super/input/run_benchmark.py'),run_name='wave16_method_source_test')
+        owner,member=name.split('.');fn=getattr(namespace[owner],member)
+        summary=p.analyze(fn)
+>       assert summary.valid,summary.reason
+E       AssertionError: cannot bind original source/bytecode: ValueError
+E       assert False
+E        +  where False = Summary(valid=False, reason='cannot bind original source/bytecode: ValueError', result=Value(origins=frozenset({Origin...pressions={}, before={}, after={}, stores=[], escaped=set(), observations=[], dependencies=(), assumptions=frozenset()).valid
+
+inplace\task2-preparation\test_shared_method_binding.py:25: AssertionError
+___ test_real_s46_richards_method_has_source_bound_summary[HandlerTask.fn] ____
+
+name = 'HandlerTask.fn'
+
+    @pytest.mark.parametrize('name',['Task.qpkt','DeviceTask.fn','HandlerTask.fn','Task.runTask'])
+    def test_real_s46_richards_method_has_source_bound_summary(name):
+        clone=Path(__file__).resolve().parents[2]
+        sys.path.insert(0,str(clone/'inplace/s46-ten-components-v8/shim'))
+        namespace=runpy.run_path(str(clone/'inplace/s46-ten-components-v8/richards_super/input/run_benchmark.py'),run_name='wave16_method_source_test')
+        owner,member=name.split('.');fn=getattr(namespace[owner],member)
+        summary=p.analyze(fn)
+>       assert summary.valid,summary.reason
+E       AssertionError: cannot bind original source/bytecode: ValueError
+E       assert False
+E        +  where False = Summary(valid=False, reason='cannot bind original source/bytecode: ValueError', result=Value(origins=frozenset({Origin...pressions={}, before={}, after={}, stores=[], escaped=set(), observations=[], dependencies=(), assumptions=frozenset()).valid
+
+inplace\task2-preparation\test_shared_method_binding.py:25: AssertionError
+____ test_real_s46_richards_method_has_source_bound_summary[Task.runTask] _____
+
+name = 'Task.runTask'
+
+    @pytest.mark.parametrize('name',['Task.qpkt','DeviceTask.fn','HandlerTask.fn','Task.runTask'])
+    def test_real_s46_richards_method_has_source_bound_summary(name):
+        clone=Path(__file__).resolve().parents[2]
+        sys.path.insert(0,str(clone/'inplace/s46-ten-components-v8/shim'))
+        namespace=runpy.run_path(str(clone/'inplace/s46-ten-components-v8/richards_super/input/run_benchmark.py'),run_name='wave16_method_source_test')
+        owner,member=name.split('.');fn=getattr(namespace[owner],member)
+        summary=p.analyze(fn)
+>       assert summary.valid,summary.reason
+E       AssertionError: cannot bind original source/bytecode: ValueError
+E       assert False
+E        +  where False = Summary(valid=False, reason='cannot bind original source/bytecode: ValueError', result=Value(origins=frozenset({Origin...pressions={}, before={}, after={}, stores=[], escaped=set(), observations=[], dependencies=(), assumptions=frozenset()).valid
+
+inplace\task2-preparation\test_shared_method_binding.py:25: AssertionError
+=========================== short test summary info ===========================
+FAILED inplace/task2-preparation/test_shared_method_binding.py::test_original_record_method_has_source_bound_summary[read]
+FAILED inplace/task2-preparation/test_shared_method_binding.py::test_original_record_method_has_source_bound_summary[store]
+FAILED inplace/task2-preparation/test_shared_method_binding.py::test_real_s46_richards_method_has_source_bound_summary[Task.qpkt]
+FAILED inplace/task2-preparation/test_shared_method_binding.py::test_real_s46_richards_method_has_source_bound_summary[DeviceTask.fn]
+FAILED inplace/task2-preparation/test_shared_method_binding.py::test_real_s46_richards_method_has_source_bound_summary[HandlerTask.fn]
+FAILED inplace/task2-preparation/test_shared_method_binding.py::test_real_s46_richards_method_has_source_bound_summary[Task.runTask]
+6 failed in 0.28s

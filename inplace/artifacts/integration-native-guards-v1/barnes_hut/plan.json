@@ -1,0 +1,2969 @@
+{
+  "script": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave5-study\\results\\drivers\\barnes_hut.py",
+  "profiler": "c",
+  "total_s": 0.9116131681746769,
+  "script_self_s": 0.004387105276691727,
+  "functions": [
+    {
+      "function": "advance_system",
+      "qualname": "advance_system",
+      "line": 314,
+      "calls": 100,
+      "self_s": 0.004387105276691727,
+      "cumulative_s": 0.7963579934439622,
+      "library_s": 0.00014198273129295558,
+      "signatures": 1,
+      "candidate": {
+        "status": "verified",
+        "engine": "region",
+        "samples": 8,
+        "compiled_samples": 8,
+        "fallback_samples": 0,
+        "rare_samples_checked": 0,
+        "recommended": true,
+        "recommendation": "Explicit measurement-only verified native-region selection; not default coverage.",
+        "net_s_first_run": -10.022899800020241,
+        "net_s_cached": 0.5192871999643103,
+        "first_pass_s": 10.640354799994384,
+        "warm_start_s": 0.09816780000983272,
+        "python_us_per_call": 6642.837499384768,
+        "compiled_cpu_us_per_call": 468.2874996433384,
+        "speedup": 14.185382920629207,
+        "changes_arguments": true,
+        "disk_cached": true,
+        "batch_backends": {},
+        "backend_note": "not batched: compiled as one region",
+        "lift_reason": "outside the supported subset: constant None at line 8",
+        "diagnostic_original_recommended": true
+      }
+    }
+  ],
+  "plan": {
+    "startup_s": 0.5238015999930212,
+    "saving_s": 0.5192871999643103,
+    "worth_running": false,
+    "aot_regions": {
+      "module": "inplace_dfd39257fb73448ec995",
+      "folder": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\artifacts\\integration-native-guards-v1\\barnes_hut",
+      "functions": [
+        {
+          "function": "advance_system",
+          "line": 314,
+          "qualname": "advance_system",
+          "exports": {
+            "c7cc1edd80c8ec9ce25bdd81f6cfdf64b7fcf772ce2c0b1d5648ff01977a3d87": "r0",
+            "89b15e9ab7aae6e8084989c122269392336bbfcfba0525679c07c91e5ae50766": "r1"
+          },
+          "seeds": {
+            "c7cc1edd80c8ec9ce25bdd81f6cfdf64b7fcf772ce2c0b1d5648ff01977a3d87": {
+              "version": 1,
+              "classes": [
+                [
+                  [
+                    "Particle"
+                  ],
+                  [
+                    "acceleration",
+                    "mass",
+                    "position",
+                    "velocity"
+                  ],
+                  [
+                    [
+                      "Particle"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "Point"
+                  ],
+                  [
+                    "x",
+                    "y"
+                  ],
+                  [
+                    [
+                      "Point"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "Rectangle"
+                  ],
+                  [
+                    "h",
+                    "w",
+                    "x",
+                    "y"
+                  ],
+                  [
+                    [
+                      "Rectangle"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "QuadTree"
+                  ],
+                  [
+                    "boundary",
+                    "capacity",
+                    "center_of_mass",
+                    "divided",
+                    "northeast",
+                    "northwest",
+                    "particles",
+                    "southeast",
+                    "southwest",
+                    "total_mass"
+                  ],
+                  [
+                    [
+                      "QuadTree"
+                    ]
+                  ]
+                ]
+              ],
+              "families": [
+                [
+                  [
+                    "Particle"
+                  ],
+                  [
+                    [
+                      "Particle"
+                    ]
+                  ],
+                  [
+                    [
+                      "acceleration",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        false,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "mass",
+                      "f"
+                    ],
+                    [
+                      "position",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        false,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "velocity",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        false,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "Point"
+                  ],
+                  [
+                    [
+                      "Point"
+                    ]
+                  ],
+                  [
+                    [
+                      "x",
+                      "m"
+                    ],
+                    [
+                      "y",
+                      "m"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "Rectangle"
+                  ],
+                  [
+                    [
+                      "Rectangle"
+                    ]
+                  ],
+                  [
+                    [
+                      "h",
+                      "f"
+                    ],
+                    [
+                      "w",
+                      "f"
+                    ],
+                    [
+                      "x",
+                      "f"
+                    ],
+                    [
+                      "y",
+                      "f"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "QuadTree"
+                  ],
+                  [
+                    [
+                      "QuadTree"
+                    ]
+                  ],
+                  [
+                    [
+                      "boundary",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "capacity",
+                      "i"
+                    ],
+                    [
+                      "center_of_mass",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        false,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "divided",
+                      "b"
+                    ],
+                    [
+                      "northeast",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "northwest",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particles",
+                      [
+                        "list",
+                        0
+                      ]
+                    ],
+                    [
+                      "southeast",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "southwest",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "total_mass",
+                      "m"
+                    ]
+                  ]
+                ]
+              ],
+              "functions": [
+                {
+                  "ref": [
+                    "$entry"
+                  ],
+                  "owner": null,
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "08f601468140f06810c969427fc791a02cf6717642e6d8cfa2231d54cbf6247f",
+                  "vars": [
+                    [
+                      "particles",
+                      [
+                        "list",
+                        1
+                      ]
+                    ],
+                    [
+                      "theta",
+                      "f"
+                    ],
+                    [
+                      "time_step",
+                      "f"
+                    ],
+                    [
+                      "width",
+                      "i"
+                    ],
+                    [
+                      "height",
+                      "i"
+                    ],
+                    [
+                      "boundary",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "quadtree",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        false,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "fx",
+                      "m"
+                    ],
+                    [
+                      "fy",
+                      "m"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "Rectangle",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "Rectangle"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "f6d7b4efb0b1996261c734fb57c492ffc52971e7748d2beae85119b8839a7b20",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Rectangle",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "Rectangle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Rectangle@__main__"
+                      ],
+                      false
+                    ],
+                    "f",
+                    "f",
+                    "f",
+                    "f"
+                  ],
+                  "sink": false,
+                  "fingerprint": "f6d7b4efb0b1996261c734fb57c492ffc52971e7748d2beae85119b8839a7b20",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "x",
+                      "f"
+                    ],
+                    [
+                      "y",
+                      "f"
+                    ],
+                    [
+                      "w",
+                      "f"
+                    ],
+                    [
+                      "h",
+                      "f"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "5b4cd07a3c1e8c6e6c5369817f5751baf89c2208bcdbca5395709e1e2dcf8bf3",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Rectangle@__main__"
+                      ],
+                      false
+                    ],
+                    "i"
+                  ],
+                  "sink": false,
+                  "fingerprint": "5b4cd07a3c1e8c6e6c5369817f5751baf89c2208bcdbca5395709e1e2dcf8bf3",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        false,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "boundary",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "capacity",
+                      "i"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "insert"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "fbf00ef804f13c94ddbc37472099d80a25f8ed5f687fdcaa5660ef0c1dd60c99",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "insert"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "fbf00ef804f13c94ddbc37472099d80a25f8ed5f687fdcaa5660ef0c1dd60c99",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        false,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  "ret": "b"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "calculate_force"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "76c0c7468a7a3865a4ead3d74fd9eb6196b1e5b93792e60f17bbd8f1981c1616",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "calculate_force"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ],
+                    "f"
+                  ],
+                  "sink": false,
+                  "fingerprint": "76c0c7468a7a3865a4ead3d74fd9eb6196b1e5b93792e60f17bbd8f1981c1616",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        false,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "theta",
+                      "f"
+                    ],
+                    [
+                      "dx",
+                      "m"
+                    ],
+                    [
+                      "dy",
+                      "m"
+                    ],
+                    [
+                      "distance",
+                      "f"
+                    ],
+                    [
+                      "f",
+                      "f"
+                    ],
+                    [
+                      "fx",
+                      "m"
+                    ],
+                    [
+                      "fy",
+                      "m"
+                    ],
+                    [
+                      "fx_ne",
+                      "m"
+                    ],
+                    [
+                      "fy_ne",
+                      "m"
+                    ],
+                    [
+                      "fx_nw",
+                      "m"
+                    ],
+                    [
+                      "fy_nw",
+                      "m"
+                    ],
+                    [
+                      "fx_se",
+                      "m"
+                    ],
+                    [
+                      "fy_se",
+                      "m"
+                    ],
+                    [
+                      "fx_sw",
+                      "m"
+                    ],
+                    [
+                      "fy_sw",
+                      "m"
+                    ]
+                  ],
+                  "ret": [
+                    "tuple",
+                    [
+                      "m",
+                      "m"
+                    ],
+                    false
+                  ]
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "apply_force"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "6a6af96b6917b4538640d1f79edd1e428b600585ac58c5ceed42cc4a2ed101c6",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "apply_force"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ],
+                    "*",
+                    "*"
+                  ],
+                  "sink": false,
+                  "fingerprint": "6a6af96b6917b4538640d1f79edd1e428b600585ac58c5ceed42cc4a2ed101c6",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "update"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "088c29c1c1a26211c8f4612553287eed509a159b5cd25ea753fc955922a67274",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "update"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ],
+                    "f"
+                  ],
+                  "sink": false,
+                  "fingerprint": "088c29c1c1a26211c8f4612553287eed509a159b5cd25ea753fc955922a67274",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "time_step",
+                      "f"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "Point",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "Point"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "524844157720fe92c789ea514d3b96cdf974cc2396f1a3d3dfaf391eb67a17a1",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Point",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "Point"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Point@__main__"
+                      ],
+                      false
+                    ],
+                    "i",
+                    "i"
+                  ],
+                  "sink": false,
+                  "fingerprint": "524844157720fe92c789ea514d3b96cdf974cc2396f1a3d3dfaf391eb67a17a1",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        false,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "x",
+                      "i"
+                    ],
+                    [
+                      "y",
+                      "i"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "Rectangle",
+                    "contains"
+                  ],
+                  "owner": [
+                    "Rectangle"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "debd27e9022e48259a1f1a232aa1dab4f59d73a5ecc9e0055f6cae02ebdc403a",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Rectangle",
+                    "contains"
+                  ],
+                  "owner": [
+                    "Rectangle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Rectangle@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Point@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "debd27e9022e48259a1f1a232aa1dab4f59d73a5ecc9e0055f6cae02ebdc403a",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "point",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        false,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  "ret": "b"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "update_mass_distribution"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "24bdd843b53fdbae80ace7dac970a80fd348907094273fac999eb200de030b2c",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "update_mass_distribution"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "24bdd843b53fdbae80ace7dac970a80fd348907094273fac999eb200de030b2c",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        false,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "total_mass_new",
+                      "f"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "subdivide"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "0d7e74dfe7f0d71f1f3f24a1b2078980140f882703a2660c8dd6c52c13fc936c",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "subdivide"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "0d7e74dfe7f0d71f1f3f24a1b2078980140f882703a2660c8dd6c52c13fc936c",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        false,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "x",
+                      "f"
+                    ],
+                    [
+                      "y",
+                      "f"
+                    ],
+                    [
+                      "w",
+                      "f"
+                    ],
+                    [
+                      "h",
+                      "f"
+                    ],
+                    [
+                      "ne",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "nw",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "se",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "sw",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "apply_force"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ],
+                    "m",
+                    "m"
+                  ],
+                  "sink": false,
+                  "fingerprint": "6a6af96b6917b4538640d1f79edd1e428b600585ac58c5ceed42cc4a2ed101c6",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        false,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "fx",
+                      "m"
+                    ],
+                    [
+                      "fy",
+                      "m"
+                    ]
+                  ],
+                  "ret": "n"
+                }
+              ],
+              "globals": [],
+              "cells": [
+                [
+                  [
+                    "object",
+                    [
+                      "Particle"
+                    ],
+                    false,
+                    [
+                      [
+                        "Particle"
+                      ]
+                    ]
+                  ],
+                  true
+                ],
+                [
+                  [
+                    "object",
+                    [
+                      "Particle"
+                    ],
+                    false,
+                    [
+                      [
+                        "Particle"
+                      ]
+                    ]
+                  ],
+                  false
+                ]
+              ],
+              "dependencies": {
+                "functions": [
+                  [
+                    [
+                      "$entry"
+                    ],
+                    "08f601468140f06810c969427fc791a02cf6717642e6d8cfa2231d54cbf6247f",
+                    null
+                  ],
+                  [
+                    [
+                      "Particle",
+                      "__init__"
+                    ],
+                    "165ae786c44fea24be10d6989048240bb88873784317972f66c7b53cc4dff3c9",
+                    null
+                  ],
+                  [
+                    [
+                      "Particle",
+                      "apply_force"
+                    ],
+                    "6a6af96b6917b4538640d1f79edd1e428b600585ac58c5ceed42cc4a2ed101c6",
+                    null
+                  ],
+                  [
+                    [
+                      "Particle",
+                      "update"
+                    ],
+                    "088c29c1c1a26211c8f4612553287eed509a159b5cd25ea753fc955922a67274",
+                    null
+                  ],
+                  [
+                    [
+                      "Point",
+                      "__init__"
+                    ],
+                    "524844157720fe92c789ea514d3b96cdf974cc2396f1a3d3dfaf391eb67a17a1",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "__init__"
+                    ],
+                    "5b4cd07a3c1e8c6e6c5369817f5751baf89c2208bcdbca5395709e1e2dcf8bf3",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "calculate_force"
+                    ],
+                    "76c0c7468a7a3865a4ead3d74fd9eb6196b1e5b93792e60f17bbd8f1981c1616",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "insert"
+                    ],
+                    "fbf00ef804f13c94ddbc37472099d80a25f8ed5f687fdcaa5660ef0c1dd60c99",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "subdivide"
+                    ],
+                    "0d7e74dfe7f0d71f1f3f24a1b2078980140f882703a2660c8dd6c52c13fc936c",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "update_mass_distribution"
+                    ],
+                    "24bdd843b53fdbae80ace7dac970a80fd348907094273fac999eb200de030b2c",
+                    null
+                  ],
+                  [
+                    [
+                      "Rectangle",
+                      "__init__"
+                    ],
+                    "f6d7b4efb0b1996261c734fb57c492ffc52971e7748d2beae85119b8839a7b20",
+                    null
+                  ],
+                  [
+                    [
+                      "Rectangle",
+                      "contains"
+                    ],
+                    "debd27e9022e48259a1f1a232aa1dab4f59d73a5ecc9e0055f6cae02ebdc403a",
+                    null
+                  ]
+                ],
+                "classes": [
+                  [
+                    [
+                      "Particle"
+                    ],
+                    [
+                      [
+                        "Particle"
+                      ]
+                    ],
+                    [
+                      "Particle",
+                      "__init__"
+                    ]
+                  ],
+                  [
+                    [
+                      "Point"
+                    ],
+                    [
+                      [
+                        "Point"
+                      ]
+                    ],
+                    [
+                      "Point",
+                      "__init__"
+                    ]
+                  ],
+                  [
+                    [
+                      "QuadTree"
+                    ],
+                    [
+                      [
+                        "QuadTree"
+                      ]
+                    ],
+                    [
+                      "QuadTree",
+                      "__init__"
+                    ]
+                  ],
+                  [
+                    [
+                      "Rectangle"
+                    ],
+                    [
+                      [
+                        "Rectangle"
+                      ]
+                    ],
+                    [
+                      "Rectangle",
+                      "__init__"
+                    ]
+                  ]
+                ]
+              }
+            },
+            "89b15e9ab7aae6e8084989c122269392336bbfcfba0525679c07c91e5ae50766": {
+              "version": 1,
+              "classes": [
+                [
+                  [
+                    "Particle"
+                  ],
+                  [
+                    "acceleration",
+                    "mass",
+                    "position",
+                    "velocity"
+                  ],
+                  [
+                    [
+                      "Particle"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "Point"
+                  ],
+                  [
+                    "x",
+                    "y"
+                  ],
+                  [
+                    [
+                      "Point"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "Rectangle"
+                  ],
+                  [
+                    "h",
+                    "w",
+                    "x",
+                    "y"
+                  ],
+                  [
+                    [
+                      "Rectangle"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "QuadTree"
+                  ],
+                  [
+                    "boundary",
+                    "capacity",
+                    "center_of_mass",
+                    "divided",
+                    "northeast",
+                    "northwest",
+                    "particles",
+                    "southeast",
+                    "southwest",
+                    "total_mass"
+                  ],
+                  [
+                    [
+                      "QuadTree"
+                    ]
+                  ]
+                ]
+              ],
+              "families": [
+                [
+                  [
+                    "Particle"
+                  ],
+                  [
+                    [
+                      "Particle"
+                    ]
+                  ],
+                  [
+                    [
+                      "acceleration",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        true,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "mass",
+                      "f"
+                    ],
+                    [
+                      "position",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        true,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "velocity",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        true,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "Point"
+                  ],
+                  [
+                    [
+                      "Point"
+                    ]
+                  ],
+                  [
+                    [
+                      "x",
+                      "m"
+                    ],
+                    [
+                      "y",
+                      "m"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "Rectangle"
+                  ],
+                  [
+                    [
+                      "Rectangle"
+                    ]
+                  ],
+                  [
+                    [
+                      "h",
+                      "f"
+                    ],
+                    [
+                      "w",
+                      "f"
+                    ],
+                    [
+                      "x",
+                      "f"
+                    ],
+                    [
+                      "y",
+                      "f"
+                    ]
+                  ]
+                ],
+                [
+                  [
+                    "QuadTree"
+                  ],
+                  [
+                    [
+                      "QuadTree"
+                    ]
+                  ],
+                  [
+                    [
+                      "boundary",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "capacity",
+                      "i"
+                    ],
+                    [
+                      "center_of_mass",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        true,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "divided",
+                      "b"
+                    ],
+                    [
+                      "northeast",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "northwest",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particles",
+                      [
+                        "list",
+                        0
+                      ]
+                    ],
+                    [
+                      "southeast",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "southwest",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "total_mass",
+                      "m"
+                    ]
+                  ]
+                ]
+              ],
+              "functions": [
+                {
+                  "ref": [
+                    "$entry"
+                  ],
+                  "owner": null,
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "08f601468140f06810c969427fc791a02cf6717642e6d8cfa2231d54cbf6247f",
+                  "vars": [
+                    [
+                      "particles",
+                      [
+                        "list",
+                        1
+                      ]
+                    ],
+                    [
+                      "theta",
+                      "f"
+                    ],
+                    [
+                      "time_step",
+                      "f"
+                    ],
+                    [
+                      "width",
+                      "i"
+                    ],
+                    [
+                      "height",
+                      "i"
+                    ],
+                    [
+                      "boundary",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "quadtree",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "fx",
+                      "m"
+                    ],
+                    [
+                      "fy",
+                      "m"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "Rectangle",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "Rectangle"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "f6d7b4efb0b1996261c734fb57c492ffc52971e7748d2beae85119b8839a7b20",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Rectangle",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "Rectangle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Rectangle@__main__"
+                      ],
+                      false
+                    ],
+                    "f",
+                    "f",
+                    "f",
+                    "f"
+                  ],
+                  "sink": false,
+                  "fingerprint": "f6d7b4efb0b1996261c734fb57c492ffc52971e7748d2beae85119b8839a7b20",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "x",
+                      "f"
+                    ],
+                    [
+                      "y",
+                      "f"
+                    ],
+                    [
+                      "w",
+                      "f"
+                    ],
+                    [
+                      "h",
+                      "f"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "5b4cd07a3c1e8c6e6c5369817f5751baf89c2208bcdbca5395709e1e2dcf8bf3",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Rectangle@__main__"
+                      ],
+                      false
+                    ],
+                    "i"
+                  ],
+                  "sink": false,
+                  "fingerprint": "5b4cd07a3c1e8c6e6c5369817f5751baf89c2208bcdbca5395709e1e2dcf8bf3",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "boundary",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "capacity",
+                      "i"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "insert"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "fbf00ef804f13c94ddbc37472099d80a25f8ed5f687fdcaa5660ef0c1dd60c99",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "insert"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "fbf00ef804f13c94ddbc37472099d80a25f8ed5f687fdcaa5660ef0c1dd60c99",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  "ret": "b"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "calculate_force"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "76c0c7468a7a3865a4ead3d74fd9eb6196b1e5b93792e60f17bbd8f1981c1616",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "calculate_force"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ],
+                    "f"
+                  ],
+                  "sink": false,
+                  "fingerprint": "76c0c7468a7a3865a4ead3d74fd9eb6196b1e5b93792e60f17bbd8f1981c1616",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "theta",
+                      "f"
+                    ],
+                    [
+                      "dx",
+                      "m"
+                    ],
+                    [
+                      "dy",
+                      "m"
+                    ],
+                    [
+                      "distance",
+                      "f"
+                    ],
+                    [
+                      "f",
+                      "f"
+                    ],
+                    [
+                      "fx",
+                      "m"
+                    ],
+                    [
+                      "fy",
+                      "m"
+                    ],
+                    [
+                      "fx_ne",
+                      "m"
+                    ],
+                    [
+                      "fy_ne",
+                      "m"
+                    ],
+                    [
+                      "fx_nw",
+                      "m"
+                    ],
+                    [
+                      "fy_nw",
+                      "m"
+                    ],
+                    [
+                      "fx_se",
+                      "m"
+                    ],
+                    [
+                      "fy_se",
+                      "m"
+                    ],
+                    [
+                      "fx_sw",
+                      "m"
+                    ],
+                    [
+                      "fy_sw",
+                      "m"
+                    ]
+                  ],
+                  "ret": [
+                    "tuple",
+                    [
+                      "m",
+                      "m"
+                    ],
+                    false
+                  ]
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "apply_force"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "6a6af96b6917b4538640d1f79edd1e428b600585ac58c5ceed42cc4a2ed101c6",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "apply_force"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ],
+                    "*",
+                    "*"
+                  ],
+                  "sink": false,
+                  "fingerprint": "6a6af96b6917b4538640d1f79edd1e428b600585ac58c5ceed42cc4a2ed101c6",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "update"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "088c29c1c1a26211c8f4612553287eed509a159b5cd25ea753fc955922a67274",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "update"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ],
+                    "f"
+                  ],
+                  "sink": false,
+                  "fingerprint": "088c29c1c1a26211c8f4612553287eed509a159b5cd25ea753fc955922a67274",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "time_step",
+                      "f"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "Point",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "Point"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "524844157720fe92c789ea514d3b96cdf974cc2396f1a3d3dfaf391eb67a17a1",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Point",
+                    "__init__"
+                  ],
+                  "owner": [
+                    "Point"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Point@__main__"
+                      ],
+                      false
+                    ],
+                    "i",
+                    "i"
+                  ],
+                  "sink": false,
+                  "fingerprint": "524844157720fe92c789ea514d3b96cdf974cc2396f1a3d3dfaf391eb67a17a1",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        true,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "x",
+                      "i"
+                    ],
+                    [
+                      "y",
+                      "i"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "Rectangle",
+                    "contains"
+                  ],
+                  "owner": [
+                    "Rectangle"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "debd27e9022e48259a1f1a232aa1dab4f59d73a5ecc9e0055f6cae02ebdc403a",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "Rectangle",
+                    "contains"
+                  ],
+                  "owner": [
+                    "Rectangle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Rectangle@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Point@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "debd27e9022e48259a1f1a232aa1dab4f59d73a5ecc9e0055f6cae02ebdc403a",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "point",
+                      [
+                        "object",
+                        [
+                          "Point"
+                        ],
+                        true,
+                        [
+                          [
+                            "Point"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  "ret": "b"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "update_mass_distribution"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "24bdd843b53fdbae80ace7dac970a80fd348907094273fac999eb200de030b2c",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "update_mass_distribution"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ],
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "24bdd843b53fdbae80ace7dac970a80fd348907094273fac999eb200de030b2c",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "total_mass_new",
+                      "f"
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "subdivide"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": null,
+                  "sink": false,
+                  "fingerprint": "0d7e74dfe7f0d71f1f3f24a1b2078980140f882703a2660c8dd6c52c13fc936c",
+                  "vars": [],
+                  "ret": "?"
+                },
+                {
+                  "ref": [
+                    "QuadTree",
+                    "subdivide"
+                  ],
+                  "owner": [
+                    "QuadTree"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "QuadTree@__main__"
+                      ],
+                      false
+                    ]
+                  ],
+                  "sink": false,
+                  "fingerprint": "0d7e74dfe7f0d71f1f3f24a1b2078980140f882703a2660c8dd6c52c13fc936c",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "QuadTree"
+                        ],
+                        true,
+                        [
+                          [
+                            "QuadTree"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "x",
+                      "f"
+                    ],
+                    [
+                      "y",
+                      "f"
+                    ],
+                    [
+                      "w",
+                      "f"
+                    ],
+                    [
+                      "h",
+                      "f"
+                    ],
+                    [
+                      "ne",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "nw",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "se",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "sw",
+                      [
+                        "object",
+                        [
+                          "Rectangle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Rectangle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "particle",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  "ret": "n"
+                },
+                {
+                  "ref": [
+                    "Particle",
+                    "apply_force"
+                  ],
+                  "owner": [
+                    "Particle"
+                  ],
+                  "key": [
+                    [
+                      "o",
+                      [
+                        "Particle@__main__"
+                      ],
+                      false
+                    ],
+                    "m",
+                    "m"
+                  ],
+                  "sink": false,
+                  "fingerprint": "6a6af96b6917b4538640d1f79edd1e428b600585ac58c5ceed42cc4a2ed101c6",
+                  "vars": [
+                    [
+                      "self",
+                      [
+                        "object",
+                        [
+                          "Particle"
+                        ],
+                        true,
+                        [
+                          [
+                            "Particle"
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "fx",
+                      "m"
+                    ],
+                    [
+                      "fy",
+                      "m"
+                    ]
+                  ],
+                  "ret": "n"
+                }
+              ],
+              "globals": [],
+              "cells": [
+                [
+                  [
+                    "object",
+                    [
+                      "Particle"
+                    ],
+                    true,
+                    [
+                      [
+                        "Particle"
+                      ]
+                    ]
+                  ],
+                  true
+                ],
+                [
+                  [
+                    "object",
+                    [
+                      "Particle"
+                    ],
+                    true,
+                    [
+                      [
+                        "Particle"
+                      ]
+                    ]
+                  ],
+                  false
+                ]
+              ],
+              "dependencies": {
+                "functions": [
+                  [
+                    [
+                      "$entry"
+                    ],
+                    "08f601468140f06810c969427fc791a02cf6717642e6d8cfa2231d54cbf6247f",
+                    null
+                  ],
+                  [
+                    [
+                      "Particle",
+                      "__init__"
+                    ],
+                    "165ae786c44fea24be10d6989048240bb88873784317972f66c7b53cc4dff3c9",
+                    null
+                  ],
+                  [
+                    [
+                      "Particle",
+                      "apply_force"
+                    ],
+                    "6a6af96b6917b4538640d1f79edd1e428b600585ac58c5ceed42cc4a2ed101c6",
+                    null
+                  ],
+                  [
+                    [
+                      "Particle",
+                      "update"
+                    ],
+                    "088c29c1c1a26211c8f4612553287eed509a159b5cd25ea753fc955922a67274",
+                    null
+                  ],
+                  [
+                    [
+                      "Point",
+                      "__init__"
+                    ],
+                    "524844157720fe92c789ea514d3b96cdf974cc2396f1a3d3dfaf391eb67a17a1",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "__init__"
+                    ],
+                    "5b4cd07a3c1e8c6e6c5369817f5751baf89c2208bcdbca5395709e1e2dcf8bf3",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "calculate_force"
+                    ],
+                    "76c0c7468a7a3865a4ead3d74fd9eb6196b1e5b93792e60f17bbd8f1981c1616",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "insert"
+                    ],
+                    "fbf00ef804f13c94ddbc37472099d80a25f8ed5f687fdcaa5660ef0c1dd60c99",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "subdivide"
+                    ],
+                    "0d7e74dfe7f0d71f1f3f24a1b2078980140f882703a2660c8dd6c52c13fc936c",
+                    null
+                  ],
+                  [
+                    [
+                      "QuadTree",
+                      "update_mass_distribution"
+                    ],
+                    "24bdd843b53fdbae80ace7dac970a80fd348907094273fac999eb200de030b2c",
+                    null
+                  ],
+                  [
+                    [
+                      "Rectangle",
+                      "__init__"
+                    ],
+                    "f6d7b4efb0b1996261c734fb57c492ffc52971e7748d2beae85119b8839a7b20",
+                    null
+                  ],
+                  [
+                    [
+                      "Rectangle",
+                      "contains"
+                    ],
+                    "debd27e9022e48259a1f1a232aa1dab4f59d73a5ecc9e0055f6cae02ebdc403a",
+                    null
+                  ]
+                ],
+                "classes": [
+                  [
+                    [
+                      "Particle"
+                    ],
+                    [
+                      [
+                        "Particle"
+                      ]
+                    ],
+                    [
+                      "Particle",
+                      "__init__"
+                    ]
+                  ],
+                  [
+                    [
+                      "Point"
+                    ],
+                    [
+                      [
+                        "Point"
+                      ]
+                    ],
+                    [
+                      "Point",
+                      "__init__"
+                    ]
+                  ],
+                  [
+                    [
+                      "QuadTree"
+                    ],
+                    [
+                      [
+                        "QuadTree"
+                      ]
+                    ],
+                    [
+                      "QuadTree",
+                      "__init__"
+                    ]
+                  ],
+                  [
+                    [
+                      "Rectangle"
+                    ],
+                    [
+                      [
+                        "Rectangle"
+                      ]
+                    ],
+                    [
+                      "Rectangle",
+                      "__init__"
+                    ]
+                  ]
+                ]
+              }
+            }
+          },
+          "seed_policy": "guarded",
+          "seed_policy_reason": null
+        }
+      ]
+    }
+  }
+}

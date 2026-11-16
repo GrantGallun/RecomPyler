@@ -1,0 +1,13 @@
+.E                                                                       [100%]
+=================================== ERRORS ====================================
+___ ERROR at setup of test_method_owner_must_match_sealed_hidden_rng_holder ___
+file D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\tests\test_prepared_native_lifetime.py, line 24
+  def test_method_owner_must_match_sealed_hidden_rng_holder(artifact,monkeypatch):
+E       fixture 'artifact' not found
+>       available fixtures: anyio_backend, anyio_backend_name, anyio_backend_options, cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, doctest_namespace, free_tcp_port, free_tcp_port_factory, free_udp_port, free_udp_port_factory, hydra_restore_singletons, hydra_sweep_runner, hydra_task_runner, monkeypatch, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\tests\test_prepared_native_lifetime.py:24
+=========================== short test summary info ===========================
+ERROR tests/test_prepared_native_lifetime.py::test_method_owner_must_match_sealed_hidden_rng_holder
+1 passed, 1 error in 4.74s

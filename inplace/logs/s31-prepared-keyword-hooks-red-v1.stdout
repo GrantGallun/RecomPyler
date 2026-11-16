@@ -1,0 +1,51 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+__________ test_late_keyword_default_keys_never_invoke_user_equality __________
+
+tmp_path = WindowsPath('D:/Code/Datathon/recompyler-codex-20261111/wave16-inplace/inplace/temp/s31-prepared-keyword-hooks-red-v1/test_late_keyword_default_keys0')
+
+    def test_late_keyword_default_keys_never_invoke_user_equality(tmp_path):
+        from recompyler import heap,_prepared as pc
+        source=tmp_path/'keyword_hooks.py'
+        source.write_text(SOURCE+"\ndef unused(*,x=1): return x\nBox.unused=unused\n")
+        module=load_source(source)
+        region=heap.lift_region(module.read)
+        assert region(module.Box(10))==10 and region.compiled_calls==1
+        section=heap.build_regions([(('read',module.read.__code__.co_firstlineno),module.read,region)],tmp_path)
+        index=pc.open_index(section,section['functions'][0],plan_snapshot=standalone(section))
+        assert index is not None,pc.last_miss()
+        program=index.bind(module.read)[0]
+        events=[]
+        class EvilKey:
+            def __hash__(self): return hash('x')
+            def __eq__(self,other): events.append('equal'); return True
+        module.unused.__kwdefaults__.clear()
+        module.unused.__kwdefaults__[EvilKey()]=1
+        events.clear()
+        result=program.guards_hold()
+>       assert events==[]
+E       AssertionError: assert ['equal'] == []
+E         
+E         Left contains one more item: 'equal'
+E         Use -v to get more diff
+
+inplace\prepared-cache-preparation\test_prepared_review_regressions.py:209: AssertionError
+---------------------------- Captured stdout call -----------------------------
+temp.c
+temp.cxx
+modulemixin.c
+dictobject.c
+listobject.c
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(490): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(492): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(497): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+C:\Users\grant\AppData\Roaming\Python\Python314\site-packages\numba\cext\listobject.c(507): warning C4244: '=': conversion from 'Py_ssize_t' to 'int', possible loss of data
+setobject.c
+utils.c
+nrt.cpp
+   Creating library D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_71ba6e3971180d60503e6984-168ybfn0\rcaotr_71ba6e3971180d60503e6984.cp314-win_amd64.lib and object D:\Code\Datathon\recompyler-codex-20261111\wave16-inplace\inplace\temp\pycc-build-rcaotr_71ba6e3971180d60503e6984-168ybfn0\rcaotr_71ba6e3971180d60503e6984.cp314-win_amd64.exp
+Generating code
+Finished generating code
+=========================== short test summary info ===========================
+FAILED inplace/prepared-cache-preparation/test_prepared_review_regressions.py::test_late_keyword_default_keys_never_invoke_user_equality
+1 failed, 11 deselected in 4.73s

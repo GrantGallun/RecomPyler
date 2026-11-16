@@ -1,0 +1,22 @@
+{
+  "label": "s49-observers-green-v1",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "tests/test_numeric_observers.py",
+    "tests/test_numeric_values.py",
+    "-q",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "complete": true,
+  "execution_class": "correctness",
+  "timing_eligible": false,
+  "process_priority": "BELOW_NORMAL",
+  "priority_verified": 16384,
+  "workers": "serial; thread env1; total run cap4",
+  "start": "2026-11-14T20:22:29.570796+00:00",
+  "end": "2026-11-14T20:22:40.124858+00:00",
+  "timing_lock_taken": false
+}

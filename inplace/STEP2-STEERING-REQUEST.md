@@ -1,0 +1,13 @@
+# Step 2 cost and steering request
+
+At 2026-11-14T16:47:07.518540+00:00, the Step 2 subproblem spans checkpoints 65 (design), 66 (foundation), and 67 (this deviation). Since the first locked proof test at 16:17 UTC, 14 isolated locked attempts have consumed 43.909 seconds of recorded child wall time; editing/review elapsed time is additional. This includes failed red tests, excluded invalid commands, and greens, not 14 successful attempts. Latest valid focused gate: 130 passed in 14.17 seconds. One independent foundation review; no timing cohorts, direct Region entries, direct reach, or measured performance gain.
+
+Built: primitive effect lattice and recursive fixed point; canonical aliases and conservative topology invalidation; backward identity demand with origin checks; a conservative actual compiler-memory bridge; a shared no-NRT raw LLVM adapter with real machine-entry/status tests and code/environment ownership; weak class/init escape facts. Existing R8/R7/escape tests pass. The adapter has not been bound into a C live-object interval.
+
+Remaining necessary implementation: checked-op/source/CFG identity integration and R8 token transfer; weak persistent Program descriptors; installed-header fresh C walk and pin release before observation; raw direct load lowering; scalar-box token materialization; actual native-entry/cleanup counters; shared saved AOT capsule emission and no-Numba restore. These are explicit engineering work, not claims that Python makes direct access impossible. Adding only raw pointer dereferences would leave the reviewed counterexamples unsound. No second backend or workload-specific rewrite is proposed.
+
+S37.4 requires a costed steering request instead of an unbounded no-gain subproblem. Requested direction: continue these gates in order, or explicitly authorize addressing the already measured Step4 arena costs before returning to direct reads/journaling. Steps2/3 remain open. No further guard variants or repeat acceptance cohorts. The current question is scope/order steering, not renewed permission to edit the authorized clone.
+
+Unaffected work while steering is pending: union verification and preservation of the reviewed foundation; source inspection of Step4's existing costs. No Step2 performance acceptance, Step3 publication, or changed step ordering is implied.
+
+Preservation update after independent verification: 17 completed locked attempts now total 576.148s child wall time (including the excluded 522.787s union); focused final source passes169tests. The union's sole failure is the unchanged monitor timing ratio; no all-suite pass is claimed. No direct execution/timing or Step3/4 expansion was started while scope steering is pending.

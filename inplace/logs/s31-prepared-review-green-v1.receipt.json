@@ -1,0 +1,23 @@
+{
+  "label": "s31-prepared-review-green-v1",
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_prepared_cache_api.py",
+    "tests/test_prepared_cache.py",
+    "tests/test_prepared_cache_adversarial.py",
+    "tests/test_prepared_cache_more.py",
+    "tests/test_runner_prepared_integration.py",
+    "tests/test_runner_prepared_artifact.py",
+    "tests/test_profiler_prepared_assembly.py",
+    "tests/test_prepared_snapshot_window.py",
+    "tests/test_prepared_review_regressions.py",
+    "--basetemp",
+    "inplace/temp/s31-prepared-review-green-v1"
+  ],
+  "exit_code": 1,
+  "wall_s": 35.48860099999001,
+  "end": "2026-11-14T06:31:13.321067+00:00"
+}

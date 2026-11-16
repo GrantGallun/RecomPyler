@@ -1,0 +1,646 @@
+{
+  "label": "integration-fixed",
+  "mode": "compile-only pre-AOT phase bound",
+  "source": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\bases\\integration-fixed\\src",
+  "source_files": {
+    "recompyler\\__init__.py": "63c3a5284d6aa962a201b875feb0bb7e384de21a99654eccc1161f53117ac843",
+    "recompyler\\__main__.py": "189565562dc667094a310ad981198a1a065cc006539bebdced6e79c17c0a2c6d",
+    "recompyler\\_comparison.py": "6f6d5d34a422541a9d7cbcadc53f86ace997e3948e9cb474f2d12e5c9b79f0e3",
+    "recompyler\\_nd.py": "343e5c97ca20d2940f91c6146567b52f898d25f1b2a28c7af4a577937f87a8f3",
+    "recompyler\\_optimize.py": "2a3eeebea55756e721f2970408b41bb0250ab28ae64c9963b5575aeb68846ec2",
+    "recompyler\\_origin.py": "a59fd394b5b6efce95341be513151cdbdcfe4de2e072b5f7d4f6965dcd1fbd32",
+    "recompyler\\_record_types.py": "f00a7946c23680a4856d1b8bd8d149f4d57b04ea2ae0d2d0fa38567645b27d64",
+    "recompyler\\_region_seed.py": "5b0892d69d9f4f593d755663edabe281ce1c90e2949889d1af477f69171be413",
+    "recompyler\\_rng.py": "422ca1b2b770c8140fc5cfab049c039e41899464787e4b474b594e010b4533ef",
+    "recompyler\\aot.py": "962efa393908c288965f7fde83c9d804c7cccf65bd7766d78dee479aeef8a08f",
+    "recompyler\\batch.py": "71c5987d87ee7d8530eff64465b7c308d009d930d91d6ae0498f1b10d53eb740",
+    "recompyler\\benchmark.py": "fb056c24becb03ed9db784c2fff95a863cbf9de63e7680f0d0ee5d218198595f",
+    "recompyler\\depmap.py": "0d32233e2bbe7812196013cecd13118fdc9360c48a6653100151f743a1bad2ad",
+    "recompyler\\escape.py": "54ab41bb195df8b3577cb40374d1e0632e71a517d265ef5b1d0deb1dbca6bc20",
+    "recompyler\\experimental.py": "180041d93c1c840f5d01bba8b701671780b6b5271a70b9e0188471b9b1ed3214",
+    "recompyler\\facts.py": "724a9570fd5ad0d11b27e5134dc616473af3a959ad2c232e6821ad04e654d9ad",
+    "recompyler\\flow.py": "f9023444602344ad6c868ed5b688544a39d0931d99d5e42f64f071d6d6ab0df1",
+    "recompyler\\heap.py": "f7acbf5af5bbb1c423b91a410c0ecc9d17341a4303492bd3578e5575d58a8ebd",
+    "recompyler\\lift.py": "f950ee6c94bfde8dd8021f925c37b246bfe0a60203ba8d58a3f375890f1f8976",
+    "recompyler\\monitor.py": "e2542d858bec1edc67fcd3e65aad4c64381389c8565ddc2f24958d6a06bbf41b",
+    "recompyler\\profiler.py": "891453d69e8680e0f40765e00b31cdb09213f6f4c3a1c6722c7e3a120de16830",
+    "recompyler\\report.py": "cab00643dddc75a38bbf0469eaf271d437386e72cb551d2860acc6d6c21d86a8",
+    "recompyler\\runner.py": "03be23bb02ddcdf5af36d8931f01d2add7e0ad42eaa9c1500981d419d7a226aa",
+    "recompyler\\scalar.py": "d71882edc4dc56f934060145e15d2d246db66ebe306cf8c2dc6e014657d6fbd4",
+    "recompyler\\variants.py": "73a11b28a5a20fd7fc68f6a1320a9a6743d9818de5724864a9c136c7c8f5fb58"
+  },
+  "input": "D:\\Code\\Datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v2\\richards_super\\input\\run_benchmark.py",
+  "input_sha256": "665b3d5551171e147c127b6f8671edc9a7703c736d317cc4a991bb00f599dc36",
+  "origin": {
+    "file": "d:\\code\\datathon\\recompyler-codex-20261111\\wave16-inplace\\inplace\\integration-smoke20-v2\\richards_super\\input\\run_benchmark.py",
+    "sha256": "665b3d5551171e147c127b6f8671edc9a7703c736d317cc4a991bb00f599dc36",
+    "module": "__main__",
+    "code_sha256": "0ef3ca80e673e5ac79827342124fef269a3dbd99e8b9d431e4d7cb171e9088e3",
+    "python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+    "library_version": null
+  },
+  "fixture_iterations": 20,
+  "fixture_s": 0.6971202999993693,
+  "args": [
+    "Richards instance",
+    1
+  ],
+  "reference": true,
+  "reference_counts": {
+    "hold": 9297,
+    "queued": 23246
+  },
+  "unmeasured_discovery_s": 0.542881600005785,
+  "preparation_s": 0.4977776999876369,
+  "phases": {
+    "program_construct": {
+      "calls": 1,
+      "inclusive_s": 0.0015793000056874007,
+      "exclusive_s": 0.0015793000056874007
+    },
+    "settle": {
+      "calls": 1,
+      "inclusive_s": 0.08926089998567477,
+      "exclusive_s": 0.08926089998567477
+    },
+    "zero_proofs": {
+      "calls": 1,
+      "inclusive_s": 1.1999800335615873e-06,
+      "exclusive_s": 1.1999800335615873e-06
+    },
+    "escape_fixed_point": {
+      "calls": 1,
+      "inclusive_s": 0.14449659999809228,
+      "exclusive_s": 0.14449659999809228
+    },
+    "scalar_lower_construct_empty": {
+      "calls": 110,
+      "inclusive_s": 0.035355899919522926,
+      "exclusive_s": 0.035355899919522926
+    },
+    "scalar_lower_visit_empty": {
+      "calls": 110,
+      "inclusive_s": 0.012475200172048062,
+      "exclusive_s": 0.012475200172048062
+    },
+    "scalar_checked_lower_empty": {
+      "calls": 110,
+      "inclusive_s": 0.15276729979086667,
+      "exclusive_s": 0.10493619969929568
+    },
+    "scalar_lower": {
+      "calls": 110,
+      "inclusive_s": 0.1622488000721205,
+      "exclusive_s": 0.00948150028125383
+    },
+    "scalar_run": {
+      "calls": 1,
+      "inclusive_s": 0.24811630000476725,
+      "exclusive_s": 0.08586749993264675
+    },
+    "origin_identity": {
+      "calls": 55,
+      "inclusive_s": 0.0064401002891827375,
+      "exclusive_s": 0.0064401002891827375
+    },
+    "source_digest": {
+      "calls": 1,
+      "inclusive_s": 0.0005400000081863254,
+      "exclusive_s": 0.0005400000081863254
+    },
+    "compile": {
+      "calls": 1,
+      "inclusive_s": 0.49616619999869727,
+      "exclusive_s": 0.00731109973276034
+    }
+  },
+  "four_fresh_copy_s": [
+    3.860000288113952e-05,
+    2.19999928958714e-05,
+    1.0499992640689015e-05,
+    8.600007276982069e-06
+  ],
+  "generated_digest": "601563ed4175fa2e5d9922f90e452c9e36934697163c3894cf4d32323338b25c",
+  "digest_hits": [
+    "601563ed4175fa2e5d9922f90e452c9e36934697163c3894cf4d32323338b25c"
+  ],
+  "digest_misses": [],
+  "generated_source_sha256": "a20113a48a4a5ec26fa0fbc1f0619200f9a7bcea2918abd9a12076d76b0aa901",
+  "generated_source_bytes": 50883,
+  "function_count": 55,
+  "source_ast_nodes": 11957,
+  "analysis_iterations": 4,
+  "scalar_removed_sites": [],
+  "scalar_field_clones": [],
+  "scalar_fresh_return_clones": [],
+  "existing_plan_digest_match": true,
+  "recorded_warm_start_s": 0.5270831999951042,
+  "note": "Comparison excludes module imports/JIT/native work; four native calls in warm_start_time are not simulated by dummy exports.",
+  "noop_preflight": {
+    "seconds": 0.01398489999701269,
+    "local_candidates": [],
+    "fresh_candidates": [],
+    "blocked": [
+      {
+        "site": "f0_run:t3",
+        "unknown": "F2/F5 polymorphic record layout"
+      },
+      {
+        "site": "f0_run:t10",
+        "unknown": "F2/F5 polymorphic record layout"
+      },
+      {
+        "site": "f0_run:t18",
+        "unknown": "F2/F5 polymorphic record layout"
+      },
+      {
+        "site": "f0_run:t26",
+        "unknown": "F2/F5 polymorphic record layout"
+      },
+      {
+        "site": "f0_run:t31",
+        "unknown": "F2/F5 polymorphic record layout"
+      },
+      {
+        "site": "f0_run:t36",
+        "unknown": "F2/F5 polymorphic record layout"
+      }
+    ],
+    "allocation_classes": {
+      "f0_run:t3": {
+        "function": "f0_run",
+        "variable": "t3",
+        "record": "TaskState",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f4_running:4"
+        ],
+        "mutated": [
+          "I:0",
+          "I:6",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t6": {
+        "function": "f0_run",
+        "variable": "t6",
+        "record": "IdleTaskRec",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:4",
+          "I:6"
+        ]
+      },
+      "f0_run:t7": {
+        "function": "f0_run",
+        "variable": "t7",
+        "record": "IdleTask",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4",
+          "I:5",
+          "I:6",
+          "I:7",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t8": {
+        "function": "f0_run",
+        "variable": "t8",
+        "record": "Packet",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4"
+        ]
+      },
+      "f0_run:t9": {
+        "function": "f0_run",
+        "variable": "t9",
+        "record": "Packet",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4"
+        ]
+      },
+      "f0_run:t10": {
+        "function": "f0_run",
+        "variable": "t10",
+        "record": "TaskState",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f12_waitingWithPacket:4"
+        ],
+        "mutated": [
+          "I:0",
+          "I:6",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t13": {
+        "function": "f0_run",
+        "variable": "t13",
+        "record": "WorkerTaskRec",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:4",
+          "I:5"
+        ]
+      },
+      "f0_run:t14": {
+        "function": "f0_run",
+        "variable": "t14",
+        "record": "WorkTask",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4",
+          "I:5",
+          "I:6",
+          "I:7",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t15": {
+        "function": "f0_run",
+        "variable": "t15",
+        "record": "Packet",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4"
+        ]
+      },
+      "f0_run:t16": {
+        "function": "f0_run",
+        "variable": "t16",
+        "record": "Packet",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4"
+        ]
+      },
+      "f0_run:t17": {
+        "function": "f0_run",
+        "variable": "t17",
+        "record": "Packet",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4"
+        ]
+      },
+      "f0_run:t18": {
+        "function": "f0_run",
+        "variable": "t18",
+        "record": "TaskState",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f12_waitingWithPacket:4"
+        ],
+        "mutated": [
+          "I:0",
+          "I:6",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t21": {
+        "function": "f0_run",
+        "variable": "t21",
+        "record": "HandlerTaskRec",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:2",
+          "I:3"
+        ]
+      },
+      "f0_run:t22": {
+        "function": "f0_run",
+        "variable": "t22",
+        "record": "HandlerTask",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4",
+          "I:5",
+          "I:6",
+          "I:7",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t23": {
+        "function": "f0_run",
+        "variable": "t23",
+        "record": "Packet",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4"
+        ]
+      },
+      "f0_run:t24": {
+        "function": "f0_run",
+        "variable": "t24",
+        "record": "Packet",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4"
+        ]
+      },
+      "f0_run:t25": {
+        "function": "f0_run",
+        "variable": "t25",
+        "record": "Packet",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4"
+        ]
+      },
+      "f0_run:t26": {
+        "function": "f0_run",
+        "variable": "t26",
+        "record": "TaskState",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f12_waitingWithPacket:4"
+        ],
+        "mutated": [
+          "I:0",
+          "I:6",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t29": {
+        "function": "f0_run",
+        "variable": "t29",
+        "record": "HandlerTaskRec",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:2",
+          "I:3"
+        ]
+      },
+      "f0_run:t30": {
+        "function": "f0_run",
+        "variable": "t30",
+        "record": "HandlerTask",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4",
+          "I:5",
+          "I:6",
+          "I:7",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t31": {
+        "function": "f0_run",
+        "variable": "t31",
+        "record": "TaskState",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f20_waiting:4"
+        ],
+        "mutated": [
+          "I:0",
+          "I:6",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t34": {
+        "function": "f0_run",
+        "variable": "t34",
+        "record": "DeviceTaskRec",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1"
+        ]
+      },
+      "f0_run:t35": {
+        "function": "f0_run",
+        "variable": "t35",
+        "record": "DeviceTask",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4",
+          "I:5",
+          "I:6",
+          "I:7",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t36": {
+        "function": "f0_run",
+        "variable": "t36",
+        "record": "TaskState",
+        "class": "b",
+        "captured": false,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [
+          "f20_waiting:4"
+        ],
+        "mutated": [
+          "I:0",
+          "I:6",
+          "I:8",
+          "I:9"
+        ]
+      },
+      "f0_run:t39": {
+        "function": "f0_run",
+        "variable": "t39",
+        "record": "DeviceTaskRec",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1"
+        ]
+      },
+      "f0_run:t40": {
+        "function": "f0_run",
+        "variable": "t40",
+        "record": "DeviceTask",
+        "class": "e",
+        "captured": true,
+        "identity_observed": false,
+        "returned_fresh": false,
+        "passed_to": [],
+        "mutated": [
+          "I:0",
+          "I:1",
+          "I:2",
+          "I:3",
+          "I:4",
+          "I:5",
+          "I:6",
+          "I:7",
+          "I:8",
+          "I:9"
+        ]
+      }
+    }
+  },
+  "actual_saved_aot_first_call": {
+    "seconds": 0.45991089998278767,
+    "result": true,
+    "compiled_calls": 1,
+    "aot_calls": 1,
+    "jit_calls": 0,
+    "fallback_calls": 0,
+    "digest": "1da23577299b43ecf18f0de5ff71dae331d0bd0ef0d00fb68cb30f85d363737c",
+    "seed_policy": "guarded"
+  }
+}
